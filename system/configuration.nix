@@ -5,45 +5,36 @@
     [
       ./hardware-configuration.nix
 
-      ./boot/default.nix
-      ./fonts/default.nix
       ./hardware/default.nix
       ./manager/default.nix
       ./pkgs/default.nix
-      ./services/default.nix
 
 
     ];
 
-  nix = {
-    settings.auto-optimise-store = true;
-    settings.experimental-features = [ "nix-command" "flakes" ];
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
+  boot = {
+    loader = {
+      /*   grub = {
+        version = 2;
+        enable = true;
+        useOSProber = true;
+        efiSupport = true;
+        default = "saved";
+        device = "nodev";
+      };
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      }; */
+      systemd-boot.enable = true;
+      efi = {
+        efiSysMountPoint = "/boot/efi";
+      };
     };
   };
 
-  users = {
-    defaultUserShell = pkgs.bash;
-    users.guifuentes8 = {
-      isNormalUser = true;
-      description = "Guilherme Fuentes";
-      extraGroups = [ "networkmanager" "wheel" "video" "docker" "adbusers" ];
-      shell = pkgs.zsh;
-    };
-  };
 
-  system = {
-    stateVersion = "22.11";
-    autoUpgrade = {
-      enable = true;
-      channel = "https://nixos.org/channels/nixos-22.11";
-      allowReboot = true;
-      dates = "weekly";
-    };
-  };
+
 
   console.keyMap = "br-abnt2";
   time.timeZone = "America/Sao_Paulo";
@@ -77,6 +68,63 @@
     };
   };
 
+  fonts.fonts = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    meslo-lgs-nf
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
+  services = {
+    xserver = {
+      layout = "br";
+      xkbVariant = "abnt2";
+      enable = false;
+      libinput.enable = false;
+      excludePackages = [ pkgs.xterm ];
+    };
+    teamviewer.enable = true;
+    printing.enable = false;
+    flatpak.enable = false;
+
+  };
+
+  # Docker
+  virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
+
+
+  nix = {
+    settings.auto-optimise-store = true;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
+
+  users = {
+    defaultUserShell = pkgs.bash;
+    users.guifuentes8 = {
+      isNormalUser = true;
+      description = "Guilherme Fuentes";
+      extraGroups = [ "networkmanager" "wheel" "video" "docker" "adbusers" ];
+      shell = pkgs.zsh;
+    };
+  };
+
+  system = {
+    stateVersion = "22.11";
+    autoUpgrade = {
+      enable = true;
+      channel = "https://nixos.org/channels/nixos-22.11";
+      allowReboot = true;
+      dates = "weekly";
+    };
+  };
+
   environment = {
     pathsToLink = [ "/libexec" ];
     variables = {
@@ -92,7 +140,5 @@
       ];
     };
   };
-
-
 
 }

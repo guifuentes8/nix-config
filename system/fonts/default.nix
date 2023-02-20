@@ -1,9 +1,0 @@
-{ config, ... }:
-{
-
-  imports =
-    [
-      ./fonts.nix
-    ];
-
-}

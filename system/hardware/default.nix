@@ -4,6 +4,7 @@
   imports =
     [
       ./intel-gpu.nix
+      ./bluetooth.nix
     ];
 
 }

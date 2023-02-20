@@ -7,6 +7,49 @@
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
 
+  home.packages = with pkgs; [
+    
+
+    # WM wayland
+    bpytop
+    cava
+    cmatrix
+    dunst
+    feh
+    gcalcli
+    glib
+    grim
+    himalaya
+    kitty
+    mpv
+    neofetch
+    pavucontrol
+    playerctl
+    ranger
+    slurp
+    sptlrx
+    sway
+    swaylock
+    swayidle
+    todo
+    tty-clock
+    vim
+    waybar
+    wayland
+    wl-clipboard
+    xdg-utils
+    xfce.thunar
+    xfce.xfconf
+  ];
+
+   nixpkgs.overlays = [
+    (self: super: {
+      mpv = super.mpv.override {
+        scripts = [ self.mpvScripts.mpris ];
+      };
+    })
+  ];
+
   xdg.configFile."bpytop/bpytop.conf".source = ./software-configs/bpytop/bpytop.conf;
   xdg.configFile."cava/config".source = ./software-configs/cava/config;
   xdg.configFile."dunst/dunstrc".source = ./software-configs/dunst/dunstrc;
@@ -15,7 +58,6 @@
   xdg.configFile."mpv/mpv.conf".source = ./software-configs/mpv/mpv.conf;
   xdg.configFile."sptlrx/config.yaml".source = ./software-configs/sptlrx/config.yaml;
   xdg.configFile."sway/config".source = ./software-configs/sway/config;
-  xdg.configFile."ytermusic/".source = ./software-configs/ytermusic;
   xdg.configFile."wallpaper.jpg".source = ./software-configs/wallpaper.jpg;
   xdg.configFile."waybar/config".source = ./software-configs/waybar/config;
 
@@ -35,7 +77,6 @@
       enable = true;
       package = pkgs.alacritty;
       settings = {
-
         window = {
           opacity = 0.85;
         };
@@ -138,7 +179,7 @@
         mailw = "mail write";
 
         #yt
-        yt = "cd ~/.config/ytermusic && ./yt.sh";
+        yt = "cd && cd ytermusic &&./yt.sh";
       };
     };
   };
