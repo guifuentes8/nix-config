@@ -1,0 +1,161 @@
+# YTerMusic log file
+
+[PERF] Init: 0ms
+[PERF] Startup: 0ms
+[PERF] Spawned clean task: 0ms
+[PERF] Clean task: 8ms
+[PERF] Spawned system task: 34ms
+Last playlist task on
+[PERF] Spawned last playlist task: 34ms
+[PERF] Spawned api task: 34ms
+[PERF] Running manager: 34ms
+API task on
+[PERF] Last playlist: 0ms
+Database getter task on
+[PERF] Local musics: 5ms
+[PERF] API task: 7602ms
+[PERF] Browse playlist Beats: 335ms
+[PERF] Browse playlist Till I collapse Remix: 343ms
+[PERF] Browse playlist Gostei: 352ms
+[PERF] Browse playlist Mix de lançamentos: 358ms
+[PERF] Browse playlist Mix de descobertas: 363ms
+[PERF] Browse playlist Replay Mix: 456ms
+[PERF] Browse playlist Nego bam paródias: 469ms
+[PERF] Browse playlist Minha Mix 4: 569ms
+[PERF] Browse playlist Minha Mix 3: 637ms
+[PERF] Browse playlist Minha Mix 7: 654ms
+[PERF] Browse playlist Minha Mix 2: 664ms
+[PERF] Browse playlist Minha Mix 6: 694ms
+[PERF] Browse playlist Minha Mix 1: 707ms
+[PERF] Browse playlist Minha Supermix: 823ms
+[PERF] Browse playlist Minha Mix 5: 914ms
+Error downloading w8ysW-C4RPA: YouTube returned an unexpected response: `Could not acquire the player response from the watch html!
+It looks like YouTube changed it's API again :-/
+If this not yet reported, it would be great if you could file an issue:
+            (https://github.com/DzenanJupic/rustube/issues/new?assignees=&labels=youtube-api-changed&template=youtube_api_changed.yml).`
+Appended Devil Eyes - ZODIVK (Bass Boosted) to database
+Appended DVRST-DREAM SPACE (SPEED UP) to database
+Appended VØJ x ZODIVK x Lastfragment "Fly in Hell" to database
+Appended Hueco Mundo to database
+Appended af1 to database
+Appended Jaah SLT - Tuff (Lyrics) to database
+Appended WARNING - MC ORSEN (SPEED UP) EXTENDED MIX to database
+Appended вечеринка to database
+Appended Cha Cha - Freddie Dredd (Lyrics) VHS to database
+Appended SLICK KILLA - UR FINAL MESSAGE FEAT. PAIMON (𝒔𝒍𝒐𝒘𝒆𝒅 + 𝒓𝒆𝒗𝒆𝒓𝒃) ✞ to database
+Appended The A La Menthe ( Cs:Go Surf/Bhop Song ) to database
+Appended ##LOCKITUP (part. laxrt) to database
+Error downloading dhhMEt1OwgI: YouTube returned an unexpected response: `Could not acquire the player response from the watch html!
+It looks like YouTube changed it's API again :-/
+If this not yet reported, it would be great if you could file an issue:
+            (https://github.com/DzenanJupic/rustube/issues/new?assignees=&labels=youtube-api-changed&template=youtube_api_changed.yml).`
+Appended INTERWORLD "METAMORPHOSIS" to database
+Appended Amrikkka to database
+Appended Gdzie jest biały węgorz ? (Zejście) to database
+Appended yeat only - lock it up [ slowed + reverb ] to database
+Appended Automotivo Super Mario World 2 to database
+Appended Montagem Orquestra Sinfonica (Speed Up) to database
+Appended XXXTENTACION - Revenge (Lyrics) | I've dug two graves for us my dear to database
+Appended AUTOMOTIVO SUPER MARIO WORLD 3 🍄 - MC DANFLIN - CAI DE BOCA NO COGUMELO (DJ NK3) - 2K23 to database
+Appended Dallo - Safar Habeby l سافر حبيبي (Remix) to database
+Appended Attack of the Killer Beast (Phonk) to database
+Appended RXDXVIL- Angry Birds PHONK REMIX#phonk #jdm #angry#birds #angrybirds to database
+Appended LAND OF FIRE to database
+Appended DEMONS IN MY SOUL (Slowed) to database
+Appended BATIDÃO DO UGA UGA - MC RD, MC FeZika e MC Gui Andrade (DJ Bruninho PZS, DJ Erik JP e DJ Duarte) to database
+Appended Clima Da Balinha (Apenas beat) to database
+Error downloading XlNSR5o6G_A: YouTube returned an unexpected response: `Could not acquire the player response from the watch html!
+It looks like YouTube changed it's API again :-/
+If this not yet reported, it would be great if you could file an issue:
+            (https://github.com/DzenanJupic/rustube/issues/new?assignees=&labels=youtube-api-changed&template=youtube_api_changed.yml).`
+Appended MALDIÇÃO ETERNA 1.0!￼ - NOVINHA DO ABC (MC LIPEX) (@DJGLKORIGINAL & @djluisdograu) to database
+Appended Crystals to database
+Appended MEGAO DOS ANOS 80 to database
+Appended MONTAGEM - MELODIA ENVOLVENTEMENTE ENVOLVENTE 4 2021 to database
+Appended EMPURRA LÁ NA TRETA X MAMA EU E OS AMIGOS (DJ Digo Beat, DJ Teixeira, DJ K e DJ Léo da 17) to database
+Appended Twilight to database
+Appended MIDNIGHT to database
+Appended Keraunos to database
+Appended Scary Garry to database
+Appended 5admin - Silence to database
+Appended Disaster to database
+Appended Close Eyes (Sped Up) to database
+Appended TANDEM to database
+Appended PlayaPhonk - PHONKY TOWN (Extended Mix) to database
+Appended Intercooler to database
+Appended INCOMING to database
+Appended Phonky Trap to database
+Appended By the Sword to database
+Appended Dynamic to database
+Appended 999 to database
+Appended Override to database
+Appended Chase to database
+Appended Lobotomy to database
+Appended HENSONN - SAHARA to database
+Appended S.X.N.D. N.X.D.E.S. to database
+Appended SHADXWBXRN, ARCHEZ, KXNVRA - PRINCE OF DARKNESS to database
+Appended IMMORTAL to database
+Appended $WERVE x KSLV - GECKO PHONK to database
+Appended Trunk to database
+Appended Wig Split to database
+Appended EXPLODING LIFE to database
+Appended ghostface playa - why not [slowed + reverb] to database
+Appended Why Not (Slowed + Reverb) to database
+Appended Freddie Dredd - ALL ALONE (Lyrics) to database
+Appended soviss - kitty phonk to database
+Appended Swaggin' at the Partment to database
+Appended PRINCE OF DARKNESS (Slowed + Reverb) to database
+Appended I Don't Give a Fuck (part. Pharmacist) to database
+Appended BLIND SIDE to database
+Appended UNHOLY to database
+Appended North Memphis to database
+Appended Chaos (part. Nateki) to database
+Appended Nitro to database
+Appended $WERVE - REVENGE (feat. Leftoz) to database
+Appended BLOWIN' to database
+Appended Nissan Playa - mistake to database
+Appended MONTAGEM ASSOMBRA NOIA 2.0 - BOLINHA DE GOLF ( DJ WS 011 & DJ GS7 ) to database
+Appended Montagem - Silent Hills to database
+Appended MINI GAME ASSOMBRADO CLUB DZ7 to database
+Appended MONTAGEM ATERRORIZANTE to database
+Appended BERIMBAU DOS BAILE to database
+Appended MEGA AGRESSIVO DAS RELIKIAS 2 to database
+Appended BEAT ESPANTA PM to database
+Appended MINI GAME DERRUBA PARAISOPOLIS to database
+Appended Mini Game Violento to database
+Appended Ritmada 2 to database
+Appended MONTAGEM - BEAT BOLADO to database
+Appended Nós Te Boca Soca Soca, Joga Tudo Dentro to database
+Appended Acabou a Água (feat. Mc Ygor Yanks) (part. Mc Ygor Yanks) to database
+Appended Hey How Vs Blecaute no Bailão (feat. Mc Gw) (part. Mc Gw) to database
+Appended AUTOMOTIVO DO ASSOBIO - TALATUMBA to database
+Appended PONTINHO DAS RELÍQUIAS to database
+Appended Automotivo Toma Sequência De Rock N Roll to database
+Appended MEGA FLAUTA DO MANDELA to database
+Appended MONTAGEM SINISTRA CLUB DA DZ7 to database
+Appended TIPO HARIEL - SEI QUE E RARIDADE - to database
+Appended WHO THAT to database
+Appended Automotivo Intimidador to database
+Appended Mega Set Final de Ano to database
+Appended Montagem Roça nos Amigo da Boca to database
+Appended Automotivo de Bandid0 (part. MC VITIN DZ7 e MC LC OFICIAL) to database
+Appended MEGA BEAT AUTOMOTIVO ESCORREGOU ABAIXA E PEGA to database
+Appended Sai Da Frente É O Trem to database
+Appended Sarra nos Menor to database
+Appended Beat Estremece Metrópole 2 to database
+Appended Voltei pra Cachorrada to database
+Appended Quem Não Bafora Não Transa (part. MC Sapinha e Mc Amandinha Zs) to database
+Appended Onda do Berimbau to database
+Appended Vampiro to database
+Appended X1 to database
+Appended Teto - Fim de Semana no Rio 🧀💨 to database
+Appended Devil Eyes - ZODIVK (Slowed + Reverb) to database
+Appended A Cara do Crime 3 (Brinde à Liberdade) to database
+Appended Pandora (part. Vulgo FK e Mc GP) to database
+Appended Ritmada 2 to database
+Appended MIDNIGHT (Slowed + Reverb) to database
+Appended UPA UPA PHONKOTÓ to database
+Error downloading DuQGokwsWF8: YouTube returned an unexpected response: `Could not acquire the player response from the watch html!
+It looks like YouTube changed it's API again :-/
+If this not yet reported, it would be great if you could file an issue:
+            (https://github.com/DzenanJupic/rustube/issues/new?assignees=&labels=youtube-api-changed&template=youtube_api_changed.yml).`
