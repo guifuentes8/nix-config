@@ -8,7 +8,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    
+
 
     # WM wayland
     bpytop
@@ -36,13 +36,14 @@
     vim
     waybar
     wayland
+    wf-recorder
     wl-clipboard
     xdg-utils
     xfce.thunar
     xfce.xfconf
   ];
 
-   nixpkgs.overlays = [
+  nixpkgs.overlays = [
     (self: super: {
       mpv = super.mpv.override {
         scripts = [ self.mpvScripts.mpris ];

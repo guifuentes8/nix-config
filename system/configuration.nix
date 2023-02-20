@@ -4,11 +4,9 @@
   imports =
     [
       ./hardware-configuration.nix
-
       ./hardware/default.nix
-      ./manager/default.nix
-      ./pkgs/default.nix
-
+      ./greetd.nix
+      ./sway.nix
 
     ];
 
@@ -140,5 +138,38 @@
       ];
     };
   };
+
+  nixpkgs.config.allowUnfree = true;
+  environment.systemPackages = (with pkgs; [
+
+    bitwarden
+    dbeaver
+    fragments
+    ffmpeg
+    google-chrome
+    obs-studio
+    onlyoffice-bin
+    postman
+    teamviewer
+    vscode
+
+    # Development
+    python2
+    python38
+    gcc
+    glxinfo
+    sassc
+    sqlite
+    imagemagick
+    unzip
+    yt-dlp
+    nodejs-16_x
+    #nodejs
+    docker-compose
+    lsof
+    nixpkgs-fmt
+    yarn
+
+  ]);
 
 }
