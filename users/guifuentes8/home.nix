@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in
 {
 
   home.username = "guifuentes8";
@@ -20,7 +22,7 @@
     glib
     grim
     himalaya
-    kitty
+    lxappearance
     mpv
     neofetch
     pavucontrol
@@ -28,9 +30,11 @@
     ranger
     slurp
     sptlrx
+    unstable.spotify-player
     sway
     swaylock
     swayidle
+    libsixel
     todo
     tty-clock
     vim
@@ -43,78 +47,40 @@
     xfce.xfconf
   ];
 
-  nixpkgs.overlays = [
-    (self: super: {
-      mpv = super.mpv.override {
-        scripts = [ self.mpvScripts.mpris ];
-      };
-    })
-  ];
+
 
   xdg.configFile."bpytop/bpytop.conf".source = ./software-configs/bpytop/bpytop.conf;
   xdg.configFile."cava/config".source = ./software-configs/cava/config;
   xdg.configFile."dunst/dunstrc".source = ./software-configs/dunst/dunstrc;
   xdg.configFile."rofi/dracula-theme.rasi".source = ./software-configs/rofi/dracula-theme.rasi;
-  xdg.configFile."kitty/".source = ./software-configs/kitty;
+  xdg.configFile."kitty/dracula-pro.conf".source = ./software-configs/kitty/dracula-pro.conf;
+  xdg.configFile."kitty/kitty.conf".source = ./software-configs/kitty/kitty.conf;
   xdg.configFile."mpv/mpv.conf".source = ./software-configs/mpv/mpv.conf;
   xdg.configFile."sptlrx/config.yaml".source = ./software-configs/sptlrx/config.yaml;
   xdg.configFile."sway/config".source = ./software-configs/sway/config;
+  xdg.configFile."spotify-player/app.toml".source = ./software-configs/spotify-player/app.toml;
+  xdg.configFile."spotify-player/theme.toml".source = ./software-configs/spotify-player/theme.toml;
   xdg.configFile."wallpaper.jpg".source = ./software-configs/wallpaper.jpg;
   xdg.configFile."waybar/config".source = ./software-configs/waybar/config;
 
+
   gtk = {
     enable = true;
-    cursorTheme.name = "Bibata-Modern-Ice";
-    cursorTheme.package = pkgs.bibata-cursors;
+    cursorTheme.name = "Catppuccin-Macchiato-Dark-Cursors";
+    cursorTheme.package = pkgs.catppuccin-cursors.macchiatoDark;
     iconTheme.name = "Adwaita";
     iconTheme.package = pkgs.gnome.adwaita-icon-theme;
-    theme.package = pkgs.dracula-theme;
-    theme.name = "Dracula";
-  };
-
-  programs = {
-
-    alacritty = {
-      enable = true;
-      package = pkgs.alacritty;
-      settings = {
-        window = {
-          opacity = 0.85;
-        };
-        colors = {
-          # Default colors
-          primary = {
-            background = "0x22212c";
-            foreground = "0xf8f8f2";
-          };
-
-          # Normal colors
-          normal = {
-            black = "0x22212c";
-            red = "0xff9580";
-            green = "0x8aff80";
-            yellow = "0xffff80";
-            blue = "0x9580ff";
-            magenta = "0xff80bf";
-            cyan = "0x80ffea";
-            white = "0xf8f8f2";
-          };
-
-          # Bright colors
-          bright = {
-            black = "0x22212c";
-            red = "0xffaa99";
-            green = "0xa2ff99";
-            yellow = "0xffff99";
-            blue = "0xaa99ff";
-            magenta = "0xff99cc";
-            cyan = "0x99ffee";
-            white = "0xffffff";
-          };
-        };
-
+    theme = {
+      name = "Catppuccin-Macchiato-Standard-Blue-Dark";
+      package = unstable.pkgs.catppuccin-gtk.override {
+        accents = [ "blue" ];
+        variant = "macchiato";
       };
     };
+  };
+
+
+  programs = {
 
     gh = {
       enable = true;
@@ -161,7 +127,7 @@
       shellAliases = {
 
         # Spotify
-        spt = "ncspot";
+        spt = "spotify_player";
         sptl = "sptlrx --current 'bold,#8be9fd' --before '#bd93f9,faint,italic,strikethrough' --after '#ff79c6,faint'";
 
         # TTY clock
@@ -184,5 +150,14 @@
       };
     };
   };
+
+
+  nixpkgs.overlays = [
+    (self: super: {
+      mpv = super.mpv.override {
+        scripts = [ self.mpvScripts.mpris ];
+      };
+    })
+  ];
 
 }
