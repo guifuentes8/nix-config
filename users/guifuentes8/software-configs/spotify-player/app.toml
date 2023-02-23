@@ -1,1 +1,9 @@
-cover_img_scale=1.8
+client_id = "32c1c3d388a14e4981d80295af909be7"
+cover_img_scale = 1.8
+theme = "Catppuccin-macchiato"
+playback_window_position = "Top"
+
+[device]
+volume = 100
+audio_cache = true
+bitrate = 320

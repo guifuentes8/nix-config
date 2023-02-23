@@ -11,6 +11,9 @@
     ];
 
   boot = {
+    extraModprobeConfig = ''
+      options hid_apple fnmode=2
+    '';
     loader = {
       /*   grub = {
         version = 2;
