@@ -18,6 +18,7 @@ in
     cmatrix
     dunst
     feh
+    firefox-devedition-bin
     gcalcli
     glib
     grim
