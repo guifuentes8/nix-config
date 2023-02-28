@@ -11,7 +11,6 @@ in
 
   home.packages = with pkgs; [
 
-
     # WM wayland
     bottom
     cava
@@ -24,31 +23,30 @@ in
     grim
     himalaya
     lxappearance
-    mpv
     neofetch
     pavucontrol
     playerctl
     ranger
     slurp
     sptlrx
-    unstable.spotify-player
     sway
     swaylock
     swayidle
     libsixel
     todo
+    tuifeed
     tty-clock
     vim
     waybar
     wayland
+    wdisplays
     wf-recorder
     wl-clipboard
     xdg-utils
     xfce.thunar
     xfce.xfconf
+    ytfzf
   ];
-
-
 
   xdg.configFile."bottom/bottom.toml".source = ./software-configs/bottom/bottom.toml;
   xdg.configFile."bpytop/bpytop.conf".source = ./software-configs/bpytop/bpytop.conf;
@@ -56,6 +54,8 @@ in
   xdg.configFile."cava/config".source = ./software-configs/cava/config;
   xdg.configFile."dunst/dunstrc".source = ./software-configs/dunst/dunstrc;
   xdg.configFile."foot/foot.ini".source = ./software-configs/foot/foot.ini;
+  xdg.configFile."kitty/kitty.conf".source = ./software-configs/kitty/kitty.conf;
+  xdg.configFile."kitty/catppuccin-macchiato.conf".source = ./software-configs/kitty/catppuccin-macchiato.conf;
   xdg.configFile."mpv/mpv.conf".source = ./software-configs/mpv/mpv.conf;
   xdg.configFile."rofi/catppuccin-macchiato.rasi".source = ./software-configs/rofi/catppuccin-macchiato.rasi;
   xdg.configFile."sptlrx/config.yaml".source = ./software-configs/sptlrx/config.yaml;
@@ -63,11 +63,10 @@ in
   xdg.configFile."spotify-player/app.toml".source = ./software-configs/spotify-player/app.toml;
   xdg.configFile."spotify-player/theme.toml".source = ./software-configs/spotify-player/theme.toml;
   xdg.configFile."waybar/config".source = ./software-configs/waybar/config;
+  xdg.configFile."ytfzf/conf.sh".source = ./software-configs/ytfzf/conf.sh;
 
   xdg.configFile."wallpaper.jpg".source = ./software-configs/wallpaper.jpg;
   xdg.configFile."wallpaper.png".source = ./software-configs/wallpaper.png;
-
-
 
   gtk = {
     enable = true;
@@ -84,8 +83,41 @@ in
     };
   };
 
-
   programs = {
+
+    ncspot = {
+      enable = true;
+      settings = {
+        use_nerdfont = true;
+        flip_status_indicators = true;
+        volnorm = true;
+        notify = true;
+        theme = {
+          background = "default";
+          primary = "#cdd6f4";
+          secondary = "bac2de";
+          title = "#cba6f7";
+          playing = "#cba6f7";
+          playing_selected = "#000000";
+          playing_bg = "default";
+          highlight = "#000000";
+          highlight_bg = "#a6e3a1";
+          error = "black";
+          error_bg = "#f38ba8";
+          statusbar = "#191414";
+          statusbar_progress = "#cba6f7";
+          statusbar_bg = "#cba6f7";
+          cmdline = "#cdd6f4";
+          cmdline_bg = "#191414";
+          search_match = "#f38ba8";
+        };
+
+      };
+    };
+
+    kitty = {
+      enable = true;
+    };
 
     gh = {
       enable = true;
@@ -116,7 +148,6 @@ in
         theme = "~/.config/rofi/catppuccin-macchiato.rasi";
       };
 
-
     zsh = {
       enable = true;
       enableAutosuggestions = true;
@@ -132,7 +163,7 @@ in
       shellAliases = {
 
         # Spotify
-        spt = "spotify_player";
+        spt = "ncspot";
         sptl = "sptlrx --current 'bold,#91D7E3' --before '#C6A0F6,faint,italic,strikethrough' --after '#ED8796,faint'";
 
         # TTY clock
@@ -150,19 +181,11 @@ in
         maild = "mail attachments";
         mailw = "mail write";
 
-        #yt
-        yt = "cd && cd ytermusic &&./yt.sh";
       };
     };
   };
 
 
-  nixpkgs.overlays = [
-    (self: super: {
-      mpv = super.mpv.override {
-        scripts = [ self.mpvScripts.mpris ];
-      };
-    })
-  ];
+
 
 }

@@ -123,9 +123,9 @@
   system = {
     stateVersion = "22.11";
     autoUpgrade = {
-      enable = true;
+      enable = false;
       channel = "https://nixos.org/channels/nixos-22.11";
-      allowReboot = true;
+      allowReboot = false;
       dates = "weekly";
     };
   };
@@ -157,8 +157,10 @@
     obs-studio
     onlyoffice-bin
     postman
+    pulseaudio
     teamviewer
     vscode
+    mpv
 
     # Development
     python2
@@ -169,7 +171,6 @@
     sqlite
     imagemagick
     unzip
-    yt-dlp
     nodejs-16_x
     #nodejs
     docker-compose
@@ -187,7 +188,13 @@
         };
       }
     )
+    (self: super: {
+      mpv = super.mpv.override {
+        scripts = [ self.mpvScripts.mpris ];
+      };
+    })
   ];
+
 
   programs.dconf.enable = true;
 
