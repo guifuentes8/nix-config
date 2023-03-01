@@ -1,4 +1,4 @@
 #!/bin/sh
 pushd ~/dotfiles
-home-manager switch -f ./users/guifuentes8/home.nix
+home-manager switch --flake .#guifuentes8
 popd

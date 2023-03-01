@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  # unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in
 {
 
@@ -15,7 +15,6 @@ in
     bottom
     cava
     cmatrix
-    dunst
     feh
     firefox-devedition-bin
     gcalcli
@@ -23,6 +22,7 @@ in
     grim
     himalaya
     lxappearance
+    mako
     neofetch
     pavucontrol
     playerctl
@@ -76,7 +76,7 @@ in
     iconTheme.package = pkgs.gnome.adwaita-icon-theme;
     theme = {
       name = "Catppuccin-Macchiato-Standard-Blue-Dark";
-      package = unstable.pkgs.catppuccin-gtk.override {
+      package = pkgs.unstable.catppuccin-gtk.override {
         accents = [ "blue" ];
         variant = "macchiato";
       };

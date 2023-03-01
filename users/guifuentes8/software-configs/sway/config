@@ -274,3 +274,4 @@ include @sysconfdir@/sway/config.d/*
 
 exec dbus-sway-environment
 exec configure-gtk
+exec mako

@@ -85,6 +85,17 @@
       libinput.enable = false;
       excludePackages = [ pkgs.xterm ];
     };
+    mpd = {
+      enable = true;
+      user = "guifuentes8";
+      extraConfig = ''
+        audio_output {
+          type "pipewire"
+          name "My PipeWire Output"
+        }
+      '';
+    };
+    gnome.gnome-keyring.enable = true;
     teamviewer.enable = true;
     printing.enable = false;
     flatpak.enable = false;
@@ -94,6 +105,16 @@
   # Docker
   virtualisation.docker.enable = true;
   virtualisation.podman.enable = true;
+
+  systemd.services.mpd.environment = {
+    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+    XDG_RUNTIME_DIR = "/run/user/1000"; # User-id 1000 must match above user. MPD will look inside this directory for the PipeWire socket.
+  };
+
+  programs = {
+    ssh.startAgent = true;
+    dconf.enable = true;
+  };
 
 
   nix = {
@@ -194,9 +215,4 @@
       };
     })
   ];
-
-
-  programs.dconf.enable = true;
-
-
 }
