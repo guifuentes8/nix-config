@@ -17,6 +17,7 @@ in
 
   environment.etc."greetd/environments".text = ''
     sway
+    Hyprland
   '';
 
   boot.kernelParams = [ "console=tty1" ];

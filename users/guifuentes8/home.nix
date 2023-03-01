@@ -76,7 +76,7 @@ in
     iconTheme.package = pkgs.gnome.adwaita-icon-theme;
     theme = {
       name = "Catppuccin-Macchiato-Standard-Blue-Dark";
-      package = pkgs.unstable.catppuccin-gtk.override {
+      package = pkgs.catppuccin-gtk.override {
         accents = [ "blue" ];
         variant = "macchiato";
       };

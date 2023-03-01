@@ -4,8 +4,8 @@
   inputs = {
 
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home Manager
     home-manager.url = "github:nix-community/home-manager/release-22.11";
@@ -15,16 +15,17 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
-      overlay-unstable = final: prev: {
-        unstable = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      };
+      pkgs = import nixpkgs { config = { allowUnfree = true; }; };
+      # overlay-unstable = final: prev: {
+      #   unstable = import nixpkgs-unstable {
+      #     inherit system;
+      #     config.allowUnfree = true;
+      #   };
+      # };
 
     in
     rec
@@ -53,7 +54,7 @@
         nixos = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+            # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
             ./system/configuration.nix
             hyprland.nixosModules.default
             { programs.hyprland.enable = true; }
@@ -65,7 +66,7 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+            # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
             ./users/guifuentes8/home.nix
             hyprland.homeManagerModules.default
             { wayland.windowManager.hyprland.enable = true; }
