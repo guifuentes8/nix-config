@@ -78,7 +78,7 @@
     xserver = {
       layout = "br";
       xkbVariant = "abnt2";
-      enable = false;
+      enable = true;
       displayManager.sddm.enable = true;
       libinput.enable = false;
       excludePackages = [ pkgs.xterm ];
