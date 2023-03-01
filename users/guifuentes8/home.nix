@@ -17,13 +17,13 @@ in
     bottom
     cava
     cmatrix
-    dunst
     feh
     gcalcli
     glib
     grim
     himalaya
     lxappearance
+    mako
     neofetch
     pavucontrol
     playerctl
@@ -49,6 +49,7 @@ in
     xfce.xfconf
     ytfzf
   ];
+
 
   xdg.configFile."bottom/bottom.toml".source = ./software-configs/bottom/bottom.toml;
   xdg.configFile."bpytop/bpytop.conf".source = ./software-configs/bpytop/bpytop.conf;
