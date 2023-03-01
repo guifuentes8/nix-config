@@ -5,7 +5,7 @@
     [
       ./hardware-configuration.nix
       ./hardware/default.nix
-      #./greetd.nix
+      ./greetd.nix
       ./sway.nix
 
     ];
@@ -78,8 +78,8 @@
     xserver = {
       layout = "br";
       xkbVariant = "abnt2";
-      enable = true;
-      displayManager.sddm.enable = true;
+      enable = false;
+      displayManager.sddm.enable = false;
       libinput.enable = false;
       excludePackages = [ pkgs.xterm ];
     };
@@ -187,6 +187,7 @@
     dbeaver
     fragments
     ffmpeg
+    firefox-devedition-bin
     google-chrome
     obs-studio
     onlyoffice-bin

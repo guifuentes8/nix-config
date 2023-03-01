@@ -15,14 +15,13 @@ in
     bottom
     cava
     cmatrix
+    dunst
     feh
-    firefox-devedition-bin
     gcalcli
     glib
     grim
     himalaya
     lxappearance
-    mako
     neofetch
     pavucontrol
     playerctl
@@ -55,6 +54,7 @@ in
   xdg.configFile."dunst/dunstrc".source = ./software-configs/dunst/dunstrc;
   xdg.configFile."foot/foot.ini".source = ./software-configs/foot/foot.ini;
   xdg.configFile."hypr/hyprland.conf".source = ./software-configs/hypr/hyprland.conf;
+  xdg.configFile."hypr/hyprpaper.conf".source = ./software-configs/hypr/hyprpaper.conf;
   xdg.configFile."kitty/kitty.conf".source = ./software-configs/kitty/kitty.conf;
   xdg.configFile."kitty/catppuccin-macchiato.conf".source = ./software-configs/kitty/catppuccin-macchiato.conf;
   xdg.configFile."mpv/mpv.conf".source = ./software-configs/mpv/mpv.conf;
@@ -66,8 +66,7 @@ in
   xdg.configFile."waybar/config".source = ./software-configs/waybar/config;
   xdg.configFile."ytfzf/conf.sh".source = ./software-configs/ytfzf/conf.sh;
 
-  xdg.configFile."wallpaper.jpg".source = ./software-configs/wallpaper.jpg;
-  xdg.configFile."wallpaper.png".source = ./software-configs/wallpaper.png;
+  xdg.configFile."wallpapers".source = ./software-configs/wallpapers;
 
   gtk = {
     enable = true;
@@ -171,8 +170,8 @@ in
         clock = "tty-clock -c -C  6 -s -S -r -n -D";
 
         # Unimatrix
-        matrix = "unimatrix -c blue -s 93 -f -a -i  ";
-
+        #matrix = "unimatrix -c blue -s 93 -f -a -i  ";
+        matrix = "cmatrix -b -f -C cyan";
         # Fetch 
         fetch = "neofetch";
 
@@ -185,8 +184,5 @@ in
       };
     };
   };
-
-
-
 
 }

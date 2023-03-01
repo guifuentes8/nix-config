@@ -8,17 +8,15 @@ in
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd sway -t --asterisks --remember --remember-user-session --user-menu -g 'Welcome, Guilherme!'";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -c Hyprland -t --asterisks --remember --remember-session -g 'Welcome, Guilherme!' -power-shutdown 'shutdown -h now' -power-reboot 'shutdown -r now'";
         user = "greeter";
       };
-
+      initial_session = {
+        command = "Hyprland";
+        user = "guifuentes8";
+      };
     };
   };
-
-  environment.etc."greetd/environments".text = ''
-    sway
-    Hyprland
-  '';
 
   boot.kernelParams = [ "console=tty1" ];
 }
