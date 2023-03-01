@@ -54,6 +54,7 @@ in
   xdg.configFile."cava/config".source = ./software-configs/cava/config;
   xdg.configFile."dunst/dunstrc".source = ./software-configs/dunst/dunstrc;
   xdg.configFile."foot/foot.ini".source = ./software-configs/foot/foot.ini;
+  xdg.configFile."hypr/hyprland.conf".source = ./software-configs/hypr/hyprland.conf;
   xdg.configFile."kitty/kitty.conf".source = ./software-configs/kitty/kitty.conf;
   xdg.configFile."kitty/catppuccin-macchiato.conf".source = ./software-configs/kitty/catppuccin-macchiato.conf;
   xdg.configFile."mpv/mpv.conf".source = ./software-configs/mpv/mpv.conf;
