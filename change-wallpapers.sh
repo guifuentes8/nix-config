@@ -14,8 +14,9 @@ fi
 
 # Edit bellow to control the images transition
 export SWWW_TRANSITION_FPS=60
-export SWWW_TRANSITION_POS="top"
+export SWWW_TRANSITION_POS="top-right"
 export SWWW_TRANSITION="grow"
+export SWWW_TRANSITION_STEP="150"
 
 # This controls (in seconds) when to switch to the next image
 INTERVAL=300
