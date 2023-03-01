@@ -30,10 +30,9 @@
     in
     rec
     {
-      # packages = forAllSystems (system:
-      #   let pkgs = nixpkgs.legacyPackages.${system};
-      #   in import ./pkgs { inherit pkgs; }
-      # );
+      packages =
+        let pkgs = nixpkgs.legacyPackages.${system};
+        in import ./pkgs { inherit pkgs; };
       # # Devshell for bootstrapping
       # # Acessible through 'nix develop' or 'nix-shell' (legacy)
       # devShells = forAllSystems (system:
