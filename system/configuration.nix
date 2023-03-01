@@ -1,11 +1,13 @@
-{ config, pkgs, ... }:
+{ config, pkgs, outputs, ... }:
+let
+  sddm-aerial = outputs.packages.${pkgs.system}.sddm-aerial;
+in
 {
-
   imports =
     [
       ./hardware-configuration.nix
       ./hardware/default.nix
-      ./greetd.nix
+      # ./greetd.nix
       ./sway.nix
 
     ];
@@ -78,9 +80,14 @@
     xserver = {
       layout = "br";
       xkbVariant = "abnt2";
-      enable = false;
-      displayManager.sddm.enable = false;
-      libinput.enable = false;
+      enable = true;
+      displayManager.sddm = {
+        enable = true;
+        enableHidpi = true;
+        theme = "";
+      };
+
+      libinput.enable = true;
       excludePackages = [ pkgs.xterm ];
     };
     mpd = {
@@ -197,6 +204,7 @@
     tdesktop
     vscode
     mpv
+    sddm-aerial
 
     # Development
     python38
