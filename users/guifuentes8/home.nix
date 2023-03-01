@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, outputs, ... }:
 let
   # unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  swww = outputs.packages.${pkgs.system}.swww;
+
 in
 {
 
@@ -31,6 +33,7 @@ in
     sway
     swaylock
     swayidle
+    swww
     libsixel
     todo
     tuifeed
@@ -66,7 +69,11 @@ in
   xdg.configFile."waybar/config".source = ./software-configs/waybar/config;
   xdg.configFile."ytfzf/conf.sh".source = ./software-configs/ytfzf/conf.sh;
 
-  xdg.configFile."wallpapers".source = ./software-configs/wallpapers;
+
+  xdg.configFile."wallpapers" = {
+    source = ./software-configs/wallpapers;
+    recursive = true;
+  };
 
   gtk = {
     enable = true;

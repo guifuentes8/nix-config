@@ -18,21 +18,16 @@
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
     let
       inherit (self) outputs;
-      system = "x86_64-linux";
+      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
+      forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
+
       pkgs = import nixpkgs { config = { allowUnfree = true; }; };
-      # overlay-unstable = final: prev: {
-      #   unstable = import nixpkgs-unstable {
-      #     inherit system;
-      #     config.allowUnfree = true;
-      #   };
-      # };
 
     in
     rec
     {
-      packages =
-        let pkgs = nixpkgs.legacyPackages.${system};
-        in import ./pkgs { inherit pkgs; };
+      packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
+
       # # Devshell for bootstrapping
       # # Acessible through 'nix develop' or 'nix-shell' (legacy)
       # devShells = forAllSystems (system:

@@ -194,6 +194,7 @@
     postman
     pulseaudio
     teamviewer
+    tdesktop
     vscode
     mpv
 

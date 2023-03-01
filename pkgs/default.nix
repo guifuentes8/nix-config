@@ -1,12 +1,6 @@
-rec {
-  overlay = final: prev:
-    let
-      dirContents = builtins.readDir ../pkgs;
-      genPackage = name: {
-        inherit name;
-        value = final.callPackage (../pkgs + "/${name}") { };
-      };
-      names = builtins.attrNames dirContents;
-    in
-    builtins.listToAttrs (map genPackage names);
+# Custom packages, that can be defined similarly to ones from nixpkgs
+# You can build them using 'nix build .#example' or (legacy) 'nix-build -A example'
+
+{ pkgs ? (import ../nixpkgs.nix) { } }: {
+  swww = pkgs.callPackage ./swww { };
 }
