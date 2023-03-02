@@ -1,6 +1,5 @@
 { config, pkgs, outputs, ... }:
 let
-  sddm-theme = outputs.packages.${pkgs.system}.sddm-theme;
   swww = outputs.packages.${pkgs.system}.swww;
 
 in
@@ -34,7 +33,6 @@ in
     swaylock
     swayidle
     libsixel
-    sddm-theme
     swww
     todo
     tuifeed
@@ -48,7 +46,6 @@ in
     xfce.thunar
     xfce.xfconf
     ytfzf
-    wpaperd
   ];
 
 
@@ -200,8 +197,8 @@ in
       PartOf = "graphical-session.target";
     };
     Service = {
-      ExecStart = "${pkgs.swww}/bin/swww init";
-      ExecStop = "${pkgs.swww}/bin/swww kill";
+      ExecStart = "${swww}/bin/swww init";
+      ExecStop = "${swww}/bin/swww kill";
       Type = "simple";
       Restart = "always";
       RestartSec = 5;

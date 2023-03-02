@@ -1,5 +1,7 @@
 { config, pkgs, outputs, ... }:
 let
+  sddm-theme = outputs.packages.${pkgs.system}.sddm-theme;
+
 in
 {
   imports =
@@ -145,6 +147,7 @@ in
   };
 
   system = {
+    stateVersion = "23.05";
     autoUpgrade = {
       enable = true;
       allowReboot = false;
@@ -196,6 +199,7 @@ in
     onlyoffice-bin
     postman
     pulseaudio
+    sddm-theme
     teamviewer
     tdesktop
     vscode
@@ -203,6 +207,7 @@ in
 
     # Development
     python38
+    libnotify
     libsForQt5.qt5.qtmultimedia
     libsForQt5.qt5.qtgraphicaleffects
     libsForQt5.phonon-backend-gstreamer

@@ -14,10 +14,10 @@ rustPlatform.buildRustPackage rec {
     owner = "Horus645";
     repo = "${pname}";
     rev = "v${version}";
-    hash = "sha256-Z90Zwjqcu0hbtJwKPUNV996mtdgX//ZWWm+Dya/JV9A=";
+    hash = "sha256-1SmCeIlcjOX3yCvpfqQ82uq4h2xlGhX9OCwKb6jGK78=";
   };
 
-  cargoHash = "sha256-7HYSuwVlAv61u346PmsTnUipDc+HDFySMYgeQCAsBLg=";
+  cargoHash = "sha256-08YM9yTCRJPHdOc1+7F3guYiP3y1WSi3/hzlDRVpitc=";
 
   nativeBuildInputs = [ pkg-config ];
 
