@@ -1,5 +1,7 @@
 { config, pkgs, outputs, ... }:
 let
+  sddm-theme = outputs.packages.${pkgs.system}.sddm-theme;
+  swww = outputs.packages.${pkgs.system}.swww;
 
 in
 {
@@ -32,6 +34,8 @@ in
     swaylock
     swayidle
     libsixel
+    sddm-theme
+    swww
     todo
     tuifeed
     tty-clock
@@ -188,6 +192,22 @@ in
         mailw = "mail write";
 
       };
+    };
+  };
+  systemd.user.services."swww" = {
+    Unit = {
+      Description = "Swww Daemon";
+      PartOf = "graphical-session.target";
+    };
+    Service = {
+      ExecStart = "${pkgs.swww}/bin/swww init";
+      ExecStop = "${pkgs.swww}/bin/swww kill";
+      Type = "simple";
+      Restart = "always";
+      RestartSec = 5;
+    };
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
     };
   };
 

@@ -1,6 +1,5 @@
 { config, pkgs, outputs, ... }:
 let
-  sddm-theme = outputs.packages.${pkgs.system}.sddm-theme;
 in
 {
   imports =
@@ -201,7 +200,6 @@ in
     tdesktop
     vscode
     mpv
-    sddm-theme
 
     # Development
     python38
@@ -243,4 +241,5 @@ in
       };
     })
   ];
+
 }

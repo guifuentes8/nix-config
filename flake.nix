@@ -12,11 +12,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "github:hyprwm/Hyprland";
-    swww.url = "github:/Horus645/swww";
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, swww, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
@@ -52,7 +51,6 @@
             # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
             ./system/configuration.nix
             hyprland.nixosModules.default
-            swww.nixosModules.default
             { programs.hyprland.enable = true; }
           ];
         };

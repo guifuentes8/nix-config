@@ -3,4 +3,5 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   sddm-theme = pkgs.callPackage ./sddm-theme { };
+  swww = pkgs.callPackage ./swww { };
 }
