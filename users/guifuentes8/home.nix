@@ -1,7 +1,5 @@
 { config, pkgs, outputs, ... }:
 let
-  # unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  swww = outputs.packages.${pkgs.system}.swww;
 
 in
 {
@@ -33,7 +31,6 @@ in
     sway
     swaylock
     swayidle
-    swww
     libsixel
     todo
     tuifeed
@@ -47,6 +44,7 @@ in
     xfce.thunar
     xfce.xfconf
     ytfzf
+    wpaperd
   ];
 
 
@@ -58,6 +56,7 @@ in
   xdg.configFile."foot/foot.ini".source = ./software-configs/foot/foot.ini;
   xdg.configFile."hypr/hyprland.conf".source = ./software-configs/hypr/hyprland.conf;
   xdg.configFile."hypr/hyprpaper.conf".source = ./software-configs/hypr/hyprpaper.conf;
+  xdg.configFile."wpaperd/output.conf".source = ./software-configs/wpaperd/output.conf;
   xdg.configFile."kitty/kitty.conf".source = ./software-configs/kitty/kitty.conf;
   xdg.configFile."kitty/catppuccin-macchiato.conf".source = ./software-configs/kitty/catppuccin-macchiato.conf;
   xdg.configFile."mpv/mpv.conf".source = ./software-configs/mpv/mpv.conf;
