@@ -1,7 +1,17 @@
 { config, pkgs, outputs, ... }:
 let
   sddm-theme = outputs.packages.${pkgs.system}.sddm-theme;
-
+  wf-recorder-overlay = (self: super: {
+    wf-recorder = super.wf-recorder.overrideAttrs (prev: {
+      version = "git";
+      src = pkgs.fetchFromGitHub {
+        owner = "ammen99";
+        repo = "wf-recorder";
+        rev = "460d454b1efd380a3f732f6fd70c7a5e265381f6";
+        sha256 = sha256-FTlAuqjOrtvjVXH3wiLlANdguys+Zzeo/QJgjbIh3LM;
+      };
+    });
+  });
 in
 {
   imports =
@@ -29,7 +39,7 @@ in
       efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
-      }; */
+        }; */
       systemd-boot.enable = true;
       efi = {
         efiSysMountPoint = "/boot/efi";
@@ -205,9 +215,12 @@ in
     tdesktop
     vscode
     mpv
+    wf-recorder
+
 
     # Development
-    python38
+    python310
+    python310Packages.playsound
     libnotify
     libsForQt5.qt5.qtmultimedia
     libsForQt5.qt5.qtgraphicaleffects
@@ -234,6 +247,9 @@ in
   ]);
 
   nixpkgs.overlays = [
+
+    wf-recorder-overlay
+
     (
       self: super: {
         yarn = super.yarn.override {
@@ -241,11 +257,13 @@ in
         };
       }
     )
+
     (self: super: {
       mpv = super.mpv.override {
         scripts = [ self.mpvScripts.mpris ];
       };
     })
+
   ];
 
 }

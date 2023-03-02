@@ -17,6 +17,7 @@ in
     cava
     cmatrix
     feh
+    fortune
     gcalcli
     glib
     grim
@@ -26,6 +27,8 @@ in
     neofetch
     pavucontrol
     playerctl
+    pokete
+    pokemonsay
     ranger
     slurp
     sptlrx
@@ -40,12 +43,11 @@ in
     vim
     waybar
     wayland
-    wf-recorder
     wl-clipboard
     xdg-utils
     xfce.thunar
     xfce.xfconf
-    ytfzf
+
   ];
 
 
@@ -67,7 +69,6 @@ in
   xdg.configFile."spotify-player/app.toml".source = ./software-configs/spotify-player/app.toml;
   xdg.configFile."spotify-player/theme.toml".source = ./software-configs/spotify-player/theme.toml;
   xdg.configFile."waybar/config".source = ./software-configs/waybar/config;
-  xdg.configFile."ytfzf/conf.sh".source = ./software-configs/ytfzf/conf.sh;
 
 
   xdg.configFile."wallpapers" = {
@@ -166,6 +167,7 @@ in
       };
       initExtraFirst = ''
         unset -v SSH_ASKPASS
+        fortune | pokemonsay -d $(printf "%03d\n" $(shuf -i 1-401 -n 1))
       '';
       shellAliases = {
 
@@ -191,7 +193,7 @@ in
       };
     };
   };
-  systemd.user.services."swww" = {
+  /* systemd.user.services."swww" = {
     Unit = {
       Description = "Swww Daemon";
       PartOf = "graphical-session.target";
@@ -206,6 +208,6 @@ in
     Install = {
       WantedBy = [ "graphical-session.target" ];
     };
-  };
+  }; */
 
 }
