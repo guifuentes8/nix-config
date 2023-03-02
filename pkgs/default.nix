@@ -3,5 +3,5 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   swww = pkgs.callPackage ./swww { };
-  sddm-aerial = pkgs.callPackage ./sddm-aerial { };
+  sddm-theme = pkgs.callPackage ./sddm-theme { };
 }

@@ -1,6 +1,6 @@
 { config, pkgs, outputs, ... }:
 let
-  sddm-aerial = outputs.packages.${pkgs.system}.sddm-aerial;
+  sddm-theme = outputs.packages.${pkgs.system}.sddm-theme;
 in
 {
   imports =
@@ -83,7 +83,6 @@ in
       enable = true;
       displayManager.sddm = {
         enable = true;
-        #        enableHidpi = true;
         theme = "sddm-theme";
       };
 
@@ -204,7 +203,7 @@ in
     tdesktop
     vscode
     mpv
-    sddm-aerial
+    sddm-theme
 
     # Development
     python38
