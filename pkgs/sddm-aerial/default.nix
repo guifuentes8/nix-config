@@ -8,12 +8,12 @@ stdenv.mkDerivation rec {
     owner = "3ximus";
     repo = pname;
     rev = version;
-    sha256 = "sha256-kvis9d9AfQk8tAzQeKTURl56Sqs3dttqPV3wNLvGEiw=";
+    sha256 = "sha256-y/+0H7gW/Tw7ib6eyETL93Iohqf1fMM/qOhE5FZwQPU=";
   };
 
   installPhase = ''
     mkdir -p $out/share/sddm/themes/${pname}
-    cp * $out/share/sddm/themes/${pname}
+    cp -r * $out/share/sddm/themes/${pname}
   '';
 
   meta = with lib; {

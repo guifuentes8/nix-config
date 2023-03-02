@@ -83,8 +83,8 @@ in
       enable = true;
       displayManager.sddm = {
         enable = true;
-        enableHidpi = true;
-        theme = "";
+#        enableHidpi = true;
+        theme = "aerial-sddm-theme";
       };
 
       libinput.enable = true;
@@ -208,6 +208,12 @@ in
 
     # Development
     python38
+    libsForQt5.qt5.qtmultimedia
+    libsForQt5.qt5.qtgraphicaleffects
+    libsForQt5.phonon-backend-gstreamer
+    libsForQt5.qt5.qtquickcontrols
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-libav
     gcc
     glxinfo
     sassc
