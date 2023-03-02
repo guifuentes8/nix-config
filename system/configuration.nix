@@ -194,6 +194,7 @@ in
     fragments
     ffmpeg
     firefox-devedition-bin
+    gifsicle
     google-chrome
     obs-studio
     onlyoffice-bin
