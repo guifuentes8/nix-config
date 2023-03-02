@@ -1,14 +1,14 @@
 { lib, stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
-  pname = "aerial-sddm-theme";
-  version = "7dceae9add6602dc499f9df155cdbe0b15c3b94a";
+  pname = "sddm-theme";
+  version = "7ac585dc04bc7dc60ddd5c0bf360f7469a3620bf";
 
   src = fetchFromGitHub {
-    owner = "3ximus";
+    owner = "CuteOS";
     repo = pname;
     rev = version;
-    sha256 = "sha256-y/+0H7gW/Tw7ib6eyETL93Iohqf1fMM/qOhE5FZwQPU=";
+    sha256 = "sha256-XJCxFRjDtc0EGT6jcEDq72semI+SxwL+k2BJ6YAeRoo=";
   };
 
   installPhase = ''
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "A sddm theme inspired by Serial experiments lain";
-    homepage = "https://github.com/3ximus/aerial-sddm-theme";
+    homepage = "https://github.com/CuteOS/sddm-theme";
     license = licenses.cc-by-sa-40;
     platforms = platforms.linux;
   };

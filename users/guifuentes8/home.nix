@@ -41,7 +41,6 @@ in
     vim
     waybar
     wayland
-    wdisplays
     wf-recorder
     wl-clipboard
     xdg-utils

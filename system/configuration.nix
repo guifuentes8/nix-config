@@ -83,8 +83,8 @@ in
       enable = true;
       displayManager.sddm = {
         enable = true;
-#        enableHidpi = true;
-        theme = "aerial-sddm-theme";
+        #        enableHidpi = true;
+        theme = "sddm-theme";
       };
 
       libinput.enable = true;
@@ -211,7 +211,10 @@ in
     libsForQt5.qt5.qtmultimedia
     libsForQt5.qt5.qtgraphicaleffects
     libsForQt5.phonon-backend-gstreamer
-    libsForQt5.qt5.qtquickcontrols
+    libsForQt5.qt5.qtquickcontrols2
+    libsForQt5.qt5.qtwayland
+    libsForQt5.qt5.qtsvg
+    qt6.qtwayland
     gst_all_1.gst-plugins-good
     gst_all_1.gst-libav
     gcc
