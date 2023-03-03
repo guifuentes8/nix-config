@@ -40,7 +40,7 @@ in
     tuifeed
     tty-clock
     vim
-    waybar
+
     wayland
     wl-clipboard
     xdg-utils
@@ -48,7 +48,6 @@ in
     xfce.xfconf
 
   ];
-
 
   xdg.configFile."bottom/bottom.toml".source = ./software-configs/bottom/bottom.toml;
   xdg.configFile."bpytop/bpytop.conf".source = ./software-configs/bpytop/bpytop.conf;
@@ -68,7 +67,6 @@ in
   xdg.configFile."spotify-player/app.toml".source = ./software-configs/spotify-player/app.toml;
   xdg.configFile."spotify-player/theme.toml".source = ./software-configs/spotify-player/theme.toml;
   xdg.configFile."waybar/config".source = ./software-configs/waybar/config;
-
 
   xdg.configFile."wallpapers" = {
     source = ./software-configs/wallpapers;
@@ -193,21 +191,5 @@ in
       };
     };
   };
-  /* systemd.user.services."swww" = {
-    Unit = {
-      Description = "Swww Daemon";
-      PartOf = "graphical-session.target";
-    };
-    Service = {
-      ExecStart = "${swww}/bin/swww init";
-      ExecStop = "${swww}/bin/swww kill";
-      Type = "simple";
-      Restart = "always";
-      RestartSec = 5;
-    };
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-  }; */
 
 }

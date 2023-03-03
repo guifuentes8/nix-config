@@ -216,18 +216,14 @@ in
     vscode
     mpv
     wf-recorder
+    waybar
 
 
     # Development
     python310
     python310Packages.playsound
     libnotify
-    libsForQt5.qt5.qtmultimedia
-    libsForQt5.qt5.qtgraphicaleffects
-    libsForQt5.phonon-backend-gstreamer
-    libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtwayland
-    libsForQt5.qt5.qtsvg
     qt6.qtwayland
     gst_all_1.gst-plugins-good
     gst_all_1.gst-libav
@@ -249,6 +245,12 @@ in
   nixpkgs.overlays = [
 
     wf-recorder-overlay
+
+    (self: super: {
+      waybar = super.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      });
+    })
 
     (
       self: super: {
