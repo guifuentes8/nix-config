@@ -8,7 +8,7 @@ let
         owner = "ammen99";
         repo = "wf-recorder";
         rev = "460d454b1efd380a3f732f6fd70c7a5e265381f6";
-        sha256 = sha256-FTlAuqjOrtvjVXH3wiLlANdguys+Zzeo/QJgjbIh3LM;
+        sha256 = "sha256-FTlAuqjOrtvjVXH3wiLlANdguys+Zzeo/QJgjbIh3LM=";
       };
     });
   });
@@ -151,7 +151,7 @@ in
     users.guifuentes8 = {
       isNormalUser = true;
       description = "Guilherme Fuentes";
-      extraGroups = [ "networkmanager" "wheel" "video" "docker" "adbusers" ];
+      extraGroups = [ "networkmanager" "wheel" "video" "docker" "adbusers" "input" ];
       shell = pkgs.zsh;
     };
   };

@@ -23,7 +23,6 @@ in
     grim
     himalaya
     lxappearance
-    mako
     neofetch
     pavucontrol
     playerctl
@@ -153,6 +152,7 @@ in
     rofi =
       {
         enable = true;
+        package = pkgs.rofi-wayland;
         theme = "~/.config/rofi/catppuccin-macchiato.rasi";
       };
 
