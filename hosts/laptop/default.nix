@@ -13,6 +13,7 @@ in
       ../common/optional/services/flatpak.nix
       ../common/optional/services/gnome-keyring.nix
       ../common/optional/services/teamviewer.nix
+      ../common/optional/sound/pipewire.nix
       ../common/users/guifuentes8
 
     ];
@@ -69,7 +70,6 @@ in
       ];
     };
   };
-
 
 
 }
