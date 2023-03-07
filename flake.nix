@@ -1,21 +1,25 @@
 {
-  description = "My Awesome System Config Nixos";
+  description = "My Awesome | guifuentes8 | Nixos Configuration";
 
   inputs = {
 
-    # Nixpkgs
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-colors.url = "github:misterio77/nix-colors";
+    hardware.url = "github:nixos/nixos-hardware";
 
-    # Home Manager
-    home-manager.url = "github:nix-community/home-manager/release-22.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprwm-contrib.url = "github:hyprwm/contrib";
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
@@ -23,52 +27,40 @@
 
       pkgs = import nixpkgs { config = { allowUnfree = true; }; };
 
-    in
-    rec
-    {
+      nixosModules = import ./modules/nixos;
+      homeManagerModules = import ./modules/home-manager;
+
+      overlays = import ./overlays { inherit inputs outputs; };
+
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
+      devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
+      formatter = forEachPkgs (pkgs: pkgs.nixpkgs-fmt);
+    in
 
-      # # Devshell for bootstrapping
-      # # Acessible through 'nix develop' or 'nix-shell' (legacy)
-      # devShells = forAllSystems (system:
-      #   let pkgs = nixpkgs.legacyPackages.${system};
-      #   in import ./shell.nix { inherit pkgs; }
-      # );
-
-      # Your custom packages and modifications, exported as overlays
-      # overlays = import ./overlays { inherit inputs; };
-      # # Reusable nixos modules you might want to export
-      # # These are usually stuff you would upstream into nixpkgs
-      # nixosModules = import ./modules/nixos;
-      # # Reusable home-manager modules you might want to export
-      # # These are usually stuff you would upstream into home-manager
-      # homeManagerModules = import ./modules/home-manager;
-
+    {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        desktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [
-            # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-            ./system/configuration.nix
-            hyprland.nixosModules.default
-            { programs.hyprland.enable = true; }
-          ];
+          modules = [ ./hosts/desktop ];
+        };
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/laptop ];
         };
       };
+
       homeConfigurations = {
-        guifuentes8 = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        "guifuentes8@desktop" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [
-            # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
-            ./users/guifuentes8/home.nix
-            hyprland.homeManagerModules.default
-            { wayland.windowManager.hyprland.enable = true; }
-          ];
+          modules = [ ./home/guifuentes8/desktop.nix ];
+        };
+        "guifuentes8@laptop" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/guifuentes8/laptop.nix ];
         };
       };
-
-
     };
 
 }
