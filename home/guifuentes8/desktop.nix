@@ -11,7 +11,7 @@
   xdg.configFile."cava/config".source = ../common/global/software-configs/cava/config;
   xdg.configFile."dunst/dunstrc".source = ../common/global/software-configs/dunst/dunstrc;
   xdg.configFile."foot/foot.ini".source = ../common/global/software-configs/foot/foot.ini;
-  xdg.configFile."hypr/hyprland.conf".source = ../common/global/software-configs/hypr/hyprland.conf;
+  #xdg.configFile."hypr/hyprland.conf".source = ../common/global/software-configs/hypr/hyprland.conf;
   xdg.configFile."hypr/hyprpaper.conf".source = ../common/global/software-configs/hypr/hyprpaper.conf;
   xdg.configFile."wpaperd/output.conf".source = ../common/global/software-configs/wpaperd/output.conf;
   xdg.configFile."kitty/kitty.conf".source = ../common/global/software-configs/kitty/kitty.conf;

@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   services.xserver = {
     layout = "br";

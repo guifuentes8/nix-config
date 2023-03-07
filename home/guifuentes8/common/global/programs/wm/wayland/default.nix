@@ -11,6 +11,7 @@
     swaylock
     swayidle
     slurp
+    waybar
     webcord
     wl-clipboard
     wf-recorder
