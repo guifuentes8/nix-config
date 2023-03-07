@@ -10,12 +10,13 @@ in
       ../common/global
       ../common/optional/boot/systemd-boot.nix
       ../common/optional/hardware/bluetooth.nix
+      ../common/optional/hardware/nvidia.nix
       ../common/optional/login-manager/sddm.nix
       ../common/optional/services/flatpak.nix
       ../common/optional/services/gnome-keyring.nix
       ../common/optional/services/teamviewer.nix
+      ../common/optional/services/X11.nix
       ../common/optional/sound/pipewire.nix
-      ../common/optional/hardware/nvidia.nix
       ../common/users/guifuentes8
     ];
 
@@ -55,6 +56,8 @@ in
       dates = "daily";
     };
   };
+
+  services.xserver.enable = true;
 
   environment = {
     pathsToLink = [ "/libexec" ];
