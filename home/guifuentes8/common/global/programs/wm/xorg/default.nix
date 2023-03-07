@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./rofi-wayland.nix
+    ./rofi.nix
   ];
 
   home.packages = with pkgs; [

@@ -6,13 +6,19 @@
   ];
 
 
-  services.xserver.windowManager.bspwm = {
+  xsession.windowManager.bspwm = {
     enable = true;
     package = pkgs.bspwm;
-    configFile = ./bspwmrc;
-    sxhkd = {
-      package = pkgs.sxhkd;
-      configFile = ./sxhkdrc;
-    };
+    extraConfig = (import ./bspwm.nix {
+      inherit (config);
+    });
+  };
 
-  }
+  services.sxhkd = {
+    enable = true;
+    package = pkgs.sxhkd;
+    extraConfig = (import ./sxhkd.nix {
+      inherit (config);
+    });
+  };
+}
