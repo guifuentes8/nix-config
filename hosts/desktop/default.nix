@@ -8,7 +8,7 @@ in
       ./hardware-configuration.nix
 
       ../common/global
-      ../common/optional/boot/grub.nix
+      ../common/optional/boot/systemd-boot.nix
       ../common/optional/hardware/nvidia.nix
       ../common/optional/hardware/bluetooth.nix
       ../common/optional/login-manager/sddm.nix
