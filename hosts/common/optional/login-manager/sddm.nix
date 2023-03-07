@@ -3,12 +3,21 @@ let
   sddm-theme = pkgs.callPackage ../../../../pkgs/sddm-theme { };
 in
 {
-  imports = [
-    ../services/X11.nix
-  ];
-  services.xserver.displayManager.sddm = {
+  services.xserver = {
     enable = true;
-    theme = "sddm-theme";
+    displayManager = {
+      sddm = {
+        enable = true;
+        theme = "sddm-theme";
+      };
+      session = [
+        {
+          manage = "desktop";
+          name = "xsession";
+          start = ''exec $HOME/.xsession'';
+        }
+      ];
+    };
   };
 
   environment.systemPackages = (with pkgs; [
