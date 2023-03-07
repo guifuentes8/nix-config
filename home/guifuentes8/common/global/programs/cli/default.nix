@@ -4,6 +4,7 @@
     ./git.nix
     ./kitty.nix
     ./ncspot.nix
+    ./zsh.nix
   ];
   home.packages = with pkgs; [
     bottom

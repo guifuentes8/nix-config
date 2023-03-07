@@ -5,9 +5,6 @@
 
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nix-colors.url = "github:misterio77/nix-colors";
-    hardware.url = "github:nixos/nixos-hardware";
-
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -15,7 +12,6 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprwm-contrib.url = "github:hyprwm/contrib";
 
   };
 
@@ -36,7 +32,6 @@
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
       formatter = forEachPkgs (pkgs: pkgs.nixpkgs-fmt);
     in
-
     {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {

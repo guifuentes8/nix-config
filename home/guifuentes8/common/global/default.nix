@@ -30,7 +30,7 @@
   home = {
     username = lib.mkDefault "guifuentes8";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
-    stateVersion = lib.mkDefault "23.05";
+    stateVersion = lib.mkDefault "22.11";
     packages = with pkgs; [
       bitwarden
       dbeaver

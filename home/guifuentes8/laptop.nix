@@ -1,8 +1,9 @@
-{ config, ... }:
+{ config, outputs, ... }:
 {
   imports = [
     ./common/global
     ./common/global/desktop/hyprland
+
   ];
 
   xdg.configFile."bottom/bottom.toml".source = ./common/global/software-configs/bottom/bottom.toml;
