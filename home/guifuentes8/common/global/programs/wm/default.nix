@@ -1,6 +1,6 @@
 { pkgs, outputs, ... }:
 let
-  swww = outputs.packages.${pkgs.system}.swww;
+  #swww = outputs.packages.${pkgs.system}.swww;
 in
 {
 
@@ -13,7 +13,7 @@ in
     pulseaudio
     playerctl
     ranger
-    swww
+   # swww
     tty-clock
     unzip
     vim

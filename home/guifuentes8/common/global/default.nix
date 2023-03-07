@@ -6,7 +6,6 @@
   ];
 
   nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
@@ -32,7 +31,7 @@
     username = lib.mkDefault "guifuentes8";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     stateVersion = lib.mkDefault "23.05";
-    home.packages = with pkgs; [
+    packages = with pkgs; [
       bitwarden
       dbeaver
       fragments
