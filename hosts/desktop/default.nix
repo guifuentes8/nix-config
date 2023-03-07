@@ -1,11 +1,23 @@
-{ config, pkgs, outputs, ... }:
+{ config, pkgs, inputs, outputs, ... }:
 let
 
 in
 {
   imports =
     [
+      ./hardware-configuration.nix
+
       ../common/global
+      ../common/optional/boot/grub.nix
+      ../common/optional/hardware/nvidia.nix
+      ../common/optional/hardware/bluetooth.nix
+      ../common/optional/login-manager/sddm.nix
+      ../common/optional/services/flatpak.nix
+      ../common/optional/services/gnome-keyring.nix
+      ../common/optional/services/teamviewer.nix
+      ../common/optional/services/X11.nix
+      ../common/optional/sound/pipewire.nix
+      ../common/users/guifuentes8
     ];
 
   boot =
@@ -31,11 +43,10 @@ in
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
-
-
   programs = {
     ssh.startAgent = true;
     dconf.enable = true;
+    hyprland.enable = true;
   };
 
   system = {
@@ -47,6 +58,36 @@ in
     };
   };
 
+  environment = {
+    pathsToLink = [ "/libexec" ];
+    variables = {
+      KITTY_ENABLE_WAYLAND = "1";
+      HYPRLAND_LOG_WLR = "1";
+
+      # Tell XWayland to use a cursor theme
+      XCURSOR_THEME = "Catppuccin-Macchiato-Dark-Cursors";
+
+      # Set a cursor size
+      XCURSOR_SIZE = "24";
+
+      # Example IME Support: fcitx
+      GTK_IM_MODULE = "fcitx";
+      QT_IM_MODULE = "fcitx";
+      XMODIFIERS = "@im=fcitx";
+      SDL_IM_MODULE = "fcitx";
+      GLFW_IM_MODULE = "ibus";
+    };
+    sessionVariables = rec {
+
+      XDG_CACHE_HOME = "\${HOME}/.cache";
+      XDG_CONFIG_HOME = "\${HOME}/.config";
+      XDG_BIN_HOME = "\${HOME}/.local/bin";
+      XDG_DATA_HOME = "\${HOME}/.local/share";
+      PATH = [
+        "\${XDG_BIN_HOME}"
+      ];
+    };
+  };
 
 
 }

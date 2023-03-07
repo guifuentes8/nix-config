@@ -18,7 +18,7 @@
   exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
   exec-once = hyprctl setcursor Catppuccin-Macchiato-Dark-Cursors 32
 
-  exec-once = ~/dotfiles/home/guifuentes8/common/global/software-configs/swww/change-wallpaper.sh init
+  exec-once = bash ~/dotfiles/home/guifuentes8/common/global/software-configs/swww/change-wallpaper.sh init
   
   # See https://wiki.hyprland.org/Configuring/Monitors/
 
