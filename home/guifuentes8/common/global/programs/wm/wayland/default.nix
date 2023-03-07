@@ -6,7 +6,6 @@
   ];
 
   home.packages = with pkgs; [
-
     grim
     mako
     swaylock
@@ -14,5 +13,6 @@
     slurp
     webcord
     wl-clipboard
+    wf-recorder
   ];
 }

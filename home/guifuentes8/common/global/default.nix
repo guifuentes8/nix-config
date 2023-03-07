@@ -2,6 +2,7 @@
 {
   imports = [
     ./programs/cli
+    ./programs/dev
   ];
 
   nixpkgs = {
@@ -31,6 +32,18 @@
     username = lib.mkDefault "guifuentes8";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     stateVersion = lib.mkDefault "23.05";
-
+    home.packages = with pkgs; [
+      bitwarden
+      dbeaver
+      fragments
+      firefox-devedition-bin
+      google-chrome
+      obs-studio
+      onlyoffice-bin
+      postman
+      teamviewer
+      tdesktop
+      vscode
+    ];
   };
 }

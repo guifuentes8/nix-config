@@ -7,6 +7,13 @@ in
     [
       ./hardware-configuration.nix
       ../common/global
+      ../common/optional/boot/systemd-boot.nix
+      ../common/optional/hardware/bluetooth.nix
+      ../common/optional/login-manager/greetd.nix
+      ../common/optional/services/flatpak.nix
+      ../common/optional/services/gnome-keyring.nix
+      ../common/optional/services/teamviewer.nix
+      ../common/users/guifuentes8
 
     ];
 

@@ -4,6 +4,9 @@
       enable = true;
       consoleMode = "max";
     };
-    efi.canTouchEfiVariables = true;
+
+    efi = {
+      efiSysMountPoint = "/boot/efi";
+    };
   };
 }

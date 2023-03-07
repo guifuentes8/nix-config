@@ -1,4 +1,4 @@
-{ outputs, ... }:
+{ outputs, pkgs, ... }:
 let
   sddm-theme = outputs.packages.${pkgs.system}.sddm-theme;
 in

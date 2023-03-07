@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   users.users.guifuentes8 = {
     isNormalUser = true;
