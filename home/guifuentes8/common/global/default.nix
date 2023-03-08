@@ -29,7 +29,7 @@
 
   home = {
     username = lib.mkDefault "guifuentes8";
-    homeDirectory = lib.mkDefault "/home/${config.home.username}";
+    homeDirectory = lib.mkDefault "/home/guifuentes8";
     stateVersion = lib.mkDefault "22.11";
     packages = with pkgs; [
       bitwarden

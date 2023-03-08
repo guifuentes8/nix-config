@@ -14,7 +14,7 @@ in
       pulseaudio
       playerctl
       ranger
-      swww
+#      swww
       tty-clock
       unzip
       vim

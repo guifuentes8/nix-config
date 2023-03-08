@@ -11,11 +11,12 @@ in
       ../common/optional/boot/systemd-boot.nix
       ../common/optional/hardware/bluetooth.nix
       ../common/optional/hardware/nvidia.nix
-      ../common/optional/login-manager/sddm.nix
-      ../common/optional/services/flatpak.nix
-      ../common/optional/services/gnome-keyring.nix
-      ../common/optional/services/teamviewer.nix
-      ../common/optional/services/X11.nix
+    # ../common/optional/login-manager/sddm.nix
+    # ../common/optional/services/flatpak.nix
+    # ../common/optional/services/gnome-keyring.nix
+    # ../common/optional/services/teamviewer.nix
+    # ../common/optional/services/X11.nix
+    # ../common/optional/wm/bspwm
       ../common/optional/sound/pipewire.nix
       ../common/users/guifuentes8
     ];
@@ -27,7 +28,7 @@ in
       '';
     };
 
-  console.keyMap = "br-abnt2";
+  console.keyMap = "us";
   time.timeZone = "America/Sao_Paulo";
 
   networking.hostName = "desktop";
@@ -57,7 +58,28 @@ in
     };
   };
 
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    autorun = false;
+    layout = "us";
+    displayManager = {
+      defaultSession = "none+i3";
+      lightdm.enable = true;
+    };
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        i3status # gives you the default i3 status bar
+        i3lock #default i3 screen locker
+        i3blocks #if you are planning on using i3blocks over i3status
+     ];
+    };
+    windowManager.bspwm = {
+      enable = true;
+      configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/bspwmrc";
+      sxhkd.configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/sxhkdrc";
+    };
+  };
 
   environment = {
     pathsToLink = [ "/libexec" ];

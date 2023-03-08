@@ -3,8 +3,8 @@
 
   inputs = {
 
-    #nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -23,14 +23,14 @@
 
       pkgs = import nixpkgs { config = { allowUnfree = true; }; };
 
-      #nixosModules = import ./modules/nixos;
-      #homeManagerModules = import ./modules/home-manager;
+      nixosModules = import ./modules/nixos;
+      homeManagerModules = import ./modules/home-manager;
 
-      #overlays = import ./overlays { inherit inputs outputs; };
+      overlays = import ./overlays { inherit inputs outputs; };
 
-      #packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
-      #devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
-      #formatter = forEachPkgs (pkgs: pkgs.nixpkgs-fmt);
+      packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
+      devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
+      formatter = forEachPkgs (pkgs: pkgs.nixpkgs-fmt);
     in
     {
       nixosConfigurations = {

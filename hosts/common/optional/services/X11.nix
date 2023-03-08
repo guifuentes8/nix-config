@@ -6,17 +6,7 @@
     enable = true;
     libinput.enable = true;
     excludePackages = [ pkgs.xterm ]; 
+    displayManager.startx.enable = true;
 
-    displayManager.session = {
-      defaultSession = "none+bspwm";
-      session = [
-        {
-          manage = "desktop";
-          name = "bspwm";
-          start = ''exec $HOME/.xsession'';
-        }
-      ];
-    };
-
-};
+   };
 }
