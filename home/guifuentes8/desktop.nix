@@ -1,8 +1,8 @@
 { config, ... }:
 {
   imports = [
-    ./common/global
-    ./common/global/desktop/bspwm
+    ./shared
+    ./shared/desktop/i3
   ];
 
 }

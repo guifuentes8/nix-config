@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./polybar.nix
     ./rofi.nix
   ];
 
@@ -9,6 +10,5 @@
     dunst
     flameshot
     lxappearance
-    polybar
   ];
 }

@@ -6,15 +6,15 @@ in
   imports =
     [
       ./hardware-configuration.nix
-      ../common/global
-      ../common/optional/boot/systemd-boot.nix
-      ../common/optional/hardware/bluetooth.nix
-      ../common/optional/login-manager/sddm.nix
-      ../common/optional/services/flatpak.nix
-      ../common/optional/services/gnome-keyring.nix
-      ../common/optional/services/teamviewer.nix
-      ../common/optional/sound/pipewire.nix
-      ../common/users/guifuentes8
+      ../shared/global
+      ../shared/optional/boot/systemd-boot.nix
+      ../shared/optional/hardware/bluetooth.nix
+      ../shared/optional/login-manager/sddm.nix
+      ../shared/optional/services/flatpak.nix
+      ../shared/optional/services/gnome-keyring.nix
+      ../shared/optional/services/teamviewer.nix
+      ../shared/optional/sound/pipewire.nix
+      ../shared/users/guifuentes8
       inputs.hyprland.nixosModules.default
 
     ];

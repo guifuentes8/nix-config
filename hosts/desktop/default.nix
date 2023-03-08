@@ -7,18 +7,20 @@ in
     [
       ./hardware-configuration.nix
 
-      ../common/global
-      ../common/optional/boot/systemd-boot.nix
-      ../common/optional/hardware/bluetooth.nix
-      ../common/optional/hardware/nvidia.nix
-    # ../common/optional/login-manager/sddm.nix
-    # ../common/optional/services/flatpak.nix
-    # ../common/optional/services/gnome-keyring.nix
-    # ../common/optional/services/teamviewer.nix
-    # ../common/optional/services/X11.nix
-    # ../common/optional/wm/bspwm
-      ../common/optional/sound/pipewire.nix
-      ../common/users/guifuentes8
+     ../shared/global
+
+     ../shared/optional/boot/grub.nix
+     ../shared/optional/display-manager/lightdm.nix
+     ../shared/optional/hardware/bluetooth.nix
+     ../shared/optional/hardware/nvidia.nix
+     ../shared/optional/services/flatpak.nix
+     ../shared/optional/services/gnome-keyring.nix
+     ../shared/optional/services/teamviewer.nix
+     ../shared/optional/sound/pipewire.nix
+     
+     ../shared/optional/wm/i3
+
+     ../shared/users/guifuentes8
     ];
 
   boot =
@@ -61,44 +63,18 @@ in
   services.xserver = {
     enable = true;
     layout = "us";
-    displayManager = {
-      defaultSession = "none+i3";
-      gdm.enable = true;
-    };
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        i3status # gives you the default i3 status bar
-        i3lock #default i3 screen locker
-        i3blocks #if you are planning on using i3blocks over i3status
-        rxvt-unicode
-     ];
-    };
-    windowManager.bspwm = {
-      enable = true;
-      configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/bspwmrc";
-      sxhkd.configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/sxhkdrc";
-    };
   };
-
+ 
+  services.dbus.enable = true;
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
     variables = {
-      #      KITTY_ENABLE_WAYLAND = "1";
-      #      HYPRLAND_LOG_WLR = "1";
-
-      # Tell XWayland to use a cursor theme
-      #      XCURSOR_THEME = "Catppuccin-Macchiato-Dark-Cursors";
+    
+     XCURSOR_THEME = "Catppuccin-Macchiato-Dark-Cursors";
 
       # Set a cursor size
-      #      XCURSOR_SIZE = "24";
+     XCURSOR_SIZE = "24";
 
-      # Example IME Support: fcitx
-      #      GTK_IM_MODULE = "fcitx";
-      #      QT_IM_MODULE = "fcitx";
-      #      XMODIFIERS = "@im=fcitx";
-      #      SDL_IM_MODULE = "fcitx";
-      #      GLFW_IM_MODULE = "ibus";
     };
     sessionVariables = rec {
 

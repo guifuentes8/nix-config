@@ -24,7 +24,6 @@
 
   programs = {
     home-manager.enable = true;
-    git.enable = true;
   };
 
   home = {
@@ -54,6 +53,9 @@
   xdg.configFile."cava/config".source = ./software-configs/cava/config;
   xdg.configFile."dunst/dunstrc".source = ./software-configs/dunst/dunstrc;
   xdg.configFile."foot/foot.ini".source = ./software-configs/foot/foot.ini;
+  xdg.configFile."bspwm/bspwmrc".source = ./software-configs/bspwm/bspwmrc;
+  xdg.configFile."sxhkd/sxhkdrc".source = ./software-configs/sxhkd/sxhkdrc;
+  xdg.configFile."i3/config".source = ./software-configs/i3/config;
   xdg.configFile."hypr/hyprpaper.conf".source = ./software-configs/hypr/hyprpaper.conf;
   xdg.configFile."wpaperd/output.conf".source = ./software-configs/wpaperd/output.conf;
   xdg.configFile."kitty/kitty.conf".source = ./software-configs/kitty/kitty.conf;

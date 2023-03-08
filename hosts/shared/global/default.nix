@@ -1,5 +1,5 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ lib, inputs, outputs, ... }:
+{ lib, inputs, outputs, pkgs, ... }:
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -17,5 +17,9 @@
       allowUnfree = true;
     };
   };
+
+  environment.systemPackages = (with pkgs; [
+    git
+  ]);
 
 }

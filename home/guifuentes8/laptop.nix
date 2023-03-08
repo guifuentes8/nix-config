@@ -1,8 +1,8 @@
 { config, outputs, ... }:
 {
   imports = [
-    ./common/global
-    ./common/global/desktop/hyprland
+    ./shared/global
+    ./shared/global/desktop/hyprland
 
   ];
 }

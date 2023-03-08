@@ -3,7 +3,7 @@
 , fetchFromGitHub
 , rustPlatform
 , pkg-config
-, libxkbcommon
+, libxkbshared
 ,
 }:
 rustPlatform.buildRustPackage rec {
@@ -21,7 +21,7 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [ pkg-config ];
 
-  buildInputs = [ libxkbcommon ];
+  buildInputs = [ libxkbshared ];
 
   doCheck = false;
 
