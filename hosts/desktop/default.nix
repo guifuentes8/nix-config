@@ -60,11 +60,10 @@ in
 
   services.xserver = {
     enable = true;
-    autorun = false;
     layout = "us";
     displayManager = {
       defaultSession = "none+i3";
-      lightdm.enable = true;
+      gdm.enable = true;
     };
     windowManager.i3 = {
       enable = true;
@@ -75,15 +74,15 @@ in
         rxvt-unicode
      ];
     };
-#    windowManager.bspwm = {
-#      enable = true;
-#      configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/bspwmrc";
-#      sxhkd.configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/sxhkdrc";
-#    };
+    windowManager.bspwm = {
+      enable = true;
+      configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/bspwmrc";
+      sxhkd.configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/sxhkdrc";
+    };
   };
 
   environment = {
-    pathsToLink = [ "/libexec" ];
+    pathsToLink = [ "/libexec" "/etc" ];
     variables = {
       #      KITTY_ENABLE_WAYLAND = "1";
       #      HYPRLAND_LOG_WLR = "1";
