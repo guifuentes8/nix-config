@@ -50,7 +50,7 @@ in
   };
 
   system = {
-    stateVersion = "22.11";
+    stateVersion = "23.05";
     autoUpgrade = {
       enable = true;
       allowReboot = false;
@@ -72,13 +72,14 @@ in
         i3status # gives you the default i3 status bar
         i3lock #default i3 screen locker
         i3blocks #if you are planning on using i3blocks over i3status
+        rxvt-unicode
      ];
     };
-    windowManager.bspwm = {
-      enable = true;
-      configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/bspwmrc";
-      sxhkd.configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/sxhkdrc";
-    };
+#    windowManager.bspwm = {
+#      enable = true;
+#      configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/bspwmrc";
+#      sxhkd.configFile = "${pkgs.bspwm}/share/doc/bspwm/examples/sxhkdrc";
+#    };
   };
 
   environment = {
