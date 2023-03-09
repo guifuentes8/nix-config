@@ -11,7 +11,6 @@ in
       gifsicle
       imagemagick
       pavucontrol
-      pulseaudio
       playerctl
       ranger
       tty-clock

@@ -6,8 +6,9 @@
       alsaSupport = true;
       iwSupport = true;
       githubSupport = true;
+      pulseSupport = true;
     };
-    script = "polybar example &";
+    script = "polybar mybar &";
     extraConfig = ''
           ;==========================================================
       ;
@@ -28,25 +29,50 @@
       ;==========================================================
 
       [colors]
-      background = #282A2E
-      background-alt = #373B41
-      foreground = #C5C8C6
-      primary = #F0C674
-      secondary = #8ABEB7
-      alert = #A54242
-      disabled = #707880
+       base = #24273a
+       mantle = #1e2030
+       crust = #181926
 
-      [bar/example]
+       text = #cad3f5
+       subtext0 = #a5adcb
+       subtext1 = #b8c0e0
+
+       surface0 = #363a4f
+       surface1 = #494d64
+       surface2 = #5b6078
+      
+       overlay0 = #6e738d
+       overlay1 = #8087a2
+       overlay2 = #939ab7
+
+       blue = #8aadf4
+       lavender = #b7bdf8
+       sapphire = #7dc4e4
+       sky = #91d7e3
+       teal = #8bd5ca
+       green = #a6da95
+       yellow = #eed49f
+       peach = #f5a97f
+       maroon = #ee99a0
+       red = #ed8796
+       mauve = #c6a0f6
+       pink = #f5bde6
+       flamingo = #91d7e3
+       rosewater = #f4dbd6
+
+       transparent = #FF00000
+
+      [bar/mybar]
       width = 100%
-      height = 24pt
+      height = 20pt
       radius = 0
 
       ; dpi = 96
 
-      background = #282A2E
-      foreground = #C5C8C6
+      background = #24273a
+      foreground = #8aadf4
 
-      line-size = 3pt
+      line-size = 2pt
 
       border-size = 0pt
       border-color = #00000000
@@ -57,11 +83,12 @@
       module-margin = 1
 
       separator = |
-      separator-foreground = #707880
+      separator-foreground = #a5adcb
 
-      font-0 = monospace;2
+      font-0 = JetBrainsMono Nerd:size=8;2
 
-      modules-left = xworkspaces xwindow
+      modules-left = xworkspaces 
+      modules-center = xwindow
       modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth date
 
       cursor-click = pointer
@@ -69,10 +96,10 @@
 
       enable-ipc = true
 
-       tray-position = right
+      tray-position = right
 
       ; wm-restack = generic
-      ; wm-restack = bspwm
+       wm-restack = bspwm
       ; wm-restack = i3
 
       ; override-redirect = true
@@ -81,20 +108,21 @@
       type = internal/xworkspaces
 
       label-active = %name%
-      label-active-background = #373B41
-      label-active-underline= #F0C674
-      label-active-padding = 1
+      label-active-foreground = #8bd5ca
+      label-active-background = #363a4f
+      label-active-underline= #8bd5ca
+      label-active-padding = 2
 
       label-occupied = %name%
-      label-occupied-padding = 1
+      label-occupied-padding = 2
 
       label-urgent = %name%
-      label-urgent-background = #A54242
-      label-urgent-padding = 1
+      label-urgent-background = #ed8796
+      label-urgent-padding = 2
 
       label-empty = %name%
-      label-empty-foreground = #707880
-      label-empty-padding = 1
+      label-empty-foreground = #cad3f5
+      label-empty-padding = 2
 
       [module/xwindow]
       type = internal/xwindow
@@ -106,29 +134,33 @@
 
       mount-0 = /
 
-      label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
+      label-mounted = %{F#91d7e3}%mountpoint%%{F-} %percentage_used%%
 
       label-unmounted = %mountpoint% not mounted
-      label-unmounted-foreground = #707880
+      label-unmounted-foreground = #5b6078
 
+    
       [module/pulseaudio]
       type = internal/pulseaudio
 
       format-volume-prefix = "VOL "
-      format-volume-prefix-foreground = #F0C674
+      format-volume-prefix-foreground = #91d7e3
       format-volume = <label-volume>
 
       label-volume = %percentage%%
 
       label-muted = muted
-      label-muted-foreground = #707880
+      label-muted-foreground = #5b6078
+
+      click-right = pavucontrol
+
 
       [module/xkeyboard]
       type = internal/xkeyboard
       blacklist-0 = num lock
 
       label-layout = %layout%
-      label-layout-foreground = #F0C674
+      label-layout-foreground = #91d7e3
 
       label-indicator-padding = 2
       label-indicator-margin = 1
@@ -139,14 +171,14 @@
       type = internal/memory
       interval = 2
       format-prefix = "RAM "
-      format-prefix-foreground = #F0C674
+      format-prefix-foreground = #91d7e3
       label = %percentage_used:2%%
 
       [module/cpu]
       type = internal/cpu
       interval = 2
       format-prefix = "CPU "
-      format-prefix-foreground = #F0C674
+      format-prefix-foreground = #91d7e3
       label = %percentage:2%%
 
       [network-base]
@@ -154,17 +186,17 @@
       interval = 5
       format-connected = <label-connected>
       format-disconnected = <label-disconnected>
-      label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
+      label-disconnected = %{F#91d7e3}%ifname%%{F#5b6078} disconnected
 
       [module/wlan]
       inherit = network-base
       interface-type = wireless
-      label-connected = %{F#F0C674}%ifname%%{F-} %essid% %local_ip%
+      label-connected = %{F#91d7e3}%ifname%%{F-} %essid% %local_ip%
 
       [module/eth]
       inherit = network-base
       interface-type = wired
-      label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
+      label-connected = %{F#91d7e3}%ifname%%{F-} %local_ip%
 
       [module/date]
       type = internal/date
@@ -174,7 +206,7 @@
       date-alt = %Y-%m-%d %H:%M:%S
 
       label = %date%
-      label-foreground = #F0C674
+      label-foreground = #91d7e3
 
       [settings]
       screenchange-reload = true

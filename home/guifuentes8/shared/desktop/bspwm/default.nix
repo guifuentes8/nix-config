@@ -10,26 +10,28 @@
     alwaysResetDesktops = true;
     extraConfig = "
 			sxhkd &
+      picom &
 			systemctl --user restart polybar.service
+
 			${pkgs.feh}/bin/feh --bg-fill ~/.config/wallpapers/images/nixos.png
-			bash ~/dotfiles/home/guifuentes8/shared/software-configs/xgifwallpaper/change-wallpaper.sh change
+      
 			
 			bspc monitor -d I II III IV V VI VII VIII IX X
 
-			bspc config border_width         0
+			bspc config border_width         3
 			bspc config window_gap          12
 
 			bspc config split_ratio          0.50
 			bspc config borderless_monocle   true
 			bspc config gapless_monocle      true
 
-      bspc config normal_border_color 
-      bspc config active_border_color 
-      bspc config focused_border_color 
-      bspc config presel-feedback_colour 
+      bspc config normal_border_color '#8aadf4'
+      bspc config active_border_color '#8aadf4'
+      bspc config focused_border_color '#a6da95'
+      bspc config presel-feedback_colour '#f5a97f'
 
-bspc config focus_follows_pointer true
-bspc config pointer_follows_focus true
+      bspc config focus_follows_pointer true
+      bspc config pointer_follows_focus true
     	";
   };
 
@@ -39,7 +41,7 @@ bspc config pointer_follows_focus true
 
       # Print
 
-      "super + Print" = "flameshot gui";
+      "Print" = "flameshot gui";
 
       # terminal emulator
       "super + Return" = "kitty";

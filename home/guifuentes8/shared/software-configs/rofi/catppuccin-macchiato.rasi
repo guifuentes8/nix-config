@@ -5,10 +5,10 @@
     selected-col: #24273a;
     blue: #8aadf4;
     fg-col: #cad3f5;
-    fg-col2: #ed8796;
+    fg-col2: #f4dbd6;
     grey: #6e738d;
 
-    width: 1200;
+    width: 800;
     font: "JetBrainsMono Nerd Font 13";
 }
 
@@ -18,10 +18,11 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    height: 560px;
+    height: 360px;
     border: 3px;
     border-color: @border-col;
     background-color: @bg-col;
+    border-radius: 12px;
 }
 
 mainbox {

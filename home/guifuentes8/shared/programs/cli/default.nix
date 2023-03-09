@@ -14,7 +14,7 @@
     fortune
     gcalcli
     himalaya
-    neofetch
+    pfetch
     pokete
     pokemonsay
     ranger

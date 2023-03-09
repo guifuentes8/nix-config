@@ -1,17 +1,28 @@
 { pkgs, ... }: {
   services.picom = {
     enable = true;
-    package = pkgs.picom-jonaburg;
+    package = pkgs.picom-next;
     extraArgs = [ "--experimental-backends" ];
     backend = "glx";
     vSync = true;
+    fade = true;
+    fadeSteps = [ 0.04 0.04 ];
+    shadow = true;
+    shadowOffsets = [ 2 2 ];
+    shadowOpacity = 0.2;
+    shadowExclude = [
+      #"class_g = 'Polybar'"
+      "_GTK_FRAME_EXTENTS@:c"
+    ];
     opacityRules = [
       "80:class_g = 'Rofi'"
+      "90:class_g = 'Polybar'"
     ];
+
     settings =
       {
         blur = {
-          method = "kawase";
+          method = "dual_kawase";
           strength = 9;
           background = true;
           background-frame = false;
@@ -25,16 +36,15 @@
         transition-pow-w = 0.1;
         transition-pow-h = 0.1;
         size-transition = true;
-        fading = false;
+        shadow-radius = 7;
+
 
         rounded-corners-exclude = [
-          "window_type = 'menu'"
-          "window_type = 'dropdown_menu'"
-          "window_type = 'popup_menu'"
-          "window_type = 'utility'"
+          # "window_type = 'menu'"
+          # "window_type = 'dropdown_menu'"
+          # "window_type = 'popup_menu'"
+          # "window_type = 'utility'"
           "class_g = 'Polybar'"
-          "class_g = 'Rofi'"
-          "class_g = 'Dunst'"
         ];
       };
   };

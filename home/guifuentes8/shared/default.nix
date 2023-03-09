@@ -40,6 +40,7 @@
       mattermost-desktop
       onlyoffice-bin
       postman
+      pulseaudio
       slack
       teamviewer
       tdesktop

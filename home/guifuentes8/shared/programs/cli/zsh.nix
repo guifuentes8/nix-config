@@ -25,7 +25,7 @@
       #matrix = "unimatrix -c blue -s 93 -f -a -i  ";
       matrix = "cmatrix -b -f -C cyan";
       # Fetch 
-      fetch = "neofetch";
+      fetch = "pfetch";
 
       # Himalaya mail
       mail = "himalaya";
