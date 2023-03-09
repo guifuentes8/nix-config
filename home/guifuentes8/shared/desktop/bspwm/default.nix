@@ -37,6 +37,10 @@ bspc config pointer_follows_focus true
     enable = true;
     keybindings = {
 
+      # Print
+
+      "super + Print" = "flameshot gui";
+
       # terminal emulator
       "super + Return" = "kitty";
 

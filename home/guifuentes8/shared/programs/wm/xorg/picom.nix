@@ -5,6 +5,9 @@
     extraArgs = [ "--experimental-backends" ];
     backend = "glx";
     vSync = true;
+    opacityRules = [
+      "80:class_g = 'Rofi'"
+    ];
     settings =
       {
         blur = {
@@ -23,6 +26,16 @@
         transition-pow-h = 0.1;
         size-transition = true;
         fading = false;
+
+        rounded-corners-exclude = [
+          "window_type = 'menu'"
+          "window_type = 'dropdown_menu'"
+          "window_type = 'popup_menu'"
+          "window_type = 'utility'"
+          "class_g = 'Polybar'"
+          "class_g = 'Rofi'"
+          "class_g = 'Dunst'"
+        ];
       };
   };
 }
