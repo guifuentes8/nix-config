@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./dunst.nix
     ./picom.nix
     ./polybar.nix
     ./rofi.nix
@@ -11,7 +12,6 @@ in
 
   home.packages = with pkgs; [
     discord
-    dunst
     flameshot
     lxappearance
     xgifwallpaper

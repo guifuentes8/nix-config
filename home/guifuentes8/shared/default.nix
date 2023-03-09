@@ -52,7 +52,6 @@
   xdg.configFile."bpytop/bpytop.conf".source = ./software-configs/bpytop/bpytop.conf;
   xdg.configFile."bpytop/themes/catppuccin_macchiato.theme".source = ./software-configs/bpytop/themes/catppuccin_macchiato.theme;
   xdg.configFile."cava/config".source = ./software-configs/cava/config;
-  xdg.configFile."dunst/dunstrc".source = ./software-configs/dunst/dunstrc;
   xdg.configFile."foot/foot.ini".source = ./software-configs/foot/foot.ini;
   xdg.configFile."i3/config".source = ./software-configs/i3/config;
   xdg.configFile."hypr/hyprpaper.conf".source = ./software-configs/hypr/hyprpaper.conf;
