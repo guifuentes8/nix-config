@@ -1,5 +1,7 @@
 { pkgs, ... }:
-
+let
+  xgifwallpaper = pkgs.callPackage ../../../../../../pkgs/xgifwallpaper { };
+in
 {
   imports = [
     ./polybar.nix
@@ -10,5 +12,6 @@
     dunst
     flameshot
     lxappearance
+    xgifwallpaper
   ];
 }

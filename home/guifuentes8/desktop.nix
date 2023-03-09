@@ -2,7 +2,7 @@
 {
   imports = [
     ./shared
-    ./shared/desktop/i3
+    ./shared/desktop/bspwm
   ];
 
 }

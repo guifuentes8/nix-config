@@ -19,6 +19,7 @@ in
      ../shared/optional/sound/pipewire.nix
      
      ../shared/optional/wm/i3
+     ../shared/optional/wm/bspwm
 
      ../shared/users/guifuentes8
     ];

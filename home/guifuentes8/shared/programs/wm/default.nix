@@ -1,11 +1,11 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 let
-  swww = pkgs.callPackage ../../../../../../pkgs/swww { };
 in
 {
 
   home.packages = with pkgs;
     [
+      libnotify
       feh
       ffmpeg
       gifsicle
@@ -14,7 +14,6 @@ in
       pulseaudio
       playerctl
       ranger
-#      swww
       tty-clock
       unzip
       vim
