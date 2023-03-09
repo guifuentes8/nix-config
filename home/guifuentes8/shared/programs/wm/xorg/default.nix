@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./picom.nix
     ./polybar.nix
     ./rofi.nix
   ];

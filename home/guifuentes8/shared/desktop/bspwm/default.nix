@@ -16,12 +16,20 @@
 			
 			bspc monitor -d I II III IV V VI VII VIII IX X
 
-			bspc config border_width         2
+			bspc config border_width         0
 			bspc config window_gap          12
 
-			bspc config split_ratio          0.52
+			bspc config split_ratio          0.50
 			bspc config borderless_monocle   true
 			bspc config gapless_monocle      true
+
+      bspc config normal_border_color 
+      bspc config active_border_color 
+      bspc config focused_border_color 
+      bspc config presel-feedback_colour 
+
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus true
     	";
   };
 
