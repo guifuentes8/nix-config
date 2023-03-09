@@ -69,7 +69,7 @@
 
       ; dpi = 96
 
-      background = #24273a
+      background = #cc24273a
       foreground = #8aadf4
 
       line-size = 2pt
@@ -153,6 +153,9 @@
       label-muted-foreground = #5b6078
 
       click-right = pavucontrol
+
+      scroll-up = notify-send Volume %percentage%%
+      scroll-down = notify-send Volume %percentage%%
 
 
       [module/xkeyboard]

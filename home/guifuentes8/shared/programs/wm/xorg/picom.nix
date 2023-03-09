@@ -16,7 +16,6 @@
     ];
     opacityRules = [
       "80:class_g = 'Rofi'"
-      "90:class_g = 'Polybar'"
     ];
 
     settings =
