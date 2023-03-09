@@ -8,21 +8,21 @@
       notify = true;
       theme = {
         background = "default";
-        primary = "#cdd6f4";
-        secondary = "bac2de";
-        title = "#cba6f7";
-        playing = "#cba6f7";
-        playing_selected = "#000000";
+        primary = "#c6a0f6";
+        secondary = "#f5a97f";
+        title = "#f5a97f";
+        playing = "#a6da95";
+        playing_selected = "#1e2030";
         playing_bg = "default";
-        highlight = "#000000";
-        highlight_bg = "#a6e3a1";
+        highlight = "#1e2030";
+        highlight_bg = "#a6da95";
         error = "black";
         error_bg = "#f38ba8";
-        statusbar = "#191414";
-        statusbar_progress = "#cba6f7";
-        statusbar_bg = "#cba6f7";
-        cmdline = "#cdd6f4";
-        cmdline_bg = "#191414";
+        statusbar = "#1e2030";
+        statusbar_progress = "#91d7e3";
+        statusbar_bg = "#91d7e3";
+        cmdline = "#f4dbd6";
+        cmdline_bg = "#1e2030";
         search_match = "#f38ba8";
       };
 

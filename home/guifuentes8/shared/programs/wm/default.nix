@@ -1,8 +1,5 @@
 { inputs, outputs, lib, config, pkgs, ... }:
-let
-in
 {
-
   home.packages = with pkgs;
     [
       libnotify

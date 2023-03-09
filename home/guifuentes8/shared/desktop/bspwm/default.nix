@@ -139,7 +139,33 @@
 
       # move a floating window
       "super + {Left,Down,Up,Right}" = "bspc node -v {-20 0,0 20,0 -20,20 0}";
-    };
 
+
+      # Increase volume
+      "XF86AudioRaiseVolume" = "pactl set-sink-volume @DEFAULT_SINK@ +1000";
+
+      # Decrease volume
+      "XF86AudioLowerVolume" = "pactl set-sink-volume @DEFAULT_SINK@ -1000";
+
+      # Mute volume
+      "XF86AudioMute" = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+
+      # Mute microphone
+      "XF86AudioMicMute" = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+
+      "XF86MonBrightnessDown" = "brightnessctl set 5%-";
+      "XF86MonBrightnessUp" = "brightnessctl set 5%+";
+
+      "XF86AudioPlay" = "playerctl play-pause";
+      "XF86AudioNext" = "playerctl next";
+      "XF86AudioPrev" = "playerctl previous";
+
+      # Rofi keys
+
+      # Emoji
+      "super + F11" = "rofi -modi emoji -show emoji";
+      # Power Menu
+      "super + F12" = "rofi -show p -modi p:rofi-power-menu -lines 6";
+    };
   };
 }

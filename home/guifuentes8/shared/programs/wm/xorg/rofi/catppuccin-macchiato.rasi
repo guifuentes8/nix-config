@@ -1,15 +1,14 @@
 * {
     bg-col:  #24273a;
-    bg-col-light: #8aadf4;
+    bg-col-light: #91d7e3;
     border-col: #8aadf4;
     selected-col: #24273a;
     blue: #8aadf4;
     fg-col: #cad3f5;
-    fg-col2: #f4dbd6;
+    fg-col2: #8bd5ca;
     grey: #6e738d;
 
-    width: 800;
-    font: "JetBrainsMono Nerd Font 13";
+    width: 600px;
 }
 
 element-text, element-icon , mode-switcher {
@@ -18,7 +17,7 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    height: 360px;
+    height: 300px;
     border: 3px;
     border-color: @border-col;
     background-color: @bg-col;
@@ -107,6 +106,6 @@ message {
 textbox {
     padding: 6px;
     margin: 20px 0px 0px 20px;
-    text-color: @blue;
+    text-color: @selected-col;
     background-color: @bg-col-light;
 }

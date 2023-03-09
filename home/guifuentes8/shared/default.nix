@@ -59,7 +59,6 @@
   xdg.configFile."kitty/kitty.conf".source = ./software-configs/kitty/kitty.conf;
   xdg.configFile."kitty/catppuccin-macchiato.conf".source = ./software-configs/kitty/catppuccin-macchiato.conf;
   xdg.configFile."mpv/mpv.conf".source = ./software-configs/mpv/mpv.conf;
-  xdg.configFile."rofi/catppuccin-macchiato.rasi".source = ./software-configs/rofi/catppuccin-macchiato.rasi;
   xdg.configFile."sptlrx/config.yaml".source = ./software-configs/sptlrx/config.yaml;
   xdg.configFile."sway/config".source = ./software-configs/sway/config;
   xdg.configFile."spotify-player/app.toml".source = ./software-configs/spotify-player/app.toml;

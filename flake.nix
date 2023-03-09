@@ -23,16 +23,20 @@
 
       pkgs = import nixpkgs { config = { allowUnfree = true; }; };
 
+
+
+
+
+    in
+    {
+
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
 
       overlays = import ./overlays { inherit inputs outputs; };
-
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
-      formatter = forEachPkgs (pkgs: pkgs.nixpkgs-fmt);
-    in
-    {
+
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };

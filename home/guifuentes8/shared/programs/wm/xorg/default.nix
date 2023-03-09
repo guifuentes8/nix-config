@@ -7,7 +7,7 @@ in
     ./dunst.nix
     ./picom.nix
     ./polybar.nix
-    ./rofi.nix
+    ./rofi
   ];
 
   home.packages = with pkgs; [
@@ -15,5 +15,7 @@ in
     flameshot
     lxappearance
     xgifwallpaper
+    xdotool
+    xclip
   ];
 }

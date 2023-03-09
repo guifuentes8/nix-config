@@ -57,7 +57,7 @@
        red = #ed8796
        mauve = #c6a0f6
        pink = #f5bde6
-       flamingo = #91d7e3
+       flamingo = #f0c6c6
        rosewater = #f4dbd6
 
        transparent = #FF00000

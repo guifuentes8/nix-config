@@ -12,6 +12,7 @@ IMG_PATH=${WALLPAPER_PATH}/$IMG_NAME
 change(){
     notify-send -u "normal" "🌁 Wallpaper Changed -> ${IMG_NAME}" 
     xgifwallpaper --scale FILL "${IMG_PATH}"
+    sleep 1
     picom &
 }
 

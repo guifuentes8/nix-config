@@ -1,0 +1,7 @@
+action type
+target username
+prompt Search: 
+selector rofi
+selector-args " -theme-str 'window {width: 50%; height: 400px;}'"
+clipboarder xclip
+typer xdotool
