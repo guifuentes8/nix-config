@@ -3,8 +3,8 @@
 , fetchFromGitHub
 , rustPlatform
 , pkg-config
-, libxkbshared
-,
+, libxkbcommon
+, lz4
 }:
 rustPlatform.buildRustPackage rec {
   pname = "swww";
@@ -21,7 +21,7 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [ pkg-config ];
 
-  buildInputs = [ libxkbshared ];
+  buildInputs = [ libxkbcommon lz4 ];
 
   doCheck = false;
 

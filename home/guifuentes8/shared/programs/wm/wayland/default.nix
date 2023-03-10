@@ -18,6 +18,5 @@ in
     wl-clipboard
     wf-recorder
     wtype
-    wl-copy
   ];
 }

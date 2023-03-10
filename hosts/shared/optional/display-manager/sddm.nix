@@ -4,6 +4,7 @@ let
 in
 {
   services.xserver = {
+    enable = true;
     displayManager = {
       sddm = {
         enable = true;

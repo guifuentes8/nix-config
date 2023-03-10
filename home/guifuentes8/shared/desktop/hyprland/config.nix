@@ -18,7 +18,7 @@
   exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
   exec-once = hyprctl setcursor Catppuccin-Macchiato-Dark-Cursors 32
 
-  exec-once = bash ~/dotfiles/home/guifuentes8/shared/global/software-configs/swww/change-wallpaper.sh init
+  exec-once = bash ~/dotfiles/home/guifuentes8/shared/software-configs/swww/change-wallpaper.sh init
   
   # See https://wiki.hyprland.org/Configuring/Monitors/
 
@@ -141,7 +141,7 @@
   bind = $mainMod, Return, exec, kitty
   bind = $mainMod, Q, killactive,
   bind = $mainMod, Escape, exit,
-  bind = $mainMod, W, exec, bash ~/dotfiles/home/guifuentes8/shared/global/software-configs/swww/change-wallpaper.sh change
+  bind = $mainMod, W, exec, bash ~/dotfiles/home/guifuentes8/shared/software-configs/swww/change-wallpaper.sh change
   bind = $mainMod, F, togglefloating,
   bind = $mainMod, D, exec, rofi -modes "drun" -show-icons -show drun
   bind = $mainMod, P, pseudo, # dwindle

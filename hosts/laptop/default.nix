@@ -9,7 +9,7 @@ in
       ../shared/global
       ../shared/optional/boot/systemd-boot.nix
       ../shared/optional/hardware/bluetooth.nix
-      ../shared/optional/login-manager/sddm.nix
+      ../shared/optional/display-manager/sddm.nix
       ../shared/optional/services/flatpak.nix
       ../shared/optional/services/gnome-keyring.nix
       ../shared/optional/services/teamviewer.nix
