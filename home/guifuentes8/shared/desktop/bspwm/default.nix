@@ -16,7 +16,7 @@
 			${pkgs.feh}/bin/feh --bg-fill ~/.config/wallpapers/images/nixos.png
       
 			
-			bspc monitor -d I II III IV V VI VII VIII IX X
+			bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 			bspc config border_width         3
 			bspc config window_gap          12

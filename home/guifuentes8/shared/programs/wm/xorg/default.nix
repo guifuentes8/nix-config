@@ -7,10 +7,10 @@ in
     ./dunst.nix
     ./picom.nix
     ./polybar.nix
-    ./rofi
   ];
 
   home.packages = with pkgs; [
+    betterdiscordctl
     discord
     flameshot
     lxappearance

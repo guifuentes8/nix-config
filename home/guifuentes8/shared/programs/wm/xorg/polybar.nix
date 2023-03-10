@@ -69,8 +69,8 @@
 
       ; dpi = 96
 
-      background = #cc24273a
-      foreground = #8aadf4
+      background = #bb24273a
+      foreground = #a6da95
 
       line-size = 2pt
 

@@ -1,6 +1,4 @@
 { pkgs, outputs, ... }:
-let
-in
 {
 
   home.packages = with pkgs; [

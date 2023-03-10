@@ -2,6 +2,8 @@
   imports = [
     ./gh.nix
     ./git.nix
+    ./gpg.nix
+    ./himalaya.nix
     ./kitty.nix
     ./ncspot.nix
     ./zsh.nix
@@ -13,7 +15,6 @@
     feh
     fortune
     gcalcli
-    himalaya
     pfetch
     pokete
     pokemonsay

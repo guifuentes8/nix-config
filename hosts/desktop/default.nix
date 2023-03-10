@@ -7,21 +7,21 @@ in
     [
       ./hardware-configuration.nix
 
-     ../shared/global
+      ../shared/global
 
-     ../shared/optional/boot/grub.nix
-     ../shared/optional/display-manager/lightdm.nix
-     ../shared/optional/hardware/bluetooth.nix
-     ../shared/optional/hardware/nvidia.nix
-     ../shared/optional/services/flatpak.nix
-     ../shared/optional/services/gnome-keyring.nix
-     ../shared/optional/services/teamviewer.nix
-     ../shared/optional/sound/pipewire.nix
-     
-     ../shared/optional/wm/i3
-     ../shared/optional/wm/bspwm
+      ../shared/optional/boot/grub.nix
+      ../shared/optional/display-manager/lightdm.nix
+      ../shared/optional/hardware/bluetooth.nix
+      ../shared/optional/hardware/nvidia.nix
+      ../shared/optional/services/flatpak.nix
+      ../shared/optional/services/gnome-keyring.nix
+      ../shared/optional/services/teamviewer.nix
+      ../shared/optional/sound/pipewire.nix
 
-     ../shared/users/guifuentes8
+      ../shared/optional/wm/i3
+      ../shared/optional/wm/bspwm
+
+      ../shared/users/guifuentes8
     ];
 
   boot =
@@ -65,16 +65,15 @@ in
     enable = true;
     layout = "us";
   };
- 
-  services.dbus.enable = true;
+
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
     variables = {
-    
-     XCURSOR_THEME = "Catppuccin-Macchiato-Dark-Cursors";
+
+      XCURSOR_THEME = "Catppuccin-Macchiato-Dark-Cursors";
 
       # Set a cursor size
-     XCURSOR_SIZE = "24";
+      XCURSOR_SIZE = "24";
 
     };
     sessionVariables = rec {
