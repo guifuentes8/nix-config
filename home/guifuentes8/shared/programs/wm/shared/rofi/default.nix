@@ -8,7 +8,6 @@
     {
       enable = true;
       terminal = "${pkgs.kitty}/bin/kitty";
-      package = pkgs.rofi;
       font = "JetBrainsMono Nerd Font 13";
       theme = "~/.config/rofi/catppuccin-macchiato.rasi";
       plugins = with pkgs; [

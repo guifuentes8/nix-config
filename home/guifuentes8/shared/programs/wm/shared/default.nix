@@ -1,5 +1,10 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 {
+
+  imports = [
+    ./rofi
+  ];
+
   home.packages = with pkgs;
     [
       libnotify

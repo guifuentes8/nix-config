@@ -3,7 +3,6 @@ let swww = outputs.packages.${pkgs.system}.swww;
 in
 {
   imports = [
-    ./rofi-wayland.nix
   ];
 
   home.packages = with pkgs; [
@@ -19,4 +18,7 @@ in
     wf-recorder
     wtype
   ];
+
+  programs.rofi.package = pkgs.rofi-wayland;
+
 }

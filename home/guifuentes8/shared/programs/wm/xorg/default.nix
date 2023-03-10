@@ -18,4 +18,6 @@ in
     xdotool
     xclip
   ];
+
+  programs.rofi.package = pkgs.rofi;
 }
