@@ -9,7 +9,6 @@
         signature = "Atenciosamente,\nGuilherme Fuentes";
         email-listing-page-size = 50;
 
-
         gmail = {
 
           default = true;
@@ -19,13 +18,13 @@
           imap-host = "imap.gmail.com";
           imap-port = 993;
           imap-login = "guifuentes8@gmail.com";
-          imap-passwd-cmd = "";
+          imap-passwd-cmd = "cat ~/dotfiles/.secrets/himalaya-gmail.txt";
 
           sender = "smtp";
           smtp-host = "smtp.gmail.com";
           smtp-port = 465;
           smtp-login = "guifuentes8@gmail.com";
-          smtp-passwd-cmd = "";
+          smtp-passwd-cmd = "cat ~/dotfiles/.secrets/himalaya-gmail.txt";
         };
 
         gmail.folder-aliases = {
