@@ -11,7 +11,7 @@
         width = 300;
         height = 300;
         transparency = 10;
-        font = "JetBrainsMono Nerd 12";
+        font = "JetBrainsMono Nerd 11";
         corner_radius = 12;
         origin = "top-right";
         notification_limit = 0;

@@ -7,6 +7,7 @@
       ffmpeg
       gifsicle
       imagemagick
+      mpv
       pavucontrol
       playerctl
       ranger

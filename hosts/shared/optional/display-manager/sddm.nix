@@ -1,6 +1,6 @@
 { outputs, pkgs, ... }:
 let
-  sddm-theme = pkgs.callPackage ../../../../pkgs/sddm-theme { };
+  sddm-theme = outputs.packages.${pkgs.system}.sddm-theme;
 in
 {
   services.xserver = {

@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ outputs, pkgs, ... }:
 let
-  xgifwallpaper = pkgs.callPackage ../../../../../../pkgs/xgifwallpaper { };
+  xgifwallpaper = outputs.packages.${pkgs.system}.xgifwallpaper;
 in
 {
   imports = [

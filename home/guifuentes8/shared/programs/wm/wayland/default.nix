@@ -1,5 +1,5 @@
-{ pkgs, ... }:
-let swww = pkgs.callPackage ../../../../../../../pkgs/swww { };
+{ pkgs, outputs, ... }:
+let swww = outputs.packages.${pkgs.system}.swww;
 in
 {
   imports = [

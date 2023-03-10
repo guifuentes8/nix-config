@@ -162,6 +162,8 @@
 
       # Rofi keys
 
+      # Bitwarden
+      "super + F10" = "rofi-rbw";
       # Emoji
       "super + F11" = "rofi -modi emoji -show emoji";
       # Power Menu
