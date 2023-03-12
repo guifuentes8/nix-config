@@ -11,10 +11,19 @@
     extraConfig = "
 			sxhkd &
       picom &
+      pkill dunst
+      dunst &
 			systemctl --user restart polybar.service
 
 			${pkgs.feh}/bin/feh --bg-fill ~/.config/wallpapers/images/nixos.png
-      
+
+
+      himalaya -a gcf notify -k 50 &
+      himalaya -a gcf watch -k 50 &
+      himalaya -a hubs notify -k 50 &
+      himalaya -a hubs watch -k 50 &
+      himalaya -a guifuentes8 notify -k 50 &
+      himalaya -a guifuentes8 watch -k 50 &
 			
 			bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 

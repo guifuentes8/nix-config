@@ -1,3 +1,6 @@
+{ outputs, pkgs, ... }:
+
+
 {
   programs.ncspot = {
     enable = true;
@@ -6,6 +9,10 @@
       flip_status_indicators = true;
       volnorm = true;
       notify = true;
+      notification_format = {
+        title = "%title";
+        body = "%artists";
+      };
       theme = {
         background = "default";
         primary = "#c6a0f6";

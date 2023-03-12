@@ -22,8 +22,8 @@
       clock = "tty-clock -c -C  6 -s -S -r -n -D";
 
       # Unimatrix
-      #matrix = "unimatrix -c blue -s 93 -f -a -i  ";
       matrix = "cmatrix -b -f -C cyan";
+
       # Fetch 
       fetch = "pfetch";
 
@@ -32,6 +32,14 @@
       mailsent = "mail -m '[Gmail]/Sent Mail'";
       maild = "mail attachments";
       mailw = "mail write";
+
+      # X11 Resolutions
+      xr1 = "xrandr -s 5120x1440";
+      xr2 = "xrandr -s 1920x1080";
+      xr3 = "xrandr -s 3840x1080";
+
+      # gcalcli
+      cal = "gcalcli";
 
     };
   };

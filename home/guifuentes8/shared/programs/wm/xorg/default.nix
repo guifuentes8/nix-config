@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./betterlockscreen
     ./dunst.nix
     ./picom.nix
     ./polybar.nix

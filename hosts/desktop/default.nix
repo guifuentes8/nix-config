@@ -22,6 +22,7 @@ in
       ../shared/optional/wm/bspwm
 
       ../shared/users/guifuentes8
+
     ];
 
   boot =

@@ -1,4 +1,9 @@
 { pkgs, ... }:
+let
+  alert = pkgs.writeShellScript "alert.sh" ''
+    paplay /home/guifuentes8/dotfiles/home/guifuentes8/shared/programs/wm/xorg/alert.wav
+  '';
+in
 {
   services.dunst = {
     enable = true;
@@ -23,6 +28,10 @@
         background = "#24273A";
         foreground = "#CAD3F5";
         timeout = 10;
+      };
+      play_sound = {
+        summary = "*";
+        script = "${alert}";
       };
     };
   };

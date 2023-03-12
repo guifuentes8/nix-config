@@ -2,6 +2,7 @@
 
   programs.gpg = {
     enable = true;
+    package = pkgs.gnupg;
   };
 
   services.gpg-agent = {
@@ -11,6 +12,5 @@
 
   home.packages = with pkgs; [
     git-crypt
-    gnupg
   ];
 }

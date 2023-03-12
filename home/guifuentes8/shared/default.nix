@@ -1,12 +1,8 @@
 { inputs, lib, pkgs, config, outputs, ... }:
 {
-  imports = [
-    ./programs/cli
-    ./programs/dev
-  ];
-
   nixpkgs = {
     config = {
+      overlays = builtins.attrValues outputs.overlays;
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
     };
@@ -56,8 +52,6 @@
   xdg.configFile."i3/config".source = ./software-configs/i3/config;
   xdg.configFile."hypr/hyprpaper.conf".source = ./software-configs/hypr/hyprpaper.conf;
   xdg.configFile."wpaperd/output.conf".source = ./software-configs/wpaperd/output.conf;
-  xdg.configFile."kitty/kitty.conf".source = ./software-configs/kitty/kitty.conf;
-  xdg.configFile."kitty/catppuccin-macchiato.conf".source = ./software-configs/kitty/catppuccin-macchiato.conf;
   xdg.configFile."mpv/mpv.conf".source = ./software-configs/mpv/mpv.conf;
   xdg.configFile."sptlrx/config.yaml".source = ./software-configs/sptlrx/config.yaml;
   xdg.configFile."sway/config".source = ./software-configs/sway/config;

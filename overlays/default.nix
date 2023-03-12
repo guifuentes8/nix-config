@@ -1,6 +1,6 @@
-{ outputs, inputs }:
-
+{ outputs, inputs, ... }:
 {
+
   overlay = final: prev: {
 
     mpv = prev.mpv.override {
@@ -21,8 +21,9 @@
       };
     });
 
+
     yarn = prev.yarn.override {
-      nodejs = pkgs.nodejs-16_x;
+      nodejs = final.pkgs.nodejs-16_x;
     };
 
   };
