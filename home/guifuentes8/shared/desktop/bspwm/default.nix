@@ -14,6 +14,7 @@
       pkill dunst
       dunst &
 			systemctl --user restart polybar.service
+      xrandr -s 5120x1440
 
 			${pkgs.feh}/bin/feh --bg-fill ~/.config/wallpapers/images/nixos.png
 
