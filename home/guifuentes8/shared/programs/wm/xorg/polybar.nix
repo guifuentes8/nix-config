@@ -69,7 +69,7 @@
 
       ; dpi = 96
 
-      background = #24273a
+      background = #aa24273a
       foreground = #a6da95
 
       line-size = 2pt
@@ -85,7 +85,7 @@
       separator = |
       separator-foreground = #a5adcb
 
-      font-0 = JetBrainsMono Nerd:size=8;2
+      font-0 = JetBrainsMono Nerd:size=9;2
 
       modules-left = xworkspaces 
       modules-center = xwindow
