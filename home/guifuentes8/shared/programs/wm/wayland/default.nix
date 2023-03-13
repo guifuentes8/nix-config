@@ -1,6 +1,4 @@
 { pkgs, outputs, ... }:
-let swww = outputs.packages.${pkgs.system}.swww;
-in
 {
   imports = [
   ];

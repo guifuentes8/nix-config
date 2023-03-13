@@ -14,7 +14,7 @@
       "super + d" = "rofi -modes 'drun' -show-icons -show drun";
 
       # change wallpaper
-      "super + w" = "bash ~/dotfiles/home/guifuentes8/shared/software-configs/xgifwallpaper/change-wallpaper.sh change";
+      "super + w" = "feh --recursive --bg-fill --randomize ~/.config/wallpapers/images/5120x1440/";
 
       # make sxhkd reload its configuration files:
       "super + alt + BackSpace" = "pkill -USR1 -x sxhkd";

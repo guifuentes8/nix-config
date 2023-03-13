@@ -11,7 +11,7 @@
     shadowOffsets = [ 2 2 ];
     shadowOpacity = 0.2;
     shadowExclude = [
-      #"class_g = 'Polybar'"
+      "class_g = 'Polybar'"
       "_GTK_FRAME_EXTENTS@:c"
     ];
     opacityRules = [

@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ./betterlockscreen
+    ./screen-lock
     ./dunst
     ./picom.nix
     ./polybar.nix
@@ -15,6 +15,7 @@ in
     discord
     flameshot
     lxappearance
+    smart-wallpaper
     xgifwallpaper
     xdotool
     xclip
