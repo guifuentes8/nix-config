@@ -3,6 +3,7 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   sddm-theme = pkgs.callPackage ./sddm-theme { };
+  spotify-player = pkgs.callPackage ./spotify-player { };
   swww = pkgs.callPackage ./swww { };
   xgifwallpaper = pkgs.callPackage ./xgifwallpaper { };
 }

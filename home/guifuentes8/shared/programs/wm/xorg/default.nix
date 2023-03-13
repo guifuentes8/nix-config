@@ -5,7 +5,7 @@ in
 {
   imports = [
     ./betterlockscreen
-    ./dunst.nix
+    ./dunst
     ./picom.nix
     ./polybar.nix
   ];

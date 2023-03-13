@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   alert = pkgs.writeShellScript "alert.sh" ''
-    paplay /home/guifuentes8/dotfiles/home/guifuentes8/shared/programs/wm/xorg/alert.wav
+    pw-play --volume=0,04 /home/guifuentes8/dotfiles/home/guifuentes8/shared/programs/wm/xorg/dunst/alert.wav
   '';
 in
 {

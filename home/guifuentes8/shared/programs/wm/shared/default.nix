@@ -1,7 +1,11 @@
 { inputs, outputs, lib, config, pkgs, ... }:
+let
+  spotify-player = outputs.packages.${pkgs.system}.spotify-player;
+in
 {
 
   imports = [
+    ./bat
     ./gh.nix
     ./git.nix
     ./gpg.nix
@@ -9,6 +13,7 @@
     ./kitty.nix
     ./ncspot.nix
     ./rofi
+    ./sxhkd
     ./zsh.nix
   ];
 
@@ -31,6 +36,7 @@
       pokemonsay
       pokete
       ranger
+      spotify-player
       sptlrx
       todo
       tty-clock

@@ -3,7 +3,6 @@
 
   home.packages = with pkgs; [
     rofi-rbw
-    rbw
     pinentry-gnome
 
   ];
@@ -12,6 +11,22 @@
     source = ./rofi-rbw.rc;
   };
 
-  programs.rbw.settings.pinentry = "gnome3";
+  programs.rbw = {
+    enable = true;
+    package = pkgs.rbw;
+    settings = {
+      email = "guifuentes8@gmail.com";
+      pinentry = "gnome3";
+      action = "type";
+      target = "username";
+      prompt = "Search: ";
+      selector = "rofi";
+      selector-args = " -theme-str 'window {width: 50%; height: = '400px;'}' ";
+      clipboarder = "xclip";
+      typer = "xdotool";
+    };
+  };
 
 }
+
+

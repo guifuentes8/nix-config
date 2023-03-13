@@ -1,6 +1,17 @@
 client_id = "32c1c3d388a14e4981d80295af909be7"
 theme = "Catppuccin-macchiato"
-playback_window_position = "Top"
+enable_media_control = true
+page_size_in_rows = 50
+track_table_item_max_len = 50
+pause_icon = "⏸️"
+liked_icon = "💓"
+play_icon = "▶️"
+border_type	 = "Rounded"
+playback_window_position = "Bottom"
+#progress_bar_type = "Line"
+cover_img_width = 8
+cover_img_length = 18
+
 
 [device]
 volume = 100
