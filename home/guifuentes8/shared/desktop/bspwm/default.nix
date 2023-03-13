@@ -1,5 +1,5 @@
 { inputs, outputs, lib, config, pkgs, ... }:
-let autostart = ../shared/autostart.sh;
+let autostart = ../../programs/wm/xorg/autostart/autostart.sh;
 in
 {
   imports = [

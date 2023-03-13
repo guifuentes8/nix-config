@@ -2,7 +2,6 @@ sxhkd &
 picom &
 
 systemctl --user restart polybar.service
-
 xrandr -s 5120x1440
 feh --bg-fill ~/.config/wallpapers/images/nixos.png
 

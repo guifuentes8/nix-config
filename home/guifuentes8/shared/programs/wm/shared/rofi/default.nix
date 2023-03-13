@@ -18,6 +18,7 @@
         rofi-power-menu
         rofi-pulse-select
         rofi-file-browser
+        rofi-pass
       ];
     };
 
@@ -28,6 +29,7 @@
     rofi-power-menu
     rofi-pulse-select
     rofi-file-browser
+    rofi-pass
   ];
 
   xdg.configFile."rofi/catppuccin-macchiato.rasi".source = ./catppuccin-macchiato.rasi;

@@ -4,10 +4,10 @@ let
 in
 {
   imports = [
-    ./screen-lock
     ./dunst
     ./picom.nix
     ./polybar.nix
+    ./screen-lock
   ];
 
   home.packages = with pkgs; [
