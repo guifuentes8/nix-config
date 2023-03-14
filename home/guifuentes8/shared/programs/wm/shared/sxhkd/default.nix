@@ -128,10 +128,18 @@
 
       # Rofi keys
 
+      # Emoji
+      "super + F8" = "rofi -modi emoji -show emoji";
+
+      # Calc
+      "super + F9" = "rofi -show calc -modi calc -no-show-match -no-sort -kb-accept-entry 'Control+c' -calc-command ' echo - n '{ result }' | xclip -sel copy'";
+
       # Bitwarden
       "super + F10" = "rofi-rbw";
+
       # Emoji
-      "super + F11" = "rofi -modi emoji -show emoji";
+      "super + F11" = "rofi-bluetooth";
+
       # Power Menu
       "super + F12" = "rofi -show p -modi p:rofi-power-menu -lines 6";
     };

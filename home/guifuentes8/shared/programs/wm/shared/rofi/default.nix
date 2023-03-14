@@ -1,7 +1,9 @@
 { pkgs, ... }:
 {
+
   imports = [
-    ./rbw.nix
+    ./plugins/bluetooth
+    ./plugins/rbw
   ];
 
   programs.rofi =
@@ -11,25 +13,26 @@
       font = "JetBrainsMono Nerd Font 13";
       theme = "~/.config/rofi/catppuccin-macchiato.rasi";
       plugins = with pkgs; [
-        rofi-emoji
-        rofi-rbw
-        rofi-calc
         rofi-bluetooth
+        rofi-calc
+        rofi-emoji
+        rofi-file-browser
+        rofi-rbw
+        rofi-pass
         rofi-power-menu
         rofi-pulse-select
-        rofi-file-browser
-        rofi-pass
       ];
     };
 
   home.packages = with pkgs; [
-    rofi-emoji
-    rofi-calc
     rofi-bluetooth
+    rofi-calc
+    rofi-emoji
+    rofi-file-browser
+    rofi-rbw
+    rofi-pass
     rofi-power-menu
     rofi-pulse-select
-    rofi-file-browser
-    rofi-pass
   ];
 
   xdg.configFile."rofi/catppuccin-macchiato.rasi".source = ./catppuccin-macchiato.rasi;

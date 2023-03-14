@@ -2,14 +2,8 @@
 {
 
   home.packages = with pkgs; [
-    rofi-rbw
     pinentry-gnome
-
   ];
-
-  xdg.configFile."rofi-rbw.rc" = {
-    source = ./rofi-rbw.rc;
-  };
 
   programs.rbw = {
     enable = true;
@@ -21,7 +15,6 @@
       target = "username";
       prompt = "Search: ";
       selector = "rofi";
-      selector-args = " -theme-str 'window {width: 50%; height: = '400px;'}' ";
       clipboarder = "xclip";
       typer = "xdotool";
     };

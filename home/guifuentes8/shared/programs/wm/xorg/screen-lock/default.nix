@@ -7,7 +7,7 @@
 
   services.betterlockscreen = {
     enable = true;
-    arguments = [ "blur" ];
+    arguments = [ "blur" "dim" ];
   };
 
 }

@@ -6,15 +6,17 @@ in
 
   imports = [
     ./bat
-    ./gh.nix
-    ./git.nix
-    ./gpg.nix
+    ./caffeine
+    ./gh
+    ./git
+    ./gpg
     ./himalaya
-    ./kitty.nix
-    ./ncspot.nix
+    ./kitty
+    ./ncspot
+    ./qutebrowser
     ./rofi
     ./sxhkd
-    ./zsh.nix
+    ./zsh
   ];
 
   home.packages = with pkgs;

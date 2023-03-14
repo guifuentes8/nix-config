@@ -8,7 +8,6 @@
     fg-col2: #8bd5ca;
     grey: #6e738d;
 
-    width: 600px;
 }
 
 element-text, element-icon , mode-switcher {
@@ -17,7 +16,9 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    height: 300px;
+    height: 30%;
+    width: 30%;
+
     border: 3px;
     border-color: @border-col;
     background-color: @bg-col;

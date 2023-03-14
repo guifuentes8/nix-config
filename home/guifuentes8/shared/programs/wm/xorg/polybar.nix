@@ -216,6 +216,12 @@
       pseudo-transparency = true
 
       ; vim:ft=dosini
+
+      [module/bluetooth]
+        type = custom/script
+        exec = rofi-bluetooth --status
+        interval = 1
+        click-left = rofi-bluetooth &
     '';
   };
 }
