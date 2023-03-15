@@ -5,8 +5,8 @@ in
 {
   imports = [
     ./dunst
-    ./picom.nix
-    ./polybar.nix
+    ./picom
+    ./polybar
     ./screen-lock
   ];
 

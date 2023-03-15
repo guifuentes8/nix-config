@@ -13,6 +13,7 @@ in
     ./himalaya
     ./kitty
     ./ncspot
+    ./neovim
     ./qutebrowser
     ./rofi
     ./sxhkd

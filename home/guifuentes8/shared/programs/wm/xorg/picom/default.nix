@@ -20,6 +20,16 @@
 
     settings =
       {
+        corner-radius = 11;
+        shadow-radius = 7;
+
+        transition-length = 300;
+        transition-pow-x = 0.1;
+        transition-pow-y = 0.1;
+        transition-pow-w = 0.1;
+        transition-pow-h = 0.1;
+        size-transition = true;
+
         blur = {
           method = "dual_kawase";
           strength = 9;
@@ -28,14 +38,6 @@
           background-fixed = false;
           kern = "3x3box";
         };
-        corner-radius = 12;
-        transition-length = 300;
-        transition-pow-x = 0.1;
-        transition-pow-y = 0.1;
-        transition-pow-w = 0.1;
-        transition-pow-h = 0.1;
-        size-transition = true;
-        shadow-radius = 7;
 
 
         rounded-corners-exclude = [

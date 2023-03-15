@@ -128,6 +128,17 @@
 
       # Rofi keys
 
+
+
+      # Filebrowser
+      "super + F5" = "rofi -modes 'file-browser-extended' -show file-browser-extended";
+
+      # Input Device Audio
+      "super + F6" = "rofi-pulse-select source";
+
+      # Output Device Audio
+      "super + F7" = "rofi-pulse-select sink";
+
       # Emoji
       "super + F8" = "rofi -modi emoji -show emoji";
 
