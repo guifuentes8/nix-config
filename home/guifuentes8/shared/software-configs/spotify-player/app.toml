@@ -8,12 +8,11 @@ liked_icon = "💓"
 play_icon = "▶️"
 border_type	 = "Rounded"
 playback_window_position = "Bottom"
-#progress_bar_type = "Line"
 cover_img_width = 8
 cover_img_length = 18
 
 
 [device]
-volume = 100
+volume = 75
 audio_cache = true
 bitrate = 320

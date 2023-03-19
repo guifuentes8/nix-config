@@ -17,7 +17,8 @@
       cat = "bat";
 
       # Spotify
-      spt = "ncspot";
+      spt = "spotify_player";
+      #spt = "ncspot";
       sptl = "sptlrx --current 'bold,#91D7E3' --before '#C6A0F6,faint,italic,strikethrough' --after '#ED8796,faint'";
 
       # TTY clock
