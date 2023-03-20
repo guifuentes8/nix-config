@@ -1,4 +1,7 @@
-{}: ''
+{}:
+let autostart = ../../programs/wm/wayland/autostart/autostart.sh;
+in
+''
    # This is an example Hyprland config file.
   #
   # Refer to the wiki for more information.
@@ -11,7 +14,6 @@
   exec-once = wl-clipboard-history -t
   exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
   exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-  exec-once = waybar
 
   exec-once = gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Macchiato-Standard-Blue-Dark
   exec-once = gsettings set org.gnome.desktop.interface cursor-theme Catppuccin-Macchiato-Dark-Cursors
@@ -19,6 +21,7 @@
   exec-once = hyprctl setcursor Catppuccin-Macchiato-Dark-Cursors 32
 
   exec-once = bash ~/dotfiles/home/guifuentes8/shared/software-configs/swww/change-wallpaper.sh init
+  exec-once = ${autostart}
   
   # See https://wiki.hyprland.org/Configuring/Monitors/
 
@@ -127,14 +130,6 @@
       sensitivity = -0.5
   }
 
-  # Example windowrule v1
-  # windowrule = float, ^(kitty)$
-  # Example windowrule v2
-  # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-  # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-
-
-  # See https://wiki.hyprland.org/Configuring/Keywords/ for more
   $mainMod = SUPER
 
   # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
@@ -146,6 +141,15 @@
   bind = $mainMod, D, exec, rofi -modes "drun" -show-icons -show drun
   bind = $mainMod, P, pseudo, # dwindle
   bind = $mainMod, J, togglesplit, # dwindle
+
+  bind = $mainMod, F5, exec, rofi -modes 'file-browser-extended' -show file-browser-extended
+  bind = $mainMod, F6, exec, rofi-pulse-select source
+  bind = $mainMod, F7, exec, rofi-pulse-select sink
+  bind = $mainMod, F8, exec, rofi -modi emoji -show emoji
+  bind = $mainMod, F9, exec, rofi -show calc -modi calc -no-show-match -no-sort -kb-accept-entry 'Control+c' -calc-command ' echo - n '{ result }' | wl-copy -sel copy'
+  bind = $mainMod, F10, exec, rofi-rbw
+  bind = $mainMod, F11, exec, rofi-bluetooth
+  bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
 
   bind = ,XF86MonBrightnessUp, exec, brightnessctl set 5%+
   bind = ,XF86MonBrightnessDown, exec, brightnessctl set 5%-

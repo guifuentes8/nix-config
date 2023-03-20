@@ -8,6 +8,7 @@ in
     ./picom
     ./polybar
     ./screen-lock
+    ./sxhkd
   ];
 
   home.packages = with pkgs; [

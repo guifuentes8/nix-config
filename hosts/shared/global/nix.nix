@@ -9,8 +9,6 @@
       experimental-features = [ "nix-command" "flakes" "repl-flake" ];
       warn-dirty = false;
     };
-    # TODO: temporary fix for NixOS/nix#7704
-    package = pkgs.nixVersions.nix_2_12;
     gc = {
       automatic = true;
       dates = "daily";

@@ -7,10 +7,6 @@
       scripts = [ prev.mpvScripts.mpris ];
     };
 
-    waybar = prev.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    });
-
     wf-recorder = prev.wf-recorder.overrideAttrs (prev: {
       version = "git";
       src = final.pkgs.fetchFromGitHub {
@@ -20,7 +16,6 @@
         sha256 = "sha256-FTlAuqjOrtvjVXH3wiLlANdguys+Zzeo/QJgjbIh3LM=";
       };
     });
-
 
     yarn = prev.yarn.override {
       nodejs = final.pkgs.nodejs-16_x;

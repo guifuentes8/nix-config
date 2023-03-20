@@ -16,7 +16,6 @@ in
     ./neovim
     ./qutebrowser
     ./rofi
-    ./sxhkd
     ./zsh
   ];
 

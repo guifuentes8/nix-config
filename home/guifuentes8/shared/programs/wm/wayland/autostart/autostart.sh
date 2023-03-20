@@ -1,9 +1,5 @@
-sxhkd &
-
 pkill mako
 mako &
-
-#source ../../../shared/autostart.sh
 
 himalaya -a gcf notify -k 50 &
 himalaya -a gcf watch -k 50 &

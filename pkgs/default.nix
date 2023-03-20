@@ -5,4 +5,5 @@
   sddm-theme = pkgs.callPackage ./sddm-theme { };
   spotify-player = pkgs.callPackage ./spotify-player { };
   xgifwallpaper = pkgs.callPackage ./xgifwallpaper { };
+  wf-recorder2 = pkgs.callPackage ./wf-recorder2 { };
 }

@@ -1,6 +1,10 @@
 { pkgs, outputs, ... }:
+let
+  wf-recorder2 = outputs.packages.${pkgs.system}.wf-recorder2;
+in
 {
   imports = [
+    ./waybar
   ];
 
   home.packages = with pkgs; [
@@ -10,10 +14,9 @@
     swaylock
     swayidle
     swww
-    waybar
     webcord
     wl-clipboard
-    wf-recorder
+    wf-recorder2
     wtype
   ];
 
