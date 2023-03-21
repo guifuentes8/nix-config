@@ -10,6 +10,7 @@ in
     defaultTimeout = 5000;
     font = "JetbrainsMono Nerd Font 12";
     borderRadius = 8;
+    borderSize = 2;
     width = 400;
     extraConfig = ''
 

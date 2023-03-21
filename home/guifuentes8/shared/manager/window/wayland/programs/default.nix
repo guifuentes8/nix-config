@@ -6,7 +6,6 @@ in
   imports = [
     ./foot
     ./mako
-    ./sway
     ./waybar
   ];
 
