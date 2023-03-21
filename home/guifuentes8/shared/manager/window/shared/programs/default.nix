@@ -21,6 +21,7 @@ in
     ./rofi
     ./spotify-player
     ./sptlrx
+    ./tmux
     ./wallpapers
     ./zsh
   ];

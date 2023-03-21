@@ -18,8 +18,8 @@ in
       ../shared/optional/services/teamviewer.nix
       ../shared/optional/sound/pipewire.nix
 
-      ../shared/optional/wm/i3
-      ../shared/optional/wm/bspwm
+      ../shared/optional/manager/wm/xorg/i3
+      ../shared/optional/manager/wm/xorg/bspwm
 
       ../shared/users/guifuentes8
 

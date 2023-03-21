@@ -16,7 +16,7 @@ in
 
       background-color=#24273a
       text-color=#cad3f5
-      border-color=#8aadf4
+      border-color=#F9E2AF
       progress-color=over #363a4f
       on-notify=exec ${alert}
 

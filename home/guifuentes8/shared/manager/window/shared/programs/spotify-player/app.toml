@@ -13,6 +13,6 @@ cover_img_length = 18
 
 
 [device]
-volume = 75
+volume = 80
 audio_cache = true
 bitrate = 320

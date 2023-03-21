@@ -9,7 +9,8 @@ in
       ../shared/global
       ../shared/optional/boot/systemd-boot.nix
       ../shared/optional/hardware/bluetooth.nix
-      ../shared/optional/display-manager/sddm.nix
+      ../shared/optional/manager/wm/wayland/hyprland
+      ../shared/optional/manager/login/sddm.nix
       ../shared/optional/services/flatpak.nix
       ../shared/optional/services/gnome-keyring.nix
       ../shared/optional/services/teamviewer.nix
