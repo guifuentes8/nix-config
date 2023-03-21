@@ -4,12 +4,12 @@ let
 in
 {
   imports = [
+    ./mako
     ./waybar
   ];
 
   home.packages = with pkgs; [
     grim
-    mako
     slurp
     swaylock
     swayidle
