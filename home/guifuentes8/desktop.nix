@@ -2,7 +2,7 @@
 {
   imports = [
     ./shared
-    ./shared/desktop/bspwm
+    ./shared/manager/window/xorg/interface/bspwm
   ];
 
 }

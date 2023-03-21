@@ -2,6 +2,6 @@
 {
   imports = [
     ./shared
-    ./shared/desktop/hyprland
+    ./shared/manager/window/wayland/interface/hyprland
   ];
 }
