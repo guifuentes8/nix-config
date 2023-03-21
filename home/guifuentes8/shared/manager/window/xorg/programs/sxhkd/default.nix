@@ -15,7 +15,7 @@
 
       # change wallpaper
       # "super + w" = "feh --recursive --bg-fill --randomize ~/.config/wallpapers/images/5120x1440/";
-      "super + w" = "bash ~/dotfiles/home/guifuentes8/shared/manager/window/xorg/programs/change-wallpaper.sh change";
+      "super + w" = "bash ~/nix-config/home/guifuentes8/shared/manager/window/xorg/programs/change-wallpaper.sh change";
 
       # make sxhkd reload its configuration files:
       "super + alt + BackSpace" = "pkill -USR1 -x sxhkd";

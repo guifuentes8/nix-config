@@ -40,14 +40,6 @@ in
 
   security.rtkit.enable = true;
 
-  fonts.fonts = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    meslo-lgs-nf
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
-
   programs = {
     ssh.startAgent = true;
     dconf.enable = true;
@@ -70,15 +62,10 @@ in
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
     variables = {
-
       XCURSOR_THEME = "Catppuccin-Macchiato-Dark-Cursors";
-
-      # Set a cursor size
       XCURSOR_SIZE = "24";
-
     };
     sessionVariables = rec {
-
       XDG_CACHE_HOME = "\${HOME}/.cache";
       XDG_CONFIG_HOME = "\${HOME}/.config";
       XDG_BIN_HOME = "\${HOME}/.local/bin";
@@ -88,6 +75,5 @@ in
       ];
     };
   };
-
 
 }

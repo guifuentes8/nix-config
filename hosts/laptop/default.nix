@@ -19,28 +19,13 @@ in
 
     ];
 
-  boot =
-    {
-      extraModprobeConfig = ''
-        options hid_apple fnmode=2
-      '';
-    };
-
   console.keyMap = "br-abnt2";
   time.timeZone = "America/Sao_Paulo";
 
-  networking.hostName = "desktop";
+  networking.hostName = "laptop";
   networking.networkmanager.enable = true;
 
   security.rtkit.enable = true;
-
-  fonts.fonts = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    meslo-lgs-nf
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
 
   programs = {
     ssh.startAgent = true;

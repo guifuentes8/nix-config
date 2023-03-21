@@ -16,8 +16,8 @@ in
         enable = true;
         settings = {
           default = true;
-          imap-passwd-cmd = "cat /home/guifuentes8/dotfiles/.secrets/guifuentes8.txt";
-          smtp-passwd-cmd = "cat /home/guifuentes8/dotfiles/.secrets/guifuentes8.txt";
+          imap-passwd-cmd = "cat ~/nix-config/.secrets/guifuentes8.txt";
+          smtp-passwd-cmd = "cat ~/nix-config/.secrets/guifuentes8.txt";
           signature = "Atenciosamente,\nGuilherme Fuentes";
           downloads-dir = "~/Downloads";
           imap-notify-cmd = script;
@@ -50,8 +50,8 @@ in
         sender = "smtp";
         enable = true;
         settings = {
-          imap-passwd-cmd = "cat /home/guifuentes8/dotfiles/.secrets/gcf.txt";
-          smtp-passwd-cmd = "cat /home/guifuentes8/dotfiles/.secrets/gcf.txt";
+          imap-passwd-cmd = "cat ~/nix-config/.secrets/gcf.txt";
+          smtp-passwd-cmd = "cat ~/nix-config/.secrets/gcf.txt";
           downloads-dir = "~/Downloads";
           imap-notify-cmd = script;
           imap-notify-query = "UNSEEN";
@@ -82,8 +82,8 @@ in
         sender = "smtp";
         enable = true;
         settings = {
-          imap-passwd-cmd = "cat /home/guifuentes8/dotfiles/.secrets/hubs.txt";
-          smtp-passwd-cmd = "cat /home/guifuentes8/dotfiles/.secrets/hubs.txt";
+          imap-passwd-cmd = "cat ~/nix-config/.secrets/hubs.txt";
+          smtp-passwd-cmd = "cat ~/nix-config/.secrets/hubs.txt";
           downloads-dir = "~/Downloads";
           imap-notify-cmd = script;
           imap-notify-query = "UNSEEN";

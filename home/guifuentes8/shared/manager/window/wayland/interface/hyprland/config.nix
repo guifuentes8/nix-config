@@ -20,7 +20,7 @@ in
   exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
   exec-once = hyprctl setcursor Catppuccin-Macchiato-Dark-Cursors 32
 
-  exec-once = bash ~/dotfiles/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh init
+  exec-once = bash ~/nix-config/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh init
   exec-once = ${autostart}
   
   # See https://wiki.hyprland.org/Configuring/Monitors/
@@ -136,7 +136,7 @@ in
   bind = $mainMod, Return, exec, kitty
   bind = $mainMod, Q, killactive,
   bind = $mainMod, Escape, exit,
-  bind = $mainMod, W, exec, bash ~/dotfiles/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh change
+  bind = $mainMod, W, exec, bash ~/nix-config/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh change
   bind = $mainMod, F, togglefloating,
   bind = $mainMod, D, exec, rofi -modes "drun" -show-icons -show drun
   bind = $mainMod, P, pseudo, # dwindle
@@ -158,8 +158,8 @@ in
   bind = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
   bind = ,XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
   bind = ,Print, exec, grim -g "$(slurp)" - | wl-copy 
-  bind = CTRL,Print, exec, wf-recorder -a -c vp8_vaapi -d /dev/dri/renderD128 -f ~/Videos/record_$(date +"%Y-%m-%d_%H:%M:%S.webm") 
-  bind = CTRL_SHIFT,Print, exec, wf-recorder -a -g "$(slurp)" -c vp8_vaapi -d /dev/dri/renderD128 -f ~/Videos/recorder__$(date +"%Y-%m-%d_%H:%M:%S.webm") 
+  bind = CTRL,Print, exec, wf-recorder --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.4.monitor -c vp8_vaapi -d /dev/dri/renderD128 -f ~/Videos/record_$(date +"%Y-%m-%d_%H:%M:%S.webm") 
+  bind = CTRL_SHIFT,Print, exec, wf-recorder --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.4.monitor -g "$(slurp)" -c vp8_vaapi -d /dev/dri/renderD128 -f ~/Videos/record_$(date +"%Y-%m-%d_%H:%M:%S.webm") 
   bind = ALT, Print, exec, pkill wf-recorder
 
   # Move focus with mainMod + arrow keys
