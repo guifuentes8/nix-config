@@ -10,7 +10,7 @@ in
       ../shared/global
 
       ../shared/optional/boot/grub.nix
-      ../shared/optional/display-manager/lightdm.nix
+      ../shared/optional/manager/login/lightdm.nix
       ../shared/optional/hardware/bluetooth.nix
       ../shared/optional/hardware/nvidia.nix
       ../shared/optional/services/flatpak.nix

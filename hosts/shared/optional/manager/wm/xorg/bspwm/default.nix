@@ -3,7 +3,7 @@
   services.xserver.windowManager.bspwm = {
     enable = true;
     package = pkgs.bspwm;
-    configFile = "~/.config/bspwm/bspwmrc";
+    configFile = "/home/guifuentes8/.config/bspwm/bspwmrc";
 
   };
 }
