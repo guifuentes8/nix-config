@@ -13,13 +13,13 @@ in
     iconTheme.name = "Adwaita";
     settings = {
       global = {
-        width = 300;
+        width = 400;
         height = 300;
         font = "JetBrainsMono Nerd 11";
-        corner_radius = 12;
+        corner_radius = 10;
         origin = "top-right";
         notification_limit = 0;
-        frame_width = 1;
+        frame_width = 0;
         frame_color = "#5b6078";
         separator_color = "frame";
         min_icon_size = 64;
@@ -30,7 +30,7 @@ in
       urgency_normal = {
         background = "#24273A";
         foreground = "#CAD3F5";
-        timeout = 10;
+        timeout = 5;
       };
       play_sound = {
         summary = "*";

@@ -3,7 +3,7 @@ picom &
 
 systemctl --user restart polybar.service
 xrandr -s 5120x1440
-feh --bg-fill ~/.config/wallpapers/images/nixos.png
+feh --bg-fill ~/.config/wallpapers/images/5120x1440/asus.jpg
 
 pkill dunst
 dunst &

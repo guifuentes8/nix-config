@@ -68,5 +68,8 @@
     extraSpecialArgs = { inherit inputs outputs; };
   };
 
+  environment.variables.EDITOR = "nvim";
+
+
 
 }

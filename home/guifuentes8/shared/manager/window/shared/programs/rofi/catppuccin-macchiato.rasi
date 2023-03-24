@@ -19,7 +19,7 @@ window {
     height: 50%;
     width: 50%;
 
-    border: 2px;
+    border: 3px;
     border-color: @border-col;
     background-color: @bg-col;
     border-radius: 12px;

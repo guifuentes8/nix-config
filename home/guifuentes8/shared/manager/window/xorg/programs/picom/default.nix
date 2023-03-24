@@ -1,14 +1,14 @@
 { pkgs, ... }: {
   services.picom = {
     enable = true;
-    package = pkgs.picom-next;
+    package = pkgs.picom-jonaburg;
     extraArgs = [ "--experimental-backends" ];
     backend = "glx";
     vSync = true;
     fade = true;
     fadeSteps = [ 0.04 0.04 ];
     shadow = true;
-    shadowOffsets = [ 2 2 ];
+    shadowOffsets = [ 1 1 ];
     shadowOpacity = 0.2;
     shadowExclude = [
       "class_g = 'Polybar'"
@@ -16,23 +16,28 @@
     ];
     opacityRules = [
       "80:class_g = 'Rofi'"
+      "80:class_g = 'Polybar'"
+      "95:class_g = 'Code'"
+      "90:class_g = 'Dunst'"
     ];
 
     settings =
       {
-        corner-radius = 11;
-        shadow-radius = 7;
+        corner-radius = 14;
+        shadow-radius = 8;
 
-        transition-length = 300;
-        transition-pow-x = 0.1;
-        transition-pow-y = 0.1;
-        transition-pow-w = 0.1;
-        transition-pow-h = 0.1;
+        refresh-rate = 120;
+
+        transition-length = 400;
+        transition-pow-x = 0.15;
+        transition-pow-y = 0.15;
+        transition-pow-w = 0.15;
+        transition-pow-h = 0.15;
         size-transition = true;
 
         blur = {
           method = "dual_kawase";
-          strength = 9;
+          strength = 7;
           background = true;
           background-frame = false;
           background-fixed = false;
@@ -41,10 +46,6 @@
 
 
         rounded-corners-exclude = [
-          # "window_type = 'menu'"
-          # "window_type = 'dropdown_menu'"
-          # "window_type = 'popup_menu'"
-          # "window_type = 'utility'"
           "class_g = 'Polybar'"
         ];
       };
