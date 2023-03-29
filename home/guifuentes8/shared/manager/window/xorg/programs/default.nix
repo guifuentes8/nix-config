@@ -1,6 +1,5 @@
 { outputs, pkgs, ... }:
 let
-  xgifwallpaper = outputs.packages.${pkgs.system}.xgifwallpaper;
 in
 {
   imports = [
@@ -17,8 +16,6 @@ in
     discord
     flameshot
     lxappearance
-    smart-wallpaper
-    xgifwallpaper
     xdotool
     xclip
   ];

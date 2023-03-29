@@ -4,7 +4,7 @@
     font = {
       name = "JetBrainsMono Nerd Font";
     };
-    theme = "Catppuccin-Macchiato";
+    theme = "Tokyo Night Storm";
     settings = {
       bold_font = "auto";
       italic_font = "auto";
@@ -13,6 +13,10 @@
       confirm_os_window_close = 0;
       initial_window_width = 640;
       initial_window_height = 400;
+
+      color2 = "#33cccc";
+      color10 = "#33cccc";
+      color16 = "#222436";
     };
   };
 }

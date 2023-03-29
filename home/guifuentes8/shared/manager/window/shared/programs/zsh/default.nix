@@ -19,7 +19,7 @@
       # Spotify
       spt = "spotify_player";
       #spt = "ncspot";
-      sptl = "sptlrx --current 'bold,#91D7E3' --before '#C6A0F6,faint,italic,strikethrough' --after '#ED8796,faint'";
+      sptl = "sptlrx --current 'bold,#33cccc' --before '#7aa2f7,faint,italic,strikethrough' --after '#bb9af7,faint'";
 
       # TTY clock
       clock = "tty-clock -c -C  6 -s -S -r -n -D";

@@ -19,8 +19,8 @@ in
         corner_radius = 10;
         origin = "top-right";
         notification_limit = 0;
-        frame_width = 0;
-        frame_color = "#5b6078";
+        frame_width = 2;
+        frame_color = "#33cccc";
         separator_color = "frame";
         min_icon_size = 64;
         max_icon_size = 64;
@@ -28,8 +28,8 @@ in
 
       };
       urgency_normal = {
-        background = "#24273A";
-        foreground = "#CAD3F5";
+        background = "#24283b";
+        foreground = "#c0caf5";
         timeout = 5;
       };
       play_sound = {

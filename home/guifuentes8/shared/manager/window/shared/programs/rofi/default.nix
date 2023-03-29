@@ -11,7 +11,7 @@
       enable = true;
       terminal = "${pkgs.kitty}/bin/kitty";
       font = "JetBrainsMono Nerd Font 13";
-      theme = "~/.config/rofi/catppuccin-macchiato.rasi";
+      theme = "~/.config/rofi/tokyo-night.rasi";
       plugins = with pkgs; [
         rofi-bluetooth
         rofi-calc
@@ -35,6 +35,6 @@
     rofi-pulse-select
   ];
 
-  xdg.configFile."rofi/catppuccin-macchiato.rasi".source = ./catppuccin-macchiato.rasi;
+  xdg.configFile."rofi/tokyo-night.rasi".source = ./tokyo-night.rasi;
 
 }

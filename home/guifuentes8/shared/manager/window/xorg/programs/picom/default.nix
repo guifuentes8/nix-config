@@ -23,7 +23,6 @@
 
     settings =
       {
-        corner-radius = 14;
         shadow-radius = 8;
 
         refresh-rate = 120;

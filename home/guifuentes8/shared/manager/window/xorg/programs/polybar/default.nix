@@ -48,7 +48,7 @@
        blue = #8aadf4
        lavender = #b7bdf8
        sapphire = #7dc4e4
-       sky = #91d7e3
+       sky = #33cccc
        teal = #8bd5ca
        green = #a6da95
        yellow = #eed49f
@@ -70,7 +70,7 @@
       ; dpi = 96
 
       background = #24273a
-      foreground = #a6da95
+      foreground = #bb9af7
 
       line-size = 2pt
 
@@ -83,9 +83,9 @@
       module-margin = 1
 
       separator = |
-      separator-foreground = #a5adcb
+      separator-foreground = #414868
 
-      font-0 = JetBrainsMono Nerd:size=9;2
+      font-0 = JetBrainsMono Nerd:size=10;2
 
       modules-left = xworkspaces 
       modules-center = xwindow
@@ -108,9 +108,9 @@
       type = internal/xworkspaces
 
       label-active = %name%
-      label-active-foreground = #8bd5ca
-      label-active-background = #363a4f
-      label-active-underline= #8bd5ca
+      label-active-foreground = #33cccc
+      label-active-background = #24283b
+      label-active-underline= #33cccc
       label-active-padding = 2
 
       label-occupied = %name%
@@ -134,7 +134,7 @@
 
       mount-0 = /
 
-      label-mounted = %{F#91d7e3}%mountpoint%%{F-} %percentage_used%%
+      label-mounted = %{F#33cccc}%mountpoint%%{F-} %percentage_used%%
 
       label-unmounted = %mountpoint% not mounted
       label-unmounted-foreground = #5b6078
@@ -144,7 +144,7 @@
       type = internal/pulseaudio
 
       format-volume-prefix = "VOL "
-      format-volume-prefix-foreground = #91d7e3
+      format-volume-prefix-foreground = #33cccc
       format-volume = <label-volume>
 
       label-volume = %percentage%%
@@ -163,7 +163,7 @@
       blacklist-0 = num lock
 
       label-layout = %layout%
-      label-layout-foreground = #91d7e3
+      label-layout-foreground = #33cccc
 
       label-indicator-padding = 2
       label-indicator-margin = 1
@@ -174,14 +174,14 @@
       type = internal/memory
       interval = 2
       format-prefix = "RAM "
-      format-prefix-foreground = #91d7e3
+      format-prefix-foreground = #33cccc
       label = %percentage_used:2%%
 
       [module/cpu]
       type = internal/cpu
       interval = 2
       format-prefix = "CPU "
-      format-prefix-foreground = #91d7e3
+      format-prefix-foreground = #33cccc
       label = %percentage:2%%
 
       [network-base]
@@ -189,17 +189,17 @@
       interval = 5
       format-connected = <label-connected>
       format-disconnected = <label-disconnected>
-      label-disconnected = %{F#91d7e3}%ifname%%{F#5b6078} disconnected
+      label-disconnected = %{F#33cccc}%ifname%%{F#5b6078} disconnected
 
       [module/wlan]
       inherit = network-base
       interface-type = wireless
-      label-connected = %{F#91d7e3}%ifname%%{F-} %essid% %local_ip%
+      label-connected = %{F#33cccc}%ifname%%{F-} %essid% %local_ip%
 
       [module/eth]
       inherit = network-base
       interface-type = wired
-      label-connected = %{F#91d7e3}%ifname%%{F-} %local_ip%
+      label-connected = %{F#33cccc}%ifname%%{F-} %local_ip%
 
       [module/date]
       type = internal/date
@@ -209,7 +209,7 @@
       date-alt = %Y-%m-%d %H:%M:%S
 
       label = %date%
-      label-foreground = #91d7e3
+      label-foreground = #33cccc
 
       [settings]
       screenchange-reload = true

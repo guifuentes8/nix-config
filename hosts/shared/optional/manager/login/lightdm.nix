@@ -1,5 +1,5 @@
 { pkgs, ... }:
-let wallpaper = ./asus.jpg;
+let wallpaper = ./nixos.png;
 in
 {
   services.xserver.displayManager.lightdm = {
