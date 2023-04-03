@@ -22,7 +22,7 @@ in
           downloads-dir = "~/Downloads";
           imap-notify-cmd = script;
           imap-notify-query = "UNSEEN";
-          email-listing-page-size = 50;
+          email-listing-page-size = 25;
 
         };
       };
@@ -55,7 +55,7 @@ in
           downloads-dir = "~/Downloads";
           imap-notify-cmd = script;
           imap-notify-query = "UNSEEN";
-          email-listing-page-size = 50;
+          email-listing-page-size = 25;
 
         };
       };
