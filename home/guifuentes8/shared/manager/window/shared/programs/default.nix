@@ -22,7 +22,6 @@ in
     ./spotify-player
     ./sptlrx
     ./tmux
-    ./wallpapers
     ./zsh
   ];
 
@@ -36,6 +35,7 @@ in
       gifsicle
       imagemagick
       libnotify
+      pastel
       pavucontrol
       playerctl
       pfetch

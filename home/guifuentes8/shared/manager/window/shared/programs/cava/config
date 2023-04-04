@@ -149,10 +149,10 @@
 
 gradient = 1
 gradient_count = 4
-gradient_color_4 = '#f7768e'
-gradient_color_3 = '#e0af68'
-gradient_color_2 = '#33cccc'
-gradient_color_1 = '#7aa2f7'
+gradient_color_4 = '#f16da6'
+gradient_color_3 = '#c8a5ff'
+gradient_color_2 = '#8cb6ff'
+gradient_color_1 = '#3ddbd9'
 
 
 

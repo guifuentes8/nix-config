@@ -15,7 +15,7 @@ opt.synmaxcol = 240
 
 -- Theme
 opt.termguicolors = true
-cmd [[ colorscheme tokyonight-storm ]]
+cmd [[ colorscheme carbonfox ]]
 
 -- Editor
 opt.number = true

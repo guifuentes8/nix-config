@@ -28,51 +28,17 @@
       ;
       ;==========================================================
 
-      [colors]
-       base = #24273a
-       mantle = #1e2030
-       crust = #181926
-
-       text = #cad3f5
-       subtext0 = #a5adcb
-       subtext1 = #b8c0e0
-
-       surface0 = #363a4f
-       surface1 = #494d64
-       surface2 = #5b6078
-      
-       overlay0 = #6e738d
-       overlay1 = #8087a2
-       overlay2 = #939ab7
-
-       blue = #8aadf4
-       lavender = #b7bdf8
-       sapphire = #7dc4e4
-       sky = #33cccc
-       teal = #8bd5ca
-       green = #a6da95
-       yellow = #eed49f
-       peach = #f5a97f
-       maroon = #ee99a0
-       red = #ed8796
-       mauve = #c6a0f6
-       pink = #f5bde6
-       flamingo = #f0c6c6
-       rosewater = #f4dbd6
-
-       transparent = #FF00000
-
       [bar/mybar]
       width = 100%
-      height = 20pt
+      height = 24pt
       radius = 0
 
       ; dpi = 96
 
-      background = #24273a
-      foreground = #bb9af7
+      background = #161616
+      foreground = #33b1ff
 
-      line-size = 2pt
+      line-size = 3pt
 
       border-size = 0pt
       border-color = #00000000
@@ -82,10 +48,10 @@
 
       module-margin = 1
 
-      separator = |
-      separator-foreground = #414868
+      separator = \
+      separator-foreground = #e4e4e5
 
-      font-0 = JetBrainsMono Nerd:size=10;2
+      font-0 = JetBrainsMonoNL Nerd Font:size=12;2
 
       modules-left = xworkspaces 
       modules-center = xwindow
@@ -108,9 +74,9 @@
       type = internal/xworkspaces
 
       label-active = %name%
-      label-active-foreground = #33cccc
+      label-active-foreground = #ee5396
       label-active-background = #24283b
-      label-active-underline= #33cccc
+      label-active-underline= #ee5396
       label-active-padding = 2
 
       label-occupied = %name%
@@ -134,7 +100,7 @@
 
       mount-0 = /
 
-      label-mounted = %{F#33cccc}%mountpoint%%{F-} %percentage_used%%
+      label-mounted = %{F#ee5396}%mountpoint%%{F-} %percentage_used%%
 
       label-unmounted = %mountpoint% not mounted
       label-unmounted-foreground = #5b6078
@@ -144,7 +110,7 @@
       type = internal/pulseaudio
 
       format-volume-prefix = "VOL "
-      format-volume-prefix-foreground = #33cccc
+      format-volume-prefix-foreground = #ee5396
       format-volume = <label-volume>
 
       label-volume = %percentage%%
@@ -163,7 +129,7 @@
       blacklist-0 = num lock
 
       label-layout = %layout%
-      label-layout-foreground = #33cccc
+      label-layout-foreground = #ee5396
 
       label-indicator-padding = 2
       label-indicator-margin = 1
@@ -174,14 +140,14 @@
       type = internal/memory
       interval = 2
       format-prefix = "RAM "
-      format-prefix-foreground = #33cccc
+      format-prefix-foreground = #ee5396
       label = %percentage_used:2%%
 
       [module/cpu]
       type = internal/cpu
       interval = 2
       format-prefix = "CPU "
-      format-prefix-foreground = #33cccc
+      format-prefix-foreground = #ee5396
       label = %percentage:2%%
 
       [network-base]
@@ -189,27 +155,27 @@
       interval = 5
       format-connected = <label-connected>
       format-disconnected = <label-disconnected>
-      label-disconnected = %{F#33cccc}%ifname%%{F#5b6078} disconnected
+      label-disconnected = %{F#ee5396}%ifname%%{F#5b6078} disconnected
 
       [module/wlan]
       inherit = network-base
       interface-type = wireless
-      label-connected = %{F#33cccc}%ifname%%{F-} %essid% %local_ip%
+      label-connected = %{F#ee5396}%ifname%%{F-} %essid% %local_ip%
 
       [module/eth]
       inherit = network-base
       interface-type = wired
-      label-connected = %{F#33cccc}%ifname%%{F-} %local_ip%
+      label-connected = %{F#ee5396}%ifname%%{F-} %local_ip%
 
       [module/date]
       type = internal/date
       interval = 1
 
       date = %H:%M
-      date-alt = %Y-%m-%d %H:%M:%S
+      date-alt = %d-%m-%Y %H:%M:%S
 
       label = %date%
-      label-foreground = #33cccc
+      label-foreground = #ee5396
 
       [settings]
       screenchange-reload = true

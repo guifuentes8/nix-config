@@ -47,7 +47,7 @@ in
     plugins = with pkgs.vimPlugins; [
       dashboard-nvim
       lualine-nvim
-      tokyonight-nvim
+      nightfox-nvim
       nvim-lspconfig
       nvim-tree-lua
       nvim-scrollbar

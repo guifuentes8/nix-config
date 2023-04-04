@@ -12,18 +12,21 @@
     shadowOpacity = 0.2;
     shadowExclude = [
       "class_g = 'Polybar'"
+      "class_g = 'Dunst'"
       "_GTK_FRAME_EXTENTS@:c"
+
     ];
     opacityRules = [
       "80:class_g = 'Rofi'"
-      "80:class_g = 'Polybar'"
+      "90:class_g = 'Polybar'"
       "95:class_g = 'Code'"
       "90:class_g = 'Dunst'"
     ];
 
     settings =
       {
-        shadow-radius = 8;
+        shadow-radius = 7;
+        corner-radius = 12;
 
         refresh-rate = 120;
 

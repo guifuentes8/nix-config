@@ -14,9 +14,9 @@ in
 
             ${autostart}
       			
-      			bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+      			bspc monitor -d      
 
-      			bspc config border_width         2
+      			bspc config border_width         0
       			bspc config window_gap          12
 
       			bspc config split_ratio          0.50
@@ -25,10 +25,10 @@ in
 
 
 
-            bspc config normal_border_color '#c0caf5'
-            bspc config active_border_color '#c0caf5'
-            bspc config focused_border_color '#33cccc'
-            bspc config presel-feedback_colour '#F9E2AF'
+            bspc config normal_border_color '#6e6f70'
+            bspc config active_border_color '#6e6f70'
+            bspc config focused_border_color '#52bdff'
+            bspc config presel-feedback_colour '#ee5396'
 
             bspc config focus_follows_pointer true
             bspc config pointer_follows_focus true

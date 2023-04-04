@@ -1,14 +1,13 @@
 { pkgs, ... }:
-let wallpaper = ./nixos.png;
+let wallpaper = ./alone.png;
 in
 {
   services.xserver.displayManager.lightdm = {
     background = wallpaper;
     enable = true;
     greeters = {
-      enso = {
+      slick = {
         enable = true;
-        blur = true;
       };
     };
   };
