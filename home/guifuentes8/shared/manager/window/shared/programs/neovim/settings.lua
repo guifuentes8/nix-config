@@ -15,7 +15,7 @@ opt.synmaxcol = 240
 
 -- Theme
 opt.termguicolors = true
-cmd [[ colorscheme catppuccin-macchiato ]]
+cmd [[ colorscheme tokyonight-storm ]]
 
 -- Editor
 opt.number = true
@@ -43,3 +43,12 @@ opt.whichwrap:append {
     h = true,
     l = true
 }
+
+-- Lualine
+
+
+
+-- Dashboard
+
+
+

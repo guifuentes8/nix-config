@@ -47,6 +47,7 @@ in
       todo
       tty-clock
       tuifeed
+      wdisplays
       xfce.thunar
       xfce.xfconf
 

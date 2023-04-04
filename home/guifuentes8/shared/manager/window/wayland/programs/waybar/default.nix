@@ -22,7 +22,7 @@
         position = "top";
 
         height = 30;
-        spacing = 4;
+        spacing = 6;
         modules-left = [ "wlr/workspaces" "wlr/window" ];
         modules-center = [ "mpd" ];
         modules-right = [ "pulseaudio" "network" "cpu" "memory" "temperature" "backlight" "keyboard-state" "sway/language" "battery" "clock" "tray" ];
@@ -102,7 +102,7 @@
         "clock" = {
           "timezone" = "America/Sao_Paulo";
           "tooltip-format" = "<big>{=%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          "format-alt" = "{=%Y-%m-%d}";
+          "format-alt" = "{=%d-%m-%y}";
         };
         "cpu" = {
           "format" = "{usage}% ";

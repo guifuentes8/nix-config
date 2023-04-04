@@ -20,6 +20,7 @@ in
 
   xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;
   xdg.configFile."nvim/lua/keybinds.lua".source = ./keybinds.lua;
+  xdg.configFile."nvim/lua/plugins.lua".source = ./plugins.lua;
 
 
   programs.neovim = {
@@ -29,26 +30,31 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     extraLuaConfig = ''
-      require 'settings'
-      require 'keybinds'
+        require 'settings'
+        require 'keybinds'
+        require 'plugins'
+
+
+        -- disable netrw at the very start of your init.lua (strongly advised)
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+
+      -- set termguicolors to enable highlight groups
+      vim.opt.termguicolors = true
+
+
     '';
     plugins = with pkgs.vimPlugins; [
-      ale
-      catppuccin-nvim
-      nerdtree
-      nerdtree-git-plugin
+      dashboard-nvim
+      lualine-nvim
+      tokyonight-nvim
       nvim-lspconfig
+      nvim-tree-lua
+      nvim-scrollbar
       nvim-treesitter.withAllGrammars
+      nvim-web-devicons
       plenary-nvim
       telescope-nvim
-      vim-airline
-      vim-airline-themes
-      vim-css-color
-      vim-devicons
-      vim-floaterm
-      vim-nerdtree-syntax-highlight
-      vim-plug
-      vim-polyglot
     ];
 
     #coc = {
