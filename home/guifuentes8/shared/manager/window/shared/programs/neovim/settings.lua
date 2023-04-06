@@ -15,7 +15,7 @@ opt.synmaxcol = 240
 
 -- Theme
 opt.termguicolors = true
-cmd [[ colorscheme carbonfox ]]
+cmd.colorscheme "catppuccin-frappe"
 
 -- Editor
 opt.number = true

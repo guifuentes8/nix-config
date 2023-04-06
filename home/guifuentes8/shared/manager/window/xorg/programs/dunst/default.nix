@@ -17,7 +17,7 @@ in
         height = 300;
         font = "JetBrainsMono Nerd 12";
         corner_radius = 12;
-        origin = "top-center";
+        origin = "top-right";
         notification_limit = 0;
         frame_width = 2;
         frame_color = "#ee5396";

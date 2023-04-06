@@ -14,14 +14,15 @@ in
     width = 400;
     extraConfig = ''
 
-      background-color=#24283b
-      text-color=#c0caf5
-      border-color=#33cccc
-      progress-color=over #363a4f
-      on-notify=exec ${alert}
+      # Colors
+
+      background-color=#303446
+      text-color=#c6d0f5
+      border-color=#8caaee
+      progress-color=over #414559
 
       [urgency=high]
-      border-color=#f7768e
+      border-color=#ef9f76
     '';
   };
 }

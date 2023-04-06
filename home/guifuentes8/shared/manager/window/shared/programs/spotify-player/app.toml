@@ -1,17 +1,17 @@
 client_id = "32c1c3d388a14e4981d80295af909be7"
-theme = "Tokyo-Night-Storm"
+theme = "Catppuccin-frappe"
 enable_media_control = true
 page_size_in_rows = 50
 track_table_item_max_len = 50
 pause_icon = "⏸️"
-liked_icon = "💙"
+liked_icon = "💜"
 play_icon = "▶️"
-border_type	 = "Hidden"
+border_type	 = "Rounded"
 playback_window_position = "Bottom"
 cover_img_width = 4
 
 
 [device]
-volume = 80
+volume = 85
 audio_cache = true
 bitrate = 320

@@ -1,28 +1,26 @@
-# Catppuccin themes for Spotify-player
-
 [[themes]]
-name = "Carbonfox"
+name = "Catppuccin-frappe"
 [themes.palette]
-background = "#161616"
-foreground = "#f2f4f8"
-black= "#282828"
-blue= "#78a9ff"
-cyan= "#08bdba"
-green= "#25be6a"
-magenta= "#be95ff"
-red= "#ee5396"
-white= "#dfdfe0"
-yellow= "#33b1ff"
-bright_black= "#484848"
-bright_blue= "#8cb6ff"
-bright_cyan= "#2dc7c4"
-bright_green= "#46c880"
-bright_magenta= "#c8a5ff"
-bright_red= "#f16da6"
-bright_white= "#e4e4e5"
-bright_yellow= "#52bdff"
-selection_background = "#2a2a2a"
-selection_foreground = "#f2f4f8"
+background = "#303446"
+foreground = "#C6D0F5"
+black = "#303446"
+blue = "#8CAAEE"
+cyan = "#89DCEB"
+green = "#A6D189"
+magenta = "#CA9EE6"
+red = "#E78284"
+white = "#C6D0F5"
+yellow = "#E5C890"
+bright_black = "#303446"
+bright_blue = "#8CAAEE"
+bright_cyan = "#89DCEB"
+bright_green = "#A6D189"
+bright_magenta = "#CA9EE6"
+bright_red = "#E78284"
+bright_white = "#C6D0F5"
+bright_yellow = "#E5C890"
+selection_background = "#414559"
+selection_foreground = "#C6D0F5"
 
 [themes.component_style]
 block_title = { fg = "Magenta"  }
@@ -33,5 +31,3 @@ playback_progress_bar = { bg = "Black", fg = "Green" }
 current_playing = { fg = "Green", modifiers = ["Bold"] }
 page_desc = { fg = "Cyan", modifiers = ["Bold"] }
 table_header = { fg = "Blue" }
-
-

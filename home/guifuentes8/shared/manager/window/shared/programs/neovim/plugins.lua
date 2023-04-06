@@ -1,6 +1,6 @@
 require('lualine').setup({
     options = {
-        theme = 'carbonfox'
+        theme = 'nightfox'
     }
 })
 

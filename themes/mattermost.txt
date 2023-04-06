@@ -1,3 +1,0 @@
-# Tokyo Night Storm
-
-{"awayIndicator":"#ff9e64","buttonBg":"#7aa2f7","buttonColor":"#24283b","centerChannelBg":"#24283b","centerChannelColor":"#c0caf5","codeTheme":"tokio-night","dndIndicator":"#f7768e","errorTextColor":"#f7768e","linkColor":"#7aa2f7","mentionBg":"#414868","mentionBj":"#cfc9c2","mentionColor":"#a9b1d6","mentionHighlightBg":"#414868","mentionHighlightLink":"#7aa2f7","newMessageSeparator":"#ff9e64","onlineIndicator":"#9ece6a","sidebarBg":"#24283b","sidebarHeaderBg":"#24283b","sidebarHeaderTextColor":"#a9b1d6","sidebarTeamBarBg":"#24283b","sidebarText":"#a9b1d6","sidebarTextActiveBorder":"#9ece6a","sidebarTextActiveColor":"#7aa2f7","sidebarTextHoverBg":"#414868","sidebarUnreadText":"#c0caf5"}

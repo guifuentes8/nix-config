@@ -10,21 +10,21 @@
     style = ''
       * {
           border: none;
-          font-family: JetBrainsMono Nerd Font;
+          font-family: JetBrainsMonoNL Nerd Font;
+          font-size: 13px;
           background-color: transparent;
           color: white;
+          padding: 2px 4px;
         }
-      
     '';
+
     settings = [
       {
         layer = "top";
         position = "top";
-
         height = 30;
-        spacing = 6;
         modules-left = [ "wlr/workspaces" "wlr/window" ];
-        modules-center = [ "mpd" ];
+        modules-center = [ ];
         modules-right = [ "pulseaudio" "network" "cpu" "memory" "temperature" "backlight" "keyboard-state" "sway/language" "battery" "clock" "tray" ];
         "wlr/workspaces" = {
           "disable-scroll" = true;
