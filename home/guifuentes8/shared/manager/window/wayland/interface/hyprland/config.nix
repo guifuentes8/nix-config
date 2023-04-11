@@ -2,33 +2,25 @@
 let autostart = ../../programs/autostart/autostart.sh;
 in
 ''
-   # This is an example Hyprland config file.
-  #
-  # Refer to the wiki for more information.
 
-  #
-  # Please note not all available settings / options are set here.
-  # For a full list, see the wiki
-  #
+# ON START
   exec-once = mako
   exec-once = wl-clipboard-history -t
   exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
   exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-
-  exec-once = gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Macchiato-Standard-Blue-Dark
-  exec-once = gsettings set org.gnome.desktop.interface cursor-theme Catppuccin-Macchiato-Dark-Cursors
+  exec-once = gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Frappe-Standard-Blue-Dark
+  exec-once = gsettings set org.gnome.desktop.interface cursor-theme Catppuccin-Frappe-Dark-Cursors
   exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
-  exec-once = hyprctl setcursor Catppuccin-Macchiato-Dark-Cursors 32
-
+  exec-once = hyprctl setcursor Catppuccin-Frappe-Dark-Cursors 32
   exec-once = bash ~/nix-config/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh init
   exec-once = ${autostart}
   
-  # See https://wiki.hyprland.org/Configuring/Monitors/
+# MONITORS
 
-  #monitor=prefered,disable
+  # See https://wiki.hyprland.org/Configuring/Monitors/
   monitor=,preferred,auto,1
 
-  monitor=HDMI-A-1, 1920x1080@60, 1920x0, 1
+# KEYWORDS
 
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
@@ -38,6 +30,8 @@ in
   # Source a file (multi-file configs)
   # source = ~/.config/hypr/myColors.conf
 
+# VARIABLES
+
   # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
   input {
       kb_layout = br
@@ -45,12 +39,6 @@ in
       kb_model =
       kb_options =
       kb_rules =
-
-      # kb_layout = us
-      # kb_variant = 
-      # kb_model =
-      # kb_options =
-      # kb_rules =
 
       follow_mouse = 1
 
@@ -61,8 +49,6 @@ in
   }
 
   general {
-      # See https://wiki.hyprland.org/Configuring/Variables/ for more
-
       gaps_in = 5
       gaps_out = 20
       border_size = 3
@@ -129,6 +115,8 @@ in
   device:epic mouse V1 {
       sensitivity = -0.5
   }
+
+# KEYBINDS
 
   $mainMod = SUPER
 
@@ -200,6 +188,6 @@ in
   bindm = $mainMod, mouse:272, movewindow
   bindm = $mainMod, mouse:273, resizewindow
   lent,22
-
-    blurls=waybar
+  
+  blurls=waybar
 ''
