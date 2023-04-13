@@ -3,7 +3,7 @@ picom &
 
 systemctl --user restart polybar.service
 xrandr -s 5120x1440
-feh --bg-fill ~/.config/wallpapers/images/5120x1440/porsche.jpg
+feh --bg-scale --randomize ~/.config/wallpapers/images/1920x1080/
 
 pkill dunst
 dunst &

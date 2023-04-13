@@ -10,184 +10,219 @@
     };
     script = "polybar mybar &";
     extraConfig = ''
-          ;==========================================================
-      ;
-      ;
-      ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-      ;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-      ;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-      ;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-      ;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-      ;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-      ;
-      ;
-      ;   To learn more about how to configure Polybar
-      ;   go to https://github.com/polybar/polybar
-      ;
-      ;   The README contains a lot of information
-      ;
-      ;==========================================================
+                ;==========================================================
+            ;
+            ;
+            ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+            ;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+            ;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+            ;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+            ;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+            ;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+            ;
+            ;
+            ;   To learn more about how to configure Polybar
+            ;   go to https://github.com/polybar/polybar
+            ;
+            ;   The README contains a lot of information
+            ;
+            ;==========================================================
+      [colors]
+       base = #303446
+       mantle = #292c3c
+       crust = #232634
 
-      [bar/mybar]
-      width = 100%
-      height = 24pt
-      radius = 0
+       text = #c6d0f5
+       subtext0 = #a5adce
+       subtext1 = #b5bfe2
 
-      ; dpi = 96
+       surface0 = #414559
+       surface1 = #51576d
+       surface2 = #626880
+ 
+       overlay0 = #737994
+       overlay1 = #838ba7
+       overlay2 = #949cbb
+ 
 
-      background = #161616
-      foreground = #33b1ff
+       blue = #8caaee
+       lavender = #babbf1
+       sapphire = #85c1dc
+       sky = #99d1db
+       teal = #81c8be
+       green = #a6d189
+       yellow = #e5c890
+       peach = #ef9f76
+       maroon = #ea999c
+       red = #e78284
+       mauve = #ca9ee6
+       pink = #f4b8e4
+       flamingo = #a6d189
+       rosewater = #f2d5cf
 
-      line-size = 3pt
+       transparent = #FF00000
 
-      border-size = 0pt
-      border-color = #00000000
+       
+            [bar/mybar]
+            width = 100%
+            height = 24pt
+            radius = 0
 
-      padding-left = 0
-      padding-right = 1
+            ; dpi = 96
 
-      module-margin = 1
+            background = #303446
+            foreground = #8caaee
 
-      separator = \
-      separator-foreground = #e4e4e5
+            line-size = 3pt
 
-      font-0 = JetBrainsMonoNL Nerd Font:size=12;2
+            border-size = 0pt
+            border-color = #00000000
 
-      modules-left = xworkspaces 
-      modules-center = xwindow
-      modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth date
+            padding-left = 0
+            padding-right = 1
 
-      cursor-click = pointer
-      cursor-scroll = ns-resize
+            module-margin = 1
 
-      enable-ipc = true
+            separator = \
+            separator-foreground = #e4e4e5
 
-      tray-position = right
+            font-0 = JetBrainsMonoNL Nerd Font:size=12;2
 
-      ; wm-restack = generic
-       wm-restack = bspwm
-      ; wm-restack = i3
+            modules-left = xworkspaces 
+            modules-center = xwindow
+            modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth date
 
-      ; override-redirect = true
+            cursor-click = pointer
+            cursor-scroll = ns-resize
 
-      [module/xworkspaces]
-      type = internal/xworkspaces
+            enable-ipc = true
 
-      label-active = %name%
-      label-active-foreground = #ee5396
-      label-active-background = #24283b
-      label-active-underline= #ee5396
-      label-active-padding = 2
+            tray-position = right
 
-      label-occupied = %name%
-      label-occupied-padding = 2
+            ; wm-restack = generic
+             wm-restack = bspwm
+            ; wm-restack = i3
 
-      label-urgent = %name%
-      label-urgent-background = #ed8796
-      label-urgent-padding = 2
+            ; override-redirect = true
 
-      label-empty = %name%
-      label-empty-foreground = #cad3f5
-      label-empty-padding = 2
+            [module/xworkspaces]
+            type = internal/xworkspaces
 
-      [module/xwindow]
-      type = internal/xwindow
-      label = %title:0:60:...%
+            label-active = %name%
+            label-active-foreground = #a6d189
+            label-active-background = #24283b
+            label-active-underline= #a6d189
+            label-active-padding = 2
 
-      [module/filesystem]
-      type = internal/fs
-      interval = 25
+            label-occupied = %name%
+            label-occupied-padding = 2
 
-      mount-0 = /
+            label-urgent = %name%
+            label-urgent-background = #ed8796
+            label-urgent-padding = 2
 
-      label-mounted = %{F#ee5396}%mountpoint%%{F-} %percentage_used%%
+            label-empty = %name%
+            label-empty-foreground = #cad3f5
+            label-empty-padding = 2
 
-      label-unmounted = %mountpoint% not mounted
-      label-unmounted-foreground = #5b6078
+            [module/xwindow]
+            type = internal/xwindow
+            label = %title:0:60:...%
+
+            [module/filesystem]
+            type = internal/fs
+            interval = 25
+
+            mount-0 = /
+
+            label-mounted = %{F#a6d189}%mountpoint%%{F-} %percentage_used%%
+
+            label-unmounted = %mountpoint% not mounted
+            label-unmounted-foreground = #5b6078
 
     
-      [module/pulseaudio]
-      type = internal/pulseaudio
+            [module/pulseaudio]
+            type = internal/pulseaudio
 
-      format-volume-prefix = "VOL "
-      format-volume-prefix-foreground = #ee5396
-      format-volume = <label-volume>
+            format-volume-prefix = "VOL "
+            format-volume-prefix-foreground = #a6d189
+            format-volume = <label-volume>
 
-      label-volume = %percentage%%
+            label-volume = %percentage%%
 
-      label-muted = muted
-      label-muted-foreground = #5b6078
+            label-muted = muted
+            label-muted-foreground = #5b6078
 
-      click-right = pavucontrol
+            click-right = pavucontrol
 
-      scroll-up = notify-send Volume %percentage%%
-      scroll-down = notify-send Volume %percentage%%
+            scroll-up = notify-send Volume %percentage%%
+            scroll-down = notify-send Volume %percentage%%
 
 
-      [module/xkeyboard]
-      type = internal/xkeyboard
-      blacklist-0 = num lock
+            [module/xkeyboard]
+            type = internal/xkeyboard
+            blacklist-0 = num lock
 
-      label-layout = %layout%
-      label-layout-foreground = #ee5396
+            label-layout = %layout%
+            label-layout-foreground = #a6d189
 
-      label-indicator-padding = 2
-      label-indicator-margin = 1
-      label-indicator-foreground = #282A2E
-      label-indicator-background = #8ABEB7
+            label-indicator-padding = 2
+            label-indicator-margin = 1
+            label-indicator-foreground = #282A2E
+            label-indicator-background = #8ABEB7
 
-      [module/memory]
-      type = internal/memory
-      interval = 2
-      format-prefix = "RAM "
-      format-prefix-foreground = #ee5396
-      label = %percentage_used:2%%
+            [module/memory]
+            type = internal/memory
+            interval = 2
+            format-prefix = "RAM "
+            format-prefix-foreground = #a6d189
+            label = %percentage_used:2%%
 
-      [module/cpu]
-      type = internal/cpu
-      interval = 2
-      format-prefix = "CPU "
-      format-prefix-foreground = #ee5396
-      label = %percentage:2%%
+            [module/cpu]
+            type = internal/cpu
+            interval = 2
+            format-prefix = "CPU "
+            format-prefix-foreground = #a6d189
+            label = %percentage:2%%
 
-      [network-base]
-      type = internal/network
-      interval = 5
-      format-connected = <label-connected>
-      format-disconnected = <label-disconnected>
-      label-disconnected = %{F#ee5396}%ifname%%{F#5b6078} disconnected
+            [network-base]
+            type = internal/network
+            interval = 5
+            format-connected = <label-connected>
+            format-disconnected = <label-disconnected>
+            label-disconnected = %{F#a6d189}%ifname%%{F#5b6078} disconnected
 
-      [module/wlan]
-      inherit = network-base
-      interface-type = wireless
-      label-connected = %{F#ee5396}%ifname%%{F-} %essid% %local_ip%
+            [module/wlan]
+            inherit = network-base
+            interface-type = wireless
+            label-connected = %{F#a6d189}%ifname%%{F-} %essid% %local_ip%
 
-      [module/eth]
-      inherit = network-base
-      interface-type = wired
-      label-connected = %{F#ee5396}%ifname%%{F-} %local_ip%
+            [module/eth]
+            inherit = network-base
+            interface-type = wired
+            label-connected = %{F#a6d189}%ifname%%{F-} %local_ip%
 
-      [module/date]
-      type = internal/date
-      interval = 1
+            [module/date]
+            type = internal/date
+            interval = 1
 
-      date = %H:%M
-      date-alt = %d-%m-%Y %H:%M:%S
+            date = %H:%M
+            date-alt = %d-%m-%Y %H:%M:%S
 
-      label = %date%
-      label-foreground = #ee5396
+            label = %date%
+            label-foreground = #a6d189
 
-      [settings]
-      screenchange-reload = true
-      pseudo-transparency = true
+            [settings]
+            screenchange-reload = true
+            pseudo-transparency = true
 
-      ; vim:ft=dosini
+            ; vim:ft=dosini
 
-      [module/bluetooth]
-        type = custom/script
-        exec = rofi-bluetooth --status
-        interval = 1
-        click-left = rofi-bluetooth &
+            [module/bluetooth]
+              type = custom/script
+              exec = rofi-bluetooth --status
+              interval = 1
+              click-left = rofi-bluetooth &
     '';
   };
 }

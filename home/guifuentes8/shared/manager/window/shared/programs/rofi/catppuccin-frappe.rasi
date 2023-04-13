@@ -21,10 +21,10 @@ configuration{
     selected-col: #303446;
     blue: #8caaee;
     fg-col: #c6d0f5;
-    fg-col2: #e78284;
+    fg-col2: #eebebe;
     grey: #737994;
 
-    width: 600;
+    width: 800;
     font: "JetBrainsMonoNL Nerd Font 13";
 }
 

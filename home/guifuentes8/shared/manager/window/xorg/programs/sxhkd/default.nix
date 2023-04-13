@@ -4,7 +4,6 @@
     keybindings = {
 
       # Print
-
       "Print" = "flameshot gui";
 
       # terminal emulator
@@ -14,8 +13,7 @@
       "super + d" = "rofi -modes 'drun' -show-icons -show drun";
 
       # change wallpaper
-      # "super + w" = "feh --recursive --bg-fill --randomize ~/.config/wallpapers/images/5120x1440/";
-      "super + w" = "bash ~/nix-config/home/guifuentes8/shared/manager/window/xorg/programs/xgifwallpaper/change-wallpaper.sh change";
+      "super + w" = "feh --recursive --bg-scale --randomize ~/.config/wallpapers/images/1920x1080/";
 
       # make sxhkd reload its configuration files:
       "super + alt + BackSpace" = "pkill -USR1 -x sxhkd";

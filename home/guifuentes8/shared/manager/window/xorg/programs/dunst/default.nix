@@ -20,17 +20,25 @@ in
         origin = "top-right";
         notification_limit = 0;
         frame_width = 2;
-        frame_color = "#ee5396";
+        frame_color = "#8CAAEE";
         separator_color = "frame";
         min_icon_size = 64;
         max_icon_size = 64;
-
-
+      };
+      urgency_low = {
+        background = "#303446";
+        foreground = "#C6D0F5";
       };
       urgency_normal = {
-        background = "#2a2a2a";
-        foreground = "#3ddbd9";
+        background = "#303446";
+        foreground = "#C6D0F5";
         timeout = 7;
+      };
+
+      urgency_critical = {
+        background = "#303446";
+        foreground = "#C6D0F5";
+        frame_color = "#EF9F76";
       };
       play_sound = {
         summary = "*";
