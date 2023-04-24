@@ -40,6 +40,8 @@ in
       kb_options =
       kb_rules =
 
+      numlock_by_default = true
+
       follow_mouse = 1
 
       touchpad {
@@ -49,11 +51,11 @@ in
   }
 
   general {
-      gaps_in = 5
+      gaps_in = 4
       gaps_out = 20
       border_size = 3
-      col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-      col.inactive_border = rgba(595959aa)
+      col.active_border = rgb(89DCEB) rgb(ca9ee6) 45deg
+      col.inactive_border = rgb(414559)
 
       layout = dwindle
   }
@@ -63,16 +65,18 @@ in
 
       rounding = 8
       blur = true
-      blur_size = 12
-      blur_passes = 2
+      blur_size = 6
+      blur_passes = 1
       blur_new_optimizations = true
       blur_ignore_opacity = true
       blur_xray = true
 
       drop_shadow = true
-      shadow_range = 4
+      shadow_range = 12
       shadow_render_power = 3
-      col.shadow = rgba(1a1a1aee)
+      shadow_ignore_window	= true
+      col.shadow = rgba(333333aa)
+      shadow_offset = [4, 6]
 
       active_opacity = 1
       inactive_opacity = 1
@@ -91,7 +95,7 @@ in
       animation = border, 1, 10, default
       animation = borderangle, 1, 8, default
       animation = fade, 1, 7, default
-      animation = workspaces, 1, 6, default
+      animation = workspaces, 1, 10, default
   }
 
   dwindle {
@@ -107,7 +111,14 @@ in
 
   gestures {
       # See https://wiki.hyprland.org/Configuring/Variables/ for more
-      workspace_swipe = false
+      workspace_swipe = true
+      workspace_swipe_numbered = true
+      workspace_swipe_cancel_ratio = 0.5
+      workspace_swipe_min_speed_to_force = 0
+
+  }
+
+  misc {
   }
 
   # Example per-device config
