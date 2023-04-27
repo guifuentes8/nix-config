@@ -11,7 +11,7 @@
       enable = true;
       terminal = "${pkgs.kitty}/bin/kitty";
       font = "JetBrainsMono Nerd Font 13";
-      theme = "~/.config/rofi/catppuccin-frappe.rasi";
+      theme = "~/.config/rofi/catppuccin-mocha.rasi";
       plugins = with pkgs; [
         rofi-bluetooth
         rofi-calc
@@ -35,6 +35,6 @@
     rofi-pulse-select
   ];
 
-  xdg.configFile."rofi/catppuccin-frappe.rasi".source = ./catppuccin-frappe.rasi;
+  xdg.configFile."rofi/catppuccin-mocha.rasi".source = ./catppuccin-mocha.rasi;
 
 }

@@ -36,15 +36,15 @@
 
   gtk = {
     enable = true;
-    cursorTheme.name = "Catppuccin-Frappe-Dark-Cursors";
-    cursorTheme.package = pkgs.catppuccin-cursors.frappeDark;
+    cursorTheme.name = "Catppuccin-Mocha-Dark-Cursors";
+    cursorTheme.package = pkgs.catppuccin-cursors.mochaDark;
     iconTheme.name = "Adwaita";
     iconTheme.package = pkgs.gnome.adwaita-icon-theme;
     theme = {
-      name = "Catppuccin-Frappe-Standard-Blue-Dark";
+      name = "Catppuccin-Mocha-Standard-Blue-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "blue" ];
-        variant = "frappe";
+        variant = "mocha";
       };
     };
   };

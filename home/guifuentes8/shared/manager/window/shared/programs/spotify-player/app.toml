@@ -1,5 +1,5 @@
 client_id = "32c1c3d388a14e4981d80295af909be7"
-theme = "Catppuccin-frappe"
+theme = "Catppuccin-mocha"
 enable_media_control = true
 page_size_in_rows = 50
 track_table_item_max_len = 50

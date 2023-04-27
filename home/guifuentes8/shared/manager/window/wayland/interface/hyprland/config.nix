@@ -8,10 +8,10 @@ in
   exec-once = wl-clipboard-history -t
   exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
   exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-  exec-once = gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Frappe-Standard-Blue-Dark
-  exec-once = gsettings set org.gnome.desktop.interface cursor-theme Catppuccin-Frappe-Dark-Cursors
+  exec-once = gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Mocha-Standard-Blue-Dark
+  exec-once = gsettings set org.gnome.desktop.interface cursor-theme Catppuccin-Mocha-Dark-Cursors
   exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
-  exec-once = hyprctl setcursor Catppuccin-Frappe-Dark-Cursors 32
+  exec-once = hyprctl setcursor Catppuccin-Mocha-Dark-Cursors 32
   exec-once = bash ~/nix-config/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh init
   exec-once = ${autostart}
   
@@ -54,8 +54,8 @@ in
       gaps_in = 4
       gaps_out = 20
       border_size = 3
-      col.active_border = rgb(89DCEB) rgb(ca9ee6) 45deg
-      col.inactive_border = rgb(414559)
+      col.active_border = rgb(cba6f7) rgb(89b4fa) 45deg
+      col.inactive_border = rgb(313244)
 
       layout = dwindle
   }

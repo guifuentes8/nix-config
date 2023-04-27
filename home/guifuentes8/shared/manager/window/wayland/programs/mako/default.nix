@@ -8,21 +8,19 @@ in
   services.mako = {
     enable = true;
     defaultTimeout = 6000;
-    font = "JetbrainsMono Nerd Font 12";
+    font = "JetbrainsMonoNL Nerd Font 12";
     borderRadius = 8;
     borderSize = 2;
     width = 400;
     extraConfig = ''
 
-      # Colors
-
-      background-color=#303446
-      text-color=#c6d0f5
-      border-color=#8caaee
-      progress-color=over #414559
+      background-color=#1e1e2e
+      text-color=#cdd6f4
+      border-color=#89b4fa
+      progress-color=over #313244
 
       [urgency=high]
-      border-color=#ef9f76
+      border-color=#fab387
     '';
   };
 }

@@ -19,13 +19,13 @@
       # Spotify
       spt = "spotify_player";
       #spt = "ncspot";
-      sptl = "sptlrx --current 'bold,#ca9ee6' --before '#e78284,faint,italic,strikethrough' --after '#99d1db,faint'";
+      sptl = "sptlrx --current 'bold,#cba6f7' --before '#b4befe,faint,italic,strikethrough' --after '#f9e2af,faint'";
 
       # TTY clock
       clock = "tty-clock -c -C 6 -s -S -r -n -D";
 
       # Unimatrix
-      matrix = "cmatrix -b -f -C cyan";
+      matrix = "cmatrix -b -f -C green";
 
       # Fetch 
       fetch = "pfetch";

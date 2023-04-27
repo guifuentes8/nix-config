@@ -9,6 +9,7 @@ in
     ./bottom
     ./caffeine
     ./cava
+    ./eww
     ./gh
     ./git
     ./gpg
@@ -17,6 +18,7 @@ in
     ./mpv
     ./ncspot
     ./neovim
+    ./obs
     ./qutebrowser
     ./rofi
     ./spotify-player

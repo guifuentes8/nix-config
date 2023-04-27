@@ -9,44 +9,100 @@
     systemd.enable = true;
     style = ''
       * {
-          border: none;
           font-family: JetBrainsMonoNL Nerd Font;
-          font-size: 13px;
-          background-color: transparent;
-          color: white;
-          padding: 2px 4px;
+          font-weight: bold;
+          font-size: 14px;
+          min-height: 0;
         }
+
+      window#waybar {
+          background: #1e1e2e;
+          color: #cdd6f4;
+      }
+
+      #custom-language,
+      #custom-updates,
+      #custom-caffeine,
+      #custom-weather,
+      #window,
+      #clock,
+      #battery,
+      #pulseaudio,
+      #network,
+      #workspaces,
+      #tray,
+      #backlight {
+      background: #313244;
+      padding: 4px 10px;
+      margin: 8px 4px;
+      border-radius: 10px;
+      }
+
+
+      #workspaces button {
+        padding: 3px;
+        color: #45475a;
+        margin-right: 5px;
+      }
+
+      #workspaces button.active {
+        color: #cba6f7;
+      }
+
+      #workspaces button.focused {
+        color: #cba6f7;
+        background: #a6e3a1;
+        border-radius: 10px;
+      }
+
+      #workspaces button.urgent {
+        color: #11111b;
+        background: #f38ba8;
+        border-radius: 10px;
+      }
+
+      #workspaces button:hover {
+        background-color: #313244;
+        color: #cdd6f4;
+        border-radius: 10px;
+      }
+
+    
     '';
 
     settings = [
       {
         layer = "top";
         position = "top";
-        height = 30;
+        exclusive = true;
+        height = 0;
         modules-left = [ "wlr/workspaces" "wlr/window" ];
         modules-center = [ ];
-        modules-right = [ "pulseaudio" "network" "cpu" "memory" "temperature" "backlight" "keyboard-state" "sway/language" "battery" "clock" "tray" ];
+        modules-right = [ "network" "backlight" "keyboard-state" "sway/language" "pulseaudio" "clock" "battery" "tray" ];
         "wlr/workspaces" = {
-          "disable-scroll" = true;
+          "on-scroll-up" = "hyprctl dispatch workspace e+1";
+          "on-scroll-down" = "hyprctl dispatch workspace e-1";
+          "on-click" = "activate";
           "all-outputs" = true;
           "format" = "{icon}";
           "format-icons" = {
-            "1" = "1";
-            "2" = "2";
-            "3" = "3";
-            "4" = "4";
-            "5" = "5";
-            "6" = "6";
-            "7" = "7";
-            "8" = "8";
-            "9" = "9";
-            "10" = "10";
+            "1" = "";
+            "2" = "";
+            "3" = "";
+            "4" = "";
+            "5" = "";
+            "urgent" = "";
+            "active" = "";
+            "default" = "";
           };
         };
-        "keyboard-state" = {
-          "numlock" = true;
-          "capslock" = true;
-          "format" = "{name} {icon}";
+        " keyboard-state " = {
+          "
+              numlock " = true;
+          "
+              capslock " = true;
+          "
+              format " = " { name } {icon}";
           "format-icons" = {
             "locked" = "";
             "unlocked" = "";
@@ -130,20 +186,20 @@
             "warning" = 30;
             "critical" = 15;
           };
-          "format" = "{capacity}% {icon}";
-          "format-charging" = "{capacity}% ";
-          "format-plugged" = "{capacity}% ";
+          "format" = "{icon} {capacity}%";
+          "format-charging" = " {capacity}%";
+          "format-plugged" = " {capacity}%";
           "format-alt" = "{time} {icon}";
-          "format-good" = "";
-          "format-full" = "";
-          "format-icons" = [ "" "" "" "" "" ];
+          "format-good" = "{icon} {capacity}%";
+          "format-full" = "{icon} {capacity}%";
+          "format-icons" = [ " " " " " " " " " " ];
         };
         "battery#bat2" = {
           "bat" = "BAT2";
         };
         "network" = {
           "interface" = "wlp2*";
-          "format-wifi" = "{essid} ({signalStrength}%) ";
+          "format-wifi" = "  {essid}";
           "format-ethernet" = "{ipaddr}/{cidr} ";
           "tooltip-format" = "{ifname} via {gwaddr} ";
           "format-linked" = "{ifname} (No IP) ";
@@ -152,11 +208,11 @@
         };
         "pulseaudio" = {
           "scroll-step" = 1;
-          "format" = "{volume}% {icon} {format_source}";
+          "format" = "{icon} {volume}%";
           "format-bluetooth" = "{volume}% {icon} {format_source}";
           "format-bluetooth-muted" = " {icon} {format_source}";
           "format-muted" = " {format_source}";
-          "format-source" = "{volume}% ";
+          "format-source" = "";
           "format-source-muted" = "";
           "format-icons" = {
             "headphone" = "";
