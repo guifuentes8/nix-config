@@ -20,11 +20,13 @@
           color: #cdd6f4;
       }
 
-      #custom-language,
-      #custom-updates,
-      #custom-caffeine,
-      #custom-weather,
+      #cpu,
+      #memory,
+      #disk,
+      #temperature,
+      #keyboard-state,
       #window,
+      #mpris,
       #clock,
       #battery,
       #pulseaudio,
@@ -38,7 +40,6 @@
       border-radius: 10px;
       }
 
-
       #workspaces button {
         padding: 3px;
         color: #45475a;
@@ -46,12 +47,11 @@
       }
 
       #workspaces button.active {
-        color: #cba6f7;
+        color: #a6e3a1;
       }
 
       #workspaces button.focused {
-        color: #cba6f7;
-        background: #a6e3a1;
+        color: #a6e3a1;
         border-radius: 10px;
       }
 
@@ -62,11 +62,45 @@
       }
 
       #workspaces button:hover {
-        background-color: #313244;
-        color: #cdd6f4;
+        color: #a6e3a1;
         border-radius: 10px;
       }
 
+      #mpris {
+        color: #cba6f7;
+      }
+      #cpu {
+        color: #89b4fa;
+      }
+      #memory {
+        color: #f9e2af;
+      }
+      #temperature {
+        color: #eba0ac;
+       }
+      #disk {
+        color: #b4befe;
+      }
+      #keyboard-state {
+        color: #fab387;
+      }
+      #clock {
+        color: #94e2d5;
+      }
+      #battery {
+        color: #f9e2af;
+      }
+      #pulseaudio {
+        color: #eba0ac;
+      }
+      #network {
+        color: #89b4fa;
+
+      }
+      #backlight {
+        color: #f5c2e7;
+
+      }
     
     '';
 
@@ -76,9 +110,9 @@
         position = "top";
         exclusive = true;
         height = 0;
-        modules-left = [ "wlr/workspaces" "wlr/window" ];
-        modules-center = [ ];
-        modules-right = [ "network" "backlight" "keyboard-state" "sway/language" "pulseaudio" "clock" "battery" "tray" ];
+        modules-left = [ "wlr/workspaces" "user" "disk" "cpu" "memory" "temperature" ];
+        modules-center = [ "mpris" ];
+        modules-right = [ "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
         "wlr/workspaces" = {
           "on-scroll-up" = "hyprctl dispatch workspace e+1";
           "on-scroll-down" = "hyprctl dispatch workspace e-1";
@@ -96,13 +130,10 @@
             "default" = "";
           };
         };
-        " keyboard-state " = {
-          "
-              numlock " = true;
-          "
-              capslock " = true;
-          "
-              format " = " { name } {icon}";
+        "keyboard-state" = {
+          "numlock" = true;
+          "capslock" = true;
+          "format" = "{icon} {name} ";
           "format-icons" = {
             "locked" = "";
             "unlocked" = "";
@@ -117,6 +148,42 @@
           "format-icons" = [ "" "" ];
           "tooltip" = true;
           "tooltip-format" = "{app}= {title}";
+        };
+        "cava" = {
+          "cava_config" = "$XDG_CONFIG_HOME/cava/cava.conf";
+          "framerate" = 60;
+          "autosens" = 1;
+          "sensitivity" = 100;
+          "bars" = 14;
+          "lower_cutoff_freq" = 50;
+          "higher_cutoff_freq" = 10000;
+          "method" = "pulse";
+          "source" = "auto";
+          "stereo" = true;
+          "reverse" = false;
+          "bar_delimiter" = 0;
+          "monstercat" = false;
+          "waves" = false;
+          "noise_reduction" = 0.77;
+          "input_delay" = 2;
+          "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+          "actions" = {
+            "on-click-right" = "mode";
+          };
+        };
+        "mpris" = {
+          "format" = "{player_icon} | {title} ";
+          "format-paused" = "{status_icon} | {title}";
+          interval = 2;
+          "player-icons" = {
+            "default" = "▶";
+            "mpv" = "🎵";
+            "spotify_player" = "";
+          };
+          "status-icons" = {
+            "paused" = "⏸";
+          };
+          "ignored-players" = [ "firefox" ];
         };
         "mpd" = {
           "format" = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime=%M=%S}/{totalTime=%M=%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
@@ -157,32 +224,42 @@
         };
         "clock" = {
           "timezone" = "America/Sao_Paulo";
-          "tooltip-format" = "<big>{=%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          "format-alt" = "{=%d-%m-%y}";
+          "format" = "{:%H:%M:%S}";
+          interval = 1;
+          tooltip = true;
+          "tooltip-format" = "{:%d/%m/%Y}";
+          "format-alt" = "{%d-%m-%y}";
+        };
+        "disk" = {
+          "interval" = 30;
+          "format" = "󰋊 {total} | 󱁋 {percentage_free}% | 󱁌 {percentage_used}%";
+          "path" = "/";
         };
         "cpu" = {
-          "format" = "{usage}% ";
-          "tooltip" = false;
+          interval = 2;
+          "format" = "󰻠 {usage}%";
+          "tooltip" = true;
+
         };
         "memory" = {
-          "format" = "{}% ";
+          "format" = "󰍛 {}%";
         };
         "temperature" = {
           "thermal-zone" = 2;
-          "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
+          "hwmon-path" = "/sys/class/hwmon/hwmon0/temp1_input";
           "critical-threshold" = 80;
-          "format-critical" = "{temperatureC}°C {icon}";
-          "format" = "{temperatureC}°C {icon}";
+          "format-critical" = "{icon} {temperatureC}°C";
+          "format" = "{icon} {temperatureC}°C";
           "format-icons" = [ "" "" "" ];
         };
         "backlight" = {
           "device" = "acpi_video1";
-          "format" = "{percent}% {icon}";
+          "format" = "{icon} {percent}%";
           "format-icons" = [ "" "" "" "" "" "" "" "" "" ];
         };
         "battery" = {
           "states" = {
-            "good" = 95;
+            "good" = 100;
             "warning" = 30;
             "critical" = 15;
           };
@@ -204,18 +281,25 @@
           "tooltip-format" = "{ifname} via {gwaddr} ";
           "format-linked" = "{ifname} (No IP) ";
           "format-disconnected" = "Disconnected ⚠";
-          "format-alt" = "{ifname}= {ipaddr}/{cidr}";
+          "format-alt" = "{Signal} - {signalStrength}%";
+        };
+        "user" = {
+          "format" = "{user} {work_H}:{work_M}";
+          "interval" = 60;
+          "height" = 30;
+          "width" = 30;
+          "icon" = true;
         };
         "pulseaudio" = {
           "scroll-step" = 1;
           "format" = "{icon} {volume}%";
-          "format-bluetooth" = "{volume}% {icon} {format_source}";
-          "format-bluetooth-muted" = " {icon} {format_source}";
-          "format-muted" = " {format_source}";
+          "format-bluetooth" = "󰋋 {volume}%";
+          "format-bluetooth-muted" = "󰟎 {volume}%";
+          "format-muted" = "󰖁 {volume}%";
           "format-source" = "";
           "format-source-muted" = "";
           "format-icons" = {
-            "headphone" = "";
+            "headphone" = "󰋋";
             "hands-free" = "";
             "headset" = "";
             "phone" = "";

@@ -8,16 +8,17 @@ in
   services.mako = {
     enable = true;
     defaultTimeout = 6000;
-    font = "JetbrainsMonoNL Nerd Font 12";
-    borderRadius = 8;
-    borderSize = 2;
+    font = "JetbrainsMonoNL Nerd Font 11";
+    borderRadius = 6;
+    borderSize = 3;
     width = 400;
     extraConfig = ''
 
       background-color=#1e1e2e
       text-color=#cdd6f4
-      border-color=#89b4fa
+      border-color=#f5e0dc
       progress-color=over #313244
+      anchor=top-center
 
       [urgency=high]
       border-color=#fab387

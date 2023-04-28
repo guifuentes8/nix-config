@@ -54,7 +54,7 @@ in
       gaps_in = 4
       gaps_out = 20
       border_size = 3
-      col.active_border = rgb(cba6f7) rgb(89b4fa) 45deg
+      col.active_border = rgb(cba6f7) rgb(f38ba8) rgb(fab387) 45deg
       col.inactive_border = rgb(313244)
 
       layout = dwindle
@@ -150,8 +150,8 @@ in
   bind = $mainMod, F11, exec, rofi-bluetooth
   bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
 
-  bind = ,XF86MonBrightnessUp, exec, brightnessctl set 5%+
-  bind = ,XF86MonBrightnessDown, exec, brightnessctl set 5%-
+  bind = ,XF86MonBrightnessUp, exec, xbacklight -inc 10
+  bind = ,XF86MonBrightnessDown, exec, xbacklight -dec 10
   bind = ,XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
   bind = ,XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
   bind = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle

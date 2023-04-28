@@ -11,15 +11,21 @@ in
       ../shared/optional/hardware/bluetooth.nix
       ../shared/optional/manager/wm/wayland/hyprland
       ../shared/optional/manager/login/sddm.nix
+      ../shared/optional/services/backlight.nix
       ../shared/optional/services/flatpak.nix
       ../shared/optional/services/gnome-keyring.nix
       ../shared/optional/services/teamviewer.nix
+      ../shared/optional/services/temperature.nix
       ../shared/optional/sound/pipewire.nix
       ../shared/users/guifuentes8
       inputs.hyprland.nixosModules.default
 
     ];
 
+  boot.kernelParams = [ "acpi_backlight=video" ];
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", GROUP="video", MODE="0664"
+  '';
   console.keyMap = "br-abnt2";
   time.timeZone = "America/Sao_Paulo";
 
