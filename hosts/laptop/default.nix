@@ -22,7 +22,7 @@ in
 
     ];
 
-  boot.kernelParams = [ "acpi_backlight=video" ];
+  boot.kernelParams = [ "acpi_backlight=video" "coretemp" "kvm-intel" ];
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", GROUP="video", MODE="0664"
   '';

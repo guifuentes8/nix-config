@@ -15,6 +15,7 @@
     slack
     teamviewer
     tdesktop
+    unrar
     unzip
     vscode
 

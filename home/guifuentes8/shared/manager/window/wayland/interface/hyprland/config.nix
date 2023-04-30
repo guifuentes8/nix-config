@@ -54,8 +54,8 @@ in
       gaps_in = 4
       gaps_out = 20
       border_size = 3
-      col.active_border = rgb(cba6f7) rgb(f38ba8) rgb(fab387) 45deg
-      col.inactive_border = rgb(313244)
+      col.active_border = rgb(a6e3a1)
+      col.inactive_border = rgb(1e1e2e)
 
       layout = dwindle
   }
@@ -63,9 +63,9 @@ in
   decoration {
       # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-      rounding = 8
+      rounding = 12
       blur = true
-      blur_size = 6
+      blur_size = 7
       blur_passes = 1
       blur_new_optimizations = true
       blur_ignore_opacity = true

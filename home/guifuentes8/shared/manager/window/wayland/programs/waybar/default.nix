@@ -40,6 +40,7 @@
       border-radius: 10px;
       }
 
+
       #workspaces button {
         padding: 3px;
         color: #45475a;
@@ -47,12 +48,13 @@
       }
 
       #workspaces button.active {
-        color: #a6e3a1;
+        color: #74c7ec;
+        background-color: rgba(0,0,0,0);
       }
 
       #workspaces button.focused {
-        color: #a6e3a1;
-        border-radius: 10px;
+        color: #74c7ec;
+        border-radius: 24px;
       }
 
       #workspaces button.urgent {
@@ -62,44 +64,42 @@
       }
 
       #workspaces button:hover {
-        color: #a6e3a1;
-        border-radius: 10px;
+        background-color: rgba(0,0,0,0);
+        color: #74c7ec;
       }
 
       #mpris {
-        color: #cba6f7;
+        color: #a6e3a1;
+      }
+      #disk {
+        color: #f5e0dc;
       }
       #cpu {
-        color: #89b4fa;
+        color: #cba6f7;
       }
       #memory {
-        color: #f9e2af;
+        color: #cba6f7;
       }
       #temperature {
-        color: #eba0ac;
+        color: #cba6f7;
        }
-      #disk {
-        color: #b4befe;
-      }
       #keyboard-state {
-        color: #fab387;
-      }
-      #clock {
-        color: #94e2d5;
-      }
-      #battery {
-        color: #f9e2af;
-      }
-      #pulseaudio {
-        color: #eba0ac;
+        color: #f38ba8;
       }
       #network {
-        color: #89b4fa;
-
+        color: #eba0ac;
       }
       #backlight {
-        color: #f5c2e7;
-
+        color: #fab387;
+      }
+      #pulseaudio {
+        color: #f9e2af;
+      }
+      #battery {
+        color: #94e2d5;
+      }
+      #clock {
+        color: #89dceb;
       }
     
     '';
@@ -110,23 +110,29 @@
         position = "top";
         exclusive = true;
         height = 0;
-        modules-left = [ "wlr/workspaces" "user" "disk" "cpu" "memory" "temperature" ];
-        modules-center = [ "mpris" ];
-        modules-right = [ "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
+        modules-left = [ "custom/nix-logo" "wlr/workspaces" "mpris" ];
+        modules-center = [ ];
+        modules-right = [ "disk" "cpu" "memory" "temperature" "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
+        "custom/nix-logo" = {
+          "format" = "<span font='16'>  </span>";
+        };
         "wlr/workspaces" = {
           "on-scroll-up" = "hyprctl dispatch workspace e+1";
           "on-scroll-down" = "hyprctl dispatch workspace e-1";
           "on-click" = "activate";
-          "all-outputs" = true;
           "format" = "{icon}";
           "format-icons" = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" = "";
+            "1" = "";
+            "2" = "";
+            "3" = "";
+            "4" = "";
+            "5" = "";
+            "6" = "";
+            "7" = "";
+            "8" = "";
+            "9" = "";
             "urgent" = "";
-            "active" = "";
+            "active" = "";
             "default" = "";
           };
         };
@@ -172,8 +178,8 @@
           };
         };
         "mpris" = {
-          "format" = "{player_icon} | {title} ";
-          "format-paused" = "{status_icon} | {title}";
+          "format" = "{player_icon} | {artist} - {title} ";
+          "format-paused" = "{status_icon} | {artist} - {title}";
           interval = 2;
           "player-icons" = {
             "default" = "▶";
@@ -239,18 +245,16 @@
           interval = 2;
           "format" = "󰻠 {usage}%";
           "tooltip" = true;
-
         };
         "memory" = {
           "format" = "󰍛 {}%";
         };
         "temperature" = {
           "thermal-zone" = 2;
-          "hwmon-path" = "/sys/class/hwmon/hwmon0/temp1_input";
           "critical-threshold" = 80;
           "format-critical" = "{icon} {temperatureC}°C";
           "format" = "{icon} {temperatureC}°C";
-          "format-icons" = [ "" "" "" ];
+          "format-icons" = [ "" "" "" ];
         };
         "backlight" = {
           "device" = "acpi_video1";
@@ -283,13 +287,6 @@
           "format-disconnected" = "Disconnected ⚠";
           "format-alt" = "{Signal} - {signalStrength}%";
         };
-        "user" = {
-          "format" = "{user} {work_H}:{work_M}";
-          "interval" = 60;
-          "height" = 30;
-          "width" = 30;
-          "icon" = true;
-        };
         "pulseaudio" = {
           "scroll-step" = 1;
           "format" = "{icon} {volume}%";
@@ -308,17 +305,6 @@
             "default" = [ "" "" "" ];
           };
           "on-click" = "pavucontrol";
-        };
-        "custom/media" = {
-          "format" = "{icon} {}";
-          "return-type" = "json";
-          "max-length" = 40;
-          "format-icons" = {
-            "spotify" = "";
-            "default" = "🎜";
-          };
-          "escape" = true;
-          "exec" = "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null";
         };
       }
     ];
