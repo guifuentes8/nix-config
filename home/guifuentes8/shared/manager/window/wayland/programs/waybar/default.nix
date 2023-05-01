@@ -8,16 +8,18 @@
       });
     systemd.enable = true;
     style = ''
+
       * {
           font-family: JetBrainsMonoNL Nerd Font;
           font-weight: bold;
           font-size: 14px;
           min-height: 0;
-        }
+      }
 
       window#waybar {
-          background: #1e1e2e;
+          background: rgba(49, 50, 68, 0.8);
           color: #cdd6f4;
+          border-radius: 12px;
       }
 
       #cpu,
@@ -25,8 +27,6 @@
       #disk,
       #temperature,
       #keyboard-state,
-      #window,
-      #mpris,
       #clock,
       #battery,
       #pulseaudio,
@@ -34,17 +34,15 @@
       #workspaces,
       #tray,
       #backlight {
-      background: #313244;
+      background: #181825;
       padding: 4px 10px;
       margin: 8px 4px;
-      border-radius: 10px;
+      border-radius: 12px;
       }
-
 
       #workspaces button {
         padding: 3px;
         color: #45475a;
-        margin-right: 5px;
       }
 
       #workspaces button.active {
@@ -68,53 +66,79 @@
         color: #74c7ec;
       }
 
-      #mpris {
-        color: #a6e3a1;
-      }
+      
+      
       #disk {
         color: #f5e0dc;
       }
+      
       #cpu {
         color: #cba6f7;
       }
+      
       #memory {
         color: #cba6f7;
       }
+      
       #temperature {
         color: #cba6f7;
-       }
+      }
+      
       #keyboard-state {
         color: #f38ba8;
       }
+      
       #network {
         color: #eba0ac;
       }
+      
       #backlight {
         color: #fab387;
       }
+      
       #pulseaudio {
         color: #f9e2af;
       }
+      
       #battery {
         color: #94e2d5;
       }
+
       #clock {
         color: #89dceb;
+        margin-right: 12px;
       }
-    
+
+      #tray {
+        margin-right: 12px;
+      }
+
+      #custom-nix-logo {
+        margin-left: 12px;
+      }
+
+      #mpris {
+        color: #a6e3a1;
+        margin-left: 12px;
+      }
     '';
 
     settings = [
       {
+        mode = "dock";
+        fixed-center = true;
         layer = "top";
         position = "top";
         exclusive = true;
+        margin-top = 15;
+        margin-left = 25;
+        margin-right = 25;
         height = 0;
         modules-left = [ "custom/nix-logo" "wlr/workspaces" "mpris" ];
         modules-center = [ ];
         modules-right = [ "disk" "cpu" "memory" "temperature" "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
         "custom/nix-logo" = {
-          "format" = "<span font='16'>  </span>";
+          "format" = "<span font='16'> </span>";
         };
         "wlr/workspaces" = {
           "on-scroll-up" = "hyprctl dispatch workspace e+1";
@@ -178,18 +202,18 @@
           };
         };
         "mpris" = {
-          "format" = "{player_icon} | {artist} - {title} ";
-          "format-paused" = "{status_icon} | {artist} - {title}";
+          "format" = "{player_icon} {length} | {artist} - {title} ";
+          "format-paused" = "{status_icon} {length} | {artist} - {title}";
           interval = 2;
           "player-icons" = {
             "default" = "▶";
             "mpv" = "🎵";
-            "spotify_player" = "";
+            "spotify_player" = " ";
           };
           "status-icons" = {
             "paused" = "⏸";
           };
-          "ignored-players" = [ "firefox" ];
+          "ignored-players" = [ "firefox" "chromium" ];
         };
         "mpd" = {
           "format" = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime=%M=%S}/{totalTime=%M=%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";

@@ -10,15 +10,14 @@ in
     defaultTimeout = 6000;
     font = "JetbrainsMonoNL Nerd Font 11";
     borderRadius = 6;
-    borderSize = 2;
-    width = 400;
+    borderSize = 3;
+    width = 500;
     extraConfig = ''
-
       background-color=#1e1e2e
       text-color=#cdd6f4
       border-color=#89dceb
       progress-color=over #313244
-      anchor=top-center
+      anchor=top-right
 
       [urgency=high]
       border-color=#fab387

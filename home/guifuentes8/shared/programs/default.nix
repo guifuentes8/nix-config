@@ -13,6 +13,7 @@
     postman
     pulseaudio
     slack
+    shotcut
     teamviewer
     tdesktop
     unrar
@@ -20,8 +21,9 @@
     vscode
 
     #dev
-    nodejs-16_x
+    nodejs
     nixpkgs-fmt
     yarn
   ];
+
 }

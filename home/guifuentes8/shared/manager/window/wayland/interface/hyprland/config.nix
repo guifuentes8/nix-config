@@ -51,11 +51,12 @@ in
   }
 
   general {
-      gaps_in = 4
-      gaps_out = 20
-      border_size = 3
+      gaps_in = 5
+      gaps_out = 18
+      border_size = 2
       col.active_border = rgb(a6e3a1)
-      col.inactive_border = rgb(1e1e2e)
+      col.inactive_border = rgb(313244)
+      no_border_on_floating = true
 
       layout = dwindle
   }
@@ -63,10 +64,10 @@ in
   decoration {
       # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-      rounding = 12
+      rounding = 8
       blur = true
       blur_size = 7
-      blur_passes = 1
+      blur_passes = 2
       blur_new_optimizations = true
       blur_ignore_opacity = true
       blur_xray = true
@@ -75,7 +76,7 @@ in
       shadow_range = 12
       shadow_render_power = 3
       shadow_ignore_window	= true
-      col.shadow = rgba(333333aa)
+      col.shadow = rgb(111111)
       shadow_offset = [4, 6]
 
       active_opacity = 1
@@ -131,24 +132,25 @@ in
 
   $mainMod = SUPER
 
-  # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-  bind = $mainMod, Return, exec, kitty
-  bind = $mainMod, Q, killactive,
   bind = $mainMod, Escape, exit,
-  bind = $mainMod, W, exec, bash ~/nix-config/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh change
-  bind = $mainMod, F, togglefloating,
+  bind = $mainMod, Return, exec, kitty
   bind = $mainMod, D, exec, rofi -modes "drun" -show-icons -show drun
+  bind = $mainMod, Q, killactive,
+  
+  bind = $mainMod, S, togglesplit, # dwindle
+  bind = $mainMod, F, togglefloating,
   bind = $mainMod, P, pseudo, # dwindle
-  bind = $mainMod, J, togglesplit, # dwindle
+  
+  bind = $mainMod, W, exec, bash ~/nix-config/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh change
 
-  bind = $mainMod, F5, exec, rofi -modes 'file-browser-extended' -show file-browser-extended
-  bind = $mainMod, F6, exec, rofi-pulse-select source
-  bind = $mainMod, F7, exec, rofi-pulse-select sink
-  bind = $mainMod, F8, exec, rofi -modi emoji -show emoji
-  bind = $mainMod, F9, exec, rofi -show calc -modi calc -no-show-match -no-sort -kb-accept-entry 'Control+c' -calc-command ' echo - n '{ result }' | wl-copy -sel copy'
-  bind = $mainMod, F10, exec, rofi-rbw
-  bind = $mainMod, F11, exec, rofi-bluetooth
-  bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
+  bind = $mainMod, F1, exec, rofi -modes 'file-browser-extended' -show file-browser-extended
+  bind = $mainMod, F2, exec, rofi-pulse-select source
+  bind = $mainMod, F3, exec, rofi-pulse-select sink
+  bind = $mainMod, F4, exec, rofi -modi emoji -show emoji
+  bind = $mainMod, F5, exec, rofi -show calc -modi calc -no-show-match -no-sort -kb-accept-entry 'Control+c' -calc-command ' echo - n '{ result }' | wl-copy -sel copy'
+  bind = $mainMod, F6, exec, rofi-rbw
+  bind = $mainMod, F7, exec, rofi-bluetooth
+  bind = $mainMod, F8, exec, rofi -show p -modi p:rofi-power-menu -lines 6
 
   bind = ,XF86MonBrightnessUp, exec, xbacklight -inc 10
   bind = ,XF86MonBrightnessDown, exec, xbacklight -dec 10
