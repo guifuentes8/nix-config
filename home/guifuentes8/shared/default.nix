@@ -26,6 +26,7 @@
     username = lib.mkDefault "guifuentes8";
     homeDirectory = lib.mkDefault "/home/guifuentes8";
     stateVersion = lib.mkDefault "22.11";
+
   };
 
   programs = {
@@ -49,3 +50,6 @@
     };
   };
 }
+
+
+

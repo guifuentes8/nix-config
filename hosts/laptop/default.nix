@@ -10,7 +10,7 @@ in
       ../shared/optional/boot/systemd-boot.nix
       ../shared/optional/hardware/bluetooth.nix
       ../shared/optional/manager/wm/wayland/hyprland
-      ../shared/optional/manager/login/sddm.nix
+      ../shared/optional/manager/login/greetd.nix
       ../shared/optional/services/backlight.nix
       ../shared/optional/services/flatpak.nix
       ../shared/optional/services/gnome-keyring.nix

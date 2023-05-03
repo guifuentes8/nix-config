@@ -12,6 +12,7 @@ IMG_PATH=${WALLPAPER_PATH}/$IMG_NAME
 init() {
   swww init
   sleep 3
+  swww img "${IMG_PATH}" --transition-duration 2 --transition-step 60 --transition-fps 30 --transition-type grow --transition-pos top-right
 }
 change() {
   notify-send -u "normal" "🕶 Wallpaper Changed 🕶"

@@ -1,7 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
     ../../programs
-    ../../../shared/programs
+    ../../../shared
     inputs.hyprland.homeManagerModules.default
   ];
 

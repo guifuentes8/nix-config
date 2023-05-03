@@ -53,7 +53,7 @@ in
   general {
       gaps_in = 5
       gaps_out = 18
-      border_size = 2
+      border_size = 3
       col.active_border = rgb(a6e3a1)
       col.inactive_border = rgb(313244)
       no_border_on_floating = true
@@ -66,7 +66,7 @@ in
 
       rounding = 8
       blur = true
-      blur_size = 7
+      blur_size = 9
       blur_passes = 2
       blur_new_optimizations = true
       blur_ignore_opacity = true

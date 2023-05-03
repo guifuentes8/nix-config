@@ -19,7 +19,6 @@
       window#waybar {
           background: rgba(49, 50, 68, 0.8);
           color: #cdd6f4;
-          border-radius: 12px;
       }
 
       #cpu,
@@ -31,7 +30,6 @@
       #battery,
       #pulseaudio,
       #network,
-      #workspaces,
       #tray,
       #backlight {
       background: #181825;
@@ -40,13 +38,25 @@
       border-radius: 12px;
       }
 
+      #workspaces {
+        background: #181825;
+        padding: 0px 4px;
+        margin: 4px 8px;
+        border-radius: 12px;
+        font-size: 16px;
+      }
+
+
       #workspaces button {
-        padding: 3px;
-        color: #45475a;
+        color: #cdd6f4;
+        padding: 0px 4px 0px 0px;
+        font-size: 16px;
+        margin: 0px 4px;
+
       }
 
       #workspaces button.active {
-        color: #74c7ec;
+        color: #a6e3a1;
         background-color: rgba(0,0,0,0);
       }
 
@@ -66,7 +76,6 @@
         color: #74c7ec;
       }
 
-      
       
       #disk {
         color: #f5e0dc;
@@ -121,6 +130,11 @@
         color: #a6e3a1;
         margin-left: 12px;
       }
+
+       #custom-media {
+        color: #a6e3a1;
+        margin-left: 12px;
+      }
     '';
 
     settings = [
@@ -129,34 +143,43 @@
         fixed-center = true;
         layer = "top";
         position = "top";
-        exclusive = true;
-        margin-top = 15;
-        margin-left = 25;
-        margin-right = 25;
         height = 0;
         modules-left = [ "custom/nix-logo" "wlr/workspaces" "mpris" ];
         modules-center = [ ];
         modules-right = [ "disk" "cpu" "memory" "temperature" "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
+        "custom/media" = {
+          "format" = "{icon}{}";
+          "return-type" = "json";
+          "format-icons" = {
+            "Playing" = " ";
+            "Paused" = " ";
+          };
+          "max-length" = 70;
+          "exec" = "playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
+          "on-click" = "playerctl play-pause";
+        };
         "custom/nix-logo" = {
           "format" = "<span font='16'> </span>";
         };
         "wlr/workspaces" = {
+          "all-outputs" = true;
+          "active-only" = false;
           "on-scroll-up" = "hyprctl dispatch workspace e+1";
           "on-scroll-down" = "hyprctl dispatch workspace e-1";
           "on-click" = "activate";
           "format" = "{icon}";
           "format-icons" = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" = "";
-            "6" = "";
-            "7" = "";
-            "8" = "";
-            "9" = "";
+            "1" = "<span font='16' rise='1000'>󰲡</span>";
+            "2" = "<span font='16' rise='1000'>󰲣</span>";
+            "3" = "<span font='16' rise='1000'>󰲥</span>";
+            "4" = "<span font='16' rise='1000'>󰲧</span>";
+            "5" = "<span font='16' rise='1000'>󰲩</span>";
+            "6" = "<span font='16' rise='1000'>󰲫</span>";
+            "7" = "<span font='16' rise='1000'>󰲭</span>";
+            "8" = "<span font='16' rise='1000'>󰲯</span>";
+            "9" = "<span font='16' rise='1000'>󰲱</span>";
             "urgent" = "";
-            "active" = "";
+            "active" = "<span font='16' rise='1000'></span>";
             "default" = "";
           };
         };
