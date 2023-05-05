@@ -149,7 +149,7 @@
         margin-right = 12;
         margin-left = 12;
         height = 0;
-        modules-left = [ "custom/nix-logo" "wlr/workspaces" "custom/media" ];
+        modules-left = [ "custom/nix-logo" "wlr/workspaces" "mpris" ];
         modules-center = [ ];
         modules-right = [ "disk" "cpu" "memory" "temperature" "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
         "custom/media" = {
@@ -242,7 +242,7 @@
           "status-icons" = {
             "paused" = "⏸";
           };
-          "ignored-players" = [ "firefox" "chromium" ];
+          "ignored-players" = [ "firefox" "chromium" "mpv" ];
         };
         "mpd" = {
           "format" = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime=%M=%S}/{totalTime=%M=%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";

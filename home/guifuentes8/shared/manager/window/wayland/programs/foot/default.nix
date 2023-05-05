@@ -4,6 +4,7 @@
     server.enable = true;
     settings = {
       main = {
+        term = "xterm-256color";
         dpi-aware = "yes";
         font = "JetBrainsMonoNL Nerd Font:size=8";
       };
@@ -11,7 +12,7 @@
       colors = {
         alpha = 0.8;
         foreground = "cdd6f4";
-        background = "1e1e2e";
+        background = "1E1E2E";
         regular0 = "45475a";
         regular1 = "f38ba8";
         regular2 = "a6e3a1";
