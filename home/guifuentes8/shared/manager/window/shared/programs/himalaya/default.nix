@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-let
-  script = ./script.sh;
-in
+{ pkgs, inputs, ... }:
 {
 
   accounts.email.accounts = {
@@ -16,20 +13,21 @@ in
         enable = true;
         settings = {
           default = true;
-          imap-passwd-cmd = "cat ~/nix-config/.secrets/guifuentes8.txt";
-          smtp-passwd-cmd = "cat ~/nix-config/.secrets/guifuentes8.txt";
+          sync = true;
+          watch-cmds = [ "himalaya --account guifuentes8 account sync" ];
+          imap-passwd-cmd = "sed -n 2p /home/guifuentes8/nix-config/.secrets/mail.txt";
+          smtp-passwd-cmd = "sed -n 2p /home/guifuentes8/nix-config/.secrets/mail.txt";
           signature = "Atenciosamente,\nGuilherme Fuentes";
           downloads-dir = "~/Downloads";
-          imap-notify-cmd = script;
+          imap-notify-cmd = "notify-send '󰊫 <sender>' '<subject>'";
           imap-notify-query = "UNSEEN";
-          email-listing-page-size = 25;
-
+          email-listing-page-size = 40;
         };
       };
 
       folders = {
         inbox = "INBOX";
-        sent = "[Gmail]/Sent Mail";
+        sent = ".Sent";
         drafts = "[Gmail]/Drafts";
         trash = "[Gmail]/Trash";
       };
@@ -50,19 +48,21 @@ in
         sender = "smtp";
         enable = true;
         settings = {
-          imap-passwd-cmd = "cat ~/nix-config/.secrets/gcf.txt";
-          smtp-passwd-cmd = "cat ~/nix-config/.secrets/gcf.txt";
+          sync = true;
+          watch-cmds = [ "himalaya --account gcf account sync" ];
+          imap-passwd-cmd = "sed -n 4p /home/guifuentes8/nix-config/.secrets/mail.txt";
+          smtp-passwd-cmd = "sed -n 4p /home/guifuentes8/nix-config/.secrets/mail.txt";
           downloads-dir = "~/Downloads";
-          imap-notify-cmd = script;
+          imap-notify-cmd = "notify-send '󰊫 <sender>' '<subject>'";
           imap-notify-query = "UNSEEN";
-          email-listing-page-size = 25;
+          email-listing-page-size = 40;
 
         };
       };
 
       folders = {
         inbox = "INBOX";
-        sent = "[Gmail]/Sent Mail";
+        sent = ".Sent";
         drafts = "[Gmail]/Drafts";
         trash = "[Gmail]/Trash";
       };
@@ -82,19 +82,21 @@ in
         sender = "smtp";
         enable = true;
         settings = {
-          imap-passwd-cmd = "cat ~/nix-config/.secrets/hubs.txt";
-          smtp-passwd-cmd = "cat ~/nix-config/.secrets/hubs.txt";
+          sync = true;
+          watch-cmds = [ "himalaya --account hubs account sync" ];
+          imap-passwd-cmd = "sed -n 6p /home/guifuentes8/nix-config/.secrets/mail.txt";
+          smtp-passwd-cmd = "sed -n 6p /home/guifuentes8/nix-config/.secrets/mail.txt";
           downloads-dir = "~/Downloads";
-          imap-notify-cmd = script;
+          imap-notify-cmd = "notify-send '󰊫 <sender>' '<subject>'";
           imap-notify-query = "UNSEEN";
-          email-listing-page-size = 25;
+          email-listing-page-size = 40;
 
         };
       };
 
       folders = {
         inbox = "INBOX";
-        sent = "[Gmail]/Sent Mail";
+        sent = ".Sent";
         drafts = "[Gmail]/Drafts";
         trash = "[Gmail]/Trash";
       };
@@ -109,5 +111,7 @@ in
 
   programs.himalaya = {
     enable = true;
+    package = inputs.himalaya.packages.${pkgs.system}.default;
   };
+
 }

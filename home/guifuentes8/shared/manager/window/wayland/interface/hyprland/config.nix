@@ -72,12 +72,12 @@ in
       blur_ignore_opacity = true
       blur_xray = true
 
-      drop_shadow = true
-      shadow_range = 12
-      shadow_render_power = 3
-      shadow_ignore_window	= true
-      col.shadow = rgb(111111)
-      shadow_offset = [4, 6]
+      #drop_shadow = false
+      #shadow_range = 12
+      #shadow_render_power = 3
+      #shadow_ignore_window	= true
+      #col.shadow = rgb(111111)
+      #shadow_offset = [4, 6]
 
       active_opacity = 1
       inactive_opacity = 1
@@ -133,12 +133,13 @@ in
   $mainMod = SUPER
 
   bind = $mainMod, Escape, exit,
-  bind = $mainMod, Return, exec, kitty
+  bind = $mainMod, Return, exec, footclient
   bind = $mainMod, D, exec, rofi -modes "drun" -show-icons -show drun
   bind = $mainMod, Q, killactive,
   
   bind = $mainMod, S, togglesplit, # dwindle
   bind = $mainMod, F, togglefloating,
+  bind = $mainMod, M, fullscreen, 1
   bind = $mainMod, P, pseudo, # dwindle
   
   bind = $mainMod, W, exec, bash ~/nix-config/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh change
@@ -159,9 +160,10 @@ in
   bind = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
   bind = ,XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
   bind = ,Print, exec, grim -g "$(slurp)" - | wl-copy 
+  bind = ALT, Print, exec, slurp | grim -g - - | wl-copy && wl-paste > /home/guifuentes8/Pictures/$(date +'%Y-%m-%d-%H%M%S_grim.png') 
   bind = CTRL,Print, exec, wf-recorder --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.4.monitor -c vp8_vaapi -d /dev/dri/renderD128 -f ~/Videos/record_$(date +"%Y-%m-%d_%H:%M:%S.webm") 
   bind = CTRL_SHIFT,Print, exec, wf-recorder --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.4.monitor -g "$(slurp)" -c vp8_vaapi -d /dev/dri/renderD128 -f ~/Videos/record_$(date +"%Y-%m-%d_%H:%M:%S.webm") 
-  bind = ALT, Print, exec, pkill wf-recorder
+  bind = SHIFT, Print, exec, pkill wf-recorder
 
   # Move focus with mainMod + arrow keys
   bind = $mainMod, left, movefocus, l
@@ -201,6 +203,24 @@ in
   bindm = $mainMod, mouse:272, movewindow
   bindm = $mainMod, mouse:273, resizewindow
   lent,22
+
+   will switch to a submap called resize
+    bind=ALT,R,submap,resize
+
+    # will start a submap called "resize"
+    submap=resize
+
+    # sets repeatable binds for resizing the active window
+    binde=,right,resizeactive,10 0
+    binde=,left,resizeactive,-10 0
+    binde=,up,resizeactive,0 -10
+    binde=,down,resizeactive,0 10
+
+    # use reset to go back to the global submap
+    bind=,escape,submap,reset 
+
+    # will reset the submap, meaning end the current one and return to the global one
+    submap=reset
   
   blurls=waybar
 ''

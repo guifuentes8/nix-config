@@ -9,7 +9,7 @@
   programs.rofi =
     {
       enable = true;
-      terminal = "${pkgs.kitty}/bin/kitty";
+      terminal = "${pkgs.foot}/bin/footclient";
       font = "JetBrainsMono Nerd Font 13";
       theme = "~/.config/rofi/catppuccin-mocha.rasi";
       plugins = with pkgs; [

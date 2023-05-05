@@ -30,6 +30,7 @@ in
     ./spotify-player
     ./sptlrx
     ./tmux
+    ./youtube-tui
     ./zsh
   ];
 
@@ -38,9 +39,9 @@ in
       cava
       cmatrix
       feh
-      fortune
       gcalcli
       gifsicle
+      krabby
       imagemagick
       libnotify
       matterhorn
@@ -49,7 +50,6 @@ in
       pavucontrol
       playerctl
       pfetch
-      pokemonsay
       pokete
       ranger
       slack-term2
@@ -61,6 +61,6 @@ in
       wdisplays
       xfce.thunar
       xfce.xfconf
-
+      ytfzf
     ];
 }

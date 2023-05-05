@@ -1,7 +1,6 @@
 {
-    "slack_token": "xoxp-2704103352693-4685050523346-5200869528739-2420dce031f5ab6f2e858185ee838356",
-    "sidebar_width": 2,
-    "notify": "all",
+    "sidebar_width": 3,
+    "notify": "mention",
     "emoji": true,
 
     "key_map": {

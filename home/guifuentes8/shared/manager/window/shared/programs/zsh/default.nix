@@ -10,15 +10,13 @@
     };
     initExtraFirst = ''
       unset -v SSH_ASKPASS
-      fortune | pokemonsay -d $(printf "%03d\n" $(shuf -i 1-401 -n 1))
+      krabby random 1-3 --no-title
     '';
     shellAliases = {
 
-      cat = "bat";
-
       # Spotify
       spt = "spotify_player";
-      #spt = "ncspot";
+
       sptl = "sptlrx --current 'bold,#a6e3a1' --before '#b4befe,faint,italic,strikethrough' --after '#89b4fa,faint'";
 
       # TTY clock
@@ -35,6 +33,7 @@
       mailsent = "mail -m '[Gmail]/Sent Mail'";
       maild = "mail attachments";
       mailw = "mail write";
+      mailr = "mail -s read";
 
       # X11 Resolutions
       xr1 = "xrandr -s 5120x1440";
@@ -51,12 +50,10 @@
       mattermost = "matterhorn";
 
       # slack
-      slack = "slack-term";
+      slack = "/home/guifuentes8/nix-config/.secrets/slack.sh";
 
-
-      #themes
-      carbonfox = "pastel color 161616 f2f4f8 2a2a2a f2f4f8 161616 25be6a f2f4f8 78a9ff 535353 3ddbd9 78a9ff 0c0c0c 2a2a2a 6e6f70 282828 ee5396 25be6a 08bdba 78a9ff be95ff 33b1ff dfdfe0 484848 f16da6 46c880 2dc7c4 8cb6ff c8a5ff 52bdff e4e4e5 3ddbd9 ff7eb6 | pastel format";
-
+      # youtube
+      yt = "youtube-tui";
     };
   };
 }

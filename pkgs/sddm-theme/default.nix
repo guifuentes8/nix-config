@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "sddm-theme";
-  version = "b63b3915e21c7ad47c973da4cf8cd231efa82193";
+  version = "b9029b6393ec76a84acd4d5faa1f5fdc76a591f8";
 
   src = fetchFromGitHub {
     owner = "guifuentes8";
     repo = pname;
     rev = version;
-    sha256 = "sha256-hFFxee7oGQch1LUWtTj6kcULbXKK1gNz12gCj1OmdUU=";
+    sha256 = "sha256-zdlE6GuNFBtk2NtKQXWTpd5Aiv6VH3YWm8u31HYzmQ0=";
   };
 
   installPhase = ''

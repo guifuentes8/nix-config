@@ -277,12 +277,12 @@
           "text/x-c++"
         ];
       in
-      (lib.genAttrs code (_: [ "emacs.desktop" ]))
-      // (lib.genAttrs images (_: [ "org.gnome.eog.desktop" ]))
-      // (lib.genAttrs urls (_: [ "firefox.desktop" ]))
-      // (lib.genAttrs documents (_: [ "org.gnome.Evince.desktop" ]))
-      // (lib.genAttrs audioVideo (_: [ "mpv.desktop" ]))
-      // (lib.genAttrs archives (_: [ "org.gnome.FileRoller.desktop" ]))
-      // (lib.genAttrs archives (_: [ "org.gnome.Nautilus.desktop" ]));
+      #(lib.genAttrs code (_: [ "emacs.desktop" ]))
+      (lib.genAttrs images (_: [ "feh.desktop" ]))
+      // (lib.genAttrs urls (_: [ "google-chrome-stable.desktop" ]))
+      #// (lib.genAttrs documents (_: [ "org.gnome.Evince.desktop" ]))
+      // (lib.genAttrs audioVideo (_: [ "mpv.desktop" ]));
+    #// (lib.genAttrs archives (_: [ "org.gnome.FileRoller.desktop" ]))
+    #// (lib.genAttrs archives (_: [ "org.gnome.Nautilus.desktop" ]));
   };
 }

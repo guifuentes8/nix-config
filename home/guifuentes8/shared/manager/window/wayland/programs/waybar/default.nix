@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.waybar = {
     enable = true;
@@ -17,8 +17,9 @@
       }
 
       window#waybar {
-          background: rgba(49, 50, 68, 0.8);
+          background: rgba(49, 50, 68, 0.6);
           color: #cdd6f4;
+          border-radius: 12px;
       }
 
       #cpu,
@@ -48,7 +49,7 @@
 
 
       #workspaces button {
-        color: #cdd6f4;
+        color: #89b4fa;
         padding: 0px 4px 0px 0px;
         font-size: 16px;
         margin: 0px 4px;
@@ -143,11 +144,16 @@
         fixed-center = true;
         layer = "top";
         position = "top";
+        exclusive = true;
+        margin-top = 12;
+        margin-right = 12;
+        margin-left = 12;
         height = 0;
-        modules-left = [ "custom/nix-logo" "wlr/workspaces" "mpris" ];
+        modules-left = [ "custom/nix-logo" "wlr/workspaces" "custom/media" ];
         modules-center = [ ];
         modules-right = [ "disk" "cpu" "memory" "temperature" "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
         "custom/media" = {
+          "interval" = 10;
           "format" = "{icon}{}";
           "return-type" = "json";
           "format-icons" = {
@@ -227,7 +233,7 @@
         "mpris" = {
           "format" = "{player_icon} {length} | {artist} - {title} ";
           "format-paused" = "{status_icon} {length} | {artist} - {title}";
-          interval = 2;
+          interval = 30;
           "player-icons" = {
             "default" = "▶";
             "mpv" = "🎵";

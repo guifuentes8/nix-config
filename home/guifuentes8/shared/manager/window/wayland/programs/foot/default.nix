@@ -3,25 +3,31 @@
     enable = true;
     server.enable = true;
     settings = {
+      main = {
+        dpi-aware = "yes";
+        font = "JetBrainsMonoNL Nerd Font:size=8";
+      };
+
       colors = {
-        foreground = "cad3f5";
-        background = "24273a";
-        regular0 = "494d64";
-        regular1 = "ed8796";
-        regular2 = "a6da95";
-        regular3 = "eed49f";
-        regular4 = "8aadf4";
-        regular5 = "f5bde6";
-        regular6 = "8bd5ca";
-        regular7 = "b8c0e0";
-        bright0 = "5b6078";
-        bright1 = "ed8796";
-        bright2 = "a6da95";
-        bright3 = "eed49f";
-        bright4 = "8aadf4";
-        bright5 = "f5bde6";
-        bright6 = "8bd5ca";
-        bright7 = "a5adcb";
+        alpha = 0.8;
+        foreground = "cdd6f4";
+        background = "1e1e2e";
+        regular0 = "45475a";
+        regular1 = "f38ba8";
+        regular2 = "a6e3a1";
+        regular3 = "f9e2af";
+        regular4 = "89b4fa";
+        regular5 = "f5c2e7";
+        regular6 = "94e2d5";
+        regular7 = "bac2de";
+        bright0 = "585b70";
+        bright1 = "f38ba8";
+        bright2 = "a6e3a1";
+        bright3 = "f9e2af";
+        bright4 = "89b4fa";
+        bright5 = "f5c2e7";
+        bright6 = "94e2d5";
+        bright7 = "a6adc8";
       };
     };
   };
