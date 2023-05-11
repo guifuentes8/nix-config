@@ -15,7 +15,7 @@ in
     ./gh
     ./git
     ./gpg
-    ./himalaya
+    #./himalaya
     ./kitty
     ./matterhorn
     ./mpv
