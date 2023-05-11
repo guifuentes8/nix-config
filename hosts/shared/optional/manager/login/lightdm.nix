@@ -1,9 +1,9 @@
 { pkgs, ... }:
-let wallpaper = ./alone.png;
-in
+#let wallpaper = ./alone.png;
+#in
 {
   services.xserver.displayManager.lightdm = {
-    background = wallpaper;
+    #    background = wallpaper;
     enable = true;
     greeters = {
       slick = {
