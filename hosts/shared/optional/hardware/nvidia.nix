@@ -2,7 +2,7 @@
 
 {
 
- services.xserver = {
+  services.xserver = {
     videoDrivers = [ "nvidia" "nomodeset" ];
     deviceSection = ''
       Option "DRI" "2"
