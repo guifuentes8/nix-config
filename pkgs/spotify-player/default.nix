@@ -42,6 +42,7 @@ rustPlatform.buildRustPackage rec {
     "media-control"
     "notify"
     "image"
+    "sixel"
   ];
 
   meta = with lib; {

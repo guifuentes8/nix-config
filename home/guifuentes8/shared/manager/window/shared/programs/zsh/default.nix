@@ -50,10 +50,13 @@
       mattermost = "matterhorn";
 
       # slack
-      slack = "/home/guifuentes8/nix-config/.secrets/slack.sh";
+      slack = "slack-term -config /home/guifuentes8/.config/slack-term/config -token $(pass show slack)";
 
       # youtube
       yt = "youtube-tui";
+
+      #convert png to jpg
+      cjpg = "mogrify -format jpg *.png && rm *.png";
     };
   };
 }

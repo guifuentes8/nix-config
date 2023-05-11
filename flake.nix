@@ -14,6 +14,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     himalaya.url = "github:soywod/himalaya";
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

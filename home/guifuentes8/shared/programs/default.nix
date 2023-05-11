@@ -13,6 +13,8 @@
     teamviewer
     vscode
 
+    gnome.nautilus
+
     #dev
     nodejs
     nixpkgs-fmt
@@ -25,6 +27,7 @@
     sqlite
     unrar
     unzip
+    libsixel
 
     #dev
     nodejs-16_x

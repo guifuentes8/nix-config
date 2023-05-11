@@ -7,10 +7,6 @@
 
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = "gnome3";
+    pinentryFlavor = "qt";
   };
-
-  home.packages = with pkgs; [
-    git-crypt
-  ];
 }

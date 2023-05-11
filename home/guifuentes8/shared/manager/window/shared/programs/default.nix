@@ -19,12 +19,13 @@ in
     ./kitty
     ./matterhorn
     ./mpv
+    ./nnn
     ./nchat
     ./ncspot
     ./neovim
     ./obs
+    ./pass
     ./qutebrowser
-    ./ranger
     ./rofi
     ./slack-term
     ./spotify-player
@@ -50,8 +51,6 @@ in
       pavucontrol
       playerctl
       pfetch
-      pokete
-      ranger
       slack-term2
       spotify-player
       sptlrx
