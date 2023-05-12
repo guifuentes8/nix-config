@@ -21,6 +21,7 @@
       powerManagement.enable = true;
       nvidiaPersistenced = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
+
     };
   };
 

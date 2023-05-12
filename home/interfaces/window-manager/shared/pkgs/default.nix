@@ -7,6 +7,7 @@ in
 {
 
   imports = [
+    ./alacritty
     ./bat
     ./bottom
     ./caffeine

@@ -1,62 +1,82 @@
 { config, pkgs, inputs, outputs, ... }:
-let
-
-in
 {
-  imports =
-    [
-      ./hardware-configuration.nix
+  imports = [
 
-      ../shared/global
+    # HARDWARE ----------------------------------------
 
-      ../shared/optional/boot/grub.nix
-      ../shared/optional/manager/login/lightdm.nix
-      ../shared/optional/hardware/bluetooth.nix
-      ../shared/optional/hardware/nvidia.nix
-      ../shared/optional/services/flatpak.nix
-      ../shared/optional/services/gnome-keyring.nix
-      ../shared/optional/services/teamviewer.nix
-      ../shared/optional/sound/pipewire.nix
+    # Hardware config
+    ./hardware-configuration.nix
 
-      ../shared/optional/manager/wm/xorg/i3
-      ../shared/optional/manager/wm/xorg/bspwm
+    # Hardware Gpu (if exist)
+    ../global/config/hardware/nvidia.nix
 
-      ../shared/users/guifuentes8
+    # Extra Hardware config
+    ../global/config/hardware/logitech.nix
+    ../global/config/hardware/keychron.nix
 
-    ];
+    # NIXOS CONFIG ------------------------------------
 
-  boot =
-    {
-      extraModprobeConfig = ''
-        options hid_apple fnmode=2
-      '';
-    };
+    # Global NixOs Config 
+    ../global
 
+    # Boot initial (grub or systemd)
+    ../global/config/boot/grub.nix
+
+    # Login Manager + Session
+    ../global/config/login/lightdm.nix
+    ../global/config/login/session.nix
+
+    # Active services
+    ../global/config/services/gnome-keyring.nix
+    ../global/config/services/teamviewer.nix
+
+    # User 
+    ../global/users/guifuentes8.nix
+
+  ];
+
+  # SYSTEM CONFIGS --------------------------------------
+
+  # Basic config
   console.keyMap = "us";
   time.timeZone = "America/Sao_Paulo";
 
+  # Network config (nmtui)
   networking.hostName = "desktop";
   networking.networkmanager.enable = true;
 
+  # Sound Service (Pipewire)
+  sound.enable = true;
   security.rtkit.enable = true;
-
-  programs = {
-    ssh.startAgent = true;
-    dconf.enable = true;
+  hardware.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
   };
 
+  # Xorg
+  services.xserver = {
+    enable = true;
+    layout = "us";
+  };
+
+  # SYSTEM OPTIONS ----------------------------------------
+
   system = {
-    stateVersion = "23.05";
+    stateVersion = "22.11";
     autoUpgrade = {
-      enable = false;
+      enable = true;
       allowReboot = false;
       dates = "daily";
     };
   };
 
-  services.xserver = {
-    enable = true;
-    layout = "us";
+  programs = {
+    ssh.startAgent = true;
+    dconf.enable = true;
   };
 
   environment = {

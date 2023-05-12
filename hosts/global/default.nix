@@ -39,7 +39,6 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
-
     };
   };
 
@@ -57,9 +56,6 @@
     };
   };
 
-
-
-
   services.dbus.enable = true;
   services.dbus.packages = [ pkgs.gcr ];
 
@@ -69,7 +65,4 @@
   };
 
   environment.variables.EDITOR = "nvim";
-
-
-
 }

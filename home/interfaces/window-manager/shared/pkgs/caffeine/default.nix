@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ ... }:
 {
   services.caffeine = {
-    enable = false;
+    enable = true;
   };
 
 }

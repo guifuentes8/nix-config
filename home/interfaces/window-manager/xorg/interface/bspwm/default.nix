@@ -11,6 +11,11 @@ in
     ../../../shared
   ];
 
+  xsession = {
+    enable = true;
+    numlock.enable = true;
+  };
+
   xsession.windowManager.bspwm = {
     enable = true;
     alwaysResetDesktops = true;
@@ -20,14 +25,12 @@ in
       			
       			bspc monitor -d      
 
-      			bspc config border_width         0
+      			bspc config border_width         2
       			bspc config window_gap          12
 
       			bspc config split_ratio          0.50
       			bspc config borderless_monocle   true
       			bspc config gapless_monocle      true
-
-
 
             bspc config normal_border_color '#6e6f70'
             bspc config active_border_color '#6e6f70'
