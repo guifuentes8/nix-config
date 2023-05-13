@@ -22,7 +22,7 @@
     # Boot initial (grub or systemd)
     ../global/config/boot/grub.nix
 
-    # Login Manager + Session
+    # Login Manager + Session (required after new home-manager xsession DE/WM change...)
     ../global/config/login/lightdm.nix
     ../global/config/login/session.nix
 
