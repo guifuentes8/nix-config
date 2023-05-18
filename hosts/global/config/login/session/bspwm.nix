@@ -5,7 +5,7 @@
     displayManager.defaultSession = "none+bspwm";
     displayManager.session = [
       {
-        manage = "desktop";
+        manage = "window";
         name = "none+bspwm";
         start = ''exec $HOME/.xsession'';
       }

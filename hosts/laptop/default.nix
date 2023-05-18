@@ -5,20 +5,41 @@ in
 {
   imports =
     [
+      # HARDWARE ----------------------------------------
+
+      # Hardware config
       ./hardware-configuration.nix
-      ../shared/global
-      ../shared/optional/boot/systemd-boot.nix
-      ../shared/optional/hardware/bluetooth.nix
-      ../shared/optional/manager/wm/wayland/hyprland
-      ../shared/optional/manager/login/sddm.nix
-      ../shared/optional/services/backlight.nix
-      ../shared/optional/services/flatpak.nix
-      ../shared/optional/services/gnome-keyring.nix
-      ../shared/optional/services/teamviewer.nix
-      ../shared/optional/services/temperature.nix
-      ../shared/optional/sound/pipewire.nix
-      ../shared/users/guifuentes8
-      inputs.hyprland.nixosModules.default
+
+      # Hardware Gpu (if exist)
+      ../global/config/hardware/bluetooth.nix
+
+      # Extra Hardware config
+      ../global/config/hardware/logitech.nix
+      ../global/config/hardware/keychron.nix
+
+      # NIXOS CONFIG ------------------------------------
+
+      # Global NixOs Config 
+      ../global
+
+      # Boot initial (grub or systemd)
+      ../global/config/boot/systemd-boot.nix
+
+      # Login Manager + Session (required after new home-manager xsession DE/WM change...)
+      ../global/config/login/sddm.nix
+      ../global/config/login/session/hyprland.nix
+
+
+      # Active services
+      ../global/config/services/gnome-keyring.nix
+      ../global/config/services/teamviewer.nix
+      ../global/config/services/temperature.nix
+      ../global/config/services/backlight.nix
+
+      # User 
+      ../global/users/guifuentes8.nix
+
+      #inputs.hyprland.nixosModules.default
 
     ];
 
@@ -37,7 +58,7 @@ in
   programs = {
     ssh.startAgent = true;
     dconf.enable = true;
-    hyprland.enable = true;
+    # hyprland.enable = true;
   };
 
   system = {

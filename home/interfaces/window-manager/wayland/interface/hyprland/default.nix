@@ -1,6 +1,9 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
-    ../../programs/programs.nix
+    # Xorg packages
+    ../../pkgs
+
+    # Shared window manager folder (pkgs and xdg)
     ../../../shared
     inputs.hyprland.homeManagerModules.default
   ];

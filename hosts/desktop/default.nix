@@ -24,7 +24,7 @@
 
     # Login Manager + Session (required after new home-manager xsession DE/WM change...)
     ../global/config/login/lightdm.nix
-    ../global/config/login/session.nix
+    ../global/config/login/session/bspwm.nix
 
     # Active services
     ../global/config/services/gnome-keyring.nix
