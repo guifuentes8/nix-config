@@ -1,26 +1,11 @@
 { ... }:
-let autostart = ../../config/autostart.sh;
+let autostart = ../xorg-autostart.sh;
 in
 {
-  imports = [
-
-    # Xorg packages
-    ../../pkgs
-
-    # Shared window manager folder (pkgs and xdg)
-    ../../../shared
-  ];
-
-  xsession = {
-    enable = true;
-    numlock.enable = true;
-  };
-
   xsession.windowManager.bspwm = {
     enable = true;
     alwaysResetDesktops = true;
-    extraConfig = "
-
+    extraConfig = ''
             ${autostart}
       			
       			bspc monitor -d      
@@ -39,7 +24,8 @@ in
 
             bspc config focus_follows_pointer true
             bspc config pointer_follows_focus true
-    	";
+
+    '';
   };
 
 }

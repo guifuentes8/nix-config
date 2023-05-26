@@ -1,7 +1,15 @@
 { ... }:
 {
   imports = [
+
+    # Global config (required)
     ./global
-    ./interfaces/window-manager/xorg/interface/bspwm
+
+    # Environment (DE and/or WM)
+    ./interfaces/WM/shared
+
+    # Wayland or Xorg (if WM is selected)
+    ./interfaces/WM/xorg
+
   ];
 }

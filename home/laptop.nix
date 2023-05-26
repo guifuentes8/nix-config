@@ -1,7 +1,14 @@
 { ... }:
 {
   imports = [
+    # Global config (required)
     ./global
-    ./interfaces/window-manager/wayland/interface/hyprland
+
+    # Environment (DE and/or WM)
+    ./interfaces/WM/shared
+
+    # Wayland or Xorg Packages
+    ./interfaces/WM/wayland/pkgs
+
   ];
 }

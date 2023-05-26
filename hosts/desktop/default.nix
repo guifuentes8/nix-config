@@ -22,9 +22,13 @@
     # Boot initial (grub or systemd)
     ../global/config/boot/grub.nix
 
-    # Login Manager + Session (required after new home-manager xsession DE/WM change...)
+    # Login Manager
     ../global/config/login/lightdm.nix
-    ../global/config/login/session/bspwm.nix
+
+    # Choice Interface (WM and/or DE)
+    ../global/interfaces/DE/gnome
+    ../global/interfaces/WM/xorg/bspwm
+    ../global/interfaces/WM/xorg/i3
 
     # Active services
     ../global/config/services/gnome-keyring.nix
