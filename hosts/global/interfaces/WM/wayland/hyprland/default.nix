@@ -1,19 +1,9 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ inputs, ... }:
+{
   imports = [
-    # Xorg packages
-    ../../pkgs
-
-    # Shared window manager folder (pkgs and xdg)
-    ../../../shared
-    inputs.hyprland.homeManagerModules.default
+    inputs.hyprland.nixosModules.default
   ];
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
-    extraConfig =
-      (import ./config.nix {
-        inherit (config);
-      });
+  programs = {
+    hyprland.enable = true;
   };
 }

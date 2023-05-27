@@ -1,5 +1,5 @@
 {}:
-let autostart = ../../config/autostart.sh;
+let autostart = ../wayland-autostart.sh;
 in
 ''
 
@@ -12,7 +12,7 @@ in
   exec-once = gsettings set org.gnome.desktop.interface cursor-theme Catppuccin-Mocha-Dark-Cursors
   exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
   exec-once = hyprctl setcursor Catppuccin-Mocha-Dark-Cursors 32
-  exec-once = bash ~/nix-config/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh init
+  exec-once = bash ~/nix-config/pkgs/swww/change-wallpaper.sh init
   exec-once = ${autostart}
   
 # MONITORS
@@ -144,7 +144,7 @@ in
   bind = $mainMod, M, fullscreen, 1
   bind = $mainMod, P, pseudo, # dwindle
   
-  bind = $mainMod, W, exec, bash ~/nix-config/home/guifuentes8/shared/manager/window/wayland/programs/swww/change-wallpaper.sh change
+  bind = $mainMod, W, exec, bash ~/nix-config/pkgs/swww/change-wallpaper.sh change
 
   bind = $mainMod, F1, exec, rofi -modes 'file-browser-extended' -show file-browser-extended
   bind = $mainMod, F2, exec, rofi-pulse-select source

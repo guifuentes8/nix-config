@@ -8,7 +8,7 @@
     ./interfaces/WM/shared
 
     # Wayland or Xorg Packages
-    ./interfaces/WM/wayland/pkgs
+    ./interfaces/WM/wayland
 
   ];
 }

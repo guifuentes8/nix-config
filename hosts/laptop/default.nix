@@ -27,7 +27,9 @@ in
 
       # Login Manager + Session (required after new home-manager xsession DE/WM change...)
       ../global/config/login/sddm.nix
-      ../global/config/login/session/hyprland.nix
+
+      # Choice Interface (WM and/or DE)
+      ../global/interfaces/WM/wayland/hyprland
 
 
       # Active services
@@ -39,7 +41,6 @@ in
       # User 
       ../global/users/guifuentes8.nix
 
-      #inputs.hyprland.nixosModules.default
 
     ];
 
@@ -53,12 +54,23 @@ in
   networking.hostName = "laptop";
   networking.networkmanager.enable = true;
 
+  # Sound Service (Pipewire)
+
+  sound.enable = true;
   security.rtkit.enable = true;
+  hardware.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
 
   programs = {
     ssh.startAgent = true;
     dconf.enable = true;
-    # hyprland.enable = true;
   };
 
   system = {
