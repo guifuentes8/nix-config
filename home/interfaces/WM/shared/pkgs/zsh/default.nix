@@ -57,6 +57,10 @@
 
       #convert png to jpg
       cjpg = "mogrify -format jpg *.png && rm *.png";
+
+      # NixOs shortcuts
+
+      gc = "nix-collect-garbage && nix-store --gc";
     };
   };
 }

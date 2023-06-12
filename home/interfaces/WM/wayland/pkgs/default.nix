@@ -12,6 +12,7 @@ in
   home.packages = with pkgs; [
     grim
     hyprpicker
+    hyprpaper
     slurp
     swaylock
     swayidle

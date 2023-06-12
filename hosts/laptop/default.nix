@@ -11,7 +11,7 @@ in
       ./hardware-configuration.nix
 
       # Hardware Gpu (if exist)
-      ../global/config/hardware/bluetooth.nix
+      ../global/config/hardware/amdgpu.nix
 
       # Extra Hardware config
       ../global/config/hardware/logitech.nix
@@ -105,7 +105,7 @@ in
       HYPRLAND_LOG_WLR = "1";
 
       # Tell XWayland to use a cursor theme
-      XCURSOR_THEME = "Catppuccin-Mocha-Dark-Cursors";
+      XCURSOR_THEME = "Bibata-Modern-Ice";
 
       # Set a cursor size
       XCURSOR_SIZE = "24";

@@ -1,9 +1,4 @@
 { inputs, outputs, lib, config, pkgs, ... }:
-let
-  spotify-player = outputs.packages.${pkgs.system}.spotify-player;
-  slack-term2 = outputs.packages.${pkgs.system}.slack-term2;
-
-in
 {
 
   imports = [
@@ -17,6 +12,7 @@ in
     ./git
     ./gpg
     ./himalaya
+    ./hyprpaper
     ./kitty
     ./matterhorn
     ./mpv
@@ -24,13 +20,11 @@ in
     ./nchat
     ./ncspot
     ./neovim
-    ./obs
     ./pass
     ./qutebrowser
     ./rofi
-    ./slack-term
-    ./spotify-player
     ./sptlrx
+    ./spotify-player
     ./tmux
     ./youtube-tui
     ./zsh
@@ -52,13 +46,16 @@ in
       pavucontrol
       playerctl
       pfetch
-      slack-term2
+      slack-term
       spotify-player
       sptlrx
       todo
       tty-clock
       tuifeed
       xfce.thunar
+      xfce.thunar-volman
+      xfce.thunar-archive-plugin
+      xfce.thunar-media-tags-plugin
       xfce.xfconf
     ];
 }

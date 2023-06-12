@@ -6,9 +6,9 @@
       PASSWORD_STORE_DIR = "$HOME/nix-config/.password-store";
     };
   };
-  #services.pass-secret-service = {
-  ###  enable = true;
-  #storePath = "$HOME/nix-config/.password-store";
-  #};
+  # services.pass-secret-service = {
+  #   enable = true;
+  #   storePath = "$HOME/nix-config/.password-store";
+  # };
 
 }

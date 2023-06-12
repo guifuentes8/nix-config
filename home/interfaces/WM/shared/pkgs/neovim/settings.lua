@@ -15,7 +15,7 @@ opt.synmaxcol = 240
 
 -- Theme
 opt.termguicolors = true
-cmd.colorscheme "catppuccin-mocha"
+cmd.colorscheme "tokyonight-storm"
 
 -- Editor
 opt.number = true

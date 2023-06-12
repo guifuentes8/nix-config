@@ -27,6 +27,7 @@
   time.timeZone = lib.mkDefault "America/Sao_Paulo";
 
   fonts.fonts = with pkgs; [
+    montserrat
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
@@ -60,6 +61,24 @@
 
   services.dbus.enable = true;
   services.dbus.packages = [ pkgs.gcr ];
+  security.polkit.enable = true;
+
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+  };
+
 
   home-manager = {
     useUserPackages = true;

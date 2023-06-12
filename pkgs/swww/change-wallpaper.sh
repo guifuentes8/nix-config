@@ -4,7 +4,7 @@ echo header
 
 export XDG_CACHE_HOME=~/.cache
 
-WALLPAPER_PATH=~/.config/wallpapers/gif
+WALLPAPER_PATH=~/.config/wallpapers/images/1920x1080
 IMG_NAME=$(ls ${WALLPAPER_PATH} | shuf -n 1)
 IMG_PATH=${WALLPAPER_PATH}/$IMG_NAME
 #swaybg -i "${IMG_PATH}"
@@ -15,7 +15,7 @@ init() {
 }
 change() {
   notify-send -u "normal" "🕶 Wallpaper Changed 🕶"
-  swww img "${IMG_PATH}" --transition-duration 2 --transition-step 60 --transition-fps 30 --transition-type grow --transition-pos top-right
+  swww img "${IMG_PATH}" --transition-duration 2 --transition-fps 30 --transition-type grow --transition-pos top-right
 }
 
 case "$1" in

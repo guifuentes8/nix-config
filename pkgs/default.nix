@@ -4,7 +4,5 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   sddm-theme = pkgs.callPackage ./sddm-theme { };
-  slack-term2 = pkgs.callPackage ./slack-term { };
-  spotify-player = pkgs.callPackage ./spotify-player { };
   wf-recorder2 = pkgs.callPackage ./wf-recorder2 { };
 }

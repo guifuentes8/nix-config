@@ -1,7 +1,6 @@
 { pkgs, ... }: {
 
   home.packages = with pkgs; [
-    davinci-resolve
     dbeaver
     fragments
     google-chrome
@@ -13,6 +12,11 @@
     teamviewer
     vscode
 
+    appimage-run
+    ventoy-bin
+    ntfs3g
+    etcher
+
     #dev
     nodejs
     nixpkgs-fmt
@@ -21,15 +25,16 @@
 
     #dependencies
     ffmpeg
+    gvfs
     jq
     sqlite
     unrar
     unzip
 
-    #dev
-    nodejs-16_x
-    nixpkgs-fmt
-    yarn
+    #extra
+    appimage-run
+    ventoy-bin
+    ntfs3g
   ];
 
 }

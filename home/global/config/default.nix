@@ -16,6 +16,7 @@
       allowUnfreePredicate = (_: true);
       permittedInsecurePackages = [
         "python-2.7.18.6"
+        "electron-12.2.3"
       ];
     };
   };
@@ -32,16 +33,22 @@
 
   gtk = {
     enable = true;
-    cursorTheme.name = "Catppuccin-Mocha-Dark-Cursors";
-    cursorTheme.package = pkgs.catppuccin-cursors.mochaDark;
-    iconTheme.name = "Adwaita";
-    iconTheme.package = pkgs.gnome.adwaita-icon-theme;
+    font = {
+      name = "JetBrainsMonoNL Nerd Font";
+      size = 13;
+    };
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
+    iconTheme = {
+      name = "Colloid";
+      package = pkgs.colloid-icon-theme;
+    };
     theme = {
-      name = "Catppuccin-Mocha-Standard-Blue-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "blue" ];
-        variant = "mocha";
-      };
+      name = "Tokyonight-Storm-B";
+      package = pkgs.tokyo-night-gtk;
     };
   };
 }

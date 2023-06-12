@@ -8,18 +8,19 @@ in
   exec-once = wl-clipboard-history -t
   exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
   exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-  exec-once = gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-Mocha-Standard-Blue-Dark
-  exec-once = gsettings set org.gnome.desktop.interface cursor-theme Catppuccin-Mocha-Dark-Cursors
-  exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
-  exec-once = hyprctl setcursor Catppuccin-Mocha-Dark-Cursors 32
-  exec-once = bash ~/nix-config/pkgs/swww/change-wallpaper.sh init
+  exec-once = gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Storm-B
+  exec-once = gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
+  exec-once = gsettings set org.gnome.desktop.interface cursor-size 24
+  exec-once = hyprctl setcursor Bibata-Modern-Ice 24
+  exec-once = hyprpaper
   exec-once = ${autostart}
   
 # MONITORS
 
   # See https://wiki.hyprland.org/Configuring/Monitors/
   #monitor=,preferred,auto,1
-  monitor = ,1920x1080@60,0x0,1,bitdepth,8
+  #monitor = ,1920x1080@60,0x0,1,bitdepth,8
+  monitor=DP-1,5120x1440@120,0x0,1
 
 
 # KEYWORDS
@@ -27,7 +28,6 @@ in
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
   # Execute your favorite apps at launch
-  # exec-once = waybar & hyprpaper & firefox
 
   # Source a file (multi-file configs)
   # source = ~/.config/hypr/myColors.conf
@@ -36,8 +36,9 @@ in
 
   # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
   input {
-      kb_layout = br
-      kb_variant = abnt2
+     # kb_layout = br
+      kb_layout = us
+     # kb_variant = abnt2
       kb_model =
       kb_options =
       kb_rules =
@@ -135,7 +136,7 @@ in
   $mainMod = SUPER
 
   bind = $mainMod, Escape, exit,
-  bind = $mainMod, Return, exec, footclient
+  bind = $mainMod, Return, exec, kitty
   bind = $mainMod, D, exec, rofi -modes "drun" -show-icons -show drun
   bind = $mainMod, Q, killactive,
   
@@ -143,8 +144,6 @@ in
   bind = $mainMod, F, togglefloating,
   bind = $mainMod, M, fullscreen, 1
   bind = $mainMod, P, pseudo, # dwindle
-  
-  bind = $mainMod, W, exec, bash ~/nix-config/pkgs/swww/change-wallpaper.sh change
 
   bind = $mainMod, F1, exec, rofi -modes 'file-browser-extended' -show file-browser-extended
   bind = $mainMod, F2, exec, rofi-pulse-select source
@@ -161,6 +160,12 @@ in
   bind = ,XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
   bind = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
   bind = ,XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
+  
+  bind = ,XF86AudioPrev, exec, playerctl previous
+  bind = ,XF86AudioPlayPause, exec, playerctl play-pause
+  bind = ,XF86AudioNext, exec, playerctl next
+  
+
   bind = ,Print, exec, grim -g "$(slurp)" - | wl-copy 
   bind = ALT, Print, exec, slurp | grim -g - - | wl-copy && wl-paste > /home/guifuentes8/Pictures/$(date +'%Y-%m-%d-%H%M%S_grim.png') 
   bind = CTRL,Print, exec, wf-recorder --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.4.monitor -c vp8_vaapi -d /dev/dri/renderD128 -f ~/Videos/record_$(date +"%Y-%m-%d_%H:%M:%S.webm") 

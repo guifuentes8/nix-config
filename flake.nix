@@ -14,6 +14,7 @@
 
     himalaya.url = "github:soywod/himalaya";
 
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

@@ -1,9 +1,10 @@
 { ... }: {
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Mocha";
+    theme = "Tokyo Night Storm";
     font = {
       name = "JetBrainsMonoNL Nerd Font";
+      size = 13;
     };
     settings = {
       bold_font = "auto";

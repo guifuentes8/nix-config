@@ -11,7 +11,7 @@
       enable = true;
       terminal = "${pkgs.foot}/bin/footclient";
       font = "JetBrainsMono Nerd Font 13";
-      theme = "~/.config/rofi/catppuccin-mocha.rasi";
+      theme = "~/.config/rofi/tokyo-storm.rasi";
       plugins = with pkgs; [
         rofi-bluetooth
         rofi-calc
@@ -35,6 +35,6 @@
     rofi-pulse-select
   ];
 
-  xdg.configFile."rofi/catppuccin-mocha.rasi".source = ./catppuccin-mocha.rasi;
+  xdg.configFile."rofi/tokyo-storm.rasi".source = ./tokyo-storm.rasi;
 
 }

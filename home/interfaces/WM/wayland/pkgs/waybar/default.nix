@@ -1,11 +1,11 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, outputs, ... }:
 {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar.overrideAttrs (oa:
-      {
-        mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
-      });
+    package = pkgs.waybar.overrideAttrs (oa: {
+    mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" "-Dcava=enabled" ];
+  });
+
     systemd.enable = true;
     style = ''
 
@@ -32,6 +32,7 @@
       #pulseaudio,
       #network,
       #tray,
+      #cava,
       #backlight {
       background: #181825;
       padding: 4px 10px;
@@ -136,6 +137,11 @@
         color: #a6e3a1;
         margin-left: 12px;
       }
+
+      #cava {
+        color: #a6e3a1;
+      }
+
     '';
 
     settings = [
@@ -149,11 +155,11 @@
         margin-right = 12;
         margin-left = 12;
         height = 0;
-        modules-left = [ "custom/nix-logo" "wlr/workspaces" "mpris" ];
+        modules-left = [ "custom/nix-logo" "wlr/workspaces" "mpris"  ];
         modules-center = [ ];
-        modules-right = [ "disk" "cpu" "memory" "temperature" "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
+        modules-right = [ "cava" "disk" "cpu" "memory" "temperature" "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
         "custom/media" = {
-          "interval" = 10;
+          "interval" = 5;
           "format" = "{icon}{}";
           "return-type" = "json";
           "format-icons" = {
@@ -209,20 +215,20 @@
           "tooltip-format" = "{app}= {title}";
         };
         "cava" = {
-          "cava_config" = "$XDG_CONFIG_HOME/cava/cava.conf";
-          "framerate" = 60;
+          "cava_config" = "$XDG_CONFIG_HOME/cava/config";
+          "framerate" = 120;
           "autosens" = 1;
           "sensitivity" = 100;
-          "bars" = 14;
+          "bars" = 16;
           "lower_cutoff_freq" = 50;
           "higher_cutoff_freq" = 10000;
-          "method" = "pulse";
+          "method" = "pipewire";
           "source" = "auto";
           "stereo" = true;
           "reverse" = false;
           "bar_delimiter" = 0;
           "monstercat" = false;
-          "waves" = false;
+          "waves" = true;
           "noise_reduction" = 0.77;
           "input_delay" = 2;
           "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
@@ -233,7 +239,8 @@
         "mpris" = {
           "format" = "{player_icon} {length} | {artist} - {title} ";
           "format-paused" = "{status_icon} {length} | {artist} - {title}";
-          interval = 30;
+          max-length = 40;
+          interval = 5;
           "player-icons" = {
             "default" = "▶";
             "mpv" = "🎵";
