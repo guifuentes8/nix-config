@@ -24,7 +24,7 @@ set $menu rofi -modes "window,drun" -show-icons -show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg ~/.config/wallpaper.png fill
+output * bg ~/.config/wallpapers/images/w1-5120.png fill
 
 #font pango:monospace 0
 default_border pixel 2
@@ -278,3 +278,4 @@ include @sysconfdir@/sway/config.d/*
 exec dbus-sway-environment
 exec configure-gtk
 exec mako
+exec hyprpaper

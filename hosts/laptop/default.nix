@@ -1,7 +1,4 @@
 { config, pkgs, inputs, outputs, ... }:
-let
-
-in
 {
   imports =
     [
@@ -11,7 +8,7 @@ in
       ./hardware-configuration.nix
 
       # Hardware Gpu (if exist)
-      ../global/config/hardware/amdgpu.nix
+      #../global/config/hardware/amdgpu.nix
 
       # Extra Hardware config
       ../global/config/hardware/logitech.nix
@@ -26,21 +23,21 @@ in
       ../global/config/boot/systemd-boot.nix
 
       # Login Manager + Session (required after new home-manager xsession DE/WM change...)
-      ../global/config/login/sddm.nix
+      ../global/config/login/greetd.nix
 
       # Choice Interface (WM and/or DE)
+      #../global/interfaces/WM/xorg/bspwm
       ../global/interfaces/WM/wayland/hyprland
-
+      ../global/interfaces/WM/wayland/sway
 
       # Active services
       ../global/config/services/gnome-keyring.nix
-      ../global/config/services/teamviewer.nix
-      ../global/config/services/temperature.nix
-      ../global/config/services/backlight.nix
+#      ../global/config/services/teamviewer.nix
+#      ../global/config/services/temperature.nix
+#      ../global/config/services/backlight.nix
 
       # User 
       ../global/users/guifuentes8.nix
-
 
     ];
 

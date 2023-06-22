@@ -8,11 +8,11 @@
     ./caffeine
     ./cava
     ./eww
+    ./firefox
     ./gh
     ./git
     ./gpg
     ./himalaya
-    ./hyprpaper
     ./kitty
     ./matterhorn
     ./mpv
@@ -20,6 +20,7 @@
     ./nchat
     ./ncspot
     ./neovim
+    ./obs
     ./pass
     ./qutebrowser
     ./rofi

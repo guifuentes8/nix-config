@@ -1,9 +1,9 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
 
   programs.himalaya = {
     enable = true;
-    package = inputs.himalaya.packages.${pkgs.system}.default;
+    package = pkgs.himalaya;
   };
 
   accounts.email.accounts = {

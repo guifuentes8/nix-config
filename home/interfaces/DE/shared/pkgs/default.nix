@@ -4,7 +4,6 @@
     bitwarden
     davinci-resolve
     mattermost-desktop
-    slack
     spotify
   ];
 }

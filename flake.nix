@@ -12,9 +12,6 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
-    himalaya.url = "github:soywod/himalaya";
-
-
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -38,6 +35,10 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/desktop ];
         };
+        desktop-wayland = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/desktop-wayland ];
+        };
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/laptop ];
@@ -49,6 +50,11 @@
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/desktop.nix ];
+        };
+        "guifuentes8@desktop-wayland" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/desktop-wayland.nix ];
         };
         "guifuentes8@laptop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";

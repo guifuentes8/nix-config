@@ -17,7 +17,7 @@
       }
 
       window#waybar {
-          background: rgba(49, 50, 68, 0.6);
+          background: rgba(0,0,0,0);
           color: #cdd6f4;
           border-radius: 12px;
       }
@@ -32,16 +32,15 @@
       #pulseaudio,
       #network,
       #tray,
-      #cava,
       #backlight {
-      background: #181825;
+      background: #1a1b26;
       padding: 4px 10px;
       margin: 8px 4px;
       border-radius: 12px;
       }
 
       #workspaces {
-        background: #181825;
+        background: #1a1b26;
         padding: 0px 4px;
         margin: 4px 8px;
         border-radius: 12px;
@@ -50,7 +49,7 @@
 
 
       #workspaces button {
-        color: #89b4fa;
+        color: #9aa5ce;
         padding: 0px 4px 0px 0px;
         font-size: 16px;
         margin: 0px 4px;
@@ -58,65 +57,64 @@
       }
 
       #workspaces button.active {
-        color: #a6e3a1;
+        color: #2ac3de;
         background-color: rgba(0,0,0,0);
       }
 
       #workspaces button.focused {
-        color: #74c7ec;
+        color: #2ac3de;
         border-radius: 24px;
       }
 
       #workspaces button.urgent {
-        color: #11111b;
+        color: #ff9e64;
         background: #f38ba8;
         border-radius: 10px;
       }
 
       #workspaces button:hover {
         background-color: rgba(0,0,0,0);
-        color: #74c7ec;
+        color: #2ac3de;
       }
-
       
       #disk {
-        color: #f5e0dc;
+        color: #bb9af7;
       }
       
       #cpu {
-        color: #cba6f7;
+        color: #f7768e;
       }
       
       #memory {
-        color: #cba6f7;
+        color: #f7768e;
       }
       
       #temperature {
-        color: #cba6f7;
+        color: #f7768e;
       }
       
       #keyboard-state {
-        color: #f38ba8;
+        color: #e0af68;
       }
       
       #network {
-        color: #eba0ac;
+        color: #ff9e64;
       }
       
       #backlight {
-        color: #fab387;
+        color: #ff9e64;
       }
       
       #pulseaudio {
-        color: #f9e2af;
+        color: #7aa2f7;
       }
       
       #battery {
-        color: #94e2d5;
+        color: #c0caf5;
       }
 
       #clock {
-        color: #89dceb;
+        color: #b4f9f8;
         margin-right: 12px;
       }
 
@@ -129,17 +127,19 @@
       }
 
       #mpris {
-        color: #a6e3a1;
+        color: #73daca;
         margin-left: 12px;
+        margin-right: 12px;
       }
 
        #custom-media {
-        color: #a6e3a1;
+        color: #73daca;
         margin-left: 12px;
+        margin-right: 12px;
       }
 
       #cava {
-        color: #a6e3a1;
+        color: #73daca;
       }
 
     '';
@@ -155,9 +155,9 @@
         margin-right = 12;
         margin-left = 12;
         height = 0;
-        modules-left = [ "custom/nix-logo" "wlr/workspaces" "mpris"  ];
-        modules-center = [ ];
-        modules-right = [ "cava" "disk" "cpu" "memory" "temperature" "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
+        modules-left = [ "custom/nix-logo" "wlr/workspaces"  ];
+        modules-center = [ "cava" "mpris" "cava" "sway/scratchpad" ];
+        modules-right = [  "disk" "cpu" "memory" "temperature" "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
         "custom/media" = {
           "interval" = 5;
           "format" = "{icon}{}";
@@ -166,7 +166,7 @@
             "Playing" = " ";
             "Paused" = " ";
           };
-          "max-length" = 70;
+          "max-length" = 120;
           "exec" = "playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
           "on-click" = "playerctl play-pause";
         };
@@ -228,7 +228,7 @@
           "reverse" = false;
           "bar_delimiter" = 0;
           "monstercat" = false;
-          "waves" = true;
+          "waves" = false;
           "noise_reduction" = 0.77;
           "input_delay" = 2;
           "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
@@ -339,12 +339,12 @@
           "bat" = "BAT2";
         };
         "network" = {
-          "interface" = "wlp2*";
+         # "interface" = "wlp2*";
           "format-wifi" = "  {essid}";
-          "format-ethernet" = "{ipaddr}/{cidr} ";
-          "tooltip-format" = "{ifname} via {gwaddr} ";
-          "format-linked" = "{ifname} (No IP) ";
-          "format-disconnected" = "Disconnected ⚠";
+          "format-ethernet" = "󱂇 Connected";
+          "tooltip-format" = "{ifname} via {gwaddr}";
+          "format-linked" = "{ifname} (No IP)";
+          "format-disconnected" = ":/ Disconnected";
           "format-alt" = "{Signal} - {signalStrength}%";
         };
         "pulseaudio" = {

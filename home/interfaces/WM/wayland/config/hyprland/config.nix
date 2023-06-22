@@ -18,9 +18,30 @@ in
 # MONITORS
 
   # See https://wiki.hyprland.org/Configuring/Monitors/
-  #monitor=,preferred,auto,1
-  #monitor = ,1920x1080@60,0x0,1,bitdepth,8
+
+
+  #monitor = DP-1,1920x1080@60,0x0,1,bitdepth,8
+  #$w1 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w1-1920.png" 
+  #$w2 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w2-1920.png" 
+  #$w3 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w3-1920.png" 
+  #$w4 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w4-1920.png" 
+  #$w5 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w5-1920.png" 
+  #$w6 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w6-1920.png" 
+  #$w7 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w7-1920.png" 
+  #$w8 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w8-1920.png" 
+  #$w9 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w9-1920.png" 
+
   monitor=DP-1,5120x1440@120,0x0,1
+
+  $w1 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w1-5120.png" 
+  $w2 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w2-5120.png" 
+  $w3 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w3-5120.png" 
+  $w4 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w4-5120.png" 
+  $w5 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w5-5120.png" 
+  $w6 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w6-5120.png" 
+  $w7 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w7-5120.png" 
+  $w8 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w8-5120.png" 
+  $w9 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w9-5120.png" 
 
 
 # KEYWORDS
@@ -54,11 +75,11 @@ in
   }
 
   general {
-      gaps_in = 5
-      gaps_out = 18
-      border_size = 3
-      col.active_border = rgb(a6e3a1)
-      col.inactive_border = rgb(313244)
+      gaps_in = 4
+      gaps_out = 12
+      border_size = 2
+      col.active_border = rgb(2ac3de)
+      col.inactive_border = rgb(9aa5ce)
       no_border_on_floating = true
 
       layout = dwindle
@@ -162,7 +183,7 @@ in
   bind = ,XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
   
   bind = ,XF86AudioPrev, exec, playerctl previous
-  bind = ,XF86AudioPlayPause, exec, playerctl play-pause
+  bind = ,XF86AudioPlay, exec, playerctl play-pause
   bind = ,XF86AudioNext, exec, playerctl next
   
 
@@ -180,27 +201,48 @@ in
 
   # Switch workspaces with mainMod + [0-9]
   bind = $mainMod, 1, workspace, 1
+  bind=$mainMod,1,exec,$w1 
   bind = $mainMod, 2, workspace, 2
+  bind=$mainMod,2,exec,$w2 
   bind = $mainMod, 3, workspace, 3
+  bind=$mainMod,3,exec,$w3 
   bind = $mainMod, 4, workspace, 4
+  bind=$mainMod,4,exec,$w4 
   bind = $mainMod, 5, workspace, 5
+  bind=$mainMod,5,exec,$w5 
   bind = $mainMod, 6, workspace, 6
+  bind=$mainMod,6,exec,$w6 
   bind = $mainMod, 7, workspace, 7
+  bind=$mainMod,7,exec,$w7 
   bind = $mainMod, 8, workspace, 8
+  bind=$mainMod,8,exec,$w8 
   bind = $mainMod, 9, workspace, 9
+  bind=$mainMod,9,exec,$w9 
   bind = $mainMod, 0, workspace, 10
+  bind=$mainMod,0,exec,$w10 
 
   # Move active window to a workspace with mainMod + SHIFT + [0-9]
-  bind = $mainMod SHIFT, 1, movetoworkspace, 1
+    bind = $mainMod SHIFT, 1, movetoworkspace, 1
+  bind=$mainMod SHIFT,1,exec,$w1 
   bind = $mainMod SHIFT, 2, movetoworkspace, 2
+  bind=$mainMod SHIFT,2,exec,$w2 
   bind = $mainMod SHIFT, 3, movetoworkspace, 3
+  bind=$mainMod SHIFT,3,exec,$w3 
   bind = $mainMod SHIFT, 4, movetoworkspace, 4
+  bind=$mainMod SHIFT,4,exec,$w4 
   bind = $mainMod SHIFT, 5, movetoworkspace, 5
+  bind=$mainMod SHIFT,5,exec,$w5 
   bind = $mainMod SHIFT, 6, movetoworkspace, 6
+  bind=$mainMod SHIFT,6,exec,$w6 
   bind = $mainMod SHIFT, 7, movetoworkspace, 7
+  bind=$mainMod SHIFT,7,exec,$w7 
   bind = $mainMod SHIFT, 8, movetoworkspace, 8
+  bind=$mainMod SHIFT,8,exec,$w8 
   bind = $mainMod SHIFT, 9, movetoworkspace, 9
+  bind=$mainMod SHIFT,9,exec,$w9 
   bind = $mainMod SHIFT, 0, movetoworkspace, 10
+  bind=$mainMod SHIFT,0,exec,$w10 
+ 
 
   # Scroll through existing workspaces with mainMod + scroll
   bind = $mainMod, mouse_down, workspace, e+1

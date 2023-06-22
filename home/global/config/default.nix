@@ -1,6 +1,5 @@
 { inputs, lib, pkgs, config, outputs, ... }:
 {
-
   nix = {
     package = pkgs.nix;
     settings = {

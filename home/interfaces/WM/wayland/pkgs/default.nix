@@ -7,6 +7,7 @@ in
     ./foot
     ./mako
     ./waybar
+    ./hyprpaper
   ];
 
   home.packages = with pkgs; [
