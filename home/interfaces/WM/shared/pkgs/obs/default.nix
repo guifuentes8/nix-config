@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-  programs.obs = {
-    enable = true;
-    package = pkgs.obs;
-  };
+ # programs.obs = {
+#    enable = true;
+#    package = pkgs.obs;
+#  };
 }

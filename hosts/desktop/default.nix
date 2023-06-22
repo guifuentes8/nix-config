@@ -27,7 +27,6 @@
     ../global/config/login/lightdm.nix
 
     # Choice Interface (WM and/or DE)
-    ../global/interfaces/DE/gnome
     ../global/interfaces/WM/xorg/bspwm
     ../global/interfaces/WM/xorg/i3
 

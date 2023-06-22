@@ -6,7 +6,7 @@ in
     ./dunst
     ./picom
     ./polybar
-    ./screen-lock
+    #./screen-lock
     ./sxhkd
   ];
 

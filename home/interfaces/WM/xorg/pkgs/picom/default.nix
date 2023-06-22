@@ -1,25 +1,17 @@
 { pkgs, ... }: {
   services.picom = {
     enable = true;
-    package = pkgs.picom-jonaburg;
+    package = pkgs.picom-next;
     extraArgs = [ "--experimental-backends" ];
     backend = "glx";
     vSync = true;
     fade = true;
     fadeSteps = [ 0.04 0.04 ];
-    shadow = true;
+    shadow = false;
     shadowOffsets = [ 2 1 ];
     shadowOpacity = 0.4;
-    shadowExclude = [
-      "class_g = 'Polybar'"
-      # "class_g = 'Dunst'"
-      "_GTK_FRAME_EXTENTS@:c"
-
-    ];
+    shadowExclude = [ ];
     opacityRules = [
-      "80:class_g = 'Rofi'"
-      "90:class_g = 'Polybar'"
-      "95:class_g = 'Code'"
       #"90:class_g = 'Dunst'"
     ];
 

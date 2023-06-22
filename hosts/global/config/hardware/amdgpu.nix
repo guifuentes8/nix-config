@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 
 {
-
   services.xserver = {
+    services.xserver.enable = true;
     videoDrivers = [ "amdgpu" ];
   };
 
@@ -18,6 +18,5 @@
   };
 
   boot.initrd.kernelModules = [ "amdgpu" ];
-
 
 }

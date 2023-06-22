@@ -3,7 +3,7 @@ picom &
 
 systemctl --user restart polybar.service
 xrandr -s 5120x1440
-feh --bg-scale --randomize ~/.config/wallpapers/images/1920x1080/
+feh --bg-scale --randomize ~/.config/wallpapers/images/w1-5120.png
 
 pkill dunst
 dunst &
