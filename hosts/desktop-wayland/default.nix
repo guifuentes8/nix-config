@@ -23,12 +23,10 @@
       ../global/config/boot/systemd-boot.nix
 
       # Login Manager + Session (required after new home-manager xsession DE/WM change...)
-      ../global/config/login/sddm.nix
+      ../global/config/login/greetd.nix
 
       # Choice Interface (WM and/or DE)
-      #../global/interfaces/WM/xorg/bspwm
       ../global/interfaces/WM/wayland/hyprland
-      ../global/interfaces/WM/wayland/sway
 
       # Active services
       ../global/config/services/gnome-keyring.nix

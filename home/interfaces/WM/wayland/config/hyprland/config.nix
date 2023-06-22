@@ -77,7 +77,7 @@ in
   general {
       gaps_in = 4
       gaps_out = 12
-      border_size = 2
+      border_size = 3
       col.active_border = rgb(2ac3de)
       col.inactive_border = rgb(9aa5ce)
       no_border_on_floating = true
@@ -88,7 +88,7 @@ in
   decoration {
       # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-      rounding = 8
+      rounding = 6
       blur = true
       blur_size = 9
       blur_passes = 2
@@ -120,7 +120,7 @@ in
       animation = border, 1, 10, default
       animation = borderangle, 1, 8, default
       animation = fade, 1, 7, default
-      animation = workspaces, 1, 10, default
+      #animation = workspaces, 1, 10, default
   }
 
   dwindle {

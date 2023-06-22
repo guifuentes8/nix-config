@@ -8,7 +8,8 @@
     ./hardware-configuration.nix
 
     # Hardware Gpu (if exist)
-    ../global/config/hardware/nvidia.nix
+    #../global/config/hardware/nvidia.nix
+    ../global/config/hardware/amdgpu.nix
 
     # Extra Hardware config
     ../global/config/hardware/logitech.nix
@@ -20,7 +21,7 @@
     ../global
 
     # Boot initial (grub or systemd)
-    ../global/config/boot/grub.nix
+    ../global/config/boot/systemd-boot.nix
 
     # Login Manager
     ../global/config/login/lightdm.nix
