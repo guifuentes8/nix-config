@@ -22,7 +22,10 @@ in
   # Your preferred application launcher
   # Note: pass the final command to swaymsg so that the resulting window can be opened
   # on the original workspace that the command was run on.
-  set $menu rofi -modes "window,drun" -show-icons -show drun  
+
+  set $menu  rofi -modes "drun" -show-icons -show drun
+
+  
   #| dmenu_path | dmenu | xargs swaymsg exec --
 
   ### Output configuration
@@ -34,31 +37,6 @@ in
   default_border pixel 2
   gaps inner 10
 
-  set $rosewater #f4dbd6
-  set $flamingo  #f0c6c6
-  set $pink      #f5bde6
-  set $mauve     #c6a0f6
-  set $red       #ed8796
-  set $maroon    #ee99a0
-  set $peach     #f5a97f
-  set $green     #a6da95
-  set $teal      #8bd5ca
-  set $sky       #91d7e3
-  set $sapphire  #7dc4e4
-  set $blue      #8aadf4
-  set $lavender  #b7bdf8
-  set $text      #cad3f5
-  set $subtext1  #b8c0e0
-  set $subtext0  #a5adcb
-  set $overlay2  #939ab7
-  set $overlay1  #8087a2
-  set $overlay0  #6e738d
-  set $surface2  #5b6078
-  set $surface1  #494d64
-  set $surface0  #363a4f
-  set $base      #24273a
-  set $mantle    #1e2030
-  set $crust     #181926
 
   client.focused           $blue     $base $text  $rosewater $blue
   client.focused_inactive  $mauve    $base $text  $rosewater $mauve
@@ -236,20 +214,20 @@ in
       # right will grow the containers width
       # up will shrink the containers height
       # down will grow the containers height
-      bindsym $left resize shrink width 10px
-      bindsym $down resize grow height 10px
-      bindsym $up resize shrink height 10px
-      bindsym $right resize grow width 10px
+     # bindsym $left resize shrink width 10px
+    #  bindsym $down resize grow height 10px
+    #  bindsym $up resize shrink height 10px
+    #  bindsym $right resize grow width 10px
 
       # Ditto, with arrow keys
-      bindsym Left resize shrink width 10px
-      bindsym Down resize grow height 10px
-      bindsym Up resize shrink height 10px
-      bindsym Right resize grow width 10px
+    #  bindsym Left resize shrink width 10px
+    #  bindsym Down resize grow height 10px
+    #  bindsym Up resize shrink height 10px
+    #  bindsym Right resize grow width 10px
 
       # Return to default mode
-      bindsym Return mode "default"
-      bindsym Escape mode "default"
+  #    bindsym Return mode "default"
+  #    bindsym Escape mode "default"
   }
 
 
@@ -274,7 +252,7 @@ in
   #
 
   bar { 
-       swaybar_command waybar
+  #     swaybar_command waybar
   }
 
   include @sysconfdir@/sway/config.d/*
@@ -286,3 +264,4 @@ in
   exec ${autostart}
 
 ''
+

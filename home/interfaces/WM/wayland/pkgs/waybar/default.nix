@@ -40,7 +40,6 @@
       }
 
       #workspaces {
-        background: #1a1b26;
         padding: 0px 4px;
         margin: 4px 8px;
         border-radius: 12px;
@@ -151,11 +150,11 @@
         layer = "top";
         position = "top";
         exclusive = true;
-        margin-top = 12;
+        margin-top = 4;
         margin-right = 12;
         margin-left = 12;
         height = 0;
-        modules-left = [ "custom/nix-logo" "wlr/workspaces"  ];
+        modules-left = [ "custom/nix-logo" "sway/workspaces" "wlr/workspaces"  ];
         modules-center = [ "cava" "mpris" "cava" "sway/scratchpad" ];
         modules-right = [  "disk" "cpu" "memory" "temperature" "keyboard-state" "network" "backlight" "pulseaudio" "battery" "clock" "tray" ];
         "custom/media" = {
@@ -173,6 +172,29 @@
         "custom/nix-logo" = {
           "format" = "<span font='16'> </span>";
         };
+        "sway/workspaces" = {
+          "all-outputs" = true;
+          "active-only" = false;
+          "on-scroll-up" = "hyprctl dispatch workspace e+1";
+          "on-scroll-down" = "hyprctl dispatch workspace e-1";
+          "on-click" = "activate";
+          "format" = "{icon}";
+          "format-icons" = {
+            "1" = "<span font='16' rise='1000'>󰲡</span>";
+            "2" = "<span font='16' rise='1000'>󰲣</span>";
+            "3" = "<span font='16' rise='1000'>󰲥</span>";
+            "4" = "<span font='16' rise='1000'>󰲧</span>";
+            "5" = "<span font='16' rise='1000'>󰲩</span>";
+            "6" = "<span font='16' rise='1000'>󰲫</span>";
+            "7" = "<span font='16' rise='1000'>󰲭</span>";
+            "8" = "<span font='16' rise='1000'>󰲯</span>";
+            "9" = "<span font='16' rise='1000'>󰲱</span>";
+            "urgent" = "";
+            "active" = "<span font='16' rise='1000'></span>";
+            "default" = "";
+          };
+        };
+
         "wlr/workspaces" = {
           "all-outputs" = true;
           "active-only" = false;
@@ -249,7 +271,7 @@
           "status-icons" = {
             "paused" = "⏸";
           };
-          "ignored-players" = [ "firefox" "chromium" "mpv" ];
+          "ignored-players" = [ ];
         };
         "mpd" = {
           "format" = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime=%M=%S}/{totalTime=%M=%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";

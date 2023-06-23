@@ -40,7 +40,7 @@
   console.keyMap = "us";
   time.timeZone = "America/Sao_Paulo";
 
-  networking.hostName = "desktop_wayland";
+  networking.hostName = "desktop-wayland";
   networking.networkmanager.enable = true;
 
   # Sound Service (Pipewire)

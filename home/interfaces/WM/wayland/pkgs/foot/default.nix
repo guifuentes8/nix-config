@@ -6,29 +6,36 @@
       main = {
         term = "xterm-256color";
         dpi-aware = "yes";
-        font = "JetBrainsMonoNL Nerd Font:size=8";
+        font = "JetBrainsMonoNL Nerd Font:size=11";
+      };
+
+      cursor = {
+        color = "c0caf5 2e3c64";
       };
 
       colors = {
-        alpha = 0.8;
-        foreground = "cdd6f4";
-        background = "1E1E2E";
-        regular0 = "45475a";
-        regular1 = "f38ba8";
-        regular2 = "a6e3a1";
-        regular3 = "f9e2af";
-        regular4 = "89b4fa";
-        regular5 = "f5c2e7";
-        regular6 = "94e2d5";
-        regular7 = "bac2de";
-        bright0 = "585b70";
-        bright1 = "f38ba8";
-        bright2 = "a6e3a1";
-        bright3 = "f9e2af";
-        bright4 = "89b4fa";
-        bright5 = "f5c2e7";
-        bright6 = "94e2d5";
-        bright7 = "a6adc8";
+        alpha = 0.9;
+        foreground = "a9b1d6";
+        background = "24283b";
+        selection-foreground="a9b1d6";
+        selection-background="2e3c64";
+        urls="73daca";
+        regular0 = "1d202f";
+        regular1 = "f7768e";
+        regular2 = "9ece6a";
+        regular3 = "e0af68";
+        regular4 = "7aa2f7";
+        regular5 = "bb9af7";
+        regular6 = "7dcfff";
+        regular7 = "a9b1d6";
+        bright0 = "414868";
+        bright1 = "f7768e";
+        bright2 = "9ece6a";
+        bright3 = "e0af68";
+        bright4 = "7aa2f7";
+        bright5 = "bb9af7";
+        bright6 = "7dcfff";
+        bright7 = "c0caf5";
       };
     };
   };
