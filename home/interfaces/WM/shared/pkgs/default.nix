@@ -5,13 +5,8 @@
     ./alacritty
     ./bat
     ./bottom
-    ./caffeine
     ./cava
     ./eww
-    ./firefox
-    ./gh
-    ./git
-    ./gpg
     ./himalaya
     ./kitty
     ./matterhorn
@@ -22,13 +17,11 @@
     ./neovim
     ./obs
     ./pass
-    ./qutebrowser
     ./rofi
     ./sptlrx
     ./spotify-player
     ./tmux
     ./youtube-tui
-    ./zsh
   ];
 
   home.packages = with pkgs;

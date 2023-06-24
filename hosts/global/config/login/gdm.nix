@@ -1,6 +1,9 @@
 { outputs, pkgs, ... }:
 {
-  services.xserver.displayManager.gdm = {
-        enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.gdm = {
+      enable = true;
     };
+  };
 }

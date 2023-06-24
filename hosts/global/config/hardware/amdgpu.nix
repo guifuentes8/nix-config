@@ -1,22 +1,27 @@
 { pkgs, config, ... }:
 
 {
+  boot.initrd.kernelModules = [ "amdgpu" ];
+
   services.xserver = {
     enable = true;
     videoDrivers = [ "amdgpu" ];
   };
 
   hardware = {
-    opengl.driSupport = true;
-    opengl.driSupport32Bit = true;
-    opengl.extraPackages = with pkgs; [
-      rocm-opencl-icd
-      rocm-opencl-runtime
-      amdvlk
-      driversi686Linux.amdvlk
+    opengl = {
+      package = pkgs.mesa.drivers;
+      driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        rocm-opencl-icd
+        rocm-opencl-runtime
+        intel-compute-runtime
+        amdvlk
     ];
+    };
   };
 
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  environment.variables.AMD_VULKAN_ICD = "RADV";
 
 }

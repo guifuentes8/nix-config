@@ -31,7 +31,7 @@ in
   ### Output configuration
   #
   # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-  output * bg ~/.config/wallpapers/images/w1-5120.png fill
+  output * bg ~/.config/wallpapers/images/5120x1440/w1-5120.png fill
 
   #font pango:monospace 0
   default_border pixel 2

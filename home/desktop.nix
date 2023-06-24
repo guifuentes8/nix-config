@@ -5,11 +5,16 @@
     # Global config (required)
     ./global
 
-    # Environment (DE and/or WM)
-    ./interfaces/WM/shared
+    # Environment (DE)
+    ./interfaces/DE/shared/pkgs
+    ./interfaces/DE/gnome
+
+    # Environment (WM)
+    #./interfaces/WM/shared
+
 
     # Wayland or Xorg (if WM is selected)
-    ./interfaces/WM/xorg
+    # ./interfaces/WM/xorg
 
   ];
 }

@@ -2,7 +2,5 @@
 {
   imports = [
     ./config
-    ./pkgs
-    ./xdg
   ];
 }

@@ -24,11 +24,12 @@
     ../global/config/boot/systemd-boot.nix
 
     # Login Manager
-    ../global/config/login/lightdm.nix
+    ../global/config/login/gdm.nix
 
     # Choice Interface (WM and/or DE)
     ../global/interfaces/WM/xorg/bspwm
     ../global/interfaces/WM/xorg/i3
+    ../global/interfaces/DE/gnome
 
     # Active services
     ../global/config/services/gnome-keyring.nix

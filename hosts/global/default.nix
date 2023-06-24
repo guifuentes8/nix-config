@@ -40,6 +40,7 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
+
     };
   };
 
@@ -85,5 +86,12 @@
     extraSpecialArgs = { inherit inputs outputs; };
   };
 
-  environment.variables.EDITOR = "nvim";
+
+  # CPU performance mode
+  powerManagement.cpuFreqGovernor = "performance";
+
+  # virtualbox
+   virtualisation.virtualbox.host.enable = true;
+   virtualisation.virtualbox.host.enableExtensionPack = true;
+   users.extraGroups.vboxusers.members = [ "guifuentes8" ];
 }

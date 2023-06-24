@@ -1,20 +1,30 @@
 { pkgs, ... }: {
 
+  imports = [
+    ./bat
+    ./caffeine
+    ./firefox
+    ./gh
+    ./git
+    ./gpg
+    ./obs
+    ./qutebrowser
+    ./vscode
+    ./zsh
+  ];
+
   home.packages = with pkgs; [
     dbeaver
     fragments
-    obs-studio
     onlyoffice-bin
     postman
     pulseaudio
     shotcut
     slack
-    teamviewer
-    vscode
 
     #appimage
     appimage-run
-    
+
     #usb media
     ventoy-bin
     ntfs3g

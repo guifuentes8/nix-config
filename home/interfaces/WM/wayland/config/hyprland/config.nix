@@ -8,7 +8,7 @@ in
   exec-once = wl-clipboard-history -t
   exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
   exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-  exec-once = gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Storm-B
+  exec-once = gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Storm-BL
   exec-once = gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
   exec-once = gsettings set org.gnome.desktop.interface cursor-size 24
   exec-once = hyprctl setcursor Bibata-Modern-Ice 24
@@ -21,27 +21,27 @@ in
 
 
   #monitor = DP-1,1920x1080@60,0x0,1,bitdepth,8
-  #$w1 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w1-1920.png" 
-  #$w2 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w2-1920.png" 
-  #$w3 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w3-1920.png" 
-  #$w4 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w4-1920.png" 
-  #$w5 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w5-1920.png" 
-  #$w6 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w6-1920.png" 
-  #$w7 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w7-1920.png" 
-  #$w8 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w8-1920.png" 
-  #$w9 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w9-1920.png" 
+  #$w1 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w1-1920.png" 
+  #$w2 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w2-1920.png" 
+  #$w3 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w3-1920.png" 
+  #$w4 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w4-1920.png" 
+  #$w5 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w5-1920.png" 
+  #$w6 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w6-1920.png" 
+  #$w7 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w7-1920.png" 
+  #$w8 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w8-1920.png" 
+  #$w9 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w9-1920.png" 
 
-  monitor=DP-1,5120x1440@120,0x0,1
+  monitor=DP-1,1920x1080@120,0x0,1
 
-  $w1 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w1-5120.png" 
-  $w2 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w2-5120.png" 
-  $w3 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w3-5120.png" 
-  $w4 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w4-5120.png" 
-  $w5 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w5-5120.png" 
-  $w6 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w6-5120.png" 
-  $w7 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w7-5120.png" 
-  $w8 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w8-5120.png" 
-  $w9 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/w9-5120.png" 
+  $w1 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w1-5120.png" 
+  $w2 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w2-5120.png" 
+  $w3 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w3-5120.png" 
+  $w4 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w4-5120.png" 
+  $w5 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w5-5120.png" 
+  $w6 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w6-5120.png" 
+  $w7 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w7-5120.png" 
+  $w8 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w8-5120.png" 
+  $w9 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w9-5120.png" 
 
 
 # KEYWORDS

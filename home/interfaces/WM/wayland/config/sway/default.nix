@@ -105,7 +105,7 @@ in
 
       output = {
         DP-1 = {
-          bg = "~/.config/wallpapers/images/w1-5120.png fill";
+          bg = "~/.config/wallpapers/images/5120x1440/w1-5120.png fill";
         };
       };
 

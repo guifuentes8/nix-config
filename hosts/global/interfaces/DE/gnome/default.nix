@@ -9,10 +9,12 @@
   };
 
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  services.gnome.gnome-browser-connector.enable = true;
 
+  programs.kdeconnect.enable = true;
+  programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
 
   # default Gnome Programs
-
   environment.systemPackages = (with pkgs; [
     contrast
     endeavour
@@ -37,6 +39,24 @@
   ++ (with pkgs.gnomeExtensions;
     [
       appindicator
+      burn-my-windows
+      color-picker
+      clipboard-indicator-2
+      desktop-cube
+      docker
+      downloads-indicator
+      dim-completed-calendar-events
+      force-quit
+      gnome-40-ui-improvements
+      mpris-label
+      order-gnome-shell-extensions
+      overview-background
+      tactile
+      trash-indicator
+      virtualbox-applet-2
+      wallpaper-switcher
+      wayland-or-x11
+      weather-oclock
     ]);
 
   # Remove default gnome packages
