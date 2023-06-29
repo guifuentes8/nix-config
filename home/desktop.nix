@@ -16,5 +16,10 @@
     # Wayland or Xorg (if WM is selected)
     # ./interfaces/WM/xorg
 
+
   ];
+
+  home.sessionVariables = {
+    TZ = "America/Sao_Paulo";
+  };
 }

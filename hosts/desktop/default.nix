@@ -100,6 +100,7 @@
       PATH = [
         "\${XDG_BIN_HOME}"
       ];
+      TZ = "America/Sao_Paulo";
     };
   };
 
