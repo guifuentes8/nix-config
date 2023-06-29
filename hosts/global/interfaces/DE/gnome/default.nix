@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   services.xserver = {
@@ -14,6 +14,12 @@
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
 
+  qt = {
+    enable = true;
+    style = lib.mkForce "adwaita-dark";
+    platformTheme = lib.mkForce "qt5ct";
+  };
+
   # default Gnome Programs
   environment.systemPackages = (with pkgs; [
     contrast
@@ -23,7 +29,7 @@
     gnome-feeds
     marker
     pdfslicer
-
+    rhythmbox
   ])
 
   # Gnome exclusive programs and icons
@@ -41,10 +47,8 @@
       appindicator
       burn-my-windows
       color-picker
-      clipboard-indicator-2
       desktop-cube
       docker
-      downloads-indicator
       dim-completed-calendar-events
       force-quit
       gnome-40-ui-improvements
@@ -52,9 +56,6 @@
       order-gnome-shell-extensions
       overview-background
       tactile
-      trash-indicator
-      virtualbox-applet-2
-      wallpaper-switcher
       wayland-or-x11
       weather-oclock
     ]);
@@ -69,6 +70,7 @@
       iagno
       tali
       seahorse
+      gnome-music
     ]);
 }
 

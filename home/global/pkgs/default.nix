@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, outputs, ... }:
+let shotcut = outputs.packages.${pkgs.system}.shotcut;
+in
+{
 
   imports = [
     ./bat
@@ -16,37 +19,53 @@
   home.packages = with pkgs; [
     dbeaver
     fragments
+    krabby
     onlyoffice-bin
     postman
     pulseaudio
-    shotcut
+
+    # Chat
+    mattermost-desktop
     slack
 
-    #appimage
-    appimage-run
+    # Sound
+    shortwave
+    ytmdl
 
-    #usb media
+    # Sound editor
+    audacity
+
+    # Image editor
+    gimp
+    inkscape
+
+    # Video editor
+    libsForQt5.kdenlive
+    mediainfo
+    glaxnimate
+
+    # Usb media
     ventoy-bin
     ntfs3g
     etcher
 
-    #dev
+    # Dev
     nodejs
-    nixpkgs-fmt
     yarn
+    nixpkgs-fmt
 
-
-    #dependencies
+    # Dependencies
     ffmpeg
     jq
     sqlite
     unrar
     unzip
 
-    #extra
+    # Extra
     appimage-run
-    ventoy-bin
     ntfs3g
   ];
+
+
 
 }

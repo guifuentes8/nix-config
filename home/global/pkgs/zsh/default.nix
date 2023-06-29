@@ -54,6 +54,7 @@
 
       # youtube
       yt = "youtube-tui";
+      ytd = "ytmdl -o ~/Music --format m4a";
 
       #convert png to jpg
       cjpg = "mogrify -format jpg *.png && rm *.png";

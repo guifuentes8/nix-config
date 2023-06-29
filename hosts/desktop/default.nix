@@ -12,8 +12,9 @@
     ../global/config/hardware/amdgpu.nix
 
     # Extra Hardware config
-    ../global/config/hardware/logitech.nix
     ../global/config/hardware/keychron.nix
+
+
 
     # NIXOS CONFIG ------------------------------------
 
@@ -33,7 +34,7 @@
 
     # Active services
     ../global/config/services/gnome-keyring.nix
-    ../global/config/services/teamviewer.nix
+    ../global/config/services/python.nix
 
     # User 
     ../global/users/guifuentes8.nix
@@ -45,6 +46,7 @@
   # Basic config
   console.keyMap = "us";
   time.timeZone = "America/Sao_Paulo";
+  time.hardwareClockInLocalTime = true;
 
   # Network config (nmtui)
   networking.hostName = "desktop";

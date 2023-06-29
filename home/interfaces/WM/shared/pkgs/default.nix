@@ -31,7 +31,6 @@
       feh
       gcalcli
       gifsicle
-      krabby
       imagemagick
       libnotify
       matterhorn

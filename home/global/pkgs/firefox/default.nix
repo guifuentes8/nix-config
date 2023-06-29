@@ -5,7 +5,6 @@ in
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox;
     profiles = {
       "guifuentes8" = {
         bookmarks = { };
@@ -16,7 +15,8 @@ in
           translate-web-pages
           ublock-origin
         ];
-        extraConfig = '''';
+        extraConfig = ''
+        '';
         id = 0;
         name = "cli2nix";
         search = {
@@ -27,7 +27,9 @@ in
             "Google"
           ];
         };
-        settings = { };
+        settings = {
+          "privacy.resistFingerprinting" = false;
+        };
         userChrome = '''';
         userContent = '''';
 

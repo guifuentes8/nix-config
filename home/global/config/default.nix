@@ -30,6 +30,9 @@
 
   systemd.user.startServices = "sd-switch";
 
+  xdg.userDirs = {
+    music = "${config.home.homeDirectory}/Music";
+  };
 
 }
 

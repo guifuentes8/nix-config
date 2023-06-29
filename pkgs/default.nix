@@ -3,6 +3,5 @@
 
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
-  sddm-theme = pkgs.callPackage ./sddm-theme { };
-  wf-recorder2 = pkgs.callPackage ./wf-recorder2 { };
+  shotcut = pkgs.callPackage ./shotcut { };
 }

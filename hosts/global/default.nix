@@ -80,18 +80,13 @@
     };
   };
 
-
   home-manager = {
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs outputs; };
   };
 
 
+
   # CPU performance mode
   powerManagement.cpuFreqGovernor = "performance";
-
-  # virtualbox
-   virtualisation.virtualbox.host.enable = true;
-   virtualisation.virtualbox.host.enableExtensionPack = true;
-   users.extraGroups.vboxusers.members = [ "guifuentes8" ];
 }

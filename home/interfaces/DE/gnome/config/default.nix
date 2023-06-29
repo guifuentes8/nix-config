@@ -3,14 +3,6 @@ let addons = inputs.firefox-addons.packages.${pkgs.system};
 in
 {
 
-  programs.firefox.profiles."guifuentes8".extensions = with addons; [
-    gnome-shell-integration
-  ];
-
-  nixpkgs.config.allowUnfree = true;
-  
- 
-
   gtk = {
     enable = true;
     # font = {
@@ -31,4 +23,6 @@ in
       package = pkgs.adw-gtk3;
     };
   };
+
+
 }

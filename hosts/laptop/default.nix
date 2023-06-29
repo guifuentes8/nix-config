@@ -32,9 +32,9 @@
 
       # Active services
       ../global/config/services/gnome-keyring.nix
-#      ../global/config/services/teamviewer.nix
-#      ../global/config/services/temperature.nix
-#      ../global/config/services/backlight.nix
+      #      ../global/config/services/teamviewer.nix
+      #      ../global/config/services/temperature.nix
+      #      ../global/config/services/backlight.nix
 
       # User 
       ../global/users/guifuentes8.nix
@@ -47,6 +47,8 @@
   '';
   console.keyMap = "br-abnt2";
   time.timeZone = "America/Sao_Paulo";
+  time.hardwareClockInLocalTime = true;
+
 
   networking.hostName = "laptop";
   networking.networkmanager.enable = true;

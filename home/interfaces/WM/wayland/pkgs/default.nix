@@ -1,7 +1,4 @@
 { pkgs, outputs, ... }:
-let
-  wf-recorder2 = outputs.packages.${pkgs.system}.wf-recorder2;
-in
 {
   imports = [
     ./foot
@@ -20,7 +17,7 @@ in
     swww
     webcord
     wl-clipboard
-    wf-recorder2
+    wf-recorder
     wtype
   ];
 

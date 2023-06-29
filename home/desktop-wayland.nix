@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     # Global config (required)
@@ -11,4 +11,25 @@
     ./interfaces/WM/wayland
 
   ];
+
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 1;
+    TZ = "America/Sao_Paulo";
+  };
+
+  programs = {
+    firefox = {
+      packages = pkgs.firefox-wayland;
+    };
+  };
+
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
 }

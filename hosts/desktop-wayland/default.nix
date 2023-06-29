@@ -39,6 +39,8 @@
   boot.kernelParams = [ ];
   console.keyMap = "us";
   time.timeZone = "America/Sao_Paulo";
+  time.hardwareClockInLocalTime = true;
+
 
   networking.hostName = "desktop-wayland";
   networking.networkmanager.enable = true;
