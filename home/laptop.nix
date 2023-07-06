@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     # Global config (required)
@@ -19,17 +19,16 @@
 
   programs = {
     firefox = {
-      packages = pkgs.firefox-wayland;
+      package = pkgs.firefox-wayland;
     };
   };
 
-  xdg = {
-    portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
-        xdg-desktop-portal-gtk
-      ];
+  gtk = {
+    cursorTheme = lib.mkDefault {
+      size = 18;
     };
   };
+
+
 }
+

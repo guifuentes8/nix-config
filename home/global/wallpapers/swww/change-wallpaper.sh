@@ -15,7 +15,7 @@ init() {
 }
 change() {
   notify-send -u "normal" "🕶 Wallpaper Changed 🕶"
-  swww img "${IMG_PATH}" --transition-duration 2 --transition-fps 30 --transition-type grow --transition-pos top-right
+  swww img "${IMG_PATH}" --transition-duration 3 --transition-fps 30 --transition-type grow --transition-pos top-right
 }
 
 case "$1" in

@@ -10,38 +10,17 @@ in
   exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
   exec-once = gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Storm-BL
   exec-once = gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
-  exec-once = gsettings set org.gnome.desktop.interface cursor-size 24
-  exec-once = hyprctl setcursor Bibata-Modern-Ice 24
-  exec-once = hyprpaper
+  exec-once = gsettings set org.gnome.desktop.interface cursor-size 18
+  exec-once = hyprctl setcursor Bibata-Modern-Ice 18
   exec-once = ${autostart}
+  exec-once = swww init
   
 # MONITORS
 
   # See https://wiki.hyprland.org/Configuring/Monitors/
 
+  monitor=,preferred,auto,1
 
-  #monitor = DP-1,1920x1080@60,0x0,1,bitdepth,8
-  #$w1 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w1-1920.png" 
-  #$w2 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w2-1920.png" 
-  #$w3 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w3-1920.png" 
-  #$w4 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w4-1920.png" 
-  #$w5 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w5-1920.png" 
-  #$w6 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w6-1920.png" 
-  #$w7 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w7-1920.png" 
-  #$w8 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w8-1920.png" 
-  #$w9 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/1920x1080/w9-1920.png" 
-
-  monitor=DP-1,1920x1080@120,0x0,1
-
-  $w1 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w1-5120.png" 
-  $w2 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w2-5120.png" 
-  $w3 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w3-5120.png" 
-  $w4 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w4-5120.png" 
-  $w5 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w5-5120.png" 
-  $w6 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w6-5120.png" 
-  $w7 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w7-5120.png" 
-  $w8 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w8-5120.png" 
-  $w9 = hyprctl hyprpaper wallpaper "DP-1,~/.config/wallpapers/images/5120x1440/w9-5120.png" 
 
 
 # KEYWORDS
@@ -57,9 +36,9 @@ in
 
   # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
   input {
-     # kb_layout = br
-      kb_layout = us
-     # kb_variant = abnt2
+      kb_layout = br
+     # kb_layout = us
+      kb_variant = abnt2
       kb_model =
       kb_options =
       kb_rules =
@@ -157,9 +136,12 @@ in
   $mainMod = SUPER
 
   bind = $mainMod, Escape, exit,
-  bind = $mainMod, Return, exec, kitty
+  bind = $mainMod, Return, exec, footclient
   bind = $mainMod, D, exec, rofi -modes "drun" -show-icons -show drun
   bind = $mainMod, Q, killactive,
+  
+  bind = $mainMod, W, exec, bash /home/guifuentes8/nix-config/home/global/wallpapers/swww/change-wallpaper.sh change
+
   
   bind = $mainMod, S, togglesplit, # dwindle
   bind = $mainMod, F, togglefloating,
@@ -201,47 +183,27 @@ in
 
   # Switch workspaces with mainMod + [0-9]
   bind = $mainMod, 1, workspace, 1
-  bind=$mainMod,1,exec,$w1 
   bind = $mainMod, 2, workspace, 2
-  bind=$mainMod,2,exec,$w2 
   bind = $mainMod, 3, workspace, 3
-  bind=$mainMod,3,exec,$w3 
   bind = $mainMod, 4, workspace, 4
-  bind=$mainMod,4,exec,$w4 
   bind = $mainMod, 5, workspace, 5
-  bind=$mainMod,5,exec,$w5 
   bind = $mainMod, 6, workspace, 6
-  bind=$mainMod,6,exec,$w6 
   bind = $mainMod, 7, workspace, 7
-  bind=$mainMod,7,exec,$w7 
   bind = $mainMod, 8, workspace, 8
-  bind=$mainMod,8,exec,$w8 
   bind = $mainMod, 9, workspace, 9
-  bind=$mainMod,9,exec,$w9 
   bind = $mainMod, 0, workspace, 10
-  bind=$mainMod,0,exec,$w10 
 
   # Move active window to a workspace with mainMod + SHIFT + [0-9]
     bind = $mainMod SHIFT, 1, movetoworkspace, 1
-  bind=$mainMod SHIFT,1,exec,$w1 
   bind = $mainMod SHIFT, 2, movetoworkspace, 2
-  bind=$mainMod SHIFT,2,exec,$w2 
   bind = $mainMod SHIFT, 3, movetoworkspace, 3
-  bind=$mainMod SHIFT,3,exec,$w3 
   bind = $mainMod SHIFT, 4, movetoworkspace, 4
-  bind=$mainMod SHIFT,4,exec,$w4 
   bind = $mainMod SHIFT, 5, movetoworkspace, 5
-  bind=$mainMod SHIFT,5,exec,$w5 
   bind = $mainMod SHIFT, 6, movetoworkspace, 6
-  bind=$mainMod SHIFT,6,exec,$w6 
   bind = $mainMod SHIFT, 7, movetoworkspace, 7
-  bind=$mainMod SHIFT,7,exec,$w7 
   bind = $mainMod SHIFT, 8, movetoworkspace, 8
-  bind=$mainMod SHIFT,8,exec,$w8 
   bind = $mainMod SHIFT, 9, movetoworkspace, 9
-  bind=$mainMod SHIFT,9,exec,$w9 
   bind = $mainMod SHIFT, 0, movetoworkspace, 10
-  bind=$mainMod SHIFT,0,exec,$w10 
  
 
   # Scroll through existing workspaces with mainMod + scroll

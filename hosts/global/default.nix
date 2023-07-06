@@ -85,8 +85,6 @@
     extraSpecialArgs = { inherit inputs outputs; };
   };
 
-
-
   # CPU performance mode
-  powerManagement.cpuFreqGovernor = "performance";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
 }

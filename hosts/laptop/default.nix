@@ -11,8 +11,8 @@
       #../global/config/hardware/amdgpu.nix
 
       # Extra Hardware config
-      ../global/config/hardware/logitech.nix
-      ../global/config/hardware/keychron.nix
+      ../global/config/hardware/bluetooth.nix
+      # ../global/config/hardware/keychron.nix
 
       # NIXOS CONFIG ------------------------------------
 
@@ -33,8 +33,8 @@
       # Active services
       ../global/config/services/gnome-keyring.nix
       #      ../global/config/services/teamviewer.nix
-      #      ../global/config/services/temperature.nix
-      #      ../global/config/services/backlight.nix
+      ../global/config/services/temperature.nix
+      ../global/config/services/backlight.nix
 
       # User 
       ../global/users/guifuentes8.nix
@@ -100,14 +100,13 @@
   environment = {
     pathsToLink = [ "/libexec" ];
     variables = {
-      KITTY_ENABLE_WAYLAND = "1";
       HYPRLAND_LOG_WLR = "1";
 
       # Tell XWayland to use a cursor theme
       XCURSOR_THEME = "Bibata-Modern-Ice";
 
       # Set a cursor size
-      XCURSOR_SIZE = "24";
+      XCURSOR_SIZE = "18";
 
       # Example IME Support: fcitx
       GTK_IM_MODULE = "fcitx";

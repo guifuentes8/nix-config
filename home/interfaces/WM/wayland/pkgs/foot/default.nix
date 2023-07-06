@@ -6,7 +6,7 @@
       main = {
         term = "xterm-256color";
         dpi-aware = "yes";
-        font = "JetBrainsMonoNL Nerd Font:size=11";
+        font = "JetBrainsMonoNL Nerd Font:size=10";
       };
 
       cursor = {
@@ -14,12 +14,12 @@
       };
 
       colors = {
-        alpha = 0.9;
+        alpha = 0.8;
         foreground = "a9b1d6";
         background = "24283b";
-        selection-foreground="a9b1d6";
-        selection-background="2e3c64";
-        urls="73daca";
+        selection-foreground = "a9b1d6";
+        selection-background = "2e3c64";
+        urls = "73daca";
         regular0 = "1d202f";
         regular1 = "f7768e";
         regular2 = "9ece6a";

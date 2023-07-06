@@ -22,4 +22,6 @@
   home.sessionVariables = {
     TZ = "America/Sao_Paulo";
   };
+
+  programs = { };
 }

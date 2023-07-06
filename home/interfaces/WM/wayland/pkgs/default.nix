@@ -4,13 +4,11 @@
     ./foot
     ./mako
     ./waybar
-    ./hyprpaper
   ];
 
   home.packages = with pkgs; [
     grim
     hyprpicker
-    hyprpaper
     slurp
     swaylock
     swayidle
