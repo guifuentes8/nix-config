@@ -136,7 +136,7 @@ in
   $mainMod = SUPER
 
   bind = $mainMod, Escape, exit,
-  bind = $mainMod, Return, exec, footclient
+  bind = $mainMod, Return, exec, foot
   bind = $mainMod, D, exec, rofi -modes "drun" -show-icons -show drun
   bind = $mainMod, Q, killactive,
   

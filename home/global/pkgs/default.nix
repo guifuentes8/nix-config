@@ -18,7 +18,6 @@ in
 
   home.packages = with pkgs; [
     dbeaver
-    fragments
     krabby
     onlyoffice-bin
     postman
@@ -43,6 +42,7 @@ in
     libsForQt5.kdenlive
     mediainfo
     glaxnimate
+    shotcut
 
     # Usb media
     ventoy-bin
