@@ -10,7 +10,7 @@ in
     ./gh
     ./git
     ./gpg
-    ./obs
+    ./obs-studio
     ./qutebrowser
     ./vscode
     ./zsh
@@ -50,6 +50,7 @@ in
     etcher
 
     # Dev
+    jetbrains-toolbox
     nodejs
     yarn
     nixpkgs-fmt

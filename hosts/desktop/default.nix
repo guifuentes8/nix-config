@@ -35,6 +35,8 @@
     # Active services
     ../global/config/services/gnome-keyring.nix
     ../global/config/services/python.nix
+    ../global/config/services/flatpak.nix
+
 
     # User 
     ../global/users/guifuentes8.nix
