@@ -14,11 +14,7 @@
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
 
-  qt = {
-    enable = true;
-    style = lib.mkForce "adwaita-dark";
-    platformTheme = lib.mkForce "qt5ct";
-  };
+
 
   # default Gnome Programs
   environment.systemPackages = (with pkgs; [

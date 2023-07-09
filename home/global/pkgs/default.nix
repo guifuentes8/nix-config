@@ -1,6 +1,4 @@
 { pkgs, outputs, ... }:
-let shotcut = outputs.packages.${pkgs.system}.shotcut;
-in
 {
 
   imports = [
@@ -42,7 +40,6 @@ in
     libsForQt5.kdenlive
     mediainfo
     glaxnimate
-    shotcut
 
     # Usb media
     ventoy-bin
@@ -50,7 +47,6 @@ in
     etcher
 
     # Dev
-    jetbrains-toolbox
     nodejs
     yarn
     nixpkgs-fmt
@@ -66,7 +62,5 @@ in
     appimage-run
     ntfs3g
   ];
-
-
 
 }

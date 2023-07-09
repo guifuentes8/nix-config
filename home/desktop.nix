@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
 
@@ -7,7 +7,7 @@
 
     # Environment (DE)
     ./interfaces/DE/shared/pkgs
-    ./interfaces/DE/gnome
+    ./interfaces/DE/kde
 
     # Environment (WM)
     #./interfaces/WM/shared
@@ -21,7 +21,24 @@
 
   home.sessionVariables = {
     TZ = "America/Sao_Paulo";
+    #MOZ_ENABLE_WAYLAND = 1; wayland
   };
 
-  programs = { };
+  # Wayland
+
+  # programs = {
+  #   firefox = {
+  #     packages = pkgs.firefox-wayland;
+  #   };
+  # };
+
+  # xdg = {
+  #   portal = {
+  #     enable = true;
+  #     extraPortals = with pkgs; [
+  #       xdg-desktop-portal-wlr
+  #       xdg-desktop-portal-gtk
+  #     ];
+  #   };
+  # };
 }

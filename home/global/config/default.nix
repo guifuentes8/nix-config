@@ -32,6 +32,11 @@
 
   xdg.userDirs = {
     music = "${config.home.homeDirectory}/Music";
+    videos = "${config.home.homeDirectory}/Videos";
+    pictures = "${config.home.homeDirectory}/Pictures";
+    download = "${config.home.homeDirectory}/Download";
+    desktop = "${config.home.homeDirectory}/Desktop";
+    documents = "${config.home.homeDirectory}/Documents";
   };
 
 }

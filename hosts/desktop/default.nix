@@ -15,7 +15,6 @@
     ../global/config/hardware/keychron.nix
 
 
-
     # NIXOS CONFIG ------------------------------------
 
     # Global NixOs Config 
@@ -28,14 +27,11 @@
     ../global/config/login/gdm.nix
 
     # Choice Interface (WM and/or DE)
-    ../global/interfaces/WM/xorg/bspwm
-    ../global/interfaces/WM/xorg/i3
-    ../global/interfaces/DE/gnome
+    ../global/interfaces/DE/kde
 
     # Active services
     ../global/config/services/gnome-keyring.nix
     ../global/config/services/python.nix
-    ../global/config/services/flatpak.nix
 
 
     # User 
@@ -46,6 +42,7 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # Basic config
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
   console.keyMap = "us";
   time.timeZone = "America/Sao_Paulo";
   time.hardwareClockInLocalTime = true;

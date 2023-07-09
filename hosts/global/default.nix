@@ -86,5 +86,5 @@
   };
 
   # CPU performance mode
-  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
+  powerManagement.cpuFreqGovernor = lib.mkForce "performance";
 }

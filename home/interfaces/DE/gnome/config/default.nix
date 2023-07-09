@@ -1,6 +1,4 @@
-{ pkgs, inputs, lib, ... }:
-let addons = inputs.firefox-addons.packages.${pkgs.system};
-in
+{ pkgs, lib, ... }:
 {
 
   gtk = {
@@ -22,6 +20,12 @@ in
       name = "adw-gtk3-dark";
       package = pkgs.adw-gtk3;
     };
+  };
+
+  qt = {
+    enable = true;
+    style = lib.mkForce "adwaita-dark";
+    platformTheme = lib.mkForce "qt5ct";
   };
 
 
