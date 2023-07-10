@@ -24,16 +24,18 @@
     ../global/config/boot/systemd-boot.nix
 
     # Login Manager
-    ../global/config/login/lightdm.nix
+    ../global/config/login/sddm.nix
 
     # Choice Interface (WM and/or DE)
     ../global/interfaces/DE/kde
-    ../global/interfaces/DE/gnome
+    ../global/interfaces/WM/xorg/bspwm
+
 
 
     # Active services
     ../global/config/services/gnome-keyring.nix
     ../global/config/services/python.nix
+    ../global/config/services/flatpak.nix
 
 
     # User 

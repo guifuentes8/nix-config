@@ -14,8 +14,6 @@
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
 
-
-
   # default Gnome Programs
   environment.systemPackages = (with pkgs; [
     contrast
