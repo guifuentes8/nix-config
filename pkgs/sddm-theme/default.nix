@@ -1,19 +1,20 @@
 { lib, stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
-  pname = "sddm-theme";
-  version = "b9029b6393ec76a84acd4d5faa1f5fdc76a591f8";
+  pname = "where-is-my-sddm-theme";
+  version = "3fd8338292680f3d1f14ce7b96eba8ba48aaabad";
 
   src = fetchFromGitHub {
-    owner = "guifuentes8";
+    owner = "stepanzubkov";
     repo = pname;
     rev = version;
-    sha256 = "sha256-zdlE6GuNFBtk2NtKQXWTpd5Aiv6VH3YWm8u31HYzmQ0=";
+    sha256 = "sha256-rGn7HKgiPaVxwsURrveHQCQ2RX2JG0HMlLLwnJCoEKg=";
   };
 
   installPhase = ''
-    mkdir -p $out/share/sddm/themes/${pname}
-    cp -r * $out/share/sddm/themes/${pname}
+    mkdir -p $out/share/sddm/themes/where_is_my_sddm_theme/
+    cp -r * $out/share/sddm/themes/where_is_my_sddm_theme/
+    ls $out/share/sddm/themes/
   '';
 
   meta = with lib; {

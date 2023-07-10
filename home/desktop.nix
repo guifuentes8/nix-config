@@ -5,26 +5,32 @@
     # Global config (required)
     ./global
 
+    # # # CHOICE ONE # # #
+
     # Environment (DE)
     ./interfaces/DE/shared/pkgs
+
+    #1 ./interfaces/DE/kde
+    #2 ./interfaces/DE/gnome
     ./interfaces/DE/kde
 
     # Environment (WM)
-    #./interfaces/WM/shared
-
+    #3 ./interfaces/WM/shared (CHOICE IF USE DE + WM)
 
     # Wayland or Xorg (if WM is selected)
     # ./interfaces/WM/xorg
 
+    # # # CHOICE ONE # # #
 
   ];
 
-  home.sessionVariables = {
-    TZ = "America/Sao_Paulo";
-    #MOZ_ENABLE_WAYLAND = 1; wayland
-  };
 
-  # Wayland
+  # # # WAYLAND ONLY # # #
+
+  # home.sessionVariables = {
+  #   #MOZ_ENABLE_WAYLAND = 1; wayland
+  # };
+
 
   # programs = {
   #   firefox = {
@@ -41,4 +47,7 @@
   #     ];
   #   };
   # };
+
+  # # # WAYLAND ONLY # # #
+
 }

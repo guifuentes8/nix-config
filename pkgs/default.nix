@@ -4,4 +4,5 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   shotcut = pkgs.callPackage ./shotcut { };
+  sddm-theme = pkgs.callPackage ./sddm-theme { };
 }

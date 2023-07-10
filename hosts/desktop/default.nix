@@ -24,10 +24,12 @@
     ../global/config/boot/systemd-boot.nix
 
     # Login Manager
-    ../global/config/login/gdm.nix
+    ../global/config/login/lightdm.nix
 
     # Choice Interface (WM and/or DE)
     ../global/interfaces/DE/kde
+    ../global/interfaces/DE/gnome
+
 
     # Active services
     ../global/config/services/gnome-keyring.nix
@@ -72,7 +74,7 @@
   # SYSTEM OPTIONS ----------------------------------------
 
   system = {
-    stateVersion = "22.11";
+    stateVersion = "23.05";
     autoUpgrade = {
       enable = true;
       allowReboot = false;

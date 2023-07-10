@@ -14,7 +14,6 @@
 
   home.sessionVariables = {
     MOZ_ENABLE_WAYLAND = 1;
-    TZ = "America/Sao_Paulo";
   };
 
   programs = {

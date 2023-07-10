@@ -10,6 +10,7 @@
     ./gpg
     ./obs-studio
     ./qutebrowser
+    ./vim
     ./vscode
     ./zsh
   ];
@@ -57,6 +58,7 @@
     sqlite
     unrar
     unzip
+    pciutils
 
     # Extra
     appimage-run

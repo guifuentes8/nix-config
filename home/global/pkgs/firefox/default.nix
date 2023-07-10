@@ -3,6 +3,9 @@ let
   addons = inputs.firefox-addons.packages.${pkgs.system};
 in
 {
+  home.sessionVariables = {
+    TZ = "America/Sao_Paulo";
+  };
 
   home.file.".mozilla/firefox/guifuentes8/chrome/Colloid" = {
     source = ./chrome/Colloid;
