@@ -20,10 +20,10 @@
       ../global
 
       # Boot initial (grub or systemd)
-      ../global/config/boot/systemd-boot.nix
+      ../global/boot/systemd-boot.nix
 
       # Login Manager + Session (required after new home-manager xsession DE/WM change...)
-      ../global/config/login/greetd.nix
+      ../global/login/greetd.nix
 
       # Choice Interface (WM and/or DE)
       #../global/interfaces/WM/xorg/bspwm
@@ -31,10 +31,10 @@
       ../global/interfaces/WM/wayland/sway
 
       # Active services
-      ../global/config/services/gnome-keyring.nix
-      #      ../global/config/services/teamviewer.nix
-      ../global/config/services/temperature.nix
-      ../global/config/services/backlight.nix
+      ../global/services/gnome-keyring.nix
+      #      ../global/services/teamviewer.nix
+      ../global/services/temperature.nix
+      ../global/services/backlight.nix
 
       # User 
       ../global/users/guifuentes8.nix

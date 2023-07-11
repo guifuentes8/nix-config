@@ -7,7 +7,4 @@
     extraGroups = [ "networkmanager" "wheel" "sudo" "video" "docker" "adbusers" "input" ];
     shell = pkgs.zsh;
   };
-  programs.zsh.enable = true;
-
-
 }

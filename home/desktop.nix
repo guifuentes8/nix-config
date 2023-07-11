@@ -8,7 +8,7 @@
     # # # CHOICE ONE # # #
 
     # Environment (DE)
-    ./interfaces/DE/shared/pkgs
+    ./interfaces/DE/shared
 
     #1 ./interfaces/DE/kde
     #2 ./interfaces/DE/gnome

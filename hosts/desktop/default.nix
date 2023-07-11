@@ -21,10 +21,10 @@
     ../global
 
     # Boot initial (grub or systemd)
-    ../global/config/boot/systemd-boot.nix
+    ../global/boot/systemd-boot.nix
 
     # Login Manager
-    ../global/config/login/sddm.nix
+    ../global/login/sddm.nix
 
     # Choice Interface (WM and/or DE)
     ../global/interfaces/DE/kde
@@ -33,9 +33,9 @@
 
 
     # Active services
-    ../global/config/services/gnome-keyring.nix
-    ../global/config/services/python.nix
-    ../global/config/services/flatpak.nix
+    ../global/services/gnome-keyring.nix
+    ../global/services/python.nix
+    ../global/services/flatpak.nix
 
 
     # User 

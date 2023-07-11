@@ -1,11 +1,11 @@
 { pkgs, ... }:
-let wallpaper = ./alone.png;
+let wallpaper = ./background.png;
 in
 {
 
   services.xserver = {
     displayManager.lightdm = {
-      background = ./alone.png;
+      background = ./background.png;
       enable = true;
       greeters = {
         enso = {

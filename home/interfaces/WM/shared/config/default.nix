@@ -1,23 +1,23 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   gtk = {
     enable = true;
     font = {
-      name = "JetBrainsMonoNL Nerd Font";
-      size = 13;
+      name = lib.mkDefault "JetBrainsMonoNL Nerd Font";
+      size = lib.mkDefault 13;
     };
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 24;
+      name = lib.mkDefault "Bibata-Modern-Ice";
+      package = lib.mkDefault pkgs.bibata-cursors;
+      size = lib.mkDefault 24;
     };
     iconTheme = {
-      name = "Colloid";
-      package = pkgs.colloid-icon-theme;
+      name = lib.mkDefault "Colloid";
+      package = lib.mkDefault pkgs.colloid-icon-theme;
     };
     theme = {
-      name = "Tokyonight-Storm-BL";
-      package = pkgs.tokyo-night-gtk;
+      name = lib.mkDefault "Tokyonight-Storm-BL";
+      package = lib.mkDefault pkgs.tokyo-night-gtk;
     };
     gtk4.extraCss = ''
           /* GTK NAMED COLORS
