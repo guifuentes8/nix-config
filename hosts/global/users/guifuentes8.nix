@@ -1,6 +1,7 @@
 { pkgs, config, ... }:
 
 {
+  programs.zsh.enable = true;
   users.users.guifuentes8 = {
     isNormalUser = true;
     description = "Guilherme Fuentes";

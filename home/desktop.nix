@@ -8,20 +8,21 @@
     # # # CHOICE ONE # # #
 
     # Environment (DE)
-    ./interfaces/DE/shared
+    #./interfaces/DE/shared
 
     #1 ./interfaces/DE/kde
     #2 ./interfaces/DE/gnome
-    ./interfaces/DE/kde
+    #./interfaces/DE/kde
 
     # Environment (WM)
     #3 ./interfaces/WM/shared (CHOICE IF USE DE + WM)
+    ./interfaces/WM/shared
 
     # Wayland or Xorg (if WM is selected)
     # ./interfaces/WM/xorg
+    ./interfaces/WM/xorg
 
     # # # CHOICE ONE # # #
-
   ];
 
 

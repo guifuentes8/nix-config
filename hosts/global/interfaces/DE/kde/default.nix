@@ -26,6 +26,7 @@
     kaccounts-integration
     kaccounts-providers
     kio-gdrive
+    dragon
   ]);
 
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [

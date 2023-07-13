@@ -9,10 +9,10 @@
 
     # Hardware Gpu (if exist)
     #../global/config/hardware/nvidia.nix
-    ../global/config/hardware/amdgpu.nix
+    ../global/hardware/gpu/amdgpu.nix
 
     # Extra Hardware config
-    ../global/config/hardware/keychron.nix
+    ../global/hardware/keychron.nix
 
 
     # NIXOS CONFIG ------------------------------------
@@ -24,19 +24,14 @@
     ../global/boot/systemd-boot.nix
 
     # Login Manager
-    ../global/login/sddm.nix
+    ../global/login/gdm.nix
 
     # Choice Interface (WM and/or DE)
-    ../global/interfaces/DE/kde
     ../global/interfaces/WM/xorg/bspwm
-
-
 
     # Active services
     ../global/services/gnome-keyring.nix
     ../global/services/python.nix
-    ../global/services/flatpak.nix
-
 
     # User 
     ../global/users/guifuentes8.nix
