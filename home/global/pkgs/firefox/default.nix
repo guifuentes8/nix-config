@@ -16,7 +16,7 @@ in
     enable = true;
     profiles = {
       "guifuentes8" = {
-        bookmarks = { };
+        bookmarks = import ./bookmarks.nix;
         extensions = with addons; [
           bitwarden
           darkreader

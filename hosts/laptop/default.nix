@@ -11,7 +11,7 @@
       #../global/config/hardware/amdgpu.nix
 
       # Extra Hardware config
-      ../global/config/hardware/bluetooth.nix
+      ../global/hardware/bluetooth.nix
       # ../global/config/hardware/keychron.nix
 
       # NIXOS CONFIG ------------------------------------
