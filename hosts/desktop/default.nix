@@ -13,7 +13,7 @@
 
     # Extra Hardware config
     ../global/hardware/keychron.nix
-
+    ../global/hardware/logitech.nix
 
     # NIXOS CONFIG ------------------------------------
 

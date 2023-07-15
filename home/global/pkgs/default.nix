@@ -16,6 +16,8 @@
   ];
 
   home.packages = with pkgs; [
+    google-chrome
+
     dbeaver
     krabby
     onlyoffice-bin

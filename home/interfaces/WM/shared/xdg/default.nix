@@ -279,7 +279,7 @@
       in
       (lib.genAttrs code (_: [ "nvim.desktop" ]))
       // (lib.genAttrs images (_: [ "feh.desktop" ]))
-      // (lib.genAttrs urls (_: [ "google-chrome.desktop" ]))
+      // (lib.genAttrs urls (_: [ "firefox.desktop" ]))
       // (lib.genAttrs documents (_: [ "org.gnome.Evince.desktop" ]))
       // (lib.genAttrs audioVideo (_: [ "mpv.desktop" ]))
       // (lib.genAttrs archives (_: [ "org.gnome.FileRoller.desktop" ]))
