@@ -19,7 +19,6 @@
       {
         shadow-radius = 9;
         corner-radius = 12;
-        refresh-rate = 120;
 
         transition-length = 400;
         transition-pow-x = 0.15;
@@ -30,7 +29,7 @@
 
         blur = {
           method = "dual_kawase";
-          strength = 5;
+          strength = 8;
           background = true;
           background-frame = false;
           background-fixed = false;

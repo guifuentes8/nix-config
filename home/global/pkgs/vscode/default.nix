@@ -13,6 +13,8 @@
 
       "workbench.colorTheme" = "Tokyo Night Storm";
       "workbench.iconTheme" = "material-icon-theme";
+      "editor.fontFamily" = "JetBrainsMonoNL Nerd Font";
+
 
       "[nix]"."editor.tabSize" = 2;
     };

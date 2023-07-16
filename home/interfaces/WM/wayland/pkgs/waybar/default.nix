@@ -152,7 +152,7 @@
       margin-left = 12;
       height = 0;
       modules-left = [ "custom/nix-logo" "sway/workspaces" "wlr/workspaces" ];
-      modules-center = ["cava" "mpris" "cava" ];
+      modules-center = [ "cava" "mpris" "cava" ];
       modules-right = [ "disk" "cpu" "memory" "temperature" "backlight" "network" "pulseaudio" "battery" "clock" "tray" ];
       "custom/media" = {
         "interval" = 5;

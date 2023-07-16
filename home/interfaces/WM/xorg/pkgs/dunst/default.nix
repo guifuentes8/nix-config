@@ -1,7 +1,8 @@
 { pkgs, ... }:
 let
   alert = pkgs.writeShellScript "alert.sh" ''
-    pw-play --volume=0,04 ~/nix-config/home/guifuentes8/shared/manager/window/xorg/programs/dunst/alert.wav
+    pw-play --volume=0,04 ~/nix-config/home/interfaces/WM/xorg/pkgs/dunst/alert.wav
+    
   '';
 in
 {
@@ -15,30 +16,30 @@ in
       global = {
         width = 500;
         height = 300;
-        font = "JetBrainsMono Nerd 12";
+        font = "JetBrainsMonoNL Nerd Font 12";
         corner_radius = 12;
         origin = "top-right";
         notification_limit = 0;
-        frame_width = 2;
-        frame_color = "#8CAAEE";
+        frame_width = 3;
+        frame_color = "#e0af68";
         separator_color = "frame";
         min_icon_size = 64;
         max_icon_size = 64;
       };
       urgency_low = {
-        background = "#303446";
-        foreground = "#C6D0F5";
+        background = "#24283b";
+        foreground = "#c0caf5";
       };
       urgency_normal = {
-        background = "#303446";
-        foreground = "#C6D0F5";
+        background = "#24283b";
+        foreground = "#c0caf5";
         timeout = 7;
       };
 
       urgency_critical = {
-        background = "#303446";
-        foreground = "#C6D0F5";
-        frame_color = "#EF9F76";
+        background = "#24283b";
+        foreground = "#c0caf5";
+        frame_color = "#ff9e64";
       };
       play_sound = {
         summary = "*";
