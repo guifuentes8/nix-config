@@ -12,19 +12,20 @@
       "super + Return" = "kitty";
 
       # program launcher
-      "super + d" = "rofi -modes 'drun' -show-icons -show drun";
+      "super + @space" = "rofi -modes 'drun' -show-icons -show drun";
 
       # change wallpaper
       "super + w" = "feh --recursive --bg-scale --randomize ~/.config/wallpapers/images/1920x1080/";
       "super + shift + w" = "feh --recursive --bg-scale --randomize ~/.config/wallpapers/images/5120x1440/";
 
       # reload sxhkd 
-      "super + Escape" = "pkill -USR1 -x sxhkd";
+      "super + Backspace" = "pkill -USR1 -x sxhkd";
+
 
       # BSPWM KEYBINDS ------------------------------------------------
 
       # quit bspwm
-      "super + ctrl + q" = "bspc quit";
+      "super + Escape" = "bspc quit";
 
       # restart bspwm
       "super + alt + r" = "bspc wm -r";

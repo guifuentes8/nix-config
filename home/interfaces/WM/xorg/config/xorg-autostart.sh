@@ -1,4 +1,3 @@
-sxhkd &
 picom &
 
 systemctl --user restart polybar.service
@@ -7,6 +6,9 @@ feh --bg-scale --randomize ~/.config/wallpapers/images/5120x1440/w1-5120.png
 
 pkill dunst
 dunst &
+
+pkill sxhkd 
+sxhkd &
 
 xsetroot -cursor_name left_ptr &
 himalaya -a gcf notify -k 50 &

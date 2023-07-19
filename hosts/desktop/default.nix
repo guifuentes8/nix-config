@@ -24,7 +24,7 @@
     ../global/boot/systemd-boot.nix
 
     # Login Manager
-    ../global/login/sddm.nix
+    ../global/login/lightdm.nix
 
     # Choice Interface (WM and/or DE)
     ../global/interfaces/WM/xorg/bspwm
