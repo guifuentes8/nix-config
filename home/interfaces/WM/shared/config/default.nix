@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
 
-  imports = [ ./gtk.nix ];
+  imports = [ ./gtk.nix ./firefox.nix ];
 
   services.gpg-agent = {
     enable = true;

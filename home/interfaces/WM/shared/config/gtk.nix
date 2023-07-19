@@ -2,21 +2,21 @@
   gtk = {
     enable = true;
     font = {
-      name = "JetBrainsMonoNL Nerd Font";
-      size = 13;
+      name = lib.mkForce "JetBrainsMonoNL Nerd Font";
+      size = lib.mkForce 13;
     };
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 24;
+      name = lib.mkForce "Bibata-Modern-Ice";
+      package = lib.mkForce pkgs.bibata-cursors;
+      size = lib.mkForce 24;
     };
     iconTheme = {
-      name = "Colloid";
-      package = pkgs.colloid-icon-theme;
+      name = lib.mkForce "Colloid";
+      package = lib.mkForce pkgs.colloid-icon-theme;
     };
     theme = {
-      name = "Tokyonight-Storm-BL";
-      package = pkgs.tokyo-night-gtk;
+      name = lib.mkForce "Tokyonight-Storm-BL";
+      package = lib.mkForce pkgs.tokyo-night-gtk;
     };
     gtk4.extraCss = ''
           /* GTK NAMED COLORS

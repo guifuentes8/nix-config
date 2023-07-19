@@ -33,6 +33,13 @@ in
         settings = {
           "privacy.resistFingerprinting" = false;
         };
+        userChrome = lib.mkDefault ''
+        
+
+        '';
+        userContent = lib.mkDefault ''
+        
+        '';
 
       };
     };
