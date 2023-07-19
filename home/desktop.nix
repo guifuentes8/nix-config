@@ -12,7 +12,6 @@
 
     #1 ./interfaces/DE/kde
     #2 ./interfaces/DE/gnome
-    #./interfaces/DE/kde
 
     # Environment (WM)
     #3 ./interfaces/WM/shared (CHOICE IF USE DE + WM)

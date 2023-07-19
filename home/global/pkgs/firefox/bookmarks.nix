@@ -69,7 +69,28 @@
           }
           {
             name = "Rocketseat";
-            url = "https://app.rocketseat.com.br/";
+            bookmarks = [
+              {
+                name = "Explorer";
+                url = "https://app.rocketseat.com.br/explorer";
+              }
+              {
+                name = "Ignite Node";
+                url = "https://app.rocketseat.com.br/ignite/node-js-2023";
+              }
+              {
+                name = "Ignite React";
+                url = "https://app.rocketseat.com.br/ignite/react-js-2022";
+              }
+              {
+                name = "Ignite RN";
+                url = "https://app.rocketseat.com.br/ignite/react-native-2022";
+              }
+              {
+                name = "Ignite Higher";
+                url = "https://app.rocketseat.com.br/ignite/higher";
+              }
+            ];
           }
         ];
       }

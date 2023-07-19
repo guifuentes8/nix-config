@@ -2,10 +2,6 @@
 
 {
   programs.zsh.enable = true;
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
   users.users.guifuentes8 = {
     isNormalUser = true;
     description = "Guilherme Fuentes";

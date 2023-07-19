@@ -5,7 +5,7 @@
 
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = "gtk2";
+    pinentryFlavor = lib.mkDefault "gtk2";
   };
 
 
