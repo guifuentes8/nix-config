@@ -17,6 +17,8 @@
 
 
       "[nix]"."editor.tabSize" = 2;
+
+      "[html]"."editor.defaultFormatter" = "vscode.html-language-features";
     };
     keybindings = [
       {

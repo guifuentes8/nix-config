@@ -17,6 +17,7 @@ in
     lxappearance
     xdotool
     xclip
+    xcolor
   ];
 
   programs.rofi.package = pkgs.rofi;

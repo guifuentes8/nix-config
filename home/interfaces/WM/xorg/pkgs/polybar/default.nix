@@ -59,7 +59,7 @@
 
        modules-left = xworkspaces 
        modules-center = 
-       modules-right = filesystem memory cpu xkeyboard wlan eth pulseaudio date
+       modules-right = himalaya filesystem memory cpu xkeyboard wlan eth pulseaudio date
 
        cursor-click = pointer
        cursor-scroll = ns-resize
@@ -113,6 +113,8 @@
 
        label-unmounted = %mountpoint% not mounted
        label-unmounted-foreground = #5b6078
+
+       
 
       [module/memory]
        type = internal/memory

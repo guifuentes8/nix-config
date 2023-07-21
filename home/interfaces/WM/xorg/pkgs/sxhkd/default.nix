@@ -19,7 +19,7 @@
       "super + shift + w" = "feh --recursive --bg-scale --randomize ~/.config/wallpapers/images/5120x1440/";
 
       # reload sxhkd 
-      "super + Backspace" = "pkill -USR1 -x sxhkd";
+      # "super + Backspace" = "pkill -USR1 -x sxhkd";
 
 
       # BSPWM KEYBINDS ------------------------------------------------

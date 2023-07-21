@@ -57,7 +57,16 @@
           }
           {
             name = "Udemy";
-            url = "https://www.udemy.com/";
+            bookmarks = [
+              {
+                name = "Neovim";
+                url = "https://www.udemy.com/course/curso-de-vim-moderno-e-vimscript/learn/lecture/15568222?start=420#overview";
+              }
+              {
+                name = "React Avancado";
+                url = "https://www.udemy.com/course/react-avancado";
+              }
+            ];
           }
           {
             name = "Origamid";

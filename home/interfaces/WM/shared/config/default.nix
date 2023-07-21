@@ -5,8 +5,7 @@
 
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = lib.mkDefault "gtk2";
+    pinentryFlavor = lib.mkForce "gnome3";
   };
-
 
 }

@@ -24,11 +24,16 @@
     username = "guifuentes8";
     homeDirectory = "/home/guifuentes8";
     stateVersion = "23.05";
+    sessionVariables = {
+      PASSWORD_STORE_DIR = lib.mkForce "${config.home.homeDirectory}/nix-config/.password-store";
+    };
   };
+
+
 
   programs.home-manager.enable = true;
 
-  systemd.user.startServices = "sd-switch";
+  systemd.user.startServices = true;
 
   xdg.userDirs = {
     music = "${config.home.homeDirectory}/Music";

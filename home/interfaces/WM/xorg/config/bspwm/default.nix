@@ -1,13 +1,22 @@
-{ ... }:
+{ pkgs, ... }:
 let autostart = ../xorg-autostart.sh;
 in
 {
   xsession.windowManager.bspwm = {
     enable = true;
     alwaysResetDesktops = true;
+    startupPrograms = [
+      "picom"
+      "systemctl --user restart polybar.service"
+      "xrandr -s 5120x1440"
+      "feh --bg-scale --randomize ~/.config/wallpapers/images/5120x1440/w1-5120.png"
+      "pkill dunst"
+      "dunst"
+      "pkill sxhkd"
+      "sxhkd"
+      "xsetroot -cursor_name left_ptr"
+    ];
     extraConfig = ''
-            ${autostart}
-      			
       			bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱
 
       			bspc config border_width         3
@@ -25,7 +34,12 @@ in
             bspc config focus_follows_pointer true
             bspc config pointer_follows_focus true
 
+
     '';
   };
 
 }
+
+
+
+
