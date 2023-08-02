@@ -188,10 +188,10 @@
        type = internal/date
        interval = 1
 
-       time = %H:%M:%S
-       date-alt = %d-%m-%Y %H:%M:%S
+       date = %H:%M:%S
+       date-alt = Data: %d/%m/%Y Hora: %H:%M:%S
 
-       label = %time%
+       label = %date% 
        label-foreground = #b4f9f8
 
     '';

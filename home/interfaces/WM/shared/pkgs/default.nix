@@ -3,7 +3,6 @@
 
   imports = [
     ./alacritty
-    #    ./bat
     ./bottom
     ./cava
     ./eww
@@ -14,7 +13,6 @@
     ./nnn
     ./nchat
     ./ncspot
-    ./neovim
     ./pass
     ./rofi
     ./sptlrx

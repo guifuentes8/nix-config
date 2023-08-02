@@ -9,15 +9,17 @@
     globalSnippets = { };
     userSettings = {
       "files.autoSave" = "off";
+
       "editor.formatOnSave" = true;
+      "editor.fontFamily" = "JetBrainsMonoNL Nerd Font";
+
+      "explorer.confirmDragAndDrop" = false;
+      "explorer.confirmDelete" = false;
 
       "workbench.colorTheme" = "Tokyo Night Storm";
       "workbench.iconTheme" = "material-icon-theme";
-      "editor.fontFamily" = "JetBrainsMonoNL Nerd Font";
-
 
       "[nix]"."editor.tabSize" = 2;
-
       "[html]"."editor.defaultFormatter" = "vscode.html-language-features";
     };
     keybindings = [

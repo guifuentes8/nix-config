@@ -1,5 +1,6 @@
 { inputs, lib, pkgs, config, outputs, ... }:
 {
+
   nix = {
     package = pkgs.nix;
     settings = {
@@ -9,8 +10,9 @@
   };
 
   nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
     config = {
-      overlays = builtins.attrValues outputs.overlays;
+
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
       permittedInsecurePackages = [
@@ -23,7 +25,7 @@
   home = {
     username = "guifuentes8";
     homeDirectory = "/home/guifuentes8";
-    stateVersion = "23.05";
+    stateVersion = "23.11";
     sessionVariables = {
       PASSWORD_STORE_DIR = lib.mkForce "${config.home.homeDirectory}/nix-config/.password-store";
     };

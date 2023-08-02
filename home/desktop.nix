@@ -9,7 +9,7 @@
 
     # Environment (DE)
     ./interfaces/DE/shared
-    ./interfaces/DE/kde
+    ./interfaces/DE/gnome
     #1 ./interfaces/DE/kde
     #2 ./interfaces/DE/gnome
 

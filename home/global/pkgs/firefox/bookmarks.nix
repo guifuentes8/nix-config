@@ -101,6 +101,32 @@
               }
             ];
           }
+          {
+            name = "Vim";
+            bookmarks = [
+              {
+                name = "OpenVim";
+                url = "https://www.openvim.com/";
+              }
+              {
+                name = "Vim Adventures";
+                url = "https://vim-adventures.com/";
+              }
+              {
+                name = "Vim Genius";
+                url = "http://www.vimgenius.com/";
+              }
+              {
+                name = "Neovim Wiki";
+                url = "https://github.com/neovim/neovim/wiki";
+              }
+
+              {
+                name = "Nvim Setup";
+                url = "https://dev.to/craftzdog/my-neovim-setup-for-react-typescript-tailwind-css-etc-58fb";
+              }
+            ];
+          }
         ];
       }
 

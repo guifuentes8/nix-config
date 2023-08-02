@@ -8,6 +8,7 @@
     ./gh
     ./git
     ./gpg
+    ./neovim
     ./obs-studio
     ./qutebrowser
     ./vim
@@ -17,7 +18,6 @@
 
   home.packages = with pkgs; [
     google-chrome
-
     dbeaver
     krabby
     onlyoffice-bin
@@ -40,9 +40,7 @@
     inkscape
 
     # Video editor
-    libsForQt5.kdenlive
-    mediainfo
-    glaxnimate
+    davinci-resolve
 
     # Usb media
     ventoy-bin
@@ -65,6 +63,17 @@
     # Extra
     appimage-run
     ntfs3g
+
+    # Wine
+
+    # support both 32- and 64-bit applications
+    wineWowPackages.stable
+
+    # winetricks (all versions)
+    winetricks
+
+    # native wayland support (unstable)
+    #wineWowPackages.waylandFull
   ];
 
 }

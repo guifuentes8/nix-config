@@ -22,8 +22,7 @@
       # TTY clock
       clock = "tty-clock -c -C 6 -s -S -r -n -D";
 
-      # Unimatrix
-      matrix = "cmatrix -b -f -C green";
+      matrix = "cmatrix -b -f -C cyan";
 
       # Fetch 
       fetch = "pfetch";
@@ -52,15 +51,10 @@
       # slack
       slack = "slack-term -config /home/guifuentes8/.config/slack-term/config -token $(pass show slack)";
 
-      # youtube
-      yt = "youtube-tui";
-      ytd = "ytmdl -o ~/Music --format m4a";
-
       #convert png to jpg
       cjpg = "mogrify -format jpg *.png && rm *.png";
 
       # NixOs shortcuts
-
       gc = "nix-collect-garbage && nix-store --gc";
     };
   };

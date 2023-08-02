@@ -28,12 +28,10 @@
 
     # Choice Interface (WM and/or DE)
     ../global/interfaces/WM/xorg/bspwm
-    ../global/interfaces/DE/kde
-
+    ../global/interfaces/DE/gnome
 
     # Active services
     ../global/services/gnome-keyring.nix
-    ../global/services/python.nix
 
     # User 
     ../global/users/guifuentes8.nix

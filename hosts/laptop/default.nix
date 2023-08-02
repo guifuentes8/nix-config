@@ -79,7 +79,7 @@
   };
 
   system = {
-    stateVersion = "23.11";
+    stateVersion = "23.05";
     autoUpgrade = {
       enable = false;
       allowReboot = false;
