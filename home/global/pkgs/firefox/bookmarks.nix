@@ -116,11 +116,21 @@
                 name = "Vim Genius";
                 url = "http://www.vimgenius.com/";
               }
+
+            ];
+          }
+
+          {
+            name = "Neovim";
+            bookmarks = [
+              {
+                name = "Nvim";
+                url = "https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f";
+              }
               {
                 name = "Neovim Wiki";
                 url = "https://github.com/neovim/neovim/wiki";
               }
-
               {
                 name = "Nvim Setup";
                 url = "https://dev.to/craftzdog/my-neovim-setup-for-react-typescript-tailwind-css-etc-58fb";

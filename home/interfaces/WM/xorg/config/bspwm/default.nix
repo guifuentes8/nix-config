@@ -12,15 +12,13 @@ in
       "feh --bg-scale --randomize ~/.config/wallpapers/images/5120x1440/w1-5120.png"
       "pkill dunst"
       "dunst"
-      "pkill sxhkd"
-      "sxhkd"
       "xsetroot -cursor_name left_ptr"
     ];
     extraConfig = ''
       			bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱
 
       			bspc config border_width         3
-      			bspc config window_gap           12
+      			bspc config window_gap           8
 
       			bspc config split_ratio          0.50
       			bspc config borderless_monocle   true
@@ -33,7 +31,6 @@ in
 
             bspc config focus_follows_pointer true
             bspc config pointer_follows_focus true
-
 
     '';
   };

@@ -30,7 +30,7 @@
        
        [bar/mybar]
        width = 100%
-       height = 24pt
+       height = 18pt
        radius = 0
 
        ; dpi = 96
@@ -45,7 +45,7 @@
 
        padding-left = 0
        padding-right = 1
-       offset-y = 5
+       offset-y = 8
 
        module-margin = 8px
 

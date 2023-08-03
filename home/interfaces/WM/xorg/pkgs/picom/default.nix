@@ -18,7 +18,7 @@
     settings =
       {
         shadow-radius = 9;
-        corner-radius = 12;
+        corner-radius = 16;
 
         transition-length = 400;
         transition-pow-x = 0.15;
