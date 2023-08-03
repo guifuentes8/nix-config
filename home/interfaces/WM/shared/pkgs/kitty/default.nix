@@ -1,7 +1,7 @@
 { ... }: {
   programs.kitty = {
     enable = true;
-    theme = "Tokyo Night Storm";
+    theme = "Tokyo Night";
     font = {
       name = "JetBrainsMonoNL Nerd Font";
       size = 13;

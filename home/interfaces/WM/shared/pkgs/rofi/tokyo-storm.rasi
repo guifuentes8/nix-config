@@ -16,10 +16,10 @@ configuration{
 
 * {
     border-radius: 8px;
-    bg-col:  #24283b;
-    bg-col-light: #24283b;
-    border-col: #24283b;
-    selected-col: #24283b;
+    bg-col:  #1a1b26;
+    bg-col-light: #1a1b26;
+    border-col: #1a1b26;
+    selected-col: #1a1b26;
     blue: #7dcfff;
     fg-col: #c0caf5;
     fg-col2: #9ece6a;

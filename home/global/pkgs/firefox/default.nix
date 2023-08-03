@@ -7,6 +7,7 @@ in
     TZ = "America/Sao_Paulo";
   };
 
+
   programs.firefox = {
     enable = true;
     profiles = {

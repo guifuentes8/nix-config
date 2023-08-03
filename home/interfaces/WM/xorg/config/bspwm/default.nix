@@ -17,7 +17,7 @@ in
     extraConfig = ''
       			bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱
 
-      			bspc config border_width         3
+      			bspc config border_width         2
       			bspc config window_gap           8
 
       			bspc config split_ratio          0.50

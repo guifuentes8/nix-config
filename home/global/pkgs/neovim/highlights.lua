@@ -10,4 +10,4 @@ opt.wildoptions = 'pum'
 opt.pumblend = 5
 opt.background = 'dark'
 
-cmd([[ colorscheme tokyonight-storm]] )
+cmd([[ colorscheme tokyonight]] )

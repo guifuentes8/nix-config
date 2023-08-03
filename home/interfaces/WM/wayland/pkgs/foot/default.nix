@@ -16,7 +16,7 @@
       colors = {
         alpha = 0.8;
         foreground = "a9b1d6";
-        background = "24283b";
+        background = "1a1b26";
         selection-foreground = "a9b1d6";
         selection-background = "2e3c64";
         urls = "73daca";

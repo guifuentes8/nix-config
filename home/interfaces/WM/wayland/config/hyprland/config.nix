@@ -8,7 +8,7 @@ in
   exec-once = wl-clipboard-history -t
   exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
   exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-  exec-once = gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Storm-BL
+  exec-once = gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-BL
   exec-once = gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
   exec-once = gsettings set org.gnome.desktop.interface cursor-size 18
   exec-once = hyprctl setcursor Bibata-Modern-Ice 18

@@ -30,22 +30,22 @@
        
        [bar/mybar]
        width = 100%
-       height = 18pt
+       height = 24pt
        radius = 0
 
        ; dpi = 96
 
-       background = #24283b
+       background = #1a1b26
        foreground = #9aa5ce 
 
        line-size = 0pt
 
-       border-size = 0pt
-       border-color = #00000000
+       border-size = 4pt
+       border-color = #1a1b26
 
        padding-left = 0
        padding-right = 1
-       offset-y = 8
+       offset-y = 0
 
        module-margin = 8px
 
@@ -53,13 +53,13 @@
        separator-foreground = #2ac3de
 
        font-0 = "JetBrainsMonoNL Nerd Font:size=13;1"
-       font-1 = "JetBrainsMonoNL Nerd Font:size=18;2"
+       font-1 = "JetBrainsMonoNL Nerd Font:size=16;2"
        label-active-font = 2
 
 
        modules-left = xworkspaces 
-       modules-center = 
-       modules-right = himalaya filesystem memory cpu xkeyboard wlan eth pulseaudio date
+       modules-center = xwindow
+       modules-right = filesystem memory cpu xkeyboard wlan eth pulseaudio date
 
        cursor-click = pointer
        cursor-scroll = ns-resize
@@ -83,7 +83,7 @@
        label-occupied-font = 2
 
        label-active-foreground = #2ac3de
-       label-active-background = #24283b
+       label-active-background = #1a1b26
        label-active-underline= #a6d189
        label-active-padding = 1
 

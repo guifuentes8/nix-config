@@ -13,7 +13,7 @@ in
     borderSize = 3;
     width = 500;
     extraConfig = ''
-      background-color=#24283b
+      background-color=#1a1b26
       text-color=#c0caf5
       border-color=#e0af68
       progress-color=over #313244

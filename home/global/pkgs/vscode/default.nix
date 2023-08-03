@@ -16,7 +16,7 @@
       "explorer.confirmDragAndDrop" = false;
       "explorer.confirmDelete" = false;
 
-      "workbench.colorTheme" = "Tokyo Night Storm";
+      "workbench.colorTheme" = "Tokyo Night";
       "workbench.iconTheme" = "material-icon-theme";
 
       "[nix]"."editor.tabSize" = 2;

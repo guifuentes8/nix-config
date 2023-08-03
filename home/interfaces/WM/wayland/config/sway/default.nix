@@ -15,17 +15,17 @@ in
       modifier = "Mod4";
       bars = [ ];
       colors = {
-        background = "#24283b";
+        background = "#1a1b26";
         focused = {
           border = "#2ac3de";
-          background = "#24283b";
+          background = "#1a1b26";
           text = "#ffffff";
           indicator = "#2ac3de";
           childBorder = "#2ac3de";
         };
         focusedInactive = {
           border = "#565f89";
-          background = "#24283b";
+          background = "#1a1b26";
           text = "#ffffff";
           indicator = "#565f89";
           childBorder = "#565f89";
@@ -33,7 +33,7 @@ in
         };
         placeholder = {
           border = "#565f89";
-          background = "#24283b";
+          background = "#1a1b26";
           text = "#565f89";
           indicator = "#565f89";
           childBorder = "#565f89";
@@ -41,7 +41,7 @@ in
         };
         unfocused = {
           border = "#565f89";
-          background = "#24283b";
+          background = "#1a1b26";
           text = "#565f89";
           indicator = "#565f89";
           childBorder = "#565f89";
@@ -49,7 +49,7 @@ in
         };
         urgent = {
           border = "#f7768e";
-          background = "#24283b";
+          background = "#1a1b26";
           text = "#f7768e";
           indicator = "#f7768e";
           childBorder = "#f7768e";

@@ -33,7 +33,7 @@
       #network,
       #tray,
       #backlight {
-      background: #24283b;
+      background: #1a1b26;
       padding: 4px 6px;
       margin: 4px 2px;
       border-radius: 12px;

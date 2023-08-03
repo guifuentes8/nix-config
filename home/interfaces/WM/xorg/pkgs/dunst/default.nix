@@ -13,33 +13,34 @@ in
     iconTheme.name = "Adwaita";
     settings = {
       global = {
-        width = 500;
+        width = 700;
         height = 300;
         font = "JetBrainsMonoNL Nerd Font 12";
         corner_radius = 12;
-        origin = "top-right";
+        origin = "top-center";
         notification_limit = 0;
         frame_width = 3;
-        frame_color = "#e0af68";
         separator_color = "frame";
         min_icon_size = 64;
         max_icon_size = 64;
-        offset = "50x100";
+        offset = "0x80";
       };
       urgency_low = {
-        background = "#24283b";
+        background = "#16161e";
         foreground = "#c0caf5";
+        frame_color = "#c0caf5";
       };
       urgency_normal = {
-        background = "#24283b";
+        background = "#1a1b26";
         foreground = "#c0caf5";
+        frame_color = "#c0caf5";
         timeout = 7;
       };
 
       urgency_critical = {
-        background = "#24283b";
-        foreground = "#c0caf5";
-        frame_color = "#ff9e64";
+        background = "#292e42";
+        foreground = "#db4b4b";
+        frame_color = "#db4b4b";
       };
       play_sound = {
         summary = "*";
@@ -48,3 +49,4 @@ in
     };
   };
 }
+
