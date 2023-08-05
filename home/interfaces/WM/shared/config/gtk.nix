@@ -15,7 +15,7 @@
       package = lib.mkForce pkgs.colloid-icon-theme;
     };
     theme = {
-      name = lib.mkForce "Tokyonight-BL";
+      name = lib.mkForce "Tokyonight-Dark-BL";
       package = lib.mkForce pkgs.tokyo-night-gtk;
     };
     gtk4.extraCss = ''
