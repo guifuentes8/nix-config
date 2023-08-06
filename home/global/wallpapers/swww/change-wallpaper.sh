@@ -4,7 +4,7 @@ echo header
 
 export XDG_CACHE_HOME=~/.cache
 
-WALLPAPER_PATH=~/.config/wallpapers/images/pixel
+WALLPAPER_PATH=~/.config/wallpapers/gifs
 IMG_NAME=$(ls ${WALLPAPER_PATH} | shuf -n 1)
 IMG_PATH=${WALLPAPER_PATH}/$IMG_NAME
 #swaybg -i "${IMG_PATH}"

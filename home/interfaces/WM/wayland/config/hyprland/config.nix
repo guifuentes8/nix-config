@@ -71,7 +71,7 @@ in
 blur {
       enabled = true
       size = 7
-      passes = 2
+      passes = 1
       new_optimizations = true
       ignore_opacity = true
       xray = true
