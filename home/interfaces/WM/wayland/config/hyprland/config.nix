@@ -66,14 +66,17 @@ in
 
   decoration {
       # See https://wiki.hyprland.org/Configuring/Variables/ for more
-
       rounding = 6
-      blur = true
-      blur_size = 9
-      blur_passes = 2
-      blur_new_optimizations = true
-      blur_ignore_opacity = true
-      blur_xray = true
+
+blur {
+      enabled = true
+      size = 7
+      passes = 2
+      new_optimizations = true
+      ignore_opacity = true
+      xray = true
+
+}
 
       #drop_shadow = false
       #shadow_range = 12
@@ -136,8 +139,8 @@ in
   $mainMod = SUPER
 
   bind = $mainMod, Escape, exit,
-  bind = $mainMod, Return, exec, foot
-  bind = $mainMod, D, exec, rofi -modes "drun" -show-icons -show drun
+  bind = $mainMod, Return, exec, kitty
+  bind = $mainMod, Space, exec, rofi -modes "drun" -show-icons -show drun
   bind = $mainMod, Q, killactive,
   
   bind = $mainMod, W, exec, bash /home/guifuentes8/nix-config/home/global/wallpapers/swww/change-wallpaper.sh change

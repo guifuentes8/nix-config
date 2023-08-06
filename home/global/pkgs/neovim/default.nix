@@ -18,6 +18,10 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     extraLuaConfig = ''
+      require("tokyonight").setup({
+        style = "night",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+        transparent = true,     -- Enable this to disable setting the background color
+      })
       require 'base'
       require 'highlights'
       require 'maps'
@@ -28,6 +32,7 @@ in
 
       # Tokyo-Night -> theme for neovim
       tokyonight-nvim
+
       # Lualine -> provides a flexible way to configure statusline 
       {
         plugin = lualine-nvim;

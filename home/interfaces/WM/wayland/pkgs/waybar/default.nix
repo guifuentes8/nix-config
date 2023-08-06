@@ -33,7 +33,7 @@
       #network,
       #tray,
       #backlight {
-      background: #1a1b26;
+      background: rgba(0,0,0,0);
       padding: 4px 6px;
       margin: 4px 2px;
       border-radius: 12px;
@@ -147,9 +147,9 @@
       layer = "top";
       position = "top";
       exclusive = true;
-      margin-top = 2;
-      margin-right = 12;
-      margin-left = 12;
+    #  margin-top = 2;
+    #  margin-right = 12;
+    #  margin-left = 12;
       height = 0;
       modules-left = [ "custom/nix-logo" "sway/workspaces" "wlr/workspaces" ];
       modules-center = [ "cava" "mpris" "cava" ];

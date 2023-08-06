@@ -40,7 +40,7 @@
     inkscape
 
     # Video editor
-    davinci-resolve
+#    davinci-resolve
 
     # Usb media
     ventoy-bin

@@ -49,3 +49,5 @@ api.nvim_create_autocmd("InsertLeave", {
 opt.formatoptions:append { 'r' } 
 
 opt.clipboard = "unnamedplus"
+
+cmd([[ colorscheme tokyonight]] )

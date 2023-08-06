@@ -11,13 +11,15 @@ in
     font = "JetbrainsMonoNL Nerd Font 12";
     borderRadius = 12;
     borderSize = 3;
-    width = 500;
+    width = 600;
+    height = 300;
     extraConfig = ''
       background-color=#1a1b26
       text-color=#c0caf5
       border-color=#e0af68
       progress-color=over #313244
-      anchor=top-right
+      anchor=top-center
+      on-notify=exec ${alert}
 
       [urgency=high]
       border-color=#ff9e64
