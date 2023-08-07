@@ -41,11 +41,6 @@
 
     ];
 
-  boot.loader = {
-    efi = {
-      efiSysMountPoint = "/boot";
-    };
-  };
 
   boot.kernelParams = [ "acpi_backlight=video" "coretemp" "kvm-intel" ];
   services.udev.extraRules = ''

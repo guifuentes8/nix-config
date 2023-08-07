@@ -34,7 +34,7 @@ in
         background = "#1a1b26";
         foreground = "#c0caf5";
         frame_color = "#c0caf5";
-        timeout = 7;
+        timeout = 3;
       };
 
       urgency_critical = {

@@ -135,11 +135,19 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/gitsign.rc.lua);
       }
+      {
+        plugin = nvim-tree-lua;
+        type = "lua";
+        config = builtins.readFile (./plugins/tree.rc.lua);
+      }
+
+
 
     ];
 
     extraPackages = [
       pkgs.nodePackages.typescript-language-server
+      pkgs.nodePackages.vscode-langservers-extracted
       pkgs.lua-language-server
       pkgs.ripgrep
     ];

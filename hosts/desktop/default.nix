@@ -21,7 +21,7 @@
     ../global
 
     # Boot initial (grub or systemd)
-    ../global/boot/systemd-boot.nix
+    ../global/boot/grub.nix
 
     # Login Manager
     ../global/login/lightdm.nix
@@ -41,7 +41,6 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # Basic config
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
   console.keyMap = "us";
   time.timeZone = "America/Sao_Paulo";
   time.hardwareClockInLocalTime = true;

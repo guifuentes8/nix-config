@@ -27,7 +27,7 @@
     homeDirectory = "/home/guifuentes8";
     stateVersion = "23.11";
     sessionVariables = {
-      PASSWORD_STORE_DIR = lib.mkForce "${config.home.homeDirectory}/nix-config/.password-store";
+      PASSWORD_STORE_DIR = lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
   };
 

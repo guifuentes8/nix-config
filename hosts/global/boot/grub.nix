@@ -1,7 +1,6 @@
 {
   boot.loader = {
     grub = {
-      version = 2;
       enable = true;
       useOSProber = true;
       efiSupport = true;
@@ -10,7 +9,7 @@
     };
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
+      efiSysMountPoint = "/boot";
     };
   };
 }

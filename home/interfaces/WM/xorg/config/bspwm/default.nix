@@ -6,7 +6,6 @@ in
     enable = true;
     alwaysResetDesktops = true;
     startupPrograms = [
-      "picom"
       "systemctl --user restart polybar.service"
       "xrandr -s 5120x1440"
       "feh --bg-scale --randomize ~/.config/wallpapers/images/5120x1440/w1-5120.png"
@@ -17,7 +16,7 @@ in
     extraConfig = ''
       			bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱
 
-      			bspc config border_width         2
+      			bspc config border_width         3
       			bspc config window_gap           8
 
       			bspc config split_ratio          0.50
