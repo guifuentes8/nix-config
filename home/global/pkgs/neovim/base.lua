@@ -4,10 +4,14 @@ local api = vim.api
 local cmd = vim.cmd
 
 cmd('autocmd!')
+cmd('set modifiable')
 
 vim.scriptencoding = 'utf-8'
 opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
+
+g.loaded_netrwPlugin = 1
+g.loaded_netrw = 1
 
 vim.wo.number = true
 

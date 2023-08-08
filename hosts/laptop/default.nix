@@ -117,7 +117,7 @@
       GLFW_IM_MODULE = "ibus";
     };
     sessionVariables = rec {
-
+      TZ = "America/Sao_Paulo";
       XDG_CACHE_HOME = "\${HOME}/.cache";
       XDG_CONFIG_HOME = "\${HOME}/.config";
       XDG_BIN_HOME = "\${HOME}/.local/bin";

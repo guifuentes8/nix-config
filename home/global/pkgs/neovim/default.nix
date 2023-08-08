@@ -18,6 +18,7 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     extraLuaConfig = ''
+    
       require("tokyonight").setup({
         style = "night",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
         transparent = true,     -- Enable this to disable setting the background color
@@ -104,7 +105,6 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/telescope.rc.lua);
       }
-      telescope-file-browser-nvim
       plenary-nvim
       # --- TELESCORE --- #
 
@@ -140,8 +140,17 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/tree.rc.lua);
       }
+      {
+        plugin = dashboard-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/dashboard.rc.lua);
+      }
 
-
+      {
+        plugin = null-ls-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/null-ls.rc.lua);
+      }
 
     ];
 
