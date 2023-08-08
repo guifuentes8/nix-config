@@ -2,8 +2,15 @@ require('dashboard').setup {
   theme = 'hyper',
   shortcut_type = 'letter',
   config = {
+    project = {
+      enable = false,
+      limit = 8,
+      icon = ' ',
+      label = '',
+      action = 'Telescope find_files'
+    },
     week_header = {
-      enable = true,
+      enable = false,
     },
     packages = { enable = false },
     shortcut = {
