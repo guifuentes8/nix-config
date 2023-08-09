@@ -36,8 +36,9 @@
 
       # X11 Resolutions
       xr1 = "xrandr -s 5120x1440";
-      xr2 = "xrandr -s 1920x1080";
+      xr2 = "xrandr -s 2560x1440";
       xr3 = "xrandr -s 3840x1080";
+      xr4 = "xrandr -s 1920x1080";
 
       # gcalcli
       cal = "gcalcli";

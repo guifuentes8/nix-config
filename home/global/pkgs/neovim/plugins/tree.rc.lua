@@ -1,7 +1,6 @@
-local status, tree = pcall(require, "nvim-tree")
+local status = pcall(require, "nvim-tree")
 if (not status) then return end
 
-local api = require "nvim-tree.api"
 
 local function on_attach(bufnr)
   local api = require('nvim-tree.api')

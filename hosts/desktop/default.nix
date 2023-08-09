@@ -28,7 +28,7 @@
 
     # Choice Interface (WM and/or DE)
     ../global/interfaces/WM/xorg/bspwm
-    ../global/interfaces/DE/gnome
+#    ../global/interfaces/DE/gnome
 
     # Active services
     ../global/services/gnome-keyring.nix

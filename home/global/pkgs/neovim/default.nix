@@ -147,9 +147,9 @@ in
       }
 
       {
-        plugin = null-ls-nvim;
+        plugin = formatter-nvim;
         type = "lua";
-        config = builtins.readFile (./plugins/null-ls.rc.lua);
+        config = builtins.readFile (./plugins/formatter.rc.lua);
       }
 
     ];
