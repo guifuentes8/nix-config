@@ -1,6 +1,6 @@
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
-
+local util = require 'lspconfig.util'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -17,14 +17,6 @@ local on_attach = function(client, bufnr)
     end
 end
 
-  
-  -- TYPESCRIPT
-
-nvim_lsp.tsserver.setup {
-    on_attach = on_attach,
-    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-    cmd = { "typescript-language-server", "--stdio" }
-}
 
 -- LUA
 
@@ -53,8 +45,7 @@ nvim_lsp.lua_ls.setup {
 nvim_lsp.html.setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    filetypes = { "html" },
-    cmd = { "vscode-html-language-server", "--stdio" }
+    
 }
 
 -- CSS
@@ -62,22 +53,37 @@ nvim_lsp.html.setup {
 nvim_lsp.cssls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    filetypes = { "css", "scss", "less" },
-    cmd = { "vscode-css-language-server", "--stdio" }
+ 
 }
+
+-- JAVASCRIPT
+
+nvim_lsp.eslint.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    root_dir = util.root_pattern('.eslintrc.js', '.eslintrc.cjs', '.eslintrc.json', '.eslintrc'),
+  }
+
+-- TYPESCRIPT
+
+  nvim_lsp.tsserver.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+  
+}
+
 
 -- JSON
 
 nvim_lsp.jsonls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    filetypes = { "json", "jsonc" },
-    cmd = { "vscode-json-language-server", "--stdio" }
+  
 }
 
--- ESLINT
-nvim_lsp.eslint.setup({
+-- NIX
+
+nvim_lsp.nixd.setup {    
     on_attach = on_attach,
-    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue", "svelte", "astro" },
-    cmd = { "vscode-eslint-language-server", "--stdio" }
-  })
+   
+}

@@ -40,7 +40,7 @@
     inkscape
 
     # Video editor
-#    davinci-resolve
+    #    davinci-resolve
 
     # Usb media
     ventoy-bin
@@ -50,7 +50,7 @@
     # Dev
     nodejs
     yarn
-    nixpkgs-fmt
+
 
     # Dependencies
     ffmpeg
