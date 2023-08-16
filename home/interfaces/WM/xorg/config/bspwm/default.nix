@@ -1,11 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, nix-colors, config, ... }:
 let autostart = ../xorg-autostart.sh;
 in
 {
+
   xsession.windowManager.bspwm = {
     enable = true;
     alwaysResetDesktops = true;
     startupPrograms = [
+      "pkill sxhkd"
+      "sxhkd"
       "picom"
       "systemctl --user restart polybar.service"
       "xrandr -s 5120x1440"
@@ -26,7 +29,7 @@ in
 
             bspc config normal_border_color '#9aa5ce'
             bspc config active_border_color '#9aa5ce'
-            bspc config focused_border_color '#2ac3de'
+            bspc config focused_border_color '#${config.colorScheme.colors.base00}'
             bspc config presel-feedback_colour '#f7768e'
 
             bspc config focus_follows_pointer true

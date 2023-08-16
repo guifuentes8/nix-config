@@ -1,6 +1,10 @@
 { inputs, lib, pkgs, config, outputs, ... }:
 {
 
+  imports = [
+    ./colorscheme 
+  ];
+
   nix = {
     package = pkgs.nix;
     settings = {

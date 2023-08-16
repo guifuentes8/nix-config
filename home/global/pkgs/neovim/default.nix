@@ -19,7 +19,7 @@ in {
     vimdiffAlias = true;
     extraLuaConfig = ''
 
-      require("tokyonight").setup({
+      require("material").setup({
         style = "night",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
         transparent = true,     -- Enable this to disable setting the background color
       })
@@ -100,7 +100,7 @@ in {
         config = builtins.readFile (./plugins/dashboard.rc.lua);
       }
 
-      tokyonight-nvim
+      material-nvim
       luasnip # Snippet engine
       cmp-buffer # buffer words
       cmp-nvim-lsp # dependencies

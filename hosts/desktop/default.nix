@@ -8,8 +8,8 @@
     ./hardware-configuration.nix
 
     # Hardware Gpu (if exist)
-    #../global/config/hardware/nvidia.nix
-    ../global/hardware/gpu/amdgpu.nix
+    ../global/hardware/gpu/nvidia.nix
+    #../global/hardware/gpu/amdgpu.nix
 
     # Extra Hardware config
     ../global/hardware/keychron.nix
@@ -28,10 +28,12 @@
 
     # Choice Interface (WM and/or DE)
     ../global/interfaces/WM/xorg/bspwm
-#    ../global/interfaces/DE/gnome
+    ../global/interfaces/DE/gnome
 
     # Active services
     ../global/services/gnome-keyring.nix
+    ../global/services/flatpak.nix
+
 
     # User 
     ../global/users/guifuentes8.nix

@@ -21,7 +21,7 @@
     dbeaver
     krabby
     onlyoffice-bin
-    postman
+    #postman
     pulseaudio
 
     # Chat
