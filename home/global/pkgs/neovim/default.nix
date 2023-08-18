@@ -9,7 +9,12 @@ let
         ref = ref;
       };
     };
-in {
+in
+{
+
+  programs.vim = {
+    enable = true;
+  };
 
   programs.neovim = {
     enable = true;

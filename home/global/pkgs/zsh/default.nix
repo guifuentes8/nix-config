@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -17,7 +18,7 @@
       # Spotify
       spt = "spotify_player";
 
-      sptl = "sptlrx --current 'bold,#a6e3a1' --before '#b4befe,faint,italic,strikethrough' --after '#89b4fa,faint'";
+      sptl = "sptlrx --current 'bold,#${config.colorScheme.colors.base00}' --before '#${config.colorScheme.colors.base05},faint,italic,strikethrough' --after '#${config.colorScheme.colors.base0E},faint'";
 
       # TTY clock
       clock = "tty-clock -c -C 6 -s -S -r -n -D";

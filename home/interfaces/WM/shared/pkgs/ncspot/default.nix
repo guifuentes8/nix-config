@@ -1,4 +1,4 @@
-{ outputs, pkgs, ... }:
+{ outputs, pkgs, config, ... }:
 
 
 {
@@ -15,22 +15,22 @@
       };
       theme = {
         background = "default";
-        primary = "#c6a0f6";
-        secondary = "#f5a97f";
-        title = "#f5a97f";
-        playing = "#a6da95";
-        playing_selected = "#1e2030";
+        primary = "#${config.colorScheme.colors.base0E}";
+        secondary = "#${config.colorScheme.colors.base00}";
+        title = "#${config.colorScheme.colors.base00}";
+        playing = "#${config.colorScheme.colors.base0A}";
+        playing_selected = "#${config.colorScheme.colors.base01}";
         playing_bg = "default";
-        highlight = "#1e2030";
-        highlight_bg = "#a6da95";
-        error = "black";
-        error_bg = "#f38ba8";
-        statusbar = "#1e2030";
-        statusbar_progress = "#91d7e3";
-        statusbar_bg = "#91d7e3";
-        cmdline = "#f4dbd6";
-        cmdline_bg = "#1e2030";
-        search_match = "#f38ba8";
+        highlight = "#${config.colorScheme.colors.base01}";
+        highlight_bg = "#${config.colorScheme.colors.base00}";
+        error = "${config.colorScheme.colors.base01}";
+        error_bg = "#${config.colorScheme.colors.base08}";
+        statusbar = "#${config.colorScheme.colors.base01}";
+        statusbar_progress = "#${config.colorScheme.colors.base00}";
+        statusbar_bg = "#${config.colorScheme.colors.base00}";
+        cmdline = "#${config.colorScheme.colors.base0B}";
+        cmdline_bg = "#${config.colorScheme.colors.base01}";
+        search_match = "#${config.colorScheme.colors.base08}";
       };
 
     };

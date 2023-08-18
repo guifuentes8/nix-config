@@ -74,7 +74,7 @@
   system = {
     stateVersion = "23.05";
     autoUpgrade = {
-      enable = true;
+      enable = false;
       allowReboot = false;
       dates = "daily";
     };

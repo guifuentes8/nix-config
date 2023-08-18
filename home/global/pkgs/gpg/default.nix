@@ -10,9 +10,7 @@
     defaultCacheTtl = 60480000;
     maxCacheTtl = 60480000;
     extraConfig = ''
-    
     '';
-
   };
 
 }

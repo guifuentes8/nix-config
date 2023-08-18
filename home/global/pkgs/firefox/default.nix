@@ -7,7 +7,6 @@ in
     TZ = "America/Sao_Paulo";
   };
 
-
   programs.firefox = {
     enable = true;
     profiles = {
@@ -24,7 +23,7 @@ in
         id = 0;
         name = "cli2nix";
         search = {
-          default = "Google";
+          default = "DuckDuckGo";
           force = true;
           order = [
             "DuckDuckGo"
@@ -34,14 +33,8 @@ in
         settings = {
           "privacy.resistFingerprinting" = false;
         };
-        userChrome = lib.mkDefault ''
-        
-
-        '';
-        userContent = lib.mkDefault ''
-        
-        '';
-
+        userChrome = lib.mkDefault '''';
+        userContent = lib.mkDefault '''';
       };
     };
   };

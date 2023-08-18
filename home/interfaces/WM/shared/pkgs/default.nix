@@ -23,7 +23,6 @@
 
   home.packages = with pkgs;
     [
-      cava
       cmatrix
       feh
       gcalcli

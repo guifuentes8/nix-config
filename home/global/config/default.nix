@@ -38,7 +38,6 @@
 
 
   programs.home-manager.enable = true;
-
   systemd.user.startServices = true;
 
   xdg.userDirs = {

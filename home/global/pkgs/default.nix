@@ -11,7 +11,6 @@
     ./neovim
     ./obs-studio
     ./qutebrowser
-    ./vim
     ./vscode
     ./zsh
   ];
@@ -21,7 +20,6 @@
     dbeaver
     krabby
     onlyoffice-bin
-    #postman
     pulseaudio
 
     # Chat
@@ -40,7 +38,7 @@
     inkscape
 
     # Video editor
-    #    davinci-resolve
+    davinci-resolve
 
     # Usb media
     ventoy-bin
@@ -50,6 +48,7 @@
     # Dev
     nodejs
     yarn
+    nixpkgs-fmt
 
 
     # Dependencies
