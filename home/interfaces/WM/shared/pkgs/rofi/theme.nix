@@ -1,24 +1,18 @@
 { config, lib, ... }:
 
 let
-  # Use `mkLiteral` for string-like values that should show without
-  # quotes, e.g.:
-  # {
-  #   foo = "abc"; => foo: "abc";
-  #   bar = mkLiteral "abc"; => bar: abc;
-  # };
   inherit (config.lib.formats.rasi) mkLiteral;
 in
 {
   "*" = {
     border-radius = mkLiteral "8px";
-    bg-col = mkLiteral "#1a1b26";
-    bg-col-light = mkLiteral "#1a1b26";
-    border-col = mkLiteral "#1a1b26";
-    selected-col = mkLiteral "#1a1b26";
-    blue = mkLiteral "#7dcfff";
-    fg-col = mkLiteral "#c0caf5";
-    fg-col2 = mkLiteral "#9ece6a";
+    bg-col = mkLiteral "#${config.colorScheme.colors.base01}";
+    bg-col-light = mkLiteral "#${config.colorScheme.colors.base01}";
+    border-col = mkLiteral "#${config.colorScheme.colors.base01}";
+    selected-col = mkLiteral "#${config.colorScheme.colors.base01}";
+    blue = mkLiteral "#${config.colorScheme.colors.base00}";
+    fg-col = mkLiteral "#${config.colorScheme.colors.base0E}";
+    fg-col2 = mkLiteral "#${config.colorScheme.colors.base0A}";
     grey = mkLiteral "#9aa5ce";
     width = "100px";
     font = "JetBrainsMonoNL Nerd Font 13";
@@ -28,7 +22,7 @@ in
     modi = "run,drun,window";
     icon-theme = "Oranchelo";
     show-icons = true;
-    terminal = "alacritty";
+    terminal = "kitty";
     drun-display-format = "{icon} {name}";
     location = 0;
     disable-history = false;
@@ -47,8 +41,8 @@ in
 
   "window" = {
     height = mkLiteral "600px";
-    border = mkLiteral "2px";
-    border-color = mkLiteral "#73daca";
+    border = mkLiteral "3px";
+    border-color = mkLiteral "#${config.colorScheme.colors.base00}";
     background-color = mkLiteral "@bg-col";
   };
 

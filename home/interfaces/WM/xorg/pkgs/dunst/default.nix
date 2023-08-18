@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   alert = pkgs.writeShellScript "alert.sh" ''
     pw-play --volume=0,04 ~/nix-config/home/interfaces/WM/xorg/pkgs/dunst/alert.wav
@@ -13,34 +13,34 @@ in
     iconTheme.name = "Adwaita";
     settings = {
       global = {
-        width = 700;
+        width = 600;
         height = 300;
         font = "JetBrainsMonoNL Nerd Font 12";
-        corner_radius = 12;
-        origin = "top-center";
+        corner_radius = 8;
+        origin = "bottom-right";
         notification_limit = 0;
-        frame_width = 3;
+        frame_width = 2;
         separator_color = "frame";
         min_icon_size = 64;
         max_icon_size = 64;
-        offset = "0x80";
+        offset = "80x80";
       };
       urgency_low = {
-        background = "#16161e";
-        foreground = "#c0caf5";
-        frame_color = "#c0caf5";
+        background = "#${config.colorScheme.colors.base01}";
+        foreground = "#${config.colorScheme.colors.base00}";
+        frame_color = "#${config.colorScheme.colors.base0E}";
       };
       urgency_normal = {
-        background = "#1a1b26";
-        foreground = "#c0caf5";
-        frame_color = "#c0caf5";
-        timeout = 3;
+        background = "#${config.colorScheme.colors.base01}";
+        foreground = "#${config.colorScheme.colors.base00}";
+        frame_color = "#${config.colorScheme.colors.base0E}";
+        timeout = 5;
       };
 
       urgency_critical = {
-        background = "#292e42";
-        foreground = "#db4b4b";
-        frame_color = "#db4b4b";
+        background = "#${config.colorScheme.colors.base01}";
+        foreground = "#${config.colorScheme.colors.base08}";
+        frame_color = "#${config.colorScheme.colors.base08}";
       };
       play_sound = {
         summary = "*";
