@@ -8,7 +8,7 @@
     settings = {
 
       # The basic colors
-      foreground = "#${config.colorScheme.colors.base00}";
+      foreground = "#${config.colorScheme.colors.base0E}";
       background = "#${config.colorScheme.colors.base01}";
       selection_foreground = "#${config.colorScheme.colors.base01}";
       selection_background = "#${config.colorScheme.colors.base0E}";
