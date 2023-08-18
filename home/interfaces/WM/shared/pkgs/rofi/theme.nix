@@ -25,18 +25,18 @@ in
   };
 
   "configuration" = {
-    modi = mkLiteral "run,drun,window";
-    icon-theme = mkLiteral "Oranchelo";
+    modi = "run,drun,window";
+    icon-theme = "Oranchelo";
     show-icons = true;
-    terminal = mkLiteral "alacritty";
-    drun-display-format = mkLiteral "{icon} {name}";
+    terminal = "alacritty";
+    drun-display-format = "{icon} {name}";
     location = 0;
     disable-history = false;
     hide-scrollbar = true;
-    display-drun = mkLiteral "   Apps ";
-    display-run = mkLiteral "   Run ";
-    display-window = mkLiteral " 﩯  Window";
-    display-Network = mkLiteral " 󰤨  Network";
+    display-drun = "   Apps ";
+    display-run = "   Run ";
+    display-window = " 﩯  Window";
+    display-Network = " 󰤨  Network";
     sidebar-mode = true;
   };
 
@@ -58,53 +58,53 @@ in
 
   "inputbar" = {
     children = map mkLiteral [ "prompt" "entry" ];
-    background-color = "@bg-col";
-    border-radius = "8px";
-    padding = "2px";
+    background-color = mkLiteral "@bg-col";
+    border-radius = mkLiteral "8px";
+    padding = mkLiteral "2px";
   };
 
   "prompt" = {
-    background-color = "@blue";
-    padding = "6px";
-    text-color = "@bg-col";
-    border-radius = "8px";
-    margin = "20px 0px 0px 20px";
+    background-color = mkLiteral "@blue";
+    padding = mkLiteral "6px";
+    text-color = mkLiteral "@bg-col";
+    border-radius = mkLiteral "8px";
+    margin = mkLiteral "20px 0px 0px 20px";
   };
 
   "textbox-prompt-colon" = {
     expand = false;
-    str = "=";
+    str = ":";
   };
 
   "entry" = {
-    padding = "6px";
-    margin = "20px 0px 0px 10px";
-    text-color = "@fg-col";
-    background-color = "@bg-col";
+    padding = mkLiteral "6px";
+    margin = mkLiteral "20px 0px 0px 10px";
+    text-color = mkLiteral "@fg-col";
+    background-color = mkLiteral "@bg-col";
   };
 
   "listview" = {
-    border = "0px 0px 0px";
-    padding = "6px 0px 0px";
-    margin = "10px 0px 0px 20px";
+    border = mkLiteral "0px 0px 0px";
+    padding = mkLiteral "6px 0px 0px";
+    margin = mkLiteral "10px 0px 0px 20px";
     columns = 2;
     lines = 5;
-    background-color = "@bg-col";
+    background-color = mkLiteral "@bg-col";
   };
 
   "element" = {
-    padding = "5px";
-    background-color = "@bg-col";
-    text-color = "@fg-col";
+    padding = mkLiteral "5px";
+    background-color = mkLiteral "@bg-col";
+    text-color = mkLiteral "@fg-col";
   };
 
   "element-icon" = {
-    size = "25px";
+    size = mkLiteral "25px";
   };
 
   "element selected" = {
-    background-color = "@selected-col";
-    text-color = " @fg-col2";
+    background-color = mkLiteral "@selected-col";
+    text-color = mkLiteral " @fg-col2";
   };
 
   "mode-switcher" = {
@@ -112,30 +112,30 @@ in
   };
 
   "button" = {
-    padding = "10px";
-    background-color = "@bg-col-light";
-    text-color = "@grey";
+    padding = mkLiteral "10px";
+    background-color = mkLiteral "@bg-col-light";
+    text-color = mkLiteral "@grey";
     vertical-align = mkLiteral "0.5";
     horizontal-align = mkLiteral "0.5";
   };
 
   "button selected" = {
-    background-color = "@bg-col";
-    text-color = "@blue";
+    background-color = mkLiteral "@bg-col";
+    text-color = mkLiteral "@blue";
   };
 
   "message" = {
-    background-color = "@bg-col-light";
-    margin = "2px";
-    padding = "2px";
-    border-radius = "5px";
+    background-color = mkLiteral "@bg-col-light";
+    margin = mkLiteral "2px";
+    padding = mkLiteral "2px";
+    border-radius = mkLiteral "5px";
   };
 
   "textbox" = {
-    padding = "6px";
-    margin = "20 px 0 px 0 px 20px";
-    text-color = "@blue";
-    background-color = "@bg-col-light";
+    padding = mkLiteral "6px";
+    margin = mkLiteral "20 px 0 px 0 px 20px";
+    text-color = mkLiteral "@blue";
+    background-color = mkLiteral "@bg-col-light";
   };
 }
 
