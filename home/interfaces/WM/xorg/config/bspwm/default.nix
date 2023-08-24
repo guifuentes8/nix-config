@@ -15,13 +15,12 @@ in
       "pkill dunst"
       "dunst"
       "xsetroot -cursor_name left_ptr"
-      "xrandr -s 5120x1440"
     ];
     extraConfig = ''
-      			bspc monitor -d 󰈹  󰉋  󰇮 󰨜 󰙏 󰙯 󰓇 󰑈 
+      			bspc monitor -d     󰇮   󰙯   
 
-      			bspc config border_width         2
-      			bspc config window_gap           10
+      			bspc config border_width         3
+      			bspc config window_gap           14
 
       			bspc config split_ratio          0.50
       			bspc config borderless_monocle   true

@@ -137,7 +137,7 @@
        date = %H:%M:%S
        date-alt = Data: %d/%m/%Y Hora: %H:%M:%S
        label = %date% 
-       label-foreground = #${config.colorScheme.colors.base0C}
+       label-foreground = #${config.colorScheme.colors.base0F}
 
        [module/xkeyboard]
        type = internal/xkeyboard

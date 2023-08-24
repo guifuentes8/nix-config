@@ -6,7 +6,7 @@
 
   xdg.configFile."cava/config".text = lib.generators.toINI { } {
     general = {
-      framerate = 60;
+      framerate = 120;
       bar_width = 2;
       bar_spacing = 1;
     };
