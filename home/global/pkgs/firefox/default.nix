@@ -23,7 +23,7 @@ in
         id = 0;
         name = "cli2nix";
         search = {
-          default = "DuckDuckGo";
+          default = "Google";
           force = true;
           order = [
             "DuckDuckGo"

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   services.polybar = {
     enable = true;
     package = pkgs.polybar.override {
@@ -10,70 +10,43 @@
     };
     script = "polybar mybar &";
     extraConfig = ''
-           ;==========================================================
-       ;
-       ;
-       ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-       ;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-       ;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-       ;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-       ;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-       ;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-       ;
-       ;
-       ;   To learn more about how to configure Polybar
-       ;   go to https://github.com/polybar/polybar
-       ;
-       ;   The README contains a lot of information
-       ;
-       ;==========================================================
-       
        [bar/mybar]
        width = 100%
-       height = 24pt
-       radius = 0
+       height = 32pt
+       radius = 4
 
-       ; dpi = 96
 
-       background = #1a1b26
-       foreground = #9aa5ce 
-
+       background = #${config.colorScheme.colors.base01}
+       foreground = #${config.colorScheme.colors.base00} 
        line-size = 0pt
-
-       border-size = 4pt
-       border-color = #1a1b26
-
-       padding-left = 0
+       border-size = 2pt
+       border-color = #${config.colorScheme.colors.base0E}
+       padding-left = 1
        padding-right = 1
        offset-y = 0
-
        module-margin = 8px
-
-       separator = 
-       separator-foreground = #2ac3de
-
-       font-0 = "JetBrainsMonoNL Nerd Font:size=13;1"
-       font-1 = "JetBrainsMonoNL Nerd Font:size=16;2"
-       label-active-font = 2
-
-
-       modules-left = xworkspaces 
-       modules-center = xwindow
-       modules-right = filesystem memory cpu xkeyboard wlan eth pulseaudio date
-
+       separator = |
+       separator-foreground = #${config.colorScheme.colors.base00}
        cursor-click = pointer
        cursor-scroll = ns-resize
-
        enable-ipc = true
-
        tray-position = right
-
-       ; wm-restack = generic
         wm-restack = bspwm
+       ; wm-restack = generic
        ; wm-restack = i3
-
        ; override-redirect = true
+       ; dpi = 96
 
+       font-0 = "JetBrainsMonoNL Nerd Font:size=11;1"
+       font-1 = "JetBrainsMonoNL Nerd Font:size=18;2"
+       label-active-font = 2
+
+       modules-left = xwindow  
+       modules-center = xworkspaces
+       modules-right = xkeyboard filesystem memory cpu wlan eth pulseaudio date
+
+      ; WORKSPACES
+    
        [module/xworkspaces]
        type = internal/xworkspaces
 
@@ -82,22 +55,25 @@
        label-empty-font = 2
        label-occupied-font = 2
 
-       label-active-foreground = #2ac3de
-       label-active-background = #1a1b26
-       label-active-underline= #a6d189
+       label-active-foreground = #${config.colorScheme.colors.base00}
+       label-active-background = #${config.colorScheme.colors.base01}
+       label-active-underline= #${config.colorScheme.colors.base09}
        label-active-padding = 1
 
        label-occupied = %name%
-       label-occupied-foreground = #cad3f5
+       label-occupied-foreground = #${config.colorScheme.colors.base0E}
        label-occupied-padding = 1
 
        label-urgent = %name%
-       label-urgent-background = #ed8796
+       label-urgent-background = #${config.colorScheme.colors.base01}
+       label-urgent-foreground = #${config.colorScheme.colors.base08}
        label-urgent-padding = 1
 
        label-empty = %name%
-       label-empty-foreground = #cad3f5
+       label-empty-foreground = #${config.colorScheme.colors.base0E}
        label-empty-padding = 1
+
+       ; WINDOWS
 
        [module/xwindow]
        type = internal/xwindow
@@ -109,34 +85,32 @@
 
        mount-0 = /
 
-       label-mounted = %{F#bb9af7}󰋊%{F-} %{F#bb9af7}%percentage_used%%%{F-}
+       label-mounted = %{F#${config.colorScheme.colors.base0E}}󰋊%{F-} %{F#${config.colorScheme.colors.base0E}}%percentage_used%%%{F-}
 
        label-unmounted = %mountpoint% not mounted
-       label-unmounted-foreground = #5b6078
-
-       
+       label-unmounted-foreground = #${config.colorScheme.colors.base0E}
 
       [module/memory]
        type = internal/memory
        interval = 2
-       format = 󰍛 <label>%
+       format = MEM <label>%
        label = %percentage_used%
-       format-foreground = #f7768e
+       format-foreground = #${config.colorScheme.colors.base0E}
 
        [module/cpu]
        type = internal/cpu
        interval = 2
-       format = 󰻠 <label>%
+       format = CPU <label>%
        label = %percentage%
-       format-foreground = #f7768e
+       format-foreground = #${config.colorScheme.colors.base0E}
 
        [module/pulseaudio]
        type = internal/pulseaudio
        format-volume = <ramp-volume> <label-volume>
        label-muted = 󰖁 muted
-       ramp-volume-foreground = #73daca
-       label-volume-foreground = #73daca
-       label-muted-foreground = #1a1b26
+       ramp-volume-foreground = #${config.colorScheme.colors.base0E}
+       label-volume-foreground = #${config.colorScheme.colors.base0E}
+       label-muted-foreground = #${config.colorScheme.colors.base0E}
 
        ramp-volume-0 = 
        ramp-volume-1 = 
@@ -154,25 +128,25 @@
        blacklist-0 = num lock
 
        label-layout = 󰌌 %layout% 
-       label-layout-foreground = #e0af68
+       label-layout-foreground = #${config.colorScheme.colors.base0E}
        label-indicator-on-capslock =   Caps lock
        label-indicator-off-capslock =   Caps lock
-       label-indicator-on-capslock-foreground = #e0af68
-       label-indicator-off-capslock-foreground = #e0af68
+       label-indicator-on-capslock-foreground = #${config.colorScheme.colors.base0E}
+       label-indicator-off-capslock-foreground = #${config.colorScheme.colors.base0E}
 
 
        label-indicator-padding = 2
        label-indicator-margin = 1
-       label-indicator-foreground = #282A2E
-       label-indicator-background = #e0af68
+       label-indicator-foreground = #${config.colorScheme.colors.base0E}
+       label-indicator-background = #${config.colorScheme.colors.base0E}
 
 
        [network-base]
        type = internal/network
        interval = 5
-       format-connected = %{F#ff9e64}󱂇 Connected%{F#ff9e64}
+       format-connected = %{F#${config.colorScheme.colors.base0E}}󱂇 Connected%{F#${config.colorScheme.colors.base0E}}
        format-disconnected = :/ Disconnected
-       label-disconnected = %{F#f7768e}%ifname%%{F#f7768e} disconnected
+       label-disconnected = %{F#${config.colorScheme.colors.base0E}}%ifname%%{F#${config.colorScheme.colors.base0E}} disconnected
 
        [module/wlan]
        inherit = network-base
@@ -182,7 +156,7 @@
        [module/eth]
        inherit = network-base
        interface-type = wired
-       label-connected = %{F#ff9e64}%ifname%%{F-}
+       label-connected = %{F#${config.colorScheme.colors.base0E}}%ifname%%{F-}
 
        [module/date]
        type = internal/date
@@ -192,7 +166,7 @@
        date-alt = Data: %d/%m/%Y Hora: %H:%M:%S
 
        label = %date% 
-       label-foreground = #b4f9f8
+       label-foreground = #${config.colorScheme.colors.base0E}
 
     '';
   };

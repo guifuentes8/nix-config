@@ -17,9 +17,9 @@ in
         height = 300;
         font = "JetBrainsMonoNL Nerd Font 12";
         corner_radius = 8;
-        origin = "bottom-right";
+        origin = "bottom-center";
         notification_limit = 0;
-        frame_width = 2;
+        frame_width = 3;
         separator_color = "frame";
         min_icon_size = 64;
         max_icon_size = 64;
@@ -28,12 +28,12 @@ in
       urgency_low = {
         background = "#${config.colorScheme.colors.base01}";
         foreground = "#${config.colorScheme.colors.base00}";
-        frame_color = "#${config.colorScheme.colors.base0E}";
+        frame_color = "#${config.colorScheme.colors.base0A}";
       };
       urgency_normal = {
         background = "#${config.colorScheme.colors.base01}";
         foreground = "#${config.colorScheme.colors.base00}";
-        frame_color = "#${config.colorScheme.colors.base0E}";
+        frame_color = "#${config.colorScheme.colors.base0A}";
         timeout = 5;
       };
 

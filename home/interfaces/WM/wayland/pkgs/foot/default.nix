@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   programs.foot = {
     enable = true;
@@ -10,32 +11,32 @@
       };
 
       cursor = {
-        color = "c0caf5 2e3c64";
+        color = "${config.colorScheme.colors.base00} ${config.colorScheme.colors.base0E}";
       };
 
       colors = {
         alpha = 0.8;
-        foreground = "a9b1d6";
-        background = "1a1b26";
-        selection-foreground = "a9b1d6";
-        selection-background = "2e3c64";
-        urls = "73daca";
-        regular0 = "1d202f";
-        regular1 = "f7768e";
-        regular2 = "9ece6a";
-        regular3 = "e0af68";
-        regular4 = "7aa2f7";
-        regular5 = "bb9af7";
-        regular6 = "7dcfff";
-        regular7 = "a9b1d6";
-        bright0 = "414868";
-        bright1 = "f7768e";
-        bright2 = "9ece6a";
-        bright3 = "e0af68";
-        bright4 = "7aa2f7";
-        bright5 = "bb9af7";
-        bright6 = "7dcfff";
-        bright7 = "c0caf5";
+        foreground = "${config.colorScheme.colors.base00}";
+        background = "${config.colorScheme.colors.base01}";
+        selection-foreground = "${config.colorScheme.colors.base00}";
+        selection-background = "${config.colorScheme.colors.base0E}";
+        urls = "${config.colorScheme.colors.base0F}";
+        regular0 = "${config.colorScheme.colors.base02}";
+        regular1 = "${config.colorScheme.colors.base08}";
+        regular2 = "${config.colorScheme.colors.base09}";
+        regular3 = "${config.colorScheme.colors.base0A}";
+        regular4 = "${config.colorScheme.colors.base0B}";
+        regular5 = "${config.colorScheme.colors.base0E}";
+        regular6 = "${config.colorScheme.colors.base0D}";
+        regular7 = "${config.colorScheme.colors.base07}";
+        bright0 = "${config.colorScheme.colors.base03}";
+        bright1 = "${config.colorScheme.colors.base08}";
+        bright2 = "${config.colorScheme.colors.base09}";
+        bright3 = "${config.colorScheme.colors.base0A}";
+        bright4 = "${config.colorScheme.colors.base0B}";
+        bright5 = "${config.colorScheme.colors.base0E}";
+        bright6 = "${config.colorScheme.colors.base0D}";
+        bright7 = "${config.colorScheme.colors.base07}";
       };
     };
   };

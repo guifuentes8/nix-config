@@ -8,18 +8,14 @@
     fade = true;
     fadeSteps = [ 0.04 0.04 ];
     shadow = true;
-    shadowOffsets = [ 2 1 ];
-    shadowOpacity = 0.4;
+    shadowOffsets = [ 3 6 ];
+    shadowOpacity = 0.1;
     shadowExclude = [ ];
-    opacityRules = [
-      "90:class_g = 'Dunst'"
-      "90:class_g = 'Polybar'"
-
-    ];
+    opacityRules = [ ];
 
     settings = {
-      shadow-radius = 9;
-      corner-radius = 12;
+      shadow-radius = 7;
+      corner-radius = 8;
 
       transition-length = 400;
       transition-pow-x = 0.15;
@@ -30,7 +26,7 @@
 
       blur = {
         method = "dual_kawase";
-        strength = 6;
+        strength = 8;
         background = true;
         background-frame = false;
         background-fixed = false;

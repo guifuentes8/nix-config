@@ -21,6 +21,7 @@
     krabby
     onlyoffice-bin
     pulseaudio
+    discord
 
     # Chat
     mattermost-desktop
@@ -63,16 +64,6 @@
     appimage-run
     ntfs3g
 
-    # Wine
-
-    # support both 32- and 64-bit applications
-    wineWowPackages.stable
-
-    # winetricks (all versions)
-    winetricks
-
-    # native wayland support (unstable)
-    #wineWowPackages.waylandFull
   ];
 
 }

@@ -27,6 +27,18 @@
             name = "nixos discourse";
             url = "https://discourse.nixos.org/";
           }
+          {
+            name = "Awesome Nix";
+            url = "https://github.com/nix-community/awesome-nix";
+          }
+          {
+            name = "nixos dev manual";
+            url = "https://nix.dev/";
+          }
+          {
+            name = "nix wiki resources";
+            url = "https://nixos.wiki/wiki/Resources";
+          }
         ];
       }
 
