@@ -41,6 +41,9 @@
       xr3 = "xrandr -s 3840x1080";
       xr4 = "xrandr -s 1920x1080";
 
+      yt = "ytfzf -t";
+
+
       # gcalcli
       cal = "gcalcli";
 

@@ -7,16 +7,18 @@ in
     enable = true;
     alwaysResetDesktops = true;
     startupPrograms = [
+      "pkill -USR1 -x sxhkd"
       "sxhkd"
       "picom"
       "systemctl --user restart polybar.service"
-      "feh --bg-scale --randomize ~/.config/wallpapers/images/5120x1440/w1-5120.png"
+      "feh --bg-scale ~/.config/wallpapers/images/wallpaper.jpg"
       "pkill dunst"
       "dunst"
       "xsetroot -cursor_name left_ptr"
+      "xr1"
     ];
     extraConfig = ''
-      			bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱
+      			bspc monitor -d 󰈹  󰉋  󰇮 󰨜 󰙏 󰙯 󰓇 󰑈 
 
       			bspc config border_width         2
       			bspc config window_gap           10

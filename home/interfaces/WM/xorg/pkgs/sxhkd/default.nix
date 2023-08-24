@@ -14,12 +14,8 @@
       # program launcher
       "super + @space" = "rofi -modes 'drun' -show-icons -show drun";
 
-      # change wallpaper
-      "super + w" = "feh --recursive --bg-scale --randomize ~/.config/wallpapers/images/1920x1080/";
-      "super + shift + w" = "feh --recursive --bg-scale --randomize ~/.config/wallpapers/images/5120x1440/";
-
       # reload sxhkd 
-      # "super + Backspace" = "pkill -USR1 -x sxhkd";
+      "super + BackSpace" = "pkill -USR1 -x sxhkd && notify-send sxhkd reloaded!";
 
 
       # BSPWM KEYBINDS ------------------------------------------------
@@ -73,22 +69,28 @@
 
       # ROFI
 
-      # Filebrowser
-      "super + F1" = "rofi -modes 'file-browser-extended' -show file-browser-extended";
+      # Bluetooth
+      "super + F1" = "rofi-bluetooth";
       # Input Device Audio
       "super + F2" = "rofi-pulse-select source";
       # Output Device Audio
       "super + F3" = "rofi-pulse-select sink";
-      # Emoji
-      "super + F4" = "rofi -modi emoji -show emoji";
-      # Calc
-      "super + F5" = "rofi -show calc -modi calc -no-show-match -no-sort -kb-accept-entry 'Control+c' -calc-command ' echo - n '{ result }' | xclip -sel copy'";
       # Bitwarden
-      "super + F6" = "rofi-rbw";
+      "super + F4" = "rofi-rbw";
+      # Filebrowser
+      "super + F5" = "rofi -modes 'file-browser-extended' -show file-browser-extended";
+      # Calc
+      "super + F8" = "rofi -show calc -modi calc -no-show-match -no-sort -kb-accept-entry 'Control+c' -calc-command ' echo - n '{ result }' | xclip -sel copy'";
+
+      "super + F9" = "ytfzf -D -d";
+
+      "super + F10" = "ytfzf -D";
       # Emoji
-      "super + F7" = "rofi-bluetooth";
+      "super + F11" = "rofi -modi emoji -show emoji";
       # Power Menu
-      "super + F8" = "rofi -show p -modi p:rofi-power-menu -lines 6";
+      "super + F12" = "rofi -show p -modi p:rofi-power-menu -lines 6";
+
+
 
       # MEDIA / VOLUME
 

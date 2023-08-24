@@ -6,8 +6,8 @@
 
   xdg.configFile."cava/config".text = lib.generators.toINI { } {
     general = {
-      framerate = 120;
-      bar_width = 1;
+      framerate = 60;
+      bar_width = 2;
       bar_spacing = 1;
     };
     input = {
@@ -32,7 +32,7 @@
     };
     smoothing = {
       # noise_reduction = 0.77;
-      monstercat = 1;
+      monstercat = 0;
       waves = 0;
     };
   };

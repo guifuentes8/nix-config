@@ -12,7 +12,9 @@
     slurp
     swaylock
     swayidle
+    swayimg
     swww
+    ueberzugpp
     webcord
     wl-clipboard
     wf-recorder

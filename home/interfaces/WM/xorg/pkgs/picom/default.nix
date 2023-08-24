@@ -8,7 +8,7 @@
     fade = true;
     fadeSteps = [ 0.04 0.04 ];
     shadow = true;
-    shadowOffsets = [ 3 6 ];
+    shadowOffsets = [ 1 4 ];
     shadowOpacity = 0.1;
     shadowExclude = [ ];
     opacityRules = [ ];

@@ -18,12 +18,13 @@
     ./sptlrx
     ./spotify-player
     ./tmux
-    ./youtube-tui
+    ./ytfzf
   ];
 
   home.packages = with pkgs;
     [
       cmatrix
+      devour
       feh
       gcalcli
       gifsicle
