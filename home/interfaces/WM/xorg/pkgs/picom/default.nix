@@ -11,7 +11,7 @@
     shadowOffsets = [ 1 4 ];
     shadowOpacity = 0.1;
     shadowExclude = [ ];
-    opacityRules = [ ];
+    opacityRules = [ "85:class_g = 'Rofi'" ];
 
     settings = {
       shadow-radius = 7;
@@ -35,6 +35,7 @@
 
       rounded-corners-exclude = [
         "class_g = 'Polybar'"
+        "class_g = 'Rofi'"
       ];
     };
   };
