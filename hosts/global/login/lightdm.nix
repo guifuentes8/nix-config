@@ -1,8 +1,5 @@
 { pkgs, ... }:
-let wallpaper = ./background.jpg;
-in
 {
-
   services.xserver = {
     displayManager.lightdm = {
       background = ./background.jpg;
@@ -10,7 +7,7 @@ in
       greeters = {
         enso = {
           enable = true;
-          blur = true;
+          blur = false;
         };
       };
     };

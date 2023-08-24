@@ -15,7 +15,7 @@ in
       "pkill dunst"
       "dunst"
       "xsetroot -cursor_name left_ptr"
-      "xr1"
+      "xrandr -s 5120x1440"
     ];
     extraConfig = ''
       			bspc monitor -d 󰈹  󰉋  󰇮 󰨜 󰙏 󰙯 󰓇 󰑈 
