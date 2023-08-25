@@ -6,11 +6,12 @@
     ./bottom
     ./cava
     ./eww
+    ./feh
     ./himalaya
+    ./joshuto
     ./kitty
     ./matterhorn
     ./mpv
-    ./nnn
     ./nchat
     ./ncspot
     ./pass
@@ -25,7 +26,6 @@
     [
       cmatrix
       devour
-      feh
       gcalcli
       gifsicle
       imagemagick

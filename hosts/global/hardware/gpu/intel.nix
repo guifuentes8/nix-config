@@ -1,11 +1,9 @@
 { pkgs, config, ... }:
 
 {
-  boot.initrd.kernelModules = [ "amdgpu" ];
-
   services.xserver = {
     enable = true;
-    videoDrivers = [ "amdgpu" ];
+    videoDrivers = [ "intel" ];
   };
 
   hardware = {
@@ -14,14 +12,12 @@
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
-        rocm-opencl-icd
-        rocm-opencl-runtime
-        intel-compute-runtime
-        amdvlk
-    ];
+        intel-media-driver # LIBVA_DRIVER_NAME=iHD
+        vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
     };
   };
-
-  environment.variables.AMD_VULKAN_ICD = "RADV";
 
 }

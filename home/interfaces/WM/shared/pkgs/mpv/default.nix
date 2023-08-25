@@ -3,9 +3,10 @@
   programs.mpv = {
     enable = true;
     config = {
-      hwdec = "auto-safe";
+      hwdec = "nvdec";
       vo = "gpu";
       profile = "gpu-hq";
+      # gpu-context = "wayland";
       ytdl-format = "bestvideo+bestaudio";
     };
     defaultProfiles = [ "gpu-hq" ];

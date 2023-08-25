@@ -9,7 +9,6 @@
 
     # Hardware Gpu (if exist)
     ../global/hardware/gpu/nvidia.nix
-    #../global/hardware/gpu/amdgpu.nix
 
     # Extra Hardware config
     ../global/hardware/keychron.nix
@@ -33,7 +32,6 @@
     # Active services
     ../global/services/gnome-keyring.nix
     ../global/services/flatpak.nix
-
 
     # User 
     ../global/users/guifuentes8.nix
