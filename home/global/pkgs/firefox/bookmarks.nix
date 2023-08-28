@@ -204,8 +204,8 @@
         name = "Cli";
         bookmarks = [
           {
-            name = "Tokyo night";
-            url = "https://github.com/enkia/tokyo-night-vscode-theme";
+            name = "Material Deep Ocean";
+            url = "https://github.com/marko-cerovac/material.nvim";
           }
         ];
       }

@@ -1,11 +1,8 @@
-{ pkgs, inputs, outputs, ... }:
+{ pkgs, config, ... }:
 {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar.overrideAttrs (oa: {
-      mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" "-Dcava=enabled" ];
-    });
-
+    package = pkgs.waybar-hyprland;
     systemd.enable = true;
     style = ''
 
@@ -17,9 +14,8 @@
       }
 
       window#waybar {
-          background: rgba(0,0,0,0);
-          color: #cdd6f4;
-          border-radius: 12px;
+          background-color: #${config.colorScheme.colors.base01};
+          color: #${config.colorScheme.colors.base0E};
       }
 
       #cpu,
@@ -33,10 +29,9 @@
       #network,
       #tray,
       #backlight {
-      background: rgba(0,0,0,0);
+      background: #${config.colorScheme.colors.base01};
       padding: 4px 6px;
       margin: 4px 2px;
-      border-radius: 12px;
       }
 
       #workspaces {
@@ -47,71 +42,71 @@
 
 
       #workspaces button {
-        color: #9aa5ce;
+        color: #${config.colorScheme.colors.base0E};
         padding: 0px 4px 0px 0px;
         margin: 0px 2px;
 
       }
 
       #workspaces button.active {
-        color: #2ac3de;
-        background-color: rgba(0,0,0,0);
+        color: #${config.colorScheme.colors.base00};
+        background-color: #${config.colorScheme.colors.base01};
       }
 
       #workspaces button.focused {
-        color: #2ac3de;
+        color: #${config.colorScheme.colors.base00};
         border-radius: 24px;
       }
 
       #workspaces button.urgent {
-        color: #ff9e64;
-        background: #f38ba8;
+        color: #${config.colorScheme.colors.base02};
+        background: #${config.colorScheme.colors.base08};
         border-radius: 10px;
       }
 
       #workspaces button:hover {
-        background-color: rgba(0,0,0,0);
-        color: #2ac3de;
+        background-color: #${config.colorScheme.colors.base01};
+        color: #${config.colorScheme.colors.base00};
       }
       
       #disk {
-        color: #bb9af7;
+        color: #${config.colorScheme.colors.base0E};
       }
       
       #cpu {
-        color: #f7768e;
+        color: #${config.colorScheme.colors.base0E};
       }
       
       #memory {
-        color: #f7768e;
+        color: #${config.colorScheme.colors.base0E};
       }
       
       #temperature {
-        color: #f7768e;
+        color: #${config.colorScheme.colors.base0E};
       }
       
       #keyboard-state {
-        color: #e0af68;
+        color: #${config.colorScheme.colors.base0E};
       }
       
       #network {
-        color: #ff9e64;
+        color: #${config.colorScheme.colors.base0E};
       }
       
       #backlight {
-        color: #9ece6a;
+        color: #${config.colorScheme.colors.base0E};
       }
       
       #pulseaudio {
-        color: #73daca;
+        color: #${config.colorScheme.colors.base0E};
       }
       
       #battery {
-        color: #c0caf5;
+        color: #${config.colorScheme.colors.base0E};
       }
 
       #clock {
-        color: #b4f9f8;
+        color: #${config.colorScheme.colors.base0E};
         margin-right: 12px;
       }
 
@@ -124,35 +119,31 @@
       }
 
       #mpris {
-        color: #73daca;
+        color: #${config.colorScheme.colors.base00};
         margin-left: 12px;
         margin-right: 12px;
       }
 
        #custom-media {
-        color: #73daca;
+        color: #${config.colorScheme.colors.base00};
         margin-left: 12px;
         margin-right: 12px;
       }
 
       #cava {
-        color: #73daca;
+        color: #${config.colorScheme.colors.base00};
       }
-
     '';
 
     settings = [{
       mode = "dock";
       fixed-center = true;
       layer = "top";
-      position = "top";
+      position = "bottom";
       exclusive = true;
-    #  margin-top = 2;
-    #  margin-right = 12;
-    #  margin-left = 12;
       height = 0;
-      modules-left = [ "custom/nix-logo" "sway/workspaces" "wlr/workspaces" ];
-      modules-center = [ "cava" "mpris" "cava" ];
+      modules-left = [ "custom/nix-logo" "sway/workspaces" "wlr/workspaces" "mpris" "cava" ];
+      modules-center = [ ];
       modules-right = [ "disk" "cpu" "memory" "temperature" "backlight" "network" "pulseaudio" "battery" "clock" "tray" ];
       "custom/media" = {
         "interval" = 5;
@@ -234,21 +225,20 @@
         "tooltip-format" = "{app}= {title}";
       };
       "cava" = {
-        "cava_config" = "$XDG_CONFIG_HOME/cava/config";
         "framerate" = 60;
-        "autosens" = 1;
-        "sensitivity" = 100;
-        "bars" = 8;
+        "autosens" = 0;
+        "sensitivity" = 10;
+        "bars" = 16;
         "lower_cutoff_freq" = 50;
         "higher_cutoff_freq" = 10000;
-        "method" = "pipewire";
+        "method" = "pulse";
         "source" = "auto";
         "stereo" = true;
         "reverse" = false;
         "bar_delimiter" = 0;
-        "monstercat" = false;
-        "waves" = true;
-        "noise_reduction" = 0.77;
+        "monstercat" = true;
+        "waves" = false;
+        "noise_reduction" = 0.30;
         "input_delay" = 2;
         "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
         "actions" = {
@@ -256,13 +246,13 @@
         };
       };
       "mpris" = {
-        "format" = "{player_icon} {length} | {artist} - {title} ";
-        "format-paused" = "{status_icon} {length} | {artist} - {title}";
-        max-length = 40;
+        "format" = "{player_icon} {length} | {title} - {artist}  ";
+        "format-paused" = "{status_icon} - {title}";
+        max-length = 60;
         interval = 5;
         "player-icons" = {
           "default" = "▶";
-          "mpv" = "🎵";
+          "mpv" = "󰋋 ";
           "spotify_player" = " ";
         };
         "status-icons" = {
@@ -317,16 +307,16 @@
       };
       "disk" = {
         "interval" = 30;
-        "format" = "󰋊 {total} | 󱁋 {percentage_free}% | 󱁌 {percentage_used}%";
+        "format" = " {percentage_used}%";
         "path" = "/";
       };
       "cpu" = {
         interval = 2;
-        "format" = "󰻠 {usage}%";
+        "format" = " {usage}%";
         "tooltip" = true;
       };
       "memory" = {
-        "format" = "󰍛 {}%";
+        "format" = "󰟁 {}%";
       };
       "temperature" = {
         "thermal-zone" = 2;

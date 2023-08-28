@@ -2,20 +2,21 @@
 {
   programs.foot = {
     enable = true;
-    server.enable = false;
+    server.enable = true;
     settings = {
       main = {
         term = "xterm-256color";
         dpi-aware = "yes";
-        font = "JetBrainsMonoNL Nerd Font:size=10";
+        font = "JetBrainsMonoNL Nerd Font:size=8";
       };
-
+      mouse = {
+        hide-when-typing = "yes";
+      };
       cursor = {
         color = "${config.colorScheme.colors.base00} ${config.colorScheme.colors.base0E}";
       };
-
       colors = {
-        alpha = 0.8;
+        alpha = 0.9;
         foreground = "${config.colorScheme.colors.base00}";
         background = "${config.colorScheme.colors.base01}";
         selection-foreground = "${config.colorScheme.colors.base00}";

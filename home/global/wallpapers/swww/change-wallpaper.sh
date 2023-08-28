@@ -7,14 +7,12 @@ export XDG_CACHE_HOME=~/.cache
 WALLPAPER_PATH=~/.config/wallpapers/gifs
 IMG_NAME=$(ls ${WALLPAPER_PATH} | shuf -n 1)
 IMG_PATH=${WALLPAPER_PATH}/$IMG_NAME
-#swaybg -i "${IMG_PATH}"
 
 init() {
   swww init
-  sleep 3
 }
 change() {
-  swww img "${IMG_PATH}" --filter Nearest --transition-type any --transition-fps 60
+  swww img "${IMG_PATH}" --transition-type any
 }
 
 case "$1" in

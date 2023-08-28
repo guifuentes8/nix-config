@@ -1,7 +1,6 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 #let   modifier = config.wayland.windowManager.sway.config.modifier;
-let autostart = ../wayland-autostart.sh;
-in
+#in
 {
 
   imports = [
@@ -119,7 +118,6 @@ in
         { command = "dbus-sway-environment"; }
         { command = "systemctl --user restart waybar"; always = true; }
         { command = "mako"; }
-        { command = "${autostart}"; }
       ];
 
       terminal = "foot";

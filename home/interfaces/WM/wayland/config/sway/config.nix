@@ -1,6 +1,4 @@
 {}:
-let autostart = ../wayland-autostart.sh;
-in
 ''
   # Default config for sway
   #
@@ -261,7 +259,6 @@ in
   exec configure-gtk
   exec mako
   exec hyprpaper
-  exec ${autostart}
 
 ''
 

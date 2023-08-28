@@ -4,6 +4,6 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   shotcut = pkgs.callPackage ./shotcut { };
-  moosync = pkgs.callPackage ./moosync { };
+  material-gtk-theme = pkgs.callPackage ./material-gtk-theme { };
   sddm-theme = pkgs.callPackage ./sddm-theme { };
 }

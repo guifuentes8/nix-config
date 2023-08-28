@@ -1,10 +1,32 @@
 { pkgs, lib, config, ... }:
 {
-  xdg.configFile."spotify-player/app.toml".source = ./app.toml;
+  xdg.configFile."spotify-player/app.toml".source = (pkgs.formats.toml { }).generate "app.toml"
+    {
+      client_id = "32c1c3d388a14e4981d80295af909be7";
+      theme = "Material-Deep-Ocean";
+      enable_media_control = true;
+      enable_cover_image_cache = true;
+      page_size_in_rows = 50;
+      track_table_item_max_len = 50;
+      pause_icon = "⏸";
+      liked_icon = "♥";
+      play_icon = "▶️";
+      border_type = "Rounded";
+      playback_window_position = "Bottom";
+      cover_img_width = 5;
+      cover_img_length = 11;
+      device = {
+        volume = 100;
+        audio_cache = true;
+        bitrate = 320;
+      };
+    };
+
+
   xdg.configFile."spotify-player/theme.toml".source = (pkgs.formats.toml { }).generate "theme.toml"
     {
       themes = [{
-        name = "Tokyonight-storm";
+        name = "Material-Deep-Ocean";
         palette = {
           background = "#${config.colorScheme.colors.base01}";
           foreground = "#${config.colorScheme.colors.base00}";
@@ -56,8 +78,5 @@
           };
         };
       }];
-
-
-
     };
 }
