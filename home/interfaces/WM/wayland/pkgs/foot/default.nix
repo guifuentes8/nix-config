@@ -16,11 +16,11 @@
         color = "${config.colorScheme.colors.base00} ${config.colorScheme.colors.base0E}";
       };
       colors = {
-        alpha = 0.9;
+        alpha = 0.8;
         foreground = "${config.colorScheme.colors.base00}";
-        background = "${config.colorScheme.colors.base01}";
+        background = "${config.colorScheme.colors.base02}";
         selection-foreground = "${config.colorScheme.colors.base00}";
-        selection-background = "${config.colorScheme.colors.base0E}";
+        selection-background = "${config.colorScheme.colors.base02}";
         urls = "${config.colorScheme.colors.base0F}";
         regular0 = "${config.colorScheme.colors.base02}";
         regular1 = "${config.colorScheme.colors.base08}";

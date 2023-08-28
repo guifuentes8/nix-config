@@ -10,6 +10,7 @@ IMG_PATH=${WALLPAPER_PATH}/$IMG_NAME
 
 init() {
   swww init
+  sleep 2
 }
 change() {
   swww img "${IMG_PATH}" --transition-type any

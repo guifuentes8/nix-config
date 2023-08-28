@@ -31,10 +31,10 @@
       ../global/interfaces/WM/wayland/sway
 
       # Active services
-      ../global/services/gnome-keyring.nix
-      #      ../global/services/teamviewer.nix
-      ../global/services/temperature.nix
       ../global/services/backlight.nix
+      ../global/services/firewall.nix
+      ../global/services/gnome-keyring.nix
+      ../global/services/temperature.nix
 
       # User 
       ../global/users/guifuentes8.nix

@@ -23,11 +23,6 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     extraLuaConfig = ''
-
-      require("material").setup({
-        style = "night",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-        transparent = true,     -- Enable this to disable setting the background color
-      })
       require 'base'
       require 'highlights'
       require 'maps'
@@ -104,8 +99,12 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/dashboard.rc.lua);
       }
+      {
+        plugin = material-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/themes/material.rc.lua);
+      }
 
-      material-nvim
       luasnip # Snippet engine
       cmp-buffer # buffer words
       cmp-nvim-lsp # dependencies

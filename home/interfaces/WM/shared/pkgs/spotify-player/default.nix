@@ -15,6 +15,7 @@
       playback_window_position = "Bottom";
       cover_img_width = 5;
       cover_img_length = 11;
+      cover_img_scale = 1.8;
       device = {
         volume = 100;
         audio_cache = true;

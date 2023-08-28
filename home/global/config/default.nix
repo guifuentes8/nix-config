@@ -16,7 +16,6 @@
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
     config = {
-
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
       permittedInsecurePackages = [
@@ -34,12 +33,8 @@
       PASSWORD_STORE_DIR = lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
   };
-
-
-
   programs.home-manager.enable = true;
   systemd.user.startServices = true;
-
   xdg.userDirs = {
     music = "${config.home.homeDirectory}/Music";
     videos = "${config.home.homeDirectory}/Videos";

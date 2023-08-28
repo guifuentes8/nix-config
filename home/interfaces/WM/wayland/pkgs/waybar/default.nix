@@ -14,7 +14,7 @@
       }
 
       window#waybar {
-          background-color: #${config.colorScheme.colors.base01};
+          background-color: rgba(15, 17, 26, 0.5);
           color: #${config.colorScheme.colors.base0E};
       }
 
@@ -29,7 +29,7 @@
       #network,
       #tray,
       #backlight {
-      background: #${config.colorScheme.colors.base01};
+      background: rgba(15, 17, 26, 0);
       padding: 4px 6px;
       margin: 4px 2px;
       }
@@ -139,7 +139,7 @@
       mode = "dock";
       fixed-center = true;
       layer = "top";
-      position = "bottom";
+      position = "top";
       exclusive = true;
       height = 0;
       modules-left = [ "custom/nix-logo" "sway/workspaces" "wlr/workspaces" "mpris" "cava" ];

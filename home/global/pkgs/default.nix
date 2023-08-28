@@ -4,7 +4,6 @@
   imports = [
     ./bat
     ./caffeine
-    ./davinci-resolve
     ./firefox
     ./gh
     ./git

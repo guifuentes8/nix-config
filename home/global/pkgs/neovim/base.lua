@@ -54,5 +54,4 @@ opt.formatoptions:append { 'r' }
 
 opt.clipboard = "unnamedplus"
 
-cmd([[ colorscheme material]] )
 g.material_style = "deep ocean"

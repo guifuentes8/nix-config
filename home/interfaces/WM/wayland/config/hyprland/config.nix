@@ -11,6 +11,7 @@
   exec-once = gsettings set org.gnome.desktop.interface cursor-size 18
   exec-once = hyprctl setcursor Bibata-Modern-Ice 18
   exec-once = swww init
+  exec-once = bash /home/guifuentes8/nix-config/home/global/wallpapers/swww/change-wallpaper.sh change
   
 # MONITORS
 
@@ -46,7 +47,7 @@
       blur {
         enabled = true
         size = 7
-        passes = 1
+        passes = 2
         new_optimizations = true
         ignore_opacity = true
         xray = true
@@ -117,7 +118,7 @@
   bind = $mainMod, F5, exec, rofi -modes 'file-browser-extended' -show file-browser-extended
   bind = $mainMod, F6, exec, 
   bind = $mainMod, F7, exec, 
-  bind = $mainMod, F8, exec, rofi -show calc -modi calc -no-show-match -no-sort -kb-accept-entry 'Control+c' -calc-command ' echo - n '{ result }' | xclip -sel copy'
+  bind = $mainMod, F8, exec, rofi -show calc -modi calc -no-show-match -no-sort -kb-accept-entry 'Control+c' -calc-command ' echo - n '{ result }' | wl-copy -sel copy'
   bind = $mainMod, F9, exec, ytfzf -D -d
   bind = $mainMod, F10, exec, ytfzf -D
   bind = $mainMod, F11, exec, rofi -modi emoji -show emoji
