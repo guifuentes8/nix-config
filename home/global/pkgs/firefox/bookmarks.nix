@@ -247,6 +247,24 @@
         ];
       }
 
+      {
+        name = "Concursos";
+        bookmarks = [
+          {
+            name = "USP - ANALISTA DE SISTEMAS";
+            url = "https://app.fuvest.br/edital_meus_concursos";
+          }
+          {
+            name = "CAMARA DEPUTADOS - INFORMATICA";
+            url = "https://www50.fgv.br/Inscricao/MinhasInscricoes.aspx";
+          }
+          {
+            name = "JUNDIAI - ARQUITETO DE SISTEMAS";
+            url = "https://www.vunesp.com.br/AreaCandidato/Posicionar/CIJU2301/pagamento";
+          }
+        ];
+      }
+
     ];
   }
 
