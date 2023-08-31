@@ -14,8 +14,6 @@
     swayidle
     swayimg
     swww
-    ueberzugpp
-    webcord
     wl-clipboard
     wf-recorder
     wtype

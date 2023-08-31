@@ -1,26 +1,19 @@
 { pkgs, lib, ... }:
 {
   imports = [
+    ./pkgs
+
     # Global config (required)
-    ./global
+    ../shared
 
     # Environment (DE and/or WM)
-    ./interfaces/WM/shared
+    ../interfaces/WM/shared
 
     # Wayland or Xorg Packages
-    ./interfaces/WM/wayland
+    ../interfaces/WM/wayland
 
   ];
 
-  home.sessionVariables = {
-    MOZ_ENABLE_WAYLAND = 1;
-  };
-
-  programs = {
-    firefox = {
-      package = pkgs.firefox-wayland;
-    };
-  };
 
   gtk = {
     cursorTheme = lib.mkDefault {

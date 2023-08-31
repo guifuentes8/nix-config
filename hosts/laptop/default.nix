@@ -11,33 +11,33 @@
       #../global/config/hardware/amdgpu.nix
 
       # Extra Hardware config
-      ../global/hardware/bluetooth.nix
-      # ../global/config/hardware/keychron.nix
+      ../shared/hardware/bluetooth.nix
+      # ../shared/config/hardware/keychron.nix
 
       # NIXOS CONFIG ------------------------------------
 
-      # Global NixOs Config 
-      ../global
+      # shared NixOs Config 
+      ../shared
 
       # Boot initial (grub or systemd)
-      ../global/boot/systemd-boot.nix
+      ../shared/boot/systemd-boot.nix
 
       # Login Manager + Session (required after new home-manager xsession DE/WM change...)
-      ../global/login/greetd.nix
+      ../shared/login/greetd.nix
 
       # Choice Interface (WM and/or DE)
-      #../global/interfaces/WM/xorg/bspwm
-      ../global/interfaces/WM/wayland/hyprland
-      ../global/interfaces/WM/wayland/sway
+      #../shared/interfaces/WM/xorg/bspwm
+      ../shared/interfaces/WM/wayland/hyprland
+      ../shared/interfaces/WM/wayland/sway
 
       # Active services
-      ../global/services/backlight.nix
-      ../global/services/firewall.nix
-      ../global/services/gnome-keyring.nix
-      ../global/services/temperature.nix
+      ../shared/services/backlight.nix
+      ../shared/services/firewall.nix
+      ../shared/services/gnome-keyring.nix
+      ../shared/services/temperature.nix
 
       # User 
-      ../global/users/guifuentes8.nix
+      ../shared/users/guifuentes8.nix
 
     ];
 

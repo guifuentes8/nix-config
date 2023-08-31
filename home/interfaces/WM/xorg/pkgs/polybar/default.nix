@@ -16,7 +16,7 @@
        radius = 0
 
 
-       background = #cc${config.colorScheme.colors.base01}
+       background = #${config.colorScheme.colors.base01}
        foreground = #${config.colorScheme.colors.base00} 
        line-size = 0pt
        border-size = 0pt
@@ -25,21 +25,21 @@
        padding-right = 1
        offset-y = 0
        module-margin = 8px
-       separator = |
+       separator = 
        separator-foreground = #${config.colorScheme.colors.base0A}
        cursor-click = pointer
        cursor-scroll = ns-resize
        enable-ipc = true
        tray-position = right
        wm-restack = bspwm
-       bottom = true
+       bottom = false
 
        font-0 = "JetBrainsMonoNL Nerd Font:size=11;1"
        font-1 = "JetBrainsMonoNL Nerd Font:size=16;2"
        label-active-font = 2
 
-       modules-left = xwindow  
-       modules-center = xworkspaces
+       modules-left = xworkspaces  
+       modules-center = xwindow 
        modules-right = filesystem memory cpu wlan eth pulseaudio date
 
       ; ------- WORKSPACES ---------
@@ -53,7 +53,7 @@
        label-occupied-font = 2
 
        label-active-foreground = #${config.colorScheme.colors.base00}
-       label-active-background = #cc${config.colorScheme.colors.base01}
+       label-active-background = #${config.colorScheme.colors.base01}
        label-active-underline= #${config.colorScheme.colors.base09}
        label-active-padding = 2
 
@@ -82,30 +82,30 @@
        type = internal/fs
        interval = 25
        mount-0 = /
-       label-mounted = %{F#${config.colorScheme.colors.base0E}}%{F-} %{F#${config.colorScheme.colors.base00}}%percentage_used%%%{F-}
+       label-mounted = %{F#${config.colorScheme.colors.base0E}}%{F-} %{F#${config.colorScheme.colors.base0E}}%percentage_used%%%{F-}
        label-unmounted = %mountpoint% not mounted
        label-unmounted-foreground = #${config.colorScheme.colors.base0F}
 
       [module/memory]
        type = internal/memory
        interval = 2
-       format = %{F#${config.colorScheme.colors.base0E}}󰟁%{F-} <label>%
+       format = %{F#${config.colorScheme.colors.base0E}}󰟁 <label>%%{F-}
        label = %percentage_used%
        format-foreground = #${config.colorScheme.colors.base0E}
 
       [module/cpu]
        type = internal/cpu
        interval = 2
-       format = %{F#${config.colorScheme.colors.base0E}}%{F-} <label>%
+       format = %{F#${config.colorScheme.colors.base0E}} <label>%%{F-}
        label = %percentage%
        format-foreground = #${config.colorScheme.colors.base0E}
 
       [network-base]
        type = internal/network
        interval = 5
-       format-connected = %{F#${config.colorScheme.colors.base0E}}󰇧%{F-} %{F#${config.colorScheme.colors.base00}}Connected%{F-}
+       format-connected = %{F#${config.colorScheme.colors.base0E}}󰇧%{F-} %{F#${config.colorScheme.colors.base0E}}Connected%{F-}
        format-disconnected = :/ Disconnected
-       label-disconnected = %{F#${config.colorScheme.colors.base0E}}%ifname%%{F#${config.colorScheme.colors.base00}} disconnected
+       label-disconnected = %{F#${config.colorScheme.colors.base0E}}%ifname%%{F#${config.colorScheme.colors.base0E}} disconnected%{F-}
 
       [module/wlan]
        inherit = network-base
@@ -122,8 +122,8 @@
        format-volume = <ramp-volume> <label-volume>
        label-muted = 󰖁 muted
        ramp-volume-foreground = #${config.colorScheme.colors.base0E}
-       label-volume-foreground = #${config.colorScheme.colors.base00}
-       label-muted-foreground = #${config.colorScheme.colors.base0F}
+       label-volume-foreground = #${config.colorScheme.colors.base0E}
+       label-muted-foreground = #${config.colorScheme.colors.base0A}
        ramp-volume-0 = 
        ramp-volume-1 = 
        ramp-volume-2 = 
@@ -137,7 +137,7 @@
        date = %H:%M:%S
        date-alt = Data: %d/%m/%Y Hora: %H:%M:%S
        label = %date% 
-       label-foreground = #${config.colorScheme.colors.base0F}
+       label-foreground = #${config.colorScheme.colors.base00}
 
        [module/xkeyboard]
        type = internal/xkeyboard

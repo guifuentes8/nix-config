@@ -13,11 +13,11 @@ in
     iconTheme.name = "Adwaita";
     settings = {
       global = {
-        width = 600;
+        width = 700;
         height = 300;
         font = "JetBrainsMonoNL Nerd Font 12";
         corner_radius = 8;
-        origin = "bottom-center";
+        origin = "bottom-right";
         notification_limit = 0;
         frame_width = 3;
         separator_color = "frame";

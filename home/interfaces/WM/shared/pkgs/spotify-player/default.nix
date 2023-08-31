@@ -1,5 +1,10 @@
 { pkgs, lib, config, ... }:
 {
+
+  home.packages = with pkgs; [
+    spotify-player
+  ];
+
   xdg.configFile."spotify-player/app.toml".source = (pkgs.formats.toml { }).generate "app.toml"
     {
       client_id = "32c1c3d388a14e4981d80295af909be7";
@@ -15,7 +20,6 @@
       playback_window_position = "Bottom";
       cover_img_width = 5;
       cover_img_length = 11;
-      cover_img_scale = 1.8;
       device = {
         volume = 100;
         audio_cache = true;

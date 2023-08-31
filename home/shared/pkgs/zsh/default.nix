@@ -1,5 +1,9 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 {
+
+  home.packages = with pkgs; [
+    krabby
+  ];
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;

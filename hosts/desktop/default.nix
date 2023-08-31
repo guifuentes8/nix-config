@@ -8,33 +8,33 @@
     ./hardware-configuration.nix
 
     # Hardware Gpu (if exist)
-    ../global/hardware/gpu/nvidia.nix
+    ../shared/hardware/gpu/nvidia.nix
 
     # Extra Hardware config
-    ../global/hardware/keychron.nix
-    ../global/hardware/logitech.nix
+    ../shared/hardware/keychron.nix
+    ../shared/hardware/logitech.nix
 
     # NIXOS CONFIG ------------------------------------
 
-    # Global NixOs Config 
-    ../global
+    # shared NixOs Config 
+    ../shared
 
     # Boot initial (grub or systemd)
-    ../global/boot/grub.nix
+    ../shared/boot/grub.nix
 
     # Login Manager
-    ../global/login/lightdm.nix
+    ../shared/login/lightdm.nix
 
     # Choice Interface (WM and/or DE)
-    ../global/interfaces/WM/xorg/bspwm
-    ../global/interfaces/DE/gnome
+    ../shared/interfaces/WM/xorg/bspwm
+    ../shared/interfaces/DE/gnome
 
     # Active services
-    ../global/services/gnome-keyring.nix
-    ../global/services/flatpak.nix
+    ../shared/services/gnome-keyring.nix
+    ../shared/services/flatpak.nix
 
     # User 
-    ../global/users/guifuentes8.nix
+    ../shared/users/guifuentes8.nix
 
   ];
 

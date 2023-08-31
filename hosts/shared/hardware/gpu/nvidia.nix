@@ -3,16 +3,7 @@
 {
 
   services.xserver = {
-    videoDrivers = [ "nvidia" "nomodeset" ];
-    deviceSection = ''
-      Option "DRI" "2"
-      Option "TearFree" "true"
-    '';
-    screenSection = ''
-      Option "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
-      Option "AllowIndirectGLXProtocol" "off"
-      Option "TripleBuffer" "on"
-    '';
+    videoDrivers = [ "nvidia" ];
   };
 
   hardware = {
