@@ -36,5 +36,6 @@
       # Dependencies / Others
       imagemagick
       libnotify
+      pavucontrol
     ];
 }

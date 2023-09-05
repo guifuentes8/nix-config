@@ -12,7 +12,7 @@
 
     # Extra Hardware config
     ../shared/hardware/keychron.nix
-    ../shared/hardware/logitech.nix
+    # ../shared/hardware/logitech.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -27,11 +27,11 @@
 
     # Choice Interface (WM and/or DE)
     ../shared/interfaces/WM/xorg/bspwm
-    ../shared/interfaces/DE/gnome
 
     # Active services
     ../shared/services/gnome-keyring.nix
-    ../shared/services/flatpak.nix
+    ../shared/services/teamviewer.nix
+    # ../shared/services/flatpak.nix
 
     # User 
     ../shared/users/guifuentes8.nix

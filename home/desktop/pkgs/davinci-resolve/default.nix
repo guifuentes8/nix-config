@@ -13,7 +13,7 @@ in
       [Desktop Entry]
         Name=DaVinci Resolve
         GenericName=DaVinci Resolve
-        Exec=env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia davinci-resolve %u
+        Exec=davinci-resolve
         Type=Application
         Terminal=false
         Icon=${icon}

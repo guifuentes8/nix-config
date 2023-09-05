@@ -8,10 +8,9 @@
     # Global config (required)
     ../shared
 
-
     # Environment (DE)
-    ../interfaces/DE/shared
-    ../interfaces/DE/gnome
+    # ../interfaces/DE/shared
+    # ../interfaces/DE/kde
     #1 ./interfaces/DE/kde
     #2 ./interfaces/DE/gnome
 

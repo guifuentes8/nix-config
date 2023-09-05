@@ -1,6 +1,10 @@
 { pkgs, lib, ... }:
 
 {
+  imports = [
+    ./python.nix
+  ];
+
   services.xserver = {
     enable = true;
     desktopManager.plasma5 = {
@@ -16,6 +20,7 @@
 
   environment.systemPackages = (with pkgs.libsForQt5; [
     kmail
+    kdenlive
     kate
     ktorrent
     kmag

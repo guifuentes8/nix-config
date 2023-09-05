@@ -3,7 +3,7 @@
 {
 
   services.xserver = {
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "nvidia" "nomodeset" ];
   };
 
   hardware = {
