@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 {
   programs.mpv = {
     enable = true;
@@ -6,9 +6,10 @@
       hwdec = "nvdec";
       vo = "gpu";
       profile = "gpu-hq";
-      # gpu-context = "wayland";
+      gpu-context = "wayland";
       ytdl-format = "bestvideo+bestaudio";
-      background = "#${config.colorScheme.colors.base01}";
+      background = lib.mkDefault "#${config.colorScheme.colors.base01}";
+      alpha = "yes";
     };
     defaultProfiles = [ "gpu-hq" ];
     scripts = [ pkgs.mpvScripts.mpris ];

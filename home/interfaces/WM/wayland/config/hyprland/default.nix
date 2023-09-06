@@ -17,7 +17,7 @@
         exec-once = gsettings set org.gnome.desktop.interface cursor-size 18
         exec-once = hyprctl setcursor Bibata-Modern-Ice 18
         exec-once = swww init
-        exec-once = bash /home/guifuentes8/nix-config/home/global/wallpapers/swww/change-wallpaper.sh change
+        exec-once = bash /home/guifuentes8/nix-config/home/shared/wallpapers/swww/change-wallpaper.sh change
   
       # MONITORS
 
@@ -69,7 +69,6 @@
             inactive_opacity = 1
             fullscreen_opacity = 1
         }
-        blurls=waybar
 
         animations {
             enabled = true
@@ -111,7 +110,7 @@
         bind = $mainMod, Return, exec, $term
         bind = $mainMod, Space, exec, rofi -modes "drun" -show-icons -show drun
         bind = $mainMod, Q, killactive,
-        bind = $mainMod, W, exec, bash /home/guifuentes8/nix-config/home/global/wallpapers/swww/change-wallpaper.sh change
+        bind = $mainMod, W, exec, bash /home/guifuentes8/nix-config/home/shared/wallpapers/swww/change-wallpaper.sh change
         bind = $mainMod, S, togglesplit, # dwindle
         bind = $mainMod, F, togglefloating,
         bind = $mainMod, M, fullscreen, 1
@@ -196,7 +195,12 @@
 
         # will reset the submap, meaning end the current one and return to the global one
         submap=reset
-  
-    ''
-      };
-  }
+
+        blurls = waybar
+        windowrule = noblur,^(firefox)$ # disables blur for firefox
+        windowrule = float,^(mpv)$
+        windowrule = size 960 520,^(mpv)$
+        windowrule = center,^(mpv)$
+    '';
+  };
+}

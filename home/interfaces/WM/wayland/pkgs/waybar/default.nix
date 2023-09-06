@@ -14,7 +14,7 @@
       }
 
       window#waybar {
-          background-color: rgba(15, 17, 26, 0.5);
+          background: #${config.colorScheme.colors.base01};
           color: #${config.colorScheme.colors.base0E};
       }
 
@@ -29,7 +29,7 @@
       #network,
       #tray,
       #backlight {
-      background: rgba(15, 17, 26, 0);
+      background: #${config.colorScheme.colors.base01};
       padding: 4px 6px;
       margin: 4px 2px;
       }
