@@ -28,10 +28,11 @@
     # Choice Interface (WM and/or DE)
     ../shared/interfaces/WM/xorg/bspwm
 
+
     # Active services
     ../shared/services/gnome-keyring.nix
     ../shared/services/teamviewer.nix
-    # ../shared/services/flatpak.nix
+    ../shared/services/flatpak.nix
 
     # User 
     ../shared/users/guifuentes8.nix
