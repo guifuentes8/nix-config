@@ -1,5 +1,7 @@
 { ... }:
 {
+
+
   networking.firewall = {
     enable = true;
     trustedInterfaces = [ "p2p-wl+" ];
@@ -9,6 +11,7 @@
       { from = 4000; to = 4070; }
       { from = 8000; to = 8010; }
       { from = 5353; to = 5353; }
+      { from = 32768; to = 60999; }
     ];
   };
 }

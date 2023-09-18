@@ -6,7 +6,7 @@
   ];
 
   home.packages = with pkgs; [
-    gnome-network-displays
+    go2tv
     webcord
   ];
 }
