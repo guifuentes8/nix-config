@@ -27,12 +27,12 @@
 
     # Choice Interface (WM and/or DE)
     ../shared/interfaces/WM/xorg/bspwm
-
+    ../shared/interfaces/WM/xorg/i3
 
     # Active services
+    ../shared/services/gaming.nix
     ../shared/services/gnome-keyring.nix
     ../shared/services/teamviewer.nix
-    ../shared/services/flatpak.nix
 
     # User 
     ../shared/users/guifuentes8.nix

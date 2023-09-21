@@ -8,7 +8,6 @@
 
     # Chat ---
     mattermost-desktop
-    telegram-desktop
     discord
 
     # Editors ---

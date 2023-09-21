@@ -5,6 +5,7 @@ in
 {
   home.packages = with pkgs; [
     davinci-resolve
+    handbrake
   ];
   home.file."davinci-resolve.desktop" = {
     enable = true;
