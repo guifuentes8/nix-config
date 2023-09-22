@@ -26,10 +26,11 @@
     ../shared/login/lightdm.nix
 
     # Choice Interface (WM and/or DE)
+    ../shared/interfaces/DE/gnome
     ../shared/interfaces/WM/xorg/bspwm
-    ../shared/interfaces/WM/xorg/i3
 
     # Active services
+    ../shared/services/firewall.nix
     ../shared/services/gaming.nix
     ../shared/services/gnome-keyring.nix
     ../shared/services/teamviewer.nix
@@ -49,6 +50,9 @@
   # Network config (nmtui)
   networking.hostName = "desktop";
   networking.networkmanager.enable = true;
+  networking.networkmanager.plugins = with pkgs; [
+    networkmanager-fortisslvpn
+  ];
 
   # Sound Service (Pipewire)
   sound.enable = true;
