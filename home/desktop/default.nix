@@ -17,7 +17,8 @@
     #3 ./interfaces/WM/shared (CHOICE IF USE DE + WM)
     ../interfaces/DE/gnome
     ../interfaces/DE/shared
-
+    ../interfaces/WM/xorg
+    ../interfaces/WM/shared
 
     # Wayland or Xorg (if WM is selected)
     # ./interfaces/WM/wayland

@@ -6,8 +6,8 @@
 
   xdg.configFile."cava/config".text = lib.generators.toINI { } {
     general = {
-      framerate = 60;
-      bar_width = 2;
+      framerate = 120;
+      bar_width = 1;
       bar_spacing = 1;
     };
     input = {
@@ -15,7 +15,7 @@
     };
     output = {
       method = "ncurses";
-      alacritty_sync = 0;
+      alacritty_sync = 1;
     };
     color = {
       gradient = 1;

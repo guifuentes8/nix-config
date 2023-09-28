@@ -69,7 +69,7 @@
   # Xorg
   services.xserver = {
     enable = true;
-    layout = "us";
+    layout = "br,us";
   };
 
   # SYSTEM OPTIONS ----------------------------------------

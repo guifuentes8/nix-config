@@ -2,12 +2,11 @@
 {
   services.xserver = {
     displayManager.lightdm = {
-      background = ./background.jpg;
+      background = ./wallpaper.jpg;
       enable = true;
       greeters = {
-        enso = {
+        pantheon = {
           enable = true;
-          blur = true;
         };
       };
     };
