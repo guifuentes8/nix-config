@@ -1,6 +1,4 @@
 { pkgs, inputs, lib, ... }:
-let
-  addons = inputs.firefox-addons.packages.${pkgs.system};
 in
 {
   home.sessionVariables = {
@@ -12,13 +10,6 @@ in
     profiles = {
       "guifuentes8" = {
         bookmarks = import ./bookmarks.nix;
-        extensions = with addons; [
-          bitwarden
-          darkreader
-          react-devtools
-          translate-web-pages
-          ublock-origin
-        ];
         extraConfig = '''';
         id = 0;
         name = "cli2nix";
