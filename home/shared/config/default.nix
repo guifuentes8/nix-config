@@ -27,8 +27,6 @@
   };
 
 
-
-
   home = {
     username = "guifuentes8";
     homeDirectory = "/home/guifuentes8";

@@ -3,6 +3,6 @@
   imports = [
     ./config
     ./pkgs
-    ./xdg
+    # ./xdg
   ];
 }

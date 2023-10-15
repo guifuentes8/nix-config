@@ -29,14 +29,11 @@
     ../shared/interfaces/WM/xorg/bspwm
     ../shared/interfaces/DE/cinnamon
 
-
-
-
     # Active services
-    ../shared/services/flatpak.nix
     ../shared/services/firewall.nix
     ../shared/services/gaming.nix
     ../shared/services/gnome-keyring.nix
+    ../shared/services/kdeconnect.nix
     ../shared/services/teamviewer.nix
 
     # User 

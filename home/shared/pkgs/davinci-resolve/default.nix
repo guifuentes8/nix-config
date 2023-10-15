@@ -1,11 +1,9 @@
-{ pkgs, unstable, lib, ... }:
+{ pkgs, lib, unstable, ... }:
 let
   icon = ./davinci-resolve-icon.png;
 in
 {
-
-
-  home.packages = with pkgs; [
+  home.packages = [
     unstable.davinci-resolve
     handbrake
   ];

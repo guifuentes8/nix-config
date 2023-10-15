@@ -12,7 +12,6 @@
     };
   };
 
-  programs.kdeconnect.enable = true;
   programs.dconf.enable = true;
   programs.partition-manager.enable = true;
 

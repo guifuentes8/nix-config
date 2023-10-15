@@ -1,9 +1,10 @@
-{ pkgs, outputs, ... }:
+{ pkgs, outputs, unstable, ... }:
 {
 
   imports = [
     ./bat
     ./caffeine
+    ./davinci-resolve
     ./firefox
     ./gh
     ./git
@@ -17,8 +18,11 @@
   home.packages = with pkgs; [
 
     #Apps
-    google-chrome
+    brave
     slack
+    insomnia
+    figma-linux
+
 
     # Usb media
     ventoy-bin

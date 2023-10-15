@@ -11,8 +11,7 @@
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   services.gnome.gnome-browser-connector.enable = true;
 
-  programs.kdeconnect.enable = true;
-  programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
+
 
   # default Gnome Programs
   environment.systemPackages = (with pkgs; [
