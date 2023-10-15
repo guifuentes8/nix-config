@@ -26,10 +26,12 @@
     ../shared/login/lightdm.nix
 
     # Choice Interface (WM and/or DE)
-    ../shared/interfaces/DE/gnome
     ../shared/interfaces/WM/xorg/bspwm
+    ../shared/interfaces/DE/budgie
+
 
     # Active services
+    ../shared/services/flatpak.nix
     ../shared/services/firewall.nix
     ../shared/services/gaming.nix
     ../shared/services/gnome-keyring.nix

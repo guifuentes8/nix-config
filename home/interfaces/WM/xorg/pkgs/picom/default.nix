@@ -15,7 +15,7 @@
 
     settings = {
       shadow-radius = 7;
-      corner-radius = 8;
+      corner-radius = 16;
 
       transition-length = 400;
       transition-pow-x = 0.15;
@@ -26,7 +26,7 @@
 
       blur = {
         method = "dual_kawase";
-        strength = 8;
+        strength = 6;
         background = true;
         background-frame = false;
         background-fixed = false;

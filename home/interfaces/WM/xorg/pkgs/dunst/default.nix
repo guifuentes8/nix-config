@@ -16,7 +16,7 @@ in
         width = 700;
         height = 300;
         font = "JetBrainsMonoNL Nerd Font 12";
-        corner_radius = 8;
+        corner_radius = 16;
         origin = "bottom-right";
         notification_limit = 0;
         frame_width = 3;

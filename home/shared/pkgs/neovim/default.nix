@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, unstable, ... }:
 let
   fromGitHub = ref: repo:
     pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -9,6 +9,7 @@ let
         ref = ref;
       };
     };
+
 in
 {
 
@@ -122,7 +123,7 @@ in
       pkgs.lua-language-server
       pkgs.ripgrep
       pkgs.nixfmt
-      pkgs.nixd
+      unstable.nixd
     ];
 
   };

@@ -2,6 +2,8 @@
 {
   imports = [
     ./foot
+    ./firefox
+    ./mpv
     ./mako
     ./waybar
   ];
@@ -17,6 +19,7 @@
     wl-clipboard
     wf-recorder
     wtype
+    webcord
   ];
 
   programs.rofi.package = pkgs.rofi-wayland;

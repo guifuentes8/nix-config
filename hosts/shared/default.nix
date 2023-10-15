@@ -26,7 +26,7 @@
 
   time.timeZone = lib.mkDefault "America/Sao_Paulo";
 
-  fonts.packages = with pkgs; [
+  fonts.fonts = with pkgs; [
     montserrat
     noto-fonts
     noto-fonts-cjk

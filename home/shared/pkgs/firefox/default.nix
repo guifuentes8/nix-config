@@ -1,5 +1,4 @@
 { pkgs, inputs, lib, ... }:
-in
 {
   home.sessionVariables = {
     TZ = "America/Sao_Paulo";

@@ -4,6 +4,8 @@ in
 {
   imports = [
     ./dunst
+    ./firefox
+    ./mpv
     ./picom
     ./polybar
     ./screen-lock

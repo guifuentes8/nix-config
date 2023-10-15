@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ./pkgs
 
     # Global config (required)
     ../shared

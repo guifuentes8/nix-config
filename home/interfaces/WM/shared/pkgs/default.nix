@@ -6,14 +6,13 @@
     ./cava
     ./feh
     ./himalaya
-    ./joshuto
     ./kitty
     ./matterhorn
-    ./mpv
     ./nchat
     ./ncspot
     ./qutebrowser
     ./pass
+    ./ranger
     ./rofi
     ./sptlrx
     ./spotify-player

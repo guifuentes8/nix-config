@@ -20,7 +20,7 @@
        foreground = #${config.colorScheme.colors.base00} 
        line-size = 0pt
        border-size = 0pt
-       border-color = #${config.colorScheme.colors.base0E}
+       border-color = #${config.colorScheme.colors.base00}
        padding-left = 1
        padding-right = 1
        offset-y = 0
@@ -32,14 +32,14 @@
        enable-ipc = true
        tray-position = right
        wm-restack = bspwm
-       bottom = false
+       bottom = true
 
        font-0 = "JetBrainsMonoNL Nerd Font:size=11;1"
        font-1 = "JetBrainsMonoNL Nerd Font:size=16;2"
        label-active-font = 2
 
-       modules-left = xworkspaces  
-       modules-center = xwindow 
+       modules-left = xwindow  
+       modules-center = xworkspaces 
        modules-right = filesystem memory cpu wlan eth pulseaudio date
 
       ; ------- WORKSPACES ---------

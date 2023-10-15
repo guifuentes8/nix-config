@@ -26,9 +26,16 @@
     etcher
 
     # Dev
+    #js
     nodejs
     yarn
+
+    #nix
     nixpkgs-fmt
+
+    #java
+    openjdk17-bootstrap
+    maven
 
     # Dependencies
     ffmpeg
