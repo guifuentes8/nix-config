@@ -27,7 +27,9 @@
 
     # Choice Interface (WM and/or DE)
     ../shared/interfaces/WM/xorg/bspwm
-    ../shared/interfaces/DE/budgie
+    ../shared/interfaces/DE/cinnamon
+
+
 
 
     # Active services

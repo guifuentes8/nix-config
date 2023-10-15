@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, unstable, ... }:
 
 {
   services.xserver = {
@@ -36,7 +36,7 @@
     ])
 
   # Gnome extensions 
-  ++ (with pkgs.gnomeExtensions;
+  ++ (with unstable.gnomeExtensions;
     [
       appindicator
       burn-my-windows
