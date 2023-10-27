@@ -5,7 +5,6 @@ in
 {
   home.packages = [
     unstable.davinci-resolve
-    handbrake
   ];
   home.file."davinci-resolve.desktop" = {
     enable = true;
@@ -15,7 +14,7 @@ in
         Name=DaVinci Resolve
         GenericName=DaVinci Resolve
         Exec=davinci-resolve
-        Type=Application
+        Type=Application 
         Terminal=false
         Icon=${icon}
         StartupNotify=true
