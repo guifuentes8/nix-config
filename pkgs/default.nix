@@ -6,4 +6,6 @@
   shotcut = pkgs.callPackage ./shotcut { };
   material-gtk-theme = pkgs.callPackage ./material-gtk-theme { };
   sddm-theme = pkgs.callPackage ./sddm-theme { };
+  # ytermusic = pkgs.callPackage ./ytermusic { };
+
 }

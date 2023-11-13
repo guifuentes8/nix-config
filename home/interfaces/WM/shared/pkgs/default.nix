@@ -17,6 +17,8 @@
     ./sptlrx
     ./spotify-player
     ./ytfzf
+    ./ytermusic
+
   ];
 
   home.packages = with pkgs;

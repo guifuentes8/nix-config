@@ -1,4 +1,7 @@
 { pkgs, outputs, unstable, ... }:
+let
+  ytermusic = outputs.packages.${pkgs.system}.ytermusic;
+in
 {
 
   imports = [
@@ -18,6 +21,7 @@
   home.packages = with pkgs; [
 
     #Apps
+    ytermusic
     brave
     slack
     insomnia

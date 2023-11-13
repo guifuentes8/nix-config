@@ -1,0 +1,82 @@
+# YTerMusic log file
+
+[PERF] Init: 0ms
+[PERF] Startup: 0ms
+[PERF] Spawned clean task: 0ms
+[PERF] Clean task: 0ms
+[PERF] Spawned system task: 29ms
+[PERF] Spawned last playlist task: 29ms
+[PERF] Spawned api task: 29ms
+[PERF] Running manager: 29ms
+Last playlist task on
+[PERF] Last playlist: 0ms
+Database getter task on
+[PERF] Local musics: 0ms
+API task on
+[PERF] Browse playlist Episodes for Later: 196ms
+[PERF] API task: 7505ms
+[PERF] Browse playlist Liked Music: 316ms
+[PERF] Browse playlist Coro da Lua: 288ms
+[PERF] Browse playlist ultrakill de funk: 285ms
+[PERF] Browse playlist Senhor das Trevas: 298ms
+[PERF] Browse playlist Rare: 307ms
+[PERF] Browse playlist EPIC PHONK EKI: 336ms
+[PERF] Browse playlist TOKYOSLEEP: 352ms
+[PERF] Browse playlist Viva Cartola: 362ms
+[PERF] Browse playlist jogar serio: 533ms
+[PERF] Browse playlist ela vira mortal: 554ms
+[PERF] Browse playlist Preferidas: 578ms
+[PERF] Browse playlist VELOZES E FURIOSOS: 586ms
+[PERF] Browse playlist musculação: 610ms
+[PERF] Browse playlist Velozes e Furiosos 🎶: 621ms
+[PERF] Browse playlist Carrinho: 621ms
+[PERF] Browse playlist Halloween Phonk: 674ms
+[PERF] Browse playlist sem treino fofo: 693ms
+[PERF] Browse playlist zpor: 752ms
+[PERF] Browse playlist New Release Mix: 790ms
+[PERF] Browse playlist My Mix 1: 858ms
+[PERF] Browse playlist Turbo Dance: 881ms
+[PERF] Browse playlist Toma Toma (Brazilian Phonk) [Slowed + Reverb]: 1308ms
+[PERF] Browse playlist Discover Mix: 1333ms
+[PERF] Browse playlist BEREAVEMENT: 1351ms
+[PERF] Browse playlist My Supermix: 1372ms
+[PERF] Browse playlist My Mix 6: 1820ms
+[PERF] Browse playlist Brazilian Phonk Mano (Super Slowed): 3371ms
+[PERF] Browse playlist My Mix 4: 3918ms
+[PERF] Browse playlist Me deixa Bobo hoje nois ta pra Jogo: 5274ms
+[PERF] Browse playlist Oh Dj Ta Muito Louco: 5274ms
+[PERF] Browse playlist Look Ma, No Brains!: 5289ms
+[PERF] Browse playlist YOUTHISENDING: 5315ms
+[PERF] Browse playlist Till I collapse Remix: 5536ms
+[PERF] Browse playlist Rave Treino: 5576ms
+[PERF] Browse playlist as braba: 5595ms
+[PERF] Browse playlist sentir: 5611ms
+[PERF] Browse playlist Intenso☄️: 5613ms
+[PERF] Browse playlist motivacional: 5615ms
+[PERF] Browse playlist eletric: 5652ms
+[PERF] Browse playlist Lose Yourself: 5694ms
+[PERF] Browse playlist Replay Mix: 5706ms
+[PERF] Browse playlist Presenting Gorillaz: 5730ms
+[PERF] Browse playlist Hip-Hop Classics: 5802ms
+[PERF] Browse playlist Energizing EDM: 5811ms
+[PERF] Browse playlist Archive Mix: 5872ms
+[PERF] Browse playlist Electronic Euphoria: 5878ms
+[PERF] Browse playlist Drum & Bass Anthems: 5883ms
+[PERF] Browse playlist My Mix 5: 5996ms
+[PERF] Browse playlist Viúva de Ferro: 6041ms
+[PERF] Browse playlist My Mix 2: 6138ms
+[PERF] Browse playlist TRASHXRL: 6364ms
+[PERF] Browse playlist S3BZS: 6382ms
+[PERF] Browse playlist DR MØB: 6378ms
+[PERF] Browse playlist Músicas carro: 6635ms
+[PERF] Browse playlist Presenting Daft Punk: 6721ms
+[PERF] Browse playlist RIO RAVE (Remixes): 8400ms
+RequestError(reqwest::Error { kind: Request, url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("music.youtube.com")), port: None, path: "/youtubei/v1/browse", query: Some("key=AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX30&prettyPrint=false"), fragment: None }, source: hyper::Error(Connect, ConnectError("dns error", Custom { kind: Uncategorized, error: "failed to lookup address information: Temporary failure in name resolution" })) })
+[PERF] Browse playlist My Mix 3: 10010ms
+RequestError(reqwest::Error { kind: Request, url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("music.youtube.com")), port: None, path: "/youtubei/v1/browse", query: Some("key=AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX30&prettyPrint=false"), fragment: None }, source: hyper::Error(Connect, ConnectError("dns error", Custom { kind: Uncategorized, error: "failed to lookup address information: Temporary failure in name resolution" })) })
+[PERF] Browse playlist treino😝: 10024ms
+[PERF] Browse playlist Velozes e Furiosos: 10679ms
+[PERF] Browse playlist serviço: 10759ms
+[PERF] Browse playlist '90s Dance: 11422ms
+[PERF] Browse playlist Worship Me: 12418ms
+[PERF] Browse playlist Impromptu Rock Party: 12884ms
