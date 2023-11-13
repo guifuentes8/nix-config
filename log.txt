@@ -1,3 +1,0 @@
-# YTerMusic log file
-
-[PERF] Init: 0ms

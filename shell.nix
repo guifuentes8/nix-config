@@ -16,10 +16,6 @@
       git
       cargo
       rustc
-      dbus
-      alsa-tools
-      alsa-lib
-      pkg-config
     ];
   };
 }
