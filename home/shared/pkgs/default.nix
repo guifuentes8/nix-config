@@ -21,7 +21,6 @@ in
   home.packages = with pkgs; [
 
     #Apps
-    ytermusic
     brave
     slack
     insomnia

@@ -43,8 +43,8 @@
             gaps_in = 4
             gaps_out = 8
             border_size = 3
-            col.active_border = rgb(${config.colorScheme.colors.base00})
-            col.inactive_border = rgb(${config.colorScheme.colors.base0E})
+            col.active_border = rgb(${config.colorScheme.colors.base0C})
+            col.inactive_border = rgb(${config.colorScheme.colors.base06})
             no_border_on_floating = true
             layout = dwindle
         }
@@ -63,7 +63,7 @@
             shadow_range = 12
             shadow_render_power = 3
             shadow_ignore_window	= true
-            col.shadow = rgb(${config.colorScheme.colors.base02})
+            col.shadow = rgb(${config.colorScheme.colors.base00})
             shadow_offset = [4, 6]
             active_opacity = 1
             inactive_opacity = 1

@@ -26,19 +26,19 @@ in
         offset = "80x80";
       };
       urgency_low = {
-        background = "#${config.colorScheme.colors.base01}";
-        foreground = "#${config.colorScheme.colors.base00}";
-        frame_color = "#${config.colorScheme.colors.base0A}";
+        background = "#${config.colorScheme.colors.base00}";
+        foreground = "#${config.colorScheme.colors.base0C}";
+        frame_color = "#${config.colorScheme.colors.base09}";
       };
       urgency_normal = {
-        background = "#${config.colorScheme.colors.base01}";
-        foreground = "#${config.colorScheme.colors.base00}";
-        frame_color = "#${config.colorScheme.colors.base0A}";
+        background = "#${config.colorScheme.colors.base00}";
+        foreground = "#${config.colorScheme.colors.base0C}";
+        frame_color = "#${config.colorScheme.colors.base09}";
         timeout = 5;
       };
 
       urgency_critical = {
-        background = "#${config.colorScheme.colors.base01}";
+        background = "#${config.colorScheme.colors.base00}";
         foreground = "#${config.colorScheme.colors.base08}";
         frame_color = "#${config.colorScheme.colors.base08}";
       };

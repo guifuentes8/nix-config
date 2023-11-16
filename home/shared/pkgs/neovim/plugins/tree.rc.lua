@@ -101,10 +101,10 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
-  sort = {
-    sorter = "name",
-    folders_first = true,
-  },
+  -- sort = {
+  --   sorter = "name",
+  --   folders_first = true,
+  -- },
   root_dirs = {},
   prefer_startup_root = false,
   sync_root_with_cwd = false,
@@ -231,7 +231,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     },
   },
   filters = {
-    git_ignored = true,
+    -- git_ignored = true,
     dotfiles = false,
     git_clean = false,
     no_buffer = false,
@@ -247,7 +247,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     enable = true,
     show_on_dirs = true,
     show_on_open_dirs = true,
-    disable_for_dirs = {},
+    -- disable_for_dirs = {},
     timeout = 400,
   },
   modified = {
@@ -308,7 +308,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   },
   notify = {
     threshold = vim.log.levels.INFO,
-    absolute_path = true,
+    -- absolute_path = true,
   },
   ui = {
     confirm = {

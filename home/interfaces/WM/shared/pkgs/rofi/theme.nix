@@ -6,13 +6,13 @@ in
 {
   "*" = {
     border-radius = mkLiteral "8px";
-    bg-col = mkLiteral "#${config.colorScheme.colors.base01}";
-    bg-col-light = mkLiteral "#${config.colorScheme.colors.base01}";
-    border-col = mkLiteral "#${config.colorScheme.colors.base01}";
-    selected-col = mkLiteral "#${config.colorScheme.colors.base01}";
-    blue = mkLiteral "#${config.colorScheme.colors.base00}";
-    fg-col = mkLiteral "#${config.colorScheme.colors.base0E}";
-    fg-col2 = mkLiteral "#${config.colorScheme.colors.base00}";
+    bg-col = mkLiteral "#${config.colorScheme.colors.base00}";
+    bg-col-light = mkLiteral "#${config.colorScheme.colors.base00}";
+    border-col = mkLiteral "#${config.colorScheme.colors.base00}";
+    selected-col = mkLiteral "#${config.colorScheme.colors.base00}";
+    blue = mkLiteral "#${config.colorScheme.colors.base0C}";
+    fg-col = mkLiteral "#${config.colorScheme.colors.base06}";
+    fg-col2 = mkLiteral "#${config.colorScheme.colors.base08}";
     grey = mkLiteral "#9aa5ce";
     font = "JetBrainsMonoNL Nerd Font 13";
   };
@@ -41,7 +41,7 @@ in
   "window" = {
     height = mkLiteral "800px";
     border = mkLiteral "3px";
-    border-color = mkLiteral "#${config.colorScheme.colors.base0A}";
+    border-color = mkLiteral "#${config.colorScheme.colors.base08}";
     background-color = mkLiteral "@bg-col";
   };
 

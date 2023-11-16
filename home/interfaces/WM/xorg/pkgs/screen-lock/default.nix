@@ -3,11 +3,7 @@
   services.screen-locker = {
     enable = true;
     xautolock.enable = true;
-  };
-
-  services.betterlockscreen = {
-    enable = true;
-    arguments = [ "blur" "dim" ];
+    lockCmd = "\${pkgs.i3lock}/bin/i3lock -n -c 000000";
   };
 
 }

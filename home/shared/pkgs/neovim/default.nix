@@ -101,9 +101,9 @@ in
         config = builtins.readFile (./plugins/dashboard.rc.lua);
       }
       {
-        plugin = material-nvim;
+        plugin = nvim-base16;
         type = "lua";
-        config = builtins.readFile (./plugins/themes/material.rc.lua);
+        config = builtins.readFile (./plugins/theme.rc.lua);
       }
 
       luasnip # Snippet engine
@@ -123,10 +123,14 @@ in
       pkgs.lua-language-server
       pkgs.ripgrep
       pkgs.nixfmt
-      unstable.nixd
+
     ];
 
   };
+
+  home.packages = [
+    unstable.nixd
+  ];
 
   home.sessionVariables.EDITOR = "nvim";
   xdg.configFile."nvim/lua/base.lua".source = ./base.lua;

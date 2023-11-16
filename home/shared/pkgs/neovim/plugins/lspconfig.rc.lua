@@ -83,7 +83,7 @@ nvim_lsp.jsonls.setup {
 
 -- NIX
 
-nvim_lsp.nixd.setup {    
-    on_attach = on_attach,
-   
-}
+-- nvim_lsp.nixd.setup {    
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+-- }

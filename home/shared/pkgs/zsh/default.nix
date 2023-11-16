@@ -19,7 +19,7 @@
     '';
     shellAliases = {
       spt = "spotify_player";
-      sptl = "sptlrx --current 'bold,#${config.colorScheme.colors.base00}' --before '#${config.colorScheme.colors.base05},faint,italic,strikethrough' --after '#${config.colorScheme.colors.base0E},faint'";
+      sptl = "sptlrx --current 'bold,#${config.colorScheme.colors.base09}' --before '#${config.colorScheme.colors.base05},faint,italic,strikethrough' --after '#${config.colorScheme.colors.base0C},faint'";
       clock = "tty-clock -c -C 6 -s -S -r -n -D";
       matrix = "cmatrix -b -f -C cyan";
       fetch = "pfetch";
@@ -43,7 +43,13 @@
       cjpg = "mogrify -format jpg *.png && rm *.png";
 
       # NixOs shortcuts
-      gc = "nix-collect-garbage && nix-store --gc";
+      hd = "cd ~/nix-config && home-manager switch --flake .#guifuentes8@desktop";
+      sd = "cd ~/nix-config && sudo nixos-rebuild switch --flake .#desktop";
+      hl = "cd ~/nix-config && home-manager switch --flake .#guifuentes8@laptop";
+      sl = "cd ~/nix-config && sudo nixos-rebuild switch --flake .#laptop";
+      gc = "nix-collect-garbage -d && nix-store --gc";
+      sgc = "sudo nix-collect-garbage -d && nix-store --gc";
+
     };
   };
 }

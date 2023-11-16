@@ -2,23 +2,25 @@
   imports = [
     nix-colors.homeManagerModules.default
   ];
-  colorScheme = nix-colors.lib.schemeFromYAML "deepocean" (builtins.readFile ./deepocean.yaml);
+  colorScheme = nix-colors.lib.schemeFromYAML "vice" (builtins.readFile ./vice.yaml);
 
-  #scheme: "DeepOcean"
-  # base00: "#84FFFF" #main
-  # base01: "#0F111A" #background
-  # base02: "#090B10" #alt-background
-  # base03: "#464B5D"
-  # base04: "#3B3F51"
-  # base05: "#717CB4"
-  # base06: "#A6ACCD"
-  # base07: "#EEFFFF" #text
-  # base08: "#F07178"
-  # base09: "#C3E88D"
-  # base0A: "#FFCB6B"
-  # base0B: "#82AAFF"
-  # base0C: "#B0C9FF"
-  # base0D: "#89DDFF"
-  # base0E: "#C792EA" #secondary
-  # base0F: "#F78C6C"
 }
+# scheme: "vice"
+# author: "Thomas Leon Highbaugh thighbaugh@zoho.com"
+# base00: "#17191E"
+# base01: "#22262d"
+# base02: "#3c3f4c"
+# base03: "#383a47"
+# base04: "#555e70"
+# base06: "#8b9cbe"
+# base06: "#B2BFD9" text-color
+# base07: "#f4f4f7"
+# base08: "#ff29a8" third
+# base09: "#85ffe0" secondary
+# base0A: "#f0ffaa"
+# base0B: "#0badff"
+# base0C: "#8265ff" main
+# base0D: "#00eaff"
+# base09: "#00f6d9"
+# base0F: "#ff3d81"
+

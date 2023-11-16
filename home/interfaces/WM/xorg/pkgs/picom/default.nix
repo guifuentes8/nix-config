@@ -8,14 +8,14 @@
     fade = true;
     fadeSteps = [ 0.04 0.04 ];
     shadow = true;
-    shadowOffsets = [ 1 4 ];
-    shadowOpacity = 0.1;
+    shadowOffsets = [ 2 3 ];
+    shadowOpacity = 0.5;
     shadowExclude = [ ];
     opacityRules = [ "85:class_g = 'Rofi'" ];
 
     settings = {
       shadow-radius = 7;
-      corner-radius = 16;
+      corner-radius = 8;
 
       transition-length = 400;
       transition-pow-x = 0.15;
