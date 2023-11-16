@@ -8,7 +8,7 @@
   xdg.configFile."spotify-player/app.toml".source = (pkgs.formats.toml { }).generate "app.toml"
     {
       client_id = "32c1c3d388a14e4981d80295af909be7";
-      theme = "Material-Deep-Ocean";
+      theme = "Vice";
       enable_media_control = true;
       enable_cover_image_cache = true;
       page_size_in_rows = 50;
@@ -17,6 +17,7 @@
       liked_icon = "♥";
       play_icon = "▶️";
       border_type = "Rounded";
+      progress_bar_type = "Line";
       playback_window_position = "Bottom";
       cover_img_width = 5;
       cover_img_length = 11;
@@ -31,7 +32,7 @@
   xdg.configFile."spotify-player/theme.toml".source = (pkgs.formats.toml { }).generate "theme.toml"
     {
       themes = [{
-        name = "Material-Deep-Ocean";
+        name = "Vice";
         palette = {
           background = "#${config.colorScheme.colors.base00}";
           foreground = "#${config.colorScheme.colors.base0C}";

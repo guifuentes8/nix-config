@@ -9,5 +9,11 @@
         hash = "sha256-UN70V+RGYlYJxCQGPH8cnQDSqpihGuwzETYEhbG6Ggo=";
       };
     });
+    spotify-player = prev.spotify-player.overrideAttrs
+      (old: {
+        buildFeatures = [
+          "notify"
+        ];
+      });
   };
 }

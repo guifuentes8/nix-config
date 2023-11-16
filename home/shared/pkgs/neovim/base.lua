@@ -54,4 +54,3 @@ opt.formatoptions:append { 'r' }
 
 opt.clipboard = "unnamedplus"
 
-g.material_style = "deep ocean"

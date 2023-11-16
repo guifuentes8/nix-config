@@ -19,6 +19,7 @@ in
 
   programs.neovim = {
     enable = true;
+    package = unstable.neovim-unwrapped;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
@@ -28,7 +29,7 @@ in
       require 'highlights'
       require 'maps'
     '';
-    plugins = with pkgs.vimPlugins; [
+    plugins = with unstable.vimPlugins; [
 
       {
         plugin = lualine-nvim;
@@ -117,20 +118,17 @@ in
     ];
 
     extraPackages = [
-      pkgs.nodePackages.typescript-language-server
-      pkgs.nodePackages.vscode-langservers-extracted
-      pkgs.nodePackages.live-server
-      pkgs.lua-language-server
-      pkgs.ripgrep
-      pkgs.nixfmt
-
+      unstable.nodePackages.typescript-language-server
+      unstable.nodePackages.vscode-langservers-extracted
+      unstable.nodePackages.live-server
+      unstable.lua-language-server
+      unstable.ripgrep
+      unstable.nixfmt
+      unstable.nixd
     ];
 
   };
 
-  home.packages = [
-    unstable.nixd
-  ];
 
   home.sessionVariables.EDITOR = "nvim";
   xdg.configFile."nvim/lua/base.lua".source = ./base.lua;

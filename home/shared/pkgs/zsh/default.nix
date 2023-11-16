@@ -43,10 +43,10 @@
       cjpg = "mogrify -format jpg *.png && rm *.png";
 
       # NixOs shortcuts
-      hd = "cd ~/nix-config && home-manager switch --flake .#guifuentes8@desktop";
-      sd = "cd ~/nix-config && sudo nixos-rebuild switch --flake .#desktop";
-      hl = "cd ~/nix-config && home-manager switch --flake .#guifuentes8@laptop";
-      sl = "cd ~/nix-config && sudo nixos-rebuild switch --flake .#laptop";
+      hd = "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@desktop";
+      sd = "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#desktop";
+      hl = "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@laptop";
+      sl = "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#laptop";
       gc = "nix-collect-garbage -d && nix-store --gc";
       sgc = "sudo nix-collect-garbage -d && nix-store --gc";
 

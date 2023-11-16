@@ -7,7 +7,6 @@
     ./feh
     ./himalaya
     ./kitty
-    ./matterhorn
     ./nchat
     ./ncspot
     ./qutebrowser

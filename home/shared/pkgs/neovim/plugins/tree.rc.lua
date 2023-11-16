@@ -101,31 +101,27 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
-  -- sort = {
-  --   sorter = "name",
-  --   folders_first = true,
-  -- },
+  sort = {
+    sorter = "name",
+    folders_first = true,
+    files_first = false,
+  },
   root_dirs = {},
   prefer_startup_root = false,
   sync_root_with_cwd = false,
-  reload_on_bufenter = false,
+  reload_on_bufenter = falsee,
   respect_buf_cwd = false,
-  remove_keymaps = false,
   select_prompts = false,
   view = {
     centralize_selection = false,
     cursorline = true,
     debounce_delay = 15,
     width = 40,
-    hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-    },
     float = {
       enable = false,
       quit_on_focus_loss = true,
@@ -142,10 +138,12 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   renderer = {
     add_trailing = false,
     group_empty = false,
-    highlight_git = true,
     full_name = false,
+    highlight_git = true,
+    highlight_diagnostics = false,
     highlight_opened_files = "none",
     highlight_modified = "icon",
+    highlight_clipboard = "name",
     root_folder_label = ":~:s?$?/..?",
     indent_width = 2,
     indent_markers = {
@@ -231,7 +229,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     },
   },
   filters = {
-    -- git_ignored = true,
+    git_ignored = true,
     dotfiles = false,
     git_clean = false,
     no_buffer = false,
@@ -247,7 +245,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     enable = true,
     show_on_dirs = true,
     show_on_open_dirs = true,
-    -- disable_for_dirs = {},
+    disable_for_dirs = {},
     timeout = 400,
   },
   modified = {
@@ -308,7 +306,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   },
   notify = {
     threshold = vim.log.levels.INFO,
-    -- absolute_path = true,
+    absolute_path = true,
   },
   ui = {
     confirm = {

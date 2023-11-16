@@ -27,10 +27,11 @@
 
     # Choice Interface (WM and/or DE)
     ../shared/interfaces/WM/xorg/bspwm
+    ../shared/interfaces/WM/xorg/qtile
+    ../shared/interfaces/WM/xorg/awesome
 
     # Active services
     ../shared/services/firewall.nix
-    ../shared/services/gaming.nix
     ../shared/services/gnome-keyring.nix
     ../shared/services/kdeconnect.nix
     ../shared/services/teamviewer.nix
@@ -43,16 +44,13 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # Basic config
-  console.keyMap = "us";
+  console.keyMap = "br-abnt2";
   time.timeZone = "America/Sao_Paulo";
   time.hardwareClockInLocalTime = true;
 
   # Network config (nmtui)
   networking.hostName = "desktop";
   networking.networkmanager.enable = true;
-  networking.networkmanager.plugins = with pkgs; [
-    networkmanager-fortisslvpn
-  ];
 
   # Sound Service (Pipewire)
   sound.enable = true;

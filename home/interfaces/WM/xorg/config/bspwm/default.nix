@@ -12,7 +12,7 @@ in
       # "xrandr -s 5120x1440"
       "picom"
       "systemctl --user restart polybar.service"
-      "feh --bg-scale ~/.config/wallpapers/images/wallpaper.jpg"
+      "feh --bg-scale ~/.config/wallpapers/images/wallpaper.png"
       "pkill dunst"
       "dunst"
       "xsetroot -cursor_name Bibata-Modern-Ice"
