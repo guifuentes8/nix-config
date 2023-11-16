@@ -4,6 +4,9 @@
     delta.enable = true;
     userName = "Guilherme Fuentes";
     userEmail = "guifuentes8@gmail.com";
+    extraConfig = {
+      http.postBuffer = "524288000";
+    };
     aliases = {
       a = "add .";
       co = "checkout";
