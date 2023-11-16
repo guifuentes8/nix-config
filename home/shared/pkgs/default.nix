@@ -21,7 +21,6 @@ in
   home.packages = with pkgs; [
 
     #Apps
-    brave
     slack
     insomnia
     figma-linux

@@ -18,13 +18,8 @@ in
       package = lib.mkForce pkgs.colloid-icon-theme;
     };
     theme = {
-      name = lib.mkForce "Catppuccin-Frappe-Standard-Teal-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "teal" ];
-        size = "standard";
-        tweaks = [ "rimless" ];
-        variant = "frappe";
-      };
+      name = lib.mkForce "Sweet-Dark";
+      package = pkgs.sweet;
     };
   };
 }
