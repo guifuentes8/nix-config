@@ -21,6 +21,7 @@ in
   home.packages = with pkgs; [
 
     #Apps
+    i3lock-color
     slack
     insomnia
     figma-linux

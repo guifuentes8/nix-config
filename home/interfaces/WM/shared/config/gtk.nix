@@ -1,5 +1,8 @@
 { pkgs, lib, outputs, ... }:
-let material-gtk-theme = outputs.packages.${pkgs.system}.material-gtk-theme;
+let
+  material-gtk-theme = outputs.packages.${pkgs.system}.material-gtk-theme;
+  lavanda-gtk-theme = outputs.packages.${pkgs.system}.lavanda-gtk-theme;
+
 in
 {
   gtk = {
@@ -18,8 +21,8 @@ in
       package = lib.mkForce pkgs.colloid-icon-theme;
     };
     theme = {
-      name = lib.mkForce "Sweet-Dark";
-      package = pkgs.sweet;
+      name = lib.mkForce "Lavanda-Dark";
+      package = lavanda-gtk-theme;
     };
   };
 }

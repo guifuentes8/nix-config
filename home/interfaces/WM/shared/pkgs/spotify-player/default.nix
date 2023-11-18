@@ -1,8 +1,8 @@
-{ pkgs, lib, config, ... }:
+{ unstable, pkgs, lib, config, ... }:
 {
 
-  home.packages = with pkgs; [
-    spotify-player
+  home.packages = [
+    unstable.spotify-player
   ];
 
   xdg.configFile."spotify-player/app.toml".source = (pkgs.formats.toml { }).generate "app.toml"
@@ -17,7 +17,7 @@
       liked_icon = "♥";
       play_icon = "▶️";
       border_type = "Rounded";
-      progress_bar_type = "Line";
+      progress_bar_type = "Rectangle";
       playback_window_position = "Bottom";
       cover_img_width = 5;
       cover_img_length = 11;

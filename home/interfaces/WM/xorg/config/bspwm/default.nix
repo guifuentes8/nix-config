@@ -30,7 +30,7 @@ in
       bspc config normal_border_color '#${config.colorScheme.colors.base01}'
       bspc config active_border_color '#${config.colorScheme.colors.base01}'
       bspc config focused_border_color '#${config.colorScheme.colors.base0C}'
-      bspc config presel-feedback_colour '#${config.colorScheme.colors.base08}'
+      bspc config presel_feedback_color '#${config.colorScheme.colors.base0C}'
 
       bspc config focus_follows_pointer true
       bspc config pointer_follows_focus true

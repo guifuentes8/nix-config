@@ -23,6 +23,8 @@
   home.packages = with pkgs;
     [
 
+      gnome.nautilus
+
       # CLI Apps
       cmatrix
       devour

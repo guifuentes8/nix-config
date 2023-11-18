@@ -47,7 +47,7 @@
       [module/xworkspaces]
        type = internal/xworkspaces
 
-       label-active = %name%
+       label-active =  %name%
        label-active-font = 2
        label-empty-font = 2
        label-occupied-font = 2
@@ -74,7 +74,7 @@
 
        [module/xwindow]
        type = internal/xwindow
-       label = %title:0:60:...%
+       label = >|%title:0:60:...%
 
       ; ------- SYSTEM INFO ---------
 

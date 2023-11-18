@@ -13,17 +13,19 @@ in
     iconTheme.name = "Adwaita";
     settings = {
       global = {
-        width = 700;
+        width = 600;
         height = 300;
         font = "JetBrainsMonoNL Nerd Font 12";
-        corner_radius = 4;
-        origin = "bottom-right";
+        corner_radius = 8;
+        gaps = true;
+        gap_size = 10;
+        origin = "bottom-left";
         notification_limit = 0;
-        frame_width = 3;
+        frame_width = 2;
         separator_color = "frame";
         min_icon_size = 64;
         max_icon_size = 64;
-        offset = "80x80";
+        offset = "20x40";
       };
       urgency_low = {
         background = "#${config.colorScheme.colors.base00}";
@@ -44,7 +46,7 @@ in
       };
       play_sound = {
         summary = "*";
-        script = "${alert}";
+        script = "~/nix-config/home/interfaces/WM/xorg/pkgs/dunst/sound.sh";
       };
     };
   };
