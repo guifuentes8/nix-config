@@ -7,7 +7,7 @@ in
   imports = [
     ./bat
     ./caffeine
-    ./davinci-resolve
+    /* ./davinci-resolve */
     ./firefox
     ./gh
     ./git
