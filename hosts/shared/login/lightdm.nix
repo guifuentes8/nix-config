@@ -1,4 +1,6 @@
-{ pkgs, lib, ... }:
+{ pkgs, unstable, outputs, lib, ... }:
+let lavanda-gtk-theme = outputs.packages.${pkgs.system}.lavanda-gtk-theme;
+in
 {
   services.xserver = {
     displayManager = {
@@ -10,20 +12,29 @@
           gtk = {
             enable = true;
             theme = {
-              name = "";
-              package = pkgs.gnome.gnome-themes-extra;
+              name = "Lavanda-Dark";
+              package = lavanda-gtk-theme;
             };
             iconTheme = {
-              name = "";
-              package = pkgs.gnome.adwaita-icon-theme;
+              name = "BeautyLine";
+              package = pkgs.beauty-line-icon-theme;
             };
             cursorTheme = {
-              name = "";
-              package = pkgs.gnome.adwaita-icon-theme;
-              size = 16;
+              name = "Phinger Cursors";
+              package = pkgs.phinger-cursors;
+              size = 32;
             };
-            clock-format = null;
-            indicators = [ ];
+            # clock-format = null;
+            indicators = [
+              "~host"
+              "~spacer"
+              "~clock"
+              "~spacer"
+              "~session"
+              "~language"
+              "~a11y"
+              "~power"
+            ];
             extraConfig = '''';
           };
         };

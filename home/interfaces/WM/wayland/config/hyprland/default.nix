@@ -13,9 +13,9 @@
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = gsettings set org.gnome.desktop.interface gtk-theme Lavanda-Dark
-        exec-once = gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
-        exec-once = gsettings set org.gnome.desktop.interface cursor-size 18
-        exec-once = hyprctl setcursor Bibata-Modern-Ice 18
+        exec-once = gsettings set org.gnome.desktop.interface cursor-theme Phinger Cursors
+        exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
+        exec-once = hyprctl setcursor Phinger Cursors 32
         exec-once = swww init
         exec-once = bash /home/guifuentes8/nix-config/home/shared/wallpapers/swww/change-wallpaper.sh change
   

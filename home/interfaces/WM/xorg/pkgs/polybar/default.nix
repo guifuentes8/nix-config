@@ -16,7 +16,7 @@
        radius = 0
 
 
-       background = #${config.colorScheme.colors.base00}
+       background = #AA${config.colorScheme.colors.base00}
        foreground = #${config.colorScheme.colors.base09} 
        line-size = 0pt
        border-size = 0pt
@@ -53,7 +53,7 @@
        label-occupied-font = 2
 
        label-active-foreground = #${config.colorScheme.colors.base09}
-       label-active-background = #${config.colorScheme.colors.base00}
+       label-active-background = #AA${config.colorScheme.colors.base00}
        label-active-underline= #${config.colorScheme.colors.base09}
        label-active-padding = 2
 

@@ -13,9 +13,15 @@
 
     nix-colors.url = "github:misterio77/nix-colors";
     hyprland.url = "github:hyprwm/Hyprland";
+
+    darkmatter-grub-theme = {
+      url = gitlab:VandalByte/darkmatter-grub-theme;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, darkmatter-grub-theme, ... }@inputs:
 
     let
       inherit (self) outputs;
@@ -38,11 +44,17 @@
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable; };
-          modules = [ ./hosts/desktop ];
+          modules = [
+            darkmatter-grub-theme.nixosModule
+            ./hosts/desktop
+          ];
         };
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable; };
-          modules = [ ./hosts/laptop ];
+          modules = [
+            darkmatter-grub-theme.nixosModule
+            ./hosts/laptop
+          ];
         };
       };
 

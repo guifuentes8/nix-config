@@ -89,8 +89,8 @@
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
     variables = {
-      XCURSOR_THEME = "Bibata-Modern-Ice";
-      XCURSOR_SIZE = "24";
+      XCURSOR_THEME = "Phinger Cursors";
+      XCURSOR_SIZE = "32";
     };
     sessionVariables = rec {
       XDG_CACHE_HOME = "\${HOME}/.cache";

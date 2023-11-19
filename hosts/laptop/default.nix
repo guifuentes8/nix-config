@@ -104,10 +104,10 @@
       HYPRLAND_LOG_WLR = "1";
 
       # Tell XWayland to use a cursor theme
-      XCURSOR_THEME = "Bibata-Modern-Ice";
+      XCURSOR_THEME = "Phinger Cursors";
 
       # Set a cursor size
-      XCURSOR_SIZE = "18";
+      XCURSOR_SIZE = "24";
 
       # Example IME Support: fcitx
       GTK_IM_MODULE = "fcitx";

@@ -63,6 +63,10 @@ rec {
       --libadwaita  \
       --dest $out/share/themes
 
+    mkdir -p $out/share/themes
+    cp -a * $out/share/themes
+    ls -la $out
+
     jdupes --quiet --link-soft --recurse $out/share
 
     runHook postInstall

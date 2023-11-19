@@ -15,7 +15,7 @@ in
       "feh --bg-scale ~/.config/wallpapers/images/wallpaper.png"
       "pkill dunst"
       "dunst"
-      "xsetroot -cursor_name Bibata-Modern-Ice"
+      "xsetroot -cursor_name Banana"
     ];
     extraConfig = ''
       bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱  
@@ -27,8 +27,8 @@ in
       bspc config borderless_monocle   true
       bspc config gapless_monocle      true
 
-      bspc config normal_border_color '#${config.colorScheme.colors.base01}'
-      bspc config active_border_color '#${config.colorScheme.colors.base01}'
+      bspc config normal_border_color '#${config.colorScheme.colors.base02}'
+      bspc config active_border_color '#${config.colorScheme.colors.base02}'
       bspc config focused_border_color '#${config.colorScheme.colors.base0C}'
       bspc config presel_feedback_color '#${config.colorScheme.colors.base0C}'
 
