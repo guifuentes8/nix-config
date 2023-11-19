@@ -7,11 +7,11 @@
     ./feh
     ./himalaya
     ./kitty
+    ./yazi
     ./nchat
     ./ncspot
     ./qutebrowser
     ./pass
-    ./ranger
     ./rofi
     ./sptlrx
     ./spotify-player
@@ -36,7 +36,6 @@
       tuifeed
 
       # Dependencies / Others
-      imagemagick
       libnotify
       pavucontrol
     ];
