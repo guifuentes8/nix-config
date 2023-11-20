@@ -32,7 +32,7 @@ folder_offset = [1, 0, 1, 0]
 preview_offset = [1, 1, 1, 1]
 
 # Highlighting
-syntect_theme = ""
+syntect_theme = "/home/guifuentes8/.config/bat/themes/16.tmTheme"
 
 # : }}}
 

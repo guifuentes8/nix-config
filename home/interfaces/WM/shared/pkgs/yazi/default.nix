@@ -1,15 +1,15 @@
 { unstable, ... }:
 {
-  # programs.yazi = { # 23.11 only
+  # programs.joshuto = { # 23.11 only
   #   enable = true;
-  #   enableZshIntegration = true;
   # };
 
   home.packages = with unstable;[
     yazi
-    ueberzug
+    ueberzugpp
     ffmpegthumbnailer
-    poppler_utils
+    poppler
+    mupdf
     unar
     fd
     ripgrep
@@ -22,6 +22,4 @@
   xdg.configFile."yazi/keymap.toml".source = ./keymap.toml;
   xdg.configFile."yazi/theme.toml".source = ./theme.toml;
   xdg.configFile."yazi/yazi.toml".source = ./yazi.toml;
-
-
 }

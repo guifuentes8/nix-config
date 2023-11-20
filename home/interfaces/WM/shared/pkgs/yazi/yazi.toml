@@ -1,15 +1,15 @@
 [manager]
-layout         = [ 1, 4, 3 ]
-sort_by        = "modified"
+layout         = [ 2, 3, 3 ]
+sort_by        = "alphabetical"
 sort_sensitive = true
-sort_reverse   = true
+sort_reverse   = false
 sort_dir_first = true
-linemode       = "none"
-show_hidden    = false
+linemode       = "size"
+show_hidden    = true
 show_symlink   = true
 
 [preview]
-tab_size        = 2
+tab_size        = 3
 max_width       = 600
 max_height      = 900
 cache_dir       = ""
