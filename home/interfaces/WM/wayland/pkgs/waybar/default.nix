@@ -1,7 +1,8 @@
-{ pkgs, config, ... }:
+{ unstable, config, ... }:
 {
   programs.waybar = {
     enable = true;
+    package = unstable.waybar;
     systemd.enable = true;
     style = ''
 
@@ -14,7 +15,7 @@
 
       window#waybar {
           background: #${config.colorScheme.colors.base00};
-          color: #${config.colorScheme.colors.base06};
+          color: #${config.colorScheme.colors.base09};
       }
 
       #cpu,
@@ -49,7 +50,7 @@
 
       #workspaces button.active {
         color: #${config.colorScheme.colors.base0C};
-        background-color: #${config.colorScheme.colors.base00};
+        background-color: #${config.colorScheme.colors.base06};
       }
 
       #workspaces button.focused {
@@ -141,7 +142,7 @@
       position = "top";
       exclusive = true;
       height = 0;
-      modules-left = [ "custom/nix-logo" "sway/workspaces" "wlr/workspaces" "mpris" "cava" ];
+      modules-left = [ "custom/nix-logo" "wlr/workspaces" "hyprland/workspaces" "mpris" "cava" ];
       modules-center = [ ];
       modules-right = [ "disk" "cpu" "memory" "temperature" "backlight" "network" "pulseaudio" "battery" "clock" "tray" ];
       "custom/media" = {
@@ -159,7 +160,7 @@
       "custom/nix-logo" = {
         "format" = "<span font='16'> </span>";
       };
-      "sway/workspaces" = {
+      "wlr/workspaces" = {
         "all-outputs" = true;
         "active-only" = false;
         "on-scroll-up" = "hyprctl dispatch workspace e+1";
@@ -182,7 +183,7 @@
         };
       };
 
-      "wlr/workspaces" = {
+      "hyprland/workspaces" = {
         "all-outputs" = true;
         "active-only" = false;
         "on-scroll-up" = "hyprctl dispatch workspace e+1";

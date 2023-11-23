@@ -20,10 +20,10 @@
       ../shared
 
       # Boot initial (grub or systemd)
-      ../shared/boot/systemd-boot.nix
+      ../shared/boot/grub.nix
 
       # Login Manager + Session (required after new home-manager xsession DE/WM change...)
-      ../shared/login/greetd.nix
+      ../shared/login/lightdm.nix
 
       # Choice Interface (WM and/or DE)
       #../shared/interfaces/WM/xorg/bspwm

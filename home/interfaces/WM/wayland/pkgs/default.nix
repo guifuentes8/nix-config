@@ -1,4 +1,4 @@
-{ pkgs, outputs, ... }:
+{ unstable, pkgs, outputs, ... }:
 {
   imports = [
     ./foot
@@ -8,7 +8,7 @@
     ./waybar
   ];
 
-  home.packages = with pkgs; [
+  home.packages = with unstable; [
     grim
     hyprpicker
     slurp

@@ -3,6 +3,7 @@ let lavanda-gtk-theme = outputs.packages.${pkgs.system}.lavanda-gtk-theme;
 in
 {
   services.xserver = {
+    enable = true;
     displayManager = {
       # defaultSession = lib.mkDefault "deepin";
       lightdm = {

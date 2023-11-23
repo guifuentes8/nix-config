@@ -1,8 +1,10 @@
-{ pkgs, config, ... }:
+{ unstable, config, ... }:
 {
 
-  home.packages = with pkgs; [
-    krabby
+  home.packages = with unstable; [
+    pokeget-rs
+
+    pfetch
   ];
   programs.zsh = {
     enable = true;
@@ -15,7 +17,7 @@
     };
     initExtraFirst = ''
       unset -v SSH_ASKPASS
-      krabby random 1-3 --no-title
+      pokeget random --hide-name
     '';
     shellAliases = {
       spt = "spotify_player";
@@ -23,8 +25,8 @@
       clock = "tty-clock -c -C 6 -s -S -r -n -D";
       matrix = "cmatrix -b -f -C cyan";
       fetch = "pfetch";
-      mail1 = "himalaya";
-      mail1_sync = "himalaya account sync";
+      mail = "himalaya";
+      mail_sync = "himalaya account sync";
       mail2 = "himalaya -a gcf";
       mail2_sync = "himalaya -a gcf account sync";
       mailsent = "mail -m '[Gmail]/Sent Mail'";
@@ -37,9 +39,7 @@
       xr4 = "xrandr -s 1920x1080";
       yt = "ytfzf -t";
       cal = "gcalcli";
-      telegram = "nchat";
-      mattermost = "matterhorn";
-      slack = "slack-term -config /home/guifuentes8/.config/slack-term/config -token $(pass show slack)";
+      tg = "nchat";
       cjpg = "mogrify -format jpg *.png && rm *.png";
 
       # NixOs shortcuts

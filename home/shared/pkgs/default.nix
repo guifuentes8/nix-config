@@ -1,7 +1,4 @@
 { pkgs, outputs, unstable, ... }:
-let
-  ytermusic = outputs.packages.${pkgs.system}.ytermusic;
-in
 {
 
   imports = [

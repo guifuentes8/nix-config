@@ -16,7 +16,7 @@
        radius = 0
 
 
-       background = #AA${config.colorScheme.colors.base00}
+       background = #FF${config.colorScheme.colors.base00}
        foreground = #${config.colorScheme.colors.base09} 
        line-size = 0pt
        border-size = 0pt

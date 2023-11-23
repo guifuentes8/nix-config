@@ -16,7 +16,7 @@
         exec-once = gsettings set org.gnome.desktop.interface cursor-theme Phinger Cursors
         exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
         exec-once = hyprctl setcursor Phinger Cursors 32
-        exec-once = swww init
+        exec-once = bash /home/guifuentes8/nix-config/home/shared/wallpapers/swww/change-wallpaper.sh init
         exec-once = bash /home/guifuentes8/nix-config/home/shared/wallpapers/swww/change-wallpaper.sh change
   
       # MONITORS
@@ -52,19 +52,19 @@
         decoration {
             blur {
               enabled = true
-              size = 7
-              passes = 2
+              size = 8
+              passes = 1
               new_optimizations = true
               ignore_opacity = true
               xray = true
             }
-            rounding = 2
-            drop_shadow = false
+            rounding = 4
+            drop_shadow = true
             shadow_range = 12
             shadow_render_power = 3
             shadow_ignore_window	= true
             col.shadow = rgb(${config.colorScheme.colors.base00})
-            shadow_offset = [4, 6]
+            shadow_offset = [2, 4]
             active_opacity = 1
             inactive_opacity = 1
             fullscreen_opacity = 1
@@ -104,7 +104,7 @@
       # KEYBINDS
 
         $mainMod = SUPER
-        $term = footclient
+        $term = footclient | foot
 
         bind = $mainMod, Escape, exit,
         bind = $mainMod, Return, exec, $term

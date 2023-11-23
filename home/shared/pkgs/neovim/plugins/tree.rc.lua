@@ -107,9 +107,9 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     files_first = false,
   },
   root_dirs = {},
-  prefer_startup_root = false,
-  sync_root_with_cwd = false,
-  reload_on_bufenter = falsee,
+  prefer_startup_root = true,
+  sync_root_with_cwd = true,
+  reload_on_bufenter = false,
   respect_buf_cwd = false,
   select_prompts = false,
   view = {

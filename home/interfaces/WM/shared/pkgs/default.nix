@@ -1,4 +1,6 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{ inputs, outputs, lib, config, pkgs, unstable, ... }:
+let ytermusic = outputs.packages.${pkgs.system}.ytermusic;
+in
 {
 
   imports = [
@@ -16,27 +18,26 @@
     ./sptlrx
     ./spotify-player
     ./ytfzf
-    ./ytermusic
 
   ];
 
-  home.packages = with pkgs;
+  home.packages =
     [
-
-      gnome.nautilus
+      pkgs.gnome.nautilus
+      ytermusic
 
       # CLI Apps
-      cmatrix
-      devour
-      gcalcli
-      pastel
-      playerctl
-      todo
-      tty-clock
-      tuifeed
+      pkgs.cmatrix
+      pkgs.devour
+      pkgs.gcalcli
+      pkgs.pastel
+      pkgs.playerctl
+      pkgs.todo
+      pkgs.tty-clock
+      pkgs.tuifeed
 
       # Dependencies / Others
-      libnotify
-      pavucontrol
+      pkgs.libnotify
+      pkgs.pavucontrol
     ];
 }
