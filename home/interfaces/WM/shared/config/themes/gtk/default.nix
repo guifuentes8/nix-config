@@ -1,8 +1,5 @@
 { pkgs, unstable, lib, outputs, ... }:
-let
-  material-gtk-theme = outputs.packages.${pkgs.system}.material-gtk-theme;
-  lavanda-gtk-theme = outputs.packages.${pkgs.system}.lavanda-gtk-theme;
-
+let catppuccin_name = "Catppuccin-Frappe-Standard-Blue-Dark";
 in
 {
   gtk = {
@@ -12,23 +9,24 @@ in
       size = lib.mkForce 13;
     };
     cursorTheme = {
-      name = lib.mkForce "Phinger Cursors";
-      package = lib.mkForce pkgs.phinger-cursors;
+      name = lib.mkForce "Catppuccin-Frappe-Dark";
+      package = lib.mkForce unstable.catppuccin-cursors.frappeDark;
       size = lib.mkForce 32;
     };
     iconTheme = {
-      name = lib.mkForce "BeautyLine";
-      package = lib.mkForce pkgs.beauty-line-icon-theme;
+      name = lib.mkForce "Papirus-Dark";
+      package = lib.mkForce unstable.catppuccin-papirus-folders;
     };
     theme = {
-      name = lib.mkForce "Lavanda-Dark";
-      package = lavanda-gtk-theme;
+      name = lib.mkForce "${catppuccin_name}";
+      package = unstable.catppuccin-gtk;
     };
   };
 
-  home.file.".config/gtk-4.0/gtk.css".source = ./lavanda.css;
+  home.file.".config/gtk-4.0/gtk.css".source = "${unstable.catppuccin-gtk}/share/themes/${catppuccin_name}gtk-4.0/gtk-dark.css";
   home.file.".config/gtk-4.0/assets" = {
     recursive = true;
-    source = "${lavanda-gtk-theme}/share/themes/src/assets";
+    source = "${unstable.catppuccin-gtk}/share/themes/${catppuccin_name}gtk-4.0/assets";
   };
+  home.sessionVariables.GTK_THEME = "${catppuccin_name}";
 }

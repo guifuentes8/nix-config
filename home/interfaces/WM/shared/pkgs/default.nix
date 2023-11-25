@@ -4,11 +4,12 @@ in
 {
 
   imports = [
+    ./alacritty
     ./bottom
     ./cava
     ./feh
+    ./firefox
     ./himalaya
-    ./kitty
     ./yazi
     ./nchat
     ./ncspot
@@ -18,7 +19,6 @@ in
     ./sptlrx
     ./spotify-player
     ./ytfzf
-
   ];
 
   home.packages =

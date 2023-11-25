@@ -2,25 +2,25 @@
   imports = [
     nix-colors.homeManagerModules.default
   ];
-  colorScheme = nix-colors.lib.schemeFromYAML "vice" (builtins.readFile ./vice.yaml);
+  #  colorScheme = nix-colors.lib.schemeFromYAML "vice" (builtins.readFile ./vice.yaml);
+  colorScheme = nix-colors.colorSchemes.catppuccin-frappe;
 
+  #   scheme: "Catppuccin Frappe"
+  # author: "https://github.com/catppuccin/catppuccin"
+  # base00: "#303446" # base
+  # base01: "#292c3c" # mantle
+  # base02: "#414559" # surface0
+  # base03: "#51576d" # surface1
+  # base04: "#626880" # surface2
+  # base05: "#c6d0f5" # text
+  # base06: "#f2d5cf" # rosewater
+  # base07: "#babbf1" # lavender
+  # base08: "#e78284" # red
+  # base09: "#ef9f76" # peach
+  # base0A: "#e5c890" # yellow
+  # base0B: "#a6d189" # green
+  # base0C: "#81c8be" # teal
+  # base0D: "#8caaee" # blue
+  # base0E: "#ca9ee6" # mauve
+  # base0F: "#eebebe" # flamingo
 }
-# scheme: "vice"
-# author: "Thomas Leon Highbaugh thighbaugh@zoho.com"
-# base00: "#17191E"
-# base01: "#22262d"
-# base02: "#3c3f4c"
-# base03: "#383a47"
-# base04: "#555e70"
-# base05: "#8b9cbe"
-# base06: "#B2BFD9" text-color
-# base07: "#f4f4f7"
-# base08: "#ff29a8" third
-# base09: "#85ffe0" secondary
-# base0A: "#f0ffaa"
-# base0B: "#0badff"
-# base0C: "#8265ff" main
-# base0D: "#00eaff"
-# base0E: "#00f6d9"
-# base0F: "#ff3d81"
-

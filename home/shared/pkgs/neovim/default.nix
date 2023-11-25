@@ -102,9 +102,9 @@ in
         config = builtins.readFile (./plugins/dashboard.rc.lua);
       }
       {
-        plugin = nvim-base16;
+        plugin = catppuccin-nvim;
         type = "lua";
-        config = builtins.readFile (./plugins/theme.rc.lua);
+        config = builtins.readFile (./plugins/catppuccin.rc.lua);
       }
 
       luasnip # Snippet engine

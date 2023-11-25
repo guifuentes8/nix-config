@@ -1,19 +1,21 @@
 { lib, stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
-  pname = "where-is-my-sddm-theme";
-  version = "3fd8338292680f3d1f14ce7b96eba8ba48aaabad";
+  pname = "my-config";
+  version = "main";
 
   src = fetchFromGitHub {
-    owner = "stepanzubkov";
+    owner = "guifuentes8";
     repo = pname;
     rev = version;
-    sha256 = "sha256-rGn7HKgiPaVxwsURrveHQCQ2RX2JG0HMlLLwnJCoEKg=";
+    sha256 = "tIOXPwtgH6MFU4FqC6B1E2kfU0WPPsSMhEP79v6SxvU=";
   };
 
   installPhase = ''
-    mkdir -p $out/share/sddm/themes/where_is_my_sddm_theme/
-    cp -r * $out/share/sddm/themes/where_is_my_sddm_theme/
+    runHook preInstall
+    mkdir -p $out/share/fonts/DankMono
+    cp -r fonts/DankMono/* $out/share/fonts/DankMono
+    runHook postInstall
   '';
 
   meta = with lib; {

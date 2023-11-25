@@ -15,7 +15,7 @@ in
       "Print" = "flameshot gui";
 
       # terminal emulator
-      "super + Return" = "kitty";
+      "super + Return" = "alacritty";
 
       # program launcher
       "super + @space" = "rofi -modes 'drun' -show-icons -show drun";

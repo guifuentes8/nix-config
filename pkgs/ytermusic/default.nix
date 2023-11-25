@@ -8,7 +8,7 @@ rustPlatform.buildRustPackage rec {
     owner = "ccgauche";
     repo = pname;
     rev = version;
-    hash = "sha256-Bl/hRzs4c+OLOUw8QXg+N6x4umVho9KtponU/QzbtMM=";
+    hash = "sha256-XUsC+BAqFcRmJZ/s0mxqvoELojZL+RXq+ZXMiDPxcLY=";
   };
 
   cargoSha256 = "";
@@ -26,6 +26,11 @@ rustPlatform.buildRustPackage rec {
     lockFile = ./Cargo.lock;
     allowBuiltinFetchGit = true;
   };
+
+  postInstall = ''
+    mkdir -p $out/share/ytermusic
+    cp -r * $out/share/ytermusic 
+  '';
 
 
   meta = with lib; {
