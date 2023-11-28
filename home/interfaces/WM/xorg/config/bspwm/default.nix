@@ -15,7 +15,7 @@ in
       "feh --bg-scale ~/.config/wallpapers/images/wallpaper.png"
       "pkill dunst"
       "dunst"
-      "xsetroot -cursor_name Banana"
+      "xsetroot -cursor_name Catppuccin-Mocha-Dark"
     ];
     extraConfig = ''
       bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱  

@@ -1,6 +1,7 @@
-{ ... }: {
+{ unstable, ... }: {
   programs.alacritty = {
     enable = true;
+    package = unstable.alacritty;
     settings = {
       font = {
         normal = {
@@ -28,119 +29,114 @@
       window.opacity = 0.9;
 
       colors = {
-
-        # Default colors
         primary = {
-
-          background = "#303446"; # base
-          foreground = "#C6D0F5"; # text
+          background = "#1E1E2E"; # base
+          foreground = "#CDD6F4"; # text
           # Bright and dim foreground colors
-          dim_foreground = "#C6D0F5"; # text
-          bright_foreground = "#C6D0F5"; # text
-
+          dim_foreground = "#CDD6F4"; # text
+          bright_foreground = "#CDD6F4"; # text
         };
+
         # Cursor colors
         cursor = {
-
-          text = "#303446"; # base
-          cursor = "#F2D5CF"; # rosewater
+          text = "#1E1E2E"; # base
+          cursor = "#F5E0DC"; # rosewater
           vi_mode_cursor = {
-            text = "#303446"; # base
-            cursor = "#BABBF1"; # lavender
+            text = "#1E1E2E"; # base
+            cursor = "#B4BEFE"; # lavender
           };
         };
 
         # Search colors
         search = {
-
           matches = {
+            foreground = "#1E1E2E"; # base
+            background = "#A6ADC8"; # subtext0
+            focused_match = {
 
-            foreground = "#303446"; # base
-            background = "#A5ADCE"; # subtext0
-          };
+              foreground = "#1E1E2E"; # base
+              background = "#A6E3A1"; # green
+            };
+            footer_bar = {
 
-          focused_match = {
-
-            foreground = "#303446"; # base
-            background = "#A6D189"; # green
-          };
-          footer_bar = {
-
-            foreground = "#303446"; # base
-            background = "#A5ADCE"; # subtext0
+              foreground = "#1E1E2E"; # base
+              background = "#A6ADC8"; # subtext0
+            };
           };
         };
 
         # Keyboard regex hints
         hints = {
-
           start = {
 
-            foreground = "#303446"; # base
-            background = "#E5C890"; # yellow
+            foreground = "#1E1E2E"; # base
+            background = "#F9E2AF"; # yellow
           };
           end = {
-            foreground = "#303446"; # base
-            background = "#A5ADCE"; # subtext0
+
+            foreground = "#1E1E2E"; # base
+            background = "#A6ADC8"; # subtext0
           };
         };
 
         # Selection colors
         selection = {
 
-          text = "#303446"; # base
-          background = "#F2D5CF"; # rosewater
+          text = "#1E1E2E"; # base
+          background = "#F5E0DC"; # rosewater
         };
 
         # Normal colors
         normal = {
-          black = "#51576D"; # surface1
-          red = "#E78284"; # red
-          green = "#A6D189"; # green
-          yellow = "#E5C890"; # yellow
-          blue = "#8CAAEE"; # blue
-          magenta = "#F4B8E4"; # pink
-          cyan = "#81C8BE"; # teal
-          white = "#B5BFE2"; # subtext1
-
+          black = "#45475A"; # surface1
+          red = "#F38BA8"; # red
+          green = "#A6E3A1"; # green
+          yellow = "#F9E2AF"; # yellow
+          blue = "#89B4FA"; # blue
+          magenta = "#F5C2E7"; # pink
+          cyan = "#94E2D5"; # teal
+          white = "#BAC2DE"; # subtext1
         };
+
         # Bright colors
         bright = {
-          black = "#626880"; # surface2
-          red = "#E78284"; # red
-          green = "#A6D189"; # green
-          yellow = "#E5C890"; # yellow
-          blue = "#8CAAEE"; # blue
-          magenta = "#F4B8E4"; # pink
-          cyan = "#81C8BE"; # teal
-          white = "#A5ADCE"; # subtext0
+
+          black = "#585B70"; # surface2
+          red = "#F38BA8"; # red
+          green = "#A6E3A1"; # green
+          yellow = "#F9E2AF"; # yellow
+          blue = "#89B4FA"; # blue
+          magenta = "#F5C2E7"; # pink
+          cyan = "#94E2D5"; # teal
+          white = "#A6ADC8"; # subtext0
         };
 
         # Dim colors
         dim = {
 
-          black = "#51576D"; # surface1
-          red = "#E78284"; # red
-          green = "#A6D189"; # green
-          yellow = "#E5C890"; # yellow
-          blue = "#8CAAEE"; # blue
-          magenta = "#F4B8E4"; # pink
-          cyan = "#81C8BE"; # teal
-          white = "#B5BFE2"; # subtext1
+          black = "#45475A"; # surface1
+          red = "#F38BA8"; # red
+          green = "#A6E3A1"; # green
+          yellow = "#F9E2AF"; # yellow
+          blue = "#89B4FA"; # blue
+          magenta = "#F5C2E7"; # pink
+          cyan = "#94E2D5"; # teal
+          white = "#BAC2DE"; # subtext1
         };
 
         indexed_colors = [
-
           {
             index = 16;
-            color = "#EF9F76";
+            color = "#FAB387";
           }
           {
             index = 17;
-            color = "#F2D5CF";
+            color = "#F5E0DC";
           }
         ];
+
       };
     };
   };
+
 }

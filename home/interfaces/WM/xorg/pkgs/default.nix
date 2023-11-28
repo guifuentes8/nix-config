@@ -4,7 +4,7 @@ in
 {
   imports = [
     ./dunst
-    ./firefox
+
     ./mpv
     ./picom
     ./polybar

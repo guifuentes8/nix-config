@@ -1,11 +1,18 @@
 { pkgs, unstable, outputs, lib, ... }:
-let lavanda-gtk-theme = outputs.packages.${pkgs.system}.lavanda-gtk-theme;
+let
+  catppuccin_name = "Catppuccin-Mocha-Standard-Blue-Dark";
+  catppuccin_gtk = unstable.catppuccin-gtk.override
+    {
+      accents = [ "blue" ]; # You can specify multiple accents here to output multiple themes
+      size = "standard";
+      tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
+      variant = "mocha";
+    };
 in
 {
   services.xserver = {
     enable = true;
     displayManager = {
-      # defaultSession = lib.mkDefault "deepin";
       lightdm = {
         background = ./wallpaper.png;
         enable = true;
@@ -13,16 +20,16 @@ in
           gtk = {
             enable = true;
             theme = {
-              name = "Lavanda-Dark";
-              package = lavanda-gtk-theme;
+              name = "${catppuccin_name}";
+              package = catppuccin_gtk;
             };
             iconTheme = {
               name = "BeautyLine";
               package = pkgs.beauty-line-icon-theme;
             };
             cursorTheme = {
-              name = "Phinger Cursors";
-              package = pkgs.phinger-cursors;
+              name = "Catppuccin-Mocha-Dark";
+              package = unstable.catppuccin-cursors.mochaDark;
               size = 32;
             };
             # clock-format = null;

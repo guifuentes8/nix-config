@@ -4,8 +4,9 @@
   imports = [
     ./bat
     ./caffeine
+    ./chromium
     /* ./davinci-resolve */
-    ./firefox
+
     ./gh
     ./git
     ./gpg
@@ -18,7 +19,6 @@
   home.packages = with pkgs; [
 
     #Apps
-    i3lock-color
     slack
     insomnia
     figma-linux

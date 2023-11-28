@@ -1,5 +1,12 @@
 { pkgs, unstable, lib, outputs, ... }:
-let catppuccin_name = "Catppuccin-Frappe-Standard-Blue-Dark";
+let
+  catppuccin_name = "Catppuccin-Mocha-Standard-Blue-Dark";
+  catppuccin_gtk = unstable.catppuccin-gtk.override {
+    accents = [ "blue" ]; # You can specify multiple accents here to output multiple themes
+    size = "standard";
+    tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
+    variant = "mocha";
+  };
 in
 {
   gtk = {
@@ -9,8 +16,8 @@ in
       size = lib.mkForce 13;
     };
     cursorTheme = {
-      name = lib.mkForce "Catppuccin-Frappe-Dark";
-      package = lib.mkForce unstable.catppuccin-cursors.frappeDark;
+      name = lib.mkForce "Catppuccin-Mocha-Dark";
+      package = lib.mkForce unstable.catppuccin-cursors.mochaDark;
       size = lib.mkForce 32;
     };
     iconTheme = {
@@ -19,14 +26,14 @@ in
     };
     theme = {
       name = lib.mkForce "${catppuccin_name}";
-      package = unstable.catppuccin-gtk;
+      package = catppuccin_gtk;
     };
   };
 
-  home.file.".config/gtk-4.0/gtk.css".source = "${unstable.catppuccin-gtk}/share/themes/${catppuccin_name}gtk-4.0/gtk-dark.css";
+  home.file.".config/gtk-4.0/gtk.css".source = "${catppuccin_gtk}/share/themes/${catppuccin_name}gtk-4.0/gtk-dark.css";
   home.file.".config/gtk-4.0/assets" = {
     recursive = true;
-    source = "${unstable.catppuccin-gtk}/share/themes/${catppuccin_name}gtk-4.0/assets";
+    source = "${catppuccin_gtk}/share/themes/${catppuccin_name}gtk-4.0/assets";
   };
   home.sessionVariables.GTK_THEME = "${catppuccin_name}";
 }

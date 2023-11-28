@@ -8,7 +8,7 @@
   xdg.configFile."spotify-player/app.toml".source = (pkgs.formats.toml { }).generate "app.toml"
     {
       client_id = "32c1c3d388a14e4981d80295af909be7";
-      theme = "Vice";
+      theme = "Catppuccin-mocha";
       enable_media_control = true;
       enable_cover_image_cache = true;
       page_size_in_rows = 50;
@@ -32,73 +32,32 @@
   xdg.configFile."spotify-player/theme.toml".source = (pkgs.formats.toml { }).generate "theme.toml"
     {
       themes = [{
-        name = "Catppuccin-frappe";
+        name = "Catppuccin-mocha";
         palette = {
-          background = "#303446";
-          foreground = "#C6D0F5";
-          black = "#303446";
-          blue = "#8CAAEE";
+          background = "#1E1E2E";
+          foreground = "#CDD6F4";
+          black = "#1E1E2E";
+          blue = "#89B4FA";
           cyan = "#89DCEB";
-          green = "#A6D189";
-          magenta = "#CA9EE6";
-          red = "#E78284";
-          white = "#C6D0F5";
-          yellow = "#E5C890";
-          bright_black = "#303446";
-          bright_blue = "#8CAAEE";
+          green = "#A6E3A1";
+          magenta = "#CBA6F7";
+          red = "#F38BA8";
+          white = "#CDD6F4";
+          yellow = "#F9E2AF";
+          bright_black = "#1E1E2E";
+          bright_blue = "#89B4FA";
           bright_cyan = "#89DCEB";
-          bright_green = "#A6D189";
-          bright_magenta = "#CA9EE6";
-          bright_red = "#E78284";
-          bright_white = "#C6D0F5";
-          bright_yellow = "#E5C890";
-          # background = "#${config.colorScheme.colors.base00}";
-          # foreground = "#${config.colorScheme.colors.base0C}";
-          # black = "#${config.colorScheme.colors.base00}";
-          # blue = "#${config.colorScheme.colors.base09}";
-          # cyan = "#${config.colorScheme.colors.base0C}";
-          # green = "#${config.colorScheme.colors.base09}";
-          # magenta = "#${config.colorScheme.colors.base08}";
-          # red = "#${config.colorScheme.colors.base08}";
-          # white = "#${config.colorScheme.colors.base07}";
-          # yellow = "#${config.colorScheme.colors.base09}";
-          # bright_black = "#414868";
-          # bright_blue = "#7aa2f7";
-          # bright_cyan = "#7dcfff";
-          # bright_green = "#9ece6a";
-          # bright_magenta = "#bb9af7";
-          # bright_red = "#f7768e";
-          # bright_white = "#c0caf5";
-          # bright_yellow = "#e0af68";
+          bright_green = "#A6E3A1";
+          bright_magenta = "#CBA6F7";
+          bright_red = "#F38BA8";
+          bright_white = "#CDD6F4";
+          bright_yellow = "#F9E2AF";
+
         };
         component_style = {
-          block_title = {
-            fg = "Magenta";
-          };
-          playback_track = {
-            fg = "Yellow";
+          selection = {
+            bg = { Rgb = { r = 49; g = 50; b = 68; }; };
             modifiers = [ "Bold" ];
-          };
-          playback_album = {
-            fg = "Cyan";
-          };
-          playback_metadata = {
-            fg = "Blue";
-          };
-          playback_progress_bar = {
-            bg = "Black";
-            fg = "Yellow";
-          };
-          current_playing = {
-            fg = "Yellow";
-            modifiers = [ "Bold" ];
-          };
-          page_desc = {
-            fg = "Magenta";
-            modifiers = [ "Bold" ];
-          };
-          table_header = {
-            fg = "Magenta";
           };
         };
       }];

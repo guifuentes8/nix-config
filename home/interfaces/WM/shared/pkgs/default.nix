@@ -8,12 +8,9 @@ in
     ./bottom
     ./cava
     ./feh
-    ./firefox
     ./himalaya
     ./yazi
-    ./nchat
     ./ncspot
-    ./qutebrowser
     ./pass
     ./rofi
     ./sptlrx

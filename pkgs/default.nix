@@ -9,6 +9,4 @@
   sddm-theme = pkgs.callPackage ./sddm-theme { };
   ytermusic = pkgs.callPackage ./ytermusic { };
   dank-mono = pkgs.callPackage ./dank-mono { };
-
-
 }

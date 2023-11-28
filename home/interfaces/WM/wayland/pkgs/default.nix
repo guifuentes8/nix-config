@@ -2,7 +2,7 @@
 {
   imports = [
     ./foot
-    ./firefox
+
     ./mpv
     ./mako
     ./waybar

@@ -89,7 +89,7 @@
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
     variables = {
-      XCURSOR_THEME = "Phinger Cursors";
+      XCURSOR_THEME = "Catppuccin-Mocha-Dark";
       XCURSOR_SIZE = "32";
     };
     sessionVariables = rec {

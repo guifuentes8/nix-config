@@ -3,9 +3,9 @@
     nix-colors.homeManagerModules.default
   ];
   #  colorScheme = nix-colors.lib.schemeFromYAML "vice" (builtins.readFile ./vice.yaml);
-  colorScheme = nix-colors.colorSchemes.catppuccin-frappe;
+  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 
-  #   scheme: "Catppuccin Frappe"
+  #   scheme: "Catppuccin Mocha"
   # author: "https://github.com/catppuccin/catppuccin"
   # base00: "#303446" # base
   # base01: "#292c3c" # mantle

@@ -3,7 +3,6 @@
 
   home.packages = with unstable; [
     pokeget-rs
-
     pfetch
   ];
   programs.zsh = {
@@ -39,7 +38,6 @@
       xr4 = "xrandr -s 1920x1080";
       yt = "ytfzf -t";
       cal = "gcalcli";
-      tg = "nchat";
       cjpg = "mogrify -format jpg *.png && rm *.png";
 
       # NixOs shortcuts

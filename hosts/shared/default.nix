@@ -1,5 +1,8 @@
 # This file (and the global directory) holds config that i use on all hosts
 { config, lib, inputs, outputs, pkgs, ... }:
+let
+  dank-mono = outputs.packages.${pkgs.system}.dank-mono;
+in
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -32,6 +35,7 @@
     noto-fonts-cjk
     noto-fonts-emoji
     meslo-lgs-nf
+    dank-mono
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 

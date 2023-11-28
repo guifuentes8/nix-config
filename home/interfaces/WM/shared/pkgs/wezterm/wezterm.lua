@@ -7,6 +7,6 @@ if wezterm.config_builder then
         default_cursor_style = "BlinkingBar",
         font = wezterm.font('Dank Mono', { style = 'Italic' }),
         font_size=13.0,
-        color_scheme = "Catppuccin Frappe", -- or Macchiato, Frappe, Latte
+        color_scheme = "Catppuccin Mocha", -- or Macchiato, Mocha, Latte
         window_background_opacity = 0.9
       }

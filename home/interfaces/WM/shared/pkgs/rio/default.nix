@@ -7,7 +7,7 @@
   xdg.configFile."rio/config.toml".source = (pkgs.formats.toml { }).generate "config.toml" {
     cursor = "▇";
     performance = "High";
-    theme = "catppuccin-frappe";
+    theme = "catppuccin-mocha";
     background.opacity = 0.9;
     fonts = {
       regular = {
@@ -32,7 +32,7 @@
     };
   };
 
-  xdg.configFile."rio/themes/catppuccin-frappe.toml".source = (pkgs.formats.toml { }).generate "catppuccin-frappe.toml" {
+  xdg.configFile."rio/themes/catppuccin-mocha.toml".source = (pkgs.formats.toml { }).generate "catppuccin-mocha.toml" {
     colors = {
       # Normal
       foreground = "#C6D0F5";
