@@ -3,13 +3,13 @@
   imports = [
 
     # Global config (required)
-    ../shared
+    ../global
 
     # Environment (DE and/or WM)
-    ../interfaces/WM/shared
+    ../global/interfaces/WM/shared
 
     # Wayland or Xorg Packages
-    ../interfaces/WM/wayland
+    ../global/interfaces/WM/wayland
 
   ];
 

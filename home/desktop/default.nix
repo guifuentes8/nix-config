@@ -1,11 +1,10 @@
 { pkgs, ... }:
 
-
 {
   imports = [
 
     # Global config (required)
-    ../shared
+    ../global
 
     # Environment (DE)
 
@@ -14,11 +13,11 @@
 
     # Environment (WM)
     #3 ./interfaces/WM/shared (CHOICE IF USE DE + WM)
-    ../interfaces/WM/xorg
-    ../interfaces/WM/shared
+    ../global/interfaces/WM/xorg
+    ../global/interfaces/WM/shared
+
     # Wayland or Xorg (if WM is selected)
     # ./interfaces/WM/wayland
-
   ];
 
 }

@@ -8,36 +8,36 @@
     ./hardware-configuration.nix
 
     # Hardware Gpu (if exist)
-    ../shared/hardware/gpu/nvidia.nix
+    ../global/hardware/gpu/nvidia.nix
 
     # Extra Hardware config
-    ../shared/hardware/keychron.nix
-    # ../shared/hardware/logitech.nix
+    ../global/hardware/keychron.nix
+    # ../global/hardware/logitech.nix
 
     # NIXOS CONFIG ------------------------------------
 
-    # shared NixOs Config 
-    ../shared
+    # global NixOs Config 
+    ../global
 
     # Boot initial (grub or systemd)
-    ../shared/boot/grub.nix
+    ../global/boot/grub.nix
 
     # Login Manager
-    ../shared/login/lightdm.nix
+    ../global/login/lightdm.nix
 
     # Choice Interface (WM and/or DE)
-    ../shared/interfaces/WM/xorg/bspwm
-    ../shared/interfaces/WM/xorg/qtile
-    ../shared/interfaces/WM/xorg/awesome
+    ../global/interfaces/WM/xorg/bspwm
+    ../global/interfaces/WM/xorg/qtile
+    ../global/interfaces/WM/xorg/awesome
 
     # Active services
-    ../shared/services/firewall.nix
-    ../shared/services/gnome-keyring.nix
-    ../shared/services/kdeconnect.nix
-    ../shared/services/teamviewer.nix
+    ../global/services/firewall.nix
+    ../global/services/gnome-keyring.nix
+    ../global/services/kdeconnect.nix
+    ../global/services/teamviewer.nix
 
     # User 
-    ../shared/users/guifuentes8.nix
+    ../global/users/guifuentes8.nix
 
   ];
 
@@ -89,7 +89,7 @@
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
     variables = {
-      XCURSOR_THEME = "Graphite light Cursors";
+      XCURSOR_THEME = "phinger-cursors-light";
       XCURSOR_SIZE = "32";
     };
     sessionVariables = rec {

@@ -11,33 +11,33 @@
       #../global/config/hardware/amdgpu.nix
 
       # Extra Hardware config
-      ../shared/hardware/bluetooth.nix
-      # ../shared/config/hardware/keychron.nix
+      ../global/hardware/bluetooth.nix
+      # ../global/config/hardware/keychron.nix
 
       # NIXOS CONFIG ------------------------------------
 
-      # shared NixOs Config 
-      ../shared
+      # global NixOs Config 
+      ../global
 
       # Boot initial (grub or systemd)
-      ../shared/boot/grub.nix
+      ../global/boot/grub.nix
 
       # Login Manager + Session (required after new home-manager xsession DE/WM change...)
-      ../shared/login/lightdm.nix
+      ../global/login/lightdm.nix
 
       # Choice Interface (WM and/or DE)
-      #../shared/interfaces/WM/xorg/bspwm
-      ../shared/interfaces/WM/wayland/hyprland
-      ../shared/interfaces/WM/wayland/sway
+      #../global/interfaces/WM/xorg/bspwm
+      ../global/interfaces/WM/wayland/hyprland
+      ../global/interfaces/WM/wayland/sway
 
       # Active services
-      ../shared/services/backlight.nix
-      ../shared/services/firewall.nix
-      ../shared/services/gnome-keyring.nix
-      ../shared/services/temperature.nix
+      ../global/services/backlight.nix
+      ../global/services/firewall.nix
+      ../global/services/gnome-keyring.nix
+      ../global/services/temperature.nix
 
       # User 
-      ../shared/users/guifuentes8.nix
+      ../global/users/guifuentes8.nix
 
     ];
 
@@ -104,7 +104,7 @@
       HYPRLAND_LOG_WLR = "1";
 
       # Tell XWayland to use a cursor theme
-      XCURSOR_THEME = "Graphite light Cursors";
+      XCURSOR_THEME = "phinger-cursors-light";
 
       # Set a cursor size
       XCURSOR_SIZE = "24";
