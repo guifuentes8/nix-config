@@ -19,7 +19,7 @@
     };
     initExtraFirst = ''
       unset -v SSH_ASKPASS
-      krabby random 1-4 --padding-left 5
+      krabby random 1-4 --padding-left 5 --no-title
       
     '';
     initExtra = ''
