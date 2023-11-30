@@ -1,5 +1,7 @@
-{ pkgs, nix-colors, config, ... }:
-let autostart = ../xorg-autostart.sh;
+{ outputs, pkgs, nix-colors, config, ... }:
+let
+  autostart = ../xorg-autostart.sh;
+  my-config = outputs.packages.${pkgs.system}.my-config;
 in
 {
 
@@ -12,10 +14,10 @@ in
       # "xrandr -s 5120x1440"
       "picom"
       "systemctl --user restart polybar.service"
-      "feh --bg-scale ~/.config/wallpapers/images/wallpaper.png"
+      "feh --bg-fill ${my-config}/wallpapers/wallpaper.png"
       "pkill dunst"
       "dunst"
-      "xsetroot -cursor_name Catppuccin-Mocha-Dark"
+      "xsetroot -cursor_name Graphite light Cursors"
     ];
     extraConfig = ''
       bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱  

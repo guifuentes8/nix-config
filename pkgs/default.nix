@@ -8,5 +8,5 @@
   lavanda-gtk-theme = pkgs.callPackage ./gtk-theme/lavanda { };
   sddm-theme = pkgs.callPackage ./sddm-theme { };
   ytermusic = pkgs.callPackage ./ytermusic { };
-  dank-mono = pkgs.callPackage ./dank-mono { };
+  my-config = pkgs.callPackage ./my-config { };
 }

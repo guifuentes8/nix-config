@@ -8,13 +8,14 @@ stdenv.mkDerivation rec {
     owner = "guifuentes8";
     repo = pname;
     rev = version;
-    sha256 = "tIOXPwtgH6MFU4FqC6B1E2kfU0WPPsSMhEP79v6SxvU=";
+    sha256 = "vMzE56t2GYv3Myknc8nGZBNsRptZ49GGRR56rTD2ptA=";
   };
 
   installPhase = ''
     runHook preInstall
     mkdir -p $out/share/fonts/DankMono
     cp -r fonts/DankMono/* $out/share/fonts/DankMono
+    cp -r * $out
     runHook postInstall
   '';
 

@@ -16,8 +16,8 @@ in
       size = lib.mkForce 13;
     };
     cursorTheme = {
-      name = lib.mkForce "Catppuccin-Mocha-Dark";
-      package = lib.mkForce unstable.catppuccin-cursors.mochaDark;
+      name = lib.mkForce "Graphite light Cursors";
+      package = lib.mkForce unstable.graphite-cursors;
       size = lib.mkForce 32;
     };
     iconTheme = {

@@ -104,7 +104,7 @@
       HYPRLAND_LOG_WLR = "1";
 
       # Tell XWayland to use a cursor theme
-      XCURSOR_THEME = "Catppuccin-Mocha-Dark";
+      XCURSOR_THEME = "Graphite light Cursors";
 
       # Set a cursor size
       XCURSOR_SIZE = "24";

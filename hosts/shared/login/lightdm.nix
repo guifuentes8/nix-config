@@ -1,5 +1,6 @@
 { pkgs, unstable, outputs, lib, ... }:
 let
+  my-config = outputs.packages.${pkgs.system}.my-config;
   catppuccin_name = "Catppuccin-Mocha-Standard-Blue-Dark";
   catppuccin_gtk = unstable.catppuccin-gtk.override
     {
@@ -14,7 +15,7 @@ in
     enable = true;
     displayManager = {
       lightdm = {
-        background = ./wallpaper.png;
+        background = "${my-config}/wallpapers/login.png";
         enable = true;
         greeters = {
           gtk = {
@@ -28,8 +29,8 @@ in
               package = pkgs.beauty-line-icon-theme;
             };
             cursorTheme = {
-              name = "Catppuccin-Mocha-Dark";
-              package = unstable.catppuccin-cursors.mochaDark;
+              name = "Graphite light Cursors";
+              package = unstable.graphite-cursors;
               size = 32;
             };
             # clock-format = null;

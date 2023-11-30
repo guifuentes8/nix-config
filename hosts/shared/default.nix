@@ -1,7 +1,7 @@
 # This file (and the global directory) holds config that i use on all hosts
 { config, lib, inputs, outputs, pkgs, ... }:
 let
-  dank-mono = outputs.packages.${pkgs.system}.dank-mono;
+  my-config = outputs.packages.${pkgs.system}.my-config;
 in
 {
   imports = [
@@ -35,7 +35,7 @@ in
     noto-fonts-cjk
     noto-fonts-emoji
     meslo-lgs-nf
-    dank-mono
+    my-config
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 

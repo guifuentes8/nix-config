@@ -1,7 +1,11 @@
-{ ... }:
-
+{ outputs, pkgs, ... }:
+let
+  my-config = outputs.packages.${pkgs.system}.my-config;
+in
 {
-  xdg.configFile."wallpapers/images".source = ./images;
-  xdg.configFile."wallpapers/gifs".source = ./gifs;
+  home.file.".config/wallpapers" = {
+    recursive = true;
+    source = "${my-config}/wallpapers";
+  };
 
 }
