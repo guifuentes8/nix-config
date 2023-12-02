@@ -7,15 +7,14 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "guifuentes8";
     repo = pname;
-    rev = version;
+    rev = "main";
     sha256 = "4VK9q9ZX/gzX7hJZPjZ/Mf4osmluFASusytN4TVYUG8=";
   };
 
   installPhase = ''
     runHook preInstall
-    mkdir -p $out/share/fonts/DankMono
-    cp -r fonts/DankMono/* $out/share/fonts/DankMono
-    cp -r * $out
+    mkdir -p $out/share
+    cp -r * $out/share
     runHook postInstall
   '';
 

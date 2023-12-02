@@ -17,6 +17,8 @@
 
   programs.home-manager.enable = true;
   systemd.user.startServices = true;
+  fonts.fontconfig.enable = true;
+
 
   xdg.userDirs = {
     music = "${config.home.homeDirectory}/Music";

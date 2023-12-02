@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }: {
+{ inputs, config, pkgs, unstable, ... }: {
   imports = [
     inputs.hyprland.homeManagerModules.default
   ];
@@ -41,10 +41,10 @@
 
         general {
             gaps_in = 4
-            gaps_out = 8
-            border_size = 3
-            col.active_border = rgb(${config.colorScheme.colors.base0C})
-            col.inactive_border = rgb(${config.colorScheme.colors.base06})
+            gaps_out = 12
+            border_size = 2
+            col.active_border = rgb(${config.colorScheme.colors.base0A})
+            col.inactive_border = rgb(${config.colorScheme.colors.base04})
             no_border_on_floating = true
             layout = dwindle
         }
@@ -104,7 +104,7 @@
       # KEYBINDS
 
         $mainMod = SUPER
-        $term = footclient | foot
+        $term = footclient
 
         bind = $mainMod, Escape, exit,
         bind = $mainMod, Return, exec, $term
@@ -114,7 +114,8 @@
         bind = $mainMod, S, togglesplit, # dwindle
         bind = $mainMod, F, togglefloating,
         bind = $mainMod, M, fullscreen, 1
-        bind = $mainMod, P, pseudo, # dwindle
+
+        bind = $mainMod, P, exec, ${unstable.hyprpicker}/bin/hyprpicker -a
 
         bind = $mainMod, F1, exec, rofi-bluetooth
         bind = $mainMod, F2, exec, rofi-pulse-select source

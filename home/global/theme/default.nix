@@ -7,7 +7,7 @@
 
   #   scheme: "Catppuccin Mocha"
   # author: "https://github.com/catppuccin/catppuccin"
-  # base00: "#303446" # base
+  # base00: "#1e1e2e" # base
   # base01: "#292c3c" # mantle
   # base02: "#414559" # surface0
   # base03: "#51576d" # surface1

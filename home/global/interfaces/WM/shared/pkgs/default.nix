@@ -7,6 +7,7 @@ in
     ./alacritty
     ./bottom
     ./cava
+    ./dunst
     ./feh
     ./himalaya
     ./yazi

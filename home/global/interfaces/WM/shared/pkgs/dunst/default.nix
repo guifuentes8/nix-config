@@ -19,7 +19,7 @@ in
         corner_radius = 14;
         gaps = true;
         gap_size = 10;
-        origin = "top-right";
+        origin = "bottom-right";
         notification_limit = 6;
         frame_width = 2;
         min_icon_size = 64;

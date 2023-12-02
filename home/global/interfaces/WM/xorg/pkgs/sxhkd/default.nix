@@ -120,7 +120,7 @@ in
 
 
       # OTHERS PROGRAMS
-      "super + p" = "xcolor | hyprpicker";
+      "super + p" = "xcolor";
 
     };
 

@@ -4,7 +4,7 @@ echo header
 
 export XDG_CACHE_HOME=~/.cache
 
-WALLPAPER_PATH=~/.config/wallpapers/gifs
+WALLPAPER_PATH=~/.config/wallpapers
 IMG_NAME=$(ls ${WALLPAPER_PATH} | shuf -n 1)
 IMG_PATH=${WALLPAPER_PATH}/$IMG_NAME
 

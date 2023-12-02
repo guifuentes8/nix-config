@@ -2,10 +2,9 @@
 {
   imports = [
     ./foot
-
     ./mpv
-    ./mako
     ./waybar
+    ./wpaperd
   ];
 
   home.packages = with unstable; [
@@ -15,7 +14,6 @@
     swaylock
     swayidle
     swayimg
-    swww
     wl-clipboard
     wf-recorder
     wtype

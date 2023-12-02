@@ -1,11 +1,10 @@
 { outputs, pkgs, ... }:
 let
-  my-config = outputs.packages.${pkgs.system}.my-config;
 in
 {
-  home.file.".config/wallpapers" = {
-    recursive = true;
-    source = "${my-config}/wallpapers";
-  };
+ # home.file."config/wallpapers" = {
+ #   source = ./my-config;
+ #   recursive = true;
+ # };
 
 }
