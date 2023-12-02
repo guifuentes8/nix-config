@@ -3,11 +3,11 @@
 
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,6 +27,7 @@
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
+      systemVersion = "23.11";
       unstable = import nixpkgs-unstable {
         system = "x86_64-linux";
         config.allowUnfree = true;
@@ -43,14 +44,14 @@
 
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs unstable; };
+          specialArgs = { inherit inputs outputs unstable systemVersion; };
           modules = [
             darkmatter-grub-theme.nixosModule
             ./hosts/desktop
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs unstable; };
+          specialArgs = { inherit inputs outputs unstable systemVersion; };
           modules = [
             darkmatter-grub-theme.nixosModule
             ./hosts/laptop
@@ -61,12 +62,12 @@
       homeConfigurations = {
         "guifuentes8@desktop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit unstable nix-colors inputs outputs; };
+          extraSpecialArgs = { inherit unstable systemVersion nix-colors inputs outputs; };
           modules = [ ./home/desktop ];
         };
         "guifuentes8@laptop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit unstable nix-colors inputs outputs; };
+          extraSpecialArgs = { inherit unstable systemVersion nix-colors inputs outputs; };
           modules = [ ./home/laptop ];
         };
       };

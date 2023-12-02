@@ -15,7 +15,7 @@ in
     enable = true;
     displayManager = {
       lightdm = {
-        background = "${my-config}/wallpapers/login.jpg";
+        background = "${my-config}/share/wallpapers/login.jpg";
         enable = true;
         greeters = {
           gtk = {

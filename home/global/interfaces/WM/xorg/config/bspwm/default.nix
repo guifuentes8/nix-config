@@ -11,7 +11,7 @@ in
       "sxhkd"
       "picom"
       "systemctl --user restart polybar.service"
-      "feh --bg-max ${my-config}/wallpapers/wallpaper.png --image-bg '#1e1e2e'"
+      "feh --bg-max ${my-config}/share/wallpapers/wallpaper.png --image-bg '#1e1e2e'"
       "pkill dunst"
       "dunst"
       "xsetroot -cursor_name 'phinger-cursors-light'"

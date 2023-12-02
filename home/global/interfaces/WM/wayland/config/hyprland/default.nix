@@ -1,6 +1,6 @@
-{ inputs, config, pkgs, unstable, ... }: 
-let 
-catppuccin_name = "Catppuccin-Mocha-Standard-Blue-Dark";
+{ inputs, config, pkgs, unstable, ... }:
+let
+  catppuccin_name = "Catppuccin-Mocha-Standard-Blue-Dark";
 in
 
 {
@@ -115,7 +115,6 @@ in
         bind = $mainMod, Return, exec, $term
         bind = $mainMod, Space, exec, rofi -modes "drun" -show-icons -show drun
         bind = $mainMod, Q, killactive,
-        bind = $mainMod, W, exec, bash /home/guifuentes8/nix-config/home/shared/wallpapers/swww/change-wallpaper.sh change
         bind = $mainMod, S, togglesplit, # dwindle
         bind = $mainMod, F, togglefloating,
         bind = $mainMod, M, fullscreen, 1

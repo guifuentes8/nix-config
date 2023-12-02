@@ -1,11 +1,12 @@
-{ unstable, ... }:
+{ pkgs, ... }:
 {
-  # programs.joshuto = { # 23.11 only
-  #   enable = true;
-  # };
 
-  home.packages = with unstable;[
-    yazi
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  home.packages = with pkgs; [
     ueberzugpp
     ffmpegthumbnailer
     poppler
@@ -17,7 +18,6 @@
     zoxide
 
   ];
-
 
   xdg.configFile."yazi/keymap.toml".source = ./keymap.toml;
   xdg.configFile."yazi/theme.toml".source = ./theme.toml;

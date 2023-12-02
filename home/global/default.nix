@@ -4,6 +4,5 @@
     ./config
     ./theme
     ./pkgs
-    ./wallpapers
   ];
 }

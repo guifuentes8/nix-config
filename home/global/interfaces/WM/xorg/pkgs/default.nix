@@ -3,7 +3,6 @@ let
 in
 {
   imports = [
-    ./dunst
     ./mpv
     ./picom
     ./polybar

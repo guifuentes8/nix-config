@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, outputs, ... }:
+{ config, pkgs, inputs, outputs, systemVersion, ... }:
 {
   imports =
     [
@@ -74,7 +74,7 @@
   };
 
   system = {
-    stateVersion = "23.05";
+    stateVersion = systemVersion;
     autoUpgrade = {
       enable = false;
       allowReboot = false;

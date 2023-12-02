@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, config, outputs, ... }:
+{ inputs, lib, pkgs, config, outputs, systemVersion, ... }:
 {
   imports = [ ];
 
@@ -7,7 +7,7 @@
   home = {
     username = "guifuentes8";
     homeDirectory = "/home/guifuentes8";
-    stateVersion = "23.05";
+    stateVersion = systemVersion;
     sessionVariables = {
       XCURSOR_THEME = "phinger-cursors-light";
       XCURSOR_SIZE = "32";
