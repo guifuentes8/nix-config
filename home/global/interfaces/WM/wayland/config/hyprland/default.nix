@@ -1,4 +1,10 @@
-{ inputs, config, pkgs, unstable, ... }: {
+{ inputs, config, pkgs, unstable, ... }: 
+let 
+catppuccin_name = "Catppuccin-Mocha-Standard-Blue-Dark";
+in
+
+{
+
   imports = [
     inputs.hyprland.homeManagerModules.default
   ];
@@ -9,15 +15,14 @@
     extraConfig = ''
       # ON START
         exec-once = mako
+        exec-once = wpaperd 
         exec-once = wl-clipboard-history -t
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-        exec-once = gsettings set org.gnome.desktop.interface gtk-theme Lavanda-Dark
+        exec-once = gsettings set org.gnome.desktop.interface gtk-theme ${catppuccin_name}
         exec-once = gsettings set org.gnome.desktop.interface cursor-theme phinger-cursors-light
         exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
         exec-once = hyprctl setcursor phinger-cursors-light 32
-        exec-once = bash /home/guifuentes8/nix-config/home/shared/wallpapers/swww/change-wallpaper.sh init
-        exec-once = bash /home/guifuentes8/nix-config/home/shared/wallpapers/swww/change-wallpaper.sh change
   
       # MONITORS
 
@@ -42,7 +47,7 @@
         general {
             gaps_in = 4
             gaps_out = 12
-            border_size = 2
+            border_size = 3
             col.active_border = rgb(${config.colorScheme.colors.base0A})
             col.inactive_border = rgb(${config.colorScheme.colors.base04})
             no_border_on_floating = true
@@ -52,8 +57,8 @@
         decoration {
             blur {
               enabled = true
-              size = 8
-              passes = 1
+              size = 6
+              passes = 2
               new_optimizations = true
               ignore_opacity = true
               xray = true

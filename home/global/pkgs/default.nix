@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
 
     #Apps
+    bitwarden
     discord
     figma-linux
     insomnia

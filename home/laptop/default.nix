@@ -14,11 +14,5 @@
   ];
 
 
-  gtk = {
-    cursorTheme = lib.mkDefault {
-      size = 18;
-    };
-  };
-
 }
 

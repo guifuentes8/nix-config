@@ -14,8 +14,8 @@
       }
 
       window#waybar {
-          background: #${config.colorScheme.colors.base00};
-          color: #${config.colorScheme.colors.base09};
+          background: #${config.colorScheme.colors.base01};
+          color: #${config.colorScheme.colors.base0C};
       }
 
       #cpu,
@@ -29,7 +29,7 @@
       #network,
       #tray,
       #backlight {
-      background: #${config.colorScheme.colors.base00};
+      background: #${config.colorScheme.colors.base01};
       padding: 4px 6px;
       margin: 4px 2px;
       }
@@ -42,71 +42,71 @@
 
 
       #workspaces button {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base0D};
         padding: 0px 4px 0px 0px;
         margin: 0px 2px;
 
       }
 
       #workspaces button.active {
-        color: #${config.colorScheme.colors.base0C};
-        background-color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base0E};
+        background-color: #${config.colorScheme.colors.base01};
       }
 
       #workspaces button.focused {
-        color: #${config.colorScheme.colors.base0C};
+        color: #${config.colorScheme.colors.base0E};
         border-radius: 24px;
       }
 
       #workspaces button.urgent {
-        color: #${config.colorScheme.colors.base00};
+        color: #${config.colorScheme.colors.base01};
         background: #${config.colorScheme.colors.base08};
         border-radius: 10px;
       }
 
       #workspaces button:hover {
-        background-color: #${config.colorScheme.colors.base00};
+        background-color: #${config.colorScheme.colors.base01};
         color: #${config.colorScheme.colors.base0C};
       }
       
       #disk {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base0F};
       }
       
       #cpu {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base0F};
       }
       
       #memory {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base0F};
       }
       
       #temperature {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base0E};
       }
       
       #keyboard-state {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base05};
+      }
+      #backlight {
+        color: #${config.colorScheme.colors.base0D};
       }
       
       #network {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base0C};
       }
       
-      #backlight {
-        color: #${config.colorScheme.colors.base06};
-      }
       
       #pulseaudio {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base0B};
       }
       
       #battery {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base0A};
       }
 
       #clock {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base09};
         margin-right: 12px;
       }
 
@@ -119,19 +119,19 @@
       }
 
       #mpris {
-        color: #${config.colorScheme.colors.base0C};
+        color: #${config.colorScheme.colors.base0B};
         margin-left: 12px;
         margin-right: 12px;
       }
 
        #custom-media {
-        color: #${config.colorScheme.colors.base0C};
+        color: #${config.colorScheme.colors.base0B};
         margin-left: 12px;
         margin-right: 12px;
       }
 
       #cava {
-        color: #${config.colorScheme.colors.base0C};
+        color: #${config.colorScheme.colors.base0B};
       }
     '';
 

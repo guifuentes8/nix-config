@@ -10,6 +10,7 @@
   home.packages = with unstable; [
     grim
     hyprpicker
+    nwg-look
     slurp
     swaylock
     swayidle

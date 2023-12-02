@@ -19,12 +19,12 @@ in
         corner_radius = 14;
         gaps = true;
         gap_size = 10;
-        origin = "bottom-right";
+        origin = "top-right";
         notification_limit = 6;
         frame_width = 2;
         min_icon_size = 64;
         max_icon_size = 64;
-        offset = "20x80";
+        offset = "20x30";
         frame_color = "#${config.colorScheme.colors.base0C}";
         separator_color = "frame";
       };

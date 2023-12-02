@@ -8,12 +8,13 @@
         term = "xterm-256color";
         dpi-aware = "yes";
         font = "Dank Mono:size=8:slant=italic";
+        pad = "8x8";
       };
       mouse = {
         hide-when-typing = "yes";
       };
       cursor = {
-        color = "${config.colorScheme.colors.base06} ${config.colorScheme.colors.base0A}";
+        color = "${config.colorScheme.colors.base06} ${config.colorScheme.colors.base0C}";
       };
       colors = {
         alpha = 0.9;
