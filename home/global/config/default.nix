@@ -57,7 +57,7 @@
     };
   };
 
-
+  news.display = "silent";
 
 }
 

@@ -7,17 +7,28 @@ in
     ./alacritty
     ./bottom
     ./cava
+    ./comodoro
+    ./dstask
     ./dunst
     ./feh
     ./gcalcli
     ./himalaya
-    ./yazi
+    ./hyfetch
+    ./jq
+    ./ncmpcpp
     ./ncspot
     ./pass
+    ./ripgrep
+    ./rtorrent
     ./rofi
     ./sptlrx
     ./spotify-player
+    ./translate-shell
+    ./watson
     ./ytfzf
+    ./yazi
+    ./zathura
+    ./zoxide
   ];
 
   home.packages = [
@@ -28,7 +39,6 @@ in
     pkgs.gcalcli
     pkgs.pastel
     pkgs.playerctl
-    pkgs.todo
     pkgs.tty-clock
     pkgs.tuifeed
     ytermusic

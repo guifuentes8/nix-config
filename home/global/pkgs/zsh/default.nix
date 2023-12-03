@@ -2,16 +2,19 @@
 {
 
   imports = [
+    ./starship.nix
     ./syntax-highlight.nix
   ];
 
   home.packages = with unstable; [
     krabby
   ];
+
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    # syntaxHighlighting.enable = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
@@ -20,31 +23,45 @@
     initExtraFirst = ''
       unset -v SSH_ASKPASS
       krabby random 1-4 --padding-left 5 --no-title
-      
     '';
     initExtra = ''
-      ZSH_HIGHLIGHT_HIGHLIGHTERS=(main cursor)
-      typeset -gA ZSH_HIGHLIGHT_STYLES
+       #compdef dstask
+       #autoload
+      _dstask() {
+        compadd -- $(dstask _completions "$words[@]")
+      }
+      compdef _dstask dstask
+   
+
+      eval "$(starship init zsh)"
+
     '';
     shellAliases = {
       spt = "spotify_player";
       sptl = "sptlrx --current 'bold,#${config.colorScheme.colors.base0C}' --before '#${config.colorScheme.colors.base07},faint,italic,strikethrough' --after '#${config.colorScheme.colors.base0E},faint'";
+      
       clock = "tty-clock -c -C 6 -s -S -r -n -D";
       matrix = "cmatrix -b -f -C cyan";
+      
       mail = "himalaya";
-      mail_sync = "himalaya account sync";
+      mail_s = "himalaya account sync";
       mail2 = "himalaya -a gcf";
-      mail2_sync = "himalaya -a gcf account sync";
-      mailsent = "mail -m '[Gmail]/Sent Mail'";
+      mail2_s = "himalaya -a gcf account sync";
+      mails = "mail -m '[Gmail]/Sent Mail'";
       maild = "mail attachments";
       mailw = "mail write";
       mailr = "mail -s read";
+      
       xr1 = "xrandr -s 5120x1440";
       xr2 = "xrandr -s 2560x1440";
       xr3 = "xrandr -s 3840x1080";
       xr4 = "xrandr -s 1920x1080";
+      
       yt = "ytfzf -t";
+
       cal = "gcalcli";
+      task = "dstask";
+
       cjpg = "mogrify -format jpg *.png && rm *.png";
       pick = "xcolor | hyprpicker";
 

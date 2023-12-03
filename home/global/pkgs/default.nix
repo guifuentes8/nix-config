@@ -9,6 +9,10 @@
     ./gh
     ./git
     ./gpg
+    ./languages
+    ./lsd
+    ./ssh
+
     ./neovim
     ./obs-studio
     ./vscode
@@ -40,7 +44,6 @@
     nixpkgs-fmt
 
     #java
-    openjdk17-bootstrap
     maven
 
     # Extra Dependencies

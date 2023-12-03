@@ -3,12 +3,9 @@ let
   my-config = outputs.packages.${pkgs.system}.my-config;
 in
 {
-  #programs.wpaperd = {
-  # enable = true;
-  #};
-  home.packages = with pkgs; [
-    wpaperd
-  ];
+  programs.wpaperd = {
+    enable = true;
+  };
 
   xdg.configFile."wpaperd/wallpaper.toml" = {
     text = ''

@@ -118,13 +118,13 @@ in
     ];
 
     extraPackages = [
-      unstable.nodePackages.typescript-language-server
-      unstable.nodePackages.vscode-langservers-extracted
-      unstable.nodePackages.live-server
-      unstable.lua-language-server
-      unstable.ripgrep
-      unstable.nixfmt
-      unstable.nixd
+      pkgs.nodePackages.typescript-language-server
+      pkgs.nodePackages.vscode-langservers-extracted
+      pkgs.nodePackages.live-server
+      pkgs.lua-language-server
+      pkgs.ripgrep
+      pkgs.nixfmt
+      pkgs.nixd
     ];
 
   };

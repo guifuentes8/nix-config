@@ -3,6 +3,7 @@
   imports = [
     ./foot
     ./mpv
+    ./screen-lock
     ./waybar
     ./wpaperd
   ];
