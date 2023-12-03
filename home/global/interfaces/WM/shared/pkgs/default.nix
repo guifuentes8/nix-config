@@ -9,6 +9,7 @@ in
     ./cava
     ./dunst
     ./feh
+    ./gcalcli
     ./himalaya
     ./yazi
     ./ncspot

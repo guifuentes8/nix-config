@@ -4,6 +4,7 @@
   imports = [
     ./bat
     ./caffeine
+    ./chrome
     # ./davinci-resolve # error in build, waiting fix
     ./gh
     ./git
@@ -23,7 +24,6 @@
     insomnia
     slack
     telegram-desktop
-    vivaldi
 
     # Usb media
     etcher
