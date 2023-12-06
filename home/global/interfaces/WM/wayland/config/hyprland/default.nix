@@ -1,16 +1,15 @@
 { inputs, config, pkgs, unstable, ... }:
 let
-  catppuccin_name = "Catppuccin-Mocha-Standard-Blue-Dark";
+  catppuccin_name = "Kyoto";
 in
-
 {
 
   imports = [
-    inputs.hyprland.homeManagerModules.default
+    # inputs.hyprland.homeManagerModules.default
   ];
 
   wayland.windowManager.hyprland = {
-    enable = true;
+    enable = false;
     package = inputs.hyprland.packages.${pkgs.system}.default;
     extraConfig = ''
       # ON START
@@ -20,9 +19,9 @@ in
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = gsettings set org.gnome.desktop.interface gtk-theme ${catppuccin_name}
-        exec-once = gsettings set org.gnome.desktop.interface cursor-theme phinger-cursors-light
+        exec-once = gsettings set org.gnome.desktop.interface cursor-theme phinger-cursors
         exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
-        exec-once = hyprctl setcursor phinger-cursors-light 32
+        exec-once = hyprctl setcursor phinger-cursors 32
   
       # MONITORS
 

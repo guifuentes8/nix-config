@@ -9,7 +9,7 @@
     homeDirectory = "/home/guifuentes8";
     stateVersion = systemVersion;
     sessionVariables = {
-      XCURSOR_THEME = "phinger-cursors-light";
+      XCURSOR_THEME = "phinger-cursors";
       XCURSOR_SIZE = "32";
       PASSWORD_STORE_DIR = lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
@@ -29,7 +29,7 @@
     documents = "${config.home.homeDirectory}/Documents";
   };
   xresources.extraConfig = ''
-    Xcursor.theme: phinger-cursors-light
+    Xcursor.theme: phinger-cursors
     Xcursor.size: 32
   '';
 

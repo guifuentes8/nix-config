@@ -8,7 +8,8 @@
   xdg.configFile."spotify-player/app.toml".source = (pkgs.formats.toml { }).generate "app.toml"
     {
       client_id = "32c1c3d388a14e4981d80295af909be7";
-      theme = "Catppuccin-mocha";
+      theme = "kyoto";
+      playback_refresh_duration_in_ms = 0;
       enable_media_control = true;
       enable_cover_image_cache = true;
       page_size_in_rows = 50;
@@ -24,7 +25,8 @@
       device = {
         volume = 100;
         audio_cache = true;
-        bitrate = 320;
+        bitrate = 160;
+        normalization = true;
       };
     };
 
@@ -32,33 +34,35 @@
   xdg.configFile."spotify-player/theme.toml".source = (pkgs.formats.toml { }).generate "theme.toml"
     {
       themes = [{
-        name = "Catppuccin-mocha";
+        name = "kyoto";
         palette = {
           background = "#${config.colorScheme.colors.base00}";
           foreground = "#${config.colorScheme.colors.base05}";
-          black = "#${config.colorScheme.colors.base01}";
-          blue = "#${config.colorScheme.colors.base0D}";
-          cyan = "#${config.colorScheme.colors.base0C}";
-          green = "#${config.colorScheme.colors.base0B}";
-          magenta = "#${config.colorScheme.colors.base0E}";
+          black = "#${config.colorScheme.colors.base00}";
+          blue = "#${config.colorScheme.colors.base0B}";
+          cyan = "#${config.colorScheme.colors.base0D}";
+          green = "#${config.colorScheme.colors.base09}";
+          magenta = "#${config.colorScheme.colors.base0C}";
           red = "#${config.colorScheme.colors.base08}";
           white = "#${config.colorScheme.colors.base07}";
           yellow = "#${config.colorScheme.colors.base0A}";
-          bright_black = "#1E1E2E";
-          bright_blue = "#89B4FA";
-          bright_cyan = "#89DCEB";
-          bright_green = "#A6E3A1";
-          bright_magenta = "#CBA6F7";
-          bright_red = "#F38BA8";
-          bright_white = "#CDD6F4";
-          bright_yellow = "#F9E2AF";
-
+          bright_black = "#${config.colorScheme.colors.base00}";
+          bright_blue = "#${config.colorScheme.colors.base0B}";
+          bright_cyan = "#${config.colorScheme.colors.base0D}";
+          bright_green = "#${config.colorScheme.colors.base09}";
+          bright_magenta = "#${config.colorScheme.colors.base0C}";
+          bright_red = "#${config.colorScheme.colors.base08}";
+          bright_white = "#${config.colorScheme.colors.base07}";
+          bright_yellow = "#${config.colorScheme.colors.base0A}";
         };
         component_style = {
           selection = {
-            bg = { Rgb = { r = 49; g = 50; b = 68; }; };
+            bg = { Rgb = { r = 26; g = 27; b = 38; }; };
+            fg = { Rgb = { r = 115; g = 218; b = 202; }; };
             modifiers = [ "Bold" ];
           };
+          playback_progress_bar = { bg = "BrightBlack"; fg = "Cyan"; };
+          current_playing = { fg = "Red"; modifiers = [ "Bold" ]; };
         };
       }];
     };

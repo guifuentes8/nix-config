@@ -1,10 +1,10 @@
 { inputs, pkgs, ... }:
 {
   imports = [
-    inputs.hyprland.nixosModules.default
+    # inputs.hyprland.nixosModules.default
   ];
   programs = {
-    hyprland.enable = true;
+    hyprland.enable = false;
   };
 
   environment.systemPackages = (with pkgs; [

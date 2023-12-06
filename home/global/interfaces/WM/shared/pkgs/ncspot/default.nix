@@ -1,6 +1,4 @@
 { outputs, pkgs, config, ... }:
-
-
 {
   programs.ncspot = {
     enable = true;
@@ -13,21 +11,25 @@
         title = "%title";
         body = "%artists";
       };
+      credentials = {
+        username_cmd = "echo guifuentes8@gmail.com";
+        password_cmd = "${pkgs.pass}/bin/pass spotify/secret";
+      };
       theme = {
-        background = "default";
+        background = "#${config.colorScheme.colors.base00}";
         primary = "#${config.colorScheme.colors.base06}";
         secondary = "#${config.colorScheme.colors.base0C}";
         title = "#${config.colorScheme.colors.base0C}";
-        playing = "#${config.colorScheme.colors.base09}";
-        playing_selected = "#${config.colorScheme.colors.base00}";
-        playing_bg = "default";
-        highlight = "#${config.colorScheme.colors.base00}";
-        highlight_bg = "#${config.colorScheme.colors.base0C}";
-        error = "${config.colorScheme.colors.base00}";
-        error_bg = "#${config.colorScheme.colors.base08}";
-        statusbar = "#${config.colorScheme.colors.base00}";
-        statusbar_progress = "#${config.colorScheme.colors.base0C}";
-        statusbar_bg = "#${config.colorScheme.colors.base0C}";
+        playing = "#${config.colorScheme.colors.base08}";
+        playing_selected = "#${config.colorScheme.colors.base0D}";
+        playing_bg = "#${config.colorScheme.colors.base00}";
+        highlight = "#${config.colorScheme.colors.base0D}";
+        highlight_bg = "#${config.colorScheme.colors.base00}";
+        error = "#${config.colorScheme.colors.base0F}";
+        error_bg = "#${config.colorScheme.colors.base00}";
+        statusbar = "#${config.colorScheme.colors.base0D}";
+        statusbar_progress = "#${config.colorScheme.colors.base0D}";
+        statusbar_bg = "#${config.colorScheme.colors.base00}";
         cmdline = "#${config.colorScheme.colors.base09}";
         cmdline_bg = "#${config.colorScheme.colors.base00}";
         search_match = "#${config.colorScheme.colors.base08}";

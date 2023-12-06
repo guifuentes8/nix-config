@@ -104,7 +104,7 @@
       HYPRLAND_LOG_WLR = "1";
 
       # Tell XWayland to use a cursor theme
-      XCURSOR_THEME = "phinger-cursors-light";
+      XCURSOR_THEME = "phinger-cursors";
 
       # Set a cursor size
       XCURSOR_SIZE = "24";

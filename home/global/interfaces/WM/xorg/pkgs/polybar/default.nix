@@ -15,7 +15,7 @@
        height = 32pt
        radius = 0
 
-       background = #EE${config.colorScheme.colors.base01}
+       background = #EE${config.colorScheme.colors.base00}
        foreground = #${config.colorScheme.colors.base0E} 
        line-size = 0pt
        border-size = 0pt
@@ -37,9 +37,12 @@
        font-1 = "JetBrainsMonoNL Nerd Font:size=16;2"
        label-active-font = 2
 
-       modules-left = xwindow  
+       modules-left = xwindow 
        modules-center = xworkspaces 
-       modules-right = filesystem memory cpu wlan eth pulseaudio date
+       modules-right = sptlrx filesystem memory cpu temperature cpu2 temperature2 wlan eth pulseaudio date
+
+      
+      
 
       ; ------- WORKSPACES ---------
     
@@ -52,7 +55,7 @@
        label-occupied-font = 2
 
        label-active-foreground = #${config.colorScheme.colors.base0E}
-       label-active-background = #EE${config.colorScheme.colors.base01}
+       label-active-background = #EE${config.colorScheme.colors.base00}
        label-active-underline= #${config.colorScheme.colors.base0E}
        label-active-padding = 2
 
@@ -61,7 +64,7 @@
        label-occupied-padding = 2
 
        label-urgent = %name%
-       label-urgent-background = #cc${config.colorScheme.colors.base01}
+       label-urgent-background = #cc${config.colorScheme.colors.base00}
        label-urgent-foreground = #${config.colorScheme.colors.base08}
        label-urgent-padding = 2
 
@@ -95,9 +98,40 @@
       [module/cpu]
        type = internal/cpu
        interval = 2
-       format = %{F#${config.colorScheme.colors.base0C}} <label>%%{F-}
-       label = %percentage%
+       format = %{F#${config.colorScheme.colors.base0C}} |<label>%%{F-}
+       label = %percentage-core1%
        format-foreground = #${config.colorScheme.colors.base0C}
+
+      [module/cpu2]
+       type = internal/cpu
+       interval = 2
+       format = %{F#${config.colorScheme.colors.base0C}}  |<label>%%{F-}
+       label = %percentage-core24%
+       format-foreground = #${config.colorScheme.colors.base0C}
+
+      [module/temperature]
+      type = internal/temperature
+      interval = 0.5
+      thermal-zone = 0
+      hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+      base-temperature = 20
+      warn-temperature = 70
+      format = %{F#${config.colorScheme.colors.base0C}}<label>|%{F-}
+      format-warn = %{F#${config.colorScheme.colors.base0C}}<label>|%{F-}
+      label = %temperature-c%
+      label-warn = %temperature-c%
+
+      [module/temperature2]
+      type = internal/temperature
+      interval = 0.5
+      thermal-zone = 0
+      hwmon-path = /sys/devices/platform/coretemp.1/hwmon/hwmon3/temp1_input
+      base-temperature = 20
+      warn-temperature = 70
+      format = %{F#${config.colorScheme.colors.base0C}}<label>|%{F-}
+      format-warn = %{F#${config.colorScheme.colors.base0C}}<label>|%{F-}
+      label = %temperature-c%
+      label-warn = %temperature-c%
 
       [network-base]
        type = internal/network
@@ -151,6 +185,14 @@
        label-indicator-margin = 1
        label-indicator-foreground = #${config.colorScheme.colors.base0D}
        label-indicator-background = #${config.colorScheme.colors.base0D}
+
+      ; ------- CUSTOM MODULES ---------
+
+       [module/sptlrx]
+        type = custom/script
+        exec = ${pkgs.sptlrx}/bin/sptlrx pipe
+        tail = true
+        label = 󰍰 %output% 󰫢 
 
     '';
   };

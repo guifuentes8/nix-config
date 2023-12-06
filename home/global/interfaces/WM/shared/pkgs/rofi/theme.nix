@@ -19,7 +19,7 @@ in
 
   "configuration" = {
     modi = "run,drun,window";
-    icon-theme = "Papirus-Dark";
+    icon-theme = "Tela-circle";
     show-icons = true;
     drun-display-format = "{icon} {name}";
     location = 0;

@@ -12,8 +12,8 @@ in
     ./dunst
     ./feh
     ./gcalcli
+    ./kitty
     ./himalaya
-    ./hyfetch
     ./jq
     ./ncmpcpp
     ./ncspot
@@ -36,7 +36,6 @@ in
     # CLI Apps
     pkgs.cmatrix
     pkgs.devour
-    pkgs.gcalcli
     pkgs.pastel
     pkgs.playerctl
     pkgs.tty-clock

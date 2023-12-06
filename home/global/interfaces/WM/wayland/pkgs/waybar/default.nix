@@ -14,7 +14,7 @@
       }
 
       window#waybar {
-          background: #${config.colorScheme.colors.base01};
+          background: #${config.colorScheme.colors.base00};
           color: #${config.colorScheme.colors.base0C};
       }
 
@@ -29,7 +29,7 @@
       #network,
       #tray,
       #backlight {
-      background: #${config.colorScheme.colors.base01};
+      background: #${config.colorScheme.colors.base00};
       padding: 4px 6px;
       margin: 4px 2px;
       }
@@ -50,7 +50,7 @@
 
       #workspaces button.active {
         color: #${config.colorScheme.colors.base0E};
-        background-color: #${config.colorScheme.colors.base01};
+        background-color: #${config.colorScheme.colors.base00};
       }
 
       #workspaces button.focused {
@@ -59,13 +59,13 @@
       }
 
       #workspaces button.urgent {
-        color: #${config.colorScheme.colors.base01};
+        color: #${config.colorScheme.colors.base00};
         background: #${config.colorScheme.colors.base08};
         border-radius: 10px;
       }
 
       #workspaces button:hover {
-        background-color: #${config.colorScheme.colors.base01};
+        background-color: #${config.colorScheme.colors.base00};
         color: #${config.colorScheme.colors.base0C};
       }
       

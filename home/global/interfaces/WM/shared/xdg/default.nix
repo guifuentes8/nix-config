@@ -280,7 +280,7 @@
       in
       (lib.genAttrs code (_: [ "nvim.desktop" ]))
       // (lib.genAttrs images (_: [ "feh.desktop" ]))
-      // (lib.genAttrs urls (_: [ "vivaldi.desktop" ]))
+      // (lib.genAttrs urls (_: [ "qutebrowser.desktop" ]))
       // (lib.genAttrs documents (_: [ "mupdf.desktop" ]))
       // (lib.genAttrs audioVideo (_: [ "mpv.desktop" ]))
       // (lib.genAttrs archives (_: [ "org.gnome.Nautilus.desktop" ]));

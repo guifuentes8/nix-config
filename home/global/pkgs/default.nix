@@ -11,8 +11,8 @@
     ./gpg
     ./languages
     ./lsd
+    ./qutebrowser
     ./ssh
-
     ./neovim
     ./obs-studio
     ./vscode
@@ -20,6 +20,9 @@
   ];
 
   home.packages = with pkgs; [
+
+
+    # TODO: organizar melhor todos esses programas (tentar centralizar e separar as coisas)
 
     #Apps
     bitwarden

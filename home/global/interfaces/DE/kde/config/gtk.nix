@@ -7,14 +7,14 @@
       package = pkgs.colloid-icon-theme;
     };
     theme = {
-      name = "Colloid-Dark";
+      name = "Kyoto";
       package = pkgs.colloid-gtk-theme;
     };
   };
 
   qt = {
     enable = true;
-    style.name = "Colloid-Dark";
+    style.name = "Kyoto";
     style.package = pkgs.colloid-kde;
     platformTheme = "kde";
   };

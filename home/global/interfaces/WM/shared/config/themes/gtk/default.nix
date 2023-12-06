@@ -1,12 +1,13 @@
 { pkgs, unstable, lib, outputs, ... }:
 let
-  catppuccin_name = "Catppuccin-Mocha-Standard-Blue-Dark";
-  catppuccin_gtk = unstable.catppuccin-gtk.override {
-    accents = [ "blue" ]; # You can specify multiple accents here to output multiple themes
-    size = "standard";
-    tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
-    variant = "mocha";
-  };
+  gtk-theme-name = "Kyoto";
+  gtk-theme = outputs.packages.${pkgs.system}.kyoto-gtk-theme;
+  # gtk-theme = pkgs.colloid-gtk-theme.override {
+  #   tweaks = [ "black" ]; # You can also specify multiple tweaks here
+  #   colorVariants = [ "dark" ]; # You can also specify multiple tweaks here
+  #   themeVariants = [ "default" ]; # You can also specify multiple tweaks here
+  #   sizeVariants = [ "standard" ]; # You can also specify multiple tweaks here
+  # };
 in
 {
   gtk = {
@@ -16,24 +17,25 @@ in
       size = lib.mkForce 13;
     };
     cursorTheme = {
-      name = lib.mkForce "phinger-cursors-light";
-      package = lib.mkForce unstable.phinger-cursors;
+      name = lib.mkForce "phinger-cursors";
+      package = lib.mkForce pkgs.phinger-cursors;
       size = lib.mkForce 32;
     };
     iconTheme = {
-      name = lib.mkForce "Papirus-Dark";
-      package = lib.mkForce unstable.catppuccin-papirus-folders;
+      name = lib.mkForce "Tela-circle";
+      package = lib.mkForce pkgs.tela-circle-icon-theme;
     };
     theme = {
-      name = lib.mkForce "${catppuccin_name}";
-      package = catppuccin_gtk;
+      name = lib.mkForce "${gtk-theme-name}";
+      package = lib.mkForce gtk-theme;
     };
   };
 
-  home.file.".config/gtk-4.0/gtk.css".source = "${catppuccin_gtk}/share/themes/${catppuccin_name}/gtk-4.0/gtk-dark.css";
-  home.file.".config/gtk-4.0/assets" = {
-    recursive = true;
-    source = "${catppuccin_gtk}/share/themes/${catppuccin_name}/gtk-4.0/assets";
-  };
-  home.sessionVariables.GTK_THEME = "${catppuccin_name}";
+  # home.file.".config/gtk-4.0/gtk.css".source = "${gtk-theme}/share/themes/${gtk-theme-name}/gtk-4.0/gtk-dark.css";
+  # home.file.".config/gtk-4.0/assets" = {
+  #   recursive = true;
+  #   source = "${gtk-theme}/share/themes/${gtk-theme-name}/gtk-4.0/assets";
+  # };
+  home.sessionVariables.GTK_THEME = "${gtk-theme-name}";
 }
+

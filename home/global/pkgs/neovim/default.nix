@@ -1,12 +1,13 @@
 { pkgs, lib, config, unstable, ... }:
 let
-  fromGitHub = ref: repo:
-    pkgs.vimUtils.buildVimPluginFrom2Nix {
+  fromGitHub = rev: ref: repo:
+    pkgs.vimUtils.buildVimPlugin {
       pname = "${lib.strings.sanitizeDerivationName repo}";
       version = ref;
       src = builtins.fetchGit {
         url = "https://github.com/${repo}.git";
         ref = ref;
+        rev = rev;
       };
     };
 
@@ -102,10 +103,14 @@ in
         config = builtins.readFile (./plugins/dashboard.rc.lua);
       }
       {
-        plugin = catppuccin-nvim;
+        plugin = (fromGitHub "55639cd95a9d382c98f99e7cc30b61cc00c4ae6d" "HEAD" "shrikecode/kyotonight.vim");
         type = "lua";
-        config = builtins.readFile (./plugins/catppuccin.rc.lua);
+        config = builtins.readFile (./plugins/theme.rc.lua);
+
       }
+
+
+
 
       luasnip # Snippet engine
       cmp-buffer # buffer words

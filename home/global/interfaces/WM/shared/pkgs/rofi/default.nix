@@ -10,9 +10,10 @@
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.alacritty}/bin/alacritty";
-    theme = (import ./theme.nix {
-      inherit config lib;
-    });
+    # theme = (import ./theme.nix {
+    #   inherit config lib;
+    # });
+    theme = "KyotoNight.rasi";
     plugins = with pkgs;
       [
         rofi-bluetooth
@@ -37,4 +38,5 @@
     rofi-pulse-select
   ];
 
+  xdg.configFile."rofi/KyotoNight.rasi".source = ./KyotoNight.rasi;
 }

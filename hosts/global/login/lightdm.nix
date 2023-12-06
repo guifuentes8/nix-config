@@ -1,36 +1,30 @@
 { pkgs, unstable, outputs, lib, ... }:
 let
   my-config = outputs.packages.${pkgs.system}.my-config;
-  catppuccin_name = "Catppuccin-Mocha-Standard-Blue-Dark";
-  catppuccin_gtk = unstable.catppuccin-gtk.override
-    {
-      accents = [ "blue" ]; # You can specify multiple accents here to output multiple themes
-      size = "standard";
-      tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
-      variant = "mocha";
-    };
+  gtk-theme-name = "Kyoto";
+  gtk-theme = outputs.packages.${pkgs.system}.kyoto-gtk-theme;
 in
 {
   services.xserver = {
     enable = true;
     displayManager = {
       lightdm = {
-        background = "${my-config}/share/wallpapers/login.jpg";
+        background = "${my-config}/share/wallpapers/login.png";
         enable = true;
         greeters = {
           gtk = {
             enable = true;
             theme = {
-              name = "${catppuccin_name}";
-              package = catppuccin_gtk;
+              name = "${gtk-theme-name}";
+              package = gtk-theme;
             };
             iconTheme = {
-              name = "BeautyLine";
-              package = pkgs.beauty-line-icon-theme;
+              name = "Tela-circle";
+              package = pkgs.tela-circle-icon-theme;
             };
             cursorTheme = {
-              name = "phinger-cursors-light";
-              package = unstable.phinger-cursors;
+              name = "phinger-cursors";
+              package = pkgs.phinger-cursors;
               size = 32;
             };
             # clock-format = null;

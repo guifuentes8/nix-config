@@ -18,7 +18,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
-      theme = "af-magic";
+      # theme = "af-magic";
     };
     initExtraFirst = ''
       unset -v SSH_ASKPASS
@@ -31,18 +31,16 @@
         compadd -- $(dstask _completions "$words[@]")
       }
       compdef _dstask dstask
-   
 
       eval "$(starship init zsh)"
 
     '';
     shellAliases = {
       spt = "spotify_player";
-      sptl = "sptlrx --current 'bold,#${config.colorScheme.colors.base0C}' --before '#${config.colorScheme.colors.base07},faint,italic,strikethrough' --after '#${config.colorScheme.colors.base0E},faint'";
-      
+
       clock = "tty-clock -c -C 6 -s -S -r -n -D";
       matrix = "cmatrix -b -f -C cyan";
-      
+
       mail = "himalaya";
       mail_s = "himalaya account sync";
       mail2 = "himalaya -a gcf";
@@ -51,12 +49,12 @@
       maild = "mail attachments";
       mailw = "mail write";
       mailr = "mail -s read";
-      
+
       xr1 = "xrandr -s 5120x1440";
       xr2 = "xrandr -s 2560x1440";
       xr3 = "xrandr -s 3840x1080";
       xr4 = "xrandr -s 1920x1080";
-      
+
       yt = "ytfzf -t";
 
       cal = "gcalcli";
@@ -64,6 +62,7 @@
 
       cjpg = "mogrify -format jpg *.png && rm *.png";
       pick = "xcolor | hyprpicker";
+      ls = "lsd";
 
       # NixOs shortcuts
       hd = "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@desktop";
