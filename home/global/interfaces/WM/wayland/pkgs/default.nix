@@ -9,10 +9,6 @@
   ];
 
   home.packages = with unstable; [
-    libva-utils
-    vdpauinfo
-    vlc
-
     grim
     hyprpicker
     nwg-look
