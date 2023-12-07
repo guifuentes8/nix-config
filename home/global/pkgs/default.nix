@@ -23,14 +23,15 @@
 
 
     # TODO: organizar melhor todos esses programas (tentar centralizar e separar as coisas)
-
-    #Apps
     bitwarden
-    discord
     figma-linux
     insomnia
+
+    # Chat
+    discord
     slack
     telegram-desktop
+    whatsapp-for-linux
 
     # Usb media
     etcher
