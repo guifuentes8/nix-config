@@ -19,7 +19,6 @@
         rofi-bluetooth
         rofi-calc
         rofi-emoji
-        rofi-file-browser
         rofi-rbw
         rofi-pass
         rofi-power-menu

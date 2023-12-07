@@ -12,6 +12,7 @@
 
       # Extra Hardware config
       ../global/hardware/bluetooth.nix
+      ../global/hardware/gpu/intel.nix
       # ../global/config/hardware/keychron.nix
 
       # NIXOS CONFIG ------------------------------------
@@ -42,14 +43,10 @@
     ];
 
 
-  boot.kernelParams = [ "acpi_backlight=video" "coretemp" "kvm-intel" ];
-  services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", GROUP="video", MODE="0664"
-  '';
+
   console.keyMap = "br-abnt2";
   time.timeZone = "America/Sao_Paulo";
   time.hardwareClockInLocalTime = true;
-
 
   networking.hostName = "laptop";
   networking.networkmanager.enable = true;
@@ -67,7 +64,6 @@
     jack.enable = true;
   };
 
-
   programs = {
     ssh.startAgent = true;
     dconf.enable = true;
@@ -79,22 +75,6 @@
       enable = false;
       allowReboot = false;
       dates = "daily";
-    };
-  };
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
-
-  hardware = {
-    opengl = {
-      enable = true;
-      extraPackages = with pkgs; [
-        intel-media-driver # LIBVA_DRIVER_NAME=iHD
-        vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
     };
   };
 

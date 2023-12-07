@@ -9,11 +9,15 @@
   ];
 
   home.packages = with unstable; [
+    libva-utils
+    vdpauinfo
+    vlc
+
     grim
     hyprpicker
     nwg-look
     slurp
-    swaylock
+    swaylock-effects
     swayidle
     swayimg
     wl-clipboard

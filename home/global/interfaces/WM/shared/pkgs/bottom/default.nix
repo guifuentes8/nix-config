@@ -19,7 +19,7 @@
         graph_color = "#${config.colorScheme.colors.base04}";
         cursor_color = "#${config.colorScheme.colors.base0F}";
         selected_text_color = "#${config.colorScheme.colors.base02}";
-        selected_bg_color = "#${config.colorScheme.colors.base0E}";
+        selected_bg_color = "#${config.colorScheme.colors.base0D}";
         high_battery_color = "#${config.colorScheme.colors.base0B}";
         medium_battery_color = "#${config.colorScheme.colors.base0A}";
         low_battery_color = "#${config.colorScheme.colors.base08}";

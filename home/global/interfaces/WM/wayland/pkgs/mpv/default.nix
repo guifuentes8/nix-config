@@ -3,7 +3,7 @@
   programs.mpv = {
     enable = true;
     config = {
-      hwdec = "nvdec";
+      hwdec = "auto";
       vo = "gpu";
       profile = "gpu-hq";
       gpu-context = "wayland";

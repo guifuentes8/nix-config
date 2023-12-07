@@ -1,4 +1,4 @@
-{ unstable, config, ... }:
+{ unstable, pkgs, config, ... }:
 {
   programs.waybar = {
     enable = true;
@@ -15,7 +15,7 @@
 
       window#waybar {
           background: #${config.colorScheme.colors.base00};
-          color: #${config.colorScheme.colors.base0C};
+          color: #${config.colorScheme.colors.base0D};
       }
 
       #cpu,
@@ -42,19 +42,19 @@
 
 
       #workspaces button {
-        color: #${config.colorScheme.colors.base0D};
+        color: #${config.colorScheme.colors.base0B};
         padding: 0px 4px 0px 0px;
         margin: 0px 2px;
 
       }
 
       #workspaces button.active {
-        color: #${config.colorScheme.colors.base0E};
+        color: #${config.colorScheme.colors.base0D};
         background-color: #${config.colorScheme.colors.base00};
       }
 
       #workspaces button.focused {
-        color: #${config.colorScheme.colors.base0E};
+        color: #${config.colorScheme.colors.base0D};
         border-radius: 24px;
       }
 
@@ -66,47 +66,47 @@
 
       #workspaces button:hover {
         background-color: #${config.colorScheme.colors.base00};
-        color: #${config.colorScheme.colors.base0C};
+        color: #${config.colorScheme.colors.base08};
       }
       
       #disk {
-        color: #${config.colorScheme.colors.base0F};
+        color: #${config.colorScheme.colors.base08};
       }
       
       #cpu {
-        color: #${config.colorScheme.colors.base0F};
+        color: #${config.colorScheme.colors.base08};
       }
       
       #memory {
-        color: #${config.colorScheme.colors.base0F};
+        color: #${config.colorScheme.colors.base08};
       }
       
       #temperature {
-        color: #${config.colorScheme.colors.base0E};
+        color: #${config.colorScheme.colors.base0A};
+      }
+      
+      #backlight {
+        color: #${config.colorScheme.colors.base06};
       }
       
       #keyboard-state {
         color: #${config.colorScheme.colors.base05};
       }
-      #backlight {
-        color: #${config.colorScheme.colors.base0D};
-      }
       
       #network {
+        color: #${config.colorScheme.colors.base09};
+      }
+      
+      #pulseaudio {
         color: #${config.colorScheme.colors.base0C};
       }
       
-      
-      #pulseaudio {
-        color: #${config.colorScheme.colors.base0B};
-      }
-      
       #battery {
-        color: #${config.colorScheme.colors.base0A};
+        color: #${config.colorScheme.colors.base0B};
       }
 
       #clock {
-        color: #${config.colorScheme.colors.base09};
+        color: #${config.colorScheme.colors.base0E};
         margin-right: 12px;
       }
 
@@ -119,32 +119,36 @@
       }
 
       #mpris {
-        color: #${config.colorScheme.colors.base0B};
+        color: #${config.colorScheme.colors.base0D};
         margin-left: 12px;
         margin-right: 12px;
       }
 
        #custom-media {
-        color: #${config.colorScheme.colors.base0B};
+        color: #${config.colorScheme.colors.base0D};
         margin-left: 12px;
         margin-right: 12px;
       }
 
       #cava {
-        color: #${config.colorScheme.colors.base0B};
+        color: #${config.colorScheme.colors.base0D};
       }
+
     '';
 
     settings = [{
-      mode = "dock";
-      fixed-center = true;
+      /* mode = "dock";
+      fixed-center = true; */
+      name = "top";
       layer = "top";
       position = "top";
       exclusive = true;
       height = 0;
-      modules-left = [ "custom/nix-logo" "wlr/workspaces" "hyprland/workspaces" "mpris" "cava" ];
+      modules-left = [ "custom/nix-logo" "wlr/workspaces" "hyprland/workspaces" ];
       modules-center = [ ];
       modules-right = [ "disk" "cpu" "memory" "temperature" "backlight" "network" "pulseaudio" "battery" "clock" "tray" ];
+
+
       "custom/media" = {
         "interval" = 5;
         "format" = "{icon}{}";
@@ -224,68 +228,7 @@
         "tooltip" = true;
         "tooltip-format" = "{app}= {title}";
       };
-      "cava" = {
-        "framerate" = 60;
-        "autosens" = 0;
-        "sensitivity" = 10;
-        "bars" = 16;
-        "lower_cutoff_freq" = 50;
-        "higher_cutoff_freq" = 10000;
-        "method" = "pulse";
-        "source" = "auto";
-        "stereo" = true;
-        "reverse" = false;
-        "bar_delimiter" = 0;
-        "monstercat" = true;
-        "waves" = false;
-        "noise_reduction" = 0.30;
-        "input_delay" = 2;
-        "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
-        "actions" = {
-          "on-click-right" = "mode";
-        };
-      };
-      "mpris" = {
-        "format" = "{player_icon} {length} | {title} - {artist}  ";
-        "format-paused" = "{status_icon} - {title}";
-        max-length = 60;
-        interval = 5;
-        "player-icons" = {
-          "default" = "▶";
-          "mpv" = "󰋋 ";
-          "spotify_player" = " ";
-        };
-        "status-icons" = {
-          "paused" = "⏸";
-        };
-        "ignored-players" = [ ];
-      };
-      "mpd" = {
-        "format" = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime=%M=%S}/{totalTime=%M=%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
-        "format-disconnected" = "Disconnected ";
-        "format-stopped" = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
-        "unknown-tag" = "N/A";
-        "interval" = 2;
-        "consume-icons" = {
-          "on" = " ";
-        };
-        "random-icons" = {
-          "off" = "<span color=\"#f53c3c\"></span> ";
-          "on" = " ";
-        };
-        "repeat-icons" = {
-          "on" = " ";
-        };
-        "single-icons" = {
-          "on" = "1 ";
-        };
-        "state-icons" = {
-          "paused" = "";
-          "playing" = "";
-        };
-        "tooltip-format" = "MPD (connected)";
-        "tooltip-format-disconnected" = "MPD (disconnected)";
-      };
+
       "idle_inhibitor" = {
         "format" = "{icon}";
         "format-icons" = {
@@ -375,7 +318,88 @@
         };
         "on-click" = "pavucontrol";
       };
-    }];
+    }
+      {
+        mode = "dock";
+        fixed-center = true;
+        name = "top2";
+        layer = "top";
+        position = "bottom";
+        exclusive = true;
+        height = 0;
+        modules-left = [ "mpris" ];
+        modules-center = [ "custom/sptlrx" ];
+        modules-right = [ "cava" ];
+        "cava" = {
+          "framerate" = 60;
+          "autosens" = 0;
+          "sensitivity" = 10;
+          "bars" = 32;
+          "lower_cutoff_freq" = 50;
+          "higher_cutoff_freq" = 10000;
+          "method" = "pulse";
+          "source" = "auto";
+          "stereo" = true;
+          "reverse" = false;
+          "bar_delimiter" = 0;
+          "monstercat" = true;
+          "waves" = false;
+          "noise_reduction" = 0.30;
+          "input_delay" = 2;
+          "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+          "actions" = {
+            "on-click-right" = "mode";
+          };
+        };
+        "mpris" = {
+          "format" = "{player_icon} {length} | {title} - {artist}  ";
+          "format-paused" = "{status_icon} - {title}";
+          max-length = 60;
+          interval = 5;
+          "player-icons" = {
+            "default" = "▶";
+            "mpv" = "󰋋 ";
+            "spotify_player" = " ";
+          };
+          "status-icons" = {
+            "paused" = "⏸";
+          };
+          "ignored-players" = [ ];
+        };
+        "mpd" = {
+          "format" = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime=%M=%S}/{totalTime=%M=%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
+          "format-disconnected" = "Disconnected ";
+          "format-stopped" = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
+          "unknown-tag" = "N/A";
+          "interval" = 2;
+          "consume-icons" = {
+            "on" = " ";
+          };
+          "random-icons" = {
+            "off" = "<span color=\"#f53c3c\"></span> ";
+            "on" = " ";
+          };
+          "repeat-icons" = {
+            "on" = " ";
+          };
+          "single-icons" = {
+            "on" = "1 ";
+          };
+          "state-icons" = {
+            "paused" = "";
+            "playing" = "";
+          };
+          "tooltip-format" = "MPD (connected)";
+          "tooltip-format-disconnected" = "MPD (disconnected)";
+        };
+        "custom/sptlrx" = {
+          "interval" = 0.5;
+          "format" = " <span font-family=\"Dank Mono\" style=\"italic\">{}</span> 󰫢 󰍰";
+          "max-length" = 150;
+          "exec" = "${pkgs.sptlrx}/bin/sptlrx pipe";
+          "on-click" = "";
+        };
+      }];
 
   };
 

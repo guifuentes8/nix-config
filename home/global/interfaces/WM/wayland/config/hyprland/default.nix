@@ -1,6 +1,6 @@
 { inputs, config, pkgs, unstable, ... }:
 let
-  catppuccin_name = "Kyoto";
+  gtk-theme-name = "Kyoto";
 in
 {
 
@@ -13,12 +13,11 @@ in
     package = inputs.hyprland.packages.${pkgs.system}.default;
     extraConfig = ''
       # ON START
-        exec-once = mako
         exec-once = wpaperd 
         exec-once = wl-clipboard-history -t
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-        exec-once = gsettings set org.gnome.desktop.interface gtk-theme ${catppuccin_name}
+        exec-once = gsettings set org.gnome.desktop.interface gtk-theme ${gtk-theme-name}
         exec-once = gsettings set org.gnome.desktop.interface cursor-theme phinger-cursors
         exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
         exec-once = hyprctl setcursor phinger-cursors 32
@@ -29,26 +28,14 @@ in
 
       # VARIABLES
 
-        input {
-            kb_layout = br
-            kb_variant = abnt2
-            kb_model =
-            kb_options =
-            kb_rules =
-            numlock_by_default = true
-            follow_mouse = 1
-            touchpad {
-                natural_scroll = false
-            }
-            sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-        }
+       
 
         general {
             gaps_in = 4
-            gaps_out = 12
+            gaps_out = 8
             border_size = 3
-            col.active_border = rgb(${config.colorScheme.colors.base0A})
-            col.inactive_border = rgb(${config.colorScheme.colors.base04})
+            col.active_border = rgb(${config.colorScheme.colors.base0D})
+            col.inactive_border = rgb(${config.colorScheme.colors.base0B})
             no_border_on_floating = true
             layout = dwindle
         }
@@ -56,19 +43,19 @@ in
         decoration {
             blur {
               enabled = true
-              size = 6
-              passes = 2
+              size = 8
+              passes = 1
               new_optimizations = true
               ignore_opacity = true
-              xray = true
+              xray = false
             }
-            rounding = 4
+            rounding = 8
             drop_shadow = true
-            shadow_range = 12
+            shadow_range = 4
             shadow_render_power = 3
             shadow_ignore_window	= true
-            col.shadow = rgb(${config.colorScheme.colors.base00})
-            shadow_offset = [2, 4]
+            col.shadow = 0xee1a1a1a
+            shadow_offset = [0, 0]
             active_opacity = 1
             inactive_opacity = 1
             fullscreen_opacity = 1
@@ -82,7 +69,29 @@ in
             animation = border, 1, 10, default
             animation = borderangle, 1, 8, default
             animation = fade, 1, 7, default
-            #animation = workspaces, 1, 10, default
+            animation = workspaces, 1, 10, default
+        }
+
+        input {
+            kb_layout = br
+            kb_variant = abnt2
+            kb_model =
+            kb_options =
+            kb_rules =
+            numlock_by_default = true
+            follow_mouse = 1
+            touchpad {
+                natural_scroll = false
+                disable_while_typing = true
+            }
+            sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+        }
+
+        gestures {
+            workspace_swipe = true
+            workspace_swipe_numbered = true
+            workspace_swipe_cancel_ratio = 0.5
+            workspace_swipe_min_speed_to_force = 0
         }
 
         dwindle {
@@ -94,15 +103,13 @@ in
             new_is_master = true
         }
 
-        gestures {
-            workspace_swipe = true
-            workspace_swipe_numbered = true
-            workspace_swipe_cancel_ratio = 0.5
-            workspace_swipe_min_speed_to_force = 0
-        }
-
         device:epic-mouse-v1 {
           sensitivity = -0.5
+        }
+
+        misc {
+          disable_hyprland_logo	= true
+          force_hypr_chan = true
         }
 
       # KEYBINDS
@@ -110,46 +117,16 @@ in
         $mainMod = SUPER
         $term = footclient
 
-        bind = $mainMod, Escape, exit,
         bind = $mainMod, Return, exec, $term
+        bind = $mainMod, Escape, exit,
+        bind = CTRL_ALT, Escape, exec, swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color 7aa2f7cc --ring-clear-color 32344a --ring-ver-color e0af68 --ring-wrong-color f7768e --key-hl-color 73dacaee --bs-hl-color f7768e --line-color 00000000 --line-clear 00000000 --line-ver-color 00000000 --line-wrong-color 00000000 --inside-color 00000000 --inside-clear-color 32344a --inside-ver-color 00000000 --inside-wrong-color 00000000 --separator-color 7aa2f7cc --text-color c0caf6 --text-clear-color c0caf6 --text-ver-color c0caf6 --text-wrong-color c0caf6 --grace 2 --fade-in 0.2
         bind = $mainMod, Space, exec, rofi -modes "drun" -show-icons -show drun
         bind = $mainMod, Q, killactive,
         bind = $mainMod, S, togglesplit, # dwindle
         bind = $mainMod, F, togglefloating,
         bind = $mainMod, M, fullscreen, 1
 
-        bind = $mainMod, P, exec, ${unstable.hyprpicker}/bin/hyprpicker -a
-
-        bind = $mainMod, F1, exec, rofi-bluetooth
-        bind = $mainMod, F2, exec, rofi-pulse-select source
-        bind = $mainMod, F3, exec, rofi-pulse-select sink
-        bind = $mainMod, F4, exec, rofi-rbw
-        bind = $mainMod, F5, exec, rofi -modes 'file-browser-extended' -show file-browser-extended
-        bind = $mainMod, F6, exec, 
-        bind = $mainMod, F7, exec, 
-        bind = $mainMod, F8, exec, rofi -show calc -modi calc -no-show-match -no-sort -kb-accept-entry 'Control+c' -calc-command ' echo - n '{ result }' | wl-copy -sel copy'
-        bind = $mainMod, F9, exec, ytfzf -D -d
-        bind = $mainMod, F10, exec, ytfzf -D
-        bind = $mainMod, F11, exec, rofi -modi emoji -show emoji
-        bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
-
-        bind = ,XF86MonBrightnessUp, exec, xbacklight -inc 10
-        bind = ,XF86MonBrightnessDown, exec, xbacklight -dec 10
-        bind = ,XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
-        bind = ,XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
-        bind = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
-        bind = ,XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
-        bind = ,XF86AudioPrev, exec, playerctl previous
-        bind = ,XF86AudioPlay, exec, playerctl play-pause
-        bind = ,XF86AudioNext, exec, playerctl next
-
-        bind = ,Print, exec, grim -g "$(slurp)" - | wl-copy 
-        bind = ALT, Print, exec, slurp | grim -g - - | wl-copy && wl-paste > /home/guifuentes8/Pictures/$(date +'%Y-%m-%d-%H%M%S_grim.png') 
-        bind = CTRL,Print, exec, wf-recorder --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.4.monitor -c vp8_vaapi -d /dev/dri/renderD128 -f ~/Videos/record_$(date +"%Y-%m-%d_%H:%M:%S.webm") 
-        bind = CTRL_SHIFT,Print, exec, wf-recorder --audio=alsa_output.pci-0000_00_1f.3.analog-stereo.4.monitor -g "$(slurp)" -c vp8_vaapi -d /dev/dri/renderD128 -f ~/Videos/record_$(date +"%Y-%m-%d_%H:%M:%S.webm") 
-        bind = SHIFT, Print, exec, pkill wf-recorder
-
-        # Move focus with mainMod + arrow keys
+      # Move focus with mainMod + arrow keys
         bind = $mainMod, left, movefocus, l
         bind = $mainMod, right, movefocus, r
         bind = $mainMod, up, movefocus, u
@@ -200,8 +177,41 @@ in
         # will reset the submap, meaning end the current one and return to the global one
         submap=reset
 
-        blurls = waybar
-        windowrule = noblur,^(firefox)$ # disables blur for firefox
+        # Light screen
+        bind = ,XF86MonBrightnessUp, exec, xbacklight -inc 10
+        bind = ,XF86MonBrightnessDown, exec, xbacklight -dec 10
+              
+        # Volume
+        bind = ,XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
+        bind = ,XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
+        bind = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
+        bind = ,XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
+              
+        # Mpris
+        bind = ,XF86AudioPrev, exec, playerctl previous
+        bind = ,XF86AudioPlay, exec, playerctl play-pause
+        bind = ,XF86AudioNext, exec, playerctl next
+
+        # Printscreen
+        bind = ,Print, exec, grim -g "$(slurp)" - | wl-copy 
+              
+        # Rofi scripts
+        bind = $mainMod, F1, exec, rofi -show calc -modi calc -no-show-match -no-sort
+        bind = $mainMod, F2, exec, rofi -modi emoji -show emoji
+        bind = $mainMod, F3, exec, ytfzf -D
+        bind = $mainMod, F4, exec, 
+        bind = $mainMod, F5, exec,
+        bind = $mainMod, F6, exec, 
+        bind = $mainMod, F7, exec, 
+        bind = $mainMod, F8, exec, 
+        bind = $mainMod, F9, exec, rofi-pulse-select sink
+        bind = $mainMod, F10, exec, rofi-bluetooth 
+        bind = $mainMod, F11, exec, rofi-rbw 
+        bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
+
+        # Pick color
+        bind = $mainMod, P, exec, ${unstable.hyprpicker}/bin/hyprpicker -a
+
         windowrule = float,^(mpv)$
         windowrule = size 960 520,^(mpv)$
         windowrule = center,^(mpv)$

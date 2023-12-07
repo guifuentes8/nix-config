@@ -28,7 +28,6 @@
     insomnia
 
     # Chat
-    discord
     slack
     telegram-desktop
     whatsapp-for-linux
