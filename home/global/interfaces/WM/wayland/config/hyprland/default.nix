@@ -5,11 +5,11 @@ in
 {
 
   imports = [
-    # inputs.hyprland.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
   ];
 
   wayland.windowManager.hyprland = {
-    enable = false;
+    enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.default;
     extraConfig = ''
       # ON START

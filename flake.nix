@@ -12,7 +12,7 @@
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
-    # hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     darkmatter-grub-theme = {
       url = gitlab:VandalByte/darkmatter-grub-theme;
