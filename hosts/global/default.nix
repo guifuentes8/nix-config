@@ -106,5 +106,11 @@ in
     layout = "br";
   };
 
+  # Others
+  qt = {
+    enable = true;
+    platformTheme = "gtk2";
+  };
+
 
 }

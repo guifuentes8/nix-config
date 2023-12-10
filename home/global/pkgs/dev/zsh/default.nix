@@ -42,18 +42,15 @@
       matrix = "cmatrix -b -f -C cyan";
 
       mail = "himalaya";
-      mail_s = "himalaya account sync";
+      mail_sync = "himalaya account sync";
       mail2 = "himalaya -a gcf";
-      mail2_s = "himalaya -a gcf account sync";
+      mail2_sync = "himalaya -a gcf account sync";
       mails = "mail -m '[Gmail]/Sent Mail'";
       maild = "mail attachments";
       mailw = "mail write";
       mailr = "mail -s read";
 
-      xr1 = "xrandr -s 5120x1440";
-      xr2 = "xrandr -s 2560x1440";
-      xr3 = "xrandr -s 3840x1080";
-      xr4 = "xrandr -s 1920x1080";
+
 
       yt = "ytfzf -t";
 

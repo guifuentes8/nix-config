@@ -10,10 +10,13 @@ in
     ./sxhkd
   ];
 
+  services = {
+    flameshot.enable = true;
+  };
+
   home.packages = with pkgs; [
 
     discord
-    flameshot
     lxappearance
     xdotool
     xclip

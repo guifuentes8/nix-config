@@ -200,7 +200,7 @@ in
         # Rofi scripts
         bind = $mainMod, F1, exec, rofi -show calc -modi calc -no-show-match -no-sort
         bind = $mainMod, F2, exec, rofi -modi emoji -show emoji
-        bind = $mainMod, F3, exec, ytfzf -D
+        bind = $mainMod, F3, exec, 
         bind = $mainMod, F4, exec, 
         bind = $mainMod, F5, exec,
         bind = $mainMod, F6, exec, 
