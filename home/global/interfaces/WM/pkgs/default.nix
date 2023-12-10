@@ -16,6 +16,7 @@ in
     ./himalaya
     ./ncmpcpp
     ./ncspot
+    ./qutebrowser
     ./pass
     ./ripgrep
     ./rtorrent

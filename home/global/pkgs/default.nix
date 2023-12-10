@@ -17,7 +17,6 @@
       package = pkgs.google-chrome;
     };
     obs-studio.enable = true;
-    qutebrowser.enable = true;
 
     # System Dependencies
     gpg.enable = true;
