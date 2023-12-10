@@ -63,12 +63,12 @@
         "guifuentes8@desktop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit unstable systemVersion nix-colors inputs outputs; };
-          modules = [ ./home/desktop ];
+          modules = [ ./home/desktop.nix ];
         };
         "guifuentes8@laptop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit unstable systemVersion nix-colors inputs outputs; };
-          modules = [ ./home/laptop ];
+          modules = [ ./home/laptop.nix ];
         };
       };
     };

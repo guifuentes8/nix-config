@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, outputs, systemVersion, ... }:
+{ config, pkgs, inputs, outputs, ... }:
 {
   imports =
     [
@@ -27,14 +27,10 @@
       ../global/login/lightdm.nix
 
       # Choice Interface (WM and/or DE)
-      #../global/interfaces/WM/xorg/bspwm
-      ../global/interfaces/WM/wayland/hyprland
-      ../global/interfaces/WM/wayland/sway
+      ../global/interfaces/WM/hyprland.nix
 
       # Active services
       ../global/services/backlight.nix
-      ../global/services/firewall.nix
-      ../global/services/gnome-keyring.nix
       ../global/services/temperature.nix
 
       # User 
@@ -42,42 +38,8 @@
 
     ];
 
-
-
   console.keyMap = "br-abnt2";
-  time.timeZone = "America/Sao_Paulo";
-  time.hardwareClockInLocalTime = true;
-
   networking.hostName = "laptop";
-  networking.networkmanager.enable = true;
-
-  # Sound Service (Pipewire)
-
-  sound.enable = true;
-  security.rtkit.enable = true;
-  hardware.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-  programs = {
-    ssh.startAgent = true;
-    dconf.enable = true;
-  };
-
-  system = {
-    stateVersion = systemVersion;
-    autoUpgrade = {
-      enable = false;
-      allowReboot = false;
-      dates = "daily";
-    };
-  };
-
   environment = {
     pathsToLink = [ "/libexec" ];
     variables = {

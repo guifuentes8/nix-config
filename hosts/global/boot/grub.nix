@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   boot.loader = {
     grub = {
@@ -19,4 +20,8 @@
       efiSysMountPoint = "/boot";
     };
   };
+  environment.systemPackages = with pkgs; [
+    ntfs3g # necessary to detected windows in grub
+  ];
+
 }

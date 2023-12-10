@@ -1,18 +1,15 @@
-{ config, pkgs, inputs, outputs, systemVersion, ... }:
+{ config, pkgs, inputs, outputs, ... }:
 {
   imports = [
 
     # HARDWARE ----------------------------------------
 
-    # Hardware config
+    # Hardware config (required)
     ./hardware-configuration.nix
 
     # Hardware Gpu (if exist)
     ../global/hardware/gpu/nvidia.nix
 
-    # Extra Hardware config
-    ../global/hardware/keychron.nix
-    # ../global/hardware/logitech.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -26,15 +23,10 @@
     ../global/login/lightdm.nix
 
     # Choice Interface (WM and/or DE)
-    ../global/interfaces/WM/xorg/bspwm
-    ../global/interfaces/WM/xorg/qtile
-    ../global/interfaces/WM/xorg/awesome
+    ../global/interfaces/WM/bspwm.nix
 
     # Active services
-    ../global/services/firewall.nix
-    ../global/services/gnome-keyring.nix
-    ../global/services/kdeconnect.nix
-    ../global/services/teamviewer.nix
+    ../global/services/remoteSupport.nix
 
     # User 
     ../global/users/guifuentes8.nix
@@ -45,46 +37,10 @@
 
   # Basic config
   console.keyMap = "br-abnt2";
-  time.timeZone = "America/Sao_Paulo";
-  time.hardwareClockInLocalTime = true;
 
   # Network config (nmtui)
   networking.hostName = "desktop";
-  networking.networkmanager.enable = true;
 
-  # Sound Service (Pipewire)
-  sound.enable = true;
-  security.rtkit.enable = true;
-  hardware.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-  # Xorg
-  services.xserver = {
-    enable = true;
-    layout = "br,us";
-  };
-
-  # SYSTEM OPTIONS ----------------------------------------
-
-  system = {
-    stateVersion = systemVersion;
-    autoUpgrade = {
-      enable = false;
-      allowReboot = false;
-      dates = "daily";
-    };
-  };
-
-  programs = {
-    ssh.startAgent = true;
-    dconf.enable = true;
-  };
 
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];

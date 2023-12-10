@@ -1,5 +1,5 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ config, lib, inputs, outputs, pkgs, ... }:
+{ config, lib, inputs, outputs, pkgs, systemVersion, ... }:
 let
   my-config = outputs.packages.${pkgs.system}.my-config;
 in
@@ -8,6 +8,83 @@ in
     inputs.home-manager.nixosModules.home-manager
   ];
 
+  # System configs
+
+  nix = {
+    settings = {
+      trusted-users = [ "root" "@wheel" ];
+      auto-optimise-store = lib.mkDefault true;
+      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+      warn-dirty = false;
+    };
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 3d";
+    };
+  };
+
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
+
+  system = {
+    stateVersion = systemVersion;
+    autoUpgrade = {
+      enable = true;
+      allowReboot = false;
+      dates = "daily";
+    };
+  };
+
+  home-manager = {
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs outputs; };
+  };
+
+  # Services
+  services = {
+    dbus = {
+      enable = true;
+      packages = [ pkgs.gcr ];
+    };
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+  };
+
+  # Network
+  networking.networkmanager.enable = true;
+  time.hardwareClockInLocalTime = true;
+  time.timeZone = lib.mkDefault "America/Sao_Paulo";
+
+  # Sound
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+
+  # Fonts
+  fonts.packages = with pkgs; [
+    my-config
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
+  # Security
+  security.rtkit.enable = true;
+  security.polkit.enable = true;
+
+
+  # Hardware
+  powerManagement.cpuFreqGovernor = lib.mkForce "performance";
+
+  # Language
   i18n = {
     defaultLocale = lib.mkDefault "en_US.UTF-8";
     extraLocaleSettings = {
@@ -27,68 +104,5 @@ in
     ];
   };
 
-  time.timeZone = lib.mkDefault "America/Sao_Paulo";
 
-  fonts.packages = with pkgs; [
-    montserrat
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    meslo-lgs-nf
-    my-config
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
-
-  nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
-
-    };
-  };
-
-  nix = {
-    settings = {
-      trusted-users = [ "root" "@wheel" ];
-      auto-optimise-store = lib.mkDefault true;
-      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
-      warn-dirty = false;
-      substituters = [ "https://hyprland.cachix.org" ];
-      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 3d";
-    };
-  };
-
-  services.dbus.enable = true;
-  services.dbus.packages = [ pkgs.gcr ];
-  security.polkit.enable = true;
-
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-  };
-
-  home-manager = {
-    useUserPackages = true;
-    extraSpecialArgs = { inherit inputs outputs; };
-  };
-
-  # CPU performance mode
-  powerManagement.cpuFreqGovernor = lib.mkForce "performance";
 }

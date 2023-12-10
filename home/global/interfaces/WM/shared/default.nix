@@ -1,8 +1,8 @@
-{ ... }:
-{
+{ ... }: {
   imports = [
-    ./config
-    ./pkgs
-    ./xdg
+    ./theme.nix
+    ./xdg.nix
+
+    ../pkgs
   ];
 }

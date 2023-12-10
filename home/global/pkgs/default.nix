@@ -2,61 +2,50 @@
 {
 
   imports = [
-    ./bat
-    ./caffeine
-    ./chrome
-    # ./davinci-resolve # error in build, waiting fix
-    ./gh
-    ./git
-    ./gpg
-    ./languages
-    ./lsd
-    ./qutebrowser
-    ./ssh
-    ./neovim
-    ./obs-studio
-    ./vscode
-    ./zsh
+    ./configFiles
   ];
 
+  programs = {
+
+    bat = {
+      enable = true;
+      extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
+      config.theme = "tokyonight_night";
+    };
+    chromium = {
+      enable = true;
+      package = pkgs.google-chrome;
+    };
+    obs-studio.enable = true;
+    qutebrowser.enable = true;
+
+    # System Dependencies
+    gpg.enable = true;
+    jq.enable = true;
+    lsd.enable = true;
+    ssh.enable = true;
+
+  };
+
   home.packages = with pkgs; [
-
-
-    # TODO: organizar melhor todos esses programas (tentar centralizar e separar as coisas)
     bitwarden
     figma-linux
-    insomnia
-
-    # Chat
     slack
     telegram-desktop
     whatsapp-for-linux
+    onlyoffice-bin
+    gimp
+    inkscape
 
     # Usb media
     etcher
-    ntfs3g # necessary to detected windows in grub
     ventoy-bin
 
-    # Dev ----
-
-    #javascript
-    nodejs
-    yarn
-
-    #nix
-    nixpkgs-fmt
-
-    #java
-    maven
-
-    # Extra Dependencies
+    # System Dependencies
     appimage-run
     ffmpeg
-    jq
-    ntfs3g
     pciutils
     pulseaudio
-    sqlite
     unrar
     unzip
   ];
