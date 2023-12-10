@@ -1,4 +1,4 @@
-  -- setup must be called before loading
+-- setup must be called before loading
 local g = vim.g
 
 g.kyotonight_bold = 1

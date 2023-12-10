@@ -106,9 +106,9 @@ in
         plugin = (fromGitHub "55639cd95a9d382c98f99e7cc30b61cc00c4ae6d" "HEAD" "shrikecode/kyotonight.vim");
         type = "lua";
         config = builtins.readFile (./plugins/theme.rc.lua);
-
       }
 
+      (fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD" "xiyaowong/transparent.nvim")
 
 
 
