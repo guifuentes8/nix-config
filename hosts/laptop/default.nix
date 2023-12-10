@@ -32,6 +32,9 @@
       # Active services
       ../global/services/backlight.nix
       ../global/services/temperature.nix
+      ../global/services/kdeconnect.nix
+      ../global/services/gnomeKeyring.nix
+
 
       # User 
       ../global/users/guifuentes8.nix

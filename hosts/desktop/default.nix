@@ -26,7 +26,10 @@
     ../global/interfaces/WM/bspwm.nix
 
     # Active services
+
+    ../global/services/gnomeKeyring.nix
     ../global/services/remoteSupport.nix
+    ../global/services/kdeconnect.nix
 
     # User 
     ../global/users/guifuentes8.nix

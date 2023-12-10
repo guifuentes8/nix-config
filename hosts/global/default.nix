@@ -9,7 +9,6 @@ in
   ];
 
   # System configs
-
   nix = {
     settings = {
       trusted-users = [ "root" "@wheel" ];
@@ -47,6 +46,7 @@ in
   };
 
   # Services
+  programs.dconf.enable = true;
   services = {
     dbus = {
       enable = true;
@@ -80,13 +80,12 @@ in
   security.rtkit.enable = true;
   security.polkit.enable = true;
 
-
   # Hardware
   powerManagement.cpuFreqGovernor = lib.mkForce "performance";
 
   # Language
   i18n = {
-    defaultLocale = lib.mkDefault "en_US.UTF-8";
+    defaultLocale = lib.mkDefault "pt_BR.UTF-8";
     extraLocaleSettings = {
       LC_ADDRESS = lib.mkDefault "pt_BR.utf8";
       LC_IDENTIFICATION = lib.mkDefault "pt_BR.utf8";
@@ -102,6 +101,9 @@ in
       "en_US.UTF-8/UTF-8"
       "pt_BR.UTF-8/UTF-8"
     ];
+  };
+  services.xserver = {
+    layout = "br";
   };
 
 

@@ -17,9 +17,10 @@ ts.setup {
   auto_install = false,
   sync_install = false,
   ensure_installed = '',
-  parser_install_dir = ''
+  parser_install_dir = '',
+  ignore_install = { "javascript" },
+
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
-

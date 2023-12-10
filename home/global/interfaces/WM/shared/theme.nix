@@ -10,6 +10,14 @@ let
   # };
 in
 {
+  home.pointerCursor = {
+    name = "phinger-cursors";
+    package = pkgs.phinger-cursors;
+    size = 32;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
   gtk = {
     enable = true;
     font = {
@@ -30,12 +38,20 @@ in
       package = lib.mkForce gtk-theme;
     };
   };
+ 
+ qt = {
+    enable = true;
+    platformTheme = "gtk";
+  };
+
 
   # home.file.".config/gtk-4.0/gtk.css".source = "${gtk-theme}/share/themes/${gtk-theme-name}/gtk-4.0/gtk-dark.css";
   # home.file.".config/gtk-4.0/assets" = {
   #   recursive = true;
   #   source = "${gtk-theme}/share/themes/${gtk-theme-name}/gtk-4.0/assets";
   # };
-  home.sessionVariables.GTK_THEME = "${gtk-theme-name}";
+  home.sessionVariables = {
+  GTK_THEME = "${gtk-theme-name}";
+  };
 }
 
