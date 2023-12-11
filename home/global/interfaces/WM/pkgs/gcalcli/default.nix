@@ -1,11 +1,4 @@
 { pkgs, lib, ... }:
-let
-  teste = lib.readFile "${pkgs.runCommand "timestamp" { env.when = "aaa"; } "echo -n `date -d @$when +%Y-%m-%d_%H-%M-%S` > $out"}";
-
-  secret = lib.readFile "${pkgs.runCommand "secret" { } ''
-    echo ${pkgs.pass}/bin/pass show gcalcli/secret > $out
-  ''}";
-in
 {
   home.packages = with pkgs; [
     gcalcli

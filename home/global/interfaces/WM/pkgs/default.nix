@@ -7,7 +7,6 @@ in
     ./alacritty
     ./bottom
     ./cava
-    ./comodoro
     ./dstask
     ./dunst
     ./feh
