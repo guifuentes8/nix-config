@@ -1,11 +1,16 @@
 { outputs, inputs, ... }:
 {
   modifications = final: prev: {
-    ytui-music = prev.ytui-music.overrideAttrs (old: {
-      src = prev.fetchFromGitHub {
-        rev = "main";
-        hash = "sh1VCQGPH8cnQDSqpihGuwzETYEhbG6Ggo=";
-      };
-    });
+    # himalaya = prev.himalaya.overrideAttrs (old: rec {
+    #   pname = "himalaya";
+    #   version = "0.9.0";
+    #   src = prev.fetchFromGitHub {
+    #     owner = "soywod";
+    #     repo = pname;
+    #     rev = "v${version}";
+    #     hash = "sha256-ScepvT0HWkESiItz0367W9xQ4PsqPwiH9EFtjfuv4PA=";
+
+    #   };
+    # });
   };
 }

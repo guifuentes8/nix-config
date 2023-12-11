@@ -108,9 +108,6 @@ in
         config = builtins.readFile (./plugins/theme.rc.lua);
       }
 
-      (fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD" "xiyaowong/transparent.nvim")
-
-
 
       luasnip # Snippet engine
       cmp-buffer # buffer words
@@ -119,6 +116,7 @@ in
       nvim-web-devicons
       markdown-preview-nvim
       zen-mode-nvim
+      (fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD" "xiyaowong/transparent.nvim")
 
     ];
 

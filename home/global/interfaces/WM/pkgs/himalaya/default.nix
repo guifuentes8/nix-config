@@ -23,7 +23,6 @@
         port = 465;
         tls = {
           enable = true;
-          useStartTls = true;
         };
       };
       himalaya = {
@@ -64,7 +63,6 @@
         port = 465;
         tls = {
           enable = true;
-          useStartTls = true;
         };
       };
       himalaya = {
@@ -113,6 +111,25 @@
 
 
   systemd.user.services = {
+    himalaya-watch-guifuentes8 = {
+      Install = {
+        WantedBy = [ "default.target" ];
+      };
+
+      Service = {
+        Environment = [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
+        ExecSearchPath = /bin;
+        ExecStart = "${pkgs.himalaya}/bin/himalaya -a guifuentes8 watch";
+        Restart = "always";
+        RestartSec = 10;
+      };
+
+      Unit = {
+        After = [ "network.target" ];
+        Description = "Himalaya folder changes watcher service";
+      };
+    };
+
     himalaya-watch-gcf = {
       Install = {
         WantedBy = [ "default.target" ];
@@ -131,9 +148,28 @@
         Description = "Himalaya folder changes watcher service";
       };
     };
+
   };
 
   systemd.user.services = {
+    himalaya-notify-guifuentes8 = {
+      Install = {
+        WantedBy = [ "default.target" ];
+      };
+
+      Service = {
+        Environment = [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
+        ExecSearchPath = /bin;
+        ExecStart = "${pkgs.himalaya}/bin/himalaya -a guifuentes8 notify";
+        Restart = "always";
+        RestartSec = 10;
+      };
+
+      Unit = {
+        After = [ "network.target" ];
+        Description = "Himalaya folder changes watcher service";
+      };
+    };
     himalaya-notify-gcf = {
       Install = {
         WantedBy = [ "default.target" ];

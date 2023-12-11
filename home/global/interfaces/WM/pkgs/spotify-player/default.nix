@@ -63,6 +63,9 @@
           };
           playback_progress_bar = { bg = "BrightBlack"; fg = "Cyan"; };
           current_playing = { fg = "Red"; modifiers = [ "Bold" ]; };
+          playback_artists = { fg = "Cyan"; modifiers = [ "Bold" ]; };
+          playback_album = { fg = "Yellow"; };
+          playback_metadata = { fg = "Blue"; };
         };
       }];
     };

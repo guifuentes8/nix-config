@@ -1,6 +1,4 @@
 { inputs, outputs, lib, config, pkgs, unstable, ... }:
-let ytermusic = outputs.packages.${pkgs.system}.ytermusic;
-in
 {
 
   imports = [
@@ -22,41 +20,52 @@ in
     ./spotify-player
     ./translate-shell
     ./watson
-    ./ytfzf
     ./yazi
+    ./ytermusic
+    ./ytfzf
   ];
 
-  home.packages = [
+  programs = {
+    rtorrent.enable = true;
+  };
+
+  home.packages = with pkgs; [
 
     # CLI Apps
-    pkgs.cmatrix
-    pkgs.devour
-    pkgs.pastel
-    pkgs.playerctl
-    pkgs.tty-clock
-    pkgs.tuifeed
-
-    # Dependencies / Others
-    pkgs.libnotify
-    pkgs.pavucontrol
+    pastel
+    tuifeed
 
     # Social media
-    pkgs.rainbowstream # twitter
+    rainbowstream # twitter
 
-    # Music
-    ytermusic
+    # chatgpt
+    tgpt
 
-    # Networking test
-    pkgs.speedtest-rs
+    # Google drive
+    gdrive3
+
     # Notes
-    pkgs.nb
+    nb
+
     # presentation slides
-    pkgs.slides
+    slides
 
     # Weather
-    pkgs.girouette
+    girouette
 
-    pkgs.yai
-    pkgs.nodePackages.webtorrent-cli
+    # Networking test
+    speedtest-rs
+
+    # 4fun
+    cmatrix
+    devour
+    tty-clock
+
+    # Dependencies / Others
+    libnotify
+    # Sound
+    pavucontrol
+    playerctl #mpris
+
   ];
 }

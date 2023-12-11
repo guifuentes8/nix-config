@@ -37,28 +37,17 @@
     '';
     shellAliases = {
       spt = "spotify_player";
-
       clock = "tty-clock -c -C 6 -s -S -r -n -D";
       matrix = "cmatrix -b -f -C cyan";
-
-      mail = "himalaya";
-      mail_sync = "himalaya account sync";
-      mail2 = "himalaya -a gcf";
-      mail2_sync = "himalaya -a gcf account sync";
-      mails = "mail -m '[Gmail]/Sent Mail'";
-      maild = "mail attachments";
-      mailw = "mail write";
-      mailr = "mail -s read";
-
       yt = "ytfzf -t";
       cal = "gcalcli";
       clima-bauru = "girouette -q -c '1h' -L 'pt_BR' -l 'Bauru' -u metric";
       clima-sp = "girouette -q -c '1h' -L 'pt_BR' -l 'São Paulo' -u metric";
-      torrentd = "webtorrent";
+      torrent = "rtorrent";
+      tgpt = "gpt";
 
-      cjpg = "mogrify -format jpg *.png && rm *.png";
-      pick = "xcolor | hyprpicker";
-      ls = "lsd";
+      mail = "nvim +Himalaya";
+
 
       # NixOs shortcuts
       hd = "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@desktop";
@@ -67,6 +56,10 @@
       sl = "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#laptop";
       gc = "nix-collect-garbage -d && nix-store --gc";
       sgc = "sudo nix-collect-garbage -d && nix-store --gc";
+
+      cjpg = "mogrify -format jpg *.png && rm *.png";
+      pick = "xcolor | hyprpicker";
+      ls = "lsd";
 
     };
   };
