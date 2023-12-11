@@ -60,6 +60,7 @@
       cjpg = "mogrify -format jpg *.png && rm *.png";
       pick = "xcolor | hyprpicker";
       ls = "lsd";
+      yterm = "bash ~/.local/share/applications/headers.sh";
 
     };
   };
