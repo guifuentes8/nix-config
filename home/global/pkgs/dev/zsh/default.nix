@@ -50,12 +50,11 @@
       mailw = "mail write";
       mailr = "mail -s read";
 
-
-
       yt = "ytfzf -t";
-
       cal = "gcalcli";
-      task = "dstask";
+      clima-bauru = "girouette -q -c '1h' -L 'pt_BR' -l 'Bauru' -u metric";
+      clima-sp = "girouette -q -c '1h' -L 'pt_BR' -l 'São Paulo' -u metric";
+      torrentd = "webtorrent";
 
       cjpg = "mogrify -format jpg *.png && rm *.png";
       pick = "xcolor | hyprpicker";

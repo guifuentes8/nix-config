@@ -126,6 +126,7 @@ in
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted
       nodePackages.live-server
+      marksman
       lua-language-server
       ripgrep
       nixfmt

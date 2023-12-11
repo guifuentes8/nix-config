@@ -72,7 +72,6 @@ nvim_lsp.tsserver.setup {
 
 }
 
-
 -- JSON
 
 nvim_lsp.jsonls.setup {
@@ -84,6 +83,12 @@ nvim_lsp.jsonls.setup {
 -- NIX
 
 nvim_lsp.nixd.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+
+-- MARKDOWN
+nvim_lsp.marksman.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }

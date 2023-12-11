@@ -7,7 +7,6 @@ in
     ./alacritty
     ./bottom
     ./cava
-    ./dstask
     ./dunst
     ./feh
     ./gcalcli
@@ -18,7 +17,6 @@ in
     ./qutebrowser
     ./pass
     ./ripgrep
-    ./rtorrent
     ./rofi
     ./sptlrx
     ./spotify-player
@@ -26,8 +24,6 @@ in
     ./watson
     ./ytfzf
     ./yazi
-    ./zathura
-    ./zoxide
   ];
 
   home.packages = [
@@ -39,11 +35,28 @@ in
     pkgs.playerctl
     pkgs.tty-clock
     pkgs.tuifeed
-    ytermusic
 
     # Dependencies / Others
     pkgs.libnotify
     pkgs.pavucontrol
 
+    # Social media
+    pkgs.rainbowstream # twitter
+
+    # Music
+    ytermusic
+
+    # Networking test
+    pkgs.speedtest-rs
+    # Notes
+    pkgs.nb
+    # presentation slides
+    pkgs.slides
+
+    # Weather
+    pkgs.girouette
+
+    pkgs.yai
+    pkgs.nodePackages.webtorrent-cli
   ];
 }

@@ -13,10 +13,8 @@
     mupdf
     unar
     fd
-    ripgrep
     fzf-zsh
     zoxide
-
   ];
 
   xdg.configFile."yazi/keymap.toml".source = ./keymap.toml;

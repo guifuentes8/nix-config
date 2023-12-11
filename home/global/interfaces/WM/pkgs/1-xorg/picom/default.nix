@@ -97,7 +97,7 @@
       blur-background = true;
       blur-method = "dual_kawase";
       blur-radius = 2;
-      blur-strength = 3;
+      blur-strength = 4;
       blur-whitelist = true;
       blur-rule = [
         "class_g = 'Polybar'"
