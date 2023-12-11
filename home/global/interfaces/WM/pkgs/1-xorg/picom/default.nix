@@ -8,15 +8,15 @@
     fade = true;
     fadeSteps = [ 0.04 0.04 ];
     shadow = true;
-    shadowOffsets = [ 3 2 ];
-    shadowOpacity = 0.4;
+    shadowOffsets = [ 2 2 ];
+    shadowOpacity = 0.2;
     shadowExclude = [
       "class_g =  'Polybar'"
       "class_g =  'Dunst'"
       "class_g =  'Rofi'"
 
     ];
-    opacityRules = [ "85:class_g = 'Rofi'" "85:class_g = 'Dunst'" ];
+    opacityRules = [ "85:class_g = 'Rofi'" ];
 
 
     settings = {
@@ -98,8 +98,8 @@
       # Blur background of windows.
       blur-background = true;
       blur-method = "dual_kawase";
-      blur-radius = 12;
-      blur-strength = 10;
+      blur-radius = 2;
+      blur-strength = 3;
       blur-whitelist = true;
       blur-rule = [
         "class_g = 'Polybar'"
@@ -117,11 +117,10 @@
       #   "class_g = 'Firefox'"
       # ];
 
-      wintypes =
-        {
-          utility = { shadow = false; focus = true; };
-          popup_menu = { shadow = false; focus = true; };
-        };
+      wintypes = {
+        utility = { shadow = false; focus = true; };
+        popup_menu = { shadow = false; focus = true; };
+      };
 
     };
   };
