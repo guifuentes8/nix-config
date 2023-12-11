@@ -12,11 +12,9 @@
     shadowOpacity = 0.2;
     shadowExclude = [
       "class_g =  'Polybar'"
-      "class_g =  'Dunst'"
-      "class_g =  'Rofi'"
 
     ];
-    opacityRules = [ "85:class_g = 'Rofi'" ];
+    # opacityRules = [ ];
 
 
     settings = {
