@@ -35,9 +35,6 @@
     pastel
     tuifeed
 
-    # Social media
-    rainbowstream # twitter
-
     # chatgpt
     tgpt
 
@@ -63,6 +60,7 @@
 
     # Dependencies / Others
     libnotify
+
     # Sound
     pavucontrol
     playerctl #mpris

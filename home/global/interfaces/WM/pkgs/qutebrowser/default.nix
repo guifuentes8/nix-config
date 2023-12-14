@@ -1,21 +1,26 @@
-{config,...}:
+{ config, ... }:
 {
   programs.qutebrowser = {
     enable = true;
     aliases = { };
     settings = { };
     quickmarks = {
-      nixpkgs = "https://github.com/NixOS/nixpkgs";
+      shfoo = "https://www.shortcutfoo.com/";
       home-manager = "https://github.com/nix-community/home-manager";
     };
     searchEngines = {
-      w = "https://en.wikipedia.org/wiki/Special:Search?search={}&go=Go&ns0=1";
-      aw = "https://wiki.archlinux.org/?search={}";
+      # Nix search
+      hm = "https://mipmip.github.io/home-manager-option-search/?query={}";
+      ns = "https://search.nixos.org/packages?channel=23.11&from=0&size=50&sort=relevance&type=packages&query={}";
+      nsu = "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={}";
       nw = "https://nixos.wiki/index.php?search={}";
+
+      # Other searchs
+      aw = "https://wiki.archlinux.org/?search={}";
       g = "https://www.google.com/search?hl=en&q={}";
     };
     extraConfig = ''
-         # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
+      # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
       # Scheme name: Tokyo Night Dark
       # Scheme author: Michaël Ball
       # Template author: theova

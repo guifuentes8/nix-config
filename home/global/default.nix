@@ -1,6 +1,7 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, ... }:
-let cursor-theme = "phinger-cursors";
-cursor-size = "32";
+let
+  cursor-theme = "phinger-cursors";
+  cursor-size = "32";
 in
 {
 
@@ -29,7 +30,7 @@ in
     desktop = "${config.home.homeDirectory}/Desktop";
     documents = "${config.home.homeDirectory}/Documents";
   };
-  
+
   nix = {
     package = pkgs.nix;
     settings = {
@@ -58,15 +59,16 @@ in
   systemd.user.startServices = true;
   news.display = "silent";
 
- ######## GLOBAL THEME ########
+  ######## GLOBAL THEME ########
   colorScheme = nix-colors.lib.schemeFromYAML "kyoto" (builtins.readFile ./pkgs/themes/kyotonight.yaml);
 
+  xsession.numlock.enable = true;
   xresources.extraConfig = ''
     Xcursor.theme: ${cursor-theme}
     Xcursor.size: ${cursor-size}
   '';
 
-# scheme: "kyotonight"
+  # scheme: "kyotonight"
   # author: "shrikecode"
   # base00: "#1a1b26"
   # base01: "#292e42"

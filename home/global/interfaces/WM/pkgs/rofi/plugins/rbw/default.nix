@@ -10,6 +10,7 @@
     package = pkgs.rbw;
     settings = {
       email = "guifuentes8@gmail.com";
+      lock_timeout = 1000;
       pinentry = "gnome3";
       action = "type";
       target = "username";
