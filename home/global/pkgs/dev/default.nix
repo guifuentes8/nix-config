@@ -23,6 +23,7 @@
       userEmail = "guifuentes8@gmail.com";
       extraConfig = {
         http.postBuffer = "524288000";
+        pull.rebase = false;
       };
       aliases = {
         a = "add .";
