@@ -30,7 +30,6 @@
     figma-linux
     slack
     telegram-desktop
-    whatsapp-for-linux
     onlyoffice-bin
     gimp
     inkscape

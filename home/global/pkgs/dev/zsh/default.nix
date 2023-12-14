@@ -57,7 +57,7 @@
       clima-bauru = "girouette -q -c '1h' -L 'pt_BR' -l 'Bauru' -u metric";
       clima-sp = "girouette -q -c '1h' -L 'pt_BR' -l 'São Paulo' -u metric";
       torrent = "rtorrent";
-      tgpt = "gpt";
+      gpt = "tgpt";
 
       mail = "himalaya -a guifuentes8";
       mail2 = "himalaya -a gcf";
