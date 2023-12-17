@@ -43,6 +43,7 @@
       sl = "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#laptop";
       gc = "nix-collect-garbage -d && nix-store --gc";
       sgc = "sudo nix-collect-garbage -d && nix-store --gc";
+
       cjpg = "mogrify -format jpg *.png && rm *.png";
       pick = "xcolor | hyprpicker";
       ls = "lsd";
@@ -51,7 +52,7 @@
       spt = "spotify_player";
       clock = "tty-clock -c -C 6 -s -S -r -n -D";
       yterm = "bash ~/.local/share/applications/headers.sh";
-      matrix = "cmatrix -b -f -C cyan";
+      matrix = "cmatrix -b -f -C red";
       yt = "ytfzf -t";
       cal = "gcalcli";
       clima-bauru = "girouette -q -c '1h' -L 'pt_BR' -l 'Bauru' -u metric";
@@ -59,6 +60,7 @@
       torrent = "rtorrent";
       gpt = "tgpt";
 
+      # Mail
       mail = "himalaya -a guifuentes8";
       mail2 = "himalaya -a gcf";
       sptest = "speeedtest-rs";

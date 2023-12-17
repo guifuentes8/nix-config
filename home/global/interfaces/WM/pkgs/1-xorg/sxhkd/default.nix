@@ -1,6 +1,7 @@
 { pkgs, outputs, config, ... }:
 let
   BLANK = "#${config.colorScheme.colors.base00}00";
+  BACKGROUND = "#${config.colorScheme.colors.base00}AA";
   CLEAR = "#${config.colorScheme.colors.base01}22";
   DEFAULT = "#${config.colorScheme.colors.base0B}cc";
   TEXT = "#${config.colorScheme.colors.base06}ee";
@@ -9,7 +10,7 @@ let
   VERIFYING = "#${config.colorScheme.colors.base0A}bb";
   my-config = outputs.packages.${pkgs.system}.my-config;
   screen-locker = pkgs.writeShellScript "script" ''
-    ${pkgs.i3lock-color}/bin/i3lock  --beep --nofork --screen 1 --blur 5 --indicator --ignore-empty-password --clock --line-uses-ring --radius=300 --ring-width=18.0 --line-color=${BLANK} --inside-color=${BLANK} --ring-color=${DEFAULT} --insidever-color=${CLEAR} --ringver-color=${VERIFYING} --insidewrong-color=${CLEAR} --ringwrong-color=${WRONG} --keyhl-color=${INPUT} --bshl-color=${WRONG} --separator-color=${DEFAULT} --verif-color=${TEXT} --wrong-color=${TEXT} --modif-color=${TEXT} --date-color=${TEXT} --time-color=${TEXT} --time-str="%H:%M:%S" --date-str="Hoje é %A, dia %d/%m/%Y." --verif-text="Analyzing..." --wrong-text="Password error!" --noinput-text="None!" --lock-text="Locking screen..." --lockfailed-text="Lock failed!"  --time-align=0 --date-align=0 --time-font="Dank Mono:style=Italic" --date-font="Dank Mono:style=Italic" --verif-font="Dank Mono:style=Italic" --wrong-font="Dank Mono:style=Italic" --time-size=48 --date-size=32 --verif-size=32 --wrong-size=32 --date-pos="tx:ty+50"
+    ${pkgs.i3lock-color}/bin/i3lock  --beep --nofork --screen 1 --blur 5 --indicator --ignore-empty-password --clock --line-uses-ring --radius=300 --ring-width=18.0 --line-color=${BLANK} --inside-color=${BACKGROUND} --ring-color=${DEFAULT} --insidever-color=${CLEAR} --ringver-color=${VERIFYING} --insidewrong-color=${CLEAR} --ringwrong-color=${WRONG} --keyhl-color=${INPUT} --bshl-color=${WRONG} --separator-color=${DEFAULT} --verif-color=${TEXT} --wrong-color=${TEXT} --modif-color=${TEXT} --date-color=${TEXT} --time-color=${TEXT} --time-str="%H:%M:%S" --date-str="Hoje é %A, dia %d/%m/%Y." --verif-text="Analyzing..." --wrong-text="Password error!" --noinput-text="None!" --lock-text="Locking screen..." --lockfailed-text="Lock failed!"  --time-align=0 --date-align=0 --time-font="Dank Mono:style=Italic" --date-font="Dank Mono:style=Italic" --verif-font="Dank Mono:style=Italic" --wrong-font="Dank Mono:style=Italic" --time-size=48 --date-size=32 --verif-size=32 --wrong-size=32 --date-pos="tx:ty+50"
   '';
 in
 {
