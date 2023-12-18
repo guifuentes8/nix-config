@@ -4,6 +4,7 @@ let
 in
 {
 
+
   services.screen-locker = {
     enable = true;
     inactiveInterval = 10;

@@ -17,7 +17,7 @@
         color = "${config.colorScheme.colors.base06} ${config.colorScheme.colors.base0D}";
       };
       colors = {
-        alpha = 0.9;
+        alpha = 0.8;
         foreground = "${config.colorScheme.colors.base06}";
         background = "${config.colorScheme.colors.base00}";
         selection-foreground = "${config.colorScheme.colors.base06}";
