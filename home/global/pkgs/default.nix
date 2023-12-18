@@ -32,7 +32,6 @@
     telegram-desktop
     onlyoffice-bin
     gimp
-    inkscape
 
     # Usb media
     etcher

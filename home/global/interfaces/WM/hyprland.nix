@@ -29,9 +29,6 @@ in
         monitor=,preferred,auto,1
 
       # VARIABLES
-
-       
-
         general {
             gaps_in = 4
             gaps_out = 8
@@ -45,8 +42,8 @@ in
         decoration {
             blur {
               enabled = true
-              size = 8
-              passes = 1
+              size = 3
+              passes = 2
               new_optimizations = true
               ignore_opacity = true
               xray = false
@@ -57,7 +54,7 @@ in
             shadow_render_power = 3
             shadow_ignore_window	= true
             col.shadow = 0xee1a1a1a
-            shadow_offset = [0, 0]
+            shadow_offset = [2, 2]
             active_opacity = 1
             inactive_opacity = 1
             fullscreen_opacity = 1
