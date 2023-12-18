@@ -19,6 +19,7 @@
     ./sptlrx
     ./spotify-player
     ./translate-shell
+    ./tuifeed
     ./watson
     ./yazi
     ./ytermusic
@@ -33,7 +34,6 @@
 
     # CLI Apps
     pastel
-    tuifeed
 
     # chatgpt
     tgpt

@@ -59,11 +59,13 @@
       clima-sp = "girouette -q -c '1h' -L 'pt_BR' -l 'São Paulo' -u metric";
       torrent = "rtorrent";
       gpt = "tgpt";
+      feed = "tuifeed";
+      drive = "gdrive";
 
       # Mail
       mail = "himalaya -a guifuentes8";
       mail2 = "himalaya -a gcf";
-      sptest = "speeedtest-rs";
+      net-test = "speeedtest-rs";
       music = "ncmpcpp";
 
     };

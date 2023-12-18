@@ -71,7 +71,7 @@ in
 
       "super + F1" = "rofi -show calc -modi calc -no-show-match -no-sort";
       "super + F2" = "rofi -modi emoji -show emoji";
-      "super + F3" = "";
+      "super + F3" = "alacritty -e yazi";
       "super + F4" = "";
       "super + F5" = "xrandr -s 5120x1440";
       "super + F6" = "xrandr -s 3840x1080";
@@ -86,6 +86,12 @@ in
       # OTHERS PROGRAMS
       "super + p" = "xcolor -s clipboard";
       "Print" = "flameshot gui";
+
+      "super + shift + F1" = "xrandr -s 5120x1440";
+      #"super + F6" = "xrandr -s 3840x1080";
+
+      # "super + F7" = "xrandr -s 2560x1440";
+      # "super + F8" = "xrandr -s 1920x1080";
     };
 
   };
