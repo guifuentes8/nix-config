@@ -51,18 +51,18 @@
        label-empty-font = 2
        label-occupied-font = 2
 
-       label-active-foreground = #${config.colorScheme.colors.base0D}
+       label-active-foreground = #${config.colorScheme.colors.base08}
        label-active-background = #EE${config.colorScheme.colors.base00}
-       label-active-underline= #${config.colorScheme.colors.base0D}
+       label-active-underline= #${config.colorScheme.colors.base08}
        label-active-padding = 2
 
        label-occupied = %name%
-       label-occupied-foreground = #${config.colorScheme.colors.base08}
+       label-occupied-foreground = #${config.colorScheme.colors.base0A}
        label-occupied-padding = 2
 
        label-urgent = %name%
        label-urgent-background = #cc${config.colorScheme.colors.base00}
-       label-urgent-foreground = #${config.colorScheme.colors.base08}
+       label-urgent-foreground = #${config.colorScheme.colors.base0A}
        label-urgent-padding = 2
 
        label-empty = %name%
