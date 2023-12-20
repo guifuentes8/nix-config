@@ -34,7 +34,7 @@ in
   system = {
     stateVersion = systemVersion;
     autoUpgrade = {
-      enable = true;
+      enable = false;
       allowReboot = false;
       dates = "daily";
     };

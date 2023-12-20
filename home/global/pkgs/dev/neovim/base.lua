@@ -50,7 +50,7 @@ api.nvim_create_autocmd("InsertLeave", {
     command = 'set nopaste'
 })
 
-opt.formatoptions:append { 'r' } 
+opt.formatoptions:append { 'r' }
 
 opt.clipboard = "unnamedplus"
 

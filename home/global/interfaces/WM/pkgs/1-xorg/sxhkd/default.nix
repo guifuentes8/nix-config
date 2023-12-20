@@ -71,27 +71,36 @@ in
 
       "super + F1" = "rofi -show calc -modi calc -no-show-match -no-sort";
       "super + F2" = "rofi -modi emoji -show emoji";
-      "super + F3" = "alacritty -e yazi";
+      "super + F3" = "";
       "super + F4" = "";
-      "super + F5" = "xrandr -s 5120x1440";
-      "super + F6" = "xrandr -s 3840x1080";
-      "super + F7" = "xrandr -s 2560x1440";
-      "super + F8" = "xrandr -s 1920x1080";
+      "super + F5" = "";
+      "super + F6" = "";
+      "super + F7" = "";
+      "super + F8" = "";
       "super + F9" = "rofi-pulse-select sink";
       "super + F10" = "rofi-bluetooth";
       "super + F11" = "rofi-rbw";
       "super + F12" = "rofi -show p -modi p:rofi-power-menu -lines 6";
 
-
-      # OTHERS PROGRAMS
-      "super + p" = "xcolor -s clipboard";
-      "Print" = "flameshot gui";
+      # RESOLUTION
 
       "super + shift + F1" = "xrandr -s 5120x1440";
-      #"super + F6" = "xrandr -s 3840x1080";
+      "super + shift + F2" = "xrandr -s 3840x1080";
+      "super + shift + F3" = "xrandr -s 2560x1440";
+      "super + shift + f4" = "xrandr -s 1920x1080";
 
-      # "super + F7" = "xrandr -s 2560x1440";
-      # "super + F8" = "xrandr -s 1920x1080";
+      # OTHERS PROGRAMS
+      "super + shift + p" = "xcolor -s clipboard";
+      "super + shift + b" = "qutebrowser";
+      "super + shift + m" = "kitty -e spotify_player";
+      "super + shift + e" = "alacritty -e nvim";
+      "super + shift + f" = "alacritty -e yazi";
+      "Print" = "flameshot gui";
+
+
+
+
+
     };
 
   };

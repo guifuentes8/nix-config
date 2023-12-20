@@ -16,7 +16,7 @@ in
 {
   services.screen-locker = {
     enable = true;
-    inactiveInterval = 10;
+    inactiveInterval = 30;
     lockCmd = "${screen-locker}";
   };
 

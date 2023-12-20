@@ -107,7 +107,11 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/theme.rc.lua);
       }
-
+      {
+        plugin = nvterm;
+        type = "lua";
+        config = builtins.readFile (./plugins/terminal.rc.lua);
+      }
 
       luasnip # Snippet engine
       cmp-buffer # buffer words
@@ -116,6 +120,7 @@ in
       nvim-web-devicons
       markdown-preview-nvim
       zen-mode-nvim
+
       (fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD" "xiyaowong/transparent.nvim")
 
     ];
@@ -125,8 +130,8 @@ in
       nodePackages.vscode-langservers-extracted
       nodePackages.live-server
       marksman
+      tailwindcss-language-server
       lua-language-server
-      ripgrep
       nixfmt
       nixd
     ];

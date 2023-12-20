@@ -31,7 +31,6 @@
     rofi-calc
     rofi-emoji
     rofi-rbw
-    rofi-pass
     rofi-power-menu
     rofi-pulse-select
   ];

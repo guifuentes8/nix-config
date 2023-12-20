@@ -47,6 +47,9 @@
     # presentation slides
     slides
 
+    # E-pub reader
+    epr
+
     # Weather
     girouette
 

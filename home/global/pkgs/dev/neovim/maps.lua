@@ -39,7 +39,5 @@ keymap.set('n', '<C-w><down>', '<C-w>-<')
 
 
 keymap.set('n', '<C-b>', '<Cmd>:NvimTreeToggle<CR>')
-
-
 keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})

@@ -8,9 +8,8 @@
 
   home.packages = with pkgs; [
     ueberzugpp
+    poppler_utils
     ffmpegthumbnailer
-    poppler
-    mupdf
     unar
     fd
     fzf-zsh

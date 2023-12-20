@@ -4,6 +4,7 @@
   programs.himalaya = {
     enable = true;
     package = pkgs.himalaya;
+    settings = { };
   };
 
 
@@ -37,7 +38,11 @@
           imap-notify-cmd = ''${pkgs.libnotify}/bin/notify-send "󰊫 <sender>" "<subject>" '';
           imap-notify-query = "UNSEEN";
           email-listing-page-size = 50;
+          email-listing-datetime-fmt = "%d-%m-%Y, %R";
+          email-listing-datetime-local-tz = true;
+
         };
+
       };
 
       folders = {
@@ -76,6 +81,8 @@
           imap-notify-cmd = ''${pkgs.libnotify}/bin/notify-send "󰊫 <sender>" "<subject>" '';
           imap-notify-query = "UNSEEN";
           email-listing-page-size = 50;
+          email-listing-datetime-fmt = "%d-%m-%Y, %R";
+          email-listing-datetime-local-tz = true;
 
         };
       };

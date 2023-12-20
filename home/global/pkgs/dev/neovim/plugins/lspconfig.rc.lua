@@ -56,6 +56,13 @@ nvim_lsp.cssls.setup {
 
 }
 
+
+nvim_lsp.tailwindcss.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+
+}
+
 -- JAVASCRIPT
 
 nvim_lsp.eslint.setup {
@@ -92,4 +99,3 @@ nvim_lsp.marksman.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
-
