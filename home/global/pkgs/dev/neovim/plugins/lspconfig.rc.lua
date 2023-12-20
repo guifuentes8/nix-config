@@ -56,6 +56,7 @@ nvim_lsp.cssls.setup {
 
 }
 
+-- TAILWINDCSS
 
 nvim_lsp.tailwindcss.setup {
   capabilities = capabilities,
@@ -76,7 +77,13 @@ nvim_lsp.eslint.setup {
 nvim_lsp.tsserver.setup {
   capabilities = capabilities,
   on_attach = on_attach,
+}
 
+-- GRAPHQL
+
+nvim_lsp.graphql.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
 }
 
 -- JSON
@@ -95,6 +102,7 @@ nvim_lsp.nixd.setup {
 }
 
 -- MARKDOWN
+
 nvim_lsp.marksman.setup {
   capabilities = capabilities,
   on_attach = on_attach,

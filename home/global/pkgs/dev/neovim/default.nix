@@ -129,6 +129,7 @@ in
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted
       nodePackages.live-server
+      nodePackages.graphql-language-service-cli
       marksman
       tailwindcss-language-server
       lua-language-server
