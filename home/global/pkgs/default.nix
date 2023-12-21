@@ -25,25 +25,28 @@
 
   };
 
-  home.packages = with pkgs; [
-    bitwarden
-    figma-linux
-    slack
-    telegram-desktop
-    onlyoffice-bin
-    gimp
 
-    # Usb media
-    etcher
-    ventoy-bin
+  home.packages = [
 
-    # System Dependencies
-    appimage-run
-    ffmpeg
-    pciutils
-    pulseaudio
-    unrar
-    unzip
+    unstable.beekeeper-studio
+    pkgs.bitwarden
+    pkgs.figma-linux
+    pkgs.slack
+    pkgs.telegram-desktop
+    pkgs.onlyoffice-bin
+    pkgs.gimp
+
+    pkgs.# Usb media
+    pkgs.etcher
+    pkgs.ventoy-bin
+
+    pkgs.# System Dependencies
+    pkgs.appimage-run
+    pkgs.ffmpeg
+    pkgs.pciutils
+    pkgs.pulseaudio
+    pkgs.unrar
+    pkgs.unzip
   ];
 
 }

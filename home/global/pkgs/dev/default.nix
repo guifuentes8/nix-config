@@ -68,7 +68,6 @@
 
     # Development programs --------------
     insomnia
-    dbeaver
 
     # Languages ------------------
 

@@ -5,8 +5,13 @@
     aliases = { };
     settings = { };
     quickmarks = {
-      shfoo = "https://www.shortcutfoo.com/";
-      home-manager = "https://github.com/nix-community/home-manager";
+      foo = "https://www.shortcutfoo.com/";
+      ude = "https://www.udemy.com/pt/";
+      ori = "https://www.origamid.com/conta/";
+      rock = "https://app.rocketseat.com.br/";
+      alu = "https://cursos.alura.com.br/onboarding/content";
+      imp = "https://app.impulso.team/";
+
     };
     searchEngines = {
       # Nix search

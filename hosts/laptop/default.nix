@@ -30,10 +30,10 @@
       ../global/interfaces/WM/hyprland.nix
 
       # Active services
-      ../global/services/backlight.nix
-      ../global/services/temperature.nix
-      ../global/services/kdeconnect.nix
-      ../global/services/gnomeKeyring.nix
+
+      ../global/services/common
+      ../global/services/extra/backlight.nix
+      ../global/services/extra/temperature.nix
 
 
       # User 
