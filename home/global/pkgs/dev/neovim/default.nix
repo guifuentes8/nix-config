@@ -112,6 +112,12 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/terminal.rc.lua);
       }
+      {
+        plugin = multicursors-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/multicursors.rc.lua);
+      }
+
 
       luasnip # Snippet engine
       cmp-buffer # buffer words

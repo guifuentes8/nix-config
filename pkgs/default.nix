@@ -3,6 +3,8 @@
 
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
+
+  dbgate = pkgs.callPackage ./dbgate { };
   shotcut = pkgs.callPackage ./shotcut { };
   kyoto-gtk-theme = pkgs.callPackage ./gtk-theme/kyoto-night { };
   sddm-theme = pkgs.callPackage ./sddm-theme { };

@@ -41,3 +41,6 @@ keymap.set('n', ';z', '<Cmd>:ZenMode<CR>')
 keymap.set('n', '<C-b>', '<Cmd>:NvimTreeToggle<CR>')
 keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
+
+keymap.set('n', ';w', '<Cmd>:MCstart<CR>')
+keymap.set('n', ';W', '<Cmd>:MCvisual<CR>')

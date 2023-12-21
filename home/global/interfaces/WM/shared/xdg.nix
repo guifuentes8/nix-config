@@ -281,7 +281,7 @@
       (lib.genAttrs code (_: [ "nvim.desktop" ]))
       // (lib.genAttrs images (_: [ "feh.desktop" ]))
       // (lib.genAttrs urls (_: [ "org.qutebrowser.qutebrowser.desktop" ]))
-      // (lib.genAttrs documents (_: [ "mupdf.desktop" ]))
+      // (lib.genAttrs documents (_: [ "onlyoffice-desktopeditors.desktop" ]))
       // (lib.genAttrs audioVideo (_: [ "mpv.desktop" ]));
   };
 }

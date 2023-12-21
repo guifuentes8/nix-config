@@ -1,4 +1,8 @@
 { pkgs, outputs, unstable, ... }:
+let
+  dbgate = outputs.packages.${pkgs.system}.dbgate;
+in
+
 {
 
   imports = [
@@ -28,7 +32,8 @@
 
   home.packages = [
 
-    unstable.beekeeper-studio
+    dbgate
+
     pkgs.bitwarden
     pkgs.figma-linux
     pkgs.slack
