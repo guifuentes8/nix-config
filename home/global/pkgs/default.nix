@@ -33,7 +33,7 @@ in
   home.packages = [
 
     dbgate
-
+    
     pkgs.bitwarden
     pkgs.figma-linux
     pkgs.slack
@@ -41,12 +41,12 @@ in
     pkgs.onlyoffice-bin
     pkgs.gimp
 
-    pkgs.# Usb media
     pkgs.etcher
     pkgs.ventoy-bin
 
-    pkgs.# System Dependencies
-    pkgs.appimage-run
+   
+
+   pkgs.appimage-run
     pkgs.ffmpeg
     pkgs.pciutils
     pkgs.pulseaudio

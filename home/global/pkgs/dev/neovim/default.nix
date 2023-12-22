@@ -102,22 +102,21 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/dashboard.rc.lua);
       }
-      {
-        plugin = (fromGitHub "55639cd95a9d382c98f99e7cc30b61cc00c4ae6d" "HEAD" "shrikecode/kyotonight.vim");
-        type = "lua";
-        config = builtins.readFile (./plugins/theme.rc.lua);
-      }
+      # {
+      #   plugin = (fromGitHub "55639cd95a9d382c98f99e7cc30b61cc00c4ae6d" "HEAD" "shrikecode/kyotonight.vim");
+      #   type = "lua";
+      #   config = builtins.readFile (./plugins/theme.rc.lua);
+      # }
       {
         plugin = nvterm;
         type = "lua";
         config = builtins.readFile (./plugins/terminal.rc.lua);
       }
       {
-        plugin = multicursors-nvim;
+        plugin = nvim-base16;
         type = "lua";
-        config = builtins.readFile (./plugins/multicursors.rc.lua);
+        config = builtins.readFile (./plugins/base16.rc.lua);
       }
-
 
       luasnip # Snippet engine
       cmp-buffer # buffer words

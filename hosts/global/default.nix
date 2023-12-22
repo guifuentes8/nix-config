@@ -85,7 +85,7 @@ in
 
   # Language
   i18n = {
-    defaultLocale = lib.mkDefault "pt_BR.UTF-8";
+    defaultLocale = lib.mkDefault "en_US.UTF-8";
     extraLocaleSettings = {
       LC_ADDRESS = lib.mkDefault "pt_BR.utf8";
       LC_IDENTIFICATION = lib.mkDefault "pt_BR.utf8";
