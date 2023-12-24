@@ -1,6 +1,6 @@
 { outputs, pkgs, nix-colors, config, ... }:
 let
-  my-config = outputs.packages.${pkgs.system}.my-config;
+  my_config = outputs.packages.${pkgs.system}.my_config;
 in
 {
   imports = [
@@ -16,7 +16,7 @@ in
       "sxhkd"
       "picom"
       "systemctl --user restart polybar.service"
-      "feh --bg-max ${my-config}/share/wallpapers/wallpaper.png --image-bg '#16161e'"
+      "feh --bg-max --randomize ${my_config}/share/wallpapers/5120/* --image-bg '#353b48'"
       "pkill dunst"
       "dunst"
       "xsetroot -cursor_name 'phinger-cursors'"

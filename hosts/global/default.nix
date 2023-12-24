@@ -1,7 +1,7 @@
 # This file (and the global directory) holds config that i use on all hosts
 { config, lib, inputs, outputs, pkgs, systemVersion, ... }:
 let
-  my-config = outputs.packages.${pkgs.system}.my-config;
+  my_config = outputs.packages.${pkgs.system}.my_config;
 in
 {
   imports = [
@@ -72,7 +72,7 @@ in
 
   # Fonts
   fonts.packages = with pkgs; [
-    my-config
+    my_config
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 

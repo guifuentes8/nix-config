@@ -1,6 +1,6 @@
 { inputs, config, pkgs, unstable, ... }:
 let
-  gtk-theme-name = "Kyoto";
+  gtk_theme_name = "Lavanda-Sea-Dark";
 in
 {
 
@@ -19,7 +19,7 @@ in
         exec-once = wl-clipboard-history -t
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-        exec-once = gsettings set org.gnome.desktop.interface gtk-theme ${gtk-theme-name}
+        exec-once = gsettings set org.gnome.desktop.interface gtk-theme ${gtk_theme_name}
         exec-once = gsettings set org.gnome.desktop.interface cursor-theme phinger-cursors
         exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
         exec-once = hyprctl setcursor phinger-cursors 32

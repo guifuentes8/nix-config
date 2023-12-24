@@ -1,8 +1,8 @@
 { pkgs, config, outputs, ... }:
 let
-  my-config = outputs.packages.${pkgs.system}.my-config;
+  my_config = outputs.packages.${pkgs.system}.my_config;
   alert = pkgs.writeShellScript "alert.sh" ''
-    ${pkgs.pipewire}/bin/pw-play --volume=0,04 ${my-config}/share/sounds/notification/notify.wav
+    ${pkgs.pipewire}/bin/pw-play --volume=0,04 ${my_config}/share/sounds/notification/notify.wav
   '';
 in
 {

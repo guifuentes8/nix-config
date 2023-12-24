@@ -1,7 +1,7 @@
 { pkgs, unstable, lib, outputs, ... }:
 let
-  gtk-theme-name = "Kyoto";
-  gtk-theme = outputs.packages.${pkgs.system}.kyoto-gtk-theme;
+  gtk_theme_name = "Lavanda-Sea-Dark";
+  gtk_theme = outputs.packages.${pkgs.system}.lavanda_gtk;
   # gtk-theme = pkgs.colloid-gtk-theme.override {
   #   tweaks = [ "black" ]; # You can also specify multiple tweaks here
   #   colorVariants = [ "dark" ]; # You can also specify multiple tweaks here
@@ -34,24 +34,24 @@ in
       package = lib.mkForce pkgs.tela-circle-icon-theme;
     };
     theme = {
-      name = lib.mkForce "${gtk-theme-name}";
-      package = lib.mkForce gtk-theme;
+      name = lib.mkForce "${gtk_theme_name}";
+      package = lib.mkForce gtk_theme;
     };
   };
- 
- qt = {
+
+  qt = {
     enable = true;
     platformTheme = "gtk";
   };
 
 
-  # home.file.".config/gtk-4.0/gtk.css".source = "${gtk-theme}/share/themes/${gtk-theme-name}/gtk-4.0/gtk-dark.css";
+  # home.file.".config/gtk-4.0/gtk.css".source = "${gtk-theme}/share/themes/${gtk_theme_name}/gtk-4.0/gtk-dark.css";
   # home.file.".config/gtk-4.0/assets" = {
   #   recursive = true;
-  #   source = "${gtk-theme}/share/themes/${gtk-theme-name}/gtk-4.0/assets";
+  #   source = "${gtk-theme}/share/themes/${gtk_theme_name}/gtk-4.0/assets";
   # };
   home.sessionVariables = {
-  GTK_THEME = "${gtk-theme-name}";
+    GTK_THEME = "${gtk_theme_name}";
   };
 }
 

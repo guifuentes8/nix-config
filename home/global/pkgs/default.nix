@@ -33,7 +33,6 @@ in
   home.packages = [
 
     dbgate
-    
     pkgs.bitwarden
     pkgs.figma-linux
     pkgs.slack
@@ -43,15 +42,21 @@ in
 
     pkgs.etcher
     pkgs.ventoy-bin
-
-   
-
-   pkgs.appimage-run
+    pkgs.caffeine-ng
+    pkgs.appimage-run
     pkgs.ffmpeg
     pkgs.pciutils
     pkgs.pulseaudio
     pkgs.unrar
     pkgs.unzip
+
+
+    pkgs.chafa
+    pkgs.imagemagick
+    pkgs.ffmpegthumbnailer
+    pkgs.poppler_utils
+    pkgs.gnome-epub-thumbnailer
+    pkgs.fontpreview
   ];
 
 }

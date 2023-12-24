@@ -17,6 +17,7 @@ in
   home.packages = with pkgs; [
 
     discord
+    flameshot
     lxappearance
     xdotool
     xclip

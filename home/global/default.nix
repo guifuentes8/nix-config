@@ -60,7 +60,6 @@ in
   news.display = "silent";
 
   ######## GLOBAL THEME ########
-  #colorScheme = nix-colors.lib.schemeFromYAML "kyoto" (builtins.readFile ./pkgs/themes/kyotonight.yaml);
   colorScheme = nix-colors.colorSchemes.gigavolt;
   xsession.numlock.enable = true;
   xresources.extraConfig = ''

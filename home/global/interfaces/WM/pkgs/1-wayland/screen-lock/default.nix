@@ -1,6 +1,6 @@
 { pkgs, outputs, config, ... }:
 let
-  my-config = outputs.packages.${pkgs.system}.my-config;
+  my_config = outputs.packages.${pkgs.system}.my_config;
 in
 {
 

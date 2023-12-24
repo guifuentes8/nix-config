@@ -6,8 +6,8 @@
 
   dbgate = pkgs.callPackage ./dbgate { };
   shotcut = pkgs.callPackage ./shotcut { };
-  kyoto-gtk-theme = pkgs.callPackage ./gtk-theme/kyoto-night { };
-  sddm-theme = pkgs.callPackage ./sddm-theme { };
+  lavanda_gtk = pkgs.callPackage ./gtk_theme/lavanda { };
+  sddm_theme = pkgs.callPackage ./sddm_theme { };
   ytermusic = pkgs.callPackage ./ytermusic { };
-  my-config = pkgs.callPackage ./my-config { };
+  my_config = pkgs.callPackage ./my_config { };
 }

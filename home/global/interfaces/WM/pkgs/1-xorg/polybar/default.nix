@@ -15,7 +15,7 @@
        height = 32pt
        radius = 0
 
-       background = #EE${config.colorScheme.colors.base00}
+       background = #CC${config.colorScheme.colors.base00}
        foreground = #${config.colorScheme.colors.base05} 
        line-size = 0pt
        border-size = 0pt
@@ -31,7 +31,7 @@
        enable-ipc = true
        tray-position = right
        wm-restack = bspwm
-       bottom = false
+       bottom = true
 
        font-0 = "JetBrainsMonoNL Nerd Font:size=11;1"
        font-1 = "JetBrainsMonoNL Nerd Font:size=16;2"
@@ -52,7 +52,7 @@
        label-occupied-font = 2
 
        label-active-foreground = #${config.colorScheme.colors.base08}
-       label-active-background = #EE${config.colorScheme.colors.base00}
+       label-active-background = #CC${config.colorScheme.colors.base00}
        label-active-underline= #${config.colorScheme.colors.base08}
        label-active-padding = 2
 

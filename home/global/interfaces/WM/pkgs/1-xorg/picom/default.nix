@@ -102,7 +102,7 @@
       blur-rule = [
         "class_g = 'Polybar'"
         "class_g = 'kitty'"
-        "class_g = 'Alacritty'"
+        "class_g = 'kitty'"
         "class_g = 'org.wezfurlong.wezterm'"
         "class_g = 'Rofi'"
         "class_g = 'Dunst'"

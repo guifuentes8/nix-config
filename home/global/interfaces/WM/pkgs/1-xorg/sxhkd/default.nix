@@ -8,7 +8,7 @@ let
   WRONG = "#${config.colorScheme.colors.base08}bb";
   INPUT = "#${config.colorScheme.colors.base0D}ee";
   VERIFYING = "#${config.colorScheme.colors.base0A}bb";
-  my-config = outputs.packages.${pkgs.system}.my-config;
+  my_config = outputs.packages.${pkgs.system}.my_config;
   screen-locker = pkgs.writeShellScript "script" ''
     ${pkgs.i3lock-color}/bin/i3lock  --beep --nofork --screen 1 --blur 5 --indicator --ignore-empty-password --clock --line-uses-ring --radius=300 --ring-width=18.0 --line-color=${BLANK} --inside-color=${BACKGROUND} --ring-color=${DEFAULT} --insidever-color=${CLEAR} --ringver-color=${VERIFYING} --insidewrong-color=${CLEAR} --ringwrong-color=${WRONG} --keyhl-color=${INPUT} --bshl-color=${WRONG} --separator-color=${DEFAULT} --verif-color=${TEXT} --wrong-color=${TEXT} --modif-color=${TEXT} --date-color=${TEXT} --time-color=${TEXT} --time-str="%H:%M:%S" --date-str="Hoje é %A, dia %d/%m/%Y." --verif-text="Analyzing..." --wrong-text="Password error!" --noinput-text="None!" --lock-text="Locking screen..." --lockfailed-text="Lock failed!"  --time-align=0 --date-align=0 --time-font="Dank Mono:style=Italic" --date-font="Dank Mono:style=Italic" --verif-font="Dank Mono:style=Italic" --wrong-font="Dank Mono:style=Italic" --time-size=48 --date-size=32 --verif-size=32 --wrong-size=32 --date-pos="tx:ty+50"
   '';
@@ -17,7 +17,7 @@ in
   services.sxhkd = {
     enable = true;
     keybindings = {
-      "super + Return" = "alacritty";
+      "super + Return" = "kitty";
       "super + @space" = "rofi -modes 'drun' -show-icons -show drun";
       # quit bspwm
       "super + Escape" = "bspc quit";
@@ -93,8 +93,8 @@ in
       "super + shift + p" = "xcolor -s clipboard";
       "super + shift + b" = "qutebrowser";
       "super + shift + m" = "kitty -e spotify_player";
-      "super + shift + e" = "alacritty -e nvim";
-      "super + shift + f" = "alacritty -e yazi";
+      "super + shift + e" = "kitty -e nvim";
+      "super + shift + f" = "kitty -e yazi";
       "Print" = "flameshot gui";
 
 

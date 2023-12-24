@@ -1,6 +1,6 @@
 { pkgs, outputs, ... }:
 let
-  my-config = outputs.packages.${pkgs.system}.my-config;
+  my_config = outputs.packages.${pkgs.system}.my_config;
 in
 {
   programs.wpaperd = {
@@ -10,7 +10,7 @@ in
   xdg.configFile."wpaperd/wallpaper.toml" = {
     text = ''
       [default]
-      path = "${my-config}/share/wallpapers/wallpaper.png"
+      path = "${my_config}/share/wallpapers/wallpaper.png"
     '';
   };
 }

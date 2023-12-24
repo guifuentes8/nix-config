@@ -18,21 +18,15 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
-      # theme = "af-magic";
+      theme = "miloshadzic";
     };
     initExtraFirst = ''
       unset -v SSH_ASKPASS
       krabby random 1-4 --padding-left 5 --no-title
     '';
     initExtra = ''
-       #compdef dstask
-       #autoload
-      _dstask() {
-        compadd -- $(dstask _completions "$words[@]")
-      }
-      compdef _dstask dstask
-
-      eval "$(starship init zsh)"
+      
+     # eval "$(starship init zsh)"
 
     '';
     shellAliases = {
