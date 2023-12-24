@@ -5,4 +5,4 @@ require('base16-colorscheme').with_config({
   ts = true,
 })
 
-vim.cmd('colorscheme base16-gigavolt')
+vim.cmd('colorscheme base16-everforest')

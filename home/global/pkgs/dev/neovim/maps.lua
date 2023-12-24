@@ -12,6 +12,10 @@ keymap.set('n', 'dw', 'vb"_d')
 
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
+keymap.set("n", "<C-down>", ":m .+1<CR>==")     -- move line up(n)
+keymap.set("n", "<C-up>", ":m .-2<CR>==")       -- move line down(n)
+keymap.set("v", "<C-down>", ":m '>+1<CR>gv=gv") -- move line up(v)
+keymap.set("v", "<C-up>", ":m '<-2<CR>gv=gv")   -- move line down(v)
 
 -- New tab
 keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
@@ -22,14 +26,10 @@ keymap.set('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 
 -- Move window
 keymap.set('n', '<Space>', '<C-w>w')
-keymap.set('', 's<left>', '<C-w>h')
-keymap.set('', 's<up>', '<C-w>k')
-keymap.set('', 's<down>', '<C-w>j')
-keymap.set('', 's<right>', '<C-w>l')
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sj', '<C-w>j')
-keymap.set('', 'sl', '<C-w>l')
+keymap.set('', '<A-left>', '<C-w>h')
+keymap.set('', '<A-up>', '<C-w>k')
+keymap.set('', '<A-down>', '<C-w>j')
+keymap.set('', '<A-right>', '<C-w>l')
 
 -- Resize window
 keymap.set('n', '<C-w><left>', '<C-w><')
@@ -38,7 +38,7 @@ keymap.set('n', '<C-w><up>', '<C-w>+<')
 keymap.set('n', '<C-w><down>', '<C-w>-<')
 
 keymap.set('n', ';z', '<Cmd>:ZenMode<CR>')
-keymap.set('n', '<C-b>', '<Cmd>:NvimTreeToggle<CR>')
+keymap.set('n', '<C-b>', '<Cmd>:Neotree toggle<CR>')
 keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
 

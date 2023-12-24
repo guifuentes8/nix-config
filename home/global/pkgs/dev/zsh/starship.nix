@@ -1,5 +1,5 @@
 {
   programs.starship = {
-    enable = false;
+    enable = true;
   };
 }

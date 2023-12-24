@@ -60,7 +60,8 @@ in
   news.display = "silent";
 
   ######## GLOBAL THEME ########
-  colorScheme = nix-colors.colorSchemes.gigavolt;
+  #colorScheme = nix-colors.colorSchemes.everforest;
+  colorScheme = nix-colors.lib.schemeFromYAML "everforest-dark" (builtins.readFile ./pkgs/themes/everforest-dark-hard.yaml);
   xsession.numlock.enable = true;
   xresources.extraConfig = ''
     Xcursor.theme: ${cursor-theme}

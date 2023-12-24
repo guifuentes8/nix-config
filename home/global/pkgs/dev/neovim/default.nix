@@ -31,7 +31,6 @@ in
       require 'maps'
     '';
     plugins = with unstable.vimPlugins; [
-      nord-nvim
       {
         plugin = lualine-nvim;
         type = "lua";
@@ -73,11 +72,6 @@ in
         config = builtins.readFile (./plugins/telescope.rc.lua);
       }
       {
-        plugin = bufferline-nvim;
-        type = "lua";
-        config = builtins.readFile (./plugins/bufferline.rc.lua);
-      }
-      {
         plugin = nvim-colorizer-lua;
         type = "lua";
         config = builtins.readFile (./plugins/colorizer.rc.lua);
@@ -91,11 +85,6 @@ in
         plugin = gitsigns-nvim;
         type = "lua";
         config = builtins.readFile (./plugins/gitsign.rc.lua);
-      }
-      {
-        plugin = nvim-tree-lua;
-        type = "lua";
-        config = builtins.readFile (./plugins/tree.rc.lua);
       }
       {
         plugin = dashboard-nvim;
@@ -112,11 +101,37 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/multicursors.rc.lua);
       }
+     # {
+     #   plugin = indent-blankline-nvim;
+     #   type = "lua";
+     #   config = builtins.readFile (./plugins/indent.rc.lua);
+     # }
       {
-        plugin = nvim-base16;
+        plugin = nvim-scrollbar;
         type = "lua";
-        config = builtins.readFile (./plugins/base16.rc.lua);
+        config = builtins.readFile (./plugins/scrollbar.rc.lua);
       }
+      {
+        plugin = neo-tree-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/neotree.rc.lua);
+      }
+
+
+      #  {
+      #    plugin = barbar-nvim;
+      #    type = "lua";
+      #    config = builtins.readFile (./plugins/barbar.rc.lua);
+      #  }
+
+
+      {
+        plugin = (fromGitHub "06a600c4fa49e7a4c44848d14c353ecbaab8eb9f" "HEAD" "neanias/everforest-nvim");
+        type = "lua";
+        config = builtins.readFile (./plugins/theme.rc.lua);
+      }
+
+
 
       cmp-buffer # buffer words
       cmp-nvim-lsp # dependencies
@@ -124,13 +139,12 @@ in
       nvim-web-devicons
       markdown-preview-nvim
       zen-mode-nvim
-      ultisnips
       nvim-spectre
       luasnip
       popup-nvim
+      image-nvim
 
       # Themes
-      nightfox-nvim
 
       # Telescope 
       telescope-project-nvim
@@ -139,6 +153,24 @@ in
       telescope-undo-nvim
 
       #(fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD" "xiyaowong/transparent.nvim")
+      # {
+      #   plugin = nvim-base16;
+      #   type = "lua";
+      #   config = builtins.readFile (./plugins/base16.rc.lua);
+      # }
+      #      {
+      #        plugin = nvim-tree-lua;
+      #        type = "lua";
+      #        config = builtins.readFile (./plugins/tree.rc.lua);
+      #      }
+      #
+      {
+        plugin = bufferline-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/bufferline.rc.lua);
+      }
+      #
+
     ];
 
     extraPackages = with pkgs; [
