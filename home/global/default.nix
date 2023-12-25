@@ -1,6 +1,6 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, ... }:
 let
-  cursor-theme = "phinger-cursors";
+  cursor-theme = "everforest-cursors";
   cursor-size = "32";
 in
 {

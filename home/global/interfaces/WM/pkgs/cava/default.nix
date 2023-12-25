@@ -20,20 +20,20 @@
     color = {
       gradient = 1;
       gradient_count = 8;
-      gradient_color_1 = "'#${config.colorScheme.colors.base03}'";
-      gradient_color_2 = "'#${config.colorScheme.colors.base0B}'";
-      gradient_color_3 = "'#${config.colorScheme.colors.base0D}'";
-      gradient_color_4 = "'#${config.colorScheme.colors.base09}'";
+      gradient_color_1 = "'#${config.colorScheme.colors.base08}'";
+      gradient_color_2 = "'#${config.colorScheme.colors.base08}'";
+      gradient_color_3 = "'#${config.colorScheme.colors.base0B}'";
+      gradient_color_4 = "'#${config.colorScheme.colors.base0D}'";
       gradient_color_5 = "'#${config.colorScheme.colors.base0A}'";
-      gradient_color_6 = "'#${config.colorScheme.colors.base0E}'";
-      gradient_color_7 = "'#${config.colorScheme.colors.base08}'";
-      gradient_color_8 = "'#${config.colorScheme.colors.base0F}'";
+      gradient_color_6 = "'#${config.colorScheme.colors.base0C}'";
+      gradient_color_7 = "'#${config.colorScheme.colors.base0E}'";
+      gradient_color_8 = "'#${config.colorScheme.colors.base09}'";
 
     };
     smoothing = {
       # noise_reduction = 0.77;
-      monstercat = 1;
-      waves = 0;
+      monstercat = 0;
+      waves = 1;
     };
   };
 }

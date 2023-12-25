@@ -15,7 +15,7 @@
        height = 32pt
        radius = 0
 
-       background = #CC${config.colorScheme.colors.base00}
+       background = #EE${config.colorScheme.colors.base00}
        foreground = #${config.colorScheme.colors.base05} 
        line-size = 0pt
        border-size = 0pt
@@ -51,9 +51,9 @@
        label-empty-font = 2
        label-occupied-font = 2
 
-       label-active-foreground = #${config.colorScheme.colors.base08}
-       label-active-background = #CC${config.colorScheme.colors.base00}
-       label-active-underline= #${config.colorScheme.colors.base08}
+       label-active-foreground = #${config.colorScheme.colors.base0B}
+       label-active-background = #EE${config.colorScheme.colors.base00}
+       label-active-underline= #${config.colorScheme.colors.base0B}
        label-active-padding = 2
 
        label-occupied = %name%
@@ -66,7 +66,7 @@
        label-urgent-padding = 2
 
        label-empty = %name%
-       label-empty-foreground = #${config.colorScheme.colors.base0B}
+       label-empty-foreground = #${config.colorScheme.colors.base05}
        label-empty-padding = 2
 
       ; ------- WINDOWS ---------
@@ -81,23 +81,23 @@
        type = internal/fs
        interval = 25
        mount-0 = /
-       label-mounted = %{F#${config.colorScheme.colors.base08}}%{F-} %{F#${config.colorScheme.colors.base08}}%percentage_used%%%{F-}
+       label-mounted = %{F#${config.colorScheme.colors.base05}}%{F-} %{F#${config.colorScheme.colors.base05}}%percentage_used%%%{F-}
        label-unmounted = %mountpoint% not mounted
        label-unmounted-foreground = #${config.colorScheme.colors.base0D}
 
       [module/memory]
        type = internal/memory
        interval = 2
-       format = %{F#${config.colorScheme.colors.base08}}󰟁 <label>%%{F-}
+       format = %{F#${config.colorScheme.colors.base05}}󰟁 <label>%%{F-}
        label = %percentage_used%
-       format-foreground = #${config.colorScheme.colors.base08}
+       format-foreground = #${config.colorScheme.colors.base05}
 
       [module/cpu]
        type = internal/cpu
        interval = 2
-       format = %{F#${config.colorScheme.colors.base08}} <label>%%{F-}
+       format = %{F#${config.colorScheme.colors.base05}} <label>%%{F-}
        label = %percentage%
-       format-foreground = #${config.colorScheme.colors.base08}
+       format-foreground = #${config.colorScheme.colors.base05}
 
       [module/temperature]
       type = internal/temperature

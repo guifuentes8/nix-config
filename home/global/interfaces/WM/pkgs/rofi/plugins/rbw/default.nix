@@ -7,18 +7,18 @@
 
   programs.rbw = {
     enable = true;
-    package = pkgs.rbw;
-    settings = {
-      email = "guifuentes8@gmail.com";
-      lock_timeout = 1000;
-      pinentry = "gnome3";
-      action = "type";
-      target = "username";
-      prompt = "Search: ";
-      selector = "rofi";
-      clipboarder = "xclip";
-      typer = "xdotool";
-    };
+     settings = {
+       email = "guifuentes8@gmail.com";
+       base_url = "https://api.bitwarden.com/";
+       lock_timeout = 1000;
+       pinentry = "gnome3";
+       action = "type";
+       target = "username";
+       prompt = "Search: ";
+       selector = "rofi";
+       clipboarder = "xclip";
+     };
+   # typer = "xdotool";
   };
 
 }

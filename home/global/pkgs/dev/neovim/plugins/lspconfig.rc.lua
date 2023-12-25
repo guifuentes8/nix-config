@@ -94,6 +94,13 @@ nvim_lsp.jsonls.setup {
 
 }
 
+-- PYTHON
+
+nvim_lsp.pyright.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+
+}
 -- NIX
 
 nvim_lsp.nixd.setup {

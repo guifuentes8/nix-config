@@ -14,7 +14,7 @@ in
     fg-col = mkLiteral "#${config.colorScheme.colors.base05}";
     fg-col2 = mkLiteral "#${config.colorScheme.colors.base0B}";
     grey = mkLiteral "#${config.colorScheme.colors.base04}";
-    font = "Dank Mono Italic 15";
+    font = "JetBrainsMonoNL Nerd Font 12";
   };
 
   "configuration" = {
@@ -38,7 +38,8 @@ in
   };
 
   "window" = {
-    height = mkLiteral "800px";
+    height = mkLiteral "350px";
+    width = mkLiteral "600px";
     border = mkLiteral "3px";
     border-color = mkLiteral "#${config.colorScheme.colors.base0E}";
     background-color = mkLiteral "@bg-col";

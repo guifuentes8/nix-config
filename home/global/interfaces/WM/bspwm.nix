@@ -19,7 +19,7 @@ in
       "feh --bg-max --randomize ${my_config}/share/wallpapers/5120/* --image-bg '#353b48'"
       "pkill dunst"
       "dunst"
-      "xsetroot -cursor_name 'phinger-cursors'"
+      "xsetroot -cursor_name 'everforest-cursors'"
     ];
     extraConfig = ''
       bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱  
@@ -31,10 +31,10 @@ in
       bspc config borderless_monocle   true
       bspc config gapless_monocle      true
 
-      bspc config normal_border_color '#${config.colorScheme.colors.base09}'
-      bspc config active_border_color '#${config.colorScheme.colors.base09}'
-      bspc config focused_border_color '#${config.colorScheme.colors.base08}'
-      bspc config presel_feedback_color '#${config.colorScheme.colors.base09}'
+      bspc config normal_border_color '#${config.colorScheme.colors.base05}'
+      bspc config active_border_color '#${config.colorScheme.colors.base05}'
+      bspc config focused_border_color '#${config.colorScheme.colors.base0B}'
+      bspc config presel_feedback_color '#${config.colorScheme.colors.base08}'
 
       bspc config focus_follows_pointer true
       bspc config pointer_follows_focus true

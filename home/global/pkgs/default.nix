@@ -13,12 +13,11 @@ in
     bat = {
       enable = true;
       extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-      config.theme = "tokyonight_night";
+      config.theme = "everforest_dark";
     };
-    chromium = {
-      enable = true;
-      package = pkgs.google-chrome;
-    };
+    firefox.enable = true;
+    chromium.enable = true;
+    chromium.package = pkgs.google-chrome;
     obs-studio.enable = true;
 
     # System Dependencies

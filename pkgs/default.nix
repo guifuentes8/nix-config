@@ -6,7 +6,8 @@
 
   dbgate = pkgs.callPackage ./dbgate { };
   shotcut = pkgs.callPackage ./shotcut { };
-  lavanda_gtk = pkgs.callPackage ./gtk_theme/lavanda { };
+  cursor = pkgs.callPackage ./cursors/everforest { };
+  gtk_theme = pkgs.callPackage ./gtk_theme/everforest { };
   sddm_theme = pkgs.callPackage ./sddm_theme { };
   ytermusic = pkgs.callPackage ./ytermusic { };
   my_config = pkgs.callPackage ./my_config { };

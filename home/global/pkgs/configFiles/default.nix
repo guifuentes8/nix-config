@@ -1,3 +1,3 @@
 {
-  xdg.configFile."bat/themes/tokyonight_night.tmTheme".source = ./tokyonight_night.tmTheme;
+  xdg.configFile."bat/themes/everforest_dark.tmTheme".source = ./everforest_dark.tmTheme;
 }

@@ -87,9 +87,9 @@ in
         config = builtins.readFile (./plugins/gitsign.rc.lua);
       }
       {
-        plugin = dashboard-nvim;
+        plugin = alpha-nvim;
         type = "lua";
-        config = builtins.readFile (./plugins/dashboard.rc.lua);
+        config = builtins.readFile (./plugins/alpha.rc.lua);
       }
       {
         plugin = nvterm;
@@ -101,11 +101,11 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/multicursors.rc.lua);
       }
-     # {
-     #   plugin = indent-blankline-nvim;
-     #   type = "lua";
-     #   config = builtins.readFile (./plugins/indent.rc.lua);
-     # }
+      {
+        plugin = indent-blankline-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/indent.rc.lua);
+      }
       {
         plugin = nvim-scrollbar;
         type = "lua";
@@ -118,19 +118,12 @@ in
       }
 
 
-      #  {
-      #    plugin = barbar-nvim;
-      #    type = "lua";
-      #    config = builtins.readFile (./plugins/barbar.rc.lua);
-      #  }
-
 
       {
         plugin = (fromGitHub "06a600c4fa49e7a4c44848d14c353ecbaab8eb9f" "HEAD" "neanias/everforest-nvim");
         type = "lua";
         config = builtins.readFile (./plugins/theme.rc.lua);
       }
-
 
 
       cmp-buffer # buffer words
@@ -164,6 +157,13 @@ in
       #        config = builtins.readFile (./plugins/tree.rc.lua);
       #      }
       #
+      #  {
+      #    plugin = barbar-nvim;
+      #    type = "lua";
+      #    config = builtins.readFile (./plugins/barbar.rc.lua);
+      #  }
+
+
       {
         plugin = bufferline-nvim;
         type = "lua";
@@ -179,6 +179,7 @@ in
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted
       nodePackages.graphql-language-service-cli
+      nodePackages.pyright
       marksman
       tailwindcss-language-server
       lua-language-server

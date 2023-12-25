@@ -1,8 +1,9 @@
 { pkgs, unstable, outputs, lib, ... }:
 let
   my_config = outputs.packages.${pkgs.system}.my_config;
-  gtk_theme_name = "Lavanda-Sea-Dark";
-  gtk_theme = outputs.packages.${pkgs.system}.lavanda_gtk;
+  gtk_theme_name = "Everforest-Dark-BL";
+  gtk_theme = outputs.packages.${pkgs.system}.gtk_theme;
+  cursor = outputs.packages.${pkgs.system}.cursor;
 in
 {
   services.xserver = {
@@ -23,8 +24,8 @@ in
               package = pkgs.tela-circle-icon-theme;
             };
             cursorTheme = {
-              name = "phinger-cursors";
-              package = pkgs.phinger-cursors;
+              name = "everforest-cursors";
+              package = cursor;
               size = 32;
             };
             # clock-format = null;
