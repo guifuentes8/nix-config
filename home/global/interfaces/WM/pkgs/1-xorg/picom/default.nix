@@ -7,7 +7,7 @@
     vSync = true;
     fade = true;
     fadeSteps = [ 0.04 0.04 ];
-    shadow = true;
+    shadow = false;
     shadowOffsets = [ 2 2 ];
     shadowOpacity = 0.2;
     shadowExclude = [

@@ -45,7 +45,7 @@
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
     variables = {
-      XCURSOR_THEME = "everforest-cursors";
+      XCURSOR_THEME = "Quintom_Ink";
       XCURSOR_SIZE = "32";
     };
     sessionVariables = rec {

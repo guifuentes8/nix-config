@@ -1,14 +1,13 @@
 { pkgs, unstable, lib, outputs, ... }:
 let
-  gtk_theme_name = "Everforest-Dark-BL";
+  gtk_theme_name = "Kyoto";
   gtk_theme = outputs.packages.${pkgs.system}.gtk_theme;
-  cursor = outputs.packages.${pkgs.system}.cursor;
-
-
+  #cursor = outputs.packages.${pkgs.system}.cursor;
+  cursor = pkgs.quintom-cursor-theme;
 in
 {
   home.pointerCursor = {
-    name = "everforest-cursors";
+    name = "Quintom_Ink";
     package = cursor;
     size = 32;
     gtk.enable = true;
@@ -22,7 +21,7 @@ in
       size = lib.mkForce 13;
     };
     cursorTheme = {
-      name = lib.mkForce "everforest-cursors";
+      name = lib.mkForce "Quintom_Ink";
       package = lib.mkForce cursor;
       size = lib.mkForce 32;
     };

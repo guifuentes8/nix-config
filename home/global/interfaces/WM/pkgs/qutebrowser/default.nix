@@ -43,8 +43,8 @@
       g = "https://www.google.com/search?hl=en&q={}";
     };
     extraConfig = ''
-    import everforest
-    everforest.set(c, 'dark', 'hard') # options are dark/light and hard/medium/soft
+      import everforest
+      everforest.set(c, 'dark', 'hard') # options are dark/light and hard/medium/soft
     '';
 
   };
