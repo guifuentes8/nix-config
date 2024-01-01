@@ -50,6 +50,7 @@ in {
     pkgs.poppler_utils
     pkgs.gnome-epub-thumbnailer
     pkgs.fontpreview
+    pkgs.wdisplays
   ];
 
 }
