@@ -11,14 +11,9 @@ let
       };
     };
 
+in {
 
-
-in
-{
-
-  programs.vim = {
-    enable = true;
-  };
+  programs.vim = { enable = true; };
 
   programs.neovim = {
     enable = true;
@@ -32,9 +27,7 @@ in
       require 'highlights'
       require 'maps'
     '';
-    extraConfig = ''
-     
-    '';
+    extraConfig = "\n";
     plugins = with unstable.vimPlugins; [
       {
         plugin = material-nvim;
@@ -126,7 +119,16 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/neotree.rc.lua);
       }
-
+      {
+        plugin = nvim-lint;
+        type = "lua";
+        config = builtins.readFile (./plugins/lint.rc.lua);
+      }
+      {
+        plugin = conform-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/conform.rc.lua);
+      }
 
       cmp-buffer # buffer words
       cmp-nvim-lsp # dependencies
@@ -145,7 +147,6 @@ in
       telescope-media-files-nvim
       telescope-undo-nvim
 
-
       #(fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD" "xiyaowong/transparent.nvim")
 
       {
@@ -153,7 +154,6 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/bufferline.rc.lua);
       }
-      #
 
     ];
 
@@ -169,12 +169,16 @@ in
       lua-language-server
       nixd
 
+      # Formaters
+      nixfmt
+      prettierd
+      eslint_d
+
       # Others
       nodePackages.live-server
     ];
 
   };
-
 
   home.sessionVariables.EDITOR = "nvim";
   xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;

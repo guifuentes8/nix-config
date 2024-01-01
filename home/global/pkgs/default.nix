@@ -1,13 +1,9 @@
 { pkgs, outputs, unstable, ... }:
-let
-  dbgate = outputs.packages.${pkgs.system}.dbgate;
-in
+let dbgate = outputs.packages.${pkgs.system}.dbgate;
 
-{
+in {
 
-  imports = [
-    ./configFiles
-  ];
+  imports = [ ./configFiles ];
 
   programs = {
     bat = {
@@ -28,7 +24,6 @@ in
 
   };
 
-
   home.packages = [
 
     dbgate
@@ -48,7 +43,6 @@ in
     pkgs.pulseaudio
     pkgs.unrar
     pkgs.unzip
-
 
     pkgs.chafa
     pkgs.imagemagick

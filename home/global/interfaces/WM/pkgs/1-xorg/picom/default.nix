@@ -14,7 +14,7 @@
       "class_g =  'Polybar'"
 
     ];
-    # opacityRules = [ ];
+    opacityRules = [ ];
 
 
     settings = {
@@ -96,8 +96,8 @@
       # Blur background of windows.
       blur-background = true;
       blur-method = "dual_kawase";
-      blur-radius = 2;
-      blur-strength = 4;
+      blur-radius = 6;
+      blur-strength = 8;
       blur-whitelist = true;
       blur-rule = [
         "class_g = 'Polybar'"

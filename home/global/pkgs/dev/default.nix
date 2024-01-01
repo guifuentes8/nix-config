@@ -1,9 +1,5 @@
-{ pkgs, ... }:
-{
-  imports = [
-    ./neovim
-    ./zsh
-  ];
+{ pkgs, ... }: {
+  imports = [ ./neovim ./zsh ];
 
   programs = {
 
@@ -76,9 +72,6 @@
 
     # JAVA
     maven
-
-    # NIX
-    nixpkgs-fmt
 
     # DATABASES -------------
     sqlite
