@@ -1,7 +1,7 @@
 { pkgs, unstable, outputs, lib, ... }:
 let
   my_config = outputs.packages.${pkgs.system}.my_config;
-  gtk_theme_name = "Kyoto";
+  gtk_theme_name = "Material-DeepOcean-BL";
   gtk_theme = outputs.packages.${pkgs.system}.gtk_theme;
   cursor = outputs.packages.${pkgs.system}.cursor;
 in

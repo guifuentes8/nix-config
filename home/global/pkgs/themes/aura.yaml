@@ -1,0 +1,38 @@
+#   scheme: "CarbonFox"
+# author: "https://github.com/baliestri/aura-theme"
+scheme: "aura"
+author: "baliestri"
+base00: "21202e"
+base01: "252525"
+base02: "29263c"
+base03: "4d4d4d"
+base04: "4d4d4d"
+base05: "edecee"
+base06: "edecee"
+base07: "edecee"
+base08: "ff6767"
+base09: "61ffca"
+base0A: "ffca85"
+base0B: "82e2ff"
+base0C: "a277ff"
+base0D: "61ffca"
+base0E: "f694ff"
+base0F: "ff6767"
+# scheme: "aura"
+# author: "baliestri"
+# base00: #21202e
+# base01: #252525
+# base02: #29263c
+# base03: #4d4d4d
+# base04: #4d4d4d
+# base05: #edecee
+# base06: #edecee
+# base07: #edecee
+# base08: #ff6767
+# base09: #61ffca
+# base0A: #ffca85
+# base0B: #82e2ff
+# base0C: #a277ff
+# base0D: #61ffca
+# base0E: #f694ff
+# base0F: #ff6767

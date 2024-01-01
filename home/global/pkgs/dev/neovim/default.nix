@@ -11,6 +11,8 @@ let
       };
     };
 
+
+
 in
 {
 
@@ -30,7 +32,15 @@ in
       require 'highlights'
       require 'maps'
     '';
+    extraConfig = ''
+     
+    '';
     plugins = with unstable.vimPlugins; [
+      {
+        plugin = material-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/theme.rc.lua);
+      }
       {
         plugin = lualine-nvim;
         type = "lua";
@@ -118,15 +128,6 @@ in
       }
 
 
-      {
-        #plugin = (fromGitHub "06a600c4fa49e7a4c44848d14c353ecbaab8eb9f" "HEAD" "neanias/everforest-nvim");
-        plugin = (fromGitHub "040aa565ef75bc1e2b566e3fc5d953ccaecd1447" "HEAD" "shrikecode/kyotonight.vim");
-        type = "lua";
-        config = builtins.readFile (./plugins/theme.rc.lua);
-      }
-
-
-
       cmp-buffer # buffer words
       cmp-nvim-lsp # dependencies
       plenary-nvim
@@ -138,8 +139,6 @@ in
       popup-nvim
       image-nvim
 
-      # Themes
-
       # Telescope 
       telescope-project-nvim
       telescope-github-nvim
@@ -148,18 +147,6 @@ in
 
 
       #(fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD" "xiyaowong/transparent.nvim")
-      #      {
-      #        plugin = nvim-tree-lua;
-      #        type = "lua";
-      #        config = builtins.readFile (./plugins/tree.rc.lua);
-      #      }
-      #
-      #  {
-      #    plugin = barbar-nvim;
-      #    type = "lua";
-      #    config = builtins.readFile (./plugins/barbar.rc.lua);
-      #  }
-
 
       {
         plugin = bufferline-nvim;

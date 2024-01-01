@@ -17,14 +17,14 @@
       package = pkgs.colloid-icon-theme;
     };
     theme = {
-      name = "Kyoto";
+      name = "Material-DeepOcean-BL";
       package = pkgs.colloid-gtk-theme;
     };
   };
 
   qt = {
     enable = true;
-    style.name = "Kyoto";
+    style.name = "Material-DeepOcean-BL";
     style.package = pkgs.colloid-kde;
     platformTheme = "kde";
   };

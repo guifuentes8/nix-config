@@ -60,8 +60,8 @@ in
   news.display = "silent";
 
   ######## GLOBAL THEME ########
-  #colorScheme = nix-colors.colorSchemes.everforest;
-  colorScheme = nix-colors.lib.schemeFromYAML "kyoto" (builtins.readFile ./pkgs/themes/kyoto.yaml);
+  #colorScheme = nix-colors.colorSchemes.material-palenight;
+  colorScheme = nix-colors.lib.schemeFromYAML "material_deep_ocean" (builtins.readFile ./pkgs/themes/material_deep_ocean.yaml);
   xsession.numlock.enable = true;
   xresources.extraConfig = ''
     Xcursor.theme: ${cursor-theme}

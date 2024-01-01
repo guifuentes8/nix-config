@@ -16,7 +16,7 @@ in
       "sxhkd"
       "picom"
       "systemctl --user restart polybar.service"
-      "feh --bg-max  ${my_config}/share/wallpapers/wallpaper.png --image-bg '#16161e'"
+      "feh --bg-max  ${my_config}/share/wallpapers/wallpaper.png --image-bg '#000000'"
       "pkill dunst"
       "dunst"
       "xsetroot -cursor_name 'Quintom_Ink'"
@@ -31,10 +31,10 @@ in
       bspc config borderless_monocle   true
       bspc config gapless_monocle      true
 
-      bspc config normal_border_color '#${config.colorScheme.colors.base0B}'
-      bspc config active_border_color '#${config.colorScheme.colors.base0B}'
-      bspc config focused_border_color '#${config.colorScheme.colors.base08}'
-      bspc config presel_feedback_color '#${config.colorScheme.colors.base09}'
+      bspc config normal_border_color '#${config.colorScheme.colors.base0C}'
+      bspc config active_border_color '#${config.colorScheme.colors.base0C}'
+      bspc config focused_border_color '#${config.colorScheme.colors.base0D}'
+      bspc config presel_feedback_color '#${config.colorScheme.colors.base0A}'
 
       bspc config focus_follows_pointer true
       bspc config pointer_follows_focus true

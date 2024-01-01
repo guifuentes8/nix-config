@@ -1,6 +1,6 @@
 { inputs, config, pkgs, unstable, ... }:
 let
-  gtk_theme_name = "Kyoto";
+  gtk_theme_name = "Material-DeepOcean-BL";
 in
 {
 

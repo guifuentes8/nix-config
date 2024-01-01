@@ -13,7 +13,7 @@ in
     bat = {
       enable = true;
       extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-      config.theme = "everforest_dark";
+      config.theme = "material_deep_ocean";
     };
     firefox.enable = true;
     chromium.enable = true;
