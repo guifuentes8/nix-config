@@ -19,6 +19,7 @@
       extraConfig = {
         http.postBuffer = "524288000";
         pull.rebase = false;
+        push.autoSetupRemote = true;
       };
       aliases = {
         a = "add .";
@@ -65,6 +66,8 @@
     insomnia
 
     # Languages ------------------
+
+    # GRAPHQL
 
     # JAVASCRIPT
     nodejs
