@@ -1,12 +1,5 @@
-{ unstable, pkgs, outputs, ... }:
-{
-  imports = [
-    ./foot
-    ./mpv
-    ./screen-lock
-    ./waybar
-    ./wpaperd
-  ];
+{ unstable, pkgs, outputs, ... }: {
+  imports = [ ./foot ./mpv ./screen-lock ./waybar ./wpaperd ];
 
   home.packages = with unstable; [
     grim
@@ -16,6 +9,8 @@
     swaylock-effects
     swayidle
     swayimg
+    wdisplays
+
     wl-clipboard
     wf-recorder
     wtype
