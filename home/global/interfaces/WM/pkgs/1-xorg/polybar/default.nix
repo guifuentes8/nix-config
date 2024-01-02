@@ -31,8 +31,7 @@
        enable-ipc = true
        tray-position = right
        wm-restack = bspwm
-       bottom = true
-
+       bottom = false
        font-0 = "JetBrainsMonoNL Nerd Font:size=11;1"
        font-1 = "JetBrainsMonoNL Nerd Font:size=16;2"
        label-active-font = 2
@@ -42,7 +41,7 @@
        modules-right = filesystem memory cpu temperature temperature2 wlan eth pulseaudio date
 
       ; ------- WORKSPACES ---------
-    
+
       [module/xworkspaces]
        type = internal/xworkspaces
 
@@ -57,12 +56,12 @@
        label-active-padding = 2
 
        label-occupied = %name%
-       label-occupied-foreground = #${config.colorScheme.colors.base0A}
+       label-occupied-foreground = #${config.colorScheme.colors.base09}
        label-occupied-padding = 2
 
        label-urgent = %name%
        label-urgent-background = #cc${config.colorScheme.colors.base00}
-       label-urgent-foreground = #${config.colorScheme.colors.base0A}
+       label-urgent-foreground = #${config.colorScheme.colors.base05}
        label-urgent-padding = 2
 
        label-empty = %name%
@@ -106,8 +105,8 @@
       hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
       base-temperature = 20
       warn-temperature = 70
-      format = %{F#${config.colorScheme.colors.base0A}}<label>%{F-}
-      format-warn = %{F#${config.colorScheme.colors.base0A}}<label>%{F-}
+      format = %{F#${config.colorScheme.colors.base05}}<label>%{F-}
+      format-warn = %{F#${config.colorScheme.colors.base08}}<label>%{F-}
       label =  %temperature-c%
       label-warn =  %temperature-c%
 
@@ -118,17 +117,17 @@
       hwmon-path = /sys/devices/platform/coretemp.1/hwmon/hwmon3/temp1_input
       base-temperature = 20
       warn-temperature = 70
-      format = %{F#${config.colorScheme.colors.base0A}}<label>%{F-}
-      format-warn = %{F#${config.colorScheme.colors.base0A}}<label>%{F-}
+      format = %{F#${config.colorScheme.colors.base05}}<label>%{F-}
+      format-warn = %{F#${config.colorScheme.colors.base08}}<label>%{F-}
       label =  %temperature-c%
       label-warn =  %temperature-c%
 
       [network-base]
        type = internal/network
        interval = 5
-       format-connected = %{F#${config.colorScheme.colors.base09}}󰇧%{F-} %{F#${config.colorScheme.colors.base09}}Connected%{F-}
+       format-connected = %{F#${config.colorScheme.colors.base05}}󰇧%{F-} %{F#${config.colorScheme.colors.base05}}Connected%{F-}
        format-disconnected = :/ Disconnected
-       label-disconnected = %{F#${config.colorScheme.colors.base0A}}%ifname%%{F#${config.colorScheme.colors.base0A}} disconnected%{F-}
+       label-disconnected = %{F#${config.colorScheme.colors.base08}}%ifname%%{F#${config.colorScheme.colors.base08}} disconnected%{F-}
 
       [module/wlan]
        inherit = network-base
@@ -138,29 +137,29 @@
       [module/eth]
        inherit = network-base
        interface-type = wired
-       label-connected = %{F#${config.colorScheme.colors.base09}}%ifname%%{F-}
+       label-connected = %{F#${config.colorScheme.colors.base05}}%ifname%%{F-}
 
        [module/pulseaudio]
        type = internal/pulseaudio
        format-volume = <ramp-volume> <label-volume>
        label-muted = 󰖁 muted
-       ramp-volume-foreground = #${config.colorScheme.colors.base0C}
-       label-volume-foreground = #${config.colorScheme.colors.base0C}
-       label-muted-foreground = #${config.colorScheme.colors.base0F}
+       ramp-volume-foreground = #${config.colorScheme.colors.base05}
+       label-volume-foreground = #${config.colorScheme.colors.base05}
+       label-muted-foreground = #${config.colorScheme.colors.base08}
        ramp-volume-0 = 
        ramp-volume-1 = 
        ramp-volume-2 = 
        click-right = pavucontrol
        scroll-up = notify-send Volume %percentage%%
        scroll-down = notify-send Volume %percentage%%
-   
+
        [module/date]
        type = internal/date
        interval = 1
        date = %H:%M:%S
        date-alt = Data: %d/%m/%Y Hora: %H:%M:%S
        label = %date% 
-       label-foreground = #${config.colorScheme.colors.base0E}
+       label-foreground = #${config.colorScheme.colors.base0B}
 
        [module/xkeyboard]
        type = internal/xkeyboard
@@ -182,8 +181,8 @@
         type = custom/script
         exec = ${pkgs.sptlrx}/bin/sptlrx pipe
         tail = true
-        label = %{F#${config.colorScheme.colors.base0D}} %output% 󰫢 󰍰
-      
+        label = %{F#${config.colorScheme.colors.base0B}} %output% 󰫢 󰍰
+
     '';
   };
 }

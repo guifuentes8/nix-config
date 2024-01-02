@@ -49,7 +49,7 @@
       HYPRLAND_LOG_WLR = "1";
 
       # Tell XWayland to use a cursor theme
-      XCURSOR_THEME = "Quintom_Ink";
+      XCURSOR_THEME = "Borealis-cursors";
 
       # Set a cursor size
       XCURSOR_SIZE = "24";

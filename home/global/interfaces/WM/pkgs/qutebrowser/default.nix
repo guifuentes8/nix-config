@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{ config, ... }: {
   # base00 = "#${config.colorScheme.colors.base00}"
   # base01 = "#${config.colorScheme.colors.base01}"
   # base02 = "#${config.colorScheme.colors.base02}"
@@ -17,7 +16,6 @@
   # base0E = "#${config.colorScheme.colors.base0E}"
   # base0F = "#${config.colorScheme.colors.base0F}"
 
-
   programs.qutebrowser = {
     enable = true;
     aliases = { };
@@ -34,19 +32,17 @@
     searchEngines = {
       # Nix search
       hm = "https://mipmip.github.io/home-manager-option-search/?query={}";
-      ns = "https://search.nixos.org/packages?channel=23.11&from=0&size=50&sort=relevance&type=packages&query={}";
-      nsu = "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={}";
+      ns =
+        "https://search.nixos.org/packages?channel=23.11&from=0&size=50&sort=relevance&type=packages&query={}";
+      nsu =
+        "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={}";
       nw = "https://nixos.wiki/index.php?search={}";
 
       # Other searchs
       aw = "https://wiki.archlinux.org/?search={}";
       g = "https://www.google.com/search?hl=en&q={}";
     };
-    extraConfig = ''
-      import everforest
-      everforest.set(c, 'dark', 'hard') # options are dark/light and hard/medium/soft
-    '';
+    extraConfig = "";
 
   };
-  xdg.configFile."qutebrowser/everforest.py".source = ./everforest.py;
 }

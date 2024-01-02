@@ -6,16 +6,14 @@
     backend = "glx";
     vSync = true;
     fade = true;
-    fadeSteps = [ 0.04 0.04 ];
-    shadow = false;
+    shadow = true;
     shadowOffsets = [ 2 2 ];
-    shadowOpacity = 0.2;
+    shadowOpacity = 0.4;
     shadowExclude = [
       "class_g =  'Polybar'"
 
     ];
     opacityRules = [ ];
-
 
     settings = {
 
@@ -42,10 +40,7 @@
       animation-for-unmap-window = "zoom";
 
       corner-radius = 14;
-      rounded-corners-exclude = [
-        "class_g = 'Polybar'"
-        "class_g = 'Rofi'"
-      ];
+      rounded-corners-exclude = [ "class_g = 'Polybar'" "class_g = 'Rofi'" ];
 
       # Explicitly declare the corner-radius of individual windows.
       #
@@ -61,7 +56,7 @@
       #   "class_g = 'bar'"
       # ];
 
-      shadow-radius = 7;
+      shadow-radius = 8;
       # shadow-exclude = [
       #   "class_g = 'change-me'",
       # ]
@@ -73,13 +68,13 @@
       # Increasing this value will result in faster fading in of windows. 
       # Decreasing makes the fading in of windows take longer. 
       # (This does not means the animations take longer, just the fading).
-      fade-in-step = 0.03;
+      fade-in-step = 3.0e-2;
 
       # Opacity change between steps while fading out. (0.01 - 1.0, defaults to 0.03)
       #
       # Increasing this value will result in faster fading out AND animating out of windows. 
       # Decreasing this makes fading and animating out take longer.
-      fade-out-step = 0.03;
+      fade-out-step = 3.0e-2;
 
       # The time between steps in fade step, in milliseconds. (> 0, defaults to 10)
       # fade-delta = 10
@@ -116,8 +111,16 @@
       # ];
 
       wintypes = {
-        utility = { shadow = false; focus = true; };
-        popup_menu = { shadow = false; focus = true; };
+        utility = {
+          shadow = false;
+          focus = true;
+        };
+        popup_menu = {
+          shadow = false;
+          focus = true;
+        };
+        dropdown_menu = { shadow = false; };
+        menu = { shadow = false; };
       };
 
     };

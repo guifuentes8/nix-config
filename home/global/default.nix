@@ -1,15 +1,10 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, ... }:
 let
-  cursor-theme = "Quintom_Ink";
+  cursor-theme = "Borealis-cursors";
   cursor-size = "32";
-in
-{
+in {
 
-  imports = [
-    nix-colors.homeManagerModules.default
-    ./pkgs
-    ./services.nix
-  ];
+  imports = [ nix-colors.homeManagerModules.default ./pkgs ./services.nix ];
 
   home = {
     username = "guifuentes8";
@@ -18,7 +13,8 @@ in
     sessionVariables = {
       XCURSOR_THEME = "${cursor-theme}";
       XCURSOR_SIZE = "${cursor-size}";
-      PASSWORD_STORE_DIR = lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
+      PASSWORD_STORE_DIR =
+        lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
   };
 
@@ -53,7 +49,6 @@ in
     };
   };
 
-
   fonts.fontconfig.enable = true;
   programs.home-manager.enable = true;
   systemd.user.startServices = true;
@@ -61,7 +56,8 @@ in
 
   ######## GLOBAL THEME ########
   #colorScheme = nix-colors.colorSchemes.material-palenight;
-  colorScheme = nix-colors.lib.schemeFromYAML "material_deep_ocean" (builtins.readFile ./pkgs/themes/material_deep_ocean.yaml);
+  colorScheme = nix-colors.lib.schemeFromYAML "poimandres"
+    (builtins.readFile ./pkgs/themes/poimandres.yaml);
   xsession.numlock.enable = true;
   xresources.extraConfig = ''
     Xcursor.theme: ${cursor-theme}
@@ -69,6 +65,4 @@ in
   '';
 
 }
-
-
 

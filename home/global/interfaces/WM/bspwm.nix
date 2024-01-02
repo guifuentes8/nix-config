@@ -1,12 +1,7 @@
 { outputs, pkgs, nix-colors, config, ... }:
-let
-  my_config = outputs.packages.${pkgs.system}.my_config;
-in
-{
-  imports = [
-    ./shared
-    ./pkgs/1-xorg
-  ];
+let my_config = outputs.packages.${pkgs.system}.my_config;
+in {
+  imports = [ ./shared ./pkgs/1-xorg ];
 
   xsession.windowManager.bspwm = {
     enable = true;
@@ -19,22 +14,22 @@ in
       "feh --bg-fill  ${my_config}/share/wallpapers/wallpaper.png --image-bg '#000000'"
       "pkill dunst"
       "dunst"
-      "xsetroot -cursor_name 'Quintom_Ink'"
+      "xsetroot -cursor_name 'Borealis-cursors'"
     ];
     extraConfig = ''
       bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱  
         
-      bspc config border_width         3
+      bspc config border_width         2
       bspc config window_gap           10
 
       bspc config split_ratio          0.50
       bspc config borderless_monocle   true
       bspc config gapless_monocle      true
 
-      bspc config normal_border_color '#${config.colorScheme.colors.base0C}'
-      bspc config active_border_color '#${config.colorScheme.colors.base0C}'
-      bspc config focused_border_color '#${config.colorScheme.colors.base0D}'
-      bspc config presel_feedback_color '#${config.colorScheme.colors.base0A}'
+      bspc config normal_border_color '#${config.colorScheme.colors.base02}'
+      bspc config active_border_color '#${config.colorScheme.colors.base02}'
+      bspc config focused_border_color '#${config.colorScheme.colors.base0B}'
+      bspc config presel_feedback_color '#${config.colorScheme.colors.base0D}'
 
       bspc config focus_follows_pointer true
       bspc config pointer_follows_focus true

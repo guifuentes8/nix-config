@@ -1,14 +1,9 @@
 { inputs, config, pkgs, unstable, ... }:
-let
-  gtk_theme_name = "Material-DeepOcean-BL";
-in
-{
+let gtk_theme_name = "Jasper-Dark";
+in {
 
-  imports = [
-    inputs.hyprland.homeManagerModules.default
-    ./shared
-    ./pkgs/1-wayland
-  ];
+  imports =
+    [ inputs.hyprland.homeManagerModules.default ./shared ./pkgs/1-wayland ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -20,10 +15,10 @@ in
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = gsettings set org.gnome.desktop.interface gtk-theme ${gtk_theme_name}
-        exec-once = gsettings set org.gnome.desktop.interface cursor-theme Quintom_Ink
+        exec-once = gsettings set org.gnome.desktop.interface cursor-theme Borealis-cursors
         exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
-        exec-once = hyprctl setcursor Quintom_Ink 32
-  
+        exec-once = hyprctl setcursor Borealis-cursors 32
+
       # MONITORS
 
         monitor=eDP-1, disable
@@ -33,9 +28,9 @@ in
         general {
             gaps_in = 4
             gaps_out = 8
-            border_size = 3
-            col.active_border = rgb(${config.colorScheme.colors.base0D})
-            col.inactive_border = rgb(${config.colorScheme.colors.base0B})
+            border_size = 2
+            col.active_border = rgb(${config.colorScheme.colors.base0B})
+            col.inactive_border = rgb(${config.colorScheme.colors.base02})
             no_border_on_floating = true
             layout = dwindle
         }
@@ -153,7 +148,7 @@ in
         bind = $mainMod SHIFT, 8, movetoworkspace, 8
         bind = $mainMod SHIFT, 9, movetoworkspace, 9
         bind = $mainMod SHIFT, 0, movetoworkspace, 10
- 
+
       # Scroll through existing workspaces with mainMod + scroll
         bind = $mainMod, mouse_down, workspace, e+1
         bind = $mainMod, mouse_up, workspace, e-1

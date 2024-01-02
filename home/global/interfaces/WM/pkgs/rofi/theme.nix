@@ -1,9 +1,7 @@
 { config, lib, ... }:
 
-let
-  inherit (config.lib.formats.rasi) mkLiteral;
-in
-{
+let inherit (config.lib.formats.rasi) mkLiteral;
+in {
   "*" = {
     border-radius = mkLiteral "8px";
     bg-col = mkLiteral "#${config.colorScheme.colors.base00}";
@@ -41,13 +39,11 @@ in
     height = mkLiteral "350px";
     width = mkLiteral "600px";
     border = mkLiteral "3px";
-    border-color = mkLiteral "#${config.colorScheme.colors.base0E}";
+    border-color = mkLiteral "#${config.colorScheme.colors.base0B}";
     background-color = mkLiteral "@bg-col";
   };
 
-  "mainbox" = {
-    background-color = mkLiteral "@bg-col";
-  };
+  "mainbox" = { background-color = mkLiteral "@bg-col"; };
 
   "inputbar" = {
     children = map mkLiteral [ "prompt" "entry" ];
@@ -91,18 +87,14 @@ in
     text-color = mkLiteral "@fg-col";
   };
 
-  "element-icon" = {
-    size = mkLiteral "25px";
-  };
+  "element-icon" = { size = mkLiteral "25px"; };
 
   "element selected" = {
     background-color = mkLiteral "@selected-col";
     text-color = mkLiteral " @fg-col2";
   };
 
-  "mode-switcher" = {
-    spacing = 0;
-  };
+  "mode-switcher" = { spacing = 0; };
 
   "button" = {
     padding = mkLiteral "10px";

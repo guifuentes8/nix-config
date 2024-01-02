@@ -1,11 +1,11 @@
 { pkgs, unstable, outputs, lib, ... }:
 let
   my_config = outputs.packages.${pkgs.system}.my_config;
-  gtk_theme_name = "Material-DeepOcean-BL";
+  gtk_theme_name = "Jasper-Dark";
   gtk_theme = outputs.packages.${pkgs.system}.gtk_theme;
-  cursor = outputs.packages.${pkgs.system}.cursor;
-in
-{
+  #cursor = outputs.packages.${pkgs.system}.cursor;
+  cursor = pkgs.borealis-cursors;
+in {
   services.xserver = {
     enable = true;
     displayManager = {
@@ -24,7 +24,7 @@ in
               package = pkgs.tela-circle-icon-theme;
             };
             cursorTheme = {
-              name = "Quintom_Ink";
+              name = "Borealis-cursors";
               package = cursor;
               size = 32;
             };
@@ -39,7 +39,7 @@ in
               "~a11y"
               "~power"
             ];
-            extraConfig = '''';
+            extraConfig = "";
           };
         };
       };

@@ -30,7 +30,7 @@ in {
     extraConfig = "\n";
     plugins = with unstable.vimPlugins; [
       {
-        plugin = material-nvim;
+        plugin = poimandres-nvim;
         type = "lua";
         config = builtins.readFile (./plugins/theme.rc.lua);
       }

@@ -9,7 +9,7 @@ in {
     bat = {
       enable = true;
       extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-      config.theme = "material_deep_ocean";
+      config.theme = "poimandres";
     };
     firefox.enable = true;
     chromium.enable = true;
