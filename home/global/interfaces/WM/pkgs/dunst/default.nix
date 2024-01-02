@@ -4,8 +4,7 @@ let
   alert = pkgs.writeShellScript "alert.sh" ''
     ${pkgs.pipewire}/bin/pw-play --volume=0,04 ${my_config}/share/sounds/notification/notify.wav
   '';
-in
-{
+in {
   services.dunst = {
     enable = true;
     package = pkgs.dunst;
@@ -27,10 +26,10 @@ in
         progress_bar_frame_width = 1;
         progress_bar_min_width = 150;
         progress_bar_max_width = 300;
-        offset = "10x50";
+        offset = "10x30";
         origin = "top-right";
         font = "JetBrainsMonoNL Nerd Font 12";
-        frame_width = 2;
+        frame_width = 3;
         frame_color = "#${config.colorScheme.colors.base08}";
         notification_limit = 0;
         separator_height = 2;
@@ -38,7 +37,6 @@ in
         horizontal_padding = 8;
         text_icon_padding = 0;
         sort = "yes";
-
 
       };
       urgency_low = {

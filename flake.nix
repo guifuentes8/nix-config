@@ -11,16 +11,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-colors.url = "github:misterio77/nix-colors";
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/hyprland";
 
     darkmatter-grub-theme = {
-      url = gitlab:VandalByte/darkmatter-grub-theme;
+      url = "gitlab:VandalByte/darkmatter-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, darkmatter-grub-theme, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors
+    , darkmatter-grub-theme, ... }@inputs:
 
     let
       inherit (self) outputs;
@@ -31,9 +32,8 @@
         system = "x86_64-linux";
         config.allowUnfree = true;
       };
-    in
 
-    {
+    in {
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
 
@@ -44,29 +44,27 @@
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable systemVersion; };
-          modules = [
-            darkmatter-grub-theme.nixosModule
-            ./hosts/desktop
-          ];
+          modules = [ darkmatter-grub-theme.nixosModule ./hosts/desktop ];
         };
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable systemVersion; };
-          modules = [
-            darkmatter-grub-theme.nixosModule
-            ./hosts/laptop
-          ];
+          modules = [ darkmatter-grub-theme.nixosModule ./hosts/laptop ];
         };
       };
 
       homeConfigurations = {
         "guifuentes8@desktop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit unstable systemVersion nix-colors inputs outputs; };
+          extraSpecialArgs = {
+            inherit unstable systemVersion nix-colors inputs outputs;
+          };
           modules = [ ./home/desktop.nix ];
         };
         "guifuentes8@laptop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit unstable systemVersion nix-colors inputs outputs; };
+          extraSpecialArgs = {
+            inherit unstable systemVersion nix-colors inputs outputs;
+          };
           modules = [ ./home/laptop.nix ];
         };
       };

@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{ config, ... }: {
   programs.foot = {
     enable = true;
     server.enable = true;
@@ -7,20 +6,19 @@
       main = {
         term = "xterm-256color";
         dpi-aware = "yes";
-        font = "Dank Mono:size=8:slant=italic";
+        font = "Dank Mono:size=11:slant=italic";
         pad = "8x8";
       };
-      mouse = {
-        hide-when-typing = "yes";
-      };
+      mouse = { hide-when-typing = "yes"; };
       cursor = {
-        color = "${config.colorScheme.colors.base06} ${config.colorScheme.colors.base0D}";
+        color =
+          "${config.colorScheme.colors.base05} ${config.colorScheme.colors.base0D}";
       };
       colors = {
         alpha = 0.8;
-        foreground = "${config.colorScheme.colors.base06}";
+        foreground = "${config.colorScheme.colors.base05}";
         background = "${config.colorScheme.colors.base00}";
-        selection-foreground = "${config.colorScheme.colors.base06}";
+        selection-foreground = "${config.colorScheme.colors.base05}";
         selection-background = "${config.colorScheme.colors.base01}";
         urls = "${config.colorScheme.colors.base0D}";
         regular0 = "${config.colorScheme.colors.base00}";

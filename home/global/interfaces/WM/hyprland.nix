@@ -20,9 +20,8 @@ in {
         exec-once = hyprctl setcursor Borealis-cursors 32
 
       # MONITORS
-
-        monitor=eDP-1, disable
-        monitor=HDMI-A-1, 1920x1080, 0x0, 1 
+        monitor = eDP-1, disable
+        monitor=HDMI-A-1,1920x1080@60,0x0,1
 
       # VARIABLES
         general {
@@ -38,18 +37,19 @@ in {
         decoration {
             blur {
               enabled = true
-              size = 3
-              passes = 2
+              size = 8
+              passes = 1
               new_optimizations = true
-              ignore_opacity = true
+              ignore_opacity = false
               xray = false
+              popups = false
             }
             rounding = 8
             drop_shadow = true
             shadow_range = 4
             shadow_render_power = 3
             shadow_ignore_window	= true
-            col.shadow = 0xee1a1a1a
+            col.shadow = 0xee000000
             shadow_offset = [2, 2]
             active_opacity = 1
             inactive_opacity = 1
@@ -68,8 +68,9 @@ in {
         }
 
         input {
-            kb_layout = br
-            kb_variant = abnt2
+            kb_layout = us
+            #kb_layout = br
+            #kb_variant = abnt2
             kb_model =
             kb_options =
             kb_rules =
@@ -198,14 +199,19 @@ in {
         bind = $mainMod, F5, exec,
         bind = $mainMod, F6, exec, 
         bind = $mainMod, F7, exec, 
-        bind = $mainMod, F8, exec, 
+        bind = $mainMod, F8, exec, rofi-systemd 
         bind = $mainMod, F9, exec, rofi-pulse-select sink
         bind = $mainMod, F10, exec, rofi-bluetooth 
         bind = $mainMod, F11, exec, rofi-rbw 
         bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
 
         # Pick color
-        bind = $mainMod, P, exec, ${unstable.hyprpicker}/bin/hyprpicker -a
+        bind = $mainMod SHIFT, p, exec, ${unstable.hyprpicker}/bin/hyprpicker -a
+        bind = $mainMod SHIFT, b, exec, qutebrowser;
+        bind = $mainMod SHIFT, m, exec, kitty -e spotify_player;
+        bind = $mainMod SHIFT, e, exec, kitty -e nvim;
+        bind = $mainMod SHIFT, f, exec, kitty -e yazi;
+
 
         windowrule = float,^(mpv)$
         windowrule = size 960 520,^(mpv)$

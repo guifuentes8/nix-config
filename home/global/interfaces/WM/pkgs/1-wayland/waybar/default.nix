@@ -1,5 +1,4 @@
-{ unstable, pkgs, config, ... }:
-{
+{ unstable, pkgs, config, ... }: {
   programs.waybar = {
     enable = true;
     package = unstable.waybar;
@@ -15,7 +14,7 @@
 
       window#waybar {
           background: #${config.colorScheme.colors.base00};
-          color: #${config.colorScheme.colors.base0D};
+          color: #${config.colorScheme.colors.base0B};
       }
 
       #cpu,
@@ -42,19 +41,19 @@
 
 
       #workspaces button {
-        color: #${config.colorScheme.colors.base0B};
+        color: #${config.colorScheme.colors.base05};
         padding: 0px 4px 0px 0px;
         margin: 0px 2px;
 
       }
 
       #workspaces button.active {
-        color: #${config.colorScheme.colors.base0D};
+        color: #${config.colorScheme.colors.base0B};
         background-color: #${config.colorScheme.colors.base00};
       }
 
       #workspaces button.focused {
-        color: #${config.colorScheme.colors.base0D};
+        color: #${config.colorScheme.colors.base0B};
         border-radius: 24px;
       }
 
@@ -68,45 +67,45 @@
         background-color: #${config.colorScheme.colors.base00};
         color: #${config.colorScheme.colors.base08};
       }
-      
+
       #disk {
-        color: #${config.colorScheme.colors.base08};
+        color: #${config.colorScheme.colors.base05};
       }
-      
+
       #cpu {
-        color: #${config.colorScheme.colors.base08};
+        color: #${config.colorScheme.colors.base05};
       }
-      
+
       #memory {
-        color: #${config.colorScheme.colors.base08};
+        color: #${config.colorScheme.colors.base05};
       }
-      
+
       #temperature {
-        color: #${config.colorScheme.colors.base0A};
+        color: #${config.colorScheme.colors.base05};
       }
-      
+
       #backlight {
-        color: #${config.colorScheme.colors.base06};
+        color: #${config.colorScheme.colors.base05};
       }
-      
+
       #keyboard-state {
         color: #${config.colorScheme.colors.base05};
       }
-      
+
       #network {
-        color: #${config.colorScheme.colors.base09};
+        color: #${config.colorScheme.colors.base05};
       }
-      
+
       #pulseaudio {
-        color: #${config.colorScheme.colors.base0C};
+        color: #${config.colorScheme.colors.base05};
       }
-      
+
       #battery {
-        color: #${config.colorScheme.colors.base0B};
+        color: #${config.colorScheme.colors.base05};
       }
 
       #clock {
-        color: #${config.colorScheme.colors.base0E};
+        color: #${config.colorScheme.colors.base0B};
         margin-right: 12px;
       }
 
@@ -119,206 +118,212 @@
       }
 
       #mpris {
-        color: #${config.colorScheme.colors.base0D};
+        color: #${config.colorScheme.colors.base0B};
         margin-left: 12px;
         margin-right: 12px;
       }
 
        #custom-media {
-        color: #${config.colorScheme.colors.base0D};
+        color: #${config.colorScheme.colors.base0B};
         margin-left: 12px;
         margin-right: 12px;
       }
 
       #cava {
-        color: #${config.colorScheme.colors.base0D};
+        color: #${config.colorScheme.colors.base0B};
       }
 
     '';
 
-    settings = [{
-      /* mode = "dock";
-      fixed-center = true; */
-      name = "top";
-      layer = "top";
-      position = "top";
-      exclusive = true;
-      height = 0;
-      modules-left = [ "custom/nix-logo" "wlr/workspaces" "hyprland/workspaces" ];
-      modules-center = [ ];
-      modules-right = [ "disk" "cpu" "memory" "temperature" "backlight" "network" "pulseaudio" "battery" "clock" "tray" ];
+    settings = [
+      {
+        /* mode = "dock";
+           fixed-center = true;
+        */
+        name = "top";
+        layer = "top";
+        position = "top";
+        exclusive = true;
+        height = 0;
+        modules-left =
+          [ "custom/nix-logo" "wlr/workspaces" "hyprland/workspaces" ];
+        modules-center = [ ];
+        modules-right = [
+          "disk"
+          "cpu"
+          "memory"
+          "temperature"
+          "backlight"
+          "network"
+          "pulseaudio"
+          "battery"
+          "clock"
+          "tray"
+        ];
 
+        "custom/media" = {
+          "interval" = 5;
+          "format" = "{icon}{}";
+          "return-type" = "json";
+          "format-icons" = {
+            "Playing" = " ";
+            "Paused" = " ";
+          };
+          "max-length" = 120;
+          "exec" = ''
+            playerctl -a metadata --format '{"text": "{{playerName}}: {{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
+          "on-click" = "playerctl play-pause";
+        };
+        "custom/nix-logo" = { "format" = "<span font='16'> </span>"; };
+        "wlr/workspaces" = {
+          "all-outputs" = true;
+          "active-only" = false;
+          "on-scroll-up" = "hyprctl dispatch workspace e+1";
+          "on-scroll-down" = "hyprctl dispatch workspace e-1";
+          "on-click" = "activate";
+          "format" = "{icon}";
+          "format-icons" = {
+            "1" = "<span font='16' rise='1000'>󰲡</span>";
+            "2" = "<span font='16' rise='1000'>󰲣</span>";
+            "3" = "<span font='16' rise='1000'>󰲥</span>";
+            "4" = "<span font='16' rise='1000'>󰲧</span>";
+            "5" = "<span font='16' rise='1000'>󰲩</span>";
+            "6" = "<span font='16' rise='1000'>󰲫</span>";
+            "7" = "<span font='16' rise='1000'>󰲭</span>";
+            "8" = "<span font='16' rise='1000'>󰲯</span>";
+            "9" = "<span font='16' rise='1000'>󰲱</span>";
+            "urgent" = "";
+            "active" = "<span font='16' rise='1000'></span>";
+            "default" = "";
+          };
+        };
 
-      "custom/media" = {
-        "interval" = 5;
-        "format" = "{icon}{}";
-        "return-type" = "json";
-        "format-icons" = {
-          "Playing" = " ";
-          "Paused" = " ";
+        "hyprland/workspaces" = {
+          "all-outputs" = true;
+          "active-only" = false;
+          "on-scroll-up" = "hyprctl dispatch workspace e+1";
+          "on-scroll-down" = "hyprctl dispatch workspace e-1";
+          "on-click" = "activate";
+          "format" = "{icon}";
+          "format-icons" = {
+            "1" = "<span font='15' rise='1000'>󰲡</span>";
+            "2" = "<span font='15' rise='1000'>󰲣</span>";
+            "3" = "<span font='15' rise='1000'>󰲥</span>";
+            "4" = "<span font='15' rise='1000'>󰲧</span>";
+            "5" = "<span font='15' rise='1000'>󰲩</span>";
+            "6" = "<span font='15' rise='1000'>󰲫</span>";
+            "7" = "<span font='15' rise='1000'>󰲭</span>";
+            "8" = "<span font='15' rise='1000'>󰲯</span>";
+            "9" = "<span font='15' rise='1000'>󰲱</span>";
+            "urgent" = "";
+            "active" = "<span font='15' rise='1000'></span>";
+            "default" = "";
+          };
         };
-        "max-length" = 120;
-        "exec" = "playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
-        "on-click" = "playerctl play-pause";
-      };
-      "custom/nix-logo" = {
-        "format" = "<span font='16'> </span>";
-      };
-      "wlr/workspaces" = {
-        "all-outputs" = true;
-        "active-only" = false;
-        "on-scroll-up" = "hyprctl dispatch workspace e+1";
-        "on-scroll-down" = "hyprctl dispatch workspace e-1";
-        "on-click" = "activate";
-        "format" = "{icon}";
-        "format-icons" = {
-          "1" = "<span font='16' rise='1000'>󰲡</span>";
-          "2" = "<span font='16' rise='1000'>󰲣</span>";
-          "3" = "<span font='16' rise='1000'>󰲥</span>";
-          "4" = "<span font='16' rise='1000'>󰲧</span>";
-          "5" = "<span font='16' rise='1000'>󰲩</span>";
-          "6" = "<span font='16' rise='1000'>󰲫</span>";
-          "7" = "<span font='16' rise='1000'>󰲭</span>";
-          "8" = "<span font='16' rise='1000'>󰲯</span>";
-          "9" = "<span font='16' rise='1000'>󰲱</span>";
-          "urgent" = "";
-          "active" = "<span font='16' rise='1000'></span>";
-          "default" = "";
+        "keyboard-state" = {
+          "numlock" = true;
+          "capslock" = true;
+          "format" = "{icon} {name} ";
+          "format-icons" = {
+            "locked" = "";
+            "unlocked" = "";
+          };
         };
-      };
+        "sway/mode" = { "format" = ''<span style="italic">{}</span>''; };
+        "sway/scratchpad" = {
+          "format" = "{icon} {count}";
+          "show-empty" = false;
+          "format-icons" = [ "" "" ];
+          "tooltip" = true;
+          "tooltip-format" = "{app}= {title}";
+        };
 
-      "hyprland/workspaces" = {
-        "all-outputs" = true;
-        "active-only" = false;
-        "on-scroll-up" = "hyprctl dispatch workspace e+1";
-        "on-scroll-down" = "hyprctl dispatch workspace e-1";
-        "on-click" = "activate";
-        "format" = "{icon}";
-        "format-icons" = {
-          "1" = "<span font='15' rise='1000'>󰲡</span>";
-          "2" = "<span font='15' rise='1000'>󰲣</span>";
-          "3" = "<span font='15' rise='1000'>󰲥</span>";
-          "4" = "<span font='15' rise='1000'>󰲧</span>";
-          "5" = "<span font='15' rise='1000'>󰲩</span>";
-          "6" = "<span font='15' rise='1000'>󰲫</span>";
-          "7" = "<span font='15' rise='1000'>󰲭</span>";
-          "8" = "<span font='15' rise='1000'>󰲯</span>";
-          "9" = "<span font='15' rise='1000'>󰲱</span>";
-          "urgent" = "";
-          "active" = "<span font='15' rise='1000'></span>";
-          "default" = "";
+        "idle_inhibitor" = {
+          "format" = "{icon}";
+          "format-icons" = {
+            "activated" = "";
+            "deactivated" = "";
+          };
         };
-      };
-      "keyboard-state" = {
-        "numlock" = true;
-        "capslock" = true;
-        "format" = "{icon} {name} ";
-        "format-icons" = {
-          "locked" = "";
-          "unlocked" = "";
+        "tray" = {
+          "icon-size" = 21;
+          "spacing" = 10;
         };
-      };
-      "sway/mode" = {
-        "format" = "<span style=\"italic\">{}</span>";
-      };
-      "sway/scratchpad" = {
-        "format" = "{icon} {count}";
-        "show-empty" = false;
-        "format-icons" = [ "" "" ];
-        "tooltip" = true;
-        "tooltip-format" = "{app}= {title}";
-      };
-
-      "idle_inhibitor" = {
-        "format" = "{icon}";
-        "format-icons" = {
-          "activated" = "";
-          "deactivated" = "";
+        "clock" = {
+          "timezone" = "America/Sao_Paulo";
+          "format" = "{:%H:%M:%S}";
+          interval = 1;
+          tooltip = true;
+          "tooltip-format" = "{:%d/%m/%Y}";
+          "format-alt" = "{%d-%m-%y}";
         };
-      };
-      "tray" = {
-        "icon-size" = 21;
-        "spacing" = 10;
-      };
-      "clock" = {
-        "timezone" = "America/Sao_Paulo";
-        "format" = "{:%H:%M:%S}";
-        interval = 1;
-        tooltip = true;
-        "tooltip-format" = "{:%d/%m/%Y}";
-        "format-alt" = "{%d-%m-%y}";
-      };
-      "disk" = {
-        "interval" = 30;
-        "format" = " {percentage_used}%";
-        "path" = "/";
-      };
-      "cpu" = {
-        interval = 2;
-        "format" = " {usage}%";
-        "tooltip" = true;
-      };
-      "memory" = {
-        "format" = "󰟁 {}%";
-      };
-      "temperature" = {
-        "thermal-zone" = 2;
-        "critical-threshold" = 80;
-        "format-critical" = "{icon} {temperatureC}°C";
-        "format" = "{icon} {temperatureC}°C";
-        "format-icons" = [ "" "" "" ];
-      };
-      "backlight" = {
-        "device" = "acpi_video1";
-        "format" = "{icon} {percent}%";
-        "format-icons" = [ "" "" "" "" "" "" "" "" "" ];
-      };
-      "battery" = {
-        "states" = {
-          "good" = 100;
-          "warning" = 30;
-          "critical" = 15;
+        "disk" = {
+          "interval" = 30;
+          "format" = " {percentage_used}%";
+          "path" = "/";
         };
-        "format" = "{icon} {capacity}%";
-        "format-charging" = " {capacity}%";
-        "format-plugged" = " {capacity}%";
-        "format-alt" = "{time} {icon}";
-        "format-good" = "{icon} {capacity}%";
-        "format-full" = "{icon} {capacity}%";
-        "format-icons" = [ " " " " " " " " " " ];
-      };
-      "battery#bat2" = {
-        "bat" = "BAT2";
-      };
-      "network" = {
-        # "interface" = "wlp2*";
-        "format-wifi" = "  {essid}";
-        "format-ethernet" = "󱂇 Connected";
-        "tooltip-format" = "{ifname} via {gwaddr}";
-        "format-linked" = "{ifname} (No IP)";
-        "format-disconnected" = ":/ Disconnected";
-        "format-alt" = "{Signal} - {signalStrength}%";
-      };
-      "pulseaudio" = {
-        "scroll-step" = 1;
-        "format" = "{icon} {volume}%";
-        "format-bluetooth" = "󰋋 {volume}%";
-        "format-bluetooth-muted" = "󰟎 {volume}%";
-        "format-muted" = "󰖁 {volume}%";
-        "format-source" = "";
-        "format-source-muted" = "";
-        "format-icons" = {
-          "headphone" = "󰋋";
-          "hands-free" = "";
-          "headset" = "";
-          "phone" = "";
-          "portable" = "";
-          "car" = "";
-          "default" = [ "" "" "" ];
+        "cpu" = {
+          interval = 2;
+          "format" = " {usage}%";
+          "tooltip" = true;
         };
-        "on-click" = "pavucontrol";
-      };
-    }
+        "memory" = { "format" = "󰟁 {}%"; };
+        "temperature" = {
+          "thermal-zone" = 2;
+          "critical-threshold" = 80;
+          "format-critical" = "{icon} {temperatureC}°C";
+          "format" = "{icon} {temperatureC}°C";
+          "format-icons" = [ "" "" "" ];
+        };
+        "backlight" = {
+          "device" = "acpi_video1";
+          "format" = "{icon} {percent}%";
+          "format-icons" = [ "" "" "" "" "" "" "" "" "" ];
+        };
+        "battery" = {
+          "states" = {
+            "good" = 100;
+            "warning" = 30;
+            "critical" = 15;
+          };
+          "format" = "{icon} {capacity}%";
+          "format-charging" = " {capacity}%";
+          "format-plugged" = " {capacity}%";
+          "format-alt" = "{time} {icon}";
+          "format-good" = "{icon} {capacity}%";
+          "format-full" = "{icon} {capacity}%";
+          "format-icons" = [ " " " " " " " " " " ];
+        };
+        "battery#bat2" = { "bat" = "BAT2"; };
+        "network" = {
+          # "interface" = "wlp2*";
+          "format-wifi" = "  {essid}";
+          "format-ethernet" = "󱂇 Connected";
+          "tooltip-format" = "{ifname} via {gwaddr}";
+          "format-linked" = "{ifname} (No IP)";
+          "format-disconnected" = ":/ Disconnected";
+          "format-alt" = "{Signal} - {signalStrength}%";
+        };
+        "pulseaudio" = {
+          "scroll-step" = 1;
+          "format" = "{icon} {volume}%";
+          "format-bluetooth" = "󰋋 {volume}%";
+          "format-bluetooth-muted" = "󰟎 {volume}%";
+          "format-muted" = "󰖁 {volume}%";
+          "format-source" = "";
+          "format-source-muted" = "";
+          "format-icons" = {
+            "headphone" = "󰋋";
+            "hands-free" = "";
+            "headset" = "";
+            "phone" = "";
+            "portable" = "";
+            "car" = "";
+            "default" = [ "" "" "" ];
+          };
+          "on-click" = "pavucontrol";
+        };
+      }
       {
         mode = "dock";
         fixed-center = true;
@@ -344,12 +349,10 @@
           "bar_delimiter" = 0;
           "monstercat" = true;
           "waves" = false;
-          "noise_reduction" = 0.30;
+          "noise_reduction" = 0.3;
           "input_delay" = 2;
           "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
-          "actions" = {
-            "on-click-right" = "mode";
-          };
+          "actions" = { "on-click-right" = "mode"; };
         };
         "mpris" = {
           "format" = "{player_icon} {length} | {title} - {artist}  ";
@@ -361,30 +364,24 @@
             "mpv" = "󰋋 ";
             "spotify_player" = " ";
           };
-          "status-icons" = {
-            "paused" = "⏸";
-          };
+          "status-icons" = { "paused" = "⏸"; };
           "ignored-players" = [ ];
         };
         "mpd" = {
-          "format" = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime=%M=%S}/{totalTime=%M=%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
+          "format" =
+            "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime=%M=%S}/{totalTime=%M=%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
           "format-disconnected" = "Disconnected ";
-          "format-stopped" = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
+          "format-stopped" =
+            "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
           "unknown-tag" = "N/A";
           "interval" = 2;
-          "consume-icons" = {
-            "on" = " ";
-          };
+          "consume-icons" = { "on" = " "; };
           "random-icons" = {
-            "off" = "<span color=\"#f53c3c\"></span> ";
+            "off" = ''<span color="#f53c3c"></span> '';
             "on" = " ";
           };
-          "repeat-icons" = {
-            "on" = " ";
-          };
-          "single-icons" = {
-            "on" = "1 ";
-          };
+          "repeat-icons" = { "on" = " "; };
+          "single-icons" = { "on" = "1 "; };
           "state-icons" = {
             "paused" = "";
             "playing" = "";
@@ -394,12 +391,14 @@
         };
         "custom/sptlrx" = {
           "interval" = 0.5;
-          "format" = " <span font-family=\"Dank Mono\" style=\"italic\">{}</span> 󰫢 󰍰";
+          "format" =
+            '' <span font-family="Dank Mono" style="italic">{}</span> 󰫢 󰍰'';
           "max-length" = 150;
           "exec" = "${pkgs.sptlrx}/bin/sptlrx pipe";
           "on-click" = "";
         };
-      }];
+      }
+    ];
 
   };
 

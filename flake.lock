@@ -86,13 +86,17 @@
         "lastModified": 1704209910,
         "narHash": "sha256-M+FImUWkeJUsdZd+X9cWNmhqJDguoKKmzX0kGMQIXnA=",
         "owner": "hyprwm",
+<<<<<<< Updated upstream
         "repo": "Hyprland",
+=======
+        "repo": "hyprland",
+>>>>>>> Stashed changes
         "rev": "4f26c4e1ebf868243dc628182c88d7feb52c8472",
         "type": "github"
       },
       "original": {
         "owner": "hyprwm",
-        "repo": "Hyprland",
+        "repo": "hyprland",
         "type": "github"
       }
     },
