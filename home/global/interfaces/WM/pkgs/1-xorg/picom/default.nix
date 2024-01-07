@@ -5,7 +5,6 @@
     extraArgs = [ ];
     backend = "glx";
     vSync = true;
-    fade = true;
     shadow = true;
     shadowOffsets = [ 2 2 ];
     shadowOpacity = 0.4;
