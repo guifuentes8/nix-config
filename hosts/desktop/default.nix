@@ -1,5 +1,4 @@
-{ config, pkgs, inputs, outputs, ... }:
-{
+{ config, pkgs, inputs, outputs, ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
@@ -10,7 +9,6 @@
     # Hardware Gpu (if exist)
     ../global/hardware/gpu/nvidia.nix
 
-
     # NIXOS CONFIG ------------------------------------
 
     # global NixOs Config 
@@ -18,6 +16,8 @@
 
     # Boot initial (grub or systemd)
     ../global/boot/grub.nix
+
+    ../global/hardware/logitech.nix
 
     # Login Manager
     ../global/login/lightdm.nix
@@ -27,6 +27,7 @@
 
     # Active services
     ../global/services/common
+    ../global/services/extra/droidcam.nix
 
     # User 
     ../global/users/guifuentes8.nix
@@ -36,16 +37,17 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # Basic config
-  console.keyMap = "br-abnt2";
+  #console.keyMap = "br-abnt2";
+  console.keyMap = "us";
+  services.xserver = { layout = "us"; };
 
   # Network config (nmtui)
   networking.hostName = "desktop";
 
-
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
     variables = {
-      XCURSOR_THEME = "Borealis-cursors";
+      XCURSOR_THEME = "everforest-cursors";
       XCURSOR_SIZE = "32";
     };
     sessionVariables = rec {
@@ -53,9 +55,7 @@
       XDG_CONFIG_HOME = "\${HOME}/.config";
       XDG_BIN_HOME = "\${HOME}/.local/bin";
       XDG_DATA_HOME = "\${HOME}/.local/share";
-      PATH = [
-        "\${XDG_BIN_HOME}"
-      ];
+      PATH = [ "\${XDG_BIN_HOME}" ];
       TZ = "America/Sao_Paulo";
     };
   };

@@ -1,5 +1,5 @@
 { inputs, config, pkgs, unstable, ... }:
-let gtk_theme_name = "Jasper-Dark";
+let gtk_theme_name = "Everforest-Dark-BL";
 in {
 
   imports =
@@ -15,9 +15,9 @@ in {
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = gsettings set org.gnome.desktop.interface gtk-theme ${gtk_theme_name}
-        exec-once = gsettings set org.gnome.desktop.interface cursor-theme Borealis-cursors
+        exec-once = gsettings set org.gnome.desktop.interface cursor-theme everforest-cursors
         exec-once = gsettings set org.gnome.desktop.interface cursor-size 32
-        exec-once = hyprctl setcursor Borealis-cursors 32
+        exec-once = hyprctl setcursor everforest-cursors 32
 
       # MONITORS
         monitor = eDP-1, disable

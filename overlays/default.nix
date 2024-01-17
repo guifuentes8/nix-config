@@ -1,16 +1,15 @@
 { outputs, inputs, ... }:
 {
-  modifications = final: prev: {
-    rbw = prev.rbw.overrideAttrs (old: rec {
-      version = "git";
-      pname = "rbw";
-      src = prev.fetchFromGitHub {
-        owner = "doy";
-        repo = pname;
-        rev = "40a33eca2837a0a11bedab7b1eb4a8b830058807";
-        hash = "sha256-8vFlMIGT1Uq7co1vlOhhx0UqzeaqeoZPkGNCgxUIkpA=";
-
-      };
-    });
-  };
+  #modifications = final: prev: {
+  #  rbw = prev.rbw.overrideAttrs (old: rec {
+  #    version = "main";
+  #    pname = "rbw";
+  #    src = prev.fetchFromGitHub {
+  #      owner = "doy";
+  #      repo = pname;
+  #      rev = "77eeb5b8bd9054529d0f8d551942b27640d22a1e";
+  #      hash = "sha256-NjMH99rmJYbCxDdc7e0iOFoslSrIuwIBxuHxADp0Ks4=";
+  #    };
+  #  });
+  #};
 }

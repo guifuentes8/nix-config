@@ -14,7 +14,7 @@ in {
       "feh --bg-fill  ${my_config}/share/wallpapers/wallpaper.png --image-bg '#000000'"
       "pkill dunst"
       "dunst"
-      "xsetroot -cursor_name 'Borealis-cursors'"
+      "xsetroot -cursor_name 'everforest-cursors'"
     ];
     extraConfig = ''
       bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱  

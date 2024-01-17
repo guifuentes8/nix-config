@@ -20,6 +20,7 @@
         http.postBuffer = "524288000";
         pull.rebase = false;
         push.autoSetupRemote = true;
+        init.defaultBranch = "main";
       };
       aliases = {
         a = "add .";
@@ -37,7 +38,7 @@
     # Languages ------------
 
     # GO
-    go.enable = false;
+    go.enable = true;
 
     # JAVA
     java.enable = false;

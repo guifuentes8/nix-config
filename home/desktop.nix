@@ -8,7 +8,7 @@
 
     # Optional pkgs
     ./global/pkgs/dev
-    ./global/pkgs/opt/davinci-resolve
+ #   ./global/pkgs/opt/davinci-resolve
 
     # Environment (DE)
     #1 ./interfaces/DE/kde.nix

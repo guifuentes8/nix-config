@@ -1,14 +1,11 @@
-{ unstable, pkgs, config, ... }:
-{
+{ unstable, pkgs, config, ... }: {
 
   imports = [
     ./starship.nix
-    ./syntax-highlight.nix
+    #    ./syntax-highlight.nix
   ];
 
-  home.packages = with unstable; [
-    krabby
-  ];
+  home.packages = with unstable; [ krabby ];
 
   programs.zsh = {
     enable = true;
@@ -25,16 +22,20 @@
       krabby random 1-4 --padding-left 5 --no-title
     '';
     initExtra = ''
-      
       eval "$(starship init zsh)"
+
 
     '';
     shellAliases = {
       # NixOs shortcuts
-      hd = "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@desktop";
-      sd = "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#desktop";
-      hl = "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@laptop";
-      sl = "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#laptop";
+      hd =
+        "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@desktop";
+      sd =
+        "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#desktop";
+      hl =
+        "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@laptop";
+      sl =
+        "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#laptop";
       gc = "nix-collect-garbage -d && nix-store --gc";
       sgc = "sudo nix-collect-garbage -d && nix-store --gc";
 

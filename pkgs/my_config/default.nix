@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     owner = "guifuentes8";
     repo = pname;
     rev = "main";
-    hash = "sha256-g51iLkMBV6+y1t2LSeSX5bf3F5TqgHv3yCaMJvX9wgY=";
+    hash = "sha256-YgISWTw1vyrGYJH+nYYwYkK5xz53TmZK778/tIA4PbA=";
   };
 
   installPhase = ''

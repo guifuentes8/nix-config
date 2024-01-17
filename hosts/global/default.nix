@@ -1,12 +1,8 @@
 # This file (and the global directory) holds config that i use on all hosts
 { config, lib, inputs, outputs, pkgs, systemVersion, ... }:
-let
-  my_config = outputs.packages.${pkgs.system}.my_config;
-in
-{
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-  ];
+let my_config = outputs.packages.${pkgs.system}.my_config;
+in {
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   # System configs
   nix = {
@@ -97,20 +93,13 @@ in
       LC_TELEPHONE = lib.mkDefault "pt_BR.utf8";
       LC_TIME = lib.mkDefault "pt_BR.UTF-8";
     };
-    supportedLocales = lib.mkDefault [
-      "en_US.UTF-8/UTF-8"
-      "pt_BR.UTF-8/UTF-8"
-    ];
+    supportedLocales =
+      lib.mkDefault [ "en_US.UTF-8/UTF-8" "pt_BR.UTF-8/UTF-8" ];
   };
-  services.xserver = {
-    layout = "br";
-  };
-
   # Others
   qt = {
     enable = true;
     platformTheme = "gtk2";
   };
-
 
 }

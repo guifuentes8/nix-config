@@ -1,12 +1,11 @@
 { pkgs, unstable, lib, outputs, ... }:
 let
-  gtk_theme_name = "Jasper-Dark";
+  gtk_theme_name = "Everforest-Dark-BL";
   gtk_theme = outputs.packages.${pkgs.system}.gtk_theme;
-  #cursor = outputs.packages.${pkgs.system}.cursor;
-  cursor = pkgs.borealis-cursors;
+  cursor = outputs.packages.${pkgs.system}.cursor;
 in {
   home.pointerCursor = {
-    name = "Borealis-cursors";
+    name = "everforest-cursors";
     package = cursor;
     size = 32;
     gtk.enable = true;
@@ -20,7 +19,7 @@ in {
       size = lib.mkForce 13;
     };
     cursorTheme = {
-      name = lib.mkForce "Borealis-cursors";
+      name = lib.mkForce "everforest-cursors";
       package = lib.mkForce cursor;
       size = lib.mkForce 32;
     };

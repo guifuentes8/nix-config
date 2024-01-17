@@ -18,7 +18,7 @@ ts.setup {
   sync_install = false,
   ensure_installed = '',
   parser_install_dir = '',
-  ignore_install = { "javascript" },
+  ignore_install = { "" },
 
 }
 

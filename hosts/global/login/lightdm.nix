@@ -1,10 +1,9 @@
 { pkgs, unstable, outputs, lib, ... }:
 let
   my_config = outputs.packages.${pkgs.system}.my_config;
-  gtk_theme_name = "Jasper-Dark";
+  gtk_theme_name = "Everforest-Dark-BL";
   gtk_theme = outputs.packages.${pkgs.system}.gtk_theme;
-  #cursor = outputs.packages.${pkgs.system}.cursor;
-  cursor = pkgs.borealis-cursors;
+  cursor = outputs.packages.${pkgs.system}.cursor;
 in {
   services.xserver = {
     enable = true;
@@ -24,7 +23,7 @@ in {
               package = pkgs.tela-circle-icon-theme;
             };
             cursorTheme = {
-              name = "Borealis-cursors";
+              name = "everforest-cursors";
               package = cursor;
               size = 32;
             };

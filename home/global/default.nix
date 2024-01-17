@@ -1,6 +1,6 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, ... }:
 let
-  cursor-theme = "Borealis-cursors";
+  cursor-theme = "everforest-cursors";
   cursor-size = "32";
 in {
 
@@ -56,8 +56,8 @@ in {
 
   ######## GLOBAL THEME ########
   #colorScheme = nix-colors.colorSchemes.material-palenight;
-  colorScheme = nix-colors.lib.schemeFromYAML "poimandres"
-    (builtins.readFile ./pkgs/themes/poimandres.yaml);
+  colorScheme = nix-colors.lib.schemeFromYAML "everforest_dark"
+    (builtins.readFile ./pkgs/themes/everforest_dark.yaml);
   xsession.numlock.enable = true;
   xresources.extraConfig = ''
     Xcursor.theme: ${cursor-theme}

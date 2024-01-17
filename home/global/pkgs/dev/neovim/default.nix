@@ -28,9 +28,10 @@ in {
       require 'maps'
     '';
     extraConfig = "\n";
-    plugins = with unstable.vimPlugins; [
+    plugins = with pkgs.vimPlugins; [
       {
-        plugin = poimandres-nvim;
+        plugin = (fromGitHub "06a600c4fa49e7a4c44848d14c353ecbaab8eb9f" "HEAD"
+          "neanias/everforest-nvim");
         type = "lua";
         config = builtins.readFile (./plugins/theme.rc.lua);
       }
@@ -129,7 +130,11 @@ in {
         type = "lua";
         config = builtins.readFile (./plugins/conform.rc.lua);
       }
-
+      {
+        plugin = bufferline-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/bufferline.rc.lua);
+      }
       cmp-buffer # buffer words
       cmp-nvim-lsp # dependencies
       plenary-nvim
@@ -148,12 +153,6 @@ in {
       telescope-undo-nvim
 
       #(fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD" "xiyaowong/transparent.nvim")
-
-      {
-        plugin = bufferline-nvim;
-        type = "lua";
-        config = builtins.readFile (./plugins/bufferline.rc.lua);
-      }
 
     ];
 

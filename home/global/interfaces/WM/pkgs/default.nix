@@ -1,12 +1,10 @@
 { inputs, outputs, lib, config, pkgs, unstable, ... }: {
-
   imports = [
     ./alacritty
     ./bottom
     ./cava
     ./dunst
     ./feh
-    ./gcalcli
     ./kitty
     ./himalaya
     ./ncmpcpp
@@ -18,6 +16,7 @@
     ./sptlrx
     ./spotify-player
     ./translate-shell
+    ./taskwarrior
     ./tuifeed
     ./watson
     ./yazi
@@ -41,14 +40,11 @@
     # chatgpt
     tgpt
 
-    # Google drive
-    gdrive3
-
-    # Notes
-    nb
-
     # presentation slides
     slides
+
+    # Notebook
+    nb
 
     # E-pub reader
     epr
