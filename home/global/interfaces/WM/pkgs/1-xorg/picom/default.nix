@@ -90,12 +90,12 @@
       # Blur background of windows.
       blur-background = true;
       blur-method = "dual_kawase";
-      blur-radius = 6;
-      blur-strength = 8;
+      blur-radius = 4;
+      blur-strength = 6;
       blur-whitelist = true;
       blur-rule = [
         "class_g = 'Polybar'"
-        "class_g = 'kitty'"
+        "class_g = 'Alacritty'"
         "class_g = 'kitty'"
         "class_g = 'org.wezfurlong.wezterm'"
         "class_g = 'Rofi'"

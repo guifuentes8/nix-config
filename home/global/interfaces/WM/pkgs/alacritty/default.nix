@@ -27,7 +27,10 @@
       };
       window = {
         opacity = 0.9;
-        padding = { x = 10; y = 10; };
+        padding = {
+          x = 10;
+          y = 10;
+        };
       };
 
       colors = {
@@ -43,10 +46,6 @@
         cursor = {
           text = "#${config.colorScheme.colors.base00}"; # base
           cursor = "#${config.colorScheme.colors.base0D}"; # rosewater
-          vi_mode_cursor = {
-            text = "#${config.colorScheme.colors.base00}"; # base
-            cursor = "#${config.colorScheme.colors.base0D}"; # lavender
-          };
         };
 
         # Search colors
@@ -54,14 +53,6 @@
           matches = {
             foreground = "#${config.colorScheme.colors.base00}"; # base
             background = "#${config.colorScheme.colors.base04}"; # subtext0
-            focused_match = {
-              foreground = "#${config.colorScheme.colors.base00}"; # base
-              background = "#${config.colorScheme.colors.base0B}"; # green
-            };
-            footer_bar = {
-              foreground = "#${config.colorScheme.colors.base00}"; # base
-              background = "#${config.colorScheme.colors.base04}"; # subtext0
-            };
           };
         };
 
