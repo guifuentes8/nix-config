@@ -17,14 +17,14 @@
       package = pkgs.colloid-icon-theme;
     };
     theme = {
-      name = "Everforest-Dark-BL";
+      name = "Material-DeepOcean-BL";
       package = pkgs.colloid-gtk-theme;
     };
   };
 
   qt = {
     enable = true;
-    style.name = "Everforest-Dark-BL";
+    style.name = "Material-DeepOcean-BL";
     style.package = pkgs.colloid-kde;
     platformTheme = "kde";
   };

@@ -1,65 +1,75 @@
-require("everforest").setup({
-  ---Controls the "hardness" of the background. Options are "soft", "medium" or "hard".
-  ---Default is "medium".
-  background = "hard",
-  ---How much of the background should be transparent. 2 will have more UI
-  ---components be transparent (e.g. status line background)
-  transparent_background_level = 0,
-  ---Whether italics should be used for keywords and more.
-  italics = true,
-  ---Disable italic fonts for comments. Comments are in italics by default, set
-  ---this to `true` to make them _not_ italic!
-  disable_italic_comments = false,
-  ---By default, the colour of the sign column background is the same as the as normal text
-  ---background, but you can use a grey background by setting this to `"grey"`.
-  sign_column_background = "none",
-  ---The contrast of line numbers, indent lines, etc. Options are `"high"` or
-  ---`"low"` (default).
-  ui_contrast = "low",
-  ---Dim inactive windows. Only works in Neovim. Can look a bit weird with Telescope.
-  ---
-  ---When this option is used in conjunction with show_eob set to `false`, the
-  ---end of the buffer will only be hidden inside the active window. Inside
-  ---inactive windows, the end of buffer filler characters will be visible in
-  ---dimmed symbols. This is due to the way Vim and Neovim handle `EndOfBuffer`.
-  dim_inactive_windows = false,
-  ---Some plugins support highlighting error/warning/info/hint texts, by
-  ---default these texts are only underlined, but you can use this option to
-  ---also highlight the background of them.
-  diagnostic_text_highlight = false,
-  ---Which colour the diagnostic text should be. Options are `"grey"` or `"coloured"` (default)
-  diagnostic_virtual_text = "coloured",
-  ---Some plugins support highlighting error/warning/info/hint lines, but this
-  ---feature is disabled by default in this colour scheme.
-  diagnostic_line_highlight = false,
-  ---By default, this color scheme won't colour the foreground of |spell|, instead
-  ---colored under curls will be used. If you also want to colour the foreground,
-  ---set this option to `true`.
-  spell_foreground = false,
-  ---Whether to show the EndOfBuffer highlight.
-  show_eob = true,
-  ---Style used to make floating windows stand out from other windows. `"bright"`
-  ---makes the background of these windows lighter than |hl-Normal|, whereas
-  ---`"dim"` makes it darker.
-  ---
-  ---Floating windows include for instance diagnostic pop-ups, scrollable
-  ---documentation windows from completion engines, overlay windows from
-  ---installers, etc.
-  ---
-  ---NB: This is only significant for dark backgrounds as the light palettes
-  ---have the same colour for both values in the switch.
-  float_style = "bright",
-  ---You can override specific highlights to use other groups or a hex colour.
-  ---This function will be called with the highlights and colour palette tables.
-  ---@param highlight_groups Highlights
-  ---@param palette Palette
-  on_highlights = function(highlight_groups, palette) end,
-  ---You can override colours in the palette to use different hex colours.
-  ---This function will be called once the base and background colours have
-  ---been mixed on the palette.
-  ---@param palette Palette
-  colours_override = function(palette) end,
+require('material').setup({
+
+  contrast = {
+    terminal = false,            -- Enable contrast for the built-in terminal
+    sidebars = false,            -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+    floating_windows = false,    -- Enable contrast for floating windows
+    cursor_line = false,         -- Enable darker background for the cursor line
+    non_current_windows = false, -- Enable contrasted background for non-current windows
+    filetypes = {},              -- Specify which filetypes get the contrasted (darker) background
+  },
+
+  styles = { -- Give comments style such as bold, italic, underline etc.
+    comments = { --[[ italic = true ]] },
+    strings = { --[[ bold = true ]] },
+    keywords = { --[[ underline = true ]] },
+    functions = { --[[ bold = true, undercurl = true ]] },
+    variables = {},
+    operators = {},
+    types = {},
+  },
+
+  plugins = { -- Uncomment the plugins that you use to highlight them
+    -- Available plugins:
+    -- "dap",
+    -- "dashboard",
+    -- "eyeliner",
+    -- "fidget",
+    -- "flash",
+    -- "gitsigns",
+    -- "harpoon",
+    -- "hop",
+    -- "illuminate",
+    -- "indent-blankline",
+    -- "lspsaga",
+    -- "mini",
+    -- "neogit",
+    -- "neotest",
+    -- "neo-tree",
+    -- "neorg",
+    -- "noice",
+    -- "nvim-cmp",
+    -- "nvim-navic",
+    -- "nvim-tree",
+    -- "nvim-web-devicons",
+    -- "rainbow-delimiters",
+    -- "sneak",
+    -- "telescope",
+    -- "trouble",
+    -- "which-key",
+  },
+
+  disable = {
+    colored_cursor = false, -- Disable the colored cursor
+    borders = false,        -- Disable borders between verticaly split windows
+    background = false,     -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
+    term_colors = false,    -- Prevent the theme from setting terminal colors
+    eob_lines = false       -- Hide the end-of-buffer lines
+  },
+
+  high_visibility = {
+    lighter = false, -- Enable higher contrast text for lighter style
+    darker = false   -- Enable higher contrast text for darker style
+  },
+
+  lualine_style = "stealth", -- Lualine style ( can be 'stealth' or 'default' )
+
+  async_loading = true,      -- Load parts of the theme asyncronously for faster startup (turned on by default)
+
+  custom_colors = nil,       -- If you want to override the default colors, set this to a function
+
+  custom_highlights = {},    -- Overwrite highlights with your own
 })
 
-
-vim.cmd([[colorscheme everforest]])
+vim.g.material_style = "deep ocean"
+vim.cmd 'colorscheme material'

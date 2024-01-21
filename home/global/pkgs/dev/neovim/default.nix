@@ -30,8 +30,7 @@ in {
     extraConfig = "\n";
     plugins = with pkgs.vimPlugins; [
       {
-        plugin = (fromGitHub "06a600c4fa49e7a4c44848d14c353ecbaab8eb9f" "HEAD"
-          "neanias/everforest-nvim");
+        plugin = material-nvim;
         type = "lua";
         config = builtins.readFile (./plugins/theme.rc.lua);
       }

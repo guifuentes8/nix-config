@@ -1,5 +1,5 @@
 { inputs, config, pkgs, unstable, ... }:
-let gtk_theme_name = "Everforest-Dark-BL";
+let gtk_theme_name = "Material-DeepOcean-BL";
 in {
 
   imports =

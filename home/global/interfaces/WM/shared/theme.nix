@@ -1,6 +1,6 @@
 { pkgs, unstable, lib, outputs, ... }:
 let
-  gtk_theme_name = "Everforest-Dark-BL";
+  gtk_theme_name = "Material-DeepOcean-BL";
   gtk_theme = outputs.packages.${pkgs.system}.gtk_theme;
   cursor = outputs.packages.${pkgs.system}.cursor;
 in {

@@ -56,8 +56,8 @@ in {
 
   ######## GLOBAL THEME ########
   #colorScheme = nix-colors.colorSchemes.material-palenight;
-  colorScheme = nix-colors.lib.schemeFromYAML "everforest_dark"
-    (builtins.readFile ./pkgs/themes/everforest_dark.yaml);
+  colorScheme = nix-colors.lib.schemeFromYAML "material_deep_ocean"
+    (builtins.readFile ./pkgs/themes/material_deep_ocean.yaml);
   xsession.numlock.enable = true;
   xresources.extraConfig = ''
     Xcursor.theme: ${cursor-theme}
