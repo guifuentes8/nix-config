@@ -1,11 +1,17 @@
-{ pkgs, unstable, lib, outputs, ... }:
+{ pkgs, unstable, lib, outputs, theme, ... }:
 let
-  gtk_theme_name = "Material-DeepOcean-BL";
-  gtk_theme = outputs.packages.${pkgs.system}.gtk_theme;
-  cursor = outputs.packages.${pkgs.system}.cursor;
+  gtk_theme = pkgs.catppuccin-gtk.override {
+    accents = [
+      "sapphire"
+    ]; # You can specify multiple accents here to output multiple themes
+    size = "standard";
+    tweaks = [ "normal" "rimless" ]; # You can also specify multiple tweaks here
+    variant = "mocha";
+  };
+  cursor = pkgs.catppuccin-cursors.mochaDark;
 in {
   home.pointerCursor = {
-    name = "everforest-cursors";
+    name = theme.cursor_name;
     package = cursor;
     size = 32;
     gtk.enable = true;
@@ -28,7 +34,7 @@ in {
       package = lib.mkForce pkgs.tela-circle-icon-theme;
     };
     theme = {
-      name = lib.mkForce "${gtk_theme_name}";
+      name = lib.mkForce "${theme.gtk_name}";
       package = lib.mkForce gtk_theme;
     };
   };
@@ -43,6 +49,6 @@ in {
   #   recursive = true;
   #   source = "${gtk-theme}/share/themes/${gtk_theme_name}/gtk-4.0/assets";
   # };
-  home.sessionVariables = { GTK_THEME = "${gtk_theme_name}"; };
+  home.sessionVariables = { GTK_THEME = "${theme.gtk_name}"; };
 }
 

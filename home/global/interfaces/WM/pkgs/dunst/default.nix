@@ -1,8 +1,8 @@
 { pkgs, config, outputs, ... }:
 let
-  my_config = outputs.packages.${pkgs.system}.my_config;
+  notify = "todo";
   alert = pkgs.writeShellScript "alert.sh" ''
-    ${pkgs.pipewire}/bin/pw-play --volume=0,04 ${my_config}/share/sounds/notification/notify.wav
+    ${pkgs.pipewire}/bin/pw-play --volume=0,04 ${notify} 
   '';
 in {
   services.dunst = {

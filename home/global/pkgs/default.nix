@@ -25,7 +25,7 @@ in {
   };
 
   home.packages = [
-
+    pkgs.todoist-electron
     dbgate
     pkgs.bitwarden
     pkgs.figma-linux

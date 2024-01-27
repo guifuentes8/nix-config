@@ -1,4 +1,4 @@
-{ pkgs, lib, config, unstable, ... }:
+{ pkgs, lib, config, unstable, theme, ... }:
 let
   fromGitHub = rev: ref: repo:
     pkgs.vimUtils.buildVimPlugin {
@@ -30,7 +30,7 @@ in {
     extraConfig = "\n";
     plugins = with pkgs.vimPlugins; [
       {
-        plugin = material-nvim;
+        plugin = catppuccin-nvim;
         type = "lua";
         config = builtins.readFile (./plugins/theme.rc.lua);
       }
@@ -151,7 +151,10 @@ in {
       telescope-media-files-nvim
       telescope-undo-nvim
 
-      #(fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD" "xiyaowong/transparent.nvim")
+      #(fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD"
+      #  "xiyaowong/transparent.nvim")
+      (fromGitHub "b6f365cf5b6a2a2fa7de2578ca047db0721335ec" "HEAD"
+        "tiagovla/tokyodark.nvim")
 
     ];
 

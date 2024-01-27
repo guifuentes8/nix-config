@@ -28,6 +28,13 @@
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
       systemVersion = "23.11";
+      theme = {
+        base16ThemeName = "catppuccin-mocha";
+        gtk_name = "Catppuccin-Mocha-Standard-Sapphire-Dark";
+        cursor_name = "Catppuccin-Mocha-Dark";
+        cursor_size = 36;
+
+      };
       unstable = import nixpkgs-unstable {
         system = "x86_64-linux";
         config.allowUnfree = true;
@@ -43,11 +50,15 @@
 
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs unstable systemVersion; };
+          specialArgs = {
+            inherit inputs outputs unstable systemVersion theme;
+          };
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/desktop ];
         };
         laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs unstable systemVersion; };
+          specialArgs = {
+            inherit inputs outputs unstable systemVersion theme;
+          };
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/laptop ];
         };
       };
@@ -56,14 +67,14 @@
         "guifuentes8@desktop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
-            inherit unstable systemVersion nix-colors inputs outputs;
+            inherit unstable systemVersion theme nix-colors inputs outputs;
           };
           modules = [ ./home/desktop.nix ];
         };
         "guifuentes8@laptop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
-            inherit unstable systemVersion nix-colors inputs outputs;
+            inherit unstable systemVersion theme nix-colors inputs outputs;
           };
           modules = [ ./home/laptop.nix ];
         };

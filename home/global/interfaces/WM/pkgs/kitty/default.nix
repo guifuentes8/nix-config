@@ -2,8 +2,8 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "JetBrainsMonoNL Nerd Font";
-      size = 13;
+      name = "MonoLisa Regular";
+      size = 12;
     };
     settings = {
 
@@ -17,7 +17,7 @@
       cursor = "#${config.colorScheme.colors.base0D}";
       cursor_text_color = "#${config.colorScheme.colors.base00}";
 
-      # URL underline color when hovering with mouse
+      # URL underline color when hovering with mouse 
       url_color = "#${config.colorScheme.colors.base0D}";
 
       # Kitty window border colors
@@ -77,13 +77,15 @@
       color16 = "#${config.colorScheme.colors.base00}";
       color17 = "#${config.colorScheme.colors.base0F}";
 
-      bold_font = "auto";
-      italic_font = "auto";
-      bold_italic_font = "auto";
-      background_opacity = "0.9";
+      bold_font = "Monolisa Bold";
+      italic_font = "Monolisa Medium Italic";
+      bold_italic_font = "Monolisa Bold Italic";
+      background_opacity = 1;
       confirm_os_window_close = 0;
       initial_window_width = 640;
       initial_window_height = 400;
+      disable_ligatures = "never";
+
     };
   };
 }

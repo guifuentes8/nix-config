@@ -1,5 +1,5 @@
 { outputs, pkgs, nix-colors, config, ... }:
-let my_config = outputs.packages.${pkgs.system}.my_config;
+let wallpaper = ./wallpaper.png;
 in {
   imports = [ ./shared ./pkgs/1-xorg ];
 
@@ -11,7 +11,7 @@ in {
       "sxhkd"
       "picom"
       "systemctl --user restart polybar.service"
-      "feh --bg-fill  ${my_config}/share/wallpapers/wallpaper.png --image-bg '#000000'"
+      "feh --bg-fill  ${wallpaper} --image-bg '#000000'"
       "pkill dunst"
       "dunst"
       "xsetroot -cursor_name 'everforest-cursors'"
@@ -19,8 +19,8 @@ in {
     extraConfig = ''
       bspc monitor -d 󰲡 󰲣 󰲥 󰲧 󰲩 󰲫 󰲭 󰲯 󰲱  
         
-      bspc config border_width         2
-      bspc config window_gap           10
+      bspc config border_width         3
+      bspc config window_gap           16
 
       bspc config split_ratio          0.50
       bspc config borderless_monocle   true

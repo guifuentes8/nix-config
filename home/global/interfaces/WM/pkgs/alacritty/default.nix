@@ -5,22 +5,22 @@
     settings = {
       font = {
         normal = {
-          family = "Dank Mono";
-          style = "Italic";
+          family = "MonoLisa";
+          style = "Regular";
         };
 
         bold = {
-          family = "Dank Mono";
+          family = "MonoLisa";
           style = "Bold";
         };
 
         italic = {
-          family = "Dank Mono";
+          family = "MonoLisa";
           style = "Italic";
         };
 
         bold_italic = {
-          family = "Dank Mono";
+          family = "MonoLisa";
           style = "Bold Italic";
         };
         size = 13;

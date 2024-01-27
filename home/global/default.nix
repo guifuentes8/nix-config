@@ -1,8 +1,4 @@
-{ inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, ... }:
-let
-  cursor-theme = "everforest-cursors";
-  cursor-size = "32";
-in {
+{ inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, theme, ... }: {
 
   imports = [ nix-colors.homeManagerModules.default ./pkgs ./services.nix ];
 
@@ -11,8 +7,8 @@ in {
     homeDirectory = "/home/guifuentes8";
     stateVersion = systemVersion;
     sessionVariables = {
-      XCURSOR_THEME = "${cursor-theme}";
-      XCURSOR_SIZE = "${cursor-size}";
+      XCURSOR_THEME = theme.cursor_name;
+      # XCURSOR_SIZE = "${theme.cursor_size}";
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
@@ -55,13 +51,13 @@ in {
   news.display = "silent";
 
   ######## GLOBAL THEME ########
-  #colorScheme = nix-colors.colorSchemes.material-palenight;
-  colorScheme = nix-colors.lib.schemeFromYAML "material_deep_ocean"
-    (builtins.readFile ./pkgs/themes/material_deep_ocean.yaml);
+  colorScheme = nix-colors.colorSchemes.${theme.base16ThemeName};
+  #colorScheme = nix-colors.lib.schemeFromYAML "everforest"
+  #  (builtins.readFile ./pkgs/themes/everforest_dark.yaml);
   xsession.numlock.enable = true;
   xresources.extraConfig = ''
-    Xcursor.theme: ${cursor-theme}
-    Xcursor.size: ${cursor-size}
+    Xcursor.theme: ${theme.cursor_name}
+    Xcursor.size: 32
   '';
 
 }

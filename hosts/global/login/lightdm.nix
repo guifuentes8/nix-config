@@ -1,21 +1,26 @@
-{ pkgs, unstable, outputs, lib, ... }:
+{ pkgs, unstable, outputs, lib, theme, ... }:
 let
-  my_config = outputs.packages.${pkgs.system}.my_config;
-  gtk_theme_name = "Material-DeepOcean-BL";
-  gtk_theme = outputs.packages.${pkgs.system}.gtk_theme;
-  cursor = outputs.packages.${pkgs.system}.cursor;
+  gtk_theme = pkgs.catppuccin-gtk.override {
+    accents = [
+      "sapphire"
+    ]; # You can specify multiple accents here to output multiple themes
+    size = "standard";
+    tweaks = [ "normal" "rimless" ]; # You can also specify multiple tweaks here
+    variant = "mocha";
+  };
+  cursor = pkgs.catppuccin-cursors.mochaDark;
 in {
   services.xserver = {
     enable = true;
     displayManager = {
       lightdm = {
-        background = "${my_config}/share/wallpapers/login.png";
+        background = ./login.png;
         enable = true;
         greeters = {
           gtk = {
             enable = true;
             theme = {
-              name = "${gtk_theme_name}";
+              name = "${theme.gtk_name}";
               package = gtk_theme;
             };
             iconTheme = {
@@ -23,9 +28,9 @@ in {
               package = pkgs.tela-circle-icon-theme;
             };
             cursorTheme = {
-              name = "everforest-cursors";
+              name = "${theme.cursor_name}";
               package = cursor;
-              size = 32;
+              size = theme.cursor_size;
             };
             # clock-format = null;
             indicators = [

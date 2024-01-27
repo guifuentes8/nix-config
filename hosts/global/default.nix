@@ -1,7 +1,5 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ config, lib, inputs, outputs, pkgs, systemVersion, ... }:
-let my_config = outputs.packages.${pkgs.system}.my_config;
-in {
+{ config, lib, inputs, outputs, pkgs, systemVersion, ... }: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   # System configs
@@ -67,10 +65,8 @@ in {
   hardware.pulseaudio.enable = false;
 
   # Fonts
-  fonts.packages = with pkgs; [
-    my_config
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+  fonts.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "JetBrainsMono" "CascadiaCode" ]; }) ];
 
   # Security
   security.rtkit.enable = true;
