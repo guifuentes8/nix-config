@@ -1,14 +1,10 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, theme, ... }: {
 
-  imports = [ nix-colors.homeManagerModules.default ];
-
   home = {
     username = "guifuentes8";
     homeDirectory = "/home/guifuentes8";
     stateVersion = systemVersion;
     sessionVariables = {
-      XCURSOR_THEME = theme.cursor_name;
-      # XCURSOR_SIZE = "${theme.cursor_size}";
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
@@ -49,16 +45,5 @@
   programs.home-manager.enable = true;
   systemd.user.startServices = true;
   news.display = "silent";
-
-  ######## GLOBAL THEME ########
-  colorScheme = nix-colors.colorSchemes.${theme.base16ThemeName};
-  #colorScheme = nix-colors.lib.schemeFromYAML "everforest"
-  #  (builtins.readFile ./pkgs/themes/everforest_dark.yaml);
-  xsession.numlock.enable = true;
-  xresources.extraConfig = ''
-    Xcursor.theme: ${theme.cursor_name}
-    Xcursor.size: 32
-  '';
-
 }
 

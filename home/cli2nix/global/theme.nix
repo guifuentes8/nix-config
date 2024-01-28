@@ -1,4 +1,4 @@
-{ pkgs, unstable, lib, outputs, theme, ... }:
+{ pkgs, unstable, lib, outputs, theme, nix-colors, ... }:
 let
   gtk_theme = pkgs.catppuccin-gtk.override {
     accents = [
@@ -10,6 +10,17 @@ let
   };
   cursor = pkgs.catppuccin-cursors.mochaDark;
 in {
+  imports = [ nix-colors.homeManagerModules.default ];
+
+  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
+  #colorScheme = nix-colors.lib.schemeFromYAML "everforest"
+  #  (builtins.readFile ./pkgs/themes/everforest_dark.yaml);
+
+  home.sessionVariables = {
+    XCURSOR_THEME = theme.cursor_name;
+    XCURSOR_SIZE = "${theme.cursor_size}";
+    GTK_THEME = "${theme.gtk_name}";
+  };
   home.pointerCursor = {
     name = theme.cursor_name;
     package = cursor;
@@ -49,6 +60,10 @@ in {
   #   recursive = true;
   #   source = "${gtk-theme}/share/themes/${gtk_theme_name}/gtk-4.0/assets";
   # };
-  home.sessionVariables = { GTK_THEME = "${theme.gtk_name}"; };
+
+  xresources.extraConfig = ''
+    Xcursor.theme: ${theme.cursor_name}
+    Xcursor.size: 32
+  '';
 }
 

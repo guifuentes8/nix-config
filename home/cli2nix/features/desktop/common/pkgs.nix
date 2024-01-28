@@ -5,32 +5,6 @@ in {
 
   imports = [ ./configFiles ];
 
-  programs = {
-    bat = {
-      enable = true;
-      extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-      config.theme = "poimandres";
-    };
-    firefox.enable = true;
-    chromium.enable = true;
-    chromium.package = pkgs.google-chrome;
-    obs-studio.enable = true;
-    vscode = {
-      enable = true;
-      enableExtensionUpdateCheck = true;
-      enableUpdateCheck = true;
-      package = pkgs.vscode;
-      keybindings = [ ];
-    };
-
-    # System Dependencies
-    gpg.enable = true;
-    jq.enable = true;
-    lsd.enable = true;
-    ssh.enable = true;
-
-  };
-
   home.packages = [
 
     dbgate
