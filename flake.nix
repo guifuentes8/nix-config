@@ -31,7 +31,7 @@
       theme = {
         base16ThemeName = "catppuccin-mocha";
         gtk_name = "Catppuccin-Mocha-Standard-Sapphire-Dark";
-        cursor_name = "Catppuccin-Mocha-Dark";
+        cursor_name = "Catppuccin-Mocha-Dark-Cursors";
         cursor_size = 36;
 
       };
@@ -64,19 +64,19 @@
       };
 
       homeConfigurations = {
-        "guifuentes8@desktop" = home-manager.lib.homeManagerConfiguration {
+        "cli2nix@jameswebb" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable systemVersion theme nix-colors inputs outputs;
           };
-          modules = [ ./home/desktop.nix ];
+          modules = [ ./home/cli2nix/jameswebb.nix ];
         };
-        "guifuentes8@laptop" = home-manager.lib.homeManagerConfiguration {
+        "cli2nix@hubble" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable systemVersion theme nix-colors inputs outputs;
           };
-          modules = [ ./home/laptop.nix ];
+          modules = [ ./home/cli2nix/hubble.nix ];
         };
       };
     };
