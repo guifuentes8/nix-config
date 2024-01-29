@@ -12,13 +12,13 @@ let
 in {
   imports = [ nix-colors.homeManagerModules.default ];
 
-  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
+  colorScheme = nix-colors.colorSchemes.everforest;
   #colorScheme = nix-colors.lib.schemeFromYAML "everforest"
   #  (builtins.readFile ./pkgs/themes/everforest_dark.yaml);
 
   home.sessionVariables = {
     XCURSOR_THEME = theme.cursor_name;
-    XCURSOR_SIZE = "${theme.cursor_size}";
+    # XCURSOR_SIZE = "${theme.cursor_size}";
     GTK_THEME = "${theme.gtk_name}";
   };
   home.pointerCursor = {

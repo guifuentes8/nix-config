@@ -1,13 +1,28 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, theme, ... }: {
 
+  imports = [ ../features/cli ../features/dev ./theme.nix ./xdg.nix ];
+
   home = {
-    username = "guifuentes8";
-    homeDirectory = "/home/guifuentes8";
-    stateVersion = systemVersion;
+    username = lib.mkDefault "cli2nix";
+    homeDirectory = "/home/${config.home.username}";
+    stateVersion = lib.mkDefault "23.11";
     sessionVariables = {
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
+    # persistence = {
+    #   "/persist/home/cli2nix" = {
+    #     directories = [
+    #       "Documents"
+    #       "Downloads"
+    #       "Pictures"
+    #       "Videos"
+    #       ".local/bin"
+    #       ".local/share/nix" # trusted settings and repl history
+    #     ];
+    #     allowOther = true;
+    #   };
+    # };
   };
 
   xdg.userDirs = {
@@ -20,7 +35,7 @@
   };
 
   nix = {
-    package = pkgs.nix;
+    package = lib.mkDefault pkgs.nix;
     settings = {
       experimental-features = [ "nix-command" "flakes" "repl-flake" ];
       warn-dirty = false;
@@ -42,8 +57,13 @@
   };
 
   fonts.fontconfig.enable = true;
-  programs.home-manager.enable = true;
-  systemd.user.startServices = true;
+
+  programs = {
+    git.enable = true;
+    home-manager.enable = true;
+  };
+
+  systemd.user.startServices = "sd-switch";
   news.display = "silent";
 }
 

@@ -49,17 +49,17 @@
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
       nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem {
+        jameswebb = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs unstable systemVersion theme;
           };
-          modules = [ darkmatter-grub-theme.nixosModule ./hosts/desktop ];
+          modules = [ darkmatter-grub-theme.nixosModule ./hosts/jameswebb ];
         };
-        laptop = nixpkgs.lib.nixosSystem {
+        hubble = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs unstable systemVersion theme;
           };
-          modules = [ darkmatter-grub-theme.nixosModule ./hosts/laptop ];
+          modules = [ darkmatter-grub-theme.nixosModule ./hosts/hubble ];
         };
       };
 
