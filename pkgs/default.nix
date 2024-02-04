@@ -6,8 +6,7 @@
   dbgate = pkgs.callPackage ./dbgate { };
   doist = pkgs.callPackage ./doist { };
   shotcut = pkgs.callPackage ./shotcut { };
-  cursor = pkgs.callPackage ./cursors/everforest { };
-  gtk_theme = pkgs.callPackage ./gtk_theme/everforest { };
+  gtk_theme = pkgs.callPackage ./gtk_theme/material { };
   sddm_theme = pkgs.callPackage ./sddm_theme { };
   ytermusic = pkgs.callPackage ./ytermusic { };
 }

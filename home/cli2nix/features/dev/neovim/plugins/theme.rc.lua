@@ -1,8 +1,8 @@
 require("catppuccin").setup({
-  flavour = "mocha", -- latte, frappe, macchiato, mocha
-  background = {     -- :h background
+  flavour = "macchiato", -- latte, frappe, macchiato, mocha
+  background = {         -- :h background
     light = "latte",
-    dark = "mocha",
+    dark = "macchiato",
   },
   transparent_background = false, -- disables setting the background color.
   show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
@@ -18,33 +18,53 @@ require("catppuccin").setup({
   styles = {                      -- Handles the styles of general hi groups (see `:h highlight-args`):
     comments = { "italic" },      -- Change the style of comments
     conditionals = { "italic" },
-    loops = {},
-    functions = {},
-    keywords = {},
+    loops = { "italic" },
+    functions = { "italic", "bold" },
+    keywords = { "italic", "bold" },
     strings = {},
     variables = {},
-    numbers = {},
-    booleans = {},
+    numbers = { "bold" },
+    booleans = { "bold" },
     properties = {},
-    types = {},
-    operators = {},
+    types = { "italic", "bold" },
+    operators = { "italic", "bold" },
   },
   color_overrides = {},
   custom_highlights = {},
   integrations = {
+    alpha = true,
     cmp = true,
     gitsigns = true,
-    nvimtree = true,
-    treesitter = true,
-    notify = false,
-    mini = {
+    indent_blankline = {
       enabled = true,
-      indentscope_color = "",
+      scope_color = "teal", -- catppuccin color (eg. `lavender`) Default: text
+      colored_indent_levels = false,
     },
+    native_lsp = {
+      enabled = true,
+      virtual_text = {
+        errors = { "italic" },
+        hints = { "italic" },
+        warnings = { "italic" },
+        information = { "italic" },
+      },
+      underlines = {
+        errors = { "underline" },
+        hints = { "underline" },
+        warnings = { "underline" },
+        information = { "underline" },
+      },
+      inlay_hints = {
+        background = true,
+      },
+    },
+    telescope = {
+      enabled = true,
+    },
+    treesitter = true,
     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
 })
 
 -- setup must be called before loading
 vim.cmd.colorscheme "catppuccin"
-

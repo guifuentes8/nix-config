@@ -1,36 +1,46 @@
 { pkgs, unstable, outputs, lib, theme, ... }:
 let
-  gtk_theme = pkgs.catppuccin-gtk.override {
+  gtk-pkg = pkgs.catppuccin-gtk.override {
     accents = [
-      "sapphire"
+      "teal"
     ]; # You can specify multiple accents here to output multiple themes
     size = "standard";
-    tweaks = [ "normal" "rimless" ]; # You can also specify multiple tweaks here
-    variant = "mocha";
+    tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
+    variant = "macchiato";
   };
-  cursor = pkgs.catppuccin-cursors.mochaDark;
+  gtk-name = "Catppuccin-Macchiato-Standard-Teal-Dark";
+  icon-pkg = pkgs.catppuccin-papirus-folders.override {
+    accent = "teal";
+    flavor = "macchiato";
+  };
+  icon-name = "Papirus";
+  cursor-name = "Catppuccin-Macchiato-Dark-Cursors";
+  cursor-pkg = pkgs.catppuccin-cursors.macchiatoDark;
+  cursor-size = 36;
+  cursor-size-text = "36";
+
 in {
   services.xserver = {
     enable = true;
     displayManager = {
       lightdm = {
-        background = ./login.png;
+        background = ./login_jameswebb.jpg;
         enable = true;
         greeters = {
           gtk = {
             enable = true;
             theme = {
-              name = "${theme.gtk_name}";
-              package = gtk_theme;
+              name = gtk-name;
+              package = gtk-pkg;
             };
             iconTheme = {
-              name = "Tela-circle";
-              package = pkgs.tela-circle-icon-theme;
+              name = icon-name;
+              package = icon-pkg;
             };
             cursorTheme = {
-              name = "${theme.cursor_name}";
-              package = cursor;
-              size = theme.cursor_size;
+              name = cursor-name;
+              package = cursor-pkg;
+              size = cursor-size;
             };
             # clock-format = null;
             indicators = [

@@ -3,10 +3,19 @@
     enable = true;
     font = {
       name = "MonoLisa Regular";
-      size = 12;
+      size = 13;
     };
+    shellIntegration.enableZshIntegration = true;
     settings = {
-
+      bold_font = "Monolisa Bold";
+      italic_font = "Monolisa Medium Italic";
+      bold_italic_font = "Monolisa Bold Italic";
+      font_features = "MonoLisa-Medium +zero +ss04 +ss07 +ss08 +ss09";
+      background_opacity = "0.9";
+      confirm_os_window_close = 0;
+      initial_window_width = 640;
+      initial_window_height = 400;
+      disable_ligatures = "never";
       # The basic colors
       foreground = "#${config.colorScheme.colors.base05}";
       background = "#${config.colorScheme.colors.base00}";
@@ -14,11 +23,11 @@
       selection_background = "#${config.colorScheme.colors.base06}";
 
       # Cursor colors
-      cursor = "#${config.colorScheme.colors.base0D}";
+      cursor = "#${config.colorScheme.colors.base06}";
       cursor_text_color = "#${config.colorScheme.colors.base00}";
 
       # URL underline color when hovering with mouse 
-      url_color = "#${config.colorScheme.colors.base0D}";
+      url_color = "#${config.colorScheme.colors.base06}";
 
       # Kitty window border colors
       active_border_color = "#${config.colorScheme.colors.base03}";
@@ -41,50 +50,71 @@
       mark3_background = "#${config.colorScheme.colors.base06}";
 
       # The 16 terminal colors
-
       # black
-      color0 = "#${config.colorScheme.colors.base02}";
-      color8 = "#${config.colorScheme.colors.base02}";
-
+      color0 = "#494D64 ";
+      color8 = "#5B6078 ";
       # red
-      color1 = "#${config.colorScheme.colors.base08}";
-      color9 = "#${config.colorScheme.colors.base08}";
+      color1 = "#ED8796 ";
+      color9 = "#ED8796 ";
 
-      # green
-      color2 = "#${config.colorScheme.colors.base09}";
-      color10 = "#${config.colorScheme.colors.base09}";
+      # green="
+      color2 = "#A6DA95 ";
+      color10 = "#A6DA95 ";
 
-      # yellow
-      color3 = "#${config.colorScheme.colors.base0A}";
-      color11 = "#${config.colorScheme.colors.base0A}";
+      # yello="w
+      color3 = "#EED49F ";
+      color11 = "#EED49F ";
 
       # blue
-      color4 = "#${config.colorScheme.colors.base0B}";
-      color12 = "#${config.colorScheme.colors.base0B}";
+      color4 = "#8AADF4 ";
+      color12 = "#8AADF4 ";
 
-      # magenta
-      color5 = "#${config.colorScheme.colors.base0C}";
-      color13 = "#${config.colorScheme.colors.base0C}";
+      # magen="ta
+      color5 = "#F5BDE6 ";
+      color13 = "#F5BDE6 ";
 
       # cyan
-      color6 = "#${config.colorScheme.colors.base0D}";
-      color14 = "#${config.colorScheme.colors.base0D}";
+      color6 = "#8BD5CA ";
+      color14 = "#8BD5CA ";
 
-      # white
-      color7 = "#${config.colorScheme.colors.base07}";
-      color15 = "#${config.colorScheme.colors.base07}";
+      # white="
+      color7 = "#B8C0E0 ";
+      color15 = "#A5ADCB ";
 
-      color16 = "#${config.colorScheme.colors.base00}";
-      color17 = "#${config.colorScheme.colors.base0F}";
+      #  # black
+      #  color0 = "#${config.colorScheme.colors.base02}";
+      #  color8 = "#${config.colorScheme.colors.base02}";
 
-      bold_font = "Monolisa Bold";
-      italic_font = "Monolisa Medium Italic";
-      bold_italic_font = "Monolisa Bold Italic";
-      background_opacity = 1;
-      confirm_os_window_close = 0;
-      initial_window_width = 640;
-      initial_window_height = 400;
-      disable_ligatures = "never";
+      #  # red
+      #  color1 = "#${config.colorScheme.colors.base08}";
+      #  color9 = "#${config.colorScheme.colors.base08}";
+
+      #  # green
+      #  color2 = "#${config.colorScheme.colors.base09}";
+      #  color10 = "#${config.colorScheme.colors.base09}";
+
+      #  # yellow
+      #  color3 = "#${config.colorScheme.colors.base0A}";
+      #  color11 = "#${config.colorScheme.colors.base0A}";
+
+      #  # blue
+      #  color4 = "#${config.colorScheme.colors.base0B}";
+      #  color12 = "#${config.colorScheme.colors.base0B}";
+
+      #  # magenta
+      #  color5 = "#${config.colorScheme.colors.base0C}";
+      #  color13 = "#${config.colorScheme.colors.base0C}";
+
+      #  # cyan
+      #  color6 = "#${config.colorScheme.colors.base0D}";
+      #  color14 = "#${config.colorScheme.colors.base0D}";
+
+      #  # white
+      #  color7 = "#${config.colorScheme.colors.base07}";
+      #  color15 = "#${config.colorScheme.colors.base07}";
+
+      #  color16 = "#${config.colorScheme.colors.base00}";
+      #  color17 = "#${config.colorScheme.colors.base0F}";
 
     };
   };

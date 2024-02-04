@@ -11,7 +11,26 @@ telescope.setup {
       },
     },
   },
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+    },
+
+  },
   extensions = {
+    file_browser = {
+      theme = "dropdown",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        },
+      },
+    },
     project = {
       base_dirs = {
         { path = '~/Work' },
@@ -20,7 +39,7 @@ telescope.setup {
       theme = "dropdown",
       order_by = "asc",
       search_by = "title",
-      sync_with_nvim_tree = true, -- default false
+      sync_with_nvim_tree = false, -- default false
       -- default for on_project_selected = find project files
     },
     media_files = {
@@ -62,7 +81,7 @@ vim.keymap.set('n', ';f',
   function()
     builtin.find_files({
       no_ignore = false,
-      hidden = true
+      hidden = true,
     })
   end)
 vim.keymap.set('n', ';s', function()
@@ -100,3 +119,4 @@ telescope.load_extension("undo")
 telescope.load_extension("gh")
 telescope.load_extension("media_files")
 telescope.load_extension("project")
+telescope.load_extension("file_browser")

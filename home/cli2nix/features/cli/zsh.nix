@@ -15,7 +15,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
-      theme = "miloshadzic";
+      #theme = "miloshadzic";
     };
     initExtraFirst = ''
       unset -v SSH_ASKPASS
@@ -23,15 +23,13 @@
     '';
     initExtra = ''
       eval "$(starship init zsh)"
-
-
     '';
     shellAliases = {
       # NixOs shortcuts
       hd =
-        "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@desktop";
+        "cd ~/nix-config && git add . && home-manager switch --flake .#cli2nix@jameswebb";
       sd =
-        "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#desktop";
+        "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#jameswebb";
       hl =
         "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@laptop";
       sl =

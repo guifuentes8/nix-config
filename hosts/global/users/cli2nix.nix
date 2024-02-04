@@ -4,7 +4,7 @@
   programs.zsh.enable = true;
   users.users.cli2nix = {
     isNormalUser = true;
-    description = "Guilherme Fuentes";
+    description = "Cli2nix";
     extraGroups =
       [ "networkmanager" "wheel" "sudo" "video" "docker" "adbusers" "input" ];
     shell = pkgs.zsh;

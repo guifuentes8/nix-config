@@ -1,6 +1,6 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, theme, ... }: {
 
-  imports = [ ../features/cli ../features/dev ./theme.nix ./xdg.nix ];
+  imports = [ ../features/cli ../features/dev ./theme ./xdg.nix ];
 
   home = {
     username = lib.mkDefault "cli2nix";

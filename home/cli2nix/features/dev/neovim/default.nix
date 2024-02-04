@@ -47,7 +47,12 @@ in {
       {
         plugin = lspkind-nvim;
         type = "lua";
-        config = builtins.readFile (./plugins/lspkind.rc.lua);
+        # config = builtins.readFile (./plugins/lspkind.rc.lua);
+      }
+      {
+        plugin = luasnip;
+        type = "lua";
+        config = builtins.readFile (./plugins/luasnip.rc.lua);
       }
       {
         plugin = nvim-cmp;
@@ -134,28 +139,37 @@ in {
         type = "lua";
         config = builtins.readFile (./plugins/bufferline.rc.lua);
       }
+      {
+        plugin = rainbow-delimiters-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/rainbow.rc.lua);
+      }
+      {
+        plugin = (fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD"
+          "xiyaowong/transparent.nvim");
+        type = "lua";
+        config = builtins.readFile (./plugins/transparent.rc.lua);
+
+      }
       cmp-buffer # buffer words
       cmp-nvim-lsp # dependencies
+      cmp_luasnip
+
       plenary-nvim
       nvim-web-devicons
       markdown-preview-nvim
       zen-mode-nvim
       nvim-spectre
-      luasnip
       popup-nvim
       image-nvim
+      friendly-snippets
 
       # Telescope 
       telescope-project-nvim
       telescope-github-nvim
       telescope-media-files-nvim
       telescope-undo-nvim
-
-      #(fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD"
-      #  "xiyaowong/transparent.nvim")
-      (fromGitHub "b6f365cf5b6a2a2fa7de2578ca047db0721335ec" "HEAD"
-        "tiagovla/tokyodark.nvim")
-
+      telescope-file-browser-nvim
     ];
 
     extraPackages = with pkgs; [

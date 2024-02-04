@@ -28,13 +28,6 @@
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
       systemVersion = "23.11";
-      theme = {
-        base16ThemeName = "catppuccin-mocha";
-        gtk_name = "Catppuccin-Mocha-Standard-Sapphire-Dark";
-        cursor_name = "Catppuccin-Mocha-Dark-Cursors";
-        cursor_size = 36;
-
-      };
       unstable = import nixpkgs-unstable {
         system = "x86_64-linux";
         config.allowUnfree = true;
@@ -50,15 +43,11 @@
 
       nixosConfigurations = {
         jameswebb = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs unstable systemVersion theme;
-          };
+          specialArgs = { inherit inputs outputs unstable systemVersion; };
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/jameswebb ];
         };
         hubble = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs unstable systemVersion theme;
-          };
+          specialArgs = { inherit inputs outputs unstable systemVersion; };
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/hubble ];
         };
       };
@@ -67,14 +56,14 @@
         "cli2nix@jameswebb" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
-            inherit unstable systemVersion theme nix-colors inputs outputs;
+            inherit unstable systemVersion nix-colors inputs outputs;
           };
           modules = [ ./home/cli2nix/jameswebb.nix ];
         };
         "cli2nix@hubble" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          pkgs = nixpkgs.legacyPackages."-linux";
           extraSpecialArgs = {
-            inherit unstable systemVersion theme nix-colors inputs outputs;
+            inherit unstable systemVersion nix-colors inputs outputs;
           };
           modules = [ ./home/cli2nix/hubble.nix ];
         };

@@ -42,14 +42,11 @@
   services.xserver = { layout = "us"; };
 
   # Network config (nmtui)
-  networking.hostName = "desktop";
+  networking.hostName = "jameswebb";
 
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
-    variables = {
-      XCURSOR_THEME = "everforest-cursors";
-      XCURSOR_SIZE = "32";
-    };
+    variables = { };
     sessionVariables = rec {
       XDG_CACHE_HOME = "\${HOME}/.cache";
       XDG_CONFIG_HOME = "\${HOME}/.config";
