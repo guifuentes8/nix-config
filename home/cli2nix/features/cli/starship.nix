@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.starship = let
-    flavour = "macchiato"; # One of `latte`, `frappe`, `macchiato`, or `mocha`
+    flavour = "mocha"; # One of `latte`, `mocha`, `mocha`, or `mocha`
   in {
     enable = true;
     settings = {

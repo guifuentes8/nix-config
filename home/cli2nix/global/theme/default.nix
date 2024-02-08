@@ -7,8 +7,8 @@
     ./qt.nix
   ];
 
-  colorScheme = nix-colors.colorSchemes.catppuccin-macchiato;
-  #colorScheme = nix-colors.lib.schemeFromYAML "oxocarbon"
+  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
+  # colorScheme = nix-colors.lib.schemeFromYAML "oxocarbon"
   #  (builtins.readFile ./oxocarbon.yaml);
 }
 

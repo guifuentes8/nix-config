@@ -6,8 +6,8 @@
     backend = "glx";
     vSync = true;
     shadow = true;
-    shadowOffsets = [ 2 2 ];
-    shadowOpacity = 0.4;
+    shadowOffsets = [ 1 2 ];
+    shadowOpacity = 0.2;
     shadowExclude = [
       "class_g =  'Polybar'"
 
@@ -55,7 +55,7 @@
       #   "class_g = 'bar'"
       # ];
 
-      shadow-radius = 8;
+      shadow-radius = 7;
       # shadow-exclude = [
       #   "class_g = 'change-me'",
       # ]

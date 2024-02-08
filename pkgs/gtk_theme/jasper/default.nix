@@ -14,7 +14,7 @@ in lib.checkListOfEnum "${pname}: theme variants" [
   "orange"
   "yellow"
   "green"
-  "teal"
+  "green"
   "grey"
   "all"
 ] themeVariants lib.checkListOfEnum

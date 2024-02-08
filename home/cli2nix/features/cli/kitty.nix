@@ -23,11 +23,11 @@
       selection_background = "#${config.colorScheme.colors.base06}";
 
       # Cursor colors
-      cursor = "#${config.colorScheme.colors.base06}";
+      cursor = "#${config.colorScheme.colors.base0C}";
       cursor_text_color = "#${config.colorScheme.colors.base00}";
 
       # URL underline color when hovering with mouse 
-      url_color = "#${config.colorScheme.colors.base06}";
+      url_color = "#${config.colorScheme.colors.base0C}";
 
       # Kitty window border colors
       active_border_color = "#${config.colorScheme.colors.base03}";
@@ -80,42 +80,6 @@
       # white="
       color7 = "#B8C0E0 ";
       color15 = "#A5ADCB ";
-
-      #  # black
-      #  color0 = "#${config.colorScheme.colors.base02}";
-      #  color8 = "#${config.colorScheme.colors.base02}";
-
-      #  # red
-      #  color1 = "#${config.colorScheme.colors.base08}";
-      #  color9 = "#${config.colorScheme.colors.base08}";
-
-      #  # green
-      #  color2 = "#${config.colorScheme.colors.base09}";
-      #  color10 = "#${config.colorScheme.colors.base09}";
-
-      #  # yellow
-      #  color3 = "#${config.colorScheme.colors.base0A}";
-      #  color11 = "#${config.colorScheme.colors.base0A}";
-
-      #  # blue
-      #  color4 = "#${config.colorScheme.colors.base0B}";
-      #  color12 = "#${config.colorScheme.colors.base0B}";
-
-      #  # magenta
-      #  color5 = "#${config.colorScheme.colors.base0C}";
-      #  color13 = "#${config.colorScheme.colors.base0C}";
-
-      #  # cyan
-      #  color6 = "#${config.colorScheme.colors.base0D}";
-      #  color14 = "#${config.colorScheme.colors.base0D}";
-
-      #  # white
-      #  color7 = "#${config.colorScheme.colors.base07}";
-      #  color15 = "#${config.colorScheme.colors.base07}";
-
-      #  color16 = "#${config.colorScheme.colors.base00}";
-      #  color17 = "#${config.colorScheme.colors.base0F}";
-
     };
   };
 }

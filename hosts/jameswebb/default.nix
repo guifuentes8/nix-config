@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
 
     # Hardware Gpu (if exist)
-    ../global/hardware/gpu/nvidia.nix
+#    ../global/hardware/gpu/nvidia.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -27,7 +27,7 @@
 
     # Active services
     ../global/services/common
-    ../global/services/extra/droidcam.nix
+ #   ../global/services/extra/droidcam.nix
 
     # User 
     ../global/users/cli2nix.nix
