@@ -53,19 +53,19 @@
       };
 
       homeConfigurations = {
-        "cli2nix@jameswebb" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@jameswebb" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable systemVersion nix-colors inputs outputs;
           };
-          modules = [ ./home/cli2nix/jameswebb.nix ];
+          modules = [ ./home/guifuentes8/jameswebb.nix ];
         };
-        "cli2nix@hubble" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@hubble" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."-linux";
           extraSpecialArgs = {
             inherit unstable systemVersion nix-colors inputs outputs;
           };
-          modules = [ ./home/cli2nix/hubble.nix ];
+          modules = [ ./home/guifuentes8/hubble.nix ];
         };
       };
     };

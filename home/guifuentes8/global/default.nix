@@ -1,9 +1,9 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, theme, ... }: {
 
-  imports = [ ../features/cli ../features/dev ./theme ./xdg.nix ];
+  imports = [ ../features/cli ../features/dev ./theme ./systemd.nix ./xdg.nix ];
 
   home = {
-    username = lib.mkDefault "cli2nix";
+    username = lib.mkDefault "guifuentes8";
     homeDirectory = "/home/${config.home.username}";
     stateVersion = lib.mkDefault "23.11";
     sessionVariables = {
@@ -11,7 +11,7 @@
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
     # persistence = {
-    #   "/persist/home/cli2nix" = {
+    #   "/persist/home/guifuentes8" = {
     #     directories = [
     #       "Documents"
     #       "Downloads"

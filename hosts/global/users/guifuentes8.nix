@@ -2,9 +2,9 @@
 
 {
   programs.zsh.enable = true;
-  users.users.cli2nix = {
+  users.users.guifuentes8 = {
     isNormalUser = true;
-    description = "Cli2nix";
+    description = "guifuentes8";
     extraGroups =
       [ "networkmanager" "wheel" "sudo" "video" "docker" "adbusers" "input" ];
     shell = pkgs.zsh;

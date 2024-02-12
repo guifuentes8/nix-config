@@ -4,8 +4,6 @@ let dbgate = outputs.packages.${pkgs.system}.dbgate;
 in {
 
   imports = [
-    ./chrome.nix
-    ./firefox.nix
     ./kdeconnect.nix
     ./obs-studio.nix
     ./pavucontrol.nix
@@ -20,11 +18,12 @@ in {
     pkgs.todoist-electron
     pkgs.spotify
     pkgs.bitwarden
-    pkgs.figma-linux
     pkgs.slack
     pkgs.telegram-desktop
     pkgs.onlyoffice-bin
     pkgs.gimp
+    pkgs.vivaldi
+    pkgs.vivaldi-ffmpeg-codecs
 
     pkgs.etcher
     pkgs.ventoy-bin

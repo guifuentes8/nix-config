@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [
     ./dev
     ./firewall.nix
@@ -7,4 +7,5 @@
     ./kdeConnect.nix
     ./remoteSupport.nix
   ];
+
 }

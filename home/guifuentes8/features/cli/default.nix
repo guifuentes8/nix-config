@@ -20,6 +20,7 @@
     ./starship.nix
     ./translate-shell.nix
     ./tuifeed.nix
+    ./yazi.nix
     ./ytdlp.nix
     ./zsh.nix
   ];

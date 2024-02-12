@@ -30,7 +30,7 @@
  #   ../global/services/extra/droidcam.nix
 
     # User 
-    ../global/users/cli2nix.nix
+    ../global/users/guifuentes8.nix
 
   ];
 
