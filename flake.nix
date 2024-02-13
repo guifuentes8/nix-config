@@ -46,9 +46,9 @@
           specialArgs = { inherit inputs outputs unstable systemVersion; };
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/jameswebb ];
         };
-        hubble = nixpkgs.lib.nixosSystem {
+        penguin = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable systemVersion; };
-          modules = [ darkmatter-grub-theme.nixosModule ./hosts/hubble ];
+          modules = [ darkmatter-grub-theme.nixosModule ./hosts/penguin ];
         };
       };
 
@@ -60,12 +60,12 @@
           };
           modules = [ ./home/guifuentes8/jameswebb.nix ];
         };
-        "guifuentes8@hubble" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."-linux";
+        "guifuentes8@penguin" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable systemVersion nix-colors inputs outputs;
           };
-          modules = [ ./home/guifuentes8/hubble.nix ];
+          modules = [ ./home/guifuentes8/penguin.nix ];
         };
       };
     };
