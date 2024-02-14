@@ -27,9 +27,9 @@
     shellAliases = {
       # NixOs shortcuts
       hd =
-        "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@jameswebb";
+        "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@nixos";
       sd =
-        "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#jameswebb";
+        "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#nixos";
       hl =
         "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@laptop";
       sl =

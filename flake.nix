@@ -42,9 +42,9 @@
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
       nixosConfigurations = {
-        jameswebb = nixpkgs.lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable systemVersion; };
-          modules = [ darkmatter-grub-theme.nixosModule ./hosts/jameswebb ];
+          modules = [ darkmatter-grub-theme.nixosModule ./hosts/nixos ];
         };
         penguin = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable systemVersion; };
@@ -53,12 +53,12 @@
       };
 
       homeConfigurations = {
-        "guifuentes8@jameswebb" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@nixos" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable systemVersion nix-colors inputs outputs;
           };
-          modules = [ ./home/guifuentes8/jameswebb.nix ];
+          modules = [ ./home/guifuentes8/nixos.nix ];
         };
         "guifuentes8@penguin" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";

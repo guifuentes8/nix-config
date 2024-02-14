@@ -24,7 +24,7 @@ in {
     enable = true;
     displayManager = {
       lightdm = {
-        background = ./login_jameswebb.jpg;
+        background = ./login.jpg;
         enable = true;
         greeters = {
           gtk = {

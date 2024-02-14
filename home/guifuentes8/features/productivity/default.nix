@@ -1,3 +1,10 @@
 { pkgs, config, ... }: {
-  imports = [ ./mail.nix ./pass.nix ./taskwarrior.nix ./watson.nix ];
+  imports = [
+    ./mail.nix
+    ./gcalcli.nix
+    ./translate-shell.nix
+    ./pass.nix
+    ./taskwarrior.nix
+    ./watson.nix
+  ];
 }

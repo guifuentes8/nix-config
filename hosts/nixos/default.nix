@@ -42,7 +42,7 @@
   services.xserver = { layout = "us"; };
 
   # Network config (nmtui)
-  networking.hostName = "jameswebb";
+  networking.hostName = "nixos";
 
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
