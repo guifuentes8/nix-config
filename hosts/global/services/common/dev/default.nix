@@ -1,9 +1,8 @@
 { pkgs, ... }: {
-  virtualisation.docker.enable = true;
-  environment.systemPackages = with pkgs; [
-    docker-compose
 
-  ];
+  imports = [ ./android-studio.nix ];
+  virtualisation.docker.enable = true;
+  environment.systemPackages = with pkgs; [ docker-compose dbeaver ];
 
   services.postgresql = {
     enable = true;
@@ -18,4 +17,5 @@
       host all       all     ::1/128        trust
     '';
   };
+
 }

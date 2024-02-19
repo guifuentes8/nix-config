@@ -4,7 +4,6 @@
 
   imports = [
     ./chromium.nix
-    ./firefox.nix
     ./kdeconnect.nix
     ./obs-studio.nix
     ./pavucontrol.nix
@@ -19,6 +18,7 @@
     pkgs.telegram-desktop
     pkgs.onlyoffice-bin
     pkgs.gimp
+    pkgs.microsoft-edge
 
     pkgs.etcher
     pkgs.ventoy-bin
