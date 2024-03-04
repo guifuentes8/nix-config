@@ -48,7 +48,7 @@
         };
         penguin = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable systemVersion; };
-          modules = [ darkmatter-grub-theme.nixosModule ./hosts/penguin ];
+          modules = [ darkmatter-grub-theme.nixosModule ./hosts/clearlinux ];
         };
       };
 
