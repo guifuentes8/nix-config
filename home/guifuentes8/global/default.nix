@@ -1,6 +1,6 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, theme, ... }: {
 
-  imports = [ ../features/cli ./systemd.nix ];
+  imports = [ ../features/cli ./systemd.nix ./theme.nix ];
 
   home = {
     username = lib.mkDefault "guifuentes8";
