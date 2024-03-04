@@ -1,13 +1,11 @@
 { inputs, outputs, lib, config, pkgs, unstable, ... }: {
   imports = [
-    ./alacritty.nix
     ./bat.nix
     ./bottom.nix
     ./feh.nix
     ./gh.nix
     ./git.nix
     ./gpg.nix
-    ./kitty.nix
     ./lsd.nix
     ./ripgrep.nix
     ./ssh.nix

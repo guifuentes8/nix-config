@@ -11,7 +11,7 @@
       italic_font = "Monolisa Medium Italic";
       bold_italic_font = "Monolisa Bold Italic";
       font_features = "MonoLisa-Medium +zero +ss04 +ss07 +ss08 +ss09";
-      background_opacity = "0.9";
+      background_opacity = "1";
       confirm_os_window_close = 0;
       initial_window_width = 640;
       initial_window_height = 400;
