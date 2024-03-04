@@ -20,7 +20,7 @@ in {
     };
     theme = {
       name = gtk-name;
-      package = lib.mkForce gtk-theme;
+      package = gtk-theme;
     };
 
   };

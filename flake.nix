@@ -65,7 +65,7 @@
           extraSpecialArgs = {
             inherit unstable systemVersion nix-colors inputs outputs;
           };
-          modules = [ ./home/guifuentes8/penguin.nix ];
+          modules = [ ./home/guifuentes8/clearlinux.nix ];
         };
       };
     };
