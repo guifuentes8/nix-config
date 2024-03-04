@@ -1,14 +1,4 @@
-{ pkgs, unstable, lib, outputs, theme, nix-colors, ... }: {
-  imports = [
-    nix-colors.homeManagerModules.default
-    ./gtk.nix
-    ./cursor.nix
-    ./icon.nix
-    ./qt.nix
-  ];
-
-  colorScheme = nix-colors.colorSchemes.catppuccin-frappe;
-  #colorScheme = nix-colors.lib.schemeFromYAML "oxocarbon"
-  #  (builtins.readFile ./oxocarbon.yaml);
+{ pkgs, unstable, lib, outputs, ... }: {
+  imports = [ ./gtk.nix ./cursor.nix ./icon.nix ./qt.nix ];
 }
 
