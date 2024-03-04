@@ -8,7 +8,7 @@
   home.packages = with unstable; [ krabby ];
 
   programs.zsh = {
-    enable = true;
+    enable = false;
     enableAutosuggestions = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
