@@ -2,23 +2,16 @@
 
 {
 
-  imports = [
-    ./chromium.nix
-    ./kdeconnect.nix
-    ./obs-studio.nix
-    ./pavucontrol.nix
-    ./playerctl.nix
-  ];
+  imports = [ ./chromium.nix ./kdeconnect.nix ./obs-studio.nix ];
 
   home.packages = [
 
-    pkgs.spotify
     pkgs.bitwarden
-    pkgs.slack
-    pkgs.telegram-desktop
-    pkgs.onlyoffice-bin
     pkgs.gimp
-    pkgs.microsoft-edge
+    pkgs.onlyoffice-bin
+    pkgs.slack
+    pkgs.spotify
+    pkgs.telegram-desktop
 
     pkgs.etcher
     pkgs.ventoy-bin
