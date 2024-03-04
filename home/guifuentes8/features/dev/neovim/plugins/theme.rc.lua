@@ -1,8 +1,8 @@
 require("catppuccin").setup({
-  flavour = "mocha", -- latte, frappe, macchiato, mocha
-  background = {     -- :h background
+  flavour = "frappe", -- latte, frappe, macchiato, mocha
+  background = {      -- :h background
     light = "latte",
-    dark = "mocha",
+    dark = "frappe",
   },
   transparent_background = false, -- disables setting the background color.
   show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
@@ -16,11 +16,11 @@ require("catppuccin").setup({
   no_bold = false,                -- Force no bold
   no_underline = false,           -- Force no underline
   styles = {                      -- Handles the styles of general hi groups (see `:h highlight-args`):
-    comments = {},                -- Change the style of comments
-    conditionals = { "bold", "italic" },
-    loops = { "bold", "italic" },
+    comments = { "italic" },      -- Change the style of comments
+    conditionals = { "italic" },
+    loops = {},
     functions = {},
-    keywords = { "bold", "italic" },
+    keywords = {},
     strings = {},
     variables = {},
     numbers = {},
@@ -28,6 +28,7 @@ require("catppuccin").setup({
     properties = {},
     types = {},
     operators = {},
+    -- miscs = {}, -- Uncomment to turn off hard-coded styles
   },
   color_overrides = {},
   custom_highlights = {},
@@ -37,6 +38,10 @@ require("catppuccin").setup({
     nvimtree = true,
     treesitter = true,
     notify = false,
+    mini = {
+      enabled = true,
+      indentscope_color = "",
+    },
     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
 })

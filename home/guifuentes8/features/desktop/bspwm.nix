@@ -14,10 +14,10 @@ in {
       "feh --bg-center  ${wallpaper} --image-bg '#1e1e2e'"
       "pkill dunst"
       "dunst"
-      "xsetroot -cursor_name 'Catppuccin-Mocha-Dark-Cursors'"
+      "xsetroot -cursor_name 'Catppuccin-Frappe-Dark-Cursors'"
     ];
     extraConfig = ''
-      bspc monitor -d 󰈹  󰓇 󱄄      
+      bspc monitor -d 󰇩   󰓇 󱄄      
 
       bspc config border_width         3
       bspc config window_gap           12
@@ -28,8 +28,8 @@ in {
 
       bspc config normal_border_color '#${config.colorScheme.colors.base01}'
       bspc config active_border_color '#${config.colorScheme.colors.base01}'
-      bspc config focused_border_color '#${config.colorScheme.colors.base0C}'
-      bspc config presel_feedback_color '#${config.colorScheme.colors.base0C}'
+      bspc config focused_border_color '#${config.colorScheme.colors.base0E}'
+      bspc config presel_feedback_color '#${config.colorScheme.colors.base0E}'
 
       bspc config focus_follows_pointer true
       bspc config pointer_follows_focus true

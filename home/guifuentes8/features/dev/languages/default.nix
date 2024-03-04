@@ -31,6 +31,8 @@
     # JAVASCRIPT
     nodejs
     yarn
+    nodePackages.eas-cli
+    nodePackages.expo-cli
 
     # JAVA
     maven

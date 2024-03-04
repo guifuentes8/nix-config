@@ -6,16 +6,16 @@ let
     ]; # You can specify multiple accents here to output multiple themes
     size = "standard";
     tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
-    variant = "mocha";
+    variant = "frappe";
   };
-  gtk-name = "Catppuccin-Mocha-Standard-Teal-Dark";
+  gtk-name = "Catppuccin-Frappe-Standard-Teal-Dark";
   icon-pkg = pkgs.catppuccin-papirus-folders.override {
     accent = "teal";
-    flavor = "mocha";
+    flavor = "frappe";
   };
   icon-name = "Papirus";
-  cursor-name = "Catppuccin-Mocha-Dark-Cursors";
-  cursor-pkg = pkgs.catppuccin-cursors.mochaDark;
+  cursor-name = "Catppuccin-Frappe-Dark-Cursors";
+  cursor-pkg = pkgs.catppuccin-cursors.frappeDark;
   cursor-size = 36;
   cursor-size-text = "36";
 

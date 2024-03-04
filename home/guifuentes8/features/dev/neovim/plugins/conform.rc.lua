@@ -15,7 +15,6 @@ require("conform").setup({
     graphql = { { "prettierd", } },
     markdown = { { "prettierd", } },
     svelte = { { "prettierd", } },
-
     nix = { "nixfmt" },
   },
   format_on_save = {

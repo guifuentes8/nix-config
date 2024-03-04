@@ -25,7 +25,7 @@
         line-size = "0pt";
         line-color = "#${config.colorScheme.colors.base0C}";
         border-size = "2pt";
-        border-color = "#${config.colorScheme.colors.base0C}";
+        border-color = "#${config.colorScheme.colors.base0E}";
         separator = "";
         separator-foreground = "#${config.colorScheme.colors.base0D}";
         cursor-click = "pointer";
@@ -55,13 +55,13 @@
         type = "internal/xworkspaces";
         label-active-padding = 1;
         label-active = "%name% ";
-        label-active-foreground = "#${config.colorScheme.colors.base0C}";
+        label-active-foreground = "#${config.colorScheme.colors.base0E}";
         label-active-background = "#${config.colorScheme.colors.base00}";
-        label-active-underline = "#${config.colorScheme.colors.base0C}";
+        label-active-underline = "#${config.colorScheme.colors.base08}";
         label-active-font = 2;
         label-occupied = "%name% ";
         label-occupied-background = "#${config.colorScheme.colors.base00}";
-        label-occupied-foreground = "#${config.colorScheme.colors.base0D}";
+        label-occupied-foreground = "#${config.colorScheme.colors.base08}";
         label-occupied-font = 2;
         label-occupied-padding = 1;
         label-urgent = "%name% ";
@@ -69,7 +69,7 @@
         label-urgent-foreground = "#${config.colorScheme.colors.base08}";
         label-empty = "%name% ";
         label-empty-background = "#${config.colorScheme.colors.base00}";
-        label-empty-foreground = "#${config.colorScheme.colors.base07}";
+        label-empty-foreground = "#${config.colorScheme.colors.base08}";
         label-empty-font = 2;
         label-empty-padding = 1;
       };
