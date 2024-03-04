@@ -46,9 +46,9 @@
           specialArgs = { inherit inputs outputs unstable systemVersion; };
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/nixos ];
         };
-        clearlinux = nixpkgs.lib.nixosSystem {
+        silverblue = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable systemVersion; };
-          modules = [ darkmatter-grub-theme.nixosModule ./hosts/clearlinux ];
+          modules = [ darkmatter-grub-theme.nixosModule ./hosts/silverblue ];
         };
       };
 
@@ -60,12 +60,12 @@
           };
           modules = [ ./home/guifuentes8/nixos.nix ];
         };
-        "guifuentes8@clearlinux" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@silverblue" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable systemVersion nix-colors inputs outputs;
           };
-          modules = [ ./home/guifuentes8/clearlinux.nix ];
+          modules = [ ./home/guifuentes8/silverblue.nix ];
         };
       };
     };
