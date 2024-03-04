@@ -1,1 +1,4 @@
-{ imports = [ ./cava.nix ./ncspot.nix ./sptlrx.nix ./spotify-player.nix ]; }
+{
+  imports =
+    [ ./cava.nix ./ncmpcpp.nix ./ncspot.nix ./sptlrx.nix ./spotify-player.nix ];
+}

@@ -9,7 +9,6 @@
     ./gpg.nix
     ./kitty.nix
     ./lsd.nix
-    ./ncmpcpp.nix
     ./ripgrep.nix
     ./ssh.nix
     ./starship.nix
