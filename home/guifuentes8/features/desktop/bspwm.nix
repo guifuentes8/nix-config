@@ -1,7 +1,7 @@
 { outputs, pkgs, nix-colors, config, theme, ... }:
 let wallpaper = ./wallpaper.png;
 in {
-  imports = [ ./common ./common/wm/xorg ];
+  imports = [ ./common ./common/wm/xorg ./theme ];
 
   xsession.windowManager.bspwm = {
     enable = true;

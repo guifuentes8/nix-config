@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ./rofi ./dunst.nix ./qutebrowser.nix ]; }
+{ ... }: { imports = [ ./rofi ./dunst.nix ./qutebrowser.nix ./xdg.nix ]; }
