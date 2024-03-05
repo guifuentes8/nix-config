@@ -2,7 +2,7 @@
 let
   icon-pkg = pkgs.catppuccin-papirus-folders.override {
     accent = "teal";
-    flavor = "frappe";
+    flavor = "mocha";
   };
 
   icon-name = "Papirus";

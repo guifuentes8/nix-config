@@ -6,10 +6,10 @@
     bat = {
       enable = true;
       extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-      config.theme = "catppuccin-frappe";
+      config.theme = "catppuccin-mocha";
     };
   };
-  xdg.configFile."bat/themes/catppuccin-frappe.tmTheme".text = ''
+  xdg.configFile."bat/themes/catppuccin-mocha.tmTheme".text = ''
       <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">

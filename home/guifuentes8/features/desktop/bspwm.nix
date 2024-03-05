@@ -14,7 +14,7 @@ in {
       "feh --bg-center  ${wallpaper} --image-bg '#1e1e2e'"
       "pkill dunst"
       "dunst"
-      "xsetroot -cursor_name 'Catppuccin-Frappe-Dark-Cursors'"
+      "xsetroot -cursor_name 'Catppuccin-Mocha-Dark-Cursors'"
     ];
     extraConfig = ''
       bspc monitor -d 󰇩   󰓇 󱄄      

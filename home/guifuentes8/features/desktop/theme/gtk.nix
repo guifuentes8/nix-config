@@ -6,9 +6,9 @@ let
     ]; # You can specify multiple accents here to output multiple themes
     size = "standard";
     tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
-    variant = "frappe";
+    variant = "mocha";
   };
-  gtk-name = "Catppuccin-Frappe-Standard-Teal-Dark";
+  gtk-name = "Catppuccin-Mocha-Standard-Teal-Dark";
 in {
 
   home.sessionVariables.GTK_THEME = gtk-name;

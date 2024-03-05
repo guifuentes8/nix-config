@@ -57,7 +57,7 @@
 
       if os.path.exists(config.configdir / "theme.py"):
           import theme
-          theme.setup(c, 'frappe', True)
+          theme.setup(c, 'mocha', True)
     '';
 
   };
