@@ -67,6 +67,14 @@
           };
           modules = [ ./home/guifuentes8/silverblue.nix ];
         };
+        "guifuentes8@windows" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = {
+            inherit unstable systemVersion nix-colors inputs outputs;
+          };
+          modules = [ ./home/guifuentes8/windows.nix ];
+        };
+
       };
     };
 
