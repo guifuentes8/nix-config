@@ -10,8 +10,10 @@
     pkgs.gimp
     pkgs.onlyoffice-bin
     pkgs.slack
+    pkgs.discord
     pkgs.spotify
     pkgs.telegram-desktop
+    pkgs.ytmdesktop
 
     pkgs.etcher
     pkgs.ventoy-bin

@@ -1,12 +1,14 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, theme, ... }: {
 
-  imports = [ ../features/cli ./systemd.nix ./theme.nix ];
+  imports = [ ../features/cli ./theme.nix ];
 
   home = {
     username = lib.mkDefault "guifuentes8";
     homeDirectory = "/home/${config.home.username}";
     stateVersion = lib.mkDefault "23.11";
     sessionVariables = {
+      WARP_THEMES_DIR =
+        "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
@@ -52,6 +54,7 @@
         "electron-12.2.3"
         "electron-19.1.9"
         "electron-24.8.6"
+        "mailspring-1.12.0"
       ];
     };
   };

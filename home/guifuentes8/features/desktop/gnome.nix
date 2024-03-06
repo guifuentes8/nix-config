@@ -1,13 +1,10 @@
-{ pkgs, ... }:
-{
-  imports = [
-    ./pkgs
-  ];
+{ pkgs, ... }: {
+  imports = [ ];
   gtk = {
     enable = true;
     font = {
       name = "JetBrainsMonoNL Nerd Font";
-      size = 12;
+      size = 13;
     };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
@@ -30,5 +27,13 @@
     style.package = pkgs.adwaita-qt;
     platformTheme = "qtct";
   };
+
+  home.packages = with pkgs; [
+    gnome.gnome-music
+    gnome.totem
+    gnome.geary
+    gnome.gnome-tweaks
+    gnome.gnome-boxes
+  ];
 
 }

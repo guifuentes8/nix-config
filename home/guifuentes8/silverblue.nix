@@ -8,6 +8,7 @@
     #    ./features/cli
     ./features/dev
     ./features/desktop/common
+    ./features/desktop/gnome.nix
     #    ./features/productivity
     # ./features/video/davinci-resolve
 
