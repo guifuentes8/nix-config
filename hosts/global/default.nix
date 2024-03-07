@@ -35,7 +35,7 @@
   };
 
   home-manager = {
-    useUserPackages = true;
+    #    useUserPackages = true;
     extraSpecialArgs = { inherit inputs outputs; };
   };
 

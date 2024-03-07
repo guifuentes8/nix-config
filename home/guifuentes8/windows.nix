@@ -1,12 +1,8 @@
-{ pkgs, lib, config, nix-colors, ... }:
-{
-  imports = [
-    ./global/theme.nix
-    ./features/cli
-    ./features/dev
-  ];
+{ pkgs, lib, config, nix-colors, ... }: {
+  imports =
+    [ ./global ./features/desktop/common ./features/cli ./features/dev ];
 
-home = {
+  home = {
     username = lib.mkDefault "guifuentes8";
     homeDirectory = "/home/${config.home.username}";
     stateVersion = lib.mkDefault "23.11";
