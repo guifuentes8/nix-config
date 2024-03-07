@@ -11,6 +11,8 @@
   imports = [
 
     ../global
+    ../global/services/common
+    ../global/users/guifuentes8.nix
   ];
 
   wsl.enable = true;
@@ -19,10 +21,13 @@
   home-manager.extraSpecialArgs = {
     inherit inputs outputs nix-colors unstable;
   };
-  home-manager.useUserPackages = true;
   home-manager.users.guifuentes8 = import ../../home/guifuentes8/windows.nix;
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    NIXOS_OZONE_WL = "1";
+  };
+
   #nixpkgs.config.spotify.commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   nix = {
     package = pkgs.nixFlakes;
