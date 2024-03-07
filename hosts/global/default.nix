@@ -17,13 +17,13 @@
     };
   };
 
-  #  nixpkgs = {
-  #   overlays = builtins.attrValues outputs.overlays;
-  #   config = {
-  #     allowUnfree = true;
-  #     allowUnfreePredicate = (_: true);
-  #   };
-  # };
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
 
   system = {
     stateVersion = systemVersion;
@@ -34,10 +34,7 @@
     };
   };
 
-  home-manager = {
-    useUserPackages = true;
-    extraSpecialArgs = { inherit inputs outputs; };
-  };
+  home-manager = { extraSpecialArgs = { inherit inputs outputs; }; };
 
   # Services
   programs.dconf.enable = true;

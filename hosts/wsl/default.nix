@@ -37,6 +37,7 @@
     '';
   };
   nixpkgs.hostPlatform = "x86_64-linux";
+  environment.systemPackages = [ pkgs.firefox ];
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
     config = {

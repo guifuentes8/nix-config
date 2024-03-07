@@ -8,7 +8,7 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-wsl.url = "github:nix-community/NixOS-WSL";
-    nix-wsl.inputs.nixpkgs.follows="nixpkgs";
+    nix-wsl.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -24,8 +24,8 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, nix-wsl, nix-colors
-    , darkmatter-grub-theme, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, nix-wsl
+    , nix-colors, darkmatter-grub-theme, ... }@inputs:
 
     let
       inherit (self) outputs;
@@ -54,21 +54,21 @@
           specialArgs = { inherit inputs outputs unstable systemVersion; };
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/silverblue ];
         };
-	       wsl = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs unstable systemVersion nix-colors; };
-          modules = [ 
-            	nix-wsl.nixosModules.wsl
-	            home-manager.nixosModules.home-manager 
-
-        ./hosts/wsl 
-	];
+        wsl = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs unstable systemVersion nix-colors;
+          };
+          modules = [
+            nix-wsl.nixosModules.wsl
+            home-manager.nixosModules.home-manager
+            ./hosts/wsl
+          ];
         };
-	
+
       };
-	darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
-		modules = [./hosts/darwin];	
-	};
-darwinPackages = self.darwinConfiguration."mac".pkgs;
+      darwinConfigurations."mac" =
+        nix-darwin.lib.darwinSystem { modules = [ ./hosts/darwin ]; };
+      darwinPackages = self.darwinConfiguration."mac".pkgs;
 
       homeConfigurations = {
         "guifuentes8@nixos" = home-manager.lib.homeManagerConfiguration {
@@ -85,7 +85,7 @@ darwinPackages = self.darwinConfiguration."mac".pkgs;
           };
           modules = [ ./home/guifuentes8/silverblue.nix ];
         };
-"guifuentes8@windows" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@windows" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable systemVersion nix-colors inputs outputs;
@@ -93,7 +93,6 @@ darwinPackages = self.darwinConfiguration."mac".pkgs;
           modules = [ ./home/guifuentes8/windows.nix ];
         };
 
-       
       };
     };
 
