@@ -6,6 +6,7 @@
     # Global config (required)
     ./global
     ./features/dev
+    ./features/desktop/common
   ];
 
   # As already mentioned
