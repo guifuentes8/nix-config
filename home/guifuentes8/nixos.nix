@@ -5,6 +5,7 @@
 
     # Global config (required)
     ./global
+    ./global/nixpkgs
     ./features/desktop/bspwm.nix
     ./features/dev
     ./features/dev/mobile.nix
