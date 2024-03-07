@@ -18,6 +18,7 @@
   wsl.enable = true;
   wsl.defaultUser = "guifuentes8";
   wsl.startMenuLaunchers = true;
+  home-manager.useGlobalPkgs = true;
   home-manager.extraSpecialArgs = {
     inherit inputs outputs nix-colors unstable;
   };
@@ -35,8 +36,21 @@
       experimental-features = nix-command flakes
     '';
   };
-  nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "x86_64-linux";
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+      permittedInsecurePackages = [
+        "python-2.7.18.6"
+        "electron-12.2.3"
+        "electron-19.1.9"
+        "electron-24.8.6"
+        "mailspring-1.12.0"
+      ];
+    };
+  };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It's perfectly fine and recommended to leave
