@@ -5,7 +5,8 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,12 +21,12 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors
+  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, nix-colors
     , darkmatter-grub-theme, ... }@inputs:
 
     let
       inherit (self) outputs;
-      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
+      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
       systemVersion = "23.11";
       unstable = import nixpkgs-unstable {
@@ -51,6 +52,10 @@
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/silverblue ];
         };
       };
+	darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+		modules = [./hosts/darwin];	
+	};
+darwinPackages = self.darwinConfiguration."mac".pkgs;
 
       homeConfigurations = {
         "guifuentes8@nixos" = home-manager.lib.homeManagerConfiguration {
