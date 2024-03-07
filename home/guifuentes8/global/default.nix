@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, config, outputs, systemVersion, nix-colors, theme, ... }: {
+{ inputs, lib, pkgs, config, outputs, systemVersion, ... }: {
 
   imports = [ ../features/cli ./theme.nix ];
 
