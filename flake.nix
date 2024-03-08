@@ -61,6 +61,11 @@
           modules = [
             nix-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
+            ({ pkgs, ... }: {
+              wsl.enable = true;
+              wsl.defaultUser = "guifuentes8";
+              wsl.startMenuLaunchers = true;
+            })
             ./hosts/wsl
           ];
         };

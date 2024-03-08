@@ -10,15 +10,12 @@
 {
   imports = [
 
-    ../global
-    ../global/services/common
+    #   ../global
+    #    ../global/services/common
     ../global/users/guifuentes8.nix
   ];
 
-  wsl.enable = true;
-  wsl.defaultUser = "guifuentes8";
-  wsl.startMenuLaunchers = true;
-  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
   home-manager.extraSpecialArgs = {
     inherit inputs outputs nix-colors unstable;
   };
@@ -37,7 +34,7 @@
     '';
   };
   nixpkgs.hostPlatform = "x86_64-linux";
-  environment.systemPackages = [ pkgs.firefox ];
+  environment.systemPackages = [ pkgs.chromium ];
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
     config = {
@@ -48,7 +45,6 @@
         "electron-12.2.3"
         "electron-19.1.9"
         "electron-24.8.6"
-        "mailspring-1.12.0"
       ];
     };
   };

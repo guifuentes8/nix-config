@@ -1,6 +1,6 @@
 { pkgs, lib, config, nix-colors, ... }: {
   imports =
-    [ ./global ./features/desktop/common ./features/cli ./features/dev ];
+    [ ./global ./features/cli ./features/desktop/common ./features/dev ];
 
   home = {
     username = lib.mkDefault "guifuentes8";

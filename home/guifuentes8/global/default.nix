@@ -1,6 +1,6 @@
 { inputs, lib, pkgs, config, outputs, systemVersion, ... }: {
 
-  imports = [ ../features/cli ./theme.nix ];
+  imports = [ ../features/cli ./nixpkgs.nix ./theme.nix ];
 
   home = {
     username = lib.mkDefault "guifuentes8";
