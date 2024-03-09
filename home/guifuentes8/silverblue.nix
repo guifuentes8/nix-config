@@ -5,7 +5,6 @@
 
     # Global config (required)
     ./global
-    ./global/nixpkgs
     ./features/dev
     ./features/desktop/common
     ./features/desktop/gnome.nix

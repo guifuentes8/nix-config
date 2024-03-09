@@ -8,7 +8,7 @@
       profile = "gpu-hq";
       gpu-context = "wayland";
       ytdl-format = "bestvideo+bestaudio";
-      background = lib.mkDefault "#${config.colorScheme.colors.base00}";
+      background = lib.mkDefault "#${config.colorScheme.palette.base00}";
       alpha = "yes";
     };
     defaultProfiles = [ "gpu-hq" ];

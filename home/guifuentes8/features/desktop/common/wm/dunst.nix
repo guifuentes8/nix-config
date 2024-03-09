@@ -30,7 +30,7 @@ in {
         origin = "top-right";
         font = "JetBrainsMonoNL Nerd Font 12";
         frame_width = 3;
-        frame_color = "#${config.colorScheme.colors.base08}";
+        frame_color = "#${config.colorScheme.palette.base08}";
         notification_limit = 0;
         separator_height = 2;
         padding = 8;
@@ -40,19 +40,19 @@ in {
 
       };
       urgency_low = {
-        background = "#${config.colorScheme.colors.base00}";
-        foreground = "#${config.colorScheme.colors.base05}";
+        background = "#${config.colorScheme.palette.base00}";
+        foreground = "#${config.colorScheme.palette.base05}";
       };
       urgency_normal = {
-        background = "#${config.colorScheme.colors.base00}";
-        foreground = "#${config.colorScheme.colors.base05}";
+        background = "#${config.colorScheme.palette.base00}";
+        foreground = "#${config.colorScheme.palette.base05}";
         timeout = 5;
       };
 
       urgency_critical = {
-        background = "#${config.colorScheme.colors.base00}";
-        foreground = "#${config.colorScheme.colors.base05}";
-        frame_color = "#${config.colorScheme.colors.base08}";
+        background = "#${config.colorScheme.palette.base00}";
+        foreground = "#${config.colorScheme.palette.base05}";
+        frame_color = "#${config.colorScheme.palette.base08}";
       };
       play_sound = {
         summary = "*";

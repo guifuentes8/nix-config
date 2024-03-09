@@ -17,37 +17,37 @@
       initial_window_height = 400;
       disable_ligatures = "never";
       # The basic colors
-      foreground = "#${config.colorScheme.colors.base05}";
-      background = "#${config.colorScheme.colors.base00}";
-      selection_foreground = "#${config.colorScheme.colors.base03}";
-      selection_background = "#${config.colorScheme.colors.base06}";
+      foreground = "#${config.colorScheme.palette.base05}";
+      background = "#${config.colorScheme.palette.base00}";
+      selection_foreground = "#${config.colorScheme.palette.base03}";
+      selection_background = "#${config.colorScheme.palette.base06}";
 
       # Cursor colors
-      cursor = "#${config.colorScheme.colors.base0C}";
-      cursor_text_color = "#${config.colorScheme.colors.base00}";
+      cursor = "#${config.colorScheme.palette.base0C}";
+      cursor_text_color = "#${config.colorScheme.palette.base00}";
 
       # URL underline color when hovering with mouse 
-      url_color = "#${config.colorScheme.colors.base0C}";
+      url_color = "#${config.colorScheme.palette.base0C}";
 
       # Kitty window border colors
-      active_border_color = "#${config.colorScheme.colors.base03}";
-      inactive_border_color = "#${config.colorScheme.colors.base03}";
-      bell_border_color = "#${config.colorScheme.colors.base09}";
+      active_border_color = "#${config.colorScheme.palette.base03}";
+      inactive_border_color = "#${config.colorScheme.palette.base03}";
+      bell_border_color = "#${config.colorScheme.palette.base09}";
 
       # Tab bar colors
-      active_tab_foreground = "#${config.colorScheme.colors.base0B}";
-      active_tab_background = "#${config.colorScheme.colors.base00}";
-      inactive_tab_foreground = "#${config.colorScheme.colors.base01}";
-      inactive_tab_background = "#${config.colorScheme.colors.base04}";
-      tab_bar_background = "#${config.colorScheme.colors.base04}";
+      active_tab_foreground = "#${config.colorScheme.palette.base0B}";
+      active_tab_background = "#${config.colorScheme.palette.base00}";
+      inactive_tab_foreground = "#${config.colorScheme.palette.base01}";
+      inactive_tab_background = "#${config.colorScheme.palette.base04}";
+      tab_bar_background = "#${config.colorScheme.palette.base04}";
 
       # Colors for marks (marked text in the terminal)
-      mark1_foreground = "#${config.colorScheme.colors.base00}";
-      mark1_background = "#${config.colorScheme.colors.base03}";
-      mark2_foreground = "#${config.colorScheme.colors.base00}";
-      mark2_background = "#${config.colorScheme.colors.base06}";
-      mark3_foreground = "#${config.colorScheme.colors.base00}";
-      mark3_background = "#${config.colorScheme.colors.base06}";
+      mark1_foreground = "#${config.colorScheme.palette.base00}";
+      mark1_background = "#${config.colorScheme.palette.base03}";
+      mark2_foreground = "#${config.colorScheme.palette.base00}";
+      mark2_background = "#${config.colorScheme.palette.base06}";
+      mark3_foreground = "#${config.colorScheme.palette.base00}";
+      mark3_background = "#${config.colorScheme.palette.base06}";
 
       # The 16 terminal colors
       # black

@@ -26,10 +26,10 @@ in {
       bspc config borderless_monocle   true
       bspc config gapless_monocle      true
 
-      bspc config normal_border_color '#${config.colorScheme.colors.base01}'
-      bspc config active_border_color '#${config.colorScheme.colors.base01}'
-      bspc config focused_border_color '#${config.colorScheme.colors.base0E}'
-      bspc config presel_feedback_color '#${config.colorScheme.colors.base0E}'
+      bspc config normal_border_color '#${config.colorScheme.palette.base01}'
+      bspc config active_border_color '#${config.colorScheme.palette.base01}'
+      bspc config focused_border_color '#${config.colorScheme.palette.base0E}'
+      bspc config presel_feedback_color '#${config.colorScheme.palette.base0E}'
 
       bspc config focus_follows_pointer true
       bspc config pointer_follows_focus true

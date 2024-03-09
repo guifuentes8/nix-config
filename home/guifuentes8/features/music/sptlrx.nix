@@ -14,7 +14,7 @@
         hAlignment = "center";
         before = {
           background = "";
-          foreground = "#${config.colorScheme.colors.base03}";
+          foreground = "#${config.colorScheme.palette.base03}";
           bold = true;
           italic = false;
           undeline = false;
@@ -25,7 +25,7 @@
 
         current = {
           background = "";
-          foreground = "#${config.colorScheme.colors.base0D}";
+          foreground = "#${config.colorScheme.palette.base0D}";
           bold = true;
           italic = false;
           undeline = false;
@@ -36,7 +36,7 @@
 
         after = {
           background = "";
-          foreground = "#${config.colorScheme.colors.base0B}";
+          foreground = "#${config.colorScheme.palette.base0B}";
           bold = false;
           italic = false;
           undeline = false;

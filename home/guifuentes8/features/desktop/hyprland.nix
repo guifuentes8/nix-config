@@ -28,8 +28,8 @@ in {
             gaps_in = 4
             gaps_out = 8
             border_size = 2
-            col.active_border = rgb(${config.colorScheme.colors.base0B})
-            col.inactive_border = rgb(${config.colorScheme.colors.base02})
+            col.active_border = rgb(${config.colorScheme.palette.base0B})
+            col.inactive_border = rgb(${config.colorScheme.palette.base02})
             no_border_on_floating = true
             layout = dwindle
         }

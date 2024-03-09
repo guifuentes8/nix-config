@@ -1,5 +1,6 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ config, lib, inputs, outputs, pkgs, systemVersion, ... }: {
+{ config, lib, inputs, outputs, pkgs, nix-colors, unstable, systemVersion, ...
+}: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   # System configs
@@ -14,11 +15,13 @@
       automatic = true;
       dates = "daily";
       options = "--delete-older-than 3d";
+
     };
   };
 
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
+    hostPlatform = "x86_64-linux";
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
@@ -33,8 +36,10 @@
       dates = "daily";
     };
   };
-
-  home-manager = { extraSpecialArgs = { inherit inputs outputs; }; };
+  home-manager.useUserPackages = true;
+  home-manager.extraSpecialArgs = {
+    inherit inputs outputs nix-colors unstable;
+  };
 
   # Services
   programs.dconf.enable = true;

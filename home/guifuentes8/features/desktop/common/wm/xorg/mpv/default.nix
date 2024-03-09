@@ -8,7 +8,7 @@
       profile = "gpu-hq";
       # gpu-context = "wayland";
       ytdl-format = "bestvideo+bestaudio";
-      background = "#${config.colorScheme.colors.base00}";
+      background = "#${config.colorScheme.palette.base00}";
     };
     defaultProfiles = [ "gpu-hq" ];
     scripts = [ pkgs.mpvScripts.mpris ];

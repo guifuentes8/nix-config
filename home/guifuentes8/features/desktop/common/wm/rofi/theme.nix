@@ -4,14 +4,14 @@ let inherit (config.lib.formats.rasi) mkLiteral;
 in {
   "*" = {
     border-radius = mkLiteral "8px";
-    bg-col = mkLiteral "#${config.colorScheme.colors.base00}";
-    bg-col-light = mkLiteral "#${config.colorScheme.colors.base00}";
-    border-col = mkLiteral "#${config.colorScheme.colors.base00}";
-    selected-col = mkLiteral "#${config.colorScheme.colors.base00}";
-    blue = mkLiteral "#${config.colorScheme.colors.base0D}";
-    fg-col = mkLiteral "#${config.colorScheme.colors.base05}";
-    fg-col2 = mkLiteral "#${config.colorScheme.colors.base0B}";
-    grey = mkLiteral "#${config.colorScheme.colors.base04}";
+    bg-col = mkLiteral "#${config.colorScheme.palette.base00}";
+    bg-col-light = mkLiteral "#${config.colorScheme.palette.base00}";
+    border-col = mkLiteral "#${config.colorScheme.palette.base00}";
+    selected-col = mkLiteral "#${config.colorScheme.palette.base00}";
+    blue = mkLiteral "#${config.colorScheme.palette.base0D}";
+    fg-col = mkLiteral "#${config.colorScheme.palette.base05}";
+    fg-col2 = mkLiteral "#${config.colorScheme.palette.base0B}";
+    grey = mkLiteral "#${config.colorScheme.palette.base04}";
     font = "JetBrainsMonoNL Nerd Font 12";
   };
 
@@ -39,7 +39,7 @@ in {
     height = mkLiteral "350px";
     width = mkLiteral "600px";
     border = mkLiteral "3px";
-    border-color = mkLiteral "#${config.colorScheme.colors.base0B}";
+    border-color = mkLiteral "#${config.colorScheme.palette.base0B}";
     background-color = mkLiteral "@bg-col";
   };
 

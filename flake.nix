@@ -58,16 +58,7 @@
           specialArgs = {
             inherit inputs outputs unstable systemVersion nix-colors;
           };
-          modules = [
-            nix-wsl.nixosModules.wsl
-            home-manager.nixosModules.home-manager
-            ({ pkgs, ... }: {
-              wsl.enable = true;
-              wsl.defaultUser = "guifuentes8";
-              wsl.startMenuLaunchers = true;
-            })
-            ./hosts/wsl
-          ];
+          modules = [ ./hosts/wsl ];
         };
 
       };

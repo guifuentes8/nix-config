@@ -20,14 +20,14 @@
         offset-x = "1%";
         bottom = false;
         fixed-center = true;
-        background = "#${config.colorScheme.colors.base00}";
-        foreground = "#${config.colorScheme.colors.base05}";
+        background = "#${config.colorScheme.palette.base00}";
+        foreground = "#${config.colorScheme.palette.base05}";
         line-size = "0pt";
-        line-color = "#${config.colorScheme.colors.base0C}";
+        line-color = "#${config.colorScheme.palette.base0C}";
         border-size = "2pt";
-        border-color = "#${config.colorScheme.colors.base0E}";
+        border-color = "#${config.colorScheme.palette.base0E}";
         separator = "";
-        separator-foreground = "#${config.colorScheme.colors.base0D}";
+        separator-foreground = "#${config.colorScheme.palette.base0D}";
         cursor-click = "pointer";
         cursor-scroll = "ns-resize";
         enable-ipc = true;
@@ -55,21 +55,21 @@
         type = "internal/xworkspaces";
         label-active-padding = 1;
         label-active = "%name% ";
-        label-active-foreground = "#${config.colorScheme.colors.base0E}";
-        label-active-background = "#${config.colorScheme.colors.base00}";
-        label-active-underline = "#${config.colorScheme.colors.base08}";
+        label-active-foreground = "#${config.colorScheme.palette.base0E}";
+        label-active-background = "#${config.colorScheme.palette.base00}";
+        label-active-underline = "#${config.colorScheme.palette.base08}";
         label-active-font = 2;
         label-occupied = "%name% ";
-        label-occupied-background = "#${config.colorScheme.colors.base00}";
-        label-occupied-foreground = "#${config.colorScheme.colors.base08}";
+        label-occupied-background = "#${config.colorScheme.palette.base00}";
+        label-occupied-foreground = "#${config.colorScheme.palette.base08}";
         label-occupied-font = 2;
         label-occupied-padding = 1;
         label-urgent = "%name% ";
-        label-urgent-background = "#${config.colorScheme.colors.base00}";
-        label-urgent-foreground = "#${config.colorScheme.colors.base08}";
+        label-urgent-background = "#${config.colorScheme.palette.base00}";
+        label-urgent-foreground = "#${config.colorScheme.palette.base08}";
         label-empty = "%name% ";
-        label-empty-background = "#${config.colorScheme.colors.base00}";
-        label-empty-foreground = "#${config.colorScheme.colors.base08}";
+        label-empty-background = "#${config.colorScheme.palette.base00}";
+        label-empty-foreground = "#${config.colorScheme.palette.base08}";
         label-empty-font = 2;
         label-empty-padding = 1;
       };
@@ -78,9 +78,9 @@
         type = "custom/script";
         exec = "${pkgs.sptlrx}/bin/sptlrx pipe";
         tail = true;
-        label = "%{F#${config.colorScheme.colors.base06}}  %output:0:40...%";
+        label = "%{F#${config.colorScheme.palette.base06}}  %output:0:40...%";
         format = "<label>";
-        format-background = "#${config.colorScheme.colors.base00}";
+        format-background = "#${config.colorScheme.palette.base00}";
       };
 
       "module/filesystem" = {
@@ -88,23 +88,23 @@
         interval = "25";
         mount-0 = "/";
         label-mounted =
-          "%{F#${config.colorScheme.colors.base0D}}%{F-} %{F#${config.colorScheme.colors.base0D}}%percentage_used%%%{F-}";
+          "%{F#${config.colorScheme.palette.base0D}}%{F-} %{F#${config.colorScheme.palette.base0D}}%percentage_used%%%{F-}";
         label-unmounted = "%mountpoint% not mounted";
-        label-unmounted-foreground = "#${config.colorScheme.colors.base0D}";
+        label-unmounted-foreground = "#${config.colorScheme.palette.base0D}";
       };
       "module/memory" = {
         type = "internal/memory";
         interval = "2";
-        format = "%{F#${config.colorScheme.colors.base0D}}󰟁 <label>%%{F-}";
+        format = "%{F#${config.colorScheme.palette.base0D}}󰟁 <label>%%{F-}";
         label = "%percentage_used%";
-        format-foreground = "#${config.colorScheme.colors.base0D}";
+        format-foreground = "#${config.colorScheme.palette.base0D}";
       };
       "module/cpu" = {
         type = "internal/cpu";
         interval = "2";
-        format = "%{F#${config.colorScheme.colors.base0D}} <label>%%{F-}";
+        format = "%{F#${config.colorScheme.palette.base0D}} <label>%%{F-}";
         label = "%percentage%";
-        format-foreground = "#${config.colorScheme.colors.base0D}";
+        format-foreground = "#${config.colorScheme.palette.base0D}";
       };
       "module/temperature" = {
         type = "internal/temperature";
@@ -114,8 +114,8 @@
           "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input";
         base-temperature = 20;
         warn-temperature = 70;
-        format = "%{F#${config.colorScheme.colors.base0A}}<label>%{F-}";
-        format-warn = "%{F#${config.colorScheme.colors.base08}}<label>%{F-}";
+        format = "%{F#${config.colorScheme.palette.base0A}}<label>%{F-}";
+        format-warn = "%{F#${config.colorScheme.palette.base08}}<label>%{F-}";
         label = " %temperature-c%";
         label-warn = " %temperature-c%";
       };
@@ -123,10 +123,10 @@
         type = "internal/network";
         interval = "5";
         format-connected =
-          "%{F#${config.colorScheme.colors.base0B}}󰇧%{F-} %{F#${config.colorScheme.colors.base0B}}Connected%{F-}";
+          "%{F#${config.colorScheme.palette.base0B}}󰇧%{F-} %{F#${config.colorScheme.palette.base0B}}Connected%{F-}";
         format-disconnected = ":/ Disconnected";
         label-disconnected =
-          "%{F#${config.colorScheme.colors.base08}}%ifname%%{F#${config.colorScheme.colors.base08}} disconnected%{F-}";
+          "%{F#${config.colorScheme.palette.base08}}%ifname%%{F#${config.colorScheme.palette.base08}} disconnected%{F-}";
       };
       "module/wlan" = {
         "inherit" = "network-base";
@@ -137,15 +137,15 @@
         "inherit" = "network-base";
         interface-type = "wired";
         label-connected =
-          "%{F#${config.colorScheme.colors.base07}}%ifname%%{F-}";
+          "%{F#${config.colorScheme.palette.base07}}%ifname%%{F-}";
       };
       "module/pulseaudio" = {
         type = "internal/pulseaudio";
         format-volume = "<ramp-volume><label-volume>";
         label-muted = "󰖁 muted";
-        ramp-volume-foreground = "#${config.colorScheme.colors.base0E}";
-        label-volume-foreground = "#${config.colorScheme.colors.base0E}";
-        label-muted-foreground = "#${config.colorScheme.colors.base08}";
+        ramp-volume-foreground = "#${config.colorScheme.palette.base0E}";
+        label-volume-foreground = "#${config.colorScheme.palette.base0E}";
+        label-muted-foreground = "#${config.colorScheme.palette.base08}";
         ramp-volume-0 = "";
         ramp-volume-1 = "";
         ramp-volume-2 = " ";
@@ -159,21 +159,21 @@
         date = "%H:%M:%S";
         date-alt = "Data: %d/%m/%Y Hora: %H:%M:%S";
         label = "%date%";
-        label-foreground = "#${config.colorScheme.colors.base09}";
+        label-foreground = "#${config.colorScheme.palette.base09}";
       };
       #  "module/xkeyboard"={
       #   type = internal/xkeyboard;
       #   blacklist-0 = num lock;
       #   label-layout = 󰌌 %layout% ;
-      #   label-layout-foreground = #${config.colorScheme.colors.base0D};
+      #   label-layout-foreground = #${config.colorScheme.palette.base0D};
       #   label-indicator-on-capslock =   Caps lock;
       #   label-indicator-off-capslock =   Caps lock;
-      #   label-indicator-on-capslock-foreground = #${config.colorScheme.colors.base0D};
-      #   label-indicator-off-capslock-foreground = #${config.colorScheme.colors.base0D};
+      #   label-indicator-on-capslock-foreground = #${config.colorScheme.palette.base0D};
+      #   label-indicator-off-capslock-foreground = #${config.colorScheme.palette.base0D};
       #   label-indicator-padding = 2;
       #   label-indicator-margin = 1;
-      #   label-indicator-foreground = #${config.colorScheme.colors.base0D};
-      #   label-indicator-background = #${config.colorScheme.colors.base0D};
+      #   label-indicator-foreground = #${config.colorScheme.palette.base0D};
+      #   label-indicator-background = #${config.colorScheme.palette.base0D};
       #};
 
       "module/tray" = {

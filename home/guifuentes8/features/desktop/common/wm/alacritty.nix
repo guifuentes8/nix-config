@@ -35,89 +35,89 @@
 
       colors = {
         primary = {
-          background = "#${config.colorScheme.colors.base00}"; # base
-          foreground = "#${config.colorScheme.colors.base05}"; # text
+          background = "#${config.colorScheme.palette.base00}"; # base
+          foreground = "#${config.colorScheme.palette.base05}"; # text
           # Bright and dim foreground colors
-          dim_foreground = "#${config.colorScheme.colors.base05}"; # text
-          bright_foreground = "#${config.colorScheme.colors.base05}"; # text
+          dim_foreground = "#${config.colorScheme.palette.base05}"; # text
+          bright_foreground = "#${config.colorScheme.palette.base05}"; # text
         };
 
         # Cursor colors
         cursor = {
-          text = "#${config.colorScheme.colors.base00}"; # base
-          cursor = "#${config.colorScheme.colors.base0D}"; # rosewater
+          text = "#${config.colorScheme.palette.base00}"; # base
+          cursor = "#${config.colorScheme.palette.base0D}"; # rosewater
         };
 
         # Search colors
         search = {
           matches = {
-            foreground = "#${config.colorScheme.colors.base00}"; # base
-            background = "#${config.colorScheme.colors.base04}"; # subtext0
+            foreground = "#${config.colorScheme.palette.base00}"; # base
+            background = "#${config.colorScheme.palette.base04}"; # subtext0
           };
         };
 
         # Keyboard regex hints
         hints = {
           start = {
-            foreground = "#${config.colorScheme.colors.base00}"; # base
-            background = "#${config.colorScheme.colors.base0A}"; # yellow
+            foreground = "#${config.colorScheme.palette.base00}"; # base
+            background = "#${config.colorScheme.palette.base0A}"; # yellow
           };
           end = {
-            foreground = "#${config.colorScheme.colors.base00}"; # base
-            background = "#${config.colorScheme.colors.base04}"; # subtext0
+            foreground = "#${config.colorScheme.palette.base00}"; # base
+            background = "#${config.colorScheme.palette.base04}"; # subtext0
           };
         };
 
         # Selection colors
         selection = {
-          text = "#${config.colorScheme.colors.base06}"; # base
-          background = "#${config.colorScheme.colors.base03}"; # rosewater
+          text = "#${config.colorScheme.palette.base06}"; # base
+          background = "#${config.colorScheme.palette.base03}"; # rosewater
         };
 
         # Normal colors
         normal = {
-          black = "#${config.colorScheme.colors.base02}"; # surface1
-          red = "#${config.colorScheme.colors.base08}"; # red
-          green = "#${config.colorScheme.colors.base09}"; # green
-          yellow = "#${config.colorScheme.colors.base0A}"; # yellow
-          blue = "#${config.colorScheme.colors.base0B}"; # blue
-          magenta = "#${config.colorScheme.colors.base0C}"; # pink
-          cyan = "#${config.colorScheme.colors.base0D}"; # teal
-          white = "#${config.colorScheme.colors.base07}"; # subtext1
+          black = "#${config.colorScheme.palette.base02}"; # surface1
+          red = "#${config.colorScheme.palette.base08}"; # red
+          green = "#${config.colorScheme.palette.base09}"; # green
+          yellow = "#${config.colorScheme.palette.base0A}"; # yellow
+          blue = "#${config.colorScheme.palette.base0B}"; # blue
+          magenta = "#${config.colorScheme.palette.base0C}"; # pink
+          cyan = "#${config.colorScheme.palette.base0D}"; # teal
+          white = "#${config.colorScheme.palette.base07}"; # subtext1
         };
 
         # Bright colors
         bright = {
-          black = "#${config.colorScheme.colors.base02}"; # surface1
-          red = "#${config.colorScheme.colors.base08}"; # red
-          green = "#${config.colorScheme.colors.base09}"; # green
-          yellow = "#${config.colorScheme.colors.base0A}"; # yellow
-          blue = "#${config.colorScheme.colors.base0B}"; # blue
-          magenta = "#${config.colorScheme.colors.base0C}"; # pink
-          cyan = "#${config.colorScheme.colors.base0D}"; # teal
-          white = "#${config.colorScheme.colors.base07}"; # subtext1
+          black = "#${config.colorScheme.palette.base02}"; # surface1
+          red = "#${config.colorScheme.palette.base08}"; # red
+          green = "#${config.colorScheme.palette.base09}"; # green
+          yellow = "#${config.colorScheme.palette.base0A}"; # yellow
+          blue = "#${config.colorScheme.palette.base0B}"; # blue
+          magenta = "#${config.colorScheme.palette.base0C}"; # pink
+          cyan = "#${config.colorScheme.palette.base0D}"; # teal
+          white = "#${config.colorScheme.palette.base07}"; # subtext1
         };
 
         # Dim colors
         dim = {
-          black = "#${config.colorScheme.colors.base02}"; # surface1
-          red = "#${config.colorScheme.colors.base08}"; # red
-          green = "#${config.colorScheme.colors.base09}"; # green
-          yellow = "#${config.colorScheme.colors.base0A}"; # yellow
-          blue = "#${config.colorScheme.colors.base0B}"; # blue
-          magenta = "#${config.colorScheme.colors.base0C}"; # pink
-          cyan = "#${config.colorScheme.colors.base0D}"; # teal
-          white = "#${config.colorScheme.colors.base07}"; # subtext1
+          black = "#${config.colorScheme.palette.base02}"; # surface1
+          red = "#${config.colorScheme.palette.base08}"; # red
+          green = "#${config.colorScheme.palette.base09}"; # green
+          yellow = "#${config.colorScheme.palette.base0A}"; # yellow
+          blue = "#${config.colorScheme.palette.base0B}"; # blue
+          magenta = "#${config.colorScheme.palette.base0C}"; # pink
+          cyan = "#${config.colorScheme.palette.base0D}"; # teal
+          white = "#${config.colorScheme.palette.base07}"; # subtext1
         };
 
         indexed_colors = [
           {
             index = 16;
-            color = "#${config.colorScheme.colors.base00}";
+            color = "#${config.colorScheme.palette.base00}";
           }
           {
             index = 17;
-            color = "#${config.colorScheme.colors.base0F}";
+            color = "#${config.colorScheme.palette.base0F}";
           }
         ];
 

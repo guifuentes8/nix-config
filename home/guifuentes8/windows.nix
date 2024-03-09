@@ -1,37 +1,21 @@
-{ pkgs, lib, config, nix-colors, ... }: {
+{ pkgs, lib, config, nix-colors, ... }:
+let waylandArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+in {
   imports =
     [ ./global ./features/cli ./features/desktop/common ./features/dev ];
 
-  home = {
-    username = lib.mkDefault "guifuentes8";
-    homeDirectory = "/home/${config.home.username}";
-    stateVersion = lib.mkDefault "23.11";
-    sessionVariables = {
-      WARP_THEMES_DIR =
-        "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
-      PASSWORD_STORE_DIR =
-        lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
-    };
-    # persistence = {
-    #   "/persist/home/guifuentes8" = {
-    #     directories = [
-    #       "Documents"
-    #       "Downloads"
-    #       "Pictures"
-    #       "Videos"
-    #       ".local/bin"
-    #       ".local/share/nix" # trusted settings and repl history
-    #     ];
-    #     allowOther = true;
-    #   };
-    # };
+  nixpkgs.config = {
+    spotify.commandLineArgs = waylandArgs;
+    chromium.commandLineArgs = waylandArgs;
+    slack.commandLineArgs = waylandArgs;
+    bitwarden.commandLineArgs = waylandArgs;
+    discord.commandLineArgs = waylandArgs;
+    ytmdesktop.commandLineArgs = waylandArgs;
+    onlyoffice-bin.commandLineArgs = waylandArgs;
   };
 
-  # As already mentioned
   targets.genericLinux.enable = true;
+  xdg.enable = true;
   xdg.mime.enable = true;
-  # The critical missing piece for me
-  xdg.systemDirs.data =
-    [ "${config.home.homeDirectory}/.nix-profile/share/applications" ];
 
 }
