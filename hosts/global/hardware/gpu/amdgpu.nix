@@ -10,6 +10,7 @@
 
   hardware = {
     opengl = {
+      enable = true;
       package = pkgs.mesa.drivers;
       driSupport = true;
       driSupport32Bit = true;
@@ -18,7 +19,7 @@
         rocm-opencl-runtime
         intel-compute-runtime
         amdvlk
-    ];
+      ];
     };
   };
 

@@ -5,7 +5,7 @@
   imports = [ ./chromium.nix ./kdeconnect.nix ./obs-studio.nix ];
 
   home.packages = [
-
+    unstable.warp-terminal
     pkgs.bitwarden
     pkgs.gimp
     pkgs.onlyoffice-bin
