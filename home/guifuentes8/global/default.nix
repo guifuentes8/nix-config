@@ -7,8 +7,6 @@
     homeDirectory = "/home/${config.home.username}";
     stateVersion = lib.mkDefault "23.11";
     sessionVariables = {
-      WARP_THEMES_DIR =
-        "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };

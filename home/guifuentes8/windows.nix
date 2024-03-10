@@ -1,7 +1,5 @@
 { pkgs, outputs, unstable, lib, config, nix-colors, ... }:
-let
-  waylandArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
-  warp-terminal = outputs.packages.${pkgs.system}.warp-terminal;
+let waylandArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
 
 in {
   imports =
@@ -13,13 +11,16 @@ in {
   xdg.mime.enable = true;
 
   home = {
-    packages = [ warp-terminal pkgs.chromium ];
+    packages = [ unstable.warp-terminal pkgs.chromium ];
     sessionVariables = {
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
       WGPU_BACKEND = "gl";
       BROWSER = "chromium";
+      WARP_THEMES_DIR =
+        "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
+
     };
   };
 
@@ -29,5 +30,8 @@ in {
     MOZ_ENABLE_WAYLAND = "1";
     WGPU_BACKEND = "gl";
     BROWSER = "chromium";
+    WARP_THEMES_DIR =
+      "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
+
   };
 }
