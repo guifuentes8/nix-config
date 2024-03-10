@@ -1,11 +1,8 @@
 { unstable, pkgs, config, ... }: {
 
-  imports = [
-    ./starship.nix
-    #    ./syntax-highlight.nix
-  ];
+  imports = [ ./starship.nix ];
 
-  home.packages = with unstable; [ krabby ];
+  home.packages = with unstable; [ pokemonsay fortune-kind ];
 
   programs.zsh = {
     enable = true;
@@ -19,8 +16,8 @@
     };
     initExtraFirst = ''
       unset -v SSH_ASKPASS
-      krabby random 1-4 --padding-left 5 --no-title
-      export $(dbus-launch)
+      fortune -s | pokemonsay -n -W -t -d $(printf "%03d\n" $(shuf -i 1-493 -n 1))
+      #krabby random 1-4 --padding-left 5 --no-title
     '';
     initExtra = ''
       eval "$(starship init zsh)"
