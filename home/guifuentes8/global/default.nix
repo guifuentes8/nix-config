@@ -12,22 +12,11 @@
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
-    # persistence = {
-    #   "/persist/home/guifuentes8" = {
-    #     directories = [
-    #       "Documents"
-    #       "Downloads"
-    #       "Pictures"
-    #       "Videos"
-    #       ".local/bin"
-    #       ".local/share/nix" # trusted settings and repl history
-    #     ];
-    #     allowOther = true;
-    #   };
-    # };
   };
 
   xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
     music = "${config.home.homeDirectory}/Music";
     videos = "${config.home.homeDirectory}/Videos";
     pictures = "${config.home.homeDirectory}/Pictures";

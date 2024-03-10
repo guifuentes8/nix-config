@@ -1,8 +1,7 @@
 { pkgs, unstable, lib, config, nix-colors, ... }:
 let waylandArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
 in {
-  imports =
-    [ ./global ./features/cli ./features/dev/languages ./features/dev/neovim ];
+  imports = [ ./global ./features/cli ./features/dev ];
 
   nixpkgs.config = { chromium.commandLineArgs = waylandArgs; };
   targets.genericLinux.enable = true;
@@ -10,7 +9,10 @@ in {
   xdg.mime.enable = true;
 
   home = {
-    packages = [ unstable.warp-terminal pkgs.chromium ];
+    packages = [
+      # unstable.warp-terminal
+      pkgs.chromium
+    ];
     sessionVariables = {
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       NIXOS_OZONE_WL = "1";

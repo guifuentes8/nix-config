@@ -11,10 +11,10 @@
   hardware = {
     opengl = {
       enable = true;
-      package = pkgs.mesa.drivers;
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
+        mesa.drivers
         rocm-opencl-icd
         rocm-opencl-runtime
         intel-compute-runtime

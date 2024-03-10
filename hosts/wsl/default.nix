@@ -15,6 +15,7 @@
     wslConf.network.generateHosts = false;
     nativeSystemd = true;
     useWindowsDriver = true;
+
     defaultUser = "guifuentes8";
     startMenuLaunchers = true;
 
