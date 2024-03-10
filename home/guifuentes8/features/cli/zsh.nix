@@ -20,9 +20,11 @@
     initExtraFirst = ''
       unset -v SSH_ASKPASS
       krabby random 1-4 --padding-left 5 --no-title
+      export $(dbus-launch)
     '';
     initExtra = ''
       eval "$(starship init zsh)"
+
     '';
     shellAliases = {
       # NixOs shortcuts
