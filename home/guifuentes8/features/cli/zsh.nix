@@ -1,4 +1,4 @@
-{ unstable, pkgs, config, ... }: {
+{ unstable, pkgs, config, windowsUser, ... }: {
 
   imports = [ ./starship.nix ];
 
@@ -60,6 +60,8 @@
       net-test = "speeedtest-rs";
       music = "ncmpcpp";
 
+      adb =
+        "/mnt/c/Users/${windowsUser}/Local\\ Settings/Android/Sdk/platform-tools/adb";
     };
   };
 }

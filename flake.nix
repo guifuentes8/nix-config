@@ -32,6 +32,7 @@
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
       systemVersion = "23.11";
+      windowsUser = "Larquim\\ Arquitetura";
       unstable = import nixpkgs-unstable {
         system = "x86_64-linux";
         config.allowUnfree = true;
@@ -56,7 +57,8 @@
         };
         wsl = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs unstable systemVersion nix-colors;
+            inherit inputs outputs unstable systemVersion nix-colors
+              windowsUser;
           };
           modules = [ ./hosts/wsl ];
         };

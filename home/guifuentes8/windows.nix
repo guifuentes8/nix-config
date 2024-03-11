@@ -9,15 +9,21 @@ in {
   targets.genericLinux.enable = true;
   xdg.enable = true;
   xdg.mime.enable = true;
+  home.file = {
+    ".vscode-server/server-env-setup" = {
+      enable = true;
+      source = ./server-env-setup;
+    };
+  };
 
   home = {
-    packages = [ unstable.warp-terminal pkgs.chromium ];
+    packages = [ unstable.warp-terminal ];
     sessionVariables = {
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
       WGPU_BACKEND = "gl";
-      BROWSER = "chromium";
+      BROWSER = "firefox";
       WARP_THEMES_DIR =
         "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
 
@@ -29,7 +35,7 @@ in {
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
     WGPU_BACKEND = "gl";
-    BROWSER = "chromium";
+    BROWSER = "firefox";
     WARP_THEMES_DIR =
       "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
 

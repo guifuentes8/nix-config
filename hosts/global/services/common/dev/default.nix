@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  imports = [ ./android-studio.nix ];
+  imports = [ ];
   virtualisation.docker.enable = true;
   environment.systemPackages = with pkgs; [ docker-compose dbeaver ];
 
