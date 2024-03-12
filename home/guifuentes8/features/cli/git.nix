@@ -8,6 +8,7 @@
     # GIT
     git = {
       enable = true;
+      lfs.enable = true;
       delta.enable = true;
       userName = "Guilherme Fuentes";
       userEmail = "guifuentes8@gmail.com";
@@ -16,6 +17,10 @@
         pull.rebase = false;
         push.autoSetupRemote = true;
         init.defaultBranch = "main";
+        # Sign all commits using ssh key
+        commit.gpgsign = true;
+        gpg.format = "ssh";
+        user.signingkey = "~/.ssh/id_ed25519.pub";
       };
       aliases = {
         a = "add .";

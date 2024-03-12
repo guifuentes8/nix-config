@@ -32,7 +32,8 @@
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
       systemVersion = "23.11";
-      windowsUser = "Larquim\\ Arquitetura";
+      # windowsUser = "Larquim\\ Arquitetura";
+      windowsUser = "Guilherme\\ Fuentes";
       unstable = import nixpkgs-unstable {
         system = "x86_64-linux";
         config.allowUnfree = true;

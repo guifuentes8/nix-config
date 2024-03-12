@@ -17,7 +17,7 @@ in {
   };
 
   home = {
-    packages = [ unstable.warp-terminal ];
+    packages = [ unstable.warp-terminal pkgs.firefox ];
     sessionVariables = {
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       NIXOS_OZONE_WL = "1";

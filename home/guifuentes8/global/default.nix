@@ -21,6 +21,8 @@
     download = "${config.home.homeDirectory}/Download";
     desktop = "${config.home.homeDirectory}/Desktop";
     documents = "${config.home.homeDirectory}/Documents";
+    extraConfig = { work = "${config.home.homeDirectory}/Work"; };
+
   };
 
   nix = {
