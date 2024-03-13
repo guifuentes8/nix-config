@@ -7,6 +7,7 @@
     ./git.nix
     ./gpg.nix
     ./lsd.nix
+    ./pass.nix
     ./ripgrep.nix
     ./ssh.nix
     ./starship.nix

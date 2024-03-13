@@ -2,8 +2,7 @@
 let waylandArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
 
 in {
-  imports =
-    [ ./global ./features/cli ./features/dev/languages ./features/dev/neovim ];
+  imports = [ ./global ./features/cli ./features/dev ];
 
   nixpkgs.config = { chromium.commandLineArgs = waylandArgs; };
   targets.genericLinux.enable = true;
@@ -19,6 +18,7 @@ in {
   home = {
     packages = [ unstable.warp-terminal pkgs.firefox ];
     sessionVariables = {
+      GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
@@ -38,6 +38,6 @@ in {
     BROWSER = "firefox";
     WARP_THEMES_DIR =
       "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
-
+    GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
   };
 }
