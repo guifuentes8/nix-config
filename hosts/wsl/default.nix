@@ -6,6 +6,7 @@
     ../global
     ../global/users/guifuentes8.nix
     ../global/hardware/gpu/amdgpu.nix
+    ../global/services/common/dev
 
     inputs.nix-wsl.nixosModules.wsl
   ];
