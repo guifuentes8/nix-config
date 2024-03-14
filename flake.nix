@@ -49,11 +49,15 @@
 
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs unstable systemVersion; };
+          specialArgs = {
+            inherit inputs outputs unstable systemVersion windowsUser;
+          };
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/nixos ];
         };
         silverblue = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs unstable systemVersion; };
+          specialArgs = {
+            inherit inputs outputs unstable systemVersion windowsUser;
+          };
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/silverblue ];
         };
         wsl = nixpkgs.lib.nixosSystem {
@@ -73,7 +77,8 @@
         "guifuentes8@nixos" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
-            inherit unstable systemVersion nix-colors inputs outputs;
+            inherit unstable systemVersion nix-colors inputs outputs
+              windowsUser;
           };
           modules = [ ./home/guifuentes8/nixos.nix ];
         };

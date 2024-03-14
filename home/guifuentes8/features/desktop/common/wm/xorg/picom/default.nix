@@ -1,7 +1,7 @@
-{ unstable, ... }: {
+{ pkgs, ... }: {
   services.picom = {
     enable = true;
-    package = unstable.picom-allusive;
+    package = pkgs.picom-allusive;
     extraArgs = [ ];
     backend = "glx";
     vSync = true;
