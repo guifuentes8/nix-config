@@ -31,6 +31,8 @@
     # JAVASCRIPT
     nodejs
     yarn
+    nest-cli
+    nodePackages.graphql-language-service-cli
 
     # JAVA
     maven

@@ -6,12 +6,12 @@
 
   home.packages = [
     pkgs.bitwarden
+    pkgs.discord
     pkgs.gimp
     pkgs.onlyoffice-bin
+    pkgs.brave
     pkgs.slack
-    pkgs.discord
     pkgs.spotify
-    pkgs.telegram-desktop
     pkgs.ytmdesktop
 
     pkgs.etcher

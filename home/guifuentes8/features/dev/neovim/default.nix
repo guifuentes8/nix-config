@@ -177,7 +177,6 @@ in {
       # Language servers
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted
-      nodePackages.graphql-language-service-cli
       nodePackages.pyright
       marksman
       tailwindcss-language-server
