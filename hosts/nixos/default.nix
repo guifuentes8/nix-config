@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
 
     # Hardware Gpu (if exist)
-    #    ../global/hardware/gpu/nvidia.nix
+    ../global/hardware/gpu/amdgpu.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -20,14 +20,17 @@
     ../global/hardware/logitech.nix
 
     # Login Manager
-    ../global/login/lightdm.nix
+    ../global/login/greetd.nix
 
     # Choice Interface (WM and/or DE)
-    ../global/interfaces/WM/bspwm.nix
+
+    ../global/interfaces/WM/hyprland.nix
 
     # Active services
     ../global/services/common
-    ../global/services/extra/wine.nix
+    ../global/services/extra/android-studio.nix
+
+    #   ../global/services/extra/wine.nix
 
     # User 
     ../global/users/guifuentes8.nix

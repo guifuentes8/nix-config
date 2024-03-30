@@ -2,7 +2,7 @@
 
   imports = [ ];
   virtualisation.docker.enable = true;
-  environment.systemPackages = with pkgs; [ docker-compose dbeaver ];
+  environment.systemPackages = with pkgs; [ docker-compose ];
 
   services.postgresql = {
     enable = true;

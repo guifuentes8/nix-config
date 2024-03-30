@@ -1,17 +1,12 @@
 { inputs, pkgs, ... }: {
-<<<<<<< Updated upstream
 
   imports = [ inputs.hyprland.nixosModules.default ./shared ];
-  programs = { hyprland.enable = true; };
-=======
-  imports = [ inputs.hyprland.nixosModules.default ];
   programs = {
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     };
   };
->>>>>>> Stashed changes
 
   nix.settings = {
     substituters = [ "https://hyprland.cachix.org" ];

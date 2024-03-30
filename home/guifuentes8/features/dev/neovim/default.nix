@@ -30,7 +30,7 @@ in {
     extraConfig = "\n";
     plugins = with pkgs.vimPlugins; [
       {
-        plugin = catppuccin-nvim;
+        plugin = tokyonight-nvim;
         type = "lua";
         config = builtins.readFile (./plugins/theme.rc.lua);
       }

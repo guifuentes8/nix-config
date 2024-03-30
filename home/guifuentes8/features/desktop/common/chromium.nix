@@ -11,6 +11,7 @@
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
       { id = "lpofefdiokgmcdnnaigddelnfamkkghi"; } # googleTasksApp
+      { id = "enpfonmmpgoinjpglildebkaphbhndek"; } # tokyo night
     ];
   };
 }

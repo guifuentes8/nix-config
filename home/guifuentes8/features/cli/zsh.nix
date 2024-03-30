@@ -1,6 +1,6 @@
 { unstable, pkgs, config, windowsUser, ... }: {
 
-  imports = [ ./starship.nix ];
+  imports = [ ];
 
   home.packages = with unstable; [ pokemonsay fortune-kind ];
 
@@ -12,17 +12,13 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
-      #theme = "miloshadzic";
+      theme = "miloshadzic";
     };
     initExtraFirst = ''
       unset -v SSH_ASKPASS
       fortune -s | pokemonsay -n -W -t -d $(printf "%03d\n" $(shuf -i 1-493 -n 1))
-      #krabby random 1-4 --padding-left 5 --no-title
     '';
-    initExtra = ''
-      eval "$(starship init zsh)"
-
-    '';
+    initExtra = "\n";
     shellAliases = {
       # NixOs shortcuts
       hd =
@@ -42,26 +38,21 @@
 
       # Cli Apps shortcuts
       spt = "spotify_player";
+      spt2 = "ncspot";
       clock = "tty-clock -c -C 6 -s -S -r -n -D";
-      yterm = "bash ~/.local/share/applications/headers.sh";
       matrix = "cmatrix -b -f -C red";
-      yt = "ytfzf -t";
-      cal = "gcalcli";
-      clima-bauru = "girouette -q -c '1h' -L 'pt_BR' -l 'Bauru' -u metric";
-      clima-sp = "girouette -q -c '1h' -L 'pt_BR' -l 'São Paulo' -u metric";
+      climabauru = "girouette -q -c '1h' -L 'pt_BR' -l 'Bauru' -u metric";
+      climasp = "girouette -q -c '1h' -L 'pt_BR' -l 'São Paulo' -u metric";
       torrent = "rtorrent";
       gpt = "tgpt";
       feed = "tuifeed";
-      drive = "gdrive";
 
       # Mail
       mail = "himalaya -a guifuentes8";
       mail2 = "himalaya -a gcf";
-      net-test = "speeedtest-rs";
+      testnet = "speeedtest-rs";
       music = "ncmpcpp";
 
-      adb =
-        "/mnt/c/Users/${windowsUser}/Local\\ Settings/Android/Sdk/platform-tools/adb";
     };
   };
 }

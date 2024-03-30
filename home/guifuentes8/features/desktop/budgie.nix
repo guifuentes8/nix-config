@@ -28,12 +28,5 @@
     platformTheme = "qtct";
   };
 
-  home.packages = with pkgs; [
-    gnome.gnome-music
-    gnome.totem
-    gnome.geary
-    gnome.gnome-tweaks
-    gnome.gnome-boxes
-  ];
 
 }

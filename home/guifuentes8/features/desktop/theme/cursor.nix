@@ -1,7 +1,7 @@
 { pkgs, unstable, lib, outputs, theme, nix-colors, ... }:
 let
-  cursor-name = "Catppuccin-Mocha-Dark-Cursors";
-  cursor-pkg = pkgs.catppuccin-cursors.mochaDark;
+  cursor-name = "Catppuccin-Macchiato-Dark-Cursors";
+  cursor-pkg = pkgs.catppuccin-cursors.macchiatoDark;
   cursor-size = 36;
   cursor-size-text = "36";
 in {

@@ -1,12 +1,9 @@
-{ unstable, pkgs, lib, config, ... }:
-{
+{ unstable, pkgs, lib, config, ... }: {
 
-  home.packages = [
-    unstable.spotify-player
-  ];
+  home.packages = [ unstable.spotify-player ];
 
-  xdg.configFile."spotify-player/app.toml".source = (pkgs.formats.toml { }).generate "app.toml"
-    {
+  xdg.configFile."spotify-player/app.toml".source =
+    (pkgs.formats.toml { }).generate "app.toml" {
       client_id = "32c1c3d388a14e4981d80295af909be7";
       theme = "kyoto";
       playback_refresh_duration_in_ms = 0;
@@ -30,9 +27,8 @@
       };
     };
 
-
-  xdg.configFile."spotify-player/theme.toml".source = (pkgs.formats.toml { }).generate "theme.toml"
-    {
+  xdg.configFile."spotify-player/theme.toml".source =
+    (pkgs.formats.toml { }).generate "theme.toml" {
       themes = [{
         name = "kyoto";
         palette = {
@@ -56,14 +52,23 @@
           bright_yellow = "#${config.colorScheme.palette.base0A}";
         };
         component_style = {
-          selection = {
-            bg = { Rgb = { r = 26; g = 27; b = 38; }; };
-            fg = { Rgb = { r = 115; g = 218; b = 202; }; };
+          #  selection = {
+          #    bg = { Rgb = { r = 26; g = 27; b = 38; }; };
+          #    fg = { Rgb = { r = 115; g = 218; b = 202; }; };
+          #    modifiers = [ "Bold" ];
+          #  };
+          playback_progress_bar = {
+            bg = "BrightBlack";
+            fg = "Cyan";
+          };
+          current_playing = {
+            fg = "Red";
             modifiers = [ "Bold" ];
           };
-          playback_progress_bar = { bg = "BrightBlack"; fg = "Cyan"; };
-          current_playing = { fg = "Red"; modifiers = [ "Bold" ]; };
-          playback_artists = { fg = "Cyan"; modifiers = [ "Bold" ]; };
+          playback_artists = {
+            fg = "Cyan";
+            modifiers = [ "Bold" ];
+          };
           playback_album = { fg = "Yellow"; };
           playback_metadata = { fg = "Blue"; };
         };

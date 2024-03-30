@@ -1,18 +1,17 @@
 { pkgs, lib, ... }:
 
 {
-  imports = [
-  ];
-
+  imports = [ ];
   services.xserver = {
     enable = true;
-    desktopManager.plasma5 = {
-      enable = true;
-    };
+    desktopManager.plasma5 = { enable = true; };
   };
+
+  services.xserver.displayManager.defaultSession = "plasmawayland";
 
   programs.dconf.enable = true;
   programs.partition-manager.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # default Kde Programs
 
@@ -32,8 +31,7 @@
     dragon
   ]);
 
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-    plasma-browser-integration
-  ];
+  environment.plasma5.excludePackages = with pkgs.libsForQt5;
+    [ plasma-browser-integration ];
 }
 

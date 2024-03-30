@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./rofi
     ./alacritty.nix
@@ -10,4 +10,5 @@
     ./systemd.nix
     ./xdg.nix
   ];
+
 }

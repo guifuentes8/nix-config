@@ -25,7 +25,6 @@
     ../global/login/lightdm.nix
 
     # Choice Interface (WM and/or DE)
-    ../global/interfaces/WM/hyprland.nix
 
     # Active services
 

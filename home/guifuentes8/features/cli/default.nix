@@ -10,7 +10,6 @@
     ./pass.nix
     ./ripgrep.nix
     ./ssh.nix
-    ./starship.nix
     ./tmux.nix
     ./tuifeed.nix
     ./yazi.nix

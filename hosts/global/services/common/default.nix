@@ -1,11 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    ./dev
-    ./firewall.nix
-    ./flatpak.nix
-    ./gnomeKeyring.nix
-    ./kdeConnect.nix
-    ./remoteSupport.nix
-  ];
+  imports =
+    [ ./dev ./firewall.nix ./flatpak.nix ./gnomeKeyring.nix ./kdeConnect.nix ];
 
 }

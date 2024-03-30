@@ -1,5 +1,5 @@
 { unstable, pkgs, outputs, ... }: {
-  imports = [ ./foot ./mpv ./screen-lock ./waybar ./wpaperd ];
+  imports = [ ../../wm ./foot ./mpv ./screen-lock ./waybar ./wpaperd ];
 
   home.packages = with unstable; [
     grim

@@ -1,12 +1,9 @@
-{ outputs, pkgs, ... }:
-let
-  sddm-theme = outputs.packages.${pkgs.system}.sddm-theme;
-in
-{
+{ outputs, pkgs, ... }: {
   services.xserver = {
     enable = true;
     displayManager = {
       sddm = {
+        wayland.enable = true;
         enable = true;
         enableHidpi = false;
         autoNumlock = true;
@@ -14,7 +11,4 @@ in
     };
   };
 
-  environment.systemPackages = (with pkgs; [
-    sddm-theme
-  ]);
 }

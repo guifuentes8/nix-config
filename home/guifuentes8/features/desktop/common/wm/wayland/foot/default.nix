@@ -6,7 +6,7 @@
       main = {
         term = "xterm-256color";
         dpi-aware = "yes";
-        font = "Dank Mono:size=11:slant=italic";
+        font = "Monolisa:size=11";
         pad = "8x8";
       };
       mouse = { hide-when-typing = "yes"; };

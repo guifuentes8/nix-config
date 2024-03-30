@@ -1,4 +1,4 @@
-{ pkgs, outputs, unstable, lib, config, nix-colors, ... }:
+{ pkgs, outputs, unstable, lib, config, nix-colors, windowsUser, ... }:
 let waylandArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
 
 in {
@@ -28,6 +28,12 @@ in {
         "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
 
     };
+  };
+
+  programs.zsh.shellAliases = {
+    adb =
+      "/mnt/c/Users/${windowsUser}/Local\\ Settings/Android/Sdk/platform-tools/adb";
+
   };
 
   programs.zsh.localVariables = {

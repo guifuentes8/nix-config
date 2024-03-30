@@ -5,11 +5,13 @@
 
     # Global config (required)
     ./global
-    ./features/desktop/bspwm.nix
     ./features/dev
     ./features/dev/mobile.nix
-    ./features/productivity
     ./features/music
+    ./features/productivity
+    ./features/desktop/hyprland.nix
+    ./features/desktop/common
+
     # ./features/video/davinci-resolve
   ];
 

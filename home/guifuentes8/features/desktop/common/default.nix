@@ -2,19 +2,17 @@
 
 {
 
-  imports = [ ./chromium.nix ./kdeconnect.nix ./obs-studio.nix ];
+  imports = [ ./kdeconnect.nix ./chromium.nix ./obs-studio.nix ];
 
   home.packages = [
     pkgs.bitwarden
     pkgs.discord
     pkgs.gimp
     pkgs.onlyoffice-bin
-    pkgs.brave
     pkgs.slack
     pkgs.spotify
-    pkgs.ytmdesktop
+    pkgs.todoist-electron
 
-    pkgs.etcher
     pkgs.ventoy-bin
     pkgs.caffeine-ng
     pkgs.appimage-run

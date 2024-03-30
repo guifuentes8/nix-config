@@ -1,9 +1,5 @@
-{ pkgs, lib, ... }:
-{
-  imports = [
-    ./pkgs
-  ];
-
+{ pkgs, lib, ... }: {
+  imports = [ ./common ];
 
   home.packages = with pkgs; [
     capitaine-cursors
@@ -13,20 +9,20 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Colloid-dark";
-      package = pkgs.colloid-icon-theme;
+      name = lib.mkDefault "Colloid-dark";
+      package = lib.mkDefault pkgs.colloid-icon-theme;
     };
     theme = {
-      name = "Material-DeepOcean-BL";
-      package = pkgs.colloid-gtk-theme;
+      name = lib.mkDefault "Colloid-dark";
+      package = lib.mkDefault pkgs.colloid-gtk-theme;
     };
   };
 
   qt = {
     enable = true;
-    style.name = "Material-DeepOcean-BL";
+    style.name = lib.mkDefault "kvantum";
     style.package = pkgs.colloid-kde;
-    platformTheme = "kde";
+    platformTheme = lib.mkForce "kde";
   };
 
   services.gpg-agent = {
@@ -34,6 +30,5 @@
     pinentryFlavor = lib.mkForce "qt";
 
   };
-
 
 }
