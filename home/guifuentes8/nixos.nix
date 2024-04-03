@@ -9,7 +9,7 @@
     ./features/dev/mobile.nix
     ./features/music
     ./features/productivity
-    ./features/desktop/hyprland.nix
+    ./features/desktop/bspwm.nix
     ./features/desktop/common
 
     # ./features/video/davinci-resolve

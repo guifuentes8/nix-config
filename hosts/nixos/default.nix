@@ -20,11 +20,11 @@
     ../global/hardware/logitech.nix
 
     # Login Manager
-    ../global/login/greetd.nix
+    ../global/login/gdm.nix
 
     # Choice Interface (WM and/or DE)
 
-    ../global/interfaces/WM/hyprland.nix
+    ../global/interfaces/WM/bspwm.nix
 
     # Active services
     ../global/services/common
