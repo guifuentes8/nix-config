@@ -5,7 +5,7 @@
     settings = {
       main = {
         term = "xterm-256color";
-        dpi-aware = "yes";
+        dpi-aware = "no";
         font = "Monolisa:size=11";
         pad = "8x8";
       };

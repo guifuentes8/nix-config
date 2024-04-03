@@ -12,6 +12,7 @@
     pkgs.slack
     pkgs.spotify
     pkgs.todoist-electron
+    unstable.anydesk
 
     pkgs.ventoy-bin
     pkgs.caffeine-ng

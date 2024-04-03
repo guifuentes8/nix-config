@@ -28,7 +28,7 @@
 
     # Active services
     ../global/services/common
-    ../global/services/extra/android-studio.nix
+    ../global/services/extra/androidStudio.nix
 
     #   ../global/services/extra/wine.nix
 
