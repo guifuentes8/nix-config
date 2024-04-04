@@ -5,13 +5,24 @@
   home = {
     username = lib.mkDefault "guifuentes8";
     homeDirectory = "/home/${config.home.username}";
-    stateVersion = lib.mkDefault "23.11";
+    stateVersion = systemVersion;
     sessionVariables = {
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
   };
 
+  fonts.fontconfig.enable = true;
+  home.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+
+  systemd.user.startServices = "sd-switch";
+  news.display = "silent";
+
+  programs = {
+    git.enable = true;
+    home-manager.enable = true;
+  };
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
@@ -22,7 +33,6 @@
     desktop = "${config.home.homeDirectory}/Desktop";
     documents = "${config.home.homeDirectory}/Documents";
     extraConfig = { work = "${config.home.homeDirectory}/Work"; };
-
   };
 
   nix = {
@@ -47,17 +57,5 @@
       ];
     };
   };
-
-  fonts.fontconfig.enable = true;
-  home.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "JetBrainsMono" "CascadiaCode" ]; }) ];
-
-  programs = {
-    git.enable = true;
-    home-manager.enable = true;
-  };
-
-  systemd.user.startServices = "sd-switch";
-  news.display = "silent";
 }
 

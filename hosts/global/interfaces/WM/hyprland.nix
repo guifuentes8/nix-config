@@ -1,20 +1,17 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
 
-  imports = [ inputs.hyprland.nixosModules.default ./shared ];
-  programs = {
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    };
-  };
+  imports = [ ./common ];
+  programs.hyprland.enable = true;
 
   nix.settings = {
     substituters = [ "https://hyprland.cachix.org" ];
     trusted-public-keys =
       [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
-
-  environment.systemPackages = (with pkgs; [ xdg-utils ]);
+  environment = {
+    sessionVariables.NIXOS_OZONE_WL = "1";
+    systemPackages = (with pkgs; [ xdg-utils ]);
+  };
 
   xdg.portal = {
     enable = true;

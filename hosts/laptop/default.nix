@@ -17,8 +17,6 @@
     # Boot initial (grub or systemd)
     ../global/boot/grub.nix
 
-    ../global/hardware/logitech.nix
-
     # Login Manager
     ../global/login/greetd.nix
 
@@ -28,9 +26,6 @@
 
     # Active services
     ../global/services/common
-    ../global/services/extra/android-studio.nix
-
-    #   ../global/services/extra/wine.nix
 
     # User 
     ../global/users/guifuentes8.nix
@@ -40,12 +35,11 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # Basic config
-  #console.keyMap = "br-abnt2";
-  console.keyMap = "us";
-  services.xserver = { layout = "us"; };
+  console.keyMap = "br-abnt2";
+  services.xserver = { layout = "br-abnt2"; };
 
   # Network config (nmtui)
-  networking.hostName = "nixos";
+  networking.hostName = "avell";
 
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];

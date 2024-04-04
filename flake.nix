@@ -16,7 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-colors.url = "github:misterio77/nix-colors";
-    hyprland.url = "github:hyprwm/hyprland";
 
     darkmatter-grub-theme = {
       url = "gitlab:VandalByte/darkmatter-grub-theme";

@@ -3,46 +3,9 @@
 , windowsUser, ... }: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-  # System configs
-  nix = {
-    settings = {
-      trusted-users = [ "root" "@wheel" ];
-      auto-optimise-store = lib.mkDefault true;
-      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
-      warn-dirty = false;
-    };
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 3d";
-
-    };
-  };
-
-  nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
-    hostPlatform = "x86_64-linux";
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
-    };
-  };
-
-  system = {
-    stateVersion = systemVersion;
-    autoUpgrade = {
-      enable = false;
-      allowReboot = false;
-      dates = "daily";
-    };
-  };
-  home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = {
-    inherit inputs outputs nix-colors unstable windowsUser;
-  };
+  programs.dconf.enable = true;
 
   # Services
-  programs.dconf.enable = true;
   services = {
     dbus = {
       enable = true;
@@ -68,7 +31,7 @@
 
   # Fonts
   fonts.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "JetBrainsMono" "CascadiaCode" ]; }) ];
+    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
 
   # Security
   security.rtkit.enable = true;
@@ -94,10 +57,41 @@
     supportedLocales =
       lib.mkDefault [ "en_US.UTF-8/UTF-8" "pt_BR.UTF-8/UTF-8" ];
   };
-  # Others
-  qt = {
-    enable = true;
-    platformTheme = "gtk2";
+
+  # System configs
+  nix = {
+    settings = {
+      trusted-users = [ "root" "@wheel" ];
+      auto-optimise-store = lib.mkDefault true;
+      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+      warn-dirty = false;
+    };
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 3d";
+
+    };
+  };
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    hostPlatform = "x86_64-linux";
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
   };
 
+  system = {
+    stateVersion = systemVersion;
+    autoUpgrade = {
+      enable = true;
+      allowReboot = false;
+      dates = "daily";
+    };
+  };
+  home-manager.useUserPackages = true;
+  home-manager.extraSpecialArgs = {
+    inherit inputs outputs nix-colors unstable windowsUser;
+  };
 }
