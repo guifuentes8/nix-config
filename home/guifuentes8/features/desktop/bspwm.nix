@@ -1,5 +1,5 @@
-{ outputs, pkgs, nix-colors, config, theme, ... }:
-let wallpaper = ./wallpaper.png;
+{ outputs, pkgs, nix-colors, config, configOptions, ... }:
+let wallpaper = ./theme/wallpaper.png;
 in {
   imports = [ ./common ./common/wm/xorg ./theme ];
 
@@ -11,15 +11,15 @@ in {
       "sxhkd"
       "picom"
       "systemctl --user restart polybar.service"
-      "feh --bg-center  ${wallpaper} --image-bg '#1e1e2e'"
+      "feh --bg-center ${wallpaper} --image-bg '#1e1e2e'"
       "pkill dunst"
       "dunst"
-      "xsetroot -cursor_name 'Catppuccin-Macchiato-Dark-Cursors'"
+      "xsetroot -cursor_name '${configOptions.styles.cursor.name}'"
     ];
     extraConfig = ''
       bspc monitor -d 󰇩   󰓇 󱄄      
 
-      bspc config border_width         3
+      bspc config border_width         ${configOptions.styles.wm.borderWidth}
       bspc config window_gap           12
 
       bspc config split_ratio          0.50

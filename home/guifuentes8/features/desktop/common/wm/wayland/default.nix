@@ -10,7 +10,7 @@
     swayidle
     swayimg
     wdisplays
-
+    swww
     wl-clipboard
     wf-recorder
     wtype

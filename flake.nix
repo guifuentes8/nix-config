@@ -16,6 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-colors.url = "github:misterio77/nix-colors";
+    nur.url = "github:nix-community/NUR";
 
     darkmatter-grub-theme = {
       url = "gitlab:VandalByte/darkmatter-grub-theme";
@@ -25,15 +26,52 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, nix-wsl
-    , nix-colors, darkmatter-grub-theme, ... }@inputs:
-
+    , nur, nix-colors, darkmatter-grub-theme, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
-      systemVersion = "23.11";
-      # windowsUser = "Larquim\\ Arquitetura";
-      windowsUser = "Guilherme\\ Fuentes";
+      pkgs = import nixpkgs { system = "x86_64-linux"; };
+      configOptions = {
+        systemVersion = "23.11";
+        windowsUser = "Guilherme\\ Fuentes";
+        styles = {
+          theme = {
+            name = "catppuccin";
+            variant = "mocha";
+          };
+          cursor = {
+            name = "Catppuccin-Mocha-Dark-Cursors";
+            package = pkgs.catppuccin-cursors.mochaDark;
+            size = "32";
+          };
+          gtk = {
+            name = "Catppuccin-Mocha-Standard-Blue-Dark";
+            package = pkgs.catppuccin-gtk.override {
+              accents = [ "blue" ];
+              size = "standard";
+              tweaks =
+                [ "rimless" ]; # You can also specify multiple tweaks here
+              variant = "${configOptions.styles.theme.variant}";
+            };
+          };
+          icon = {
+            name = "Papirus-Dark";
+            package =
+              pkgs.catppuccin-papirus-folders.override { accent = "lavender"; };
+          };
+          font = {
+            code = "MonoLisa";
+            main = "JetBrainsMonoNL Nerd Font";
+            size = "12";
+          };
+          keyboard = {
+            layout = "br,us";
+            variant = "abnt2";
+          };
+          wm = { borderWidth = 3; };
+        };
+      };
       unstable = import nixpkgs-unstable {
         system = "x86_64-linux";
         config.allowUnfree = true;
@@ -49,21 +87,16 @@
 
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs unstable systemVersion windowsUser;
-          };
+          specialArgs = { inherit inputs outputs unstable configOptions; };
           modules = [ darkmatter-grub-theme.nixosModule ./hosts/nixos ];
         };
-        laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs unstable systemVersion windowsUser;
-          };
-          modules = [ darkmatter-grub-theme.nixosModule ./hosts/laptop ];
+        avell = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs unstable configOptions; };
+          modules = [ darkmatter-grub-theme.nixosModule ./hosts/avell ];
         };
         wsl = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs unstable systemVersion nix-colors
-              windowsUser;
+            inherit inputs outputs unstable configOptions nix-colors;
           };
           modules = [ ./hosts/wsl ];
         };
@@ -76,23 +109,20 @@
       homeConfigurations = {
         "guifuentes8@nixos" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = {
-            inherit unstable systemVersion nix-colors inputs outputs
-              windowsUser;
-          };
+          extraSpecialArgs = { inherit unstable configOptions inputs outputs; };
           modules = [ ./home/guifuentes8/nixos.nix ];
         };
-        "guifuentes8@laptop" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@avell" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
-            inherit unstable systemVersion nix-colors inputs outputs;
+            inherit unstable configOptions nix-colors inputs outputs;
           };
-          modules = [ ./home/guifuentes8/laptop.nix ];
+          modules = [ ./home/guifuentes8/avell.nix ];
         };
         "guifuentes8@windows" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
-            inherit unstable systemVersion nix-colors inputs outputs;
+            inherit unstable configOptions nix-colors inputs outputs;
           };
           modules = [ ./home/guifuentes8/windows.nix ];
         };

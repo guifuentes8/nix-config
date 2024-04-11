@@ -1,6 +1,7 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.chromium = {
     enable = true;
+    package = pkgs.chromium;
     extensions = [
       { id = "gphhapmejobijbbhgpjhcjognlahblep"; } # gnomeExtensions
       { id = "fmkadmapgofadopljbjfkapdkoienihi"; } # reactDevTools
@@ -11,7 +12,7 @@
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
       { id = "lpofefdiokgmcdnnaigddelnfamkkghi"; } # googleTasksApp
-      { id = "enpfonmmpgoinjpglildebkaphbhndek"; } # tokyo night
+      { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } # catppuccin mocha
     ];
   };
 }

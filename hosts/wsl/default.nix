@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, outputs, nix-colors, unstable, windowsUser, ... }:
+{ config, lib, pkgs, inputs, outputs, nix-colors, unstable, configOptions, ... }:
 
 {
   imports = [
@@ -36,7 +36,7 @@
       WGPU_BACKEND = "gl";
       BROWSER = "firefox";
       WSLENV = "ANDROID_HOME/p";
-      ANDROID_HOME = "/mnt/c/Users/${windowsUser}/Local Settings/Android/Sdk";
+      ANDROID_HOME = "/mnt/c/Users/${configOptions.windowsUser}/Local Settings/Android/Sdk";
     };
 
   };

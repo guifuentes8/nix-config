@@ -1,6 +1,6 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ config, lib, inputs, outputs, pkgs, nix-colors, unstable, systemVersion
-, windowsUser, ... }: {
+{ config, lib, inputs, outputs, pkgs, nix-colors, unstable, configOptions, ...
+}: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   programs.dconf.enable = true;
@@ -83,7 +83,7 @@
   };
 
   system = {
-    stateVersion = systemVersion;
+    stateVersion = configOptions.systemVersion;
     autoUpgrade = {
       enable = true;
       allowReboot = false;
@@ -92,6 +92,6 @@
   };
   home-manager.useUserPackages = true;
   home-manager.extraSpecialArgs = {
-    inherit inputs outputs nix-colors unstable windowsUser;
+    inherit inputs outputs nix-colors unstable configOptions;
   };
 }

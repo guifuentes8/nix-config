@@ -38,7 +38,7 @@
   ];
 
   console.keyMap = "br-abnt2";
-  networking.hostName = "laptop";
+  networking.hostName = "avell";
   environment = {
     pathsToLink = [ "/libexec" ];
     variables = {

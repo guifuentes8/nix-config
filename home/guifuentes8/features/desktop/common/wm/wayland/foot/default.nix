@@ -12,10 +12,10 @@
       mouse = { hide-when-typing = "yes"; };
       cursor = {
         color =
-          "${config.colorScheme.palette.base05} ${config.colorScheme.palette.base0D}";
+          "${config.colorScheme.palette.base05} ${config.colorScheme.palette.base0A}";
       };
       colors = {
-        alpha = 0.8;
+        alpha = 0.9;
         foreground = "${config.colorScheme.palette.base05}";
         background = "${config.colorScheme.palette.base00}";
         selection-foreground = "${config.colorScheme.palette.base05}";

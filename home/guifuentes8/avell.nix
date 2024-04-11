@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, configOptions, ... }: {
   imports = [
 
     # Global config (required)
@@ -13,6 +11,6 @@
     ./features/desktop/common
 
     # ./features/video/davinci-resolve
-  ];
 
+  ];
 }

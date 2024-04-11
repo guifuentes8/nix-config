@@ -2,20 +2,25 @@
   imports = [
     ./bat.nix
     ./bottom.nix
-    ./feh.nix
     ./gh.nix
     ./git.nix
     ./gpg.nix
-    ./lsd.nix
     ./pass.nix
-    ./ripgrep.nix
     ./ssh.nix
     ./tmux.nix
     ./tuifeed.nix
     ./yazi.nix
-    ./ytdlp.nix
     ./zsh.nix
   ];
+
+  programs = {
+    feh.enable = true;
+    jq.enable = true;
+    lsd.enable = true;
+    ripgrep.enable = true;
+    rtorrent.enable = true;
+    yt-dlp.enable = true;
+  };
 
   home.packages = with pkgs; [
 

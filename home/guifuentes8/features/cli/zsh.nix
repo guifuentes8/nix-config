@@ -1,4 +1,4 @@
-{ unstable, pkgs, config, windowsUser, ... }: {
+{ unstable, pkgs, config, configOptions, ... }: {
 
   imports = [ ];
 
@@ -18,17 +18,9 @@
       unset -v SSH_ASKPASS
       fortune -s | pokemonsay -n -W -t -d $(printf "%03d\n" $(shuf -i 1-493 -n 1))
     '';
-    initExtra = "\n";
+    initExtra = "";
     shellAliases = {
       # NixOs shortcuts
-      hd =
-        "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@nixos";
-      sd =
-        "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#nixos";
-      hl =
-        "cd ~/nix-config && git add . && home-manager switch --flake .#guifuentes8@laptop";
-      sl =
-        "cd ~/nix-config && git add . && sudo nixos-rebuild switch --flake .#laptop";
       gc = "nix-collect-garbage -d && nix-store --gc";
       sgc = "sudo nix-collect-garbage -d && nix-store --gc";
 
@@ -37,8 +29,6 @@
       ls = "lsd";
 
       # Cli Apps shortcuts
-      spt = "spotify_player";
-      spt2 = "ncspot";
       clock = "tty-clock -c -C 6 -s -S -r -n -D";
       matrix = "cmatrix -b -f -C red";
       climabauru = "girouette -q -c '1h' -L 'pt_BR' -l 'Bauru' -u metric";
@@ -50,7 +40,7 @@
       # Mail
       mail = "himalaya -a guifuentes8";
       mail2 = "himalaya -a gcf";
-      testnet = "speeedtest-rs";
+      testnet = "speedtest-rs";
       music = "ncmpcpp";
 
     };

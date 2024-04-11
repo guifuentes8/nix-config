@@ -6,8 +6,9 @@
     bat = {
       enable = true;
       extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-      config.theme = "tokyonight";
+      config.theme = "catppuccinMocha";
     };
   };
-  xdg.configFile."bat/themes/tokyonight.tmTheme".source = ./tokyonight.tmTheme;
+  xdg.configFile."bat/themes/catppuccinMocha.tmTheme".source =
+    ./catppuccinMocha.tmTheme;
 }

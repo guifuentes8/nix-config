@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, configOptions, ... }: {
   # base00 = "#${config.colorScheme.palette.base00}"
   # base01 = "#${config.colorScheme.palette.base01}"
   # base02 = "#${config.colorScheme.palette.base02}"
@@ -57,7 +57,7 @@
 
       if os.path.exists(config.configdir / "theme.py"):
           import theme
-          theme.setup(c, 'macchiato', True)
+          theme.setup(c, '${configOptions.styles.theme.variant}', True)
     '';
 
   };

@@ -1,38 +1,40 @@
-{ inputs, lib, pkgs, config, outputs, systemVersion, ... }: {
+{ inputs, lib, pkgs, config, outputs, nix-colors, configOptions, ... }: {
 
-  imports = [ ../features/cli ./theme.nix ];
+  imports = [ nix-colors.homeManagerModules.default ../features/cli ];
+
+  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 
   home = {
     username = lib.mkDefault "guifuentes8";
     homeDirectory = "/home/${config.home.username}";
-    stateVersion = systemVersion;
+    stateVersion = configOptions.systemVersion;
     sessionVariables = {
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
+    packages = with pkgs;
+      [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+
   };
-
-  fonts.fontconfig.enable = true;
-  home.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
-
-  systemd.user.startServices = "sd-switch";
-  news.display = "silent";
 
   programs = {
     git.enable = true;
     home-manager.enable = true;
   };
-  xdg.userDirs = {
+
+  xdg = {
     enable = true;
-    createDirectories = true;
-    music = "${config.home.homeDirectory}/Music";
-    videos = "${config.home.homeDirectory}/Videos";
-    pictures = "${config.home.homeDirectory}/Pictures";
-    download = "${config.home.homeDirectory}/Downloads";
-    desktop = "${config.home.homeDirectory}/Desktop";
-    documents = "${config.home.homeDirectory}/Documents";
-    extraConfig = { work = "${config.home.homeDirectory}/Work"; };
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      music = "${config.home.homeDirectory}/Music";
+      videos = "${config.home.homeDirectory}/Videos";
+      pictures = "${config.home.homeDirectory}/Pictures";
+      download = "${config.home.homeDirectory}/Downloads";
+      desktop = "${config.home.homeDirectory}/Desktop";
+      documents = "${config.home.homeDirectory}/Documents";
+      extraConfig = { work = "${config.home.homeDirectory}/Work"; };
+    };
   };
 
   nix = {
@@ -44,7 +46,7 @@
   };
 
   nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
+    overlays = [ inputs.nur.overlay ];
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
@@ -57,5 +59,9 @@
       ];
     };
   };
+
+  fonts.fontconfig.enable = true;
+  systemd.user.startServices = "sd-switch";
+  news.display = "silent";
 }
 

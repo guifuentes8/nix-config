@@ -8,13 +8,13 @@ let
     tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
     variant = "macchiato";
   };
-  gtk-name = "Catppuccin-Macchiato-Standard-Teal-Dark";
+  gtk-name = "Catppuccin-Mocha-Standard-Blue-Dark";
   icon-pkg = pkgs.catppuccin-papirus-folders.override {
     accent = "teal";
     flavor = "macchiato";
   };
   icon-name = "Papirus";
-  cursor-name = "Catppuccin-Macchiato-Dark-Cursors";
+  cursor-name = "Catppuccin-Mocha-Dark-Cursors";
   cursor-pkg = pkgs.catppuccin-cursors.macchiatoDark;
   cursor-size = 36;
   cursor-size-text = "36";

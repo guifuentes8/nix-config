@@ -5,6 +5,7 @@
 
     # Hardware config (required)
     ./hardware-configuration.nix
+    ../global/hardware/bluetooth.nix
 
     # Hardware Gpu (if exist)
     ../global/hardware/gpu/notebook-prime.nix

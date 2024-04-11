@@ -1,5 +1,4 @@
 { lib, ... }: {
-  xdg.enable = true;
   xdg.mimeApps = {
     enable = true;
     defaultApplications = let
@@ -278,8 +277,8 @@
       ];
     in (lib.genAttrs code (_: [ "nvim.desktop" ]))
     // (lib.genAttrs images (_: [ "feh.desktop" ]))
-    #// (lib.genAttrs urls (_: [ "org.qutebrowser.qutebrowser.desktop" ]))
-    // (lib.genAttrs urls (_: [ "opera.desktop" ]))
+    // (lib.genAttrs archives (_: [ "thunar.desktop" ]))
+    // (lib.genAttrs urls (_: [ "org.qutebrowser.qutebrowser.desktop" ]))
     // (lib.genAttrs documents (_: [ "zathura.desktop" ]))
     // (lib.genAttrs audioVideo (_: [ "mpv.desktop" ]));
   };

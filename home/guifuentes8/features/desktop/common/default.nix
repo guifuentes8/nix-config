@@ -1,8 +1,14 @@
 { pkgs, outputs, unstable, ... }:
 
 {
+  imports = [ ./chromium.nix ./firefox.nix ];
 
-  imports = [ ./kdeconnect.nix ./chromium.nix ./obs-studio.nix ];
+  programs = { obs-studio.enable = true; };
+
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
+  };
 
   home.packages = [
     pkgs.bitwarden
@@ -10,8 +16,7 @@
     pkgs.gimp
     pkgs.onlyoffice-bin
     pkgs.slack
-    pkgs.spotify
-    pkgs.todoist-electron
+    unstable.spotube
     unstable.anydesk
 
     pkgs.ventoy-bin
@@ -29,6 +34,8 @@
     pkgs.poppler_utils
     pkgs.gnome-epub-thumbnailer
     pkgs.fontpreview
+    pkgs.xdotool
+    pkgs.xorg.xprop
   ];
 
 }

@@ -1,4 +1,4 @@
-{ pkgs, outputs, unstable, lib, config, nix-colors, windowsUser, ... }:
+{ pkgs, outputs, unstable, lib, config, nix-colors, configOptions, ... }:
 let waylandArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
 
 in {
@@ -6,8 +6,6 @@ in {
 
   nixpkgs.config = { chromium.commandLineArgs = waylandArgs; };
   targets.genericLinux.enable = true;
-  xdg.enable = true;
-  xdg.mime.enable = true;
   home.file = {
     ".vscode-server/server-env-setup" = {
       enable = true;
@@ -32,7 +30,7 @@ in {
 
   programs.zsh.shellAliases = {
     adb =
-      "/mnt/c/Users/${windowsUser}/Local\\ Settings/Android/Sdk/platform-tools/adb";
+      "/mnt/c/Users/${configOptions.windowsUser}/Local\\ Settings/Android/Sdk/platform-tools/adb";
 
   };
 
