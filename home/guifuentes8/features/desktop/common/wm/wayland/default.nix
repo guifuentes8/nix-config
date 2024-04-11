@@ -19,4 +19,6 @@
 
   programs.rofi.package = pkgs.rofi-wayland;
 
+  programs.zsh.sessionVariables = { KITTY_ENABLE_WAYLAND = 1; };
+
 }

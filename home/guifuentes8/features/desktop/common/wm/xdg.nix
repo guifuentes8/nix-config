@@ -2,7 +2,6 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = let
-      # take from the respective mimetype files
       images = [
         "image/bmp"
         "image/jpeg"

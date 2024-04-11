@@ -24,7 +24,7 @@ in {
          general {
              gaps_in = 4
              gaps_out = 8
-             border_size = 3
+             border_size = ${configOptions.styles.wm.borderWidth} 
              col.active_border = rgb(${config.colorScheme.palette.base0D})
              col.inactive_border = rgb(${config.colorScheme.palette.base00})
              no_border_on_floating = false
@@ -40,7 +40,7 @@ in {
                ignore_opacity = false
                xray = false
              }
-             rounding = 10
+             rounding = ${configOptions.styles.wm.borderRadius}
              drop_shadow = true
              shadow_range = 4
              shadow_render_power = 3

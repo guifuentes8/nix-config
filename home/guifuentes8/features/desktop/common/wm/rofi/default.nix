@@ -1,10 +1,10 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, configOptions, ... }:
 
 {
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.kitty}/bin/kitty";
-    theme = (import ./theme.nix { inherit config lib; });
+    theme = (import ./theme.nix { inherit config lib configOptions; });
     plugins = with pkgs; [
       rofi-bluetooth
       rofi-calc

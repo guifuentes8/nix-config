@@ -1,4 +1,4 @@
-{ unstable, pkgs, config, ... }: {
+{ unstable, pkgs, config, configOptions, ... }: {
   programs.waybar = {
     enable = true;
     package = unstable.waybar;
@@ -6,9 +6,9 @@
     style = ''
 
       * {
-          font-family: JetBrainsMonoNL Nerd Font;
+          font-family: ${configOptions.styles.font.main};
           font-weight: bold;
-          font-size: 14px;
+          font-size: ${configOptions.styles.font.size}px;
           min-height: 0;
       }
 
@@ -36,7 +36,7 @@
       #workspaces {
         padding: 0px 4px;
         margin: 4px 4px;
-        border-radius: 12px;
+        border-radius: ${configOptions.styles.wm.borderRadius};
       }
 
 
@@ -54,13 +54,13 @@
 
       #workspaces button.focused {
         color: #${config.colorScheme.palette.base0B};
-        border-radius: 24px;
+        border-radius: ${configOptions.styles.wm.borderRadius};
       }
 
       #workspaces button.urgent {
         color: #${config.colorScheme.palette.base00};
         background: #${config.colorScheme.palette.base08};
-        border-radius: 10px;
+        border-radius: ${configOptions.styles.wm.borderRadius};
       }
 
       #workspaces button:hover {

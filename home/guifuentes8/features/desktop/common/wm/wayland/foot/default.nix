@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, configOptions, ... }: {
   programs.foot = {
     enable = true;
     server.enable = true;
@@ -6,7 +6,8 @@
       main = {
         term = "xterm-256color";
         dpi-aware = "no";
-        font = "Monolisa:size=11";
+        font =
+          "${configOptions.styles.font.code}:size=${configOptions.styles.font.size}";
         pad = "8x8";
       };
       mouse = { hide-when-typing = "yes"; };
@@ -15,7 +16,7 @@
           "${config.colorScheme.palette.base05} ${config.colorScheme.palette.base0A}";
       };
       colors = {
-        alpha = 0.9;
+        alpha = configOptions.styles.wm.opacity;
         foreground = "${config.colorScheme.palette.base05}";
         background = "${config.colorScheme.palette.base00}";
         selection-foreground = "${config.colorScheme.palette.base05}";

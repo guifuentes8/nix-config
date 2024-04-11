@@ -1,9 +1,9 @@
-{ config, lib, ... }:
+{ config, lib, configOptions, ... }:
 
 let inherit (config.lib.formats.rasi) mkLiteral;
 in {
   "*" = {
-    border-radius = mkLiteral "8px";
+    border-radius = mkLiteral "${configOptions.styles.wm.borderRadius}";
     bg-col = mkLiteral "#${config.colorScheme.palette.base00}";
     bg-col-light = mkLiteral "#${config.colorScheme.palette.base00}";
     border-col = mkLiteral "#${config.colorScheme.palette.base00}";
@@ -12,12 +12,13 @@ in {
     fg-col = mkLiteral "#${config.colorScheme.palette.base05}";
     fg-col2 = mkLiteral "#${config.colorScheme.palette.base0B}";
     grey = mkLiteral "#${config.colorScheme.palette.base04}";
-    font = "JetBrainsMonoNL Nerd Font 12";
+    font =
+      "${configOptions.styles.font.main} ${configOptions.styles.font.size}";
   };
 
   "configuration" = {
     modi = "run,drun,window";
-    icon-theme = "Tela-circle";
+    icon-theme = configOptions.styles.icon.name;
     show-icons = true;
     drun-display-format = "{icon} {name}";
     location = 0;
@@ -38,7 +39,7 @@ in {
   "window" = {
     height = mkLiteral "350px";
     width = mkLiteral "600px";
-    border = mkLiteral "3px";
+    border = mkLiteral "${configOptions.styles.wm.borderWidth}";
     border-color = mkLiteral "#${config.colorScheme.palette.base0B}";
     background-color = mkLiteral "@bg-col";
   };
@@ -48,7 +49,7 @@ in {
   "inputbar" = {
     children = map mkLiteral [ "prompt" "entry" ];
     background-color = mkLiteral "@bg-col";
-    border-radius = mkLiteral "8px";
+    border-radius = mkLiteral "${configOptions.styles.wm.borderWidth}";
     padding = mkLiteral "2px";
   };
 

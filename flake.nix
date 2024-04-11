@@ -69,7 +69,11 @@
             layout = "br,us";
             variant = "abnt2";
           };
-          wm = { borderWidth = 3; };
+          wm = {
+            borderWidth = "3";
+            borderRadius = "12";
+            opacity = "0.9";
+          };
         };
       };
       unstable = import nixpkgs-unstable {

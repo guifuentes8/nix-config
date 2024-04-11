@@ -1,17 +1,18 @@
-{ config, ... }: {
+{ pkgs, config, configOptions, ... }: {
   programs.kitty = {
     enable = true;
     font = {
-      name = "MonoLisa Regular";
-      size = 13;
+      name = "${configOptions.styles.font.code} Regular";
+      size = pkgs.lib.strings.toInt configOptions.styles.font.size;
     };
     shellIntegration.enableZshIntegration = true;
     settings = {
-      bold_font = "Monolisa Bold";
-      italic_font = "Monolisa Medium Italic";
-      bold_italic_font = "Monolisa Bold Italic";
-      font_features = "MonoLisa-Medium +zero +ss04 +ss07 +ss08 +ss09";
-      background_opacity = "1";
+      bold_font = "${configOptions.styles.font.code} Bold";
+      italic_font = "${configOptions.styles.font.code} Medium Italic";
+      bold_italic_font = "${configOptions.styles.font.code} Bold Italic";
+      font_features =
+        "${configOptions.styles.font.code}-Medium +zero +ss04 +ss07 +ss08 +ss09";
+      background_opacity = "${configOptions.styles.wm.opacity}";
       confirm_os_window_close = 0;
       initial_window_width = 640;
       initial_window_height = 400;

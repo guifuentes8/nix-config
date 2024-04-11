@@ -1,32 +1,32 @@
-{ unstable, config, ... }: {
+{ unstable, pkgs, config, configOptions, ... }: {
   programs.alacritty = {
     enable = true;
     package = unstable.alacritty;
     settings = {
       font = {
         normal = {
-          family = "MonoLisa";
+          family = configOptions.styles.font.code;
           style = "Regular";
         };
 
         bold = {
-          family = "MonoLisa";
+          family = configOptions.styles.font.code;
           style = "Bold";
         };
 
         italic = {
-          family = "MonoLisa";
+          family = configOptions.styles.font.code;
           style = "Italic";
         };
 
         bold_italic = {
-          family = "MonoLisa";
+          family = configOptions.styles.font.code;
           style = "Bold Italic";
         };
-        size = 13;
+        size = pkgs.lib.strings.toInt configOptions.styles.font.size;
       };
       window = {
-        opacity = 0.9;
+        opacity = configOptions.styles.wm.opacity;
         padding = {
           x = 10;
           y = 10;
@@ -37,6 +37,7 @@
         primary = {
           background = "#${config.colorScheme.palette.base00}"; # base
           foreground = "#${config.colorScheme.palette.base05}"; # text
+
           # Bright and dim foreground colors
           dim_foreground = "#${config.colorScheme.palette.base05}"; # text
           bright_foreground = "#${config.colorScheme.palette.base05}"; # text

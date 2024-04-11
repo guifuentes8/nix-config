@@ -1,8 +1,7 @@
-{ pkgs, config, outputs, ... }:
+{ pkgs, config, configOptions, ... }:
 let
-  notify = "todo";
   alert = pkgs.writeShellScript "alert.sh" ''
-    ${pkgs.pipewire}/bin/pw-play --volume=0,04 ${notify} 
+    ${pkgs.pipewire}/bin/pw-play --volume=0,04  
   '';
 in {
   services.dunst = {
@@ -10,8 +9,8 @@ in {
     package = pkgs.dunst;
     iconTheme.size = "128x128";
     iconTheme = {
-      name = "Tela-circle";
-      package = pkgs.tela-circle-icon-theme;
+      name = configOptions.styles.icon.name;
+      package = configOptions.styles.icon.package;
     };
     settings = {
       global = {
@@ -19,7 +18,7 @@ in {
         height = 300;
         min_icon_size = 64;
         max_icon_size = 64;
-        corner_radius = 14;
+        corner_radius = configOptions.styles.wm.borderRadius;
         gaps = true;
         gap_size = 10;
         separator_color = "frame";
@@ -28,8 +27,9 @@ in {
         progress_bar_max_width = 300;
         offset = "10x30";
         origin = "top-right";
-        font = "JetBrainsMonoNL Nerd Font 12";
-        frame_width = 3;
+        font =
+          "${configOptions.styles.font.main} ${configOptions.styles.font.size}";
+        frame_width = configOptions.styles.wm.borderWidth;
         frame_color = "#${config.colorScheme.palette.base08}";
         notification_limit = 0;
         separator_height = 2;
