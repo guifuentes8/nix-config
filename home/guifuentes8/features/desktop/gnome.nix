@@ -1,15 +1,15 @@
-{ pkgs, ... }: {
+{ pkgs, configOptions, ... }: {
   imports = [ ./common ];
   gtk = {
     enable = true;
     font = {
-      name = "JetBrainsMonoNL Nerd Font";
-      size = 13;
+      name = configOptions.styles.font.main;
+      size = configOptions.styles.font.size;
     };
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 24;
+      name = "${configOptions.styles.cursor.name}";
+      package = configOptions.styles.cursor.package;
+      size = configOptions.styles.cursor.size;
     };
     iconTheme = {
       name = "Adwaita";

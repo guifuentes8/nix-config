@@ -103,8 +103,8 @@ in {
        # KEYBINDS
 
          $mainMod = SUPER
-      #  $term = footclient
-         $term = kitty
+         $term = footclient
+      #   $term = kitty
 
          bind = $mainMod, Return, exec, $term
          bind = $mainMod, Escape, exit,

@@ -5,13 +5,5 @@ in {
 
   services = { flameshot.enable = true; };
 
-  home.packages = with pkgs; [
-
-    discord
-    flameshot
-    lxappearance
-    xdotool
-    xclip
-    xcolor
-  ];
+  home.packages = with pkgs; [ discord flameshot lxappearance xclip xcolor ];
 }

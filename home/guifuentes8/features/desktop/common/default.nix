@@ -16,8 +16,6 @@
     pkgs.gimp
     pkgs.onlyoffice-bin
     pkgs.slack
-    unstable.spotube
-    unstable.anydesk
 
     pkgs.ventoy-bin
     pkgs.caffeine-ng

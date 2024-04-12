@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, configOptions, ... }: {
   services.picom = {
     enable = true;
     package = pkgs.picom-allusive;
     extraArgs = [ ];
     backend = "glx";
     vSync = true;
-    shadow = true;
+    shadow = false;
     shadowOffsets = [ 1 2 ];
     shadowOpacity = 0.2;
     shadowExclude = [
@@ -38,7 +38,7 @@
       # Options: ("none","zoom","fly-in","slide-up","slide-down","slide-left","slide-right")
       animation-for-unmap-window = "zoom";
 
-      corner-radius = 14;
+      corner-radius = configOptions.styles.wm.borderRadius;
       rounded-corners-exclude = [ "class_g = 'Polybar'" "class_g = 'Rofi'" ];
 
       # Explicitly declare the corner-radius of individual windows.

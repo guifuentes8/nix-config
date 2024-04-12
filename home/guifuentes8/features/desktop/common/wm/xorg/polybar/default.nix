@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, configOptions, ... }: {
   services.polybar = {
     enable = true;
     package = pkgs.polybar.override {
@@ -13,11 +13,9 @@
 
       "settings" = { format-padding = 1; };
       "bar/wm" = {
-        width = "98%";
+        width = "100%";
         height = "3%";
         radius = 12;
-        offset-y = "1%";
-        offset-x = "1%";
         bottom = false;
         fixed-center = true;
         background = "#${config.colorScheme.palette.base00}";
@@ -33,8 +31,9 @@
         enable-ipc = true;
         wm-restack = "bspwm";
 
-        font-0 = "JetBrainsMono Nerd Font:size=12;2";
-        font-1 = "JetBrainsMono Nerd Font:size=16;2";
+        font-0 =
+          "${configOptions.styles.font.main}:size=${configOptions.styles.font.size};2";
+        font-1 = "${configOptions.styles.font.main}:size=16;2";
 
         modules-left = [ "spotify-lyrics" ];
         modules-center = [ "xworkspaces" ];
