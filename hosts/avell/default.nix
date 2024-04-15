@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, outputs, ... }: {
+{ config, pkgs, inputs, outputs, configOptions, ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
@@ -36,8 +36,9 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # Basic config
-  console.keyMap = "br-abnt2";
-  services.xserver = { layout = "br-abnt2"; };
+  console.keyMap =
+    "${configOptions.styles.keyboard.languageVariant}${configOptions.styles.keyboard.variant}";
+  services.xserver = { layout = "${configOptions.styles.keyboard.layout}"; };
 
   # Network config (nmtui)
   networking.hostName = "avell";

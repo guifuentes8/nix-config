@@ -50,8 +50,7 @@
             package = pkgs.catppuccin-gtk.override {
               accents = [ "blue" ];
               size = "standard";
-              tweaks =
-                [ "rimless" ]; # You can also specify multiple tweaks here
+              tweaks = [ "rimless" ];
               variant = "${configOptions.styles.theme.variant}";
             };
           };
@@ -66,6 +65,7 @@
             size = "12";
           };
           keyboard = {
+            languageVariant = "br-"; # or "" for us
             layout = "br,us";
             variant = "abnt2";
           };

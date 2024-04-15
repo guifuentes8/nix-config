@@ -21,7 +21,7 @@
       package = configOptions.styles.gtk.package;
     };
     iconTheme = {
-      name = "";
+      name = configOptions.styles.icon.name;
       package = configOptions.styles.icon.package;
     };
     cursorTheme = {
