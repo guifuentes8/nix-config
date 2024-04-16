@@ -20,11 +20,11 @@
       # The basic colors
       foreground = "#${config.colorScheme.palette.base05}";
       background = "#${config.colorScheme.palette.base00}";
-      selection_foreground = "#${config.colorScheme.palette.base03}";
-      selection_background = "#${config.colorScheme.palette.base06}";
+      selection_foreground = "#${config.colorScheme.palette.base00}";
+      selection_background = "#${config.colorScheme.palette.base0D}";
 
       # Cursor colors
-      cursor = "#${config.colorScheme.palette.base0C}";
+      cursor = "#${config.colorScheme.palette.base0D}";
       cursor_text_color = "#${config.colorScheme.palette.base00}";
 
       # URL underline color when hovering with mouse 

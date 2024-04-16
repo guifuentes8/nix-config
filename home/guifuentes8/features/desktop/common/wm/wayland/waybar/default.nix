@@ -14,7 +14,7 @@
 
       window#waybar {
           background: #${config.colorScheme.palette.base00};
-          color: #${config.colorScheme.palette.base0B};
+          color: #${config.colorScheme.palette.base0D};
       }
 
       #cpu,
@@ -28,9 +28,9 @@
       #network,
       #tray,
       #backlight {
-      background: #${config.colorScheme.palette.base00};
       padding: 4px 6px;
       margin: 4px 2px;
+
       }
 
       #workspaces {
@@ -48,12 +48,12 @@
       }
 
       #workspaces button.active {
-        color: #${config.colorScheme.palette.base0B};
+        color: #${config.colorScheme.palette.base0D};
         background-color: #${config.colorScheme.palette.base00};
       }
 
       #workspaces button.focused {
-        color: #${config.colorScheme.palette.base0B};
+        color: #${config.colorScheme.palette.base0D};
         border-radius: ${configOptions.styles.wm.borderRadius};
       }
 
@@ -105,7 +105,7 @@
       }
 
       #clock {
-        color: #${config.colorScheme.palette.base0B};
+        color: #${config.colorScheme.palette.base0D};
         margin-right: 12px;
       }
 
@@ -118,19 +118,19 @@
       }
 
       #mpris {
-        color: #${config.colorScheme.palette.base0B};
+        color: #${config.colorScheme.palette.base0C};
         margin-left: 12px;
         margin-right: 12px;
       }
 
        #custom-media {
-        color: #${config.colorScheme.palette.base0B};
+        color: #${config.colorScheme.palette.base0C};
         margin-left: 12px;
         margin-right: 12px;
       }
 
       #cava {
-        color: #${config.colorScheme.palette.base0B};
+        color: #${config.colorScheme.palette.base0C};
       }
 
     '';
@@ -331,7 +331,7 @@
         layer = "top";
         position = "bottom";
         exclusive = true;
-        height = 0;
+        height = 32;
         modules-left = [ "mpris" ];
         modules-center = [ "custom/sptlrx" ];
         modules-right = [ "cava" ];
@@ -391,8 +391,8 @@
         };
         "custom/sptlrx" = {
           "interval" = 0.5;
-          "format" =
-            '' <span font-family="Dank Mono" style="italic">{}</span> 󰫢 󰍰'';
+          "format" = ''
+             <span font-family="${configOptions.styles.font.main}" style="italic">{}</span> 󰫢 󰍰'';
           "max-length" = 150;
           "exec" = "${pkgs.sptlrx}/bin/sptlrx pipe";
           "on-click" = "";
