@@ -35,6 +35,7 @@ require("catppuccin").setup({
   custom_highlights = {},
   default_integrations = true,
   integrations = {
+    barbar = true,
     cmp = true,
     gitsigns = true,
     nvimtree = true,

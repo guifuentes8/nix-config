@@ -14,7 +14,6 @@ let
 in {
 
   programs.vim = { enable = true; };
-
   programs.neovim = {
     enable = true;
     package = unstable.neovim-unwrapped;

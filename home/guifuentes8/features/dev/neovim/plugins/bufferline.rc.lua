@@ -1,5 +1,6 @@
 local status, bufferline = pcall(require, "bufferline")
 if (not status) then return end
+local mocha = require("catppuccin.palettes").get_palette "mocha"
 
 bufferline.setup({
   options = {
@@ -11,6 +12,17 @@ bufferline.setup({
     color_icons = true,
     diagnostics = "nvim_lsp",
     indicator = {
+    },
+  },
+  highlights = require("catppuccin.groups.integrations.bufferline").get {
+    styles = { "italic", "bold" },
+    custom = {
+      all = {
+        fill = { bg = '#45475B' },
+      },
+      mocha = {
+        background = { fg = mocha.text },
+      },
     },
   },
 })

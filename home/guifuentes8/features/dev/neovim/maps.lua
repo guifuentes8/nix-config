@@ -9,7 +9,6 @@ keymap.set('n', 'Q', ':qa<CR>')
 keymap.set('n', '<C-w>', ':wa<CR>')
 keymap.set('n', '<C-s>', ':w<CR>')
 
-
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
