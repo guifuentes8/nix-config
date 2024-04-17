@@ -195,7 +195,8 @@ in {
         bind = $mainMod, F8, exec, rofi-systemd 
         bind = $mainMod, F9, exec, rofi-pulse-select sink
         bind = $mainMod, F10, exec, rofi-bluetooth 
-        bind = $mainMod, F11, exec, rofi-rbw --keybindings 'Alt+u:copy:username,Alt+p:copy:password,Alt+t:copy:totp,Alt+n:copy:notes'        bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
+        bind = $mainMod, F11, exec, rofi-rbw --keybindings 'Alt+u:copy:username,Alt+p:copy:password,Alt+t:copy:totp,Alt+n:copy:notes'        
+        bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
 
         # Pick color
         bind = $mainMod SHIFT, p, exec, ${unstable.hyprpicker}/bin/hyprpicker -a

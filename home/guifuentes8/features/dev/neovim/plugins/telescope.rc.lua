@@ -1,6 +1,7 @@
 local status, telescope = pcall(require, 'telescope')
 if (not status) then return end
 local actions = require('telescope.actions')
+local fb_actions = require "telescope._extensions.file_browser.actions"
 local builtin = require('telescope.builtin')
 
 telescope.setup {
@@ -15,6 +16,9 @@ telescope.setup {
     find_files = {
       theme = "dropdown",
     },
+    live_grep = {
+      theme = "dropdown",
+    },
 
   },
   extensions = {
@@ -24,10 +28,36 @@ telescope.setup {
       hijack_netrw = true,
       mappings = {
         ["i"] = {
-          -- your custom insert mode mappings
+          ["<A-c>"] = fb_actions.create,
+          ["<S-CR>"] = fb_actions.create_from_prompt,
+          ["<A-r>"] = fb_actions.rename,
+          ["<A-m>"] = fb_actions.move,
+          ["<A-y>"] = fb_actions.copy,
+          ["<A-d>"] = fb_actions.remove,
+          ["<C-o>"] = fb_actions.open,
+          ["<C-g>"] = fb_actions.goto_parent_dir,
+          ["<C-e>"] = fb_actions.goto_home_dir,
+          ["<C-w>"] = fb_actions.goto_cwd,
+          ["<C-t>"] = fb_actions.change_cwd,
+          ["<C-f>"] = fb_actions.toggle_browser,
+          ["<C-h>"] = fb_actions.toggle_hidden,
+          ["<C-s>"] = fb_actions.toggle_all,
+          ["<bs>"] = fb_actions.backspace,
         },
         ["n"] = {
-          -- your custom normal mode mappings
+          ["c"] = fb_actions.create,
+          ["r"] = fb_actions.rename,
+          ["m"] = fb_actions.move,
+          ["y"] = fb_actions.copy,
+          ["d"] = fb_actions.remove,
+          ["o"] = fb_actions.open,
+          ["g"] = fb_actions.goto_parent_dir,
+          ["e"] = fb_actions.goto_home_dir,
+          ["w"] = fb_actions.goto_cwd,
+          ["t"] = fb_actions.change_cwd,
+          ["f"] = fb_actions.toggle_browser,
+          ["h"] = fb_actions.toggle_hidden,
+          ["s"] = fb_actions.toggle_all,
         },
       },
     },
@@ -42,41 +72,12 @@ telescope.setup {
       sync_with_nvim_tree = false, -- default false
       -- default for on_project_selected = find project files
     },
-    media_files = {
-      -- filetypes whitelist
-      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-      filetypes = { "png", "webp", "jpg", "jpeg", "svg" },
-      -- find command (defaults to `fd`)
-      find_cmd = "rg"
-    },
-    undo = {
-      use_delta = true,
-      side_by_side = true,
-      theme = "ivy",
-      layout_strategy = "vertical",
-      layout_config = {
-        preview_height = 0.8,
-      },
-      mappings = {
-        i = {
-          ["<cr>"] = require("telescope-undo.actions").yank_additions,
-          ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
-          ["<C-cr>"] = require("telescope-undo.actions").restore,
-          -- alternative defaults, for users whose terminals do questionable things with modified <cr>
-          ["<C-y>"] = require("telescope-undo.actions").yank_deletions,
-          ["<C-r>"] = require("telescope-undo.actions").restore,
-        },
-        n = {
-          ["y"] = require("telescope-undo.actions").yank_additions,
-          ["Y"] = require("telescope-undo.actions").yank_deletions,
-          ["u"] = require("telescope-undo.actions").restore,
-        },
-      },
-    },
   },
 }
 
--- keymaps
+-- Keymaps
+-- Builtins functions
+
 vim.keymap.set('n', ';f',
   function()
     builtin.find_files({
@@ -107,16 +108,11 @@ vim.keymap.set('n', ';gb', function()
   builtin.git_branches()
 end)
 
-vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
-vim.api.nvim_set_keymap(
-  'n',
-  '<C-p>',
-  ":lua require'telescope'.extensions.project.project{}<CR>",
-  { noremap = true, silent = true }
-)
+-- Extensions
+vim.keymap.set("n", "<space>f", ":Telescope file_browser<CR>")
 
-telescope.load_extension("undo")
-telescope.load_extension("gh")
-telescope.load_extension("media_files")
-telescope.load_extension("project")
+-- open file_browser with the path of the current buffer
+vim.keymap.set("n", "<space>b", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
+
 telescope.load_extension("file_browser")
+telescope.load_extension("project")

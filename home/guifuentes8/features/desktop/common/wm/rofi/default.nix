@@ -45,5 +45,4 @@
     };
   };
 
-  # xdg.configFile."rofi/KyotoNight.rasi".source = ./KyotoNight.rasi;
 }

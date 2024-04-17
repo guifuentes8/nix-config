@@ -100,16 +100,6 @@ in {
         config = builtins.readFile (./plugins/alpha.rc.lua);
       }
       {
-        plugin = nvterm;
-        type = "lua";
-        config = builtins.readFile (./plugins/terminal.rc.lua);
-      }
-      {
-        plugin = multicursors-nvim;
-        type = "lua";
-        config = builtins.readFile (./plugins/multicursors.rc.lua);
-      }
-      {
         plugin = indent-blankline-nvim;
         type = "lua";
         config = builtins.readFile (./plugins/indent.rc.lua);
@@ -119,11 +109,7 @@ in {
         type = "lua";
         config = builtins.readFile (./plugins/scrollbar.rc.lua);
       }
-      {
-        plugin = neo-tree-nvim;
-        type = "lua";
-        config = builtins.readFile (./plugins/neotree.rc.lua);
-      }
+
       {
         plugin = nvim-lint;
         type = "lua";
@@ -145,23 +131,19 @@ in {
         config = builtins.readFile (./plugins/rainbow.rc.lua);
       }
       {
-        plugin = (fromGitHub "fd35a46f4b7c1b244249266bdcb2da3814f01724" "HEAD"
-          "xiyaowong/transparent.nvim");
+        plugin = neorg;
         type = "lua";
-        config = builtins.readFile (./plugins/transparent.rc.lua);
-
+        config = builtins.readFile (./plugins/neorg.rc.lua);
       }
+
       cmp-buffer # buffer words
       cmp-nvim-lsp # dependencies
       cmp_luasnip
 
       plenary-nvim
       nvim-web-devicons
-      markdown-preview-nvim
       zen-mode-nvim
       nvim-spectre
-      popup-nvim
-      image-nvim
       friendly-snippets
 
       # Telescope 

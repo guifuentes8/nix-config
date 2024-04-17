@@ -12,6 +12,7 @@
     };
     searchEngines = {
       # Nix search
+      DEFAULT = "https://google.com.br/search?q={}";
       hm = "https://home-manager-options.extranix.com/?query={}&release=master";
       ns =
         "https://search.nixos.org/packages?channel=23.11&from=0&size=50&sort=relevance&type=packages&query={}";
@@ -20,7 +21,6 @@
       nw = "https://nixos.wiki/index.php?search={}";
       # Other searchs
       aw = "https://wiki.archlinux.org/?search={}";
-      g = "https://www.google.com/search?hl=en&q={}";
     };
     settings = {
       colors.webpage = {

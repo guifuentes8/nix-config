@@ -3,55 +3,50 @@ local opt = vim.opt
 local api = vim.api
 local cmd = vim.cmd
 
-cmd('autocmd!')
-cmd('set modifiable')
-
-vim.scriptencoding = 'utf-8'
-opt.encoding = 'utf-8'
-opt.fileencoding = 'utf-8'
-
 g.mapleader = ","
-
-vim.wo.number = true
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
-
-opt.title = true
-opt.autoindent = true
-opt.hlsearch = true
-opt.backup = false
-opt.showcmd = true
-opt.cmdheight = 1
-opt.laststatus = 2
-opt.expandtab = true
-opt.scrolloff = 10
-opt.shell = 'zsh'
-opt.backupskip = '/tmp/*'
-opt.inccommand = 'split'
-opt.ignorecase = true
-opt.smarttab = true
-opt.breakindent = true
-opt.shiftwidth = 2
-opt.tabstop = 2
-opt.ai = true            -- Auto indent
-opt.si = true            -- Smart indent
-opt.wrap = false         -- No wrap lines
-opt.backspace = 'start,eol,indent'
-opt.path:append { '**' } -- Finding files - search down into subfolders
-opt.wildignore:append { '*/node_modules/*' }
-
--- Undercurl
+cmd('autocmd!')
+cmd('set modifiable')
 cmd([[let &t_Cs = "\e[4:3m"]])
 cmd([[let &t_Ce = "\e[4:0m"]])
 
+
+vim.scriptencoding = 'utf-8'
+vim.wo.number = true
+
+opt.ai = true
+opt.backup = false
+opt.backupskip = '/tmp/*'
+opt.backspace = 'start,eol,indent'
+opt.breakindent = true
+opt.clipboard = "unnamedplus"
+opt.cmdheight = 1
+opt.encoding = 'utf-8'
+opt.expandtab = true
+opt.formatoptions:append { 'r' }
+opt.fileencoding = 'utf-8'
+opt.hlsearch = true
+opt.inccommand = 'split'
+opt.ignorecase = true
+opt.laststatus = 2
+opt.path:append { '**' } -- Finding files - search down into subfolders
+opt.scrolloff = 999
+opt.shell = 'zsh'
+opt.shiftwidth = 2
+opt.showcmd = true
+opt.si = true -- Smart indent
+opt.smarttab = true
+opt.splitbelow = true
+opt.splitright = true
+opt.tabstop = 4
+opt.title = true
+opt.wildignore:append { '*/node_modules/*' }
+opt.wrap = false -- No wrap lines
 
 -- Turn off paste mode when leaving insert
 api.nvim_create_autocmd("InsertLeave", {
   pattern = '*',
   command = 'set nopaste'
 })
-
-opt.formatoptions:append { 'r' }
-
-opt.clipboard = "unnamedplus"

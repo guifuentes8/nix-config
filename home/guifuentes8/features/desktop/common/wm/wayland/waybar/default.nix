@@ -41,7 +41,7 @@
 
 
       #workspaces button {
-        color: #${config.colorScheme.palette.base05};
+        color: #${config.colorScheme.palette.base07};
         padding: 0px 4px 0px 0px;
         margin: 0px 2px;
 
@@ -65,27 +65,27 @@
 
       #workspaces button:hover {
         background-color: #${config.colorScheme.palette.base00};
-        color: #${config.colorScheme.palette.base08};
+        color: #${config.colorScheme.palette.base0C};
       }
 
       #disk {
-        color: #${config.colorScheme.palette.base05};
+        color: #${config.colorScheme.palette.base06};
       }
 
       #cpu {
-        color: #${config.colorScheme.palette.base05};
+        color: #${config.colorScheme.palette.base06};
       }
 
       #memory {
-        color: #${config.colorScheme.palette.base05};
+        color: #${config.colorScheme.palette.base06};
       }
 
       #temperature {
-        color: #${config.colorScheme.palette.base05};
+        color: #${config.colorScheme.palette.base09};
       }
 
       #backlight {
-        color: #${config.colorScheme.palette.base05};
+        color: #${config.colorScheme.palette.base0A};
       }
 
       #keyboard-state {
@@ -93,19 +93,19 @@
       }
 
       #network {
-        color: #${config.colorScheme.palette.base05};
+        color: #${config.colorScheme.palette.base0B};
       }
 
       #pulseaudio {
-        color: #${config.colorScheme.palette.base05};
+        color: #${config.colorScheme.palette.base0C};
       }
 
       #battery {
-        color: #${config.colorScheme.palette.base05};
+        color: #${config.colorScheme.palette.base0E};
       }
 
       #clock {
-        color: #${config.colorScheme.palette.base0D};
+        color: #${config.colorScheme.palette.base0F};
         margin-right: 12px;
       }
 
@@ -183,15 +183,15 @@
           "on-click" = "activate";
           "format" = "{icon}";
           "format-icons" = {
-            "1" = "<span font='16' rise='1000'>󰲡</span>";
-            "2" = "<span font='16' rise='1000'>󰲣</span>";
-            "3" = "<span font='16' rise='1000'>󰲥</span>";
-            "4" = "<span font='16' rise='1000'>󰲧</span>";
-            "5" = "<span font='16' rise='1000'>󰲩</span>";
-            "6" = "<span font='16' rise='1000'>󰲫</span>";
-            "7" = "<span font='16' rise='1000'>󰲭</span>";
-            "8" = "<span font='16' rise='1000'>󰲯</span>";
-            "9" = "<span font='16' rise='1000'>󰲱</span>";
+            "1" = "<span font='16' rise='1000'>󰯬</span>";
+            "2" = "<span font='16' rise='1000'>󰯯</span>";
+            "3" = "<span font='16' rise='1000'>󰯲</span>";
+            "4" = "<span font='16' rise='1000'>󰯵</span>";
+            "5" = "<span font='16' rise='1000'>󰯸</span>";
+            "6" = "<span font='16' rise='1000'>󰯻</span>";
+            "7" = "<span font='16' rise='1000'>󰯾</span>";
+            "8" = "<span font='16' rise='1000'>󰰁</span>";
+            "9" = "<span font='16' rise='1000'>󰰄</span>";
             "urgent" = "";
             "active" = "<span font='16' rise='1000'></span>";
             "default" = "";
@@ -206,15 +206,15 @@
           "on-click" = "activate";
           "format" = "{icon}";
           "format-icons" = {
-            "1" = "<span font='15' rise='1000'>󰲡</span>";
-            "2" = "<span font='15' rise='1000'>󰲣</span>";
-            "3" = "<span font='15' rise='1000'>󰲥</span>";
-            "4" = "<span font='15' rise='1000'>󰲧</span>";
-            "5" = "<span font='15' rise='1000'>󰲩</span>";
-            "6" = "<span font='15' rise='1000'>󰲫</span>";
-            "7" = "<span font='15' rise='1000'>󰲭</span>";
-            "8" = "<span font='15' rise='1000'>󰲯</span>";
-            "9" = "<span font='15' rise='1000'>󰲱</span>";
+            "1" = "<span font='16' rise='1000'>󰯬</span>";
+            "2" = "<span font='16' rise='1000'>󰯯</span>";
+            "3" = "<span font='16' rise='1000'>󰯲</span>";
+            "4" = "<span font='16' rise='1000'>󰯵</span>";
+            "5" = "<span font='16' rise='1000'>󰯸</span>";
+            "6" = "<span font='16' rise='1000'>󰯻</span>";
+            "7" = "<span font='16' rise='1000'>󰯾</span>";
+            "8" = "<span font='16' rise='1000'>󰰁</span>";
+            "9" = "<span font='16' rise='1000'>󰰄</span>";
             "urgent" = "";
             "active" = "<span font='15' rise='1000'></span>";
             "default" = "";
@@ -287,7 +287,7 @@
             "critical" = 15;
           };
           "format" = "{icon} {capacity}%";
-          "format-charging" = " {capacity}%";
+          "format-charging" = " {capacity}%";
           "format-plugged" = " {capacity}%";
           "format-alt" = "{time} {icon}";
           "format-good" = "{icon} {capacity}%";
