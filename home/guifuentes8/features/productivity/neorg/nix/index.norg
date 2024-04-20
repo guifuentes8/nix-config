@@ -1,0 +1,60 @@
+* */My Awesome Nix Config xD/* 🐧
+** Applications
+*** Dunst
+    - ( ) *Tasks*
+    -- ( ) Change border color and width
+    -- ( ) Modify position on screen
+    -- ( ) Fix sound .wav when notification appears
+*** Tmux
+    - ( ) *Tasks*
+    -- ( ) Initial configuration
+    -- ( ) Keybindings
+*** Rofi
+    - ( ) *Tasks*
+    -- ( ) Width and Height size
+    -- ( ) Keybindings review
+    -- ( ) New plugins ?
+*** Qutebrowser    
+    - ( ) *Tasks*
+    -- ( ) Tabs configuration
+    -- ( ) Keybindings # make a tutorial
+*** Foot terminal
+    - ( ) *Tasks*
+    -- ( ) Adjust colorscheme
+    -- ( ) Review configuration
+*** Cava
+    - ( ) *Tasks*
+    -- ( ) Adjust colorscheme
+    -- ( ) View config file
+*** Yazi
+    - ( ) *Tasks*
+    -- ( ) Fix the error when opened
+    -- ( ) Adjust colorscheme to file.bat
+*** Spotify player
+    - ( ) *Tasks*
+    -- ( ) View config and adjust for better use
+    -- ( ) Adjust colorscheme to nix-colors
+
+** News apps
+*** Youtube
+    - ( ) Add new cli with download and view youtube videos
+*** Calendar
+    - ( ) Add new cli to calendar (google agenda)
+*** Mail
+    - ( ) Add new cli to mail (himalaya maybe)
+** Windows Managers
+*** Hyprland 
+    - ( ) Tasks
+    -- ( ) Read wiki and create todo for each wiki config
+*** Qtile
+    - ( ) Tasks
+    -- ( ) Read wiki and create todo for each wiki config
+*** Bspwm
+    - ( ) Tasks
+    -- ( ) Adjust config equal to Hyprland
+    -- ( ) Adjust xorg wm apps (polybar, picom)
+    -- ( ) Adjust sxhkd keybinds
+*** I3
+    - ( ) Tasks
+    -- ( ) Adjust config equal to Bspwm
+    -- ( ) Sxhkd keybinds

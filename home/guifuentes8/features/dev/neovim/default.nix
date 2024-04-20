@@ -27,7 +27,7 @@ in {
       require 'maps'
     '';
     extraConfig = "\n";
-    plugins = with pkgs.vimPlugins; [
+    plugins = with unstable.vimPlugins; [
       {
         plugin = catppuccin-nvim;
         type = "lua";

@@ -12,7 +12,6 @@
       rofi-power-menu
       rofi-pulse-select
       rofi-systemd
-      rofi-pass
       rofi-rbw
     ];
   };
@@ -24,7 +23,6 @@
     rofi-power-menu
     rofi-pulse-select
     rofi-systemd
-    rofi-pass
     rofi-rbw
   ];
 

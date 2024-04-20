@@ -21,6 +21,7 @@
       nw = "https://nixos.wiki/index.php?search={}";
       # Other searchs
       aw = "https://wiki.archlinux.org/?search={}";
+      yt = "https://www.youtube.com/results?search_query={}";
     };
     settings = {
       colors.webpage = {
