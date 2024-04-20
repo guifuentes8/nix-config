@@ -32,7 +32,13 @@
         preferred_color_scheme = "dark";
       };
       url = { start_pages = "https://www.google.com.br"; };
-      content = { notifications.enabled = false; };
+      content = {
+        notifications.enabled = false;
+        javascript = {
+          enabled = true;
+          clipboard = "access";
+        };
+      };
       fonts = {
         default_family = configOptions.styles.font.main;
         default_size = "14px";

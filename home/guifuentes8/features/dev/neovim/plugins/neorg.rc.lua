@@ -43,7 +43,7 @@ require("neorg").setup {
     ["core.qol.todo_items"] = {},
     ["core.summary"] = {},
     ["core.tangle"] = { config = { report_on_empty = false } },
-    ["core.ui.calendar"] = {},
+    --    ["core.ui.calendar"] = {},
   },
 }
 

@@ -1,8 +1,19 @@
+@document.meta
+title: index
+description: 
+authors: guifuentes8
+categories: 
+created: 2024-04-20T14:13:05-0300
+updated: 2024-04-20T14:13:05-0300
+version: 1.1.1
+@end
+
 * Neovim
 ** Plugins
 *** Neorg
     - ( ) */Tasks/*
     -- ( ) Add cmp completion
+    -- ( ) image.nvim
     -- ( ) Study neorg modules and keybindings for best use
     --- How to minimize line in Neorg?
     --- How to create links
@@ -13,8 +24,22 @@
     --- ( ) File browser plugin
     --- ( ) Others
     -- ( ) Add Plugins telescope
-    --- ( ) Cmdline
-    --- ( ) Neorg
-    --- ( ) Git
+    --- (!) Cmdline
+    --- (!) Neorg
+    --- (!) Git
+*** Notify
+    - (!) */Tasks/*
+    -- (!) Init notify plugin in neovim
+    -- (!) Add catppuccin theme
+    -- (!) Custom config appearance and others custom configs
+*** Others
+    - ( ) */Tasks/*
+    -- ( ) Search others plugins in {https://github.com/catppuccin/nvim#integrations}[Catppuccin Neovim] 
 
-
+** Configuration
+   - ( ) */Tasks/*
+   -- ( ) Rules to wrap max text width size in editor
+   -- ( ) Multiselect
+   -- ( ) Analyze all plugins
+   -- ( ) Integration with tmux
+   -- ( ) Analyze neovim configuration

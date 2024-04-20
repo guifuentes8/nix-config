@@ -1,4 +1,4 @@
-* */My Awesome Nix Config xD/* 🐧
+* */My Awesome Nix Config xD/* 🐧 *TODO LIST*
 ** Applications
 *** Dunst
     - ( ) *Tasks*
@@ -42,6 +42,7 @@
     - ( ) Add new cli to calendar (google agenda)
 *** Mail
     - ( ) Add new cli to mail (himalaya maybe)
+
 ** Windows Managers
 *** Hyprland 
     - ( ) Tasks

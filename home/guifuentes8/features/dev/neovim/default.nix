@@ -134,6 +134,12 @@ in {
         type = "lua";
         config = builtins.readFile (./plugins/neorg.rc.lua);
       }
+      {
+        plugin = (fromGitHub "dd676584145d62b30d7e8dbdd011796a8f0a065f" "HEAD"
+          "VonHeikemen/fine-cmdline.nvim");
+        type = "lua";
+        config = builtins.readFile (./plugins/cmdline.rc.lua);
+      }
 
       cmp-buffer # buffer words
       cmp-nvim-lsp # dependencies
@@ -144,6 +150,8 @@ in {
       zen-mode-nvim
       nvim-spectre
       friendly-snippets
+
+      nui-nvim
 
       # Telescope 
       telescope-project-nvim
