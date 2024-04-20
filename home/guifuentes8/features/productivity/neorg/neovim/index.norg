@@ -11,20 +11,20 @@ version: 1.1.1
 * Neovim
 ** Plugins
 *** Neorg
-    - ( ) */Tasks/*
-    -- ( ) Add cmp completion
+    - (-) */Tasks/*
+    -- (x) Add cmp completion
     -- ( ) image.nvim
     -- ( ) Study neorg modules and keybindings for best use
-    --- How to minimize line in Neorg?
-    --- How to create links
-    --- What do all modules?
+    --- ( ) How to minimize line in Neorg?
+    --- ( ) How to create links
+    --- ( ) What do all modules?
 *** Telescope
-    - ( ) */Tasks/*
+    - (-) */Tasks/*
     -- ( ) Adjust keybindings actually exists
-    --- ( ) File browser plugin
+    --- (x) File browser plugin
     --- ( ) Others
     -- ( ) Add Plugins telescope
-    --- (!) Cmdline
+    --- (x) Cmdline
     --- (!) Neorg
     --- (!) Git
 *** Notify

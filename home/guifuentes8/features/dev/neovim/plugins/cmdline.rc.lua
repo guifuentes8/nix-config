@@ -2,17 +2,18 @@ require('fine-cmdline').setup({
   cmdline = {
     enable_keymaps = true,
     smart_history = true,
-    prompt = ': '
+    prompt = '🏁: '
   },
   popup = {
     position = {
-      row = '10%',
+      row = '50%',
       col = '50%',
     },
     size = {
-      width = '60%',
+      width = '80%',
     },
     border = {
+      padding = { 1, 3 },
       style = 'rounded',
     },
     win_options = {
@@ -31,4 +32,3 @@ require('fine-cmdline').setup({
     end
   }
 })
-

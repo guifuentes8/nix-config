@@ -46,7 +46,7 @@ keymap.set('n', '<C-w><up>', '<C-w>+<')
 keymap.set('n', '<C-w><down>', '<C-w>-<')
 
 
-keymap.set('n', '<C-b>', '<Cmd>:Neotree toggle<CR>')
+keymap.set('n', '<C-b>', '<Cmd>:Telescope file_browser path=%:p:h select_buffer=true<CR>')
 keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
 
@@ -65,4 +65,7 @@ keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR
 keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
   desc = "Search on current file"
 })
-keymap.set('n', ';z', '<Cmd>:ZenMode<CR>')
+
+-- PLUGING HOTKEYS
+keymap.set('n', ';z', '<cmd>:ZenMode<CR>')
+keymap.set('n', ':', '<cmd>:FineCmdline<CR>')

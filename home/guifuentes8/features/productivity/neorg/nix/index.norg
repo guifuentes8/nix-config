@@ -1,3 +1,13 @@
+@document.meta
+title: index
+description: 
+authors: guifuentes8
+categories: 
+created: 2024-04-20T16:14:46-0300
+updated: 2024-04-20T16:14:46-0300
+version: 1.1.1
+@end
+
 * */My Awesome Nix Config xD/* 🐧 *TODO LIST*
 ** Applications
 *** Dunst

@@ -15,6 +15,8 @@ cmd([[let &t_Ce = "\e[4:0m"]])
 
 vim.scriptencoding = 'utf-8'
 vim.wo.number = true
+vim.notify = require("notify")
+
 
 opt.ai = true
 opt.backup = false
