@@ -35,17 +35,11 @@ require("catppuccin").setup({
   custom_highlights = {},
   default_integrations = true,
   integrations = {
-    barbar = true,
     cmp = true,
     gitsigns = true,
-    nvimtree = true,
     treesitter = true,
-    notify = false,
-    mini = {
-      enabled = true,
-      indentscope_color = "",
-    },
-    -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+    noice = true,
+    notify = true,
   },
 })
 

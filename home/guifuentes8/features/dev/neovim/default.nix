@@ -135,16 +135,16 @@ in {
           config = builtins.readFile (./plugins/neorg.rc.lua);
         }
         {
-          plugin = nvim-notify;
+          plugin = noice-nvim;
           type = "lua";
-          config = builtins.readFile (./plugins/notify.rc.lua);
+          config = builtins.readFile (./plugins/noice.rc.lua);
         }
-        {
-          plugin = (fromGitHub "dd676584145d62b30d7e8dbdd011796a8f0a065f" "HEAD"
-            "VonHeikemen/fine-cmdline.nvim");
-          type = "lua";
-          config = builtins.readFile (./plugins/cmdline.rc.lua);
-        }
+        # {
+        #   plugin = (fromGitHub "dd676584145d62b30d7e8dbdd011796a8f0a065f" "HEAD"
+        #     "VonHeikemen/fine-cmdline.nvim");
+        #   type = "lua";
+        #   config = builtins.readFile (./plugins/cmdline.rc.lua);
+        # }
 
         cmp-buffer # buffer words
         cmp-nvim-lsp # dependencies
@@ -156,10 +156,12 @@ in {
         nvim-spectre
         friendly-snippets
 
+        # Noice dependencies
         nui-nvim
+        nvim-notify
         nvim-lsp-notify
 
-        # Telescope 
+        # Telescope extensions 
         telescope-project-nvim
         telescope-github-nvim
         telescope-media-files-nvim

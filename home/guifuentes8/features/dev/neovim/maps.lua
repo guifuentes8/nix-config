@@ -68,4 +68,4 @@ keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({sel
 
 -- PLUGING HOTKEYS
 keymap.set('n', ';z', '<cmd>:ZenMode<CR>')
-keymap.set('n', ':', '<cmd>:FineCmdline<CR>')
+--keymap.set('n', ':', '<cmd>:FineCmdline<CR>')
