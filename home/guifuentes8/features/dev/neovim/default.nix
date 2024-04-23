@@ -12,6 +12,7 @@ let
     };
 
 in {
+  home.packages = [ unstable.tree-sitter-grammars.tree-sitter-norg-meta ];
   programs = {
     vim = { enable = true; };
     neovim = {
@@ -59,7 +60,9 @@ in {
           config = builtins.readFile (./plugins/cmp.rc.lua);
         }
         {
-          plugin = nvim-treesitter.withAllGrammars;
+          plugin = (nvim-treesitter.withPlugins (_:
+            nvim-treesitter.allGrammars
+            ++ [ (unstable.tree-sitter-grammars.tree-sitter-norg-meta) ]));
           type = "lua";
           config = builtins.readFile (./plugins/treesitter.rc.lua);
         }
@@ -108,7 +111,6 @@ in {
           type = "lua";
           config = builtins.readFile (./plugins/scrollbar.rc.lua);
         }
-
         {
           plugin = nvim-lint;
           type = "lua";
@@ -139,12 +141,6 @@ in {
           type = "lua";
           config = builtins.readFile (./plugins/noice.rc.lua);
         }
-        # {
-        #   plugin = (fromGitHub "dd676584145d62b30d7e8dbdd011796a8f0a065f" "HEAD"
-        #     "VonHeikemen/fine-cmdline.nvim");
-        #   type = "lua";
-        #   config = builtins.readFile (./plugins/cmdline.rc.lua);
-        # }
 
         cmp-buffer # buffer words
         cmp-nvim-lsp # dependencies
@@ -155,6 +151,8 @@ in {
         zen-mode-nvim
         nvim-spectre
         friendly-snippets
+
+        # Neorg dependencies
 
         # Noice dependencies
         nui-nvim
@@ -169,7 +167,7 @@ in {
         telescope-file-browser-nvim
       ];
 
-      extraPackages = with pkgs; [
+      extraPackages = with unstable; [
 
         # Language servers
         nodePackages.typescript-language-server
@@ -187,6 +185,7 @@ in {
 
         # Others
         nodePackages.live-server
+
       ];
 
     };

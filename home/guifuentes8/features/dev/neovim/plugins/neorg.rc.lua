@@ -6,12 +6,12 @@ require("neorg").setup {
     ["core.dirman"] = {
       config = {
         workspaces = {
-          personal = "~/nix-config/home/guifuentes8/features/productivity/neorg/personal",
-          study = "~/nix-config/home/guifuentes8/features/productivity/neorg/study",
-          neovim = "~/nix-config/home/guifuentes8/features/productivity/neorg/neovim",
-          nix = "~/nix-config/home/guifuentes8/features/productivity/neorg/nix",
-          journal = "~/nix-config/home/guifuentes8/features/productivity/neorg/journal",
-          work = "~/nix-config/home/guifuentes8/features/productivity/neorg/work",
+          personal = "~/Notes/personal",
+          study = "~/Notes/study",
+          neovim = "~/Notes/neovim",
+          nix = "~/Notes/nix",
+          work = "~/Notes/work",
+          journal = "~/Notes/journal",
 
         },
         default_workspace = "personal",
@@ -21,6 +21,14 @@ require("neorg").setup {
     ["core.export"] = {},
     ["core.export.markdown"] = { config = { extensions = "all" } },
     ["core.integrations.nvim-cmp"] = {},
+    ["core.highlights"] = {},
+    ["core.mode"] = {},
+    ["core.integrations.treesitter"] = {
+      config = {
+        configure_parsers = false,
+        install_parsers = false,
+      }
+    },
     ["core.journal"] = {
       config = {
         strategy = "flat",

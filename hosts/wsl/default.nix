@@ -1,4 +1,5 @@
-{ config, lib, pkgs, inputs, outputs, nix-colors, unstable, configOptions, ... }:
+{ config, lib, pkgs, inputs, outputs, nix-colors, unstable, configOptions, ...
+}:
 
 {
   imports = [
@@ -6,7 +7,7 @@
     ../global
     ../global/users/guifuentes8.nix
     ../global/hardware/gpu/amdgpu.nix
-    ../global/services/common/dev
+    ../global/services/common
 
     inputs.nix-wsl.nixosModules.wsl
   ];
@@ -28,16 +29,33 @@
   home-manager.users.guifuentes8 = import ../../home/guifuentes8/windows.nix;
 
   environment = {
-    systemPackages = [ pkgs.firefox pkgs.wget ];
+    systemPackages = [ pkgs.nextcloud-client ];
     sessionVariables = {
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
       WGPU_BACKEND = "gl";
-      BROWSER = "firefox";
+      BROWSER = "org.qutebrowser.qutebrowser.desktop";
       WSLENV = "ANDROID_HOME/p";
-      ANDROID_HOME = "/mnt/c/Users/${configOptions.windowsUser}/Local Settings/Android/Sdk";
+      ANDROID_HOME =
+        "/mnt/c/Users/${configOptions.windowsUser}/Local Settings/Android/Sdk";
     };
 
   };
+
+  environment.etc."nextcloud-admin-pass".text = "";
+  services.nextcloud = {
+    enable = true;
+    package = pkgs.nextcloud28;
+    hostName = "https://kim.nl.tab.digital/";
+    database.createLocally = true;
+    config.adminpassFile = "/etc/nextcloud-admin-pass";
+    config.adminuser = "guifuentes8@gmail.com";
+    configureRedis = true;
+    extraApps = {
+      inherit (pkgs.nextcloud28Packages.apps) tasks mail calendar contacts;
+    };
+    extraAppsEnable = true;
+  };
+
 }

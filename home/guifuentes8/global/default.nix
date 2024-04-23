@@ -33,7 +33,10 @@
       download = "${config.home.homeDirectory}/Downloads";
       desktop = "${config.home.homeDirectory}/Desktop";
       documents = "${config.home.homeDirectory}/Documents";
-      extraConfig = { work = "${config.home.homeDirectory}/Work"; };
+      extraConfig = {
+        work = "${config.home.homeDirectory}/Work";
+        notes = "${config.home.homeDirectory}/Notes";
+      };
     };
   };
 

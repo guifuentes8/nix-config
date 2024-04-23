@@ -34,7 +34,7 @@
       pkgs = import nixpkgs { system = "x86_64-linux"; };
       configOptions = {
         systemVersion = "23.11";
-        windowsUser = "Guilherme\\ Fuentes";
+        windowsUser = "guifuentes8";
         styles = {
           theme = {
             name = "catppuccin";
