@@ -1,6 +1,7 @@
 { inputs, lib, pkgs, config, outputs, nix-colors, configOptions, ... }: {
 
-  imports = [ nix-colors.homeManagerModules.default ../features/cli ];
+  imports =
+    [ nix-colors.homeManagerModules.default ../features/cli ./systemd.nix ];
 
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 

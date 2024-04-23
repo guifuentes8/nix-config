@@ -29,7 +29,7 @@
   home-manager.users.guifuentes8 = import ../../home/guifuentes8/windows.nix;
 
   environment = {
-    systemPackages = [ pkgs.nextcloud-client ];
+    systemPackages = [ ];
     sessionVariables = {
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       NIXOS_OZONE_WL = "1";

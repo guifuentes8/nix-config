@@ -35,6 +35,7 @@
       configOptions = {
         systemVersion = "23.11";
         windowsUser = "guifuentes8";
+        nextcloudHostname = "https://kim.nl.tab.digital";
         styles = {
           theme = {
             name = "catppuccin";
