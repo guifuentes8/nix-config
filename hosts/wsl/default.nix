@@ -43,19 +43,4 @@
 
   };
 
-  environment.etc."nextcloud-admin-pass".text = "";
-  services.nextcloud = {
-    enable = true;
-    package = pkgs.nextcloud28;
-    hostName = "https://kim.nl.tab.digital/";
-    database.createLocally = true;
-    config.adminpassFile = "/etc/nextcloud-admin-pass";
-    config.adminuser = "guifuentes8@gmail.com";
-    configureRedis = true;
-    extraApps = {
-      inherit (pkgs.nextcloud28Packages.apps) tasks mail calendar contacts;
-    };
-    extraAppsEnable = true;
-  };
-
 }
