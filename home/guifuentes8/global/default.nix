@@ -10,6 +10,7 @@
     homeDirectory = "/home/${config.home.username}";
     stateVersion = configOptions.systemVersion;
     sessionVariables = {
+      NEXTCLOUD_PASS = "$(${pkgs.pass}/bin/pass show nextcloud/secret)";
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
@@ -22,6 +23,7 @@
     git.enable = true;
     home-manager.enable = true;
     zsh.localVariables = {
+      NEXTCLOUD_PASS = "$(${pkgs.pass}/bin/pass show nextcloud/secret)";
       GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
     };
   };

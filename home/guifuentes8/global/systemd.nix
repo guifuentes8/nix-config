@@ -1,4 +1,7 @@
-{ pkgs, configOptions, ... }: {
+{ pkgs, config, configOptions, ... }:
+let
+
+in {
 
   systemd.user = {
     services.nextcloud-autosync = {
@@ -8,9 +11,8 @@
       };
       Service = {
         Type = "simple";
-        ExecStart = ''
-          ${pkgs.nextcloud-client}/bin/nextcloudcmd -u wxyz98@live.com -p $(${pkgs.pass}/bin/pass show nextcloud/secret)
-          --path /Notes /home/guifuentes8/Notes/ ${configOptions.nextcloudHostname}'';
+        ExecStart =
+          "${pkgs.nextcloud-client}/bin/nextcloudcmd -h -n --path /Notes /home/guifuentes8/Notes/ ${configOptions.nextcloudHostname}";
         TimeoutStopSec = "180";
         KillMode = "process";
         KillSignal = "SIGINT";
@@ -20,8 +22,8 @@
     timers.nextcloud-autosync = {
       Unit.Description =
         "Automatic sync files with Nextcloud when booted up after 5 minutes then rerun every 10 minutes";
-      Timer.OnBootSec = "5min";
-      Timer.OnUnitActiveSec = "10min";
+      Timer.OnBootSec = "5m";
+      Timer.OnUnitActiveSec = "10m";
       Install.WantedBy = [ "multi-user.target" "timers.target" ];
     };
   };

@@ -2,7 +2,6 @@
   description = "My Awesome | guifuentes8 | Nixos Configuration";
 
   inputs = {
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -17,6 +16,7 @@
     };
     nix-colors.url = "github:misterio77/nix-colors";
     nur.url = "github:nix-community/NUR";
+    sops-nix.url = "github:Mic92/sops-nix";
 
     darkmatter-grub-theme = {
       url = "gitlab:VandalByte/darkmatter-grub-theme";
@@ -26,7 +26,7 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, nix-wsl
-    , nur, nix-colors, darkmatter-grub-theme, ... }@inputs:
+    , nur, sops-nix, nix-colors, darkmatter-grub-theme, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
@@ -103,7 +103,7 @@
           specialArgs = {
             inherit inputs outputs unstable configOptions nix-colors;
           };
-          modules = [ ./hosts/wsl ];
+          modules = [ sops-nix.nixosModules.sops ./hosts/wsl ];
         };
 
       };
