@@ -15,9 +15,9 @@ in {
 
   home = {
     packages = [ ];
-    #  sessionVariables = {
-    #    GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
-    #  };
+    sessionVariables = {
+      GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
+    };
   };
 
   programs.zsh.shellAliases = {
@@ -34,6 +34,6 @@ in {
     BROWSER = "org.qutebrowser.qutebrowser.desktop";
     WARP_THEMES_DIR =
       "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
-    GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
+    #GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
   };
 }
