@@ -15,9 +15,9 @@ in {
 
   home = {
     packages = [ ];
-    sessionVariables = {
-      GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
-    };
+    #  sessionVariables = {
+    #    GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
+    #  };
   };
 
   programs.zsh.shellAliases = {
@@ -26,14 +26,14 @@ in {
 
   };
 
-  #programs.zsh.localVariables = {
-  #  ELECTRON_OZONE_PLATFORM_HINT = "wayland";
-  #  NIXOS_OZONE_WL = "1";
-  #  MOZ_ENABLE_WAYLAND = "1";
-  #  WGPU_BACKEND = "gl";
-  #  BROWSER = "org.qutebrowser.qutebrowser.desktop";
-  #  WARP_THEMES_DIR =
-  #    "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
-  # GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
-  #};
+  programs.zsh.localVariables = {
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+    WGPU_BACKEND = "gl";
+    BROWSER = "org.qutebrowser.qutebrowser.desktop";
+    WARP_THEMES_DIR =
+      "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
+    GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
+  };
 }
