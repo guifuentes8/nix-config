@@ -21,6 +21,9 @@
   programs = {
     git.enable = true;
     home-manager.enable = true;
+    zsh.localVariables = {
+      GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
+    };
   };
 
   xdg = {

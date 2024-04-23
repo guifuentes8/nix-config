@@ -25,7 +25,6 @@ in {
   };
 
   programs.zsh.localVariables = {
-    GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
