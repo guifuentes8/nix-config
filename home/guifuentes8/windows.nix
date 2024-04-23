@@ -15,9 +15,7 @@ in {
 
   home = {
     packages = [ ];
-    sessionVariables = {
-      GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
-    };
+    sessionVariables = { };
   };
 
   programs.zsh.shellAliases = {
@@ -27,6 +25,7 @@ in {
   };
 
   programs.zsh.localVariables = {
+    GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
@@ -34,6 +33,5 @@ in {
     BROWSER = "org.qutebrowser.qutebrowser.desktop";
     WARP_THEMES_DIR =
       "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
-    #GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
   };
 }
