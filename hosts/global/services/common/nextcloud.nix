@@ -1,7 +1,8 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, configOptions, ... }: {
   environment.systemPackages = [ pkgs.nextcloud-client ];
 
   environment.etc."nextcloud-admin-pass".text =
+
     "$(${pkgs.pass}/bin/pass show nextcloud/secret)";
 
   services.nextcloud = {
@@ -42,5 +43,31 @@
       }];
     };
   };
+
+  #  systemd.user = {
+  #@    services.nextcloud-autosync = {
+  #     description = "Auto sync Nextcloud";
+  #     after = [ "network-online.target" ];
+  #     serviceConfig = {
+  #       Type = "simple";
+  #       ExecStart = ''
+  #         ${pkgs.nextcloud-client}/bin/nextcloudcmd -u wxyz98@live.com -p $(pass)
+  #         --path /Notes /home/guifuentes8/Notes/ ${configOptions.nextcloudHostname}'';
+  #       TimeoutStopSec = "180";
+  #       KillMode = "process";
+  #       KillSignal = "SIGINT";
+  #   };
+  #   wantedBy = [ "multi-user.target" ];
+  # };
+  # timers.nextcloud-autosync = {
+  #   description =
+  #    "Automatic sync files with Nextcloud when booted up after 5 minutes then rerun every 10 minutes";
+  #   timerConfig = {
+  #      OnBootSec = "10s";
+  #       OnUnitActiveSec = "10s";
+  #     };
+  #     wantedBy = [ "multi-user.target" "timers.target" ];
+  #   };
+  #  };
 
 }
