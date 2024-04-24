@@ -10,6 +10,8 @@
     homeDirectory = "/home/${config.home.username}";
     stateVersion = configOptions.systemVersion;
     sessionVariables = {
+      GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
+
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
@@ -22,7 +24,7 @@
     git.enable = true;
     home-manager.enable = true;
     zsh.localVariables = {
-      GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
+      #  GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
     };
   };
 
