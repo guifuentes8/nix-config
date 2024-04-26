@@ -7,15 +7,18 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec "$@"
   '';
-in
-{
+in {
   # Boot and Kernel 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest; # Latest kernel 
-    kernelParams = [ "i915.force_probe=46a6" ]; # Intel 12th generation required kernel params
+    kernelPackages = pkgs.linuxPackages_latest; # Latest kernel
+    kernelParams = [
+      "i915.force_probe=46a6"
+    ]; # Intel 12th generation required kernel params
   };
 
   # Hardware
+  security.polkit.enable = true;
+  hardware.opengl.enable = true; # when using QEMU KVM
   hardware = {
     # Nvidia
     nvidia = {
@@ -28,8 +31,6 @@ in
     };
   };
 
-  environment.systemPackages = (with pkgs; [
-    nvidia-offload
-  ]);
+  environment.systemPackages = (with pkgs; [ nvidia-offload ]);
 
 }

@@ -27,6 +27,7 @@ opt.clipboard = "unnamedplus"
 opt.cmdheight = 1
 opt.encoding = 'utf-8'
 opt.expandtab = true
+opt.foldmethod = 'indent'
 opt.formatoptions:append { 'r' }
 opt.fileencoding = 'utf-8'
 opt.hlsearch = true
@@ -45,7 +46,7 @@ opt.splitright = true
 opt.tabstop = 4
 opt.title = true
 opt.wildignore:append { '*/node_modules/*' }
-opt.wrap = false -- No wrap lines
+opt.wrap = true -- No wrap lines
 
 -- Turn off paste mode when leaving insert
 api.nvim_create_autocmd("InsertLeave", {

@@ -29,7 +29,7 @@ in {
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
     WGPU_BACKEND = "gl";
-    BROWSER = "org.qutebrowser.qutebrowser.desktop";
+    BROWSER = "";
     WARP_THEMES_DIR =
       "${config.home.homeDirectory}/.local/share/warp-terminal/themes";
   };

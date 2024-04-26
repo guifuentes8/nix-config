@@ -6,7 +6,8 @@
 
     ../global
     ../global/users/guifuentes8.nix
-    ../global/hardware/gpu/amdgpu.nix
+    #../global/hardware/gpu/amdgpu.nix
+    ../global/hardware/gpu/notebook-prime.nix
     ../global/services/common
 
     inputs.nix-wsl.nixosModules.wsl

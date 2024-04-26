@@ -115,4 +115,4 @@ vim.keymap.set("n", "<space>f", ":Telescope file_browser<CR>")
 vim.keymap.set("n", "<space>b", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
 
 telescope.load_extension("file_browser")
-telescope.load_extension("project")
+--telescope.load_extension("project")
