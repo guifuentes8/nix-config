@@ -1,7 +1,4 @@
-{ pkgs, config, configOptions, ... }:
-let
-
-in {
+{ pkgs, config, configOptions, ... }: {
 
   systemd.user = {
     services.nextcloud-autosync = {

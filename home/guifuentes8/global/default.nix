@@ -10,12 +10,7 @@
     homeDirectory = "/home/${config.home.username}";
     stateVersion = configOptions.systemVersion;
     sessionVariables = {
-<<<<<<< HEAD
-      GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
 
-=======
-      NEXTCLOUD_PASS = "$(${pkgs.pass}/bin/pass show nextcloud/secret)";
->>>>>>> cb2d0a376e94547e1b8ef7bd74a2683689bb1036
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
@@ -28,12 +23,7 @@
     git.enable = true;
     home-manager.enable = true;
     zsh.localVariables = {
-<<<<<<< HEAD
       #  GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
-=======
-      NEXTCLOUD_PASS = "$(${pkgs.pass}/bin/pass show nextcloud/secret)";
-      GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
->>>>>>> cb2d0a376e94547e1b8ef7bd74a2683689bb1036
     };
   };
 

@@ -24,7 +24,7 @@
 
     # Choice Interface (WM and/or DE)
 
-    ../global/interfaces/WM/bspwm.nix
+    ../global/interfaces/DE/gnome.nix
 
     # Active services
     ../global/services/common

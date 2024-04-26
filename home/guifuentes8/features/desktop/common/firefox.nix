@@ -8,7 +8,6 @@
       id = 0;
       name = "guifuentes8";
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        tokyo-night-v2
         bitwarden
         react-devtools
         reduxdevtools

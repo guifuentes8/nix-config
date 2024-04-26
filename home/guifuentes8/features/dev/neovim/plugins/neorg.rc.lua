@@ -11,8 +11,6 @@ require("neorg").setup {
           neovim = "~/Notes/neovim",
           nix = "~/Notes/nix",
           work = "~/Notes/work",
-          journal = "~/Notes/journal",
-
         },
         default_workspace = "personal",
       },
@@ -32,7 +30,7 @@ require("neorg").setup {
     ["core.journal"] = {
       config = {
         strategy = "flat",
-        workspace = "journal",
+        workspace = "personal",
       },
     },
     ["core.keybinds"] = {

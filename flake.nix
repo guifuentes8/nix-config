@@ -114,7 +114,9 @@
       homeConfigurations = {
         "guifuentes8@nixos" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit unstable configOptions inputs outputs; };
+          extraSpecialArgs = {
+            inherit unstable nix-colors configOptions inputs outputs;
+          };
           modules = [ ./home/guifuentes8/nixos.nix ];
         };
         "guifuentes8@avell" = home-manager.lib.homeManagerConfiguration {
