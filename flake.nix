@@ -93,7 +93,11 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable configOptions; };
-          modules = [ darkmatter-grub-theme.nixosModule ./hosts/nixos ];
+          modules = [
+            darkmatter-grub-theme.nixosModule
+            sops-nix.nixosModules.sops
+            ./hosts/nixos
+          ];
         };
         avell = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable configOptions; };

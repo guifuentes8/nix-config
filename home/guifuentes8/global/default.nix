@@ -14,9 +14,10 @@
       PASSWORD_STORE_DIR =
         lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
     };
-    packages = with pkgs;
-      [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
-
+    packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      age
+    ];
   };
 
   programs = {

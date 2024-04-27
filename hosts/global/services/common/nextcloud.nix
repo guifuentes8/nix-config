@@ -1,5 +1,4 @@
 { pkgs, config, configOptions, ... }: {
-  environment.systemPackages = [ pkgs.nextcloud-client ];
 
   environment.etc."nextcloud-admin-pass".text =
 
