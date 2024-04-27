@@ -15,16 +15,22 @@ require("neorg").setup {
         default_workspace = "personal",
       },
     },
-    ["core.esupports.metagen"] = { config = { type = "auto", update_date = true } },
+    ["core.esupports.metagen"] = { config = { author = "guifuentes8", type = "auto", update_date = true } },
     ["core.export"] = {},
     ["core.export.markdown"] = { config = { extensions = "all" } },
-    ["core.integrations.nvim-cmp"] = {},
+    ["core.integrations.nvim-cmp"] = {
+      config = {
+        sources = {
+          { name = "neorg" },
+        }
+      },
+    },
     ["core.highlights"] = {},
     ["core.mode"] = {},
     ["core.integrations.treesitter"] = {
       config = {
-        configure_parsers = false,
-        install_parsers = false,
+        configure_parsers = true,
+        install_parsers = true,
       }
     },
     ["core.journal"] = {

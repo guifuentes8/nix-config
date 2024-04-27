@@ -5,13 +5,15 @@
 
     gpg = {
       enable = true;
-      mutableTrust = true;
-      mutableKeys = true;
-      settings = { default-key = "guifuentes8@gmail.com"; };
-      publicKeys = [{
-        source = ./secret.gpg;
-        trust = "ultimate";
-      }];
+      # mutableTrust = true;
+      # mutableKeys = true;
+      #      settings = { default-key = "guifuentes8@gmail.com"; };
+      #   publicKeys = [
+      #  {
+      #        source = ./secret.gpg;
+      #        trust = "ultimate";
+      #   }
+      #  ];
     };
 
   };
