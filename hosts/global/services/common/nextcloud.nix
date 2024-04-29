@@ -1,13 +1,11 @@
 { pkgs, config, configOptions, ... }: {
 
-  environment.etc."nextcloud-admin-pass".text =
-
-    "$(${pkgs.pass}/bin/pass show nextcloud/secret)";
+  environment.etc."nextcloud-admin-pass".text = "Guigui.2035";
 
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud28;
-    hostName = "localhost";
+    hostName = "192.168.0.5";
     database.createLocally = true;
     config = {
       adminpassFile = "/etc/nextcloud-admin-pass";

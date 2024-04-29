@@ -25,6 +25,7 @@
     # Choice Interface (WM and/or DE)
 
     ../global/interfaces/DE/gnome.nix
+    ../global/interfaces/WM/hyprland.nix
 
     # Active services
     ../global/services/common
