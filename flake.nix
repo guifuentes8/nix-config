@@ -17,7 +17,6 @@
     nix-colors.url = "github:misterio77/nix-colors";
     nur.url = "github:nix-community/NUR";
     sops-nix.url = "github:Mic92/sops-nix";
-
     darkmatter-grub-theme = {
       url = "gitlab:VandalByte/darkmatter-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,8 +24,8 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, nix-wsl
-    , nur, sops-nix, nix-colors, darkmatter-grub-theme, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager
+    , sops-nix, nix-colors, darkmatter-grub-theme, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
@@ -42,12 +41,12 @@
             variant = "mocha";
           };
           cursor = {
-            name = "Catppuccin-Mocha-Dark-Cursors";
+            name = "Everforest-cursos";
             package = pkgs.catppuccin-cursors.mochaDark;
             size = "32";
           };
           gtk = {
-            name = "Catppuccin-Mocha-Standard-Blue-Dark";
+            name = "Everforest-Dark-BL";
             package = pkgs.catppuccin-gtk.override {
               accents = [ "blue" ];
               size = "standard";
@@ -101,7 +100,11 @@
         };
         avell = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable configOptions; };
-          modules = [ darkmatter-grub-theme.nixosModule ./hosts/avell ];
+          modules = [
+            darkmatter-grub-theme.nixosModule
+            sops-nix.nixosModules.sops
+            ./hosts/avell
+          ];
         };
         wsl = nixpkgs.lib.nixosSystem {
           specialArgs = {

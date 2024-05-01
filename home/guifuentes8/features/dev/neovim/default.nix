@@ -1,4 +1,4 @@
-{ pkgs, lib, config, unstable, theme, ... }:
+{ pkgs, lib, unstable, ... }:
 let
   fromGitHub = rev: ref: repo:
     pkgs.vimUtils.buildVimPlugin {
@@ -22,15 +22,23 @@ in {
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
+      extraLuaPackages = luaPkgs:
+        with luaPkgs; [
+          lua-utils-nvim
+          nvim-nio
+          pathlib-nvim
+        ];
+
       extraLuaConfig = ''
         require 'settings'
         require 'highlights'
         require 'maps'
       '';
       extraConfig = "\n";
-      plugins = with unstable.vimPlugins; [
+      plugins = with pkgs.vimPlugins; [
         {
-          plugin = catppuccin-nvim;
+          plugin = (fromGitHub "5e0e32a569fb464911342f0d421721cc1c94cf25" "HEAD"
+            "neanias/everforest-nvim");
           type = "lua";
           config = builtins.readFile (./plugins/theme.rc.lua);
         }
@@ -132,15 +140,16 @@ in {
           config = builtins.readFile (./plugins/rainbow.rc.lua);
         }
         {
-          plugin = neorg;
+          plugin = (fromGitHub "03fb74927f358320f66cdd1337265c8e7f049fa3" "HEAD"
+            "nvim-neorg/neorg");
           type = "lua";
           config = builtins.readFile (./plugins/neorg.rc.lua);
         }
-        {
-          plugin = noice-nvim;
-          type = "lua";
-          config = builtins.readFile (./plugins/noice.rc.lua);
-        }
+        #       {
+        #         plugin = noice-nvim;
+        #         type = "lua";
+        #         config = builtins.readFile (./plugins/noice.rc.lua);
+        #       }
 
         cmp-buffer # buffer words
         cmp-nvim-lsp # dependencies
@@ -163,7 +172,6 @@ in {
         telescope-project-nvim
         telescope-github-nvim
         telescope-media-files-nvim
-        telescope-undo-nvim
         telescope-file-browser-nvim
       ];
 
@@ -178,10 +186,14 @@ in {
         lua-language-server
         nixd
 
-        # Formaters
+        # Conform
+        ruff # Python
+
+        # Linters
+        eslint_d
         nixfmt
         prettierd
-        eslint_d
+        pylint
 
         # Others
         nodePackages.live-server
@@ -192,6 +204,7 @@ in {
 
   };
   home.sessionVariables.EDITOR = "nvim";
+
   xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;
   xdg.configFile."nvim/lua/highlights.lua".source = ./highlights.lua;
   xdg.configFile."nvim/lua/maps.lua".source = ./maps.lua;

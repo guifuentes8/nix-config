@@ -3,7 +3,7 @@ local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
 eslint_d.args = {
   args = {
-    '--no-warn-ignored',       -- <-- this is the key argument
+    '--no-warn-ignored', -- <-- this is the key argument
     '--format',
     'json',
     '--stdin',

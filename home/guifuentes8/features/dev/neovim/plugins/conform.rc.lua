@@ -1,21 +1,19 @@
 require("conform").setup({
   formatters_by_ft = {
-    lua = { "stylua" },
-    -- Conform will run multiple formatters sequentially
-    python = { "isort", "black" },
-    -- Use a sub-list to run only the first available formatter
-    javascript = { { "prettierd", } },
-    typescript = { { "prettierd", } },
-    javascriptreact = { { "prettierd", } },
-    typescriptreact = { { "prettierd", } },
-    html = { { "prettierd", } },
     css = { { "prettierd", } },
-    json = { { "prettierd", } },
-    yaml = { { "prettierd", } },
     graphql = { { "prettierd", } },
+    html = { { "prettierd", } },
+    javascript = { { "prettierd", } },
+    javascriptreact = { { "prettierd", } },
+    json = { { "prettierd", } },
+    lua = { "stylua" },
     markdown = { { "prettierd", } },
-    svelte = { { "prettierd", } },
     nix = { "nixfmt" },
+    python = { "ruff_fix", "ruff_format" },
+    svelte = { { "prettierd", } },
+    typescript = { { "prettierd", } },
+    typescriptreact = { { "prettierd", } },
+    yaml = { { "prettierd", } },
   },
   format_on_save = {
     -- These options will be passed to conform.format()

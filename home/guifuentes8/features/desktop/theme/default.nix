@@ -1,4 +1,4 @@
-{ pkgs, configOptions, ... }: {
+{ pkgs, outputs, configOptions, ... }: {
 
   home = {
     sessionVariables.GTK_THEME = configOptions.styles.gtk.name;
@@ -18,7 +18,8 @@
     };
     theme = {
       name = configOptions.styles.gtk.name;
-      package = configOptions.styles.gtk.package;
+      #package = configOptions.styles.gtk.package;
+      package = outputs.packages.${pkgs.system}.gtk_theme;
     };
     iconTheme = {
       name = configOptions.styles.icon.name;
@@ -26,7 +27,8 @@
     };
     cursorTheme = {
       name = configOptions.styles.cursor.name;
-      package = configOptions.styles.cursor.package;
+      # package = configOptions.styles.cursor.package;
+      package = outputs.packages.${pkgs.system}.cursor_theme;
       size = pkgs.lib.strings.toInt configOptions.styles.cursor.size;
     };
   };

@@ -66,12 +66,12 @@
       experimental-features = [ "nix-command" "flakes" "repl-flake" ];
       warn-dirty = false;
     };
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 3d";
+    # gc = {
+    #   automatic = true;
+    #   dates = "daily";
+    #   options = "--delete-older-than 3d";
 
-    };
+    # };
   };
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
@@ -93,5 +93,18 @@
   home-manager.useUserPackages = true;
   home-manager.extraSpecialArgs = {
     inherit inputs outputs nix-colors unstable configOptions;
+  };
+
+  # programs.nh = {
+  #   enable = true;
+  #   clean = {
+  #     enable = true;
+  #     extraArgs = "--keep-since 4d --keep 3";
+  #   };
+  #   flake = "/home/guifuentes8/nix-config";
+  # };
+
+  environment = {
+    sessionVariables = { FLAKE = "/home/guifuentes8/nix-config"; };
   };
 }

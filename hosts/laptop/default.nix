@@ -1,13 +1,14 @@
-{ config, pkgs, inputs, outputs, ... }: {
+{ config, pkgs, inputs, outputs, configOptions, ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
 
     # Hardware config (required)
     ./hardware-configuration.nix
+    ../global/hardware/bluetooth.nix
 
     # Hardware Gpu (if exist)
-        ../global/hardware/gpu/admgpu.nix
+    #    ../global/hardware/gpu/notebook-prime.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -18,10 +19,11 @@
     ../global/boot/grub.nix
 
     # Login Manager
-    ../global/login/lightdm.nix
+    ../global/login/greetd.nix
 
     # Choice Interface (WM and/or DE)
-    ../global/interfaces/WM/bspwm.nix
+
+    ../global/interfaces/WM/hyprland.nix
 
     # Active services
     ../global/services/common
@@ -34,12 +36,12 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # Basic config
-  #console.keyMap = "br-abnt2";
-  console.keyMap = "us";
-  services.xserver = { layout = "us"; };
+  console.keyMap =
+    "${configOptions.styles.keyboard.languageVariant}${configOptions.styles.keyboard.variant}";
+  services.xserver = { layout = "${configOptions.styles.keyboard.layout}"; };
 
   # Network config (nmtui)
-  networking.hostName = "nixos";
+  networking.hostName = "avell";
 
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];

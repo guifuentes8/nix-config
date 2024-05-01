@@ -8,7 +8,7 @@
     ../global/hardware/bluetooth.nix
 
     # Hardware Gpu (if exist)
-    #    ../global/hardware/gpu/notebook-prime.nix
+    ../global/hardware/gpu/notebook-prime.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -16,13 +16,13 @@
     ../global
 
     # Boot initial (grub or systemd)
-    ../global/boot/grub.nix
+    ../global/boot/systemd-boot.nix
 
     # Login Manager
     ../global/login/greetd.nix
 
     # Choice Interface (WM and/or DE)
-
+    ../global/interfaces/DE/gnome.nix
     ../global/interfaces/WM/hyprland.nix
 
     # Active services

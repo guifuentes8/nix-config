@@ -3,10 +3,11 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
 
+  cursor_theme = pkgs.callPackage ./cursors/everforest { };
   dbgate = pkgs.callPackage ./dbgate { };
+  gtk_theme = pkgs.callPackage ./gtk_theme/everforest { };
   shotcut = pkgs.callPackage ./shotcut { };
-  warp-terminal = pkgs.callPackage ./warp-terminal { };
-  gtk_theme = pkgs.callPackage ./gtk_theme/material { };
   sddm_theme = pkgs.callPackage ./sddm_theme { };
+  warp-terminal = pkgs.callPackage ./warp-terminal { };
   ytermusic = pkgs.callPackage ./ytermusic { };
 }

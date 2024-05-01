@@ -1,22 +1,22 @@
-{ inputs, lib, pkgs, config, outputs, nix-colors, configOptions, ... }: {
+{ inputs, lib, pkgs, unstable, config, outputs, nix-colors, configOptions, ...
+}: {
 
   imports =
     [ nix-colors.homeManagerModules.default ../features/cli ./systemd.nix ];
 
-  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
+  colorScheme = nix-colors.colorSchemes.everforest-dark-hard;
 
   home = {
     username = lib.mkDefault "guifuentes8";
     homeDirectory = "/home/${config.home.username}";
     stateVersion = configOptions.systemVersion;
-    sessionVariables = {
-
-      PASSWORD_STORE_DIR =
-        lib.mkForce "${config.home.homeDirectory}/nix-config/password-store";
-    };
-    packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-      age
+    sessionVariables = { };
+    packages = [
+      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      pkgs.age
+      unstable.nh
+      pkgs.nix-output-monitor
+      pkgs.nvd
     ];
   };
 

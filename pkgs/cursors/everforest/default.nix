@@ -5,7 +5,8 @@ stdenvNoCC.mkDerivation rec {
   version = "main";
 
   src = fetchurl {
-    url = "https://github.com/talwat/everforest-cursors/releases/download/3212590527/everforest-cursors-variants.tar.bz2";
+    url =
+      "https://github.com/talwat/everforest-cursors/releases/download/3212590527/everforest-cursors-variants.tar.bz2";
     sha256 = "sha256-xXgtN9wbjbrGLUGYymMEGug9xEs9y44mq18yZVdbiuU=";
   };
 
