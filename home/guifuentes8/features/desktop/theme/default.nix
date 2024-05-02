@@ -4,7 +4,8 @@
     sessionVariables.GTK_THEME = configOptions.styles.gtk.name;
     pointerCursor = {
       name = configOptions.styles.cursor.name;
-      package = configOptions.styles.cursor.package;
+      #package = configOptions.styles.cursor.package;
+      package = outputs.packages.${pkgs.system}.cursor_theme;
       size = pkgs.lib.strings.toInt configOptions.styles.cursor.size;
       gtk.enable = true;
       x11.enable = true;

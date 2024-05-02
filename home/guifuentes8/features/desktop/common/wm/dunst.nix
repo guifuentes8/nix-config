@@ -25,8 +25,8 @@ in {
         progress_bar_frame_width = 1;
         progress_bar_min_width = 150;
         progress_bar_max_width = 300;
-        offset = "10x30";
-        origin = "top-right";
+        offset = "30x30";
+        origin = "bottom-right";
         font =
           "${configOptions.styles.font.main} ${configOptions.styles.font.size}";
         frame_width = configOptions.styles.wm.borderWidth;

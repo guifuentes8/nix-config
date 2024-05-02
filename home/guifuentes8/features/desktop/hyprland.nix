@@ -12,10 +12,10 @@ in {
         exec-once = wl-clipboard-history -t
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+        exec-once = hyprctl setcursor ${configOptions.styles.cursor.name} ${configOptions.styles.cursor.size} 
         exec-once = gsettings set org.gnome.desktop.interface gtk-theme ${configOptions.styles.gtk.name}
         exec-once = gsettings set org.gnome.desktop.interface cursor-theme ${configOptions.styles.cursor.name}
         exec-once = gsettings set org.gnome.desktop.interface cursor-size ${configOptions.styles.cursor.size} 
-        exec-once = hyprctl setcursor ${configOptions.styles.cursor.name} ${configOptions.styles.cursor.size} 
 
       # MONITORS
        monitor=,preferred,auto,1
@@ -25,8 +25,8 @@ in {
             gaps_in = 4
             gaps_out = 8
             border_size = ${configOptions.styles.wm.borderWidth} 
-            col.active_border = rgb(${config.colorScheme.palette.base0D})
-            col.inactive_border = rgb(${config.colorScheme.palette.base00})
+            col.active_border = rgb(${config.colorScheme.palette.base0B})
+            col.inactive_border = rgb(${config.colorScheme.palette.base01})
             no_border_on_floating = false
             layout = dwindle
         }
@@ -41,7 +41,7 @@ in {
               xray = false
             }
             rounding = ${configOptions.styles.wm.borderRadius}
-            drop_shadow = true
+            drop_shadow = false
             shadow_range = 4
             shadow_render_power = 3
             shadow_ignore_window	= true

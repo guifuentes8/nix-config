@@ -13,4 +13,6 @@
     # ./features/video/davinci-resolve
 
   ];
+
+  home.packages = [ pkgs.avell-unofficial-control-center ];
 }

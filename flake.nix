@@ -41,7 +41,7 @@
             variant = "mocha";
           };
           cursor = {
-            name = "Everforest-cursos";
+            name = "everforest-cursors";
             package = pkgs.catppuccin-cursors.mochaDark;
             size = "32";
           };

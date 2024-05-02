@@ -8,9 +8,9 @@ in {
     bg-col-light = mkLiteral "#${config.colorScheme.palette.base00}";
     border-col = mkLiteral "#${config.colorScheme.palette.base00}";
     selected-col = mkLiteral "#${config.colorScheme.palette.base00}";
-    blue = mkLiteral "#${config.colorScheme.palette.base09}";
+    blue = mkLiteral "#${config.colorScheme.palette.base0C}";
     fg-col = mkLiteral "#${config.colorScheme.palette.base05}";
-    fg-col2 = mkLiteral "#${config.colorScheme.palette.base09}";
+    fg-col2 = mkLiteral "#${config.colorScheme.palette.base0C}";
     grey = mkLiteral "#${config.colorScheme.palette.base04}";
     font =
       "${configOptions.styles.font.main} ${configOptions.styles.font.size}";
@@ -40,7 +40,7 @@ in {
     height = mkLiteral "350px";
     width = mkLiteral "600px";
     border = mkLiteral "${configOptions.styles.wm.borderWidth}";
-    border-color = mkLiteral "#${config.colorScheme.palette.base09}";
+    border-color = mkLiteral "#${config.colorScheme.palette.base0C}";
     background-color = mkLiteral "@bg-col";
   };
 
