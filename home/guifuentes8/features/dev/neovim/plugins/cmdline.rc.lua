@@ -2,7 +2,7 @@ require('fine-cmdline').setup({
   cmdline = {
     enable_keymaps = true,
     smart_history = true,
-    prompt = '🏁: '
+    prompt = ' '
   },
   popup = {
     position = {
@@ -10,10 +10,9 @@ require('fine-cmdline').setup({
       col = '50%',
     },
     size = {
-      width = '80%',
+      width = '60%',
     },
     border = {
-      padding = { 1, 3 },
       style = 'rounded',
     },
     win_options = {
@@ -32,3 +31,5 @@ require('fine-cmdline').setup({
     end
   }
 })
+
+vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })

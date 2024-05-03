@@ -10,4 +10,5 @@
   sddm_theme = pkgs.callPackage ./sddm_theme { };
   warp-terminal = pkgs.callPackage ./warp-terminal { };
   ytermusic = pkgs.callPackage ./ytermusic { };
+  nchat = pkgs.callPackage ./nchat { };
 }

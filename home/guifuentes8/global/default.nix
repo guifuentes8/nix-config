@@ -4,26 +4,26 @@
   imports =
     [ nix-colors.homeManagerModules.default ../features/cli ./systemd.nix ];
 
-  colorScheme = nix-colors.colorSchemes.everforest-dark-hard;
+  colorScheme = nix-colors.colorSchemes.catppuccin-frappe;
 
-  #scheme: "Everforest Dark Hard"
-  #author: "Oskar Liew (https://github.com/OskarLiew)"
-  #base00: "#272e33" # bg0,        Default background
-  #base01: "#2e383c" # bg1,        Lighter background
-  #base02: "#414b50" # bg3,        Selection background
-  #base03: "#859289" # grey1,      Comments
-  #base04: "#9da9a0" # grey2,      Dark foreground
-  #base05: "#d3c6aa" # fg,         Default foreground
-  #base06: "#e4e1cd" # bg3,        Light foreground
-  #base07: "#fdf6e3" # bg0,        Light background
-  #base08: "#7fbbb3" # blue
-  #base09: "#d699b6" # purple
-  #base0A: "#dbbc7f" # yellow
-  #base0B: "#83c092" # aqua
-  #base0C: "#e69875" # orange
-  #base0D: "#a7c080" # green
-  #base0E: "#e67e80" # red
-  #base0F: "#4C3743" # bg_visual
+  #scheme: "Catppuccin Macchiato"
+  #author: "https://github.com/catppuccin/catppuccin"
+  #base00: "#24273a" # base
+  #base01: "#1e2030" # mantle
+  #base02: "#363a4f" # surface0
+  #base03: "#494d64" # surface1
+  #base04: "#5b6078" # surface2
+  #base05: "#cad3f5" # text
+  #base06: "#f4dbd6" # rosewater
+  #base07: "#b7bdf8" # lavender
+  #base08: "#ed8796" # red
+  #base09: "#f5a97f" # peach
+  #base0A: "#eed49f" # yellow
+  #base0B: "#a6da95" # green
+  #base0C: "#8bd5ca" # teal
+  #base0D: "#8aadf4" # blue
+  #base0E: "#c6a0f6" # mauve
+  #base0F: "#f0c6c6" # flamingo
 
   home = {
     username = lib.mkDefault "guifuentes8";
@@ -36,6 +36,7 @@
       unstable.nh
       pkgs.nix-output-monitor
       pkgs.nvd
+      unstable.ferdium
     ];
   };
 
@@ -74,7 +75,7 @@
   };
 
   nixpkgs = {
-    overlays = [ inputs.nur.overlay ];
+    overlays = builtins.attrValues outputs.overlays;
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);

@@ -1,6 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+
+{
   programs = { zathura.enable = true; };
-  home.packages = with pkgs; [ pavucontrol playerctl ];
   services = { playerctld.enable = true; };
 
   imports = [
@@ -12,4 +13,5 @@
     ./xdg.nix
   ];
 
+  home.packages = with pkgs; [ pavucontrol playerctl ];
 }

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
   programs.firefox = {
     enable = true;
     package = pkgs.firefox;
@@ -7,15 +7,15 @@
       isDefault = true;
       id = 0;
       name = "guifuentes8";
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        bitwarden
-        react-devtools
-        reduxdevtools
-        darkreader
-        ublock-origin
-        firefox-color
-        stylus
-      ];
+      # TODO
+      #  extensions = with pkgs.inputs.firefox-addons; [
+      #    bitwarden
+      #    react-devtools
+      #    reduxdevtools
+      #    darkreader
+      #    ublock-origin
+      #    stylus
+      #  ];
     };
   };
 }

@@ -22,11 +22,11 @@ in {
 
       # VARIABLES
         general {
-            gaps_in = 4
-            gaps_out = 8
+            gaps_in = 8
+            gaps_out = 10
             border_size = ${configOptions.styles.wm.borderWidth} 
             col.active_border = rgb(${config.colorScheme.palette.base0B})
-            col.inactive_border = rgb(${config.colorScheme.palette.base01})
+            col.inactive_border = rgb(${config.colorScheme.palette.base0D})
             no_border_on_floating = false
             layout = dwindle
         }
@@ -41,10 +41,10 @@ in {
               xray = false
             }
             rounding = ${configOptions.styles.wm.borderRadius}
-            drop_shadow = false
+            drop_shadow = true
             shadow_range = 4
             shadow_render_power = 3
-            shadow_ignore_window	= true
+            shadow_ignore_window = true
             col.shadow = 0xee000000
           #  shadow_offset = [2, 2]
             active_opacity = 1

@@ -37,8 +37,7 @@ in {
       extraConfig = "\n";
       plugins = with pkgs.vimPlugins; [
         {
-          plugin = (fromGitHub "5e0e32a569fb464911342f0d421721cc1c94cf25" "HEAD"
-            "neanias/everforest-nvim");
+          plugin = catppuccin-nvim;
           type = "lua";
           config = builtins.readFile (./plugins/theme.rc.lua);
         }
@@ -145,11 +144,11 @@ in {
           type = "lua";
           config = builtins.readFile (./plugins/neorg.rc.lua);
         }
-        #       {
-        #         plugin = noice-nvim;
-        #         type = "lua";
-        #         config = builtins.readFile (./plugins/noice.rc.lua);
-        #       }
+        {
+          plugin = noice-nvim;
+          type = "lua";
+          config = builtins.readFile (./plugins/noice.rc.lua);
+        }
 
         cmp-buffer # buffer words
         cmp-nvim-lsp # dependencies
@@ -160,6 +159,7 @@ in {
         zen-mode-nvim
         nvim-spectre
         friendly-snippets
+        inc-rename-nvim
 
         # Neorg dependencies
 

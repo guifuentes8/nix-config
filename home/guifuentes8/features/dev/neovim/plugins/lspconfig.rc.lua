@@ -18,26 +18,6 @@ local on_attach = function(client, bufnr)
 end
 
 
--- LUA
-
-nvim_lsp.lua_ls.setup {
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- Get language server to recognize the vim global
-        globals = { 'vim' }
-      },
-
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false
-
-      }
-    }
-  }
-}
 
 
 -- HTML
@@ -113,4 +93,12 @@ nvim_lsp.nixd.setup {
 nvim_lsp.marksman.setup {
   capabilities = capabilities,
   on_attach = on_attach,
+}
+
+-- LUA
+
+nvim_lsp.lua_ls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+
 }

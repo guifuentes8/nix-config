@@ -15,13 +15,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-colors.url = "github:misterio77/nix-colors";
-    nur.url = "github:nix-community/NUR";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sops-nix.url = "github:Mic92/sops-nix";
     darkmatter-grub-theme = {
       url = "gitlab:VandalByte/darkmatter-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager
@@ -38,17 +40,17 @@
         styles = {
           theme = {
             name = "catppuccin";
-            variant = "mocha";
+            variant = "frappe";
           };
           cursor = {
-            name = "everforest-cursors";
-            package = pkgs.catppuccin-cursors.mochaDark;
+            name = "Catppuccin-Frappe-Dark-Cursors";
+            package = pkgs.catppuccin-cursors.frappeDark;
             size = "32";
           };
           gtk = {
-            name = "Everforest-Dark-BL";
+            name = "Catppuccin-Frappe-Standard-Green-Dark";
             package = pkgs.catppuccin-gtk.override {
-              accents = [ "blue" ];
+              accents = [ "green" ];
               size = "standard";
               tweaks = [ "rimless" ];
               variant = "${configOptions.styles.theme.variant}";
@@ -57,7 +59,7 @@
           icon = {
             name = "Papirus-Dark";
             package =
-              pkgs.catppuccin-papirus-folders.override { accent = "lavender"; };
+              pkgs.catppuccin-papirus-folders.override { accent = "mauve"; };
           };
           font = {
             code = "MonoLisa";
@@ -71,8 +73,8 @@
           };
           wm = {
             borderWidth = "3";
-            borderRadius = "12";
-            opacity = "0.9";
+            borderRadius = "6";
+            opacity = "0.8";
           };
         };
       };
@@ -140,8 +142,6 @@
           };
           modules = [ ./home/guifuentes8/windows.nix ];
         };
-
       };
     };
-
 }

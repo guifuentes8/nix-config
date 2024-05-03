@@ -1,15 +1,15 @@
-{ outputs, inputs, ... }:
-{
-  #modifications = final: prev: {
-  #  rbw = prev.rbw.overrideAttrs (old: rec {
-  #    version = "main";
-  #    pname = "rbw";
-  #    src = prev.fetchFromGitHub {
-  #      owner = "doy";
-  #      repo = pname;
-  #      rev = "77eeb5b8bd9054529d0f8d551942b27640d22a1e";
-  #      hash = "sha256-NjMH99rmJYbCxDdc7e0iOFoslSrIuwIBxuHxADp0Ks4=";
-  #    };
-  #  });
-  #};
+{ inputs, ... }: {
+  modifications = final: prev: {
+    nchat = prev.nchat.overrideAttrs (old: rec {
+      version = "4.41";
+      pname = "nchat";
+      src = prev.fetchFromGitHub {
+        owner = "d99kris";
+        repo = pname;
+        rev = "v${version}";
+        hash = "sha256-P+QprQDXUv5uCa/6+RXYImWDL0DIG+p8KFiGPwK+q0g=";
+      };
+      cmakeFlags = [ ];
+    });
+  };
 }

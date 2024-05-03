@@ -23,11 +23,12 @@
       foreground = "#${config.colorScheme.palette.base05}";
       background = "#${config.colorScheme.palette.base00}";
       selection_foreground = "#${config.colorScheme.palette.base00}";
-      selection_background = "#${config.colorScheme.palette.base0B}";
+      selection_background = "#${config.colorScheme.palette.base07}";
 
       # Cursor colors
-      cursor = "#${config.colorScheme.palette.base0B}";
-      cursor_text_color = "#${config.colorScheme.palette.base00}";
+      cursor = "#${config.colorScheme.palette.base0C}";
+      cursor_text_color = "#${config.colorScheme.palette.base01}";
+      cursor_shape = "block";
 
       # URL underline color when hovering with mouse 
       url_color = "#${config.colorScheme.palette.base0C}";
@@ -54,35 +55,35 @@
 
       # The 16 terminal colors
       # black
-      color0 = "#494D64 ";
-      color8 = "#5B6078 ";
+      color0 = "#${config.colorScheme.palette.base04}";
+      color8 = "#${config.colorScheme.palette.base04}";
       # red
-      color1 = "#ED8796 ";
-      color9 = "#ED8796 ";
+      color1 = "#${config.colorScheme.palette.base08}";
+      color9 = "#${config.colorScheme.palette.base08}";
 
       # green="
-      color2 = "#A6DA95 ";
-      color10 = "#A6DA95 ";
+      color2 = "#${config.colorScheme.palette.base0B}";
+      color10 = "#${config.colorScheme.palette.base0B}";
 
       # yello="w
-      color3 = "#EED49F ";
-      color11 = "#EED49F ";
+      color3 = "#${config.colorScheme.palette.base0A}";
+      color11 = "#${config.colorScheme.palette.base0A}";
 
       # blue
-      color4 = "#8AADF4 ";
-      color12 = "#8AADF4 ";
+      color4 = "#${config.colorScheme.palette.base0D}";
+      color12 = "#${config.colorScheme.palette.base0D}";
 
       # magen="ta
-      color5 = "#F5BDE6 ";
-      color13 = "#F5BDE6 ";
+      color5 = "#${config.colorScheme.palette.base0E}";
+      color13 = "#${config.colorScheme.palette.base0E}";
 
       # cyan
-      color6 = "#8BD5CA ";
-      color14 = "#8BD5CA ";
+      color6 = "#${config.colorScheme.palette.base0C}";
+      color14 = "#${config.colorScheme.palette.base0C}";
 
       # white="
-      color7 = "#B8C0E0 ";
-      color15 = "#A5ADCB ";
+      color7 = "#${config.colorScheme.palette.base07}";
+      color15 = "#${config.colorScheme.palette.base07}";
     };
   };
 }

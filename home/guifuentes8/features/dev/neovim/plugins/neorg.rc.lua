@@ -8,9 +8,6 @@ require("neorg").setup {
         workspaces = {
           personal = "~/Notes/personal",
           study = "~/Notes/study",
-          neovim = "~/Notes/neovim",
-          nix = "~/Notes/nix",
-          work = "~/Notes/work",
         },
         default_workspace = "personal",
       },
@@ -53,7 +50,7 @@ require("neorg").setup {
     },
     ["core.qol.toc"] = {},
     ["core.qol.todo_items"] = {},
-    ["core.summary"] = {},
+    ["core.summary"] = { config = { strategy = "by_path" } },
     ["core.tangle"] = { config = { report_on_empty = false } },
     --    ["core.ui.calendar"] = {},
   },

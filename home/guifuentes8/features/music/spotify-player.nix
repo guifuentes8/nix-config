@@ -5,7 +5,7 @@
   xdg.configFile."spotify-player/app.toml".source =
     (pkgs.formats.toml { }).generate "app.toml" {
       client_id = "32c1c3d388a14e4981d80295af909be7";
-      theme = "kyoto";
+      theme = "everforest";
       playback_refresh_duration_in_ms = 0;
       enable_media_control = true;
       enable_cover_image_cache = true;
@@ -16,7 +16,7 @@
       play_icon = "▶️";
       border_type = "Rounded";
       progress_bar_type = "Rectangle";
-      playback_window_position = "Bottom";
+      playback_window_position = "Top";
       cover_img_width = 5;
       cover_img_length = 11;
       device = {
@@ -30,7 +30,7 @@
   xdg.configFile."spotify-player/theme.toml".source =
     (pkgs.formats.toml { }).generate "theme.toml" {
       themes = [{
-        name = "kyoto";
+        name = "everforest";
         palette = {
           background = "#${config.colorScheme.palette.base00}";
           foreground = "#${config.colorScheme.palette.base05}";
