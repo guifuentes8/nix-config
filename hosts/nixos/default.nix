@@ -20,18 +20,13 @@
     ../global/hardware/logitech.nix
 
     # Login Manager
-    ../global/login/gdm.nix
+    ../global/login/greetd.nix
 
     # Choice Interface (WM and/or DE)
-
-    ../global/interfaces/DE/gnome.nix
     ../global/interfaces/WM/hyprland.nix
 
     # Active services
     ../global/services/common
-    ../global/services/extra/androidStudio.nix
-
-    #   ../global/services/extra/wine.nix
 
     # User 
     ../global/users/guifuentes8.nix

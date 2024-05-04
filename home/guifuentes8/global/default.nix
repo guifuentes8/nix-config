@@ -4,7 +4,7 @@
   imports =
     [ nix-colors.homeManagerModules.default ../features/cli ./systemd.nix ];
 
-  colorScheme = nix-colors.colorSchemes.catppuccin-frappe;
+  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 
   #scheme: "Catppuccin Macchiato"
   #author: "https://github.com/catppuccin/catppuccin"

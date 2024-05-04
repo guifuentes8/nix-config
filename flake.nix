@@ -40,17 +40,17 @@
         styles = {
           theme = {
             name = "catppuccin";
-            variant = "frappe";
+            variant = "mocha";
           };
           cursor = {
-            name = "Catppuccin-Frappe-Dark-Cursors";
-            package = pkgs.catppuccin-cursors.frappeDark;
+            name = "Catppuccin-Mocha-Dark-Cursors";
+            package = pkgs.catppuccin-cursors.mochaDark;
             size = "32";
           };
           gtk = {
-            name = "Catppuccin-Frappe-Standard-Green-Dark";
+            name = "Catppuccin-Mocha-Standard-Green-Dark";
             package = pkgs.catppuccin-gtk.override {
-              accents = [ "green" ];
+              accents = [ "teal" ];
               size = "standard";
               tweaks = [ "rimless" ];
               variant = "${configOptions.styles.theme.variant}";
@@ -59,7 +59,7 @@
           icon = {
             name = "Papirus-Dark";
             package =
-              pkgs.catppuccin-papirus-folders.override { accent = "mauve"; };
+              pkgs.catppuccin-papirus-folders.override { accent = "lavender"; };
           };
           font = {
             code = "MonoLisa";
@@ -72,7 +72,7 @@
             variant = "abnt2";
           };
           wm = {
-            borderWidth = "3";
+            borderWidth = "2";
             borderRadius = "6";
             opacity = "0.8";
           };

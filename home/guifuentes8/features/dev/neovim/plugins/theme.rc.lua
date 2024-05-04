@@ -1,8 +1,8 @@
 require("catppuccin").setup({
-  flavour = "frappe", -- latte, frappe, macchiato, mocha
-  background = {      -- :h background
+  flavour = "mocha", -- latte, frappe, macchiato, mocha
+  background = {     -- :h background
     light = "latte",
-    dark = "frappe",
+    dark = "mocha",
   },
   transparent_background = true, -- disables setting the background color.
   show_end_of_buffer = false,    -- shows the '~' characters after the end of buffers
@@ -62,6 +62,7 @@ require("catppuccin").setup({
       },
     },
     noice = true,
+    notify = true,
     rainbow_delimiters = true,
     treesitter = true,
     telescope = {

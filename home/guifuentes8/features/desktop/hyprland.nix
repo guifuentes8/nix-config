@@ -205,9 +205,10 @@ in {
         bind = $mainMod SHIFT, e, exec, kitty -e nvim;
         bind = $mainMod SHIFT, f, exec, kitty -e yazi;
         bind = $mainMod, W, exec, bash ${cw} change
+
+
         bind = ALT,Space, exec, hyprctl switchxkblayout at-translated-set-2-keyboard next
-
-
+        bind = ALT,Space, exec, hyprctl switchxkblayout logitech-usb-receiver next
 
 
         windowrule = float,^(mpv)$

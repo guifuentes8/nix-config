@@ -3,222 +3,40 @@
     enable = true;
     package = unstable.waybar;
     systemd.enable = true;
-    style = ''
-
-      * {
-          font-family: ${configOptions.styles.font.main};
-          font-weight: bold;
-          font-size: ${configOptions.styles.font.size}px;
-          min-height: 0;
-      }
-
-      window#waybar {
-          background: #${config.colorScheme.palette.base00};
-          color: #${config.colorScheme.palette.base0C};
-
-      }
-
-      #cpu,
-      #memory,
-      #disk,
-      #temperature,
-      #keyboard-state,
-      #clock,
-      #battery,
-      #pulseaudio,
-      #network,
-      #tray,
-      #backlight {
-      padding: 4px 6px;
-      margin: 4px 2px;
-
-      }
-
-      #workspaces {
-        padding: 0px 4px;
-        margin: 4px 4px;
-        border-radius: ${configOptions.styles.wm.borderRadius};
-      }
-
-
-      #workspaces button {
-        color: #${config.colorScheme.palette.base0D};
-        padding: 0px 4px 0px 0px;
-        margin: 0px 2px;
-
-      }
-
-      #workspaces button.active {
-        color: #${config.colorScheme.palette.base0B};
-        background-color: #${config.colorScheme.palette.base00};
-      }
-
-      #workspaces button.focused {
-        color: #${config.colorScheme.palette.base0B};
-        border-radius: ${configOptions.styles.wm.borderRadius};
-      }
-
-      #workspaces button.urgent {
-        color: #${config.colorScheme.palette.base00};
-        background: #${config.colorScheme.palette.base08};
-        border-radius: ${configOptions.styles.wm.borderRadius};
-      }
-
-      #workspaces button:hover {
-        background-color: #${config.colorScheme.palette.base00};
-        color: #${config.colorScheme.palette.base0C};
-      }
-
-      #disk {
-        color: #${config.colorScheme.palette.base07};
-      }
-
-      #cpu {
-        color: #${config.colorScheme.palette.base07};
-      }
-
-      #memory {
-        color: #${config.colorScheme.palette.base07};
-      }
-
-      #temperature {
-        color: #${config.colorScheme.palette.base0F};
-      }
-
-      #keyboard-state {
-        color: #${config.colorScheme.palette.base0D};
-      }
-
-      #backlight {
-        color: #${config.colorScheme.palette.base0C};
-      }
-
-      #network {
-        color: #${config.colorScheme.palette.base09};
-      }
-
-      #pulseaudio {
-        color: #${config.colorScheme.palette.base0B};
-      }
-
-      #battery {
-        color: #${config.colorScheme.palette.base0A};
-      }
-
-      #clock {
-        color: #${config.colorScheme.palette.base0E};
-        margin-right: 12px;
-      }
-
-      #tray {
-        margin-right: 12px;
-      }
-
-      #custom-nix-logo {
-        margin-left: 12px;
-      }
-
-      #mpris {
-        color: #${config.colorScheme.palette.base0C};
-        margin-left: 12px;
-        margin-right: 12px;
-      }
-
-       #custom-media {
-        color: #${config.colorScheme.palette.base0C};
-        margin-left: 12px;
-        margin-right: 12px;
-      }
-
-      #cava {
-        color: #${config.colorScheme.palette.base0C};
-      }
-
-
-    '';
-
     settings = [
-      {
-        fixed-center = true;
-        name = "left";
-        layer = "top";
-        position = "left";
-        exclusive = true;
-        modules-left = [ ];
-        modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ ];
-        "wlr/workspaces" = {
-          "all-outputs" = true;
-          "active-only" = false;
-          "on-scroll-up" = "hyprctl dispatch workspace e+1";
-          "on-scroll-down" = "hyprctl dispatch workspace e-1";
-          "on-click" = "activate";
-          "format" = "{icon}";
-          "format-icons" = {
-            "1" = "<span font='16' rise='1000'>󰯬</span>";
-            "2" = "<span font='16' rise='1000'>󰯯</span>";
-            "3" = "<span font='16' rise='1000'>󰯲</span>";
-            "4" = "<span font='16' rise='1000'>󰯵</span>";
-            "5" = "<span font='16' rise='1000'>󰯸</span>";
-            "6" = "<span font='16' rise='1000'>󰯻</span>";
-            "7" = "<span font='16' rise='1000'>󰯾</span>";
-            "8" = "<span font='16' rise='1000'>󰰁</span>";
-            "9" = "<span font='16' rise='1000'>󰰄</span>";
-            "urgent" = "";
-            "active" = "<span font='16' rise='1000'></span>";
-            "default" = "";
-          };
-        };
-
-        "hyprland/workspaces" = {
-          "all-outputs" = true;
-          "active-only" = false;
-          "on-scroll-up" = "hyprctl dispatch workspace e+1";
-          "on-scroll-down" = "hyprctl dispatch workspace e-1";
-          "on-click" = "activate";
-          "format" = "{icon}";
-          "format-icons" = {
-            "1" = "<span font='16' rise='1000'>󰯬</span>";
-            "2" = "<span font='16' rise='1000'>󰯯</span>";
-            "3" = "<span font='16' rise='1000'>󰯲</span>";
-            "4" = "<span font='16' rise='1000'>󰯵</span>";
-            "5" = "<span font='16' rise='1000'>󰯸</span>";
-            "6" = "<span font='16' rise='1000'>󰯻</span>";
-            "7" = "<span font='16' rise='1000'>󰯾</span>";
-            "8" = "<span font='16' rise='1000'>󰰁</span>";
-            "9" = "<span font='16' rise='1000'>󰰄</span>";
-            "urgent" = "";
-            "active" = "<span font='15' rise='1000'></span>";
-            "default" = "";
-          };
-        };
-
-      }
-
       {
         fixed-center = true;
         name = "bottom";
         layer = "top";
         position = "bottom";
         exclusive = true;
-        modules-left = [ "cava" "mpris" "sptlrx" ];
-        modules-center = [ ];
-        modules-right = [
+        width = 1920;
+        margin-bottom = 8;
+        margin-left = 8;
+        margin-right = 8;
+        modules-left = [ "mpris" ];
+        modules-center = [
+          "sptlrx"
           "disk"
           "cpu"
           "memory"
           "temperature"
           "backlight"
+          "sway/language"
+          "keyboard-state"
           "network"
           "pulseaudio"
           "battery"
           "clock"
           "tray"
         ];
+        modules-right = [ "sptlrx" "cava" ];
+
+        "sway/language" = { "format" = "{short} {variant}"; };
         "keyboard-state" = {
           "numlock" = true;
           "capslock" = true;
-          "format" = "{icon} {name} ";
+          "format" = "{icon} {name}";
           "format-icons" = {
             "locked" = "";
             "unlocked" = "";
@@ -396,9 +214,178 @@
         };
 
       }
+      {
+        fixed-center = true;
+        name = "left";
+        layer = "top";
+        position = "left";
+        exclusive = true;
+        height = 8;
+        margin-left = 8;
+        margin-bottom = 48;
+        modules-left = [ ];
+        modules-center = [ "hyprland/workspaces" ];
+        modules-right = [ ];
+
+        "hyprland/workspaces" = {
+          "all-outputs" = true;
+          "active-only" = false;
+          "on-scroll-up" = "hyprctl dispatch workspace e+1";
+          "on-scroll-down" = "hyprctl dispatch workspace e-1";
+          "on-click" = "activate";
+          "format" = "{icon}";
+          "format-icons" = {
+            "1" = "<span font='16' rise='1000'>󰯬</span>";
+            "2" = "<span font='16' rise='1000'>󰯯</span>";
+            "3" = "<span font='16' rise='1000'>󰯲</span>";
+            "4" = "<span font='16' rise='1000'>󰯵</span>";
+            "5" = "<span font='16' rise='1000'>󰯸</span>";
+            "6" = "<span font='16' rise='1000'>󰯻</span>";
+            "7" = "<span font='16' rise='1000'>󰯾</span>";
+            "8" = "<span font='16' rise='1000'>󰰁</span>";
+            "9" = "<span font='16' rise='1000'>󰰄</span>";
+            "urgent" = "";
+            "active" = "<span font='15' rise='1000'></span>";
+            "default" = "";
+          };
+          "persistent-workspaces" = { "*" = 9; };
+        };
+
+      }
+
     ];
+    style = ''
 
+      * {
+          font-family: ${configOptions.styles.font.main};
+          font-weight: bold;
+          font-size: ${configOptions.styles.font.size}px;
+      }
+
+      window#waybar {
+          background: #${config.colorScheme.palette.base00};
+          color: #${config.colorScheme.palette.base0C};
+          border-radius: ${configOptions.styles.wm.borderRadius}px;
+          border: ${configOptions.styles.wm.borderWidth}px solid #${config.colorScheme.palette.base0E};
+      }
+
+      #cpu,
+      #memory,
+      #disk,
+      #temperature,
+      #keyboard-state,
+      #clock,
+      #battery,
+      #pulseaudio,
+      #network,
+      #tray,
+      #backlight {
+      padding: 4px 6px;
+      margin: 4px 2px;
+
+      }
+
+      #workspaces {
+        padding: 0px 4px;
+        margin: 4px 4px;
+        border-radius: ${configOptions.styles.wm.borderRadius};
+      }
+
+
+      #workspaces button {
+        color: #${config.colorScheme.palette.base07};
+        padding: 0px 4px 0px 0px;
+        margin: 0px 2px;
+
+      }
+
+      #workspaces button.active {
+        color: #${config.colorScheme.palette.base0E};
+        background-color: #${config.colorScheme.palette.base00};
+      }
+
+      #workspaces button.focused {
+        color: #${config.colorScheme.palette.base0E};
+        border-radius: ${configOptions.styles.wm.borderRadius};
+      }
+
+      #workspaces button.urgent {
+        color: #${config.colorScheme.palette.base00};
+        background: #${config.colorScheme.palette.base08};
+        border-radius: ${configOptions.styles.wm.borderRadius};
+      }
+
+      #workspaces button:hover {
+        background-color: #${config.colorScheme.palette.base00};
+        color: #${config.colorScheme.palette.base0C};
+      }
+
+      #disk {
+        color: #${config.colorScheme.palette.base07};
+      }
+
+      #cpu {
+        color: #${config.colorScheme.palette.base07};
+      }
+
+      #memory {
+        color: #${config.colorScheme.palette.base07};
+      }
+
+      #temperature {
+        color: #${config.colorScheme.palette.base0F};
+      }
+
+      #keyboard-state {
+        color: #${config.colorScheme.palette.base0D};
+      }
+
+      #backlight {
+        color: #${config.colorScheme.palette.base0C};
+      }
+
+      #network {
+        color: #${config.colorScheme.palette.base09};
+      }
+
+      #pulseaudio {
+        color: #${config.colorScheme.palette.base0B};
+      }
+
+      #battery {
+        color: #${config.colorScheme.palette.base0A};
+      }
+
+      #clock {
+        color: #${config.colorScheme.palette.base0E};
+        margin-right: 12px;
+      }
+
+      #tray {
+        margin-right: 12px;
+      }
+
+      #custom-nix-logo {
+        margin-left: 12px;
+      }
+
+      #mpris {
+        color: #${config.colorScheme.palette.base0C};
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+
+       #custom-media {
+        color: #${config.colorScheme.palette.base0C};
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+
+      #cava {
+        color: #${config.colorScheme.palette.base0C};
+        margin: 0 12px;
+      }
+    '';
   };
-
 }
 
