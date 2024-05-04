@@ -25,8 +25,8 @@ in {
             gaps_in = 8
             gaps_out = 10
             border_size = ${configOptions.styles.wm.borderWidth} 
-            col.active_border = rgb(${config.colorScheme.palette.base0B})
-            col.inactive_border = rgb(${config.colorScheme.palette.base0D})
+            col.active_border = rgb(${config.colorScheme.palette.base09})
+            col.inactive_border = rgb(${config.colorScheme.palette.base00})
             no_border_on_floating = false
             layout = dwindle
         }
@@ -42,10 +42,10 @@ in {
             }
             rounding = ${configOptions.styles.wm.borderRadius}
             drop_shadow = true
-            shadow_range = 4
+            shadow_range = 6
             shadow_render_power = 3
             shadow_ignore_window = true
-            col.shadow = 0xee000000
+            col.shadow = 0xbb${config.colorScheme.palette.base00}
           #  shadow_offset = [2, 2]
             active_opacity = 1
             inactive_opacity = 1
@@ -113,7 +113,7 @@ in {
         bind = $mainMod, Q, killactive,
         bind = $mainMod, S, togglesplit, # dwindle
         bind = $mainMod, F, togglefloating,
-        bind = $mainMod, M, fullscreen, 1
+        bind = $mainMod, M, fullscreen, 0
 
       # Move focus with mainMod + arrow keys
         bind = $mainMod, left, movefocus, l
@@ -151,7 +151,7 @@ in {
         bindm = $mainMod, mouse:272, movewindow
         bindm = $mainMod, mouse:273, resizewindow
 
-        bind=ALT,R,submap,resize
+        bind=CTRL_SHIFT,R,submap,resize
         submap=resize
 
         # sets repeatable binds for resizing the active window

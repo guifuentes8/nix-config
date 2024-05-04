@@ -6,17 +6,13 @@
     settings = [
       {
         fixed-center = true;
-        name = "bottom";
-        layer = "top";
-        position = "bottom";
+        name = "top";
+        layer = "bottom";
+        position = "top";
         exclusive = true;
-        width = 1920;
-        margin-bottom = 8;
-        margin-left = 8;
-        margin-right = 8;
-        modules-left = [ "mpris" ];
+        width = 8;
+        margin-top = 8;
         modules-center = [
-          "sptlrx"
           "disk"
           "cpu"
           "memory"
@@ -27,11 +23,9 @@
           "network"
           "pulseaudio"
           "battery"
-          "clock"
           "tray"
+          "clock"
         ];
-        modules-right = [ "sptlrx" "cava" ];
-
         "sway/language" = { "format" = "{short} {variant}"; };
         "keyboard-state" = {
           "numlock" = true;
@@ -39,8 +33,12 @@
           "format" = "{icon} {name}";
           "format-icons" = {
             "locked" = "";
-            "unlocked" = "";
+            "unlocked" = " ";
           };
+        };
+        "tray" = {
+          "icon-size" = 16;
+          "spacing" = 10;
         };
         "sway/mode" = { "format" = ''<span style="italic">{}</span>''; };
         "sway/scratchpad" = {
@@ -57,10 +55,6 @@
             "activated" = "";
             "deactivated" = "";
           };
-        };
-        "tray" = {
-          "icon-size" = 21;
-          "spacing" = 10;
         };
         "clock" = {
           "timezone" = "America/Sao_Paulo";
@@ -136,6 +130,51 @@
           };
           "on-click" = "pavucontrol";
         };
+      }
+      {
+        fixed-center = true;
+        name = "left";
+        layer = "top";
+        position = "left";
+        exclusive = true;
+        height = 8;
+        margin-left = 8;
+        modules-center = [ "hyprland/workspaces" ];
+
+        "hyprland/workspaces" = {
+          "all-outputs" = true;
+          "active-only" = false;
+          "on-scroll-up" = "hyprctl dispatch workspace e+1";
+          "on-scroll-down" = "hyprctl dispatch workspace e-1";
+          "on-click" = "activate";
+          "format" = "{icon}";
+          "format-icons" = {
+            "1" = "<span font='16' rise='1000'>󰯬</span>";
+            "2" = "<span font='16' rise='1000'>󰯯</span>";
+            "3" = "<span font='16' rise='1000'>󰯲</span>";
+            "4" = "<span font='16' rise='1000'>󰯵</span>";
+            "5" = "<span font='16' rise='1000'>󰯸</span>";
+            "6" = "<span font='16' rise='1000'>󰯻</span>";
+            "7" = "<span font='16' rise='1000'>󰯾</span>";
+            "8" = "<span font='16' rise='1000'>󰰁</span>";
+            "9" = "<span font='16' rise='1000'>󰰄</span>";
+            "urgent" = "";
+            "active" = "<span font='15' rise='1000'></span>";
+            "default" = "";
+          };
+          "persistent-workspaces" = { "*" = 9; };
+        };
+      }
+      {
+        fixed-center = true;
+        name = "bottom";
+        layer = "top";
+        position = "bottom";
+        exclusive = true;
+        height = 32;
+        width = 768;
+        margin-bottom = 8;
+        modules-center = [ "cava" "mpris" "sptlrx" "cava" ];
         "cava" = {
           "framerate" = 60;
           "autosens" = 0;
@@ -159,7 +198,7 @@
           "format" = "{player_icon}[{position}|{length}] - {artist}/{title}";
           "format-paused" = "{status_icon} - {artist}/{title}";
           max-length = 60;
-          interval = 5;
+          interval = 1;
           "player-icons" = {
             "default" = "▶";
             "mpv" = "󰋋 ";
@@ -212,47 +251,7 @@
             playerctl -a metadata --format '{"text": "{{playerName}}: {{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
           "on-click" = "playerctl play-pause";
         };
-
       }
-      {
-        fixed-center = true;
-        name = "left";
-        layer = "top";
-        position = "left";
-        exclusive = true;
-        height = 8;
-        margin-left = 8;
-        margin-bottom = 48;
-        modules-left = [ ];
-        modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ ];
-
-        "hyprland/workspaces" = {
-          "all-outputs" = true;
-          "active-only" = false;
-          "on-scroll-up" = "hyprctl dispatch workspace e+1";
-          "on-scroll-down" = "hyprctl dispatch workspace e-1";
-          "on-click" = "activate";
-          "format" = "{icon}";
-          "format-icons" = {
-            "1" = "<span font='16' rise='1000'>󰯬</span>";
-            "2" = "<span font='16' rise='1000'>󰯯</span>";
-            "3" = "<span font='16' rise='1000'>󰯲</span>";
-            "4" = "<span font='16' rise='1000'>󰯵</span>";
-            "5" = "<span font='16' rise='1000'>󰯸</span>";
-            "6" = "<span font='16' rise='1000'>󰯻</span>";
-            "7" = "<span font='16' rise='1000'>󰯾</span>";
-            "8" = "<span font='16' rise='1000'>󰰁</span>";
-            "9" = "<span font='16' rise='1000'>󰰄</span>";
-            "urgent" = "";
-            "active" = "<span font='15' rise='1000'></span>";
-            "default" = "";
-          };
-          "persistent-workspaces" = { "*" = 9; };
-        };
-
-      }
-
     ];
     style = ''
 
@@ -266,7 +265,7 @@
           background: #${config.colorScheme.palette.base00};
           color: #${config.colorScheme.palette.base0C};
           border-radius: ${configOptions.styles.wm.borderRadius}px;
-          border: ${configOptions.styles.wm.borderWidth}px solid #${config.colorScheme.palette.base0E};
+          border: ${configOptions.styles.wm.borderWidth}px solid #${config.colorScheme.palette.base01};
       }
 
       #cpu,
@@ -278,7 +277,6 @@
       #battery,
       #pulseaudio,
       #network,
-      #tray,
       #backlight {
       padding: 4px 6px;
       margin: 4px 2px;
@@ -300,12 +298,12 @@
       }
 
       #workspaces button.active {
-        color: #${config.colorScheme.palette.base0E};
+        color: #${config.colorScheme.palette.base09};
         background-color: #${config.colorScheme.palette.base00};
       }
 
       #workspaces button.focused {
-        color: #${config.colorScheme.palette.base0E};
+        color: #${config.colorScheme.palette.base09};
         border-radius: ${configOptions.styles.wm.borderRadius};
       }
 
@@ -361,28 +359,24 @@
         margin-right: 12px;
       }
 
-      #tray {
-        margin-right: 12px;
-      }
-
       #custom-nix-logo {
         margin-left: 12px;
       }
 
       #mpris {
-        color: #${config.colorScheme.palette.base0C};
+        color: #${config.colorScheme.palette.base0D};
         margin-left: 12px;
         margin-right: 12px;
       }
 
        #custom-media {
-        color: #${config.colorScheme.palette.base0C};
+        color: #${config.colorScheme.palette.base0D};
         margin-left: 12px;
         margin-right: 12px;
       }
 
       #cava {
-        color: #${config.colorScheme.palette.base0C};
+        color: #${config.colorScheme.palette.base0B};
         margin: 0 12px;
       }
     '';
