@@ -48,9 +48,9 @@
             size = "32";
           };
           gtk = {
-            name = "Catppuccin-Mocha-Standard-Green-Dark";
+            name = "Catppuccin-Mocha-Standard-Sapphire-Dark";
             package = pkgs.catppuccin-gtk.override {
-              accents = [ "teal" ];
+              accents = [ "sapphire" ];
               size = "standard";
               tweaks = [ "rimless" ];
               variant = "${configOptions.styles.theme.variant}";

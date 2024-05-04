@@ -364,19 +364,19 @@
       }
 
       #mpris {
-        color: #${config.colorScheme.palette.base0D};
+        color: #${config.colorScheme.palette.base0A};
         margin-left: 12px;
         margin-right: 12px;
       }
 
        #custom-media {
-        color: #${config.colorScheme.palette.base0D};
+        color: #${config.colorScheme.palette.base0A};
         margin-left: 12px;
         margin-right: 12px;
       }
 
       #cava {
-        color: #${config.colorScheme.palette.base0B};
+        color: #${config.colorScheme.palette.base0E};
         margin: 0 12px;
       }
     '';
