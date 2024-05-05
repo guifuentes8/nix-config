@@ -13,9 +13,9 @@
       alacritty_sync = 0;
     };
     color = {
+      background = "'default'";
       gradient = 1;
       gradient_count = 8;
-
       gradient_color_1 = "'#${config.colorScheme.palette.base0D}'";
       gradient_color_2 = "'#${config.colorScheme.palette.base0D}'";
       gradient_color_3 = "'#${config.colorScheme.palette.base0E}'";

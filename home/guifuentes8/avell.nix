@@ -14,5 +14,8 @@
 
   ];
 
-  home.packages = [ pkgs.avell-unofficial-control-center ];
+  services.nextcloud-client = {
+    enable = true;
+    startInBackground = true;
+  };
 }

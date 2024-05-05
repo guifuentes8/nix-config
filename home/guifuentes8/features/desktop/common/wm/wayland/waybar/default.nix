@@ -7,10 +7,10 @@
       {
         fixed-center = true;
         name = "top";
-        layer = "bottom";
+        layer = "top";
         position = "top";
         exclusive = true;
-        width = 8;
+        # width = 8;
         margin-top = 8;
         modules-center = [
           "disk"
@@ -32,7 +32,7 @@
           "capslock" = true;
           "format" = "{icon} {name}";
           "format-icons" = {
-            "locked" = "";
+            "locked" = " ";
             "unlocked" = " ";
           };
         };
@@ -168,7 +168,7 @@
       {
         fixed-center = true;
         name = "bottom";
-        layer = "top";
+        layer = "bottom";
         position = "bottom";
         exclusive = true;
         height = 32;
@@ -280,7 +280,6 @@
       #backlight {
       padding: 4px 6px;
       margin: 4px 2px;
-
       }
 
       #workspaces {

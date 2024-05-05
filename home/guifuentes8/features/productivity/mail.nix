@@ -1,12 +1,10 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, ... }: {
 
   programs.himalaya = {
     enable = true;
     package = pkgs.himalaya;
     settings = { };
   };
-
 
   accounts.email.accounts = {
     guifuentes8 = {
@@ -22,9 +20,7 @@
       smtp = {
         host = "smtp.gmail.com";
         port = 465;
-        tls = {
-          enable = true;
-        };
+        tls = { enable = true; };
       };
       himalaya = {
         enable = true;
@@ -32,10 +28,15 @@
           default = true;
           sync = true;
           backend = "imap";
-          imap-watch-cmds = [ "${pkgs.himalaya}/bin/himalaya --account guifuentes8 account sync -f INBOX" ];
-          signature = "Atenciosamente,\nGuilherme Fuentes";
+          imap-watch-cmds = [
+            "${pkgs.himalaya}/bin/himalaya --account guifuentes8 account sync -f INBOX"
+          ];
+          signature = ''
+            Atenciosamente,
+            Guilherme Fuentes'';
           downloads-dir = "~/Downloads";
-          imap-notify-cmd = ''${pkgs.libnotify}/bin/notify-send "󰊫 <sender>" "<subject>" '';
+          imap-notify-cmd =
+            ''${pkgs.libnotify}/bin/notify-send "󰊫 <sender>" "<subject>" '';
           imap-notify-query = "UNSEEN";
           email-listing-page-size = 50;
           email-listing-datetime-fmt = "%d-%m-%Y, %R";
@@ -66,9 +67,7 @@
       smtp = {
         host = "smtp.gmail.com";
         port = 465;
-        tls = {
-          enable = true;
-        };
+        tls = { enable = true; };
       };
       himalaya = {
         enable = true;
@@ -76,9 +75,12 @@
           sync = true;
           backend = "imap";
           sender = "smtp";
-          imap-watch-cmds = [ "${pkgs.himalaya}/bin/himalaya --account gcf account sync -f INBOX" ];
+          imap-watch-cmds = [
+            "${pkgs.himalaya}/bin/himalaya --account gcf account sync -f INBOX"
+          ];
           downloads-dir = "~/Downloads";
-          imap-notify-cmd = ''${pkgs.libnotify}/bin/notify-send "󰊫 <sender>" "<subject>" '';
+          imap-notify-cmd =
+            ''${pkgs.libnotify}/bin/notify-send "󰊫 <sender>" "<subject>" '';
           imap-notify-query = "UNSEEN";
           email-listing-page-size = 50;
           email-listing-datetime-fmt = "%d-%m-%Y, %R";
@@ -116,15 +118,13 @@
     settings.keepalive = 10;
   };
 
-
   systemd.user.services = {
     himalaya-watch-guifuentes8 = {
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
+      Install = { WantedBy = [ "default.target" ]; };
 
       Service = {
-        Environment = [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
+        Environment =
+          [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
         ExecSearchPath = /bin;
         ExecStart = "${pkgs.himalaya}/bin/himalaya -a guifuentes8 watch";
         Restart = "always";
@@ -138,12 +138,11 @@
     };
 
     himalaya-watch-gcf = {
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
+      Install = { WantedBy = [ "default.target" ]; };
 
       Service = {
-        Environment = [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
+        Environment =
+          [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
         ExecSearchPath = /bin;
         ExecStart = "${pkgs.himalaya}/bin/himalaya -a gcf watch";
         Restart = "always";
@@ -160,12 +159,11 @@
 
   systemd.user.services = {
     himalaya-notify-guifuentes8 = {
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
+      Install = { WantedBy = [ "default.target" ]; };
 
       Service = {
-        Environment = [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
+        Environment =
+          [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
         ExecSearchPath = /bin;
         ExecStart = "${pkgs.himalaya}/bin/himalaya -a guifuentes8 notify";
         Restart = "always";
@@ -178,12 +176,11 @@
       };
     };
     himalaya-notify-gcf = {
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
+      Install = { WantedBy = [ "default.target" ]; };
 
       Service = {
-        Environment = [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
+        Environment =
+          [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
         ExecSearchPath = /bin;
         ExecStart = "${pkgs.himalaya}/bin/himalaya -a gcf notify";
         Restart = "always";
@@ -197,6 +194,4 @@
     };
   };
 }
-
-
 

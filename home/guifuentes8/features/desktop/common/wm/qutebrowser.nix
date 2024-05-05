@@ -22,6 +22,7 @@
       # Other searchs
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://www.youtube.com/results?search_query={}";
+      gh = "https://github.com/search?q={}&type=repositories";
     };
     settings = {
       colors = {

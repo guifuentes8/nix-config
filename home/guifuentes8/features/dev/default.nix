@@ -1,7 +1,5 @@
 { pkgs, outputs, unstable, ... }:
-let
-  dbgate = outputs.packages.${pkgs.system}.dbgate;
-  warpp = outputs.packages.${pkgs.system}.warp-terminal;
+let dbgate = outputs.packages.${pkgs.system}.dbgate;
 in {
   imports = [ ./neovim ./languages ./vscode.nix ];
 

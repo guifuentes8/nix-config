@@ -1,5 +1,10 @@
-{ pkgs, lib, unstable, ... }:
+{ pkgs, lib, outputs, unstable, ... }:
 let
+  mach-nix = import (builtins.fetchGit {
+    url = "https://github.com/DavHau/mach-nix";
+    ref = "refs/tags/3.5.0";
+  });
+
   fromGitHub = rev: ref: repo:
     pkgs.vimUtils.buildVimPlugin {
       pname = "${lib.strings.sanitizeDerivationName repo}";
@@ -22,6 +27,8 @@ in {
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
+      withPython3 = true;
+      extraPython3Packages = pyPkgs: with pyPkgs; [ keyring ];
       extraLuaPackages = luaPkgs:
         with luaPkgs; [
           lua-utils-nvim
@@ -148,6 +155,12 @@ in {
           plugin = noice-nvim;
           type = "lua";
           config = builtins.readFile (./plugins/noice.rc.lua);
+        }
+        {
+          plugin = (fromGitHub "90f1e977fca73e7c8bee060711ecc7e655647673" "HEAD"
+            "stevearc/gkeep.nvim");
+          type = "lua";
+          #config = builtins.readFile (./plugins/noice.rc.lua);
         }
 
         cmp-buffer # buffer words

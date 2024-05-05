@@ -24,6 +24,7 @@
       url = "gitlab:VandalByte/darkmatter-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager

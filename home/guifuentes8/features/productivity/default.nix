@@ -1,3 +1,3 @@
 { pkgs, config, ... }: {
-  imports = [ ./mail.nix ./gcalcli.nix ./translate-shell.nix ];
+  imports = [ ./mail.nix ./calendar.nix ./translator.nix ];
 }
