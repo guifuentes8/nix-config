@@ -4,8 +4,8 @@
   services.pppd.enable = true;
 
   networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 22 80 443 53589 ];
+    enable = false;
+    allowedTCPPorts = [ 80 443 ];
   };
 
 }

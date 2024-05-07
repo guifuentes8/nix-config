@@ -1,70 +1,54 @@
-{ pkgs, config, configOptions, ... }: {
+{ pkgs, config, ... }: {
+
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  #networking.nat.enable = true;
+  networking.interfaces.enp6s0.useDHCP = false;
+  networking.interfaces.enp6s0.ipv4.addresses = [{
+    address = "192.168.0.15";
+    prefixLength = 24;
+  }];
+  networking.defaultGateway = "192.168.0.1";
+  networking.nameservers = [ "8.8.8.8" "8.8.4.4" ];
 
   environment.etc."nextcloud-admin-pass".text = "Guigui.2035";
 
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud28;
-    hostName = "192.168.0.5";
-    database.createLocally = true;
-    config = {
-      adminpassFile = "/etc/nextcloud-admin-pass";
-      adminuser = "guifuentes8@gmail.com";
-    };
+    https = true;
     configureRedis = true;
-    extraApps = {
-      inherit (pkgs.nextcloud28Packages.apps) tasks mail calendar contacts;
+    hostName = "localhost";
+    database.createLocally = true;
+    maxUploadSize = "1G";
+    autoUpdateApps.enable = true;
+    config = {
+      #  dbtype = "pgsql";
+      overwriteProtocol = "https";
+      adminuser = "guifuentes8";
+      adminpassFile = "/etc/nextcloud-admin-pass";
+      extraTrustedDomains = [ "192.168.0.15" "localhost" ];
+    };
+    extraApps = with config.services.nextcloud.package.packages.apps; {
+      # List of apps we want to install and are already packaged in
+      # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nextcloud/packages/nextcloud-apps.json
+      inherit calendar contacts mail notes onlyoffice tasks;
+
+      # Custom app installation example.
     };
     extraAppsEnable = true;
-    extraOptions.enabledPreviewProviders = [
-      "OC\\Preview\\BMP"
-      "OC\\Preview\\GIF"
-      "OC\\Preview\\JPEG"
-      "OC\\Preview\\Krita"
-      "OC\\Preview\\MarkDown"
-      "OC\\Preview\\MP3"
-      "OC\\Preview\\OpenDocument"
-      "OC\\Preview\\PNG"
-      "OC\\Preview\\TXT"
-      "OC\\Preview\\XBitmap"
-      "OC\\Preview\\HEIC"
-    ];
   };
 
-  services.nginx = {
-    enable = true;
-    virtualHosts."${config.services.nextcloud.hostName}" = {
-      listen = [{
-        addr = "127.0.0.1";
-        port = 8080;
-      }];
-    };
+  services.nginx.enable = true;
+  services.nginx.virtualHosts.${config.services.nextcloud.hostName} = {
+    forceSSL = false;
+    #  enableACME = true;
   };
 
-  #  systemd.user = {
-  #@    services.nextcloud-autosync = {
-  #     description = "Auto sync Nextcloud";
-  #     after = [ "network-online.target" ];
-  #     serviceConfig = {
-  #       Type = "simple";
-  #       ExecStart = ''
-  #         ${pkgs.nextcloud-client}/bin/nextcloudcmd -u wxyz98@live.com -p $(pass)
-  #         --path /Notes /home/guifuentes8/Notes/ ${configOptions.nextcloudHostname}'';
-  #       TimeoutStopSec = "180";
-  #       KillMode = "process";
-  #       KillSignal = "SIGINT";
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  # };
-  # timers.nextcloud-autosync = {
-  #   description =
-  #    "Automatic sync files with Nextcloud when booted up after 5 minutes then rerun every 10 minutes";
-  #   timerConfig = {
-  #      OnBootSec = "10s";
-  #       OnUnitActiveSec = "10s";
-  #     };
-  #     wantedBy = [ "multi-user.target" "timers.target" ];
-  #   };
+  #  security.acme = {
+  #    acceptTerms = true;
+  #    certs = {
+  #      ${config.services.nextcloud.hostName}.email = "guifuentes8@gmail.com";
+  #    };
   #  };
 
 }

@@ -27,6 +27,7 @@
 
     # Active services
     ../global/services/common
+    ../global/services/common/nextcloud.nix
 
     # User 
     ../global/users/guifuentes8.nix

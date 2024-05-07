@@ -5,8 +5,16 @@
   users.users.guifuentes8 = {
     isNormalUser = true;
     description = "guifuentes8";
-    extraGroups =
-      [ "networkmanager" "wheel" "sudo" "video" "docker" "adbusers" "input" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "sudo"
+      "video"
+      "docker"
+      "adbusers"
+      "input"
+      "vboxusers"
+    ];
     shell = pkgs.zsh;
   };
 
