@@ -93,12 +93,12 @@
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        pikachu = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable configOptions; };
           modules = [
             darkmatter-grub-theme.nixosModule
             sops-nix.nixosModules.sops
-            ./hosts/nixos
+            ./hosts/pikachu
           ];
         };
         avell = nixpkgs.lib.nixosSystem {
@@ -122,12 +122,12 @@
       darwinPackages = self.darwinConfiguration."mac".pkgs;
 
       homeConfigurations = {
-        "guifuentes8@nixos" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@pikachu" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable nix-colors configOptions inputs outputs;
           };
-          modules = [ ./home/guifuentes8/nixos.nix ];
+          modules = [ ./home/guifuentes8/pikachu.nix ];
         };
         "guifuentes8@avell" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";

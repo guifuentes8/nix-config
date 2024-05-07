@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, outputs, ... }: {
+{ pkgs, configOptions, ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
@@ -20,14 +20,13 @@
     ../global/hardware/logitech.nix
 
     # Login Manager
-    ../global/login/greetd.nix
+    ../global/login/sddm.nix
 
     # Choice Interface (WM and/or DE)
-    ../global/interfaces/WM/hyprland.nix
+    ../global/interfaces/DE/kde.nix
 
     # Active services
     ../global/services/common
-    ../global/services/common/nextcloud.nix
 
     # User 
     ../global/users/guifuentes8.nix
@@ -39,15 +38,16 @@
   # Basic config
   #console.keyMap = "br-abnt2";
   console.keyMap = "us";
-  services.xserver = { layout = "us"; };
+  services.xserver = { layout = "${configOptions.styles.keyboard.layout}"; };
 
   # Network config (nmtui)
-  networking.hostName = "nixos";
+  networking.hostName = "pikachu";
 
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
+    systemPackages = [ ];
     variables = { };
-    sessionVariables = rec {
+    sessionVariables = {
       XDG_CACHE_HOME = "\${HOME}/.cache";
       XDG_CONFIG_HOME = "\${HOME}/.config";
       XDG_BIN_HOME = "\${HOME}/.local/bin";

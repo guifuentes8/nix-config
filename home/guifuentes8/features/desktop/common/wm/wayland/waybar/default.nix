@@ -10,7 +10,7 @@
         layer = "top";
         position = "top";
         exclusive = true;
-        # width = 8;
+        width = 8;
         margin-top = 8;
         modules-center = [
           "disk"

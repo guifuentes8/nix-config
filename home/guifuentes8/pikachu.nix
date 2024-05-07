@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   imports = [
 
@@ -8,9 +6,8 @@
     ./features/dev
     ./features/music
     ./features/productivity
-    ./features/desktop/hyprland.nix
+    ./features/desktop/kde.nix
 
     # ./features/video/davinci-resolve
   ];
-
 }
