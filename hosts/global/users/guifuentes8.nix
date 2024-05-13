@@ -14,6 +14,7 @@
       "adbusers"
       "input"
       "vboxusers"
+      "nextcloud"
     ];
     shell = pkgs.zsh;
   };

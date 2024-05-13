@@ -17,7 +17,7 @@ let
     };
 
 in {
-  home.packages = [ unstable.tree-sitter-grammars.tree-sitter-norg-meta ];
+  home.packages = [ unstable.tree-sitter-grammars.tree-sitter-norg-meta  ];
   programs = {
     vim = { enable = true; };
     neovim = {

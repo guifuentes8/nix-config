@@ -27,8 +27,17 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager
-    , sops-nix, nix-colors, darkmatter-grub-theme, ... }@inputs:
+  outputs =
+    { self
+    , nixpkgs
+    , nixpkgs-unstable
+    , nix-darwin
+    , home-manager
+    , sops-nix
+    , nix-colors
+    , darkmatter-grub-theme
+    , ...
+    }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
@@ -37,7 +46,7 @@
       configOptions = {
         systemVersion = "23.11";
         windowsUser = "guifuentes8";
-        nextcloudHostname = "https://kim.nl.tab.digital";
+        nextcloudHostname = "http://192.168.0.10";
         styles = {
           theme = {
             name = "catppuccin";
@@ -84,7 +93,8 @@
         config.allowUnfree = true;
       };
 
-    in {
+    in
+    {
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
 

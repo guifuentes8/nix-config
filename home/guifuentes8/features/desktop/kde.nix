@@ -9,11 +9,11 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = lib.mkDefault "Colloid-dark";
+      name = lib.mkDefault "Colloid-Dark";
       package = lib.mkDefault pkgs.colloid-icon-theme;
     };
     theme = {
-      name = lib.mkDefault "Colloid-dark";
+      name = lib.mkDefault "Colloid-Dark";
       package = lib.mkDefault pkgs.colloid-gtk-theme;
     };
   };

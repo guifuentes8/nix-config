@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-  imports =
-    [ ./firewall.nix ./gnomeKeyring.nix ./kdeConnect.nix ./virtualbox.nix ];
+  imports = [ ./dev ./firewall.nix ./gnomeKeyring.nix ./kdeConnect.nix ];
 
 }

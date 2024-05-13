@@ -11,4 +11,6 @@
     };
 
   };
+
+  home.packages = [ pkgs.nixpkgs-fmt ];
 }

@@ -27,6 +27,8 @@
 
     # Active services
     ../global/services/common
+    ../global/services/extra/virtualbox.nix
+
 
     # User 
     ../global/users/guifuentes8.nix
@@ -45,7 +47,6 @@
 
   environment = {
     pathsToLink = [ "/libexec" "/etc" ];
-    systemPackages = [ ];
     variables = { };
     sessionVariables = {
       XDG_CACHE_HOME = "\${HOME}/.cache";
