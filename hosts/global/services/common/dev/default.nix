@@ -1,1 +1,1 @@
-{ pkgs, ... }: { imports = [ ./docker.nix ./postgres.nix ]; }
+{ pkgs, ... }: { imports = [ ./docker.nix ]; }

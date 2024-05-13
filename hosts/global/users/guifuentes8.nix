@@ -15,6 +15,7 @@
       "input"
       "vboxusers"
       "nextcloud"
+      "storage"
     ];
     shell = pkgs.zsh;
   };

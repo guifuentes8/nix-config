@@ -27,7 +27,6 @@
 
     # Active services
     ../global/services/common
-    ../global/services/extra/virtualbox.nix
 
 
     # User 
@@ -57,5 +56,8 @@
       TZ = "America/Sao_Paulo";
     };
   };
+
+
+
 
 }
