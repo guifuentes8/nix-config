@@ -125,6 +125,13 @@
           };
           modules = [ sops-nix.nixosModules.sops ./hosts/wsl ];
         };
+        homelab = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs unstable configOptions nix-colors;
+          };
+          modules = [ sops-nix.nixosModules.sops ./hosts/homelab ];
+        };
+
 
       };
       darwinConfigurations."mac" =
@@ -153,6 +160,14 @@
           };
           modules = [ ./home/guifuentes8/windows.nix ];
         };
+"guifuentes8@homelab" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = {
+            inherit unstable configOptions nix-colors inputs outputs;
+          };
+          modules = [ ./home/guifuentes8/homelab.nix ];
+        };
+
       };
     };
 }

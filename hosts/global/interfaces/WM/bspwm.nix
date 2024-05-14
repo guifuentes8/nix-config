@@ -1,6 +1,6 @@
 { config, ... }: {
 
-  imports = [ ./shared ];
+  imports = [ ];
 
   services.xserver = {
     enable = true;

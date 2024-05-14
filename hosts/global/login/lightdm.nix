@@ -19,7 +19,7 @@
             cursorTheme = {
               name = configOptions.styles.cursor.name;
               package = configOptions.styles.cursor.package;
-              size = configOptions.styles.cursor.size;
+              #              size = configOptions.styles.cursor.size;
             };
             # clock-format = null;
             indicators = [

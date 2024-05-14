@@ -1,5 +1,13 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ config, lib, inputs, outputs, pkgs, nix-colors, unstable, configOptions, ...
+{ config
+, lib
+, inputs
+, outputs
+, pkgs
+, nix-colors
+, unstable
+, configOptions
+, ...
 }: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
@@ -105,6 +113,7 @@
   # };
 
   environment = {
+    systemPackages = with pkgs; [ git caffeine-ng ];
     sessionVariables = { FLAKE = "/home/guifuentes8/nix-config"; };
   };
 }

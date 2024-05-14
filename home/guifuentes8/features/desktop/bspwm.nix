@@ -1,5 +1,5 @@
 { outputs, pkgs, nix-colors, config, configOptions, ... }:
-let wallpaper = ./theme/wallpaper.png;
+let wallpaper = ./theme/wallpapers/wallpaper.png;
 in {
   imports = [ ./common ./common/wm/xorg ./theme ];
 

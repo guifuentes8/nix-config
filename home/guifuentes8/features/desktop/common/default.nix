@@ -18,7 +18,6 @@
     pkgs.slack
 
     pkgs.ventoy-bin
-    pkgs.caffeine-ng
     pkgs.appimage-run
     pkgs.ffmpeg
     pkgs.pciutils
