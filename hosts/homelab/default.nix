@@ -14,7 +14,7 @@
     ../global/boot/systemd-boot.nix
 
     ../global/login/lightdm.nix
-    ../global/interfaces/WM/xfce.nix
+    ../global/interfaces/DE/xfce.nix
 
     ../global/users/guifuentes8.nix
   ];
