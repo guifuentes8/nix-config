@@ -1,12 +1,12 @@
 { pkgs, config, ... }: {
-  environment.etc."nextcloud-admin-pass".text = "gj8uoV9xKd9Teu";
+  environment.etc."nextcloud-admin-pass".text = "Agorajaera@123";
 
   services.nextcloud = {
     enable = true;
     config = {
       overwriteProtocol = "http";
       defaultPhoneRegion = "BR";
-      extraTrustedDomains = [ "192.168.0.8" ];
+      extraTrustedDomains = ["homelab" "192.168.122.3" ];
       trustedProxies = [ ];
       dbtype = "pgsql";
       dbuser = "nextcloud";
