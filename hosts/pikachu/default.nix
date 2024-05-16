@@ -15,8 +15,7 @@
     ../global
 
     # Boot initial (grub or systemd)
-    ../global/boot/grub.nix
-
+    ../global/boot/systemd-boot.nix
     ../global/hardware/logitech.nix
 
     # Login Manager
@@ -27,7 +26,7 @@
 
     # Active services
     ../global/services/common
-
+    ../global/services/extra/virt-manager.nix
 
     # User 
     ../global/users/guifuentes8.nix
@@ -56,8 +55,5 @@
       TZ = "America/Sao_Paulo";
     };
   };
-
-
-
 
 }

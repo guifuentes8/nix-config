@@ -16,6 +16,7 @@
       "vboxusers"
       "nextcloud"
       "storage"
+      "libvirtd"
     ];
     shell = pkgs.zsh;
   };

@@ -113,7 +113,7 @@
   # };
 
   environment = {
-    systemPackages = with pkgs; [ git caffeine-ng ];
+    systemPackages = [unstable.nh pkgs.git pkgs.caffeine-ng ];
     sessionVariables = { FLAKE = "/home/guifuentes8/nix-config"; };
   };
 }
