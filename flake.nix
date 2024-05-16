@@ -105,11 +105,7 @@
       nixosConfigurations = {
         pikachu = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable configOptions; };
-          modules = [
-            darkmatter-grub-theme.nixosModule
-            sops-nix.nixosModules.sops
-            ./hosts/pikachu
-          ];
+          modules = [ sops-nix.nixosModules.sops ./hosts/pikachu ];
         };
         avell = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable configOptions; };
@@ -131,7 +127,6 @@
           };
           modules = [ sops-nix.nixosModules.sops ./hosts/homelab ];
         };
-
 
       };
       darwinConfigurations."mac" =
@@ -160,7 +155,7 @@
           };
           modules = [ ./home/guifuentes8/windows.nix ];
         };
-"guifuentes8@homelab" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@homelab" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable configOptions nix-colors inputs outputs;
