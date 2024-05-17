@@ -9,6 +9,11 @@
     device = "/dev/sda1";
     fsType = "ext4";
   };
+  networking.nat = {
+    enable = true;
+    internalInterfaces = [ "virbr0" ];
+    externalInterface = "enp3s0";
+  };
 
 }
 

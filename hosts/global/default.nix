@@ -15,6 +15,8 @@
 
   # Services
   services = {
+    tailscale.enable = true;
+    tailscale.useRoutingFeatures = "client";
     dbus = {
       enable = true;
       packages = [ pkgs.gcr ];
@@ -113,7 +115,7 @@
   # };
 
   environment = {
-    systemPackages = [unstable.nh pkgs.git pkgs.caffeine-ng ];
+    systemPackages = [ unstable.nh pkgs.git pkgs.caffeine-ng pkgs.tailscale ];
     sessionVariables = { FLAKE = "/home/guifuentes8/nix-config"; };
   };
 }
