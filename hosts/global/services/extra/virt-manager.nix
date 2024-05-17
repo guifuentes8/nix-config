@@ -5,10 +5,7 @@
   };
   programs.virt-manager.enable = true;
   boot.extraModprobeConfig = "options kvm_intel nested=1";
-  fileSystems."/run/media/guifuentes8/pokedexStorage" = {
-    device = "/dev/sda1";
-    fsType = "btrfs";
-  };
+
   networking.nat = {
     enable = true;
     internalInterfaces = [ "virbr0" ];

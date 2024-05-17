@@ -18,6 +18,7 @@
     pkgs.slack
 
     pkgs.ventoy-bin
+    pkgs.etcher
     pkgs.appimage-run
     pkgs.ffmpeg
     pkgs.pciutils

@@ -4,30 +4,32 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f2c44c4a-4553-434c-87f1-12303f861b62";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/f2c44c4a-4553-434c-87f1-12303f861b62";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/668B-11DB";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/668B-11DB";
+    fsType = "vfat";
+    options = [ "fmask=0022" "dmask=0022" ];
+  };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/11b0d347-6c85-4d94-a9e6-b2788b6d2123"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/11b0d347-6c85-4d94-a9e6-b2788b6d2123"; }];
 
+  fileSystems."/run/media/guifuentes8/pokedexStorage" = {
+    device = "/dev/sda1";
+    fsType = "ext4";
+  };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
@@ -37,5 +39,6 @@
   # networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
