@@ -8,6 +8,11 @@
 
   ]);
 
+services.xserver.displayManager.defaultSession = "xfce";
+services.xserver.displayManager.autoLogin = {
+	enable = true;
+	user = "guifuentes8";
+};
   # environment.xfce.excludePackages
 
 }
