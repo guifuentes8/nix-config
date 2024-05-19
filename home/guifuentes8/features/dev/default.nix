@@ -1,15 +1,29 @@
-{ pkgs, outputs, unstable, ... }:
+{ pkgs, outputs, ... }:
 let dbgate = outputs.packages.${pkgs.system}.dbgate;
 in {
-  imports = [ ./neovim ./languages ./vscode.nix ];
+  imports = [ ./vscode.nix ];
+
+  programs = {
+    go.enable = true;
+    java.enable = true;
+    pyenv.enable = true;
+    rbenv.enable = true;
+  };
 
   home.packages = [
+    # Extra programs for development
     dbgate
-    unstable.beeper
     pkgs.firefox-devedition-bin
     pkgs.insomnia
-    unstable.warp-terminal
-  ];
 
+    # Programming languages and dependencies packages 
+    pkgs.nodePackages.graphql-language-service-cli
+    pkgs.nodejs
+    pkgs.yarn
+    pkgs.nest-cli
+    pkgs.maven
+    pkgs.nodePackages.eas-cli
+    pkgs.nodePackages.expo-cli
+  ];
 }
 

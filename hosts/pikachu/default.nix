@@ -1,59 +1,43 @@
-{ pkgs, configOptions, ... }: {
+{ ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
 
     # Hardware config (required)
     ./hardware-configuration.nix
+    ../common/hardware/bluetooth.nix
 
     # Hardware Gpu (if exist)
-    ../global/hardware/gpu/amdgpu.nix
+    ../common/hardware/gpu/notebook-prime.nix
 
     # NIXOS CONFIG ------------------------------------
 
     # global NixOs Config 
-    ../global
+    ../common
 
     # Boot initial (grub or systemd)
-    ../global/boot/systemd-boot.nix
-    ../global/hardware/logitech.nix
+    ../common/boot/systemd-boot.nix
 
     # Login Manager
-    ../global/login/sddm.nix
+    ../common/login/greetd.nix
 
     # Choice Interface (WM and/or DE)
-    ../global/interfaces/DE/kde.nix
+    ../common/interfaces/WM/hyprland.nix
 
     # Active services
-    ../global/services/common
-    ../global/services/extra/virt-manager.nix
+    ../common/services/backlight.nix
+    ../common/services/temperature.nix
+    ../common/services/dev
 
     # User 
-    ../global/users/guifuentes8.nix
+    ../common/users/guifuentes8.nix
 
   ];
 
   # SYSTEM CONFIGS --------------------------------------
 
-  # Basic config
-  #console.keyMap = "br-abnt2";
-  console.keyMap = "us";
-  services.xserver = { layout = "${configOptions.styles.keyboard.layout}"; };
-
-  # Network config (nmtui)
+  # custom system config
+  console.keyMap = "br-abnt2";
   networking.hostName = "pikachu";
-
-  environment = {
-    pathsToLink = [ "/libexec" "/etc" ];
-    variables = { };
-    sessionVariables = {
-      XDG_CACHE_HOME = "\${HOME}/.cache";
-      XDG_CONFIG_HOME = "\${HOME}/.config";
-      XDG_BIN_HOME = "\${HOME}/.local/bin";
-      XDG_DATA_HOME = "\${HOME}/.local/share";
-      PATH = [ "\${XDG_BIN_HOME}" ];
-      TZ = "America/Sao_Paulo";
-    };
-  };
 
 }

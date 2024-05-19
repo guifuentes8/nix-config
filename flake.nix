@@ -46,7 +46,7 @@
       configOptions = {
         systemVersion = "23.11";
         windowsUser = "guifuentes8";
-        nextcloudHostname = "http://192.168.0.10";
+        nextcloudHostname = "http://192.168.0.8";
         styles = {
           theme = {
             name = "catppuccin";
@@ -102,66 +102,81 @@
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
-      nixosConfigurations = {
-        pikachu = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs unstable configOptions; };
-          modules = [ sops-nix.nixosModules.sops ./hosts/pikachu ];
-        };
-        avell = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs unstable configOptions; };
-          modules = [
-            darkmatter-grub-theme.nixosModule
-            sops-nix.nixosModules.sops
-            ./hosts/avell
-          ];
-        };
-        wsl = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs unstable configOptions nix-colors;
-          };
-          modules = [ sops-nix.nixosModules.sops ./hosts/wsl ];
-        };
-        homelab = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs unstable configOptions nix-colors;
-          };
-          modules = [ sops-nix.nixosModules.sops ./hosts/homelab ];
-        };
-
-      };
-      darwinConfigurations."mac" =
-        nix-darwin.lib.darwinSystem { modules = [ ./hosts/darwin ]; };
-      darwinPackages = self.darwinConfiguration."mac".pkgs;
-
       homeConfigurations = {
-        "guifuentes8@pikachu" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@charizard" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable nix-colors configOptions inputs outputs;
           };
+          modules = [ ./home/guifuentes8/charizard.nix ];
+        };
+        "guifuentes8@pikachu" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = {
+            inherit unstable configOptions nix-colors inputs outputs;
+          };
           modules = [ ./home/guifuentes8/pikachu.nix ];
         };
-        "guifuentes8@avell" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@squirtle" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable configOptions nix-colors inputs outputs;
           };
-          modules = [ ./home/guifuentes8/avell.nix ];
+          modules = [ ./home/guifuentes8/squirtle.nix ];
         };
-        "guifuentes8@windows" = home-manager.lib.homeManagerConfiguration {
+
+        "guifuentes8@magikarp" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable configOptions nix-colors inputs outputs;
           };
-          modules = [ ./home/guifuentes8/windows.nix ];
+          modules = [ ./home/guifuentes8/magikarp.nix ];
         };
-        "guifuentes8@homelab" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@pokecenter" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable configOptions nix-colors inputs outputs;
           };
-          modules = [ ./home/guifuentes8/homelab.nix ];
+          modules = [ ./home/guifuentes8/pokecenter.nix ];
         };
+        nixosConfigurations = {
+          charizard = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs outputs unstable configOptions; };
+            modules = [ sops-nix.nixosModules.sops ./hosts/charizard ];
+          };
+          pikachu = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs outputs unstable configOptions; };
+            modules = [
+              darkmatter-grub-theme.nixosModule
+              sops-nix.nixosModules.sops
+              ./hosts/pikachu
+            ];
+          };
+          squirtle = nixpkgs.lib.nixosSystem {
+            specialArgs = {
+              inherit inputs outputs unstable configOptions nix-colors;
+            };
+            modules = [ sops-nix.nixosModules.sops ./hosts/squirtle ];
+          };
+
+          magikarp = nixpkgs.lib.nixosSystem {
+            specialArgs = {
+              inherit inputs outputs unstable configOptions nix-colors;
+            };
+            modules = [ sops-nix.nixosModules.sops ./hosts/magikarp ];
+          };
+
+          pokecenter = nixpkgs.lib.nixosSystem {
+            specialArgs = {
+              inherit inputs outputs unstable configOptions nix-colors;
+            };
+            modules = [ sops-nix.nixosModules.sops ./hosts/pokecenter ];
+          };
+
+        };
+        darwinConfigurations."mew" =
+          nix-darwin.lib.darwinSystem { modules = [ ./hosts/darwin ]; };
+        darwinPackages = self.darwinConfiguration."mew".pkgs;
 
       };
     };
