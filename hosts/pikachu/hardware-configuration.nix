@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -21,6 +21,7 @@
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/D8CB-1DCA";
       fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
@@ -32,6 +33,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
