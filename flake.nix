@@ -35,7 +35,6 @@
     , home-manager
     , sops-nix
     , nix-colors
-    , darkmatter-grub-theme
     , ...
     }@inputs:
     let
@@ -139,45 +138,41 @@
           };
           modules = [ ./home/guifuentes8/pokecenter.nix ];
         };
-        nixosConfigurations = {
-          charizard = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs outputs unstable configOptions; };
-            modules = [ sops-nix.nixosModules.sops ./hosts/charizard ];
-          };
-          pikachu = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs outputs unstable configOptions; };
-            modules = [
-              darkmatter-grub-theme.nixosModule
-              sops-nix.nixosModules.sops
-              ./hosts/pikachu
-            ];
-          };
-          squirtle = nixpkgs.lib.nixosSystem {
-            specialArgs = {
-              inherit inputs outputs unstable configOptions nix-colors;
-            };
-            modules = [ sops-nix.nixosModules.sops ./hosts/squirtle ];
-          };
-
-          magikarp = nixpkgs.lib.nixosSystem {
-            specialArgs = {
-              inherit inputs outputs unstable configOptions nix-colors;
-            };
-            modules = [ sops-nix.nixosModules.sops ./hosts/magikarp ];
-          };
-
-          pokecenter = nixpkgs.lib.nixosSystem {
-            specialArgs = {
-              inherit inputs outputs unstable configOptions nix-colors;
-            };
-            modules = [ sops-nix.nixosModules.sops ./hosts/pokecenter ];
-          };
-
+      };
+      nixosConfigurations = {
+        charizard = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs unstable configOptions; };
+          modules = [ sops-nix.nixosModules.sops ./hosts/charizard ];
         };
-        darwinConfigurations."mew" =
-          nix-darwin.lib.darwinSystem { modules = [ ./hosts/darwin ]; };
-        darwinPackages = self.darwinConfiguration."mew".pkgs;
+        pikachu = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs unstable configOptions; };
+          modules = [ sops-nix.nixosModules.sops ./hosts/pikachu ];
+        };
+        squirtle = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs unstable configOptions nix-colors;
+          };
+          modules = [ sops-nix.nixosModules.sops ./hosts/squirtle ];
+        };
+
+        magikarp = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs unstable configOptions nix-colors;
+          };
+          modules = [ sops-nix.nixosModules.sops ./hosts/magikarp ];
+        };
+
+        pokecenter = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs unstable configOptions nix-colors;
+          };
+          modules = [ sops-nix.nixosModules.sops ./hosts/pokecenter ];
+        };
 
       };
+      darwinConfigurations."mew" =
+        nix-darwin.lib.darwinSystem { modules = [ ./hosts/darwin ]; };
+      darwinPackages = self.darwinConfiguration."mew".pkgs;
+
     };
 }

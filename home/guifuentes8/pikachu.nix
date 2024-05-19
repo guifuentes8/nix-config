@@ -8,7 +8,6 @@
     ./features/dev
     ./features/music
     ./features/neovim
-    ./features/video
     ./features/desktop/WM/hyprland.nix
 
     # ./features/video/davinci-resolve

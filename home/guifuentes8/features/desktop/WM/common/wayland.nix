@@ -1,5 +1,5 @@
 { unstable, pkgs, ... }: {
-  imports = [ ../common ./foot.nix ./swaylock.nix ./waybar.nix ];
+  imports = [ ../common ./foot.nix ./waybar.nix ];
 
   home.packages = with unstable; [
     grim

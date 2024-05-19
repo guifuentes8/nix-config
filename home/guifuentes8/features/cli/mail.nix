@@ -102,19 +102,12 @@
 
   services.himalaya-watch = {
     enable = true;
-    environment = {
-      PASSWORD_STORE_DIR = "${config.home.sessionVariables.PASSWORD_STORE_DIR}";
-      RUST_LOG = "debug";
-    };
     settings.keepalive = 10;
   };
 
   services.himalaya-notify = {
     enable = true;
-    environment = {
-      PASSWORD_STORE_DIR = "${config.home.sessionVariables.PASSWORD_STORE_DIR}";
-      RUST_LOG = "debug";
-    };
+    environment = { };
     settings.keepalive = 10;
   };
 
@@ -123,8 +116,6 @@
       Install = { WantedBy = [ "default.target" ]; };
 
       Service = {
-        Environment =
-          [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
         ExecSearchPath = /bin;
         ExecStart = "${pkgs.himalaya}/bin/himalaya -a guifuentes8 watch";
         Restart = "always";
@@ -141,8 +132,6 @@
       Install = { WantedBy = [ "default.target" ]; };
 
       Service = {
-        Environment =
-          [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
         ExecSearchPath = /bin;
         ExecStart = "${pkgs.himalaya}/bin/himalaya -a gcf watch";
         Restart = "always";
@@ -162,8 +151,6 @@
       Install = { WantedBy = [ "default.target" ]; };
 
       Service = {
-        Environment =
-          [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
         ExecSearchPath = /bin;
         ExecStart = "${pkgs.himalaya}/bin/himalaya -a guifuentes8 notify";
         Restart = "always";
@@ -179,8 +166,6 @@
       Install = { WantedBy = [ "default.target" ]; };
 
       Service = {
-        Environment =
-          [ "PASSWORD_STORE_DIR=/home/guifuentes8/nix-config/.password-store" ];
         ExecSearchPath = /bin;
         ExecStart = "${pkgs.himalaya}/bin/himalaya -a gcf notify";
         Restart = "always";
