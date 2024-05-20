@@ -101,21 +101,21 @@
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
       homeConfigurations = {
-        "guifuentes8@charizard" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@Charizard" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable nix-colors configOptions inputs outputs;
           };
           modules = [ ./home/guifuentes8/charizard.nix ];
         };
-        "guifuentes8@pikachu" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@Pikachu" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable configOptions nix-colors inputs outputs;
           };
           modules = [ ./home/guifuentes8/pikachu.nix ];
         };
-        "guifuentes8@squirtle" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@Squirtle" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable configOptions nix-colors inputs outputs;
@@ -123,14 +123,14 @@
           modules = [ ./home/guifuentes8/squirtle.nix ];
         };
 
-        "guifuentes8@magikarp" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@Magikarp" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable configOptions nix-colors inputs outputs;
           };
           modules = [ ./home/guifuentes8/magikarp.nix ];
         };
-        "guifuentes8@pokecenter" = home-manager.lib.homeManagerConfiguration {
+        "guifuentes8@PokeCenter" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = {
             inherit unstable configOptions nix-colors inputs outputs;
