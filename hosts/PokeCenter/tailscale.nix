@@ -1,8 +1,8 @@
-{ pkgs, lib, ... }: {
+{ unstable, lib, ... }: {
 
-  environment.systemPackages = with pkgs; [ tailscale ];
   services.tailscale = {
     enable = true;
+    package = unstable.tailscale;
     openFirewall = true;
     useRoutingFeatures = lib.mkDefault "server";
   };
