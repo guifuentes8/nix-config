@@ -1,20 +1,19 @@
-{ pkgs, lib, ... }: {
+{ pkgs, unstable, lib, ... }: {
   imports = [ ./common ];
 
   home.packages = with pkgs; [
     capitaine-cursors
     libsForQt5.qtstyleplugin-kvantum
   ];
-
   gtk = {
     enable = true;
     iconTheme = {
-      name = lib.mkDefault "Colloid-Dark";
-      package = lib.mkDefault pkgs.colloid-icon-theme;
+      name = lib.mkDefault "";
+      package = lib.mkDefault unstable.catppuccin-papirus-folders;
     };
     theme = {
-      name = lib.mkDefault "Colloid-Dark";
-      package = lib.mkDefault pkgs.colloid-gtk-theme;
+      name = lib.mkDefault "";
+      package = lib.mkDefault unstable.catppuccin-kde;
     };
   };
 

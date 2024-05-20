@@ -37,7 +37,7 @@ in
         require 'maps'
       '';
       extraConfig = "\n";
-      plugins = with pkgs.vimPlugins; [
+      plugins = with unstable.vimPlugins; [
         {
           plugin = catppuccin-nvim;
           type = "lua";
@@ -141,8 +141,7 @@ in
           config = builtins.readFile (./plugins/rainbow.rc.lua);
         }
         {
-          plugin = (fromGitHub "03fb74927f358320f66cdd1337265c8e7f049fa3" "HEAD"
-            "nvim-neorg/neorg");
+          plugin = neorg;
           type = "lua";
           config = builtins.readFile (./plugins/neorg.rc.lua);
         }

@@ -52,7 +52,7 @@ require("neorg").setup {
     ["core.qol.todo_items"] = {},
     ["core.summary"] = { config = { strategy = "by_path" } },
     ["core.tangle"] = { config = { report_on_empty = false } },
-    --    ["core.ui.calendar"] = {},
+    ["core.ui.calendar"] = {},
   },
 }
 
