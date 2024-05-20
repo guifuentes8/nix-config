@@ -4,6 +4,7 @@
   imports = [ ./dunst.nix ./mpv.nix ./qutebrowser.nix ./rofi ./xdg.nix ];
 
   services = {
+    caffeine.enable = true;
     kdeconnect = {
       enable = true;
       indicator = true;

@@ -6,6 +6,7 @@
   programs = { obs-studio.enable = true; };
 
   services = {
+    caffeine.enable = true;
     kdeconnect = {
       enable = true;
       indicator = true;

@@ -7,7 +7,8 @@
 
     # Others configs
     ./features/dev
-    ./features/desktop/kde.nix
+    ./features/desktop/DE/kde.nix
+    ./features/music
 
     # ./features/video/davinci-resolve
   ];

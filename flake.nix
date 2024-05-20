@@ -96,7 +96,6 @@
     {
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
-
       overlays = import ./overlays { inherit inputs outputs; };
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
@@ -142,36 +141,36 @@
       nixosConfigurations = {
         charizard = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable configOptions; };
-          modules = [ sops-nix.nixosModules.sops ./hosts/charizard ];
+          modules = [ sops-nix.nixosModules.sops ./hosts/Charizard ];
         };
         pikachu = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable configOptions; };
-          modules = [ sops-nix.nixosModules.sops ./hosts/pikachu ];
+          modules = [ sops-nix.nixosModules.sops ./hosts/Pikachu ];
         };
         squirtle = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs unstable configOptions nix-colors;
           };
-          modules = [ sops-nix.nixosModules.sops ./hosts/squirtle ];
+          modules = [ sops-nix.nixosModules.sops ./hosts/Squirtle ];
         };
 
         magikarp = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs unstable configOptions nix-colors;
           };
-          modules = [ sops-nix.nixosModules.sops ./hosts/magikarp ];
+          modules = [ sops-nix.nixosModules.sops ./hosts/Magikarp ];
         };
 
         pokecenter = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs unstable configOptions nix-colors;
           };
-          modules = [ sops-nix.nixosModules.sops ./hosts/pokecenter ];
+          modules = [ sops-nix.nixosModules.sops ./hosts/PokeCenter ];
         };
 
       };
       darwinConfigurations."mew" =
-        nix-darwin.lib.darwinSystem { modules = [ ./hosts/darwin ]; };
+        nix-darwin.lib.darwinSystem { modules = [ ./hosts/Mew ]; };
       darwinPackages = self.darwinConfiguration."mew".pkgs;
 
     };

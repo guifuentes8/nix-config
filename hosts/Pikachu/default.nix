@@ -38,6 +38,8 @@
 
   # custom system config
   console.keyMap = "br-abnt2";
-  networking.hostName = "pikachu";
+  services.xserver.xkb.layout = "br";
+  services.xserver.xkb.variant = "abnt2";
+  networking.hostName = "Pikachu";
 
 }
