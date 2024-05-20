@@ -2,9 +2,9 @@
 
   services.tailscale = {
     enable = true;
-    package = unstable.tailscale;
+    package = lib.mkForce unstable.tailscale;
     openFirewall = true;
-    useRoutingFeatures = lib.mkDefault "server";
+    useRoutingFeatures = lib.mkForce "server";
   };
 
 }

@@ -1,10 +1,19 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ config, lib, inputs, outputs, pkgs, nix-colors, unstable, configOptions, ...
+{ config
+, lib
+, inputs
+, outputs
+, pkgs
+, nix-colors
+, unstable
+, configOptions
+, ...
 }: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   services = {
     tailscale.enable = true;
+    tailscale.package = unstable.tailscale;
     tailscale.useRoutingFeatures = "client";
     dbus = {
       enable = true;
@@ -32,7 +41,7 @@
   };
 
   environment = {
-    systemPackages = [ unstable.nh pkgs.git unstable.tailscale ];
+    systemPackages = [ unstable.nh pkgs.git ];
     sessionVariables = {
       FLAKE = "/home/guifuentes8/nix-config";
       XDG_CACHE_HOME = "\${HOME}/.cache";

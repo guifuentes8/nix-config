@@ -6,7 +6,7 @@
     config = {
       overwriteProtocol = "http";
       defaultPhoneRegion = "BR";
-      extraTrustedDomains = ["homelab" "192.168.122.3" ];
+      extraTrustedDomains = [ "pokecenter" "192.168.122.3" ];
       trustedProxies = [ ];
       dbtype = "pgsql";
       dbuser = "nextcloud";

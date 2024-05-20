@@ -2,8 +2,8 @@
   imports = [
 
     # Global config (required)
-    ./global
-    ./features/dev
+    ./common
+    ./features/neovim
   ];
 }
     
