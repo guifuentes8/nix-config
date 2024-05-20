@@ -14,6 +14,7 @@ let
 in
 {
   programs = {
+    ripgrep.enable = true;
     tmux.enable = true;
     vim.enable = true;
     neovim = {

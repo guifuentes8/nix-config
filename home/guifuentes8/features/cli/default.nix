@@ -14,7 +14,6 @@
     feh.enable = true;
     jq.enable = true;
     lsd.enable = true;
-    ripgrep.enable = true;
     rtorrent.enable = true;
     translate-shell.enable = true;
     yt-dlp.enable = true;
