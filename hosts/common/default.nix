@@ -32,7 +32,7 @@
   };
 
   environment = {
-    systemPackages = [ unstable.nh pkgs.git pkgs.tailscale ];
+    systemPackages = [ unstable.nh pkgs.git unstable.tailscale ];
     sessionVariables = {
       FLAKE = "/home/guifuentes8/nix-config";
       XDG_CACHE_HOME = "\${HOME}/.cache";

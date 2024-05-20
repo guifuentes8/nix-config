@@ -139,29 +139,29 @@
         };
       };
       nixosConfigurations = {
-        charizard = nixpkgs.lib.nixosSystem {
+        Charizard = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable configOptions; };
           modules = [ sops-nix.nixosModules.sops ./hosts/Charizard ];
         };
-        pikachu = nixpkgs.lib.nixosSystem {
+        Pikachu = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs unstable configOptions; };
           modules = [ sops-nix.nixosModules.sops ./hosts/Pikachu ];
         };
-        squirtle = nixpkgs.lib.nixosSystem {
+        Squirtle = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs unstable configOptions nix-colors;
           };
           modules = [ sops-nix.nixosModules.sops ./hosts/Squirtle ];
         };
 
-        magikarp = nixpkgs.lib.nixosSystem {
+        Magikarp = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs unstable configOptions nix-colors;
           };
           modules = [ sops-nix.nixosModules.sops ./hosts/Magikarp ];
         };
 
-        pokecenter = nixpkgs.lib.nixosSystem {
+        PokeCenter = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs unstable configOptions nix-colors;
           };
@@ -169,9 +169,9 @@
         };
 
       };
-      darwinConfigurations."mew" =
+      darwinConfigurations."Mew" =
         nix-darwin.lib.darwinSystem { modules = [ ./hosts/Mew ]; };
-      darwinPackages = self.darwinConfiguration."mew".pkgs;
+      darwinPackages = self.darwinConfiguration."Mew".pkgs;
 
     };
 }

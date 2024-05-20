@@ -7,6 +7,7 @@
 
     # Others configs
     ./features/dev
+    ./features/neovim	
     ./features/desktop/DE/kde.nix
     ./features/music
 
