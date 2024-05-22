@@ -12,18 +12,18 @@ in {
 
   home.packages = [
     # Extra programs for development
-    dbgate
+    #dbgate
     pkgs.firefox-devedition-bin
     pkgs.insomnia
 
     # Programming languages and dependencies packages 
-    pkgs.nodePackages.graphql-language-service-cli
+    # pkgs.nodePackages.graphql-language-service-cli
     pkgs.nodejs
     pkgs.yarn
     pkgs.nest-cli
     pkgs.maven
-    pkgs.nodePackages.eas-cli
-    pkgs.nodePackages.expo-cli
+    #pkgs.nodePackages.eas-cli
+    #pkgs.nodePackages.expo-cli
   ];
 }
 

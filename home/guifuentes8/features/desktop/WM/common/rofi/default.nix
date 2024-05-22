@@ -1,33 +1,33 @@
-{ unstable, pkgs, lib, config, configOptions, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   programs.rofi = {
     enable = true;
-    terminal = "${pkgs.kitty}/bin/kitty";
-    theme = (import ./theme.nix { inherit config lib configOptions; });
-    plugins = with unstable; [
+    terminal = "footclient";
+    #theme = (import ./theme.nix { inherit config lib; });
+    plugins = with pkgs; [
       rofi-bluetooth
       rofi-calc
       rofi-emoji
       rofi-power-menu
       rofi-pulse-select
       rofi-systemd
-      rofi-rbw
+      # rofi-rbw
     ];
   };
 
-  home.packages = with unstable; [
+  home.packages = with pkgs; [
     rofi-bluetooth
     rofi-calc
     rofi-emoji
     rofi-power-menu
     rofi-pulse-select
     rofi-systemd
-    rofi-rbw
+    #rofi-rbw
   ];
 
   programs.rbw = {
-    enable = true;
+    enable = false;
     package = pkgs.rbw.overrideAttrs (oldAttrs: {
       patches = oldAttrs.patches ++ [
         (pkgs.fetchpatch {
@@ -39,7 +39,7 @@
     });
     settings = {
       email = "guifuentes8@gmail.com";
-      pinentry = pkgs.pinentry-gnome;
+      pinentry = pkgs.pinentry-gnome3;
     };
   };
 

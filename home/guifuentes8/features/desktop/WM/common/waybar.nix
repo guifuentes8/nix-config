@@ -1,7 +1,7 @@
-{ unstable, pkgs, config, configOptions, ... }: {
+{ unstable, pkgs, config, ... }: {
   programs.waybar = {
     enable = true;
-    package = unstable.waybar;
+    package = pkgs.waybar;
     systemd.enable = true;
     settings = [
       {
@@ -174,7 +174,7 @@
         height = 32;
         width = 768;
         margin-bottom = 8;
-        modules-center = [ "cava" "mpris" "sptlrx" "cava" ];
+        modules-center = [ "cava" "mpd" "mpris" "cava" ];
         "cava" = {
           "framerate" = 60;
           "autosens" = 0;
@@ -209,7 +209,7 @@
         };
         "mpd" = {
           "format" =
-            "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime=%M=%S}/{totalTime=%M=%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
+            "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ";
           "format-disconnected" = "Disconnected ";
           "format-stopped" =
             "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
@@ -231,8 +231,8 @@
         };
         "custom/sptlrx" = {
           "interval" = 0.5;
-          "format" = ''
-             <span font-family="${configOptions.styles.font.main}" style="italic">{}</span> 󰫢 󰍰'';
+          #   "format" = ''
+          #      <span font-family="${configOptions.styles.font.main}" style="italic">{}</span> 󰫢 󰍰'';
           "max-length" = 150;
           "exec" = "${pkgs.sptlrx}/bin/sptlrx pipe";
           "on-click" = "";
@@ -253,132 +253,131 @@
         };
       }
     ];
-    style = ''
+    #  style = ''
 
-      * {
-          font-family: ${configOptions.styles.font.main};
-          font-weight: bold;
-          font-size: ${configOptions.styles.font.size}px;
-      }
+    #      * {
+    #    #      font-family: ${configOptions.styles.font.main};
+    #          font-weight: bold;
+    #    #      font-size: ${configOptions.styles.font.size}px;
+    #      }
 
-      window#waybar {
-          background: #${config.colorScheme.palette.base00};
-          color: #${config.colorScheme.palette.base0C};
-          border-radius: ${configOptions.styles.wm.borderRadius}px;
-          border: ${configOptions.styles.wm.borderWidth}px solid #${config.colorScheme.palette.base01};
-      }
+    #      window#waybar {
+    #          background: #${config.colorScheme.palette.base00};
+    #          color: #${config.colorScheme.palette.base0C};
+    #    #      border-radius: ${configOptions.styles.wm.borderRadius}px;
+    #    #      border: ${configOptions.styles.wm.borderWidth}px solid #${config.colorScheme.palette.base01};
+    #      }
 
-      #cpu,
-      #memory,
-      #disk,
-      #temperature,
-      #keyboard-state,
-      #clock,
-      #battery,
-      #pulseaudio,
-      #network,
-      #backlight {
-      padding: 4px 6px;
-      margin: 4px 2px;
-      }
+    #      #cpu,
+    #      #memory,
+    #      #disk,
+    #      #temperature,
+    #      #keyboard-state,
+    #      #clock,
+    #      #battery,
+    #      #pulseaudio,
+    #      #network,
+    #      #backlight {
+    #      padding: 4px 6px;
+    #      margin: 4px 2px;
+    #      }
 
-      #workspaces {
-        padding: 0px 4px;
-        margin: 4px 4px;
-        border-radius: ${configOptions.styles.wm.borderRadius};
-      }
+    #      #workspaces {
+    #        padding: 0px 4px;
+    #        margin: 4px 4px;
+    #     #   border-radius: ${configOptions.styles.wm.borderRadius};
+    #      }
 
+    #      #workspaces button {
+    #        color: #${config.colorScheme.palette.base07};
+    #        padding: 0px 4px 0px 0px;
+    #        margin: 0px 2px;
 
-      #workspaces button {
-        color: #${config.colorScheme.palette.base07};
-        padding: 0px 4px 0px 0px;
-        margin: 0px 2px;
+    #      }
 
-      }
+    #      #workspaces button.active {
+    #        color: #${config.colorScheme.palette.base09};
+    #        background-color: #${config.colorScheme.palette.base00};
+    #      }
 
-      #workspaces button.active {
-        color: #${config.colorScheme.palette.base09};
-        background-color: #${config.colorScheme.palette.base00};
-      }
+    #      #workspaces button.focused {
+    #        color: #${config.colorScheme.palette.base09};
+    #        border-radius: ${configOptions.styles.wm.borderRadius};
+    #      }
 
-      #workspaces button.focused {
-        color: #${config.colorScheme.palette.base09};
-        border-radius: ${configOptions.styles.wm.borderRadius};
-      }
+    #      #workspaces button.urgent {
+    #        color: #${config.colorScheme.palette.base00};
+    #        background: #${config.colorScheme.palette.base08};
+    #        border-radius: ${configOptions.styles.wm.borderRadius};
+    #      }
 
-      #workspaces button.urgent {
-        color: #${config.colorScheme.palette.base00};
-        background: #${config.colorScheme.palette.base08};
-        border-radius: ${configOptions.styles.wm.borderRadius};
-      }
+    #      #workspaces button:hover {
+    #        background-color: #${config.colorScheme.palette.base00};
+    #        color: #${config.colorScheme.palette.base0C};
+    #      }
 
-      #workspaces button:hover {
-        background-color: #${config.colorScheme.palette.base00};
-        color: #${config.colorScheme.palette.base0C};
-      }
+    #      #disk {
+    #        color: #${config.colorScheme.palette.base07};
+    #      }
 
-      #disk {
-        color: #${config.colorScheme.palette.base07};
-      }
+    #      #cpu {
+    #        color: #${config.colorScheme.palette.base07};
+    #      }
 
-      #cpu {
-        color: #${config.colorScheme.palette.base07};
-      }
+    #      #memory {
+    #        color: #${config.colorScheme.palette.base07};
+    #      }
 
-      #memory {
-        color: #${config.colorScheme.palette.base07};
-      }
+    #      #temperature {
+    #        color: #${config.colorScheme.palette.base0F};
+    #      }
 
-      #temperature {
-        color: #${config.colorScheme.palette.base0F};
-      }
+    #      #keyboard-state {
+    #        color: #${config.colorScheme.palette.base0D};
+    #      }
 
-      #keyboard-state {
-        color: #${config.colorScheme.palette.base0D};
-      }
+    #      #backlight {
+    #        color: #${config.colorScheme.palette.base0C};
+    #      }
 
-      #backlight {
-        color: #${config.colorScheme.palette.base0C};
-      }
+    #      #network {
+    #        color: #${config.colorScheme.palette.base09};
+    #      }
 
-      #network {
-        color: #${config.colorScheme.palette.base09};
-      }
+    #      #pulseaudio {
+    #        color: #${config.colorScheme.palette.base0B};
+    #      }
 
-      #pulseaudio {
-        color: #${config.colorScheme.palette.base0B};
-      }
+    #      #battery {
+    #        color: #${config.colorScheme.palette.base0A};
+    #      }
 
-      #battery {
-        color: #${config.colorScheme.palette.base0A};
-      }
+    #      #clock {
+    #        color: #${config.colorScheme.palette.base0E};
+    #        margin-right: 12px;
+    #      }
 
-      #clock {
-        color: #${config.colorScheme.palette.base0E};
-        margin-right: 12px;
-      }
+    #      #custom-nix-logo {
+    #        margin-left: 12px;
+    #      }
 
-      #custom-nix-logo {
-        margin-left: 12px;
-      }
+    #      #mpris {
+    #        color: #${config.colorScheme.palette.base0A};
+    #        margin-left: 12px;
+    #        margin-right: 12px;
+    #      }
 
-      #mpris {
-        color: #${config.colorScheme.palette.base0A};
-        margin-left: 12px;
-        margin-right: 12px;
-      }
+    #       #custom-media {
+    #        color: #${config.colorScheme.palette.base0A};
+    #        margin-left: 12px;
+    #        margin-right: 12px;
+    #      }
 
-       #custom-media {
-        color: #${config.colorScheme.palette.base0A};
-        margin-left: 12px;
-        margin-right: 12px;
-      }
-
-      #cava {
-        color: #${config.colorScheme.palette.base0E};
-        margin: 0 12px;
-      }
-    '';
+    #      #cava {
+    #        color: #${config.colorScheme.palette.base0E};
+    #        margin: 0 12px;
+    #      }
+    #  '';
   };
 }
 

@@ -1,11 +1,11 @@
-{ lib, pkgs, config, outputs, configOptions, ... }: {
+{ lib, pkgs, config, outputs, ... }: {
 
-  imports = [ ./programs.nix ./systemd.nix ./services.nix ];
+  imports = [ ./programs.nix ./systemd.nix ./services.nix ./stylix.nix ];
 
   home = {
     username = "guifuentes8";
     homeDirectory = "/home/${config.home.username}";
-    stateVersion = configOptions.systemVersion;
+    stateVersion = "24.05";
   };
 
   xdg = {
@@ -36,9 +36,7 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
-      permittedInsecurePackages = [
-	"electron-19.1.9"
-      ];
+      permittedInsecurePackages = [ "electron-19.1.9" ];
     };
   };
 

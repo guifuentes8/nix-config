@@ -1,5 +1,5 @@
-{ pkgs, unstable, ... }: {
-  imports = [ ./mail.nix ];
+{ pkgs, ... }: {
+  # imports = [ ./accounts.nix ];
 
   programs = {
     bat = {
@@ -12,6 +12,7 @@
       settings = { };
     };
     feh.enable = true;
+    khal.enable = true;
     jq.enable = true;
     lsd.enable = true;
     rtorrent.enable = true;
@@ -19,7 +20,7 @@
     yt-dlp.enable = true;
     yazi = {
       enable = true;
-      package = unstable.yazi;
+      package = pkgs.yazi;
       enableZshIntegration = true;
       keymap = { };
       settings = { };
@@ -28,7 +29,6 @@
   };
 
   home.packages = with pkgs; [
-    calcurse # calendar
     cmatrix # matrix
     devour # hide terminal
     epr # E-pub reader

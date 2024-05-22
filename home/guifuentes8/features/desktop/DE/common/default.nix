@@ -19,12 +19,12 @@
 
   home.packages = [
     pkgs.bitwarden
-    unstable.beeper
+    pkgs.beeper
     pkgs.discord
     pkgs.gimp
     pkgs.onlyoffice-bin
     pkgs.slack
-    unstable.warp-terminal
+    pkgs.warp-terminal
 
     pkgs.ventoy-bin
     pkgs.etcher

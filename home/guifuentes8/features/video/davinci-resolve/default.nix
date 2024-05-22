@@ -6,10 +6,10 @@ in
 
 
   home.packages = [
-    unstable.davinci-resolve
+    pkgs.davinci-resolve
   ];
   xdg.desktopEntries."davinci-resolve" = {
-    exec = "env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia ${unstable.davinci-resolve}/bin/davinci-resolve";
+    exec = "env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia ${pkgs.davinci-resolve}/bin/davinci-resolve";
 
     genericName = "DaVinci Resolve";
     name = "Davinci Resolve";

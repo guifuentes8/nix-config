@@ -1,10 +1,10 @@
-{ pkgs, unstable, ... }: {
+{ pkgs, ... }: {
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.age
 
     # Nix pkgs required
-    unstable.nh
+    pkgs.nh
     pkgs.nix-output-monitor
     pkgs.nvd
     pkgs.nixpkgs-fmt
@@ -71,7 +71,6 @@
       shellAliases = {
         cjpg = "mogrify -format jpg *.png && rm *.png";
         pick = "xcolor | hyprpicker";
-        ls = "lsd";
         clock = "tty-clock -c -C 6 -s -S -r -n -D";
         matrix = "cmatrix -b -f -C red";
         climabauru = "girouette -q -c '1h' -L 'pt_BR' -l 'Bauru' -u metric";

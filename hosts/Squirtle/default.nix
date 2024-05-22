@@ -1,5 +1,4 @@
-{ config, lib, pkgs, inputs, outputs, nix-colors, unstable, configOptions, ...
-}:
+{ inputs, ... }:
 
 {
   imports = [
@@ -38,8 +37,7 @@
       WGPU_BACKEND = "gl";
       BROWSER = "org.qutebrowser.qutebrowser.desktop";
       WSLENV = "ANDROID_HOME/p";
-      ANDROID_HOME =
-        "/mnt/c/Users/${configOptions.windowsUser}/Local Settings/Android/Sdk";
+      ANDROID_HOME = "/mnt/c/Users/guifuentes8/Local Settings/Android/Sdk";
     };
 
   };

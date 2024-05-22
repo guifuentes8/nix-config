@@ -1,18 +1,17 @@
 { pkgs, unstable, config, lib, ... }: {
-  home.packages =
-    [ pkgs.cava unstable.spotube pkgs.pavucontrol pkgs.playerctl ];
+  home.packages = [ pkgs.cava pkgs.spotube pkgs.pavucontrol pkgs.playerctl ];
 
   programs.ncmpcpp = {
     package = pkgs.ncmpcpp.override { visualizerSupport = true; };
     enable = true;
-    mpdMusicDir = "${config.xdg.userDirs.music}";
+    mpdMusicDir = "${config.home.homeDirectory}/Nextcloud/Music";
   };
 
   services = {
     playerctld.enable = true;
     mpd = {
       enable = true;
-      musicDirectory = "${config.xdg.userDirs.music}";
+      musicDirectory = "${config.home.homeDirectory}/Nextcloud/Music";
       extraConfig = ''
         audio_output {
           type "pipewire"

@@ -1,20 +1,10 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ config
-, lib
-, inputs
-, outputs
-, pkgs
-, nix-colors
-, unstable
-, configOptions
-, ...
-}: {
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
+{ config, lib, inputs, outputs, pkgs, nix-colors, ... }: {
+  imports = [ inputs.home-manager.nixosModules.home-manager ./stylix.nix ];
 
   services = {
-    teamviewer.enable = true;
     tailscale.enable = true;
-    tailscale.package = unstable.tailscale;
+    tailscale.package = pkgs.tailscale;
     tailscale.useRoutingFeatures = "client";
     dbus = {
       enable = true;
@@ -42,8 +32,7 @@
   };
 
   environment = {
-    systemPackages =
-      [ unstable.nh pkgs.git unstable.anydesk unstable.teamviewer ];
+    systemPackages = [ pkgs.nh pkgs.git ];
     sessionVariables = {
       FLAKE = "/home/guifuentes8/nix-config";
       XDG_CACHE_HOME = "\${HOME}/.cache";
@@ -57,9 +46,7 @@
   };
 
   home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = {
-    inherit inputs outputs nix-colors unstable configOptions;
-  };
+  home-manager.extraSpecialArgs = { inherit inputs outputs nix-colors pkgs; };
 
   # Network
   networking = {
@@ -126,7 +113,7 @@
     };
   };
   system = {
-    stateVersion = configOptions.systemVersion;
+    stateVersion = "24.05";
     autoUpgrade = {
       enable = false;
       allowReboot = false;

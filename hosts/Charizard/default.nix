@@ -1,4 +1,4 @@
-{ pkgs, configOptions, ... }: {
+{ ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------

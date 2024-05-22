@@ -9,11 +9,11 @@
     enable = true;
     iconTheme = {
       name = lib.mkDefault "";
-      package = lib.mkDefault unstable.catppuccin-papirus-folders;
+      package = lib.mkDefault pkgs.catppuccin-papirus-folders;
     };
     theme = {
       name = lib.mkDefault "";
-      package = lib.mkDefault unstable.catppuccin-kde;
+      package = lib.mkDefault pkgs.catppuccin-kde;
     };
   };
 

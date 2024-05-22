@@ -1,4 +1,4 @@
-{ outputs, pkgs, nix-colors, config, configOptions, ... }:
+{ outputs, pkgs, nix-colors, config, ... }:
 let wallpaper = ./theme/wallpapers/wallpaper.png;
 in {
   imports = [ ./common ./common/wm/xorg ./theme ];
@@ -14,7 +14,7 @@ in {
       "feh --bg-center ${wallpaper} --image-bg '#1e1e2e'"
       "pkill dunst"
       "dunst"
-      "xsetroot -cursor_name '${configOptions.styles.cursor.name}'"
+    #  "xsetroot -cursor_name '${configOptions.styles.cursor.name}'"
     ];
     extraConfig = ''
       bspc monitor -d 󰇩   󰓇 󱄄      

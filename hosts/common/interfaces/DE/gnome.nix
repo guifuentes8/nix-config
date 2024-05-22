@@ -31,7 +31,7 @@
     gnome-music
     totem
     geary
-  ]) ++ (with unstable.gnomeExtensions; [
+  ]) ++ (with pkgs.gnomeExtensions; [
     appindicator
     burn-my-windows
     color-picker

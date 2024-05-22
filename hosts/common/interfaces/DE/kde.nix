@@ -15,7 +15,7 @@
 
   # default Kde Programs
 
-  environment.systemPackages = (with unstable.kdePackages; [
+  environment.systemPackages = (with pkgs.kdePackages; [
     kmail
     kdenlive
     kate

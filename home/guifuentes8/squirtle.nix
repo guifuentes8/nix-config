@@ -1,4 +1,4 @@
-{ pkgs, outputs, unstable, lib, config, nix-colors, configOptions, ... }:
+{ outputs, pkgs, lib, config, nix-colors, ... }:
 let waylandArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
 
 in {
@@ -20,7 +20,7 @@ in {
 
   programs.zsh.shellAliases = {
     adb =
-      "/mnt/c/Users/${configOptions.windowsUser}/Local\\ Settings/Android/Sdk/platform-tools/adb";
+      "/mnt/c/Users/guifuentes8/Local\\ Settings/Android/Sdk/platform-tools/adb";
 
   };
 

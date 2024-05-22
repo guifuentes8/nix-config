@@ -1,4 +1,4 @@
-{ pkgs, config, configOptions, ... }: {
+{ pkgs, ... }: {
 
   # Nextcloud Auto Sync
   systemd.user = {
@@ -9,8 +9,7 @@
       };
       Service = {
         Type = "simple";
-        ExecStart =
-          "${pkgs.nextcloud-client}/bin/nextcloudcmd -h -n --path /Notes /home/guifuentes8/Notes/ ${configOptions.nextcloudHostname}";
+        ExecStart = "";
         TimeoutStopSec = "180";
         KillMode = "process";
         KillSignal = "SIGINT";

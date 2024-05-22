@@ -6,8 +6,10 @@ require("neorg").setup {
     ["core.dirman"] = {
       config = {
         workspaces = {
-          personal = "~/Notes/personal",
-          study = "~/Notes/study",
+          personal = "/home/guifuentes8/Nextcloud/Notes/personal",
+          journal = "/home/guifuentes8/Nextcloud/Notes/journal",
+          work = "/home/guifuentes8/Nextcloud/Notes/neovim",
+          study = "/home/guifuentes8/Nextcloud/Notes/study",
         },
         default_workspace = "personal",
       },
@@ -33,7 +35,7 @@ require("neorg").setup {
     ["core.journal"] = {
       config = {
         strategy = "flat",
-        workspace = "personal",
+        workspace = "journal",
       },
     },
     ["core.keybinds"] = {
@@ -52,6 +54,7 @@ require("neorg").setup {
     ["core.qol.todo_items"] = {},
     ["core.summary"] = { config = { strategy = "by_path" } },
     ["core.tangle"] = { config = { report_on_empty = false } },
+    ["core.ui"] = {},
     ["core.ui.calendar"] = {},
   },
 }

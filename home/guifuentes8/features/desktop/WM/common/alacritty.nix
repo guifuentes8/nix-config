@@ -1,37 +1,37 @@
-{ unstable, pkgs, config, configOptions, ... }: {
+{ unstable, pkgs, config, ... }: {
   programs.alacritty = {
     enable = true;
-    package = unstable.alacritty;
+    package = pkgs.alacritty;
     settings = {
-      font = {
-        normal = {
-          family = configOptions.styles.font.code;
-          style = "Regular";
-        };
-
-        bold = {
-          family = configOptions.styles.font.code;
-          style = "Bold";
-        };
-
-        italic = {
-          family = configOptions.styles.font.code;
-          style = "Italic";
-        };
-
-        bold_italic = {
-          family = configOptions.styles.font.code;
-          style = "Bold Italic";
-        };
-        size = pkgs.lib.strings.toInt configOptions.styles.font.size;
-      };
-      window = {
-        opacity = configOptions.styles.wm.opacity;
-        padding = {
-          x = 10;
-          y = 10;
-        };
-      };
+     # font = {
+     #   normal = {
+     #     family = configOptions.styles.font.code;
+     #     style = "Regular";
+     #   };
+#
+     #   bold = {
+     #     family = configOptions.styles.font.code;
+     #     style = "Bold";
+     #   };
+#
+     #   italic = {
+     #     family = configOptions.styles.font.code;
+     #     style = "Italic";
+     #   };
+#
+     #   bold_italic = {
+     #     family = configOptions.styles.font.code;
+     #     style = "Bold Italic";
+     #   };
+     #   size = pkgs.lib.strings.toInt configOptions.styles.font.size;
+     # };
+     # window = {
+     #   opacity = configOptions.styles.wm.opacity;
+     #   padding = {
+     #     x = 10;
+     #     y = 10;
+     #   };
+     # };
 
       colors = {
         primary = {

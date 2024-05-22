@@ -1,6 +1,9 @@
-{ config, unstable, configOptions, ... }:
-let cw = ./cw.sh;
-in {
+{ config, pkgs, ... }:
+let
+  cw = ./cw.sh;
+  term = "footclient";
+in
+{
   imports = [ ./common/wayland.nix ../theme ];
 
   wayland.windowManager.hyprland = {
@@ -11,11 +14,10 @@ in {
         exec-once = wl-clipboard-history -t
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-        exec-once = hyprctl setcursor ${configOptions.styles.cursor.name} ${configOptions.styles.cursor.size} 
-        exec-once = gsettings set org.gnome.desktop.interface gtk-theme ${configOptions.styles.gtk.name}
-        exec-once = gsettings set org.gnome.desktop.interface cursor-theme ${configOptions.styles.cursor.name}
-        exec-once = gsettings set org.gnome.desktop.interface cursor-size ${configOptions.styles.cursor.size} 
-
+       # exec-once = hyprctl setcursor 
+       # exec-once = gsettings set org.gnome.desktop.interface gtk-theme 
+       # exec-once = gsettings set org.gnome.desktop.interface cursor-theme 
+       # exec-once = gsettings set org.gnome.desktop.interface cursor-size
       # MONITORS
        monitor=,preferred,auto,1
 
@@ -23,9 +25,9 @@ in {
         general {
             gaps_in = 8
             gaps_out = 10
-            border_size = ${configOptions.styles.wm.borderWidth} 
-            col.active_border = rgb(${config.colorScheme.palette.base09})
-            col.inactive_border = rgb(${config.colorScheme.palette.base00})
+            border_size = 3 
+         #   col.active_border = rgb(${config.colorScheme.palette.base09})
+         #   col.inactive_border = rgb(${config.colorScheme.palette.base00})
             no_border_on_floating = false
             layout = dwindle
         }
@@ -39,7 +41,7 @@ in {
               ignore_opacity = false
               xray = false
             }
-            rounding = ${configOptions.styles.wm.borderRadius}
+            rounding = 8 
             drop_shadow = true
             shadow_range = 6
             shadow_render_power = 3
@@ -63,8 +65,8 @@ in {
         }
 
         input {
-            kb_layout = ${configOptions.styles.keyboard.layout}
-            kb_variant = ${configOptions.styles.keyboard.variant}
+          kb_layout = br,us
+    kb_variant = abnt2,
             numlock_by_default = true
             follow_mouse = 1
             touchpad {
@@ -76,7 +78,6 @@ in {
 
         gestures {
             workspace_swipe = true
-            workspace_swipe_numbered = true
             workspace_swipe_cancel_ratio = 0.5
             workspace_swipe_min_speed_to_force = 0
         }
@@ -91,19 +92,16 @@ in {
         }
 
         device:at-translated-set-2-keyboard {
-         kb_layout = ${configOptions.styles.keyboard.layout}
         }
 
         misc {
           disable_hyprland_logo	= false
-          force_hypr_chan = false
         }
 
       # KEYBINDS
 
         $mainMod = SUPER
-      #  $term = footclient
-        $term = kitty
+        $term = ${term}
 
         bind = $mainMod, Return, exec, $term
         bind = $mainMod, Escape, exit,
@@ -198,17 +196,16 @@ in {
         bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
 
         # Pick color
-        bind = $mainMod SHIFT, p, exec, ${unstable.hyprpicker}/bin/hyprpicker -a
+        bind = $mainMod SHIFT, p, exec, ${pkgs.hyprpicker}/bin/hyprpicker -a
         bind = $mainMod SHIFT, b, exec, qutebrowser;
-        bind = $mainMod SHIFT, m, exec, kitty -e spotify_player;
-        bind = $mainMod SHIFT, e, exec, kitty -e nvim;
-        bind = $mainMod SHIFT, f, exec, kitty -e yazi;
+        bind = $mainMod SHIFT, m, exec, ${term} -e spotify_player;
+        bind = $mainMod SHIFT, e, exec, ${term} -e nvim;
+        bind = $mainMod SHIFT, f, exec, ${term} -e yazi;
         bind = $mainMod, W, exec, bash ${cw} change
 
 
         bind = ALT,Space, exec, hyprctl switchxkblayout at-translated-set-2-keyboard next
         bind = ALT,Space, exec, hyprctl switchxkblayout logitech-usb-receiver next
-
 
         windowrule = float,^(mpv)$
         windowrule = size 960 520,^(mpv)$

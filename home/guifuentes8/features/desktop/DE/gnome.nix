@@ -1,1 +1,1 @@
-{ pkgs, unstable, configOptions, ... }: { imports = [ ./common ]; }
+{ pkgs, unstable, ... }: { imports = [ ./common ]; }

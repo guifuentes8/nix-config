@@ -1,24 +1,24 @@
-{ config, lib, configOptions, ... }:
+{ config, lib, ... }:
 
 let inherit (config.lib.formats.rasi) mkLiteral;
 in {
   "*" = {
-    border-radius = mkLiteral "${configOptions.styles.wm.borderRadius}";
-    bg-col = mkLiteral "#${config.colorScheme.palette.base00}";
-    bg-col-light = mkLiteral "#${config.colorScheme.palette.base00}";
-    border-col = mkLiteral "#${config.colorScheme.palette.base00}";
-    selected-col = mkLiteral "#${config.colorScheme.palette.base00}";
-    blue = mkLiteral "#${config.colorScheme.palette.base0C}";
-    fg-col = mkLiteral "#${config.colorScheme.palette.base05}";
-    fg-col2 = mkLiteral "#${config.colorScheme.palette.base0C}";
-    grey = mkLiteral "#${config.colorScheme.palette.base04}";
-    font =
-      "${configOptions.styles.font.main} ${configOptions.styles.font.size}";
+    #    border-radius = mkLiteral "${configOptions.styles.wm.borderRadius}";
+    #  bg-col = mkLiteral "#${config.colorScheme.palette.base00}";
+    #  bg-col-light = mkLiteral "#${config.colorScheme.palette.base00}";
+    #  border-col = mkLiteral "#${config.colorScheme.palette.base00}";
+    #  selected-col = mkLiteral "#${config.colorScheme.palette.base00}";
+    #  blue = mkLiteral "#${config.colorScheme.palette.base0C}";
+    #  fg-col = mkLiteral "#${config.colorScheme.palette.base05}";
+    #  fg-col2 = mkLiteral "#${config.colorScheme.palette.base0C}";
+    #  grey = mkLiteral "#${config.colorScheme.palette.base04}";
+    #  #   font =
+    #  #     "${configOptions.styles.font.main} ${configOptions.styles.font.size}";
   };
 
   "configuration" = {
     modi = "run,drun,window";
-    icon-theme = configOptions.styles.icon.name;
+    #   icon-theme = configOptions.styles.icon.name;
     show-icons = true;
     drun-display-format = "{icon} {name}";
     location = 0;
@@ -39,24 +39,24 @@ in {
   "window" = {
     height = mkLiteral "350px";
     width = mkLiteral "600px";
-    border = mkLiteral "${configOptions.styles.wm.borderWidth}";
-    border-color = mkLiteral "#${config.colorScheme.palette.base0C}";
-    background-color = mkLiteral "@bg-col";
+    border = mkLiteral "2px";
+    # border-color = mkLiteral "#${config.colorScheme.palette.base0C}";
+    #background-color = mkLiteral "@bg-col";
   };
 
-  "mainbox" = { background-color = mkLiteral "@bg-col"; };
+  "mainbox" = { }; # background-color = mkLiteral "@bg-col"; };
 
   "inputbar" = {
     children = map mkLiteral [ "prompt" "entry" ];
-    background-color = mkLiteral "@bg-col";
-    border-radius = mkLiteral "${configOptions.styles.wm.borderWidth}";
+    #background-color = mkLiteral "@bg-col";
+    border-radius = mkLiteral "2px";
     padding = mkLiteral "2px";
   };
 
   "prompt" = {
-    background-color = mkLiteral "@blue";
+    # background-color = mkLiteral "@blue";
     padding = mkLiteral "6px";
-    text-color = mkLiteral "@bg-col";
+    #text-color = mkLiteral "@bg-col";
     border-radius = mkLiteral "8px";
     margin = mkLiteral "20px 0px 0px 20px";
   };
@@ -69,8 +69,8 @@ in {
   "entry" = {
     padding = mkLiteral "6px";
     margin = mkLiteral "20px 0px 0px 10px";
-    text-color = mkLiteral "@fg-col";
-    background-color = mkLiteral "@bg-col";
+    #text-color = mkLiteral "@fg-col";
+    # background-color = mkLiteral "@bg-col";
   };
 
   "listview" = {
@@ -79,39 +79,39 @@ in {
     margin = mkLiteral "10px 0px 0px 20px";
     columns = 2;
     lines = 5;
-    background-color = mkLiteral "@bg-col";
+    #background-color = mkLiteral "@bg-col";
   };
 
   "element" = {
     padding = mkLiteral "5px";
-    background-color = mkLiteral "@bg-col";
-    text-color = mkLiteral "@fg-col";
+    # background-color = mkLiteral "@bg-col";
+    # text-color = mkLiteral "@fg-col";
   };
 
   "element-icon" = { size = mkLiteral "25px"; };
 
   "element selected" = {
-    background-color = mkLiteral "@selected-col";
-    text-color = mkLiteral " @fg-col2";
+    #background-color = mkLiteral "@selected-col";
+    #   text-color = mkLiteral " @fg-col2";
   };
 
   "mode-switcher" = { spacing = 0; };
 
   "button" = {
     padding = mkLiteral "10px";
-    background-color = mkLiteral "@bg-col-light";
-    text-color = mkLiteral "@grey";
+    #background-color = mkLiteral "@bg-col-light";
+    #  text-color = mkLiteral "@grey";
     vertical-align = mkLiteral "0.5";
     horizontal-align = mkLiteral "0.5";
   };
 
   "button selected" = {
-    background-color = mkLiteral "@bg-col";
-    text-color = mkLiteral "@blue";
+    # background-color = mkLiteral "@bg-col";
+    #  text-color = mkLiteral "@blue";
   };
 
   "message" = {
-    background-color = mkLiteral "@bg-col-light";
+    # background-color = mkLiteral "@bg-col-light";
     margin = mkLiteral "2px";
     padding = mkLiteral "2px";
     border-radius = mkLiteral "5px";
@@ -120,8 +120,8 @@ in {
   "textbox" = {
     padding = mkLiteral "6px";
     margin = mkLiteral "20 px 0 px 0 px 20px";
-    text-color = mkLiteral "@blue";
-    background-color = mkLiteral "@bg-col-light";
+    #   text-color = mkLiteral "@blue";
+    #background-color = mkLiteral "@bg-col-light";
   };
 }
 
