@@ -12,6 +12,7 @@
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   services = {
+    teamviewer.enable = true;
     tailscale.enable = true;
     tailscale.package = unstable.tailscale;
     tailscale.useRoutingFeatures = "client";
@@ -41,7 +42,8 @@
   };
 
   environment = {
-    systemPackages = [ unstable.nh pkgs.git ];
+    systemPackages =
+      [ unstable.nh pkgs.git unstable.anydesk unstable.teamviewer ];
     sessionVariables = {
       FLAKE = "/home/guifuentes8/nix-config";
       XDG_CACHE_HOME = "\${HOME}/.cache";

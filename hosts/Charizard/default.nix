@@ -25,6 +25,7 @@
     ../common/interfaces/DE/kde.nix
 
     # Active services
+    ../common/services/flatpak.nix
     ../common/services/virt-manager.nix
     ../common/services/dev
 

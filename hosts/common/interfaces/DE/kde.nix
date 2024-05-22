@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, unstable, lib, ... }:
 
 {
   imports = [ ];
@@ -15,7 +15,7 @@
 
   # default Kde Programs
 
-  environment.systemPackages = (with pkgs.libsForQt5; [
+  environment.systemPackages = (with unstable.kdePackages; [
     kmail
     kdenlive
     kate
@@ -24,11 +24,11 @@
     akregator
     knotes
     kasts
-    calindori
     kaccounts-integration
     kaccounts-providers
     kio-gdrive
     dragon
+    audiotube
   ]);
 
   environment.plasma5.excludePackages = with pkgs.libsForQt5;
