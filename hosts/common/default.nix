@@ -1,6 +1,6 @@
 # This file (and the global directory) holds config that i use on all hosts
 { config, lib, inputs, outputs, pkgs, nix-colors, ... }: {
-  imports = [ inputs.home-manager.nixosModules.home-manager ./stylix.nix ];
+  imports = [ inputs.home-manager.nixosModules.home-manager  ];
 
   services = {
     tailscale.enable = true;

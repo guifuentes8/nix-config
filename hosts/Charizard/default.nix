@@ -32,6 +32,8 @@
     # User 
     ../common/users/guifuentes8.nix
 
+    ./stylix.nix
+
   ];
 
   # SYSTEM CONFIGS --------------------------------------

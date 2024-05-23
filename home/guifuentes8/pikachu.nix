@@ -14,6 +14,8 @@
 
     nix-colors.homeManagerModules.default
 
+    ./stylix.nix
+
   ];
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 

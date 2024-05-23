@@ -12,6 +12,8 @@
     ./features/music
 
     # ./features/video/davinci-resolve
+
+    ./stylix.nix
   ];
 
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
