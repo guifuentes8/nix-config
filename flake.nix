@@ -57,7 +57,6 @@
 
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
-
   };
 
   outputs =
@@ -68,8 +67,8 @@
     , home-manager
     , sops-nix
     , nix-colors
-    , stylix,
-    neorg-overlay
+    , stylix
+    , neorg-overlay
     , ...
     }@inputs:
     let
@@ -119,11 +118,18 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit nix-colors inputs outputs; };
-          modules = [ ./home/guifuentes8/charizard.nix ];
+          modules = [
+            stylix.homeManagerModules.stylix
+            ./home/guifuentes8/charizard.nix
+          ];
         };
       nixosConfigurations.Charizard = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
-        modules = [ sops-nix.nixosModules.sops ./hosts/Charizard ];
+        modules = [
+          stylix.nixosModules.stylix
+          sops-nix.nixosModules.sops
+          ./hosts/Charizard
+        ];
       };
       #                                PIKACHU (Main laptop, transport and beautiful friend)
 

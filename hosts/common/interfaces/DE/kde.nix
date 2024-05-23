@@ -1,13 +1,13 @@
-{ pkgs, unstable, lib, ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ];
   services.xserver = {
     enable = true;
-    desktopManager.plasma5 = { enable = true; };
+    desktopManager.plasma6 = { enable = true; };
   };
 
-  services.xserver.displayManager.defaultSession = "plasmawayland";
+  services.xserver.displayManager.defaultSession = "plasma";
 
   programs.dconf.enable = true;
   programs.partition-manager.enable = true;
@@ -28,10 +28,10 @@
     kaccounts-providers
     kio-gdrive
     dragon
-    audiotube
+    qtstyleplugin-kvantum
   ]);
 
-  environment.plasma5.excludePackages = with pkgs.libsForQt5;
+  environment.plasma6.excludePackages = with pkgs.kdePackages;
     [ plasma-browser-integration ];
 }
 

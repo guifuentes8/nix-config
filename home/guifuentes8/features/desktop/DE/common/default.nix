@@ -23,11 +23,10 @@
     pkgs.discord
     pkgs.gimp
     pkgs.onlyoffice-bin
-    pkgs.slack
+    #pkgs.slack
     pkgs.warp-terminal
 
     pkgs.ventoy-bin
-    pkgs.etcher
     pkgs.appimage-run
     pkgs.ffmpeg
     pkgs.pciutils
