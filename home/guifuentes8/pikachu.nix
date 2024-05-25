@@ -19,4 +19,6 @@
   ];
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 
+  programs.zsh.initExtraFirst = ''cat ${./pikachu.txt}'';
+
 }

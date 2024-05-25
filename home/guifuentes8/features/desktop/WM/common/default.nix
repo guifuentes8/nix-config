@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./dunst.nix ./mpv.nix ./qutebrowser.nix ./rofi ./xdg.nix ];
+  imports = [ ./dunst.nix  ./mpv.nix ./qutebrowser.nix ./rofi ./xdg.nix ];
 
   services = {
     caffeine.enable = true;
@@ -12,7 +12,7 @@
 
     nextcloud-client = {
       enable = true;
-      startInBackground = false;
+      startInBackground = true;
     };
   };
 

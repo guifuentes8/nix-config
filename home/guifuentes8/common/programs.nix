@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, outputs, ... }: 
+let pokeget-plus = outputs.packages.${pkgs.system}.pokeget-plus;
+in
+{
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.age
@@ -10,8 +13,7 @@
     pkgs.nixpkgs-fmt
 
     # zsh
-    pkgs.pokemonsay
-    pkgs.fortune-kind
+    pokeget-plus
   ];
 
   programs = {
@@ -63,11 +65,7 @@
         plugins = [ "git" ];
         theme = "miloshadzic";
       };
-      initExtraFirst = ''
-        unset -v SSH_ASKPASS
-        fortune -s | pokemonsay -n -W -t -d $(printf "%03d\n" $(shuf -i 1-493 -n 1))
-      '';
-      initExtra = "";
+      initExtra = "unset -v SSH_ASKPASS";
       shellAliases = {
         cjpg = "mogrify -format jpg *.png && rm *.png";
         pick = "xcolor | hyprpicker";

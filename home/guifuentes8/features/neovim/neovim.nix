@@ -13,11 +13,7 @@ let
 
 in
 {
-  programs = {
-    ripgrep.enable = true;
-    tmux.enable = true;
-    vim.enable = true;
-    neovim = {
+  programs.neovim = {
       enable = true;
       package = pkgs.neovim-unwrapped;
       defaultEditor = true;
@@ -31,19 +27,14 @@ in
           pathlib-nvim
         ];
 
-      # extraLuaConfig = ''
-      #   require 'settings'
-      #   require 'highlights'
-      #   require 'maps'
-      # '';
+       extraLuaConfig = ''
+         require 'settings'
+         require 'highlights'
+         require 'maps'
+       '';
       extraConfig = "\n";
       plugins = with pkgs.vimPlugins; [
 
-        {
-          plugin = tokyonight-nvim;
-          type = "lua";
-          #  config = builtins.readFile (./plugins/theme.rc.lua);
-        }
         {
           plugin = lualine-nvim;
           type = "lua";
@@ -204,13 +195,12 @@ in
 
     };
 
-  };
 
-  #  xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;
-  #  xdg.configFile."nvim/lua/highlights.lua".source = ./highlights.lua;
-  #  xdg.configFile."nvim/lua/maps.lua".source = ./maps.lua;
-  #  xdg.configFile."nvim/lua/plugins".source = ./plugins;
-  #
-  #  home.sessionVariables.EDITOR = "nvim";
+    xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;
+    xdg.configFile."nvim/lua/highlights.lua".source = ./highlights.lua;
+    xdg.configFile."nvim/lua/maps.lua".source = ./maps.lua;
+    xdg.configFile."nvim/lua/plugins".source = ./plugins;
+  
+    home.sessionVariables.EDITOR = "nvim";
 }
 

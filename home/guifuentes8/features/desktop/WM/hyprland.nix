@@ -4,20 +4,18 @@ let
   term = "footclient";
 in
 {
-  imports = [ ./common/wayland.nix ../theme ];
+  imports = [ ./common/wayland.nix ./common/hyprpaper.nix  ];
 
+stylix.image = ./hyprland.png;
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
       # ON START
-        exec-once = swww-daemon 
+       # exec-once = swww-daemon 
+        exec-once = wpaperd 
         exec-once = wl-clipboard-history -t
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-       # exec-once = hyprctl setcursor 
-       # exec-once = gsettings set org.gnome.desktop.interface gtk-theme 
-       # exec-once = gsettings set org.gnome.desktop.interface cursor-theme 
-       # exec-once = gsettings set org.gnome.desktop.interface cursor-size
       # MONITORS
        monitor=,preferred,auto,1
 

@@ -32,7 +32,7 @@
     # User 
     ../common/users/guifuentes8.nix
 
-    ./stylix.nix
+    ../stylix.nix
 
   ];
 

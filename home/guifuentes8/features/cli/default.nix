@@ -29,6 +29,7 @@
   };
 
   home.packages = with pkgs; [
+    dipc # palette wallpaper converter
     cmatrix # matrix
     devour # hide terminal
     epr # E-pub reader

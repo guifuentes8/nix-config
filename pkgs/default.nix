@@ -4,4 +4,5 @@
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   dbgate = pkgs.callPackage ./dbgate { };
   everforest-cursors = pkgs.callPackage ./everforest-cursors { };
+  pokeget-plus = pkgs.callPackage ./pokeget-plus { };
 }
