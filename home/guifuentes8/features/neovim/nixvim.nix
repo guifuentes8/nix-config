@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
+  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+
   programs.nixvim = {
     enable = true;
     extraLuaPackages = luaPkgs:
@@ -61,31 +63,7 @@
       wrap = true;
     };
 
-    colorschemes.tokyonight = {
-      enable = true;
-      settings = {
-        day_brightness = 0.3;
-        dim_inactive = false;
-        hide_inactive_statusline = false;
-        light_style = "day";
-        lualine_bold = false;
-        on_colors = "function(colors) end";
-        on_highlights = "function(highlights, colors) end";
-        sidebars = [ "qf" "vista_kind" "terminal" "packer" ];
-        style = "night";
-        styles = {
-          comments = { italic = true; };
-          floats = "dark";
-          functions = { };
-          keywords = { italic = true; };
-          sidebars = "dark";
-          variables = { };
-        };
-        terminal_colors = true;
-        transparent = false;
-      };
 
-    };
     plugins = {
       alpha.enable = true;
       alpha.theme = "dashboard";
@@ -105,6 +83,9 @@
       telescope.enable = true;
       treesitter.enable = true;
     };
+
+    extraPlugins = [ pkgs.vimPlugins.everforest ];
+    colorscheme = "everforest";
   };
 
 }

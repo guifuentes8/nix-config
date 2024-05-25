@@ -45,4 +45,6 @@
 
   ];
 
+  home.file.".local/share/warp-terminal/themes/everforest_hard.yml".source = ./everforest_hard.yml;
+
 }
