@@ -1,4 +1,4 @@
-{ ... }: {
+{ config,... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
@@ -42,4 +42,7 @@
   console.keyMap = "us";
   services.xserver.xkb.layout = "us";
   networking.hostName = "Charizard";
+
+
+
 }

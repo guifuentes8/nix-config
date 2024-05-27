@@ -11,6 +11,7 @@
     fonts = { };
     opacity = { };
     override = { };
+    image = ./wallpaper.png;
     targets = {
       nixvim.enable = false;
       vim.enable = false;
