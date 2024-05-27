@@ -5,13 +5,10 @@
     allowedBridges = [ "br0" ];
   };
   networking.defaultGateway = "192.168.0.1";
+  networking.useDHCP = false;
   networking.bridges.br0.interfaces = [ "enp4s0" ];
   networking.interfaces.br0 = {
-    useDHCP = false;
-    ipv4.addresses = [{
-      "address" = "192.168.0.11";
-      "prefixLength" = 24;
-    }];
+    useDHCP = true;
   };
   networking = {
     firewall.trustedInterfaces = [ "br0" ];

@@ -5,6 +5,7 @@
   services = {
     tailscale.enable = true;
     tailscale.package = pkgs.tailscale;
+    tailscale.openFirewall = true;
     tailscale.useRoutingFeatures = "client";
     dbus = {
       enable = true;
