@@ -1,18 +1,20 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 let
   cw = ./cw.sh;
   term = "footclient";
 in
 {
-  imports = [ ./common/wayland.nix ./common/hyprpaper.nix  ];
+  imports = [ ./common/wayland.nix ./common/hyprpaper.nix ];
 
-stylix.image = ./hyprland.png;
+  stylix.image = lib.mkForce ./Hyprland.png;
+
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
       # ON START
-       # exec-once = swww-daemon 
-        exec-once = wpaperd 
+        # exec-once = gnome-keyring
+        exec-once = swww-daemon 
+        exec-once = hyprpaper
         exec-once = wl-clipboard-history -t
         exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
         exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -24,8 +26,8 @@ stylix.image = ./hyprland.png;
             gaps_in = 8
             gaps_out = 10
             border_size = 3 
-         #   col.active_border = rgb(${config.colorScheme.palette.base09})
-         #   col.inactive_border = rgb(${config.colorScheme.palette.base00})
+            col.active_border =  rgb(${config.lib.stylix.colors.base0B}) 
+            col.inactive_border = rgb(${config.lib.stylix.colors.base01})
             no_border_on_floating = false
             layout = dwindle
         }
@@ -64,14 +66,14 @@ stylix.image = ./hyprland.png;
 
         input {
           kb_layout = br,us
-    kb_variant = abnt2,
-            numlock_by_default = true
-            follow_mouse = 1
-            touchpad {
+          kb_variant = abnt2,
+          numlock_by_default = true
+          follow_mouse = 0
+          touchpad {
                 natural_scroll = false
                 disable_while_typing = true
-            }
-            sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+          }
+          sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
         }
 
         gestures {

@@ -8,7 +8,6 @@ require("inc_rename").setup {
 }
 
 require("notify").setup({
-  background_colour = "#000000",
   render = "wrapped-compact",
   timeout = 1000,
   max_width = 60,

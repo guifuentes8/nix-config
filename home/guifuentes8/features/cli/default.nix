@@ -1,18 +1,15 @@
 { pkgs, ... }: {
-  # imports = [ ./accounts.nix ];
 
   programs = {
     bat = {
       enable = true;
       extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-      #    config.theme = "catppuccin";
     };
     bottom = {
       enable = true;
       settings = { };
     };
     feh.enable = true;
-    khal.enable = true;
     jq.enable = true;
     lsd.enable = true;
     rtorrent.enable = true;
@@ -40,6 +37,8 @@
     speedtest-rs # Networking test
     tgpt # chatgpt
     tty-clock # clock
+
+    unzip
   ];
 
   xdg.configFile."tuifeed/config.toml".source =

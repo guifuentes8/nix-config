@@ -1,4 +1,4 @@
-{ config,  ... }: {
+{ config, lib, ... }: {
   programs.qutebrowser = {
     enable = true;
     aliases = { };
@@ -25,10 +25,17 @@
       gh = "https://github.com/search?q={}&type=repositories";
     };
     settings = {
+      auto_save.session = false;
       colors = {
+        tabs = {
+          even.bg = lib.mkForce "#${config.lib.stylix.colors.base00}";
+          selected.even.bg = lib.mkForce "#${config.lib.stylix.colors.base02}";
+          selected.odd.bg = lib.mkForce "#${config.lib.stylix.colors.base02}";
+
+        };
         webpage = {
           darkmode = {
-            enabled = true;
+            enabled = false;
             policy.images = "never";
           };
           preferred_color_scheme = "dark";
@@ -44,5 +51,8 @@
       };
       tabs = { position = "left"; };
     };
+    extraConfig = ''
+      c.tabs.padding = {'top': 4, 'bottom': 4, 'right': 2, 'left': 2}
+    '';
   };
 }

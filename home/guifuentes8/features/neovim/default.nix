@@ -1,5 +1,5 @@
 { ... }: {
-  imports = [ ./nixvim.nix ];
+  imports = [ ./neovim.nix ];
 
   programs = {
     ripgrep.enable = true;
