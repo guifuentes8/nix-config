@@ -1,29 +1,30 @@
 { config, ... }: {
 
   networking = {
-    search = [ "nextcloud.ts.net" ];
+    search = [ "nextcloud" ];
+
+    defaultGateway = "192.168.0.1";
     interfaces.enp1s0 = {
       useDHCP = false;
       ipv4.addresses = [{
-        address = "192.168.122.3";
+        address = "192.168.0.10";
         prefixLength = 24;
       }];
+
     };
-defaultGateway = "192.168.122.1";
     nameservers = [ "100.100.100.100" "8.8.8.8" "8.8.4.4" ];
     firewall = {
-      enable = true;
-      trustedInterfaces = ["enp1s0" "tailscale0" ];
-      allowedUDPPorts = [ config.services.tailscale.port ];
-      allowedTCPPorts = [ 22 80 443 ];
+      trustedInterfaces = [ "enp1s0" "tailscale0" ];
+      allowedUDPPorts = [ config.services.tailscale.port 8096 ];
+      allowedTCPPorts = [ 22 80 443 8096 ];
     };
   };
 
-services.resolved = {
-enable = true;
-dnssec = "true";
-domains = ["~."];
-fallbackDns = config.networking.nameservers;
-dnsovertls = "true";
-};
+  services.resolved = {
+    enable = true;
+    dnssec = "true";
+    domains = [ "~." ];
+    fallbackDns = config.networking.nameservers;
+    dnsovertls = "true";
+  };
 }
