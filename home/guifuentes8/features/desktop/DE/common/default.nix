@@ -23,8 +23,8 @@
     pkgs.discord
     pkgs.gimp
     pkgs.onlyoffice-bin
-    #pkgs.slack
     pkgs.warp-terminal
+    pkgs.zoom-us
 
     pkgs.ventoy-bin
     pkgs.appimage-run

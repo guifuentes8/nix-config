@@ -6,8 +6,6 @@ in
 {
   imports = [ ./common/wayland.nix ./common/hyprpaper.nix ];
 
-  stylix.image = lib.mkForce ./Hyprland.png;
-
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
