@@ -4,8 +4,8 @@ in {
   stylix = {
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml";
     cursor = {
-      name = "everforest-cursors";
-      package = everforest-cursors;
+      name = "Breeze_Hacked";
+      package = pkgs.breeze-hacked-cursor-theme;
       size = 32;
     };
     fonts = { };

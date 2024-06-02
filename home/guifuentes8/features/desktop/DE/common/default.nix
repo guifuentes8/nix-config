@@ -45,6 +45,7 @@
 
   ];
 
-  home.file.".local/share/warp-terminal/themes/everforest_hard.yml".source = ./everforest_hard.yml;
+  home.file.".local/share/warp-terminal/themes/tokyo_night_storm.yml".source =
+    ./tokyo_night_storm.yml;
 
 }
