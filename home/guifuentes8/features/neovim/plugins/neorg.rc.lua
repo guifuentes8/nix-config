@@ -55,7 +55,6 @@ require("neorg").setup {
     ["core.summary"] = { config = { strategy = "by_path" } },
     ["core.tangle"] = { config = { report_on_empty = false } },
     ["core.ui"] = {},
-    ["core.ui.calendar"] = {},
   },
 }
 

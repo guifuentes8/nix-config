@@ -1,6 +1,6 @@
 # This file (and the global directory) holds config that i use on all hosts
 { config, lib, inputs, outputs, pkgs, nix-colors, ... }: {
-  imports = [ inputs.home-manager.nixosModules.home-manager  ];
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   services = {
     tailscale.enable = true;
@@ -22,18 +22,19 @@
 
   programs = {
     dconf.enable = true;
-    # nh = {
-    #   enable = true;
-    #   clean = {
-    #     enable = true;
-    #     extraArgs = "--keep-since 4d --keep 3";
-    #   };
-    #   flake = "/home/guifuentes8/nix-config";
-    # };
+    git.enable = true;
+    nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 4d --keep 3";
+      };
+      flake = "/home/guifuentes8/nix-config";
+    };
   };
 
   environment = {
-    systemPackages = [ pkgs.nh pkgs.git ];
+    systemPackages = [ ];
     sessionVariables = {
       FLAKE = "/home/guifuentes8/nix-config";
       XDG_CACHE_HOME = "\${HOME}/.cache";

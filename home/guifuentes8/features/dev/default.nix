@@ -13,7 +13,7 @@ in {
   home.packages = [
     # Extra programs for development
     #dbgate
-    pkgs.firefox-devedition-bin
+    pkgs.zed-editor
     pkgs.insomnia
 
     # Programming languages and dependencies packages 

@@ -2,8 +2,7 @@
 let everforest-cursors = outputs.packages.${pkgs.system}.everforest-cursors;
 in {
   stylix = {
-    base16Scheme =
-      "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml";
     cursor = {
       name = "everforest-cursors";
       package = everforest-cursors;
@@ -17,7 +16,7 @@ in {
       nixvim.enable = false;
       vim.enable = false;
       tmux.enable = true;
-      vscode.enable = true;
+      vscode.enable = false;
     };
   };
 
