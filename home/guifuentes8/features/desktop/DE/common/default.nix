@@ -1,7 +1,7 @@
 { pkgs, unstable, ... }:
 
 {
-  imports = [ ./chromium.nix ./firefox.nix ];
+  imports = [ ./chromium.nix ./firefox.nix ./wezterm.nix ];
 
   programs = { obs-studio.enable = true; };
 

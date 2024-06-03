@@ -2,9 +2,7 @@
 
 {
 
-  services.xserver = {
-    videoDrivers = [ "nvidia" "nomodeset" ];
-  };
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware = {
     opengl = {
@@ -16,13 +14,15 @@
       nvidiaSettings = true;
       modesetting.enable = true;
       powerManagement.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      powerManagement.finegrained = false;
+      package = config.boot.kernelPackages.nvidiaPackages.production;
 
     };
   };
 
   boot = {
-    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ]; # Extra modules in kernel
+    extraModulePackages =
+      [ config.boot.kernelPackages.nvidia_x11 ]; # Extra modules in kernel
   };
 
 }
