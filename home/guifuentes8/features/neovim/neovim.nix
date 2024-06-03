@@ -32,11 +32,11 @@ in
       require 'highlights'
       require 'maps'
     '';
-    extraConfig = "colorscheme everforest";
     plugins = with pkgs.vimPlugins; [
       {
-        plugin = (fromGitHub "ed4ba26c911696d69cfda26014ec740861d324e1" "HEAD"
-          "neanias/everforest-nvim");
+        plugin = tokyonight-nvim;
+        type = "lua";
+        config = builtins.readFile (./plugins/theme.rc.lua);
       }
       {
         plugin = lualine-nvim;
