@@ -15,8 +15,8 @@
     nameservers = [ "100.100.100.100" "8.8.8.8" "8.8.4.4" ];
     firewall = {
       trustedInterfaces = [ "enp1s0" "tailscale0" ];
-      allowedUDPPorts = [ config.services.tailscale.port 8096 ];
-      allowedTCPPorts = [ 22 80 443 8096 ];
+      allowedUDPPorts = [ config.services.tailscale.port 8096 51413 ];
+      allowedTCPPorts = [ 22 80 443 8082 8096 51413 ];
     };
   };
 
