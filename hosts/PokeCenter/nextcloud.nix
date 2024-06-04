@@ -6,8 +6,8 @@
     config = {
       overwriteProtocol = "http";
       defaultPhoneRegion = "BR";
+      trustedProxies = [ "localhost" "127.0.0.1" ];
       extraTrustedDomains = [ "pokecenter" "192.168.0.10" ];
-      trustedProxies = [ ];
       dbtype = "pgsql";
       dbuser = "nextcloud";
       dbname = "nextcloud";
@@ -15,12 +15,12 @@
       adminuser = "admin";
     };
     package = pkgs.nextcloud28; # Need to manually increment with every update
-    hostName = "localhost";
+    hostName = "nextcloud";
     configureRedis = true;
     https = false;
     maxUploadSize = "50G";
     database.createLocally = true;
-    autoUpdateApps.enable = true;
+    autoUpdateApps.enable = false;
     extraAppsEnable = true;
     extraApps = {
       inherit (config.services.nextcloud.package.packages.apps)
