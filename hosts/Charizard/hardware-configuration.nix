@@ -4,53 +4,29 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules =
-    [ "ahci" "xhci_pci" "ehci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "ehci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/a12c1044-1015-484f-8e00-0464c0ea6b27";
-    fsType = "btrfs";
-    options = [ "subvol=@" ];
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/699B-01F8";
-    fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/7c236749-45bc-4002-a44c-67c0629fda9c";
+      fsType = "ext4";
+    };
 
   swapDevices = [ ];
-
-  fileSystems."/run/media/guifuentes8/PokeStorage" = {
-    device = "/dev/disk/by-uuid/c0d80b92-01f8-4298-be55-b1843b8a6506";
-    fsType = "btrfs";
-    options = [
-      # If you don't have this options attribute, it'll default to "defaults"
-      # boot options for fstab. Search up fstab mount options you can use
-      "users" # Allows any user to mount and unmount
-      "nofail" # Prevent system from failing if this drive doesn't mount
-
-    ];
-  };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.virbr0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.vnet0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode =
-    lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
