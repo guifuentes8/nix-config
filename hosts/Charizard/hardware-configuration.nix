@@ -20,6 +20,17 @@
 
   swapDevices = [ ];
 
+   fileSystems."/run/media/guifuentes8/PokeStorage" = {
+   device = "/dev/disk/by-uuid/c0d80b92-01f8-4298-be55-b1843b8a6506";
+   fsType = "btrfs";
+   options = [ # If you don't have this options attribute, it'll default to "defaults" 
+     # boot options for fstab. Search up fstab mount options you can use
+     "users" # Allows any user to mount and unmount
+     "nofail" # Prevent system from failing if this drive doesn't mount
+     
+   ];
+ };
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
