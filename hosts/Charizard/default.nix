@@ -15,7 +15,6 @@
     ../common
 
     # Boot initial (grub or systemd)
-    ../common/boot/systemd-boot.nix
     ../common/hardware/logitech.nix
 
     # Login Manager
@@ -43,6 +42,20 @@
   services.xserver.xkb.layout = "us";
   networking.hostName = "Charizard";
 
+
+  boot.loader = {
+    grub = {
+      enable = true;
+      useOSProber = true;
+      efiSupport = false;
+      efiInstallAsRemovable = false;
+      default = "saved";
+      device = "/dev/nvme0n1";
+    };
+    efi = {
+      canTouchEfiVariables = false;
+    };
+  };
 
 
 }
