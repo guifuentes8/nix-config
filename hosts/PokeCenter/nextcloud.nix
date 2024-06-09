@@ -70,6 +70,13 @@
           "https://github.com/te-online/timemanager/archive/refs/tags/v0.3.14.tar.gz";
         license = "gpl3";
       };
+      user_migration = pkgs.fetchNextcloudApp {
+        sha256 = "sha256-ND3c86OE7An5qo6F/p9Bl9isJNAjY0FsfZMp3lvVY/A=";
+        url =
+          "https://github.com/nextcloud-releases/user_migration/releases/download/v5.0.0/user_migration-v5.0.0.tar.gz";
+        license = "gpl3";
+      };
+
     };
     extraOptions.enabledPreviewProviders = [
       "OC\\Preview\\BMP"

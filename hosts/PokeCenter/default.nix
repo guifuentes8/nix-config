@@ -8,6 +8,7 @@
     ../common/users/guifuentes8.nix
 
     ./homepage-dashboard.nix
+    ./borg.nix
     ./transmission.nix
     ./jellyfin.nix
     ./networking.nix
@@ -18,6 +19,6 @@
 
   networking.hostName = "PokeCenter"; # Define your hostname.
   services.getty.autologinUser = "guifuentes8";
-
+  environment.systemPackages = with pkgs; [ ];
   services.openssh.enable = true;
 }
