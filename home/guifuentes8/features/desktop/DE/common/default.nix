@@ -13,7 +13,7 @@
     };
     nextcloud-client = {
       enable = true;
-      startInBackground = false;
+      startInBackground = true;
     };
   };
 

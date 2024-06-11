@@ -1,4 +1,4 @@
-{ config,... }: {
+{ config, ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
@@ -18,10 +18,11 @@
     ../common/hardware/logitech.nix
 
     # Login Manager
-    ../common/login/sddm.nix
+    ../common/login/gdm.nix
 
     # Choice Interface (WM and/or DE)
     ../common/interfaces/DE/kde.nix
+    ../common/interfaces/WM/hyprland.nix
 
     # Active services
     ../common/services/flatpak.nix
@@ -42,7 +43,6 @@
   services.xserver.xkb.layout = "us";
   networking.hostName = "Charizard";
 
-
   boot.loader = {
     grub = {
       enable = true;
@@ -52,10 +52,7 @@
       default = "saved";
       device = "/dev/nvme0n1";
     };
-    efi = {
-      canTouchEfiVariables = false;
-    };
+    efi = { canTouchEfiVariables = false; };
   };
-
 
 }

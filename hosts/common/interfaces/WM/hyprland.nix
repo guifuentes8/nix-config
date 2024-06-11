@@ -3,8 +3,6 @@
   imports = [ ./common ];
   programs.hyprland.enable = true;
 
-  services.gnome.gnome-keyring.enable = true;
-
   nix.settings = {
     substituters = [ "https://hyprland.cachix.org" ];
     trusted-public-keys =

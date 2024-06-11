@@ -9,6 +9,8 @@
     ./features/dev
     ./features/neovim	
     ./features/desktop/DE/kde.nix
+    ./features/desktop/WM/hyprland.nix
+
     ./features/music
 
     # ./features/video/davinci-resolve

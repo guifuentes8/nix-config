@@ -1,9 +1,10 @@
 { ... }: {
+  security.pam.services.lightdm.enableGnomeKeyring = true;
   services.xserver = {
     enable = true;
     displayManager = {
       lightdm = {
-        background = ./login.jpg;
+        #        background = ./login.jpg;
         enable = true;
         greeters = {
           gtk = {

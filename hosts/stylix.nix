@@ -6,7 +6,7 @@ in {
     cursor = {
       name = "Breeze_Hacked";
       package = pkgs.breeze-hacked-cursor-theme;
-      size = 32;
+      size = 36;
     };
     fonts = { };
     image = ./wallpaper.png;
