@@ -17,6 +17,7 @@ in {
     packages = [ ];
     sessionVariables = { };
   };
+  programs.zsh.initExtraFirst = "cat ${./extras/squirtle.txt}";
 
   programs.zsh.shellAliases = {
     adb =

@@ -1,7 +1,6 @@
-{ pkgs, outputs, ... }: 
+{ pkgs, outputs, ... }:
 let pokeget-plus = outputs.packages.${pkgs.system}.pokeget-plus;
-in
-{
+in {
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.age
@@ -12,8 +11,6 @@ in
     pkgs.nvd
     pkgs.nixpkgs-fmt
 
-    # zsh
-    pokeget-plus
   ];
 
   programs = {

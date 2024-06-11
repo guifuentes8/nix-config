@@ -28,7 +28,6 @@
   inputs = {
     # Nix required
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    # nixpkgs-pkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-wsl.url = "github:nix-community/NixOS-WSL";
@@ -58,23 +57,17 @@
   outputs =
     { self
     , nixpkgs
-      #, nixpkgs-unstable
     , nix-darwin
     , home-manager
     , sops-nix
     , nix-colors
     , stylix
-    , neorg-overlay
     , ...
     }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
-      #unstable = import nixpkgs-unstable {
-      #  system = "x86_64-linux";
-      #  config.allowUnfree = true;
-      #};
 
     in
     {
@@ -127,7 +120,7 @@
           ./hosts/Charizard
         ];
       };
-      #                                PIKACHU (Main laptop, transport and beautiful friend)
+      #                                PIKACHU (Main laptop, transport && mobile and beautiful friend)
 
       #                      ⠸⣷⣦⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⠀⠀⠀
       #                      ⠀⠙⣿⡄⠈⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠔⠊⠉⣿⡿⠁⠀⠀⠀
@@ -159,7 +152,7 @@
           ./hosts/Pikachu
         ];
       };
-      #                               SQUIRTLE (Windows WSL, WTF)
+      #                               SQUIRTLE (Windows WSL, WTF, Squad)
 
       #                       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       #                       ⠀⠀⠀⠀⠀⠀⣴⡎⠠⠊⠀⠠⠚⢿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -187,7 +180,7 @@
         specialArgs = { inherit inputs outputs nix-colors; };
         modules = [ sops-nix.nixosModules.sops ./hosts/Squirtle ];
       };
-      #                         Magikarp (Old laptop like a Magikarp ;D)
+      #                         Magikarp (Old laptop like a Magikarp power ;D)
 
       #               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡶⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       #               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⣠⡞⠁⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -216,7 +209,7 @@
         specialArgs = { inherit inputs outputs nix-colors; };
         modules = [ sops-nix.nixosModules.sops ./hosts/Magikarp ];
       };
-      #                           POKECENTER (Homelab nextcloud server)
+      #                           POKECENTER (Homelab nextcloud server and much more)
 
       #                   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       #                   ⠀⠀⠀⠀⠀⠀⣀⣴⡶⠿⠛⠛⠛⠛⠛⠛⠻⠷⣦⣄⡀⠀⠀⠀⠀⠀

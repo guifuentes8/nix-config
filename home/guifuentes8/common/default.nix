@@ -1,6 +1,6 @@
 { lib, pkgs, config, outputs, ... }: {
 
-  imports = [ ./programs.nix ./systemd.nix ./services.nix  ];
+  imports = [ ./programs.nix ./systemd.nix ./services.nix ];
 
   home = {
     username = "guifuentes8";

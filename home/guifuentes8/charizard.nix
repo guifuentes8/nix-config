@@ -7,7 +7,7 @@
 
     # Others configs
     ./features/dev
-    ./features/neovim	
+    ./features/neovim
     ./features/desktop/DE/kde.nix
     ./features/desktop/WM/hyprland.nix
 
@@ -20,6 +20,6 @@
 
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 
-  programs.zsh.initExtraFirst = ''cat ${./charizard.txt}'';
+  programs.zsh.initExtraFirst = "cat ${./extras/charizard.txt}";
 
 }

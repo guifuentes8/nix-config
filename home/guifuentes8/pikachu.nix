@@ -1,4 +1,4 @@
-{ nix-colors, ... }: {
+{ nix-colors, lib, ... }: {
   imports = [
 
     # Global config (required)
@@ -19,6 +19,10 @@
   ];
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 
-  programs.zsh.initExtraFirst = ''cat ${./pikachu.txt}'';
+  programs.zsh.initExtraFirst = "cat ${./extras/pikachu.txt}";
+  wayland.windowManager.hyprland.settings.input = {
+    kb_layout = "br";
+    kb_variant = "abnt2";
+  };
 
 }
