@@ -1,6 +1,4 @@
-{ pkgs, outputs, ... }:
-let pokeget-plus = outputs.packages.${pkgs.system}.pokeget-plus;
-in {
+{ pkgs, ... }: {
   home.packages = [
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     pkgs.age
