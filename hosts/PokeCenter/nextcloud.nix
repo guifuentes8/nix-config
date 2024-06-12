@@ -14,6 +14,16 @@
       adminpassFile = "/etc/nextcloud-admin-pass";
       adminuser = "admin";
     };
+
+    poolSettings = {
+      pm = "dynamic";
+      "pm.max_children" = "250";
+      "pm.max_spare_servers" = "96";
+      "pm.min_spare_servers" = "48";
+      "pm.start_servers" = "96";
+      "pm.process_idle_timeout" = "10s";
+    };
+    extraOptions = { };
     package = pkgs.nextcloud28; # Need to manually increment with every update
     hostName = "nextcloud";
     configureRedis = true;
@@ -45,13 +55,18 @@
           "https://github.com/jgraph/drawio-nextcloud/releases/download/v3.0.2/drawio-v3.0.2.tar.gz";
         license = "gpl3";
       };
+      integration_excalidraw = pkgs.fetchNextcloudApp {
+        sha256 = "sha256-NZGu6+KxeXQP23brkpkUbrzglDAy1P9dyQEAf7muwKE";
+        url =
+          "https://github.com/nextcloud-releases/integration_excalidraw/releases/download/v2.1.0/integration_excalidraw-v2.1.0.tar.gz";
+        license = "gpl3";
+      };
       news = pkgs.fetchNextcloudApp {
         sha256 = "sha256-zQOtIcUxa/IRhQLYoJYe5dRqx/Gac2/qCUdY2aZ5EU4=";
         url =
           "https://github.com/nextcloud/news/releases/download/25.0.0-alpha6/news.tar.gz";
         license = "gpl3";
       };
-
       phonetrack = pkgs.fetchNextcloudApp {
         sha256 = "sha256-V92f+FiS5vZEkq15A51pHoDpUOBfUOEVIcsXdP/rSMQ=";
         url =
