@@ -1,4 +1,4 @@
-{ outputs, pkgs, lib, config, nix-colors, ... }:
+{ outputs, pkgs, lib, config, ... }:
 let waylandArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
 
 in {

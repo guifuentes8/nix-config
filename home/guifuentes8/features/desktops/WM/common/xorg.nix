@@ -1,12 +1,6 @@
 { pkgs, ... }: {
-  imports = [
-    ./kitty.nix
-    ./picom.nix
-    ./polybar.nix
-    ./i3lock.nix
-    ./sxhkd.nix
-    ../common
-  ];
+  imports =
+    [ ./default.nix ./picom.nix ./polybar.nix ./i3lock.nix ./sxhkd.nix ];
 
   services = { flameshot.enable = true; };
 

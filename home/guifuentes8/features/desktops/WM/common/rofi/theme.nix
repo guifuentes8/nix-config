@@ -18,7 +18,7 @@ in {
 
   "configuration" = {
     modi = "run,drun,window";
-    #   icon-theme = configOptions.styles.icon.name;
+    icon-theme = config.gtk.iconTheme.name;
     show-icons = true;
     drun-display-format = "{icon} {name}";
     location = 0;

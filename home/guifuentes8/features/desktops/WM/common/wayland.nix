@@ -1,5 +1,5 @@
-{ unstable, pkgs, ... }: {
-  imports = [ ../common ./foot.nix ./waybar.nix ];
+{ pkgs, ... }: {
+  imports = [ ./default.nix ./waybar.nix ];
 
   home.packages = with pkgs; [
     grim

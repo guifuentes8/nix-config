@@ -1,19 +1,29 @@
-{ lib, config, pkgs, ... }:
+{ lib, inputs, pkgs, ... }:
 let
-  cw = ./cw.sh;
-  term = "footclient";
+  cw = ./scripts/cw.sh;
+  term = "kitty";
   startupScript = pkgs.writeShellScriptBin "start" ''
     swww-daemon & 
     wl-clipboard-history -t &
     dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
     systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
-
   '';
 in
 {
-  imports = [ ./common/wayland.nix ];
+  imports = [
+
+    inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
+
+    ../../browsers/chromium.nix
+    ../../browsers/qutebrowser.nix
+    ../../terminals/kitty.nix
+    ../../cli
+    ../../programs
+    ../../services
+    ./common/wayland.nix
+  ];
+  #programs.hyprcursor-phinger.enable = true;
   services.gnome-keyring.enable = true;
-  #services.hyprpaper.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
@@ -42,8 +52,8 @@ in
         "col.shadow" = lib.mkDefault "rgba(1a1a1aee)";
         blur = {
           enabled = true;
-          size = 3;
-          passes = 1;
+          size = 4;
+          passes = 2;
           vibrancy = 0.1696;
         };
       };

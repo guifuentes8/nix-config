@@ -43,7 +43,6 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-colors.url = "github:misterio77/nix-colors";
     # darkmatter-grub-theme.url = "gitlab:VandalByte/darkmatter-grub-theme";
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -52,18 +51,12 @@
 
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
+    hyprcursor-phinger.url = "github:jappie3/hyprcursor-phinger";
+
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , nix-darwin
-    , home-manager
-    , sops-nix
-    , nix-colors
-    , stylix
-    , ...
-    }@inputs:
+    { self, nixpkgs, nix-darwin, home-manager, sops-nix, stylix, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
@@ -106,7 +99,7 @@
       homeConfigurations."guifuentes8@Charizard" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit nix-colors inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             stylix.homeManagerModules.stylix
             ./home/guifuentes8/charizard.nix
@@ -140,7 +133,7 @@
       homeConfigurations."guifuentes8@Pikachu" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit nix-colors inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules =
             [ stylix.homeManagerModules.stylix ./home/guifuentes8/pikachu.nix ];
         };
@@ -172,12 +165,12 @@
       homeConfigurations."guifuentes8@Squirtle" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit nix-colors inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/guifuentes8/squirtle.nix ];
         };
 
       nixosConfigurations.Squirtle = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs nix-colors; };
+        specialArgs = { inherit inputs outputs; };
         modules = [ sops-nix.nixosModules.sops ./hosts/Squirtle ];
       };
       #                         Magikarp (Old laptop like a Magikarp power ;D)
@@ -202,11 +195,11 @@
       homeConfigurations."guifuentes8@Magikarp" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit nix-colors inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/guifuentes8/magikarp.nix ];
         };
       nixosConfigurations.Magikarp = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs nix-colors; };
+        specialArgs = { inherit inputs outputs; };
         modules = [ sops-nix.nixosModules.sops ./hosts/Magikarp ];
       };
       #                           POKECENTER (Homelab nextcloud server and much more)
@@ -228,11 +221,11 @@
       homeConfigurations."guifuentes8@PokeCenter" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit nix-colors inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/guifuentes8/pokecenter.nix ];
         };
       nixosConfigurations.PokeCenter = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs nix-colors; };
+        specialArgs = { inherit inputs outputs; };
         modules = [ sops-nix.nixosModules.sops ./hosts/PokeCenter ];
       };
       #                               MEW (Apple macOs)

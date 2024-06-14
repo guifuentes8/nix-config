@@ -1,5 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
 
+  imports = [ ./cava.nix ];
   programs = {
     bat = {
       enable = true;
@@ -12,6 +13,11 @@
     feh.enable = true;
     jq.enable = true;
     lsd.enable = true;
+    ncmpcpp = {
+      package = pkgs.ncmpcpp.override { visualizerSupport = true; };
+      enable = true;
+      mpdMusicDir = "${config.home.homeDirectory}/Nextcloud/Music";
+    };
     rtorrent.enable = true;
     translate-shell.enable = true;
     yt-dlp.enable = true;
@@ -27,6 +33,7 @@
 
   home.packages = with pkgs; [
     cmatrix # matrix
+    cava # audio visualizer
     dipc # palette wallpaper converter
     devour # hide terminal
     epr # E-pub reader

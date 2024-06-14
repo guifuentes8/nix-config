@@ -2,20 +2,15 @@
   imports = [
 
     # Global config (required)
-    ./common
+    ./global
 
-    ./features/cli
     ./features/dev
-    ./features/music
     ./features/neovim
-    ./features/desktop/WM/hyprland.nix
-    # ./features/video/davinci-resolve
-
-    ./stylix.nix
+    ./features/desktops/WM/hyprland.nix
 
   ];
 
-  programs.zsh.initExtraFirst = "cat ${./extras/pikachu.txt}";
+  programs.zsh.initExtraFirst = "cat ${./global/extras/pikachu.txt}";
 
   # Keyboard
   wayland.windowManager.hyprland.settings.input = {

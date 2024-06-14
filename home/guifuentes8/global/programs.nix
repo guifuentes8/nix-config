@@ -1,15 +1,6 @@
 { pkgs, ... }: {
-  home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    pkgs.age
-
-    # Nix pkgs required
-    pkgs.nh
-    pkgs.nix-output-monitor
-    pkgs.nvd
-    pkgs.nixpkgs-fmt
-
-  ];
+  home.packages =
+    [ pkgs.age pkgs.nh pkgs.nix-output-monitor pkgs.nvd pkgs.nixpkgs-fmt ];
 
   programs = {
     gh = {

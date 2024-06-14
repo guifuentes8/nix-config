@@ -18,8 +18,6 @@
     ./stylix.nix
   ];
 
-  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
-
   programs.zsh.initExtraFirst = "cat ${./extras/charizard.txt}";
 
 }

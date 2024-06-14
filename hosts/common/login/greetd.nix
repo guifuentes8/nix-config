@@ -4,7 +4,7 @@
   security.pam.services.greetd.enableGnomeKeyring = true;
 
   services.greetd = {
-    vt = 1;
+    vt = 2;
     enable = true;
     settings = {
       default_session = {

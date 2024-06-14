@@ -2,6 +2,7 @@
   programs.chromium = {
     enable = true;
     package = pkgs.chromium;
+    commandLineArgs = [ "--no-default-browser-check" ];
     extensions = [
       { id = "gphhapmejobijbbhgpjhcjognlahblep"; } # gnomeExtensions
       { id = "fmkadmapgofadopljbjfkapdkoienihi"; } # reactDevTools

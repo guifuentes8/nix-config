@@ -1,5 +1,6 @@
 { inputs, ... }: {
   neorg = inputs.neorg-overlay.overlays.default;
+
   modifications = final: prev: {
     nchat = prev.nchat.overrideAttrs (old: rec {
       version = "4.41";
