@@ -2,10 +2,10 @@
   imports = [
 
     # Global config (required)
-    ./common
+    ./global
     ./features/neovim
   ];
-  programs.zsh.initExtraFirst = "cat ${./extras/pokecenter.txt}";
+  programs.zsh.initExtraFirst = "cat ${./global/extras/pokecenter.txt}";
 
 }
 

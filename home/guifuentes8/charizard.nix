@@ -1,23 +1,15 @@
-{ nix-colors, ... }: {
+{ ... }: {
   imports = [
-    nix-colors.homeManagerModules.default
-
     # Global config (required)
-    ./common
+    ./global
 
     # Others configs
     ./features/dev
     ./features/neovim
-    ./features/desktop/DE/kde.nix
-    ./features/desktop/WM/hyprland.nix
+    ./features/desktops/DE/kde.nix
 
-    ./features/music
-
-    # ./features/video/davinci-resolve
-
-    ./stylix.nix
   ];
 
-  programs.zsh.initExtraFirst = "cat ${./extras/charizard.txt}";
+  programs.zsh.initExtraFirst = "cat ${./global/extras/charizard.txt}";
 
 }

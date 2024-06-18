@@ -18,11 +18,10 @@
     ../common/hardware/logitech.nix
 
     # Login Manager
-    ../common/login/gdm.nix
+    ../common/login/sddm.nix
 
     # Choice Interface (WM and/or DE)
     ../common/interfaces/DE/kde.nix
-    ../common/interfaces/WM/hyprland.nix
 
     # Active services
     ../common/services/flatpak.nix
