@@ -24,13 +24,16 @@
     rofi-pulse-select
     rofi-systemd
     rofi-rbw
+    bitwarden-cli
   ];
 
   programs.rbw = {
     enable = true;
     settings = {
-      email = "guifuentes8@gmail.com";
       pinentry = pkgs.pinentry-gnome3;
+      base_url = "https://vault.bitwarden.com";
+      identity_url = "https://identity.bitwarden.com";
+      email = "guifuentes8@gmail.com";
     };
   };
 
