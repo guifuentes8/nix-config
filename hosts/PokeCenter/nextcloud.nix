@@ -55,12 +55,19 @@
           "https://github.com/jgraph/drawio-nextcloud/releases/download/v3.0.2/drawio-v3.0.2.tar.gz";
         license = "gpl3";
       };
-      integration_excalidraw = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-NZGu6+KxeXQP23brkpkUbrzglDAy1P9dyQEAf7muwKE";
+      health = pkgs.fetchNextcloudApp {
+        sha256 = "sha256-yLH5EpFKL3pto/4kVo9DKnvog8+x9XFXLChpFKqQU1M=";
         url =
-          "https://github.com/nextcloud-releases/integration_excalidraw/releases/download/v2.1.0/integration_excalidraw-v2.1.0.tar.gz";
+          "https://github.com/nextcloud/health/releases/download/v2.2.2/health.tar.gz";
         license = "gpl3";
       };
+      thesearchpage = pkgs.fetchNextcloudApp {
+        sha256 = "sha256-+SiPBJ+meG2Fuj0UoFS9PMDJArCKE6q0IXhHOFSTPg0=";
+        url =
+          "https://github.com/callmemagnus/nextcloud-searchpage/releases/download/v1.2.7/thesearchpage.tar.gz";
+        license = "gpl3";
+      };
+
       news = pkgs.fetchNextcloudApp {
         sha256 = "sha256-zQOtIcUxa/IRhQLYoJYe5dRqx/Gac2/qCUdY2aZ5EU4=";
         url =
@@ -85,13 +92,18 @@
           "https://github.com/te-online/timemanager/archive/refs/tags/v0.3.14.tar.gz";
         license = "gpl3";
       };
-      user_migration = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-ND3c86OE7An5qo6F/p9Bl9isJNAjY0FsfZMp3lvVY/A=";
+      integration_collaboard = pkgs.fetchNextcloudApp {
+        sha256 = "sha256-FIHEzq1Q+/45QcARRpJDAwjO0DQLACtqWZ2S7SbUr+k=";
         url =
-          "https://github.com/nextcloud-releases/user_migration/releases/download/v5.0.0/user_migration-v5.0.0.tar.gz";
+          "https://github.com/nextcloud-releases/integration_collaboard/releases/download/v1.0.6/integration_collaboard-v1.0.6.tar.gz";
         license = "gpl3";
       };
-
+      integration_excalidraw = pkgs.fetchNextcloudApp {
+        sha256 = "sha256-NZGu6+KxeXQP23brkpkUbrzglDAy1P9dyQEAf7muwKE";
+        url =
+          "https://github.com/nextcloud-releases/integration_excalidraw/releases/download/v2.1.0/integration_excalidraw-v2.1.0.tar.gz";
+        license = "gpl3";
+      };
     };
     extraOptions.enabledPreviewProviders = [
       "OC\\Preview\\BMP"
