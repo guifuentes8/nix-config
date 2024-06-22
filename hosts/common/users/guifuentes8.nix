@@ -13,6 +13,7 @@
       "input"
       "vboxusers"
       "nextcloud"
+      "vaultwarden"
       "storage"
       "libvirtd"
     ];

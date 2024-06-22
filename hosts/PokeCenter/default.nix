@@ -6,14 +6,19 @@
     ../common
     ../common/boot/systemd-boot.nix
     ../common/users/guifuentes8.nix
+    ../common/interfaces/DE/xfce.nix
 
-    ./borg.nix
+    # services
     ./homepage-dashboard.nix
     ./jellyfin.nix
-    ./networking.nix
     ./nextcloud.nix
-    ./postgres.nix
     ./transmission.nix
+
+    # Extra config
+    ./borg.nix
+    ./nginx.nix
+    ./networking.nix
+    ./postgres.nix
     ./tailscale.nix
   ];
 

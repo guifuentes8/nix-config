@@ -15,7 +15,8 @@
       rpc-bind-address = "0.0.0.0"; # Bind to own IP
       rpc-whitelist =
         "127.0.0.1,192.168.*,100.*.*.*"; # Whitelist your remote machine (10.0.0.1 in this example)
-      download-dir = "/var/lib/nextcloud/data/guifuentes8/files/Torrents";
+      download-dir =
+        "/run/media/guifuentes8/pokestorage/nextcloud/data/guifuentes8/files/Torrents";
       ratio-limit = 0;
       ratio-limit-enabled = true;
     };

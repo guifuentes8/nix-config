@@ -13,5 +13,9 @@
       host all       all     ::1/128        trust
     '';
   };
+  systemd.services."nextcloud-setup" = {
+    requires = [ "postgresql.service" ];
+    after = [ "postgresql.service" ];
+  };
 
 }
