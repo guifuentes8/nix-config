@@ -196,7 +196,8 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/guifuentes8/magikarp.nix ];
+          modules = [ stylix.homeManagerModules.stylix
+./home/guifuentes8/magikarp.nix ];
         };
       nixosConfigurations.Magikarp = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
@@ -222,7 +223,8 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/guifuentes8/pokecenter.nix ];
+          modules = [ stylix.homeManagerModules.stylix
+./home/guifuentes8/pokecenter.nix ];
         };
       nixosConfigurations.PokeCenter = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };

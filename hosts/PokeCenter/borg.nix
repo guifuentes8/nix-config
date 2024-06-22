@@ -1,9 +1,9 @@
 { pkgs, ... }: {
   services.borgbackup.jobs.borg-nextcloud = {
-    paths = "/var/lib/nextcloud/data/guifuentes8/files";
+    paths = "/run/media/guifuentes8/pokestorage/nextcloud/";
     encryption.mode = "none";
     environment.BORG_RSH = "ssh -i /home/guifuentes8/.ssh/id_ed25519";
-    repo = "/home/guifuentes8/Backup";
+    repo = "/run/media/guifuentes8/backup_files/nextcloud/";
     compression = "auto,zstd";
     startAt = "daily";
   };

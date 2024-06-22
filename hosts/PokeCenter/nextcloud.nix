@@ -14,17 +14,19 @@
       adminpassFile = "/etc/nextcloud-admin-pass";
       adminuser = "admin";
     };
+    datadir = "/run/media/guifuentes8/pokestorage/nextcloud";
+    home = "/run/media/guifuentes8/pokestorage/nextcloud";
 
     poolSettings = {
       pm = "dynamic";
-      "pm.max_children" = "250";
-      "pm.max_spare_servers" = "96";
-      "pm.min_spare_servers" = "48";
+      "pm.max_children" = "550";
+      "pm.max_spare_servers" = "200";
+      "pm.min_spare_servers" = "96";
       "pm.start_servers" = "96";
-      "pm.process_idle_timeout" = "10s";
+      "pm.process_idle_timeout" = "5s";
     };
     extraOptions = { };
-    package = pkgs.nextcloud28; # Need to manually increment with every update
+    package = pkgs.nextcloud29; # Need to manually increment with every update
     hostName = "nextcloud";
     configureRedis = true;
     https = false;
@@ -125,4 +127,21 @@
     after = [ "postgresql.service" ];
   };
 
+  services.nginx.virtualHosts."nextcloud".listen = [{
+    addr = "127.0.0.1";
+    port = 9000;
+  }];
+  services.nginx.virtualHosts."localhost" = {
+    # enableACME = true;
+    forceSSL = false;
+    locations."/" = {
+      proxyPass = "http://localhost:8080";
+      proxyWebsockets = true; # needed if you need to use WebSocket
+      extraConfig =
+        # required when the target is also TLS server with multiple hosts
+        "proxy_ssl_server_name on;" +
+        # required when the server wants to use HTTP Authentication
+        "proxy_pass_header Authorization;";
+    };
+  };
 }

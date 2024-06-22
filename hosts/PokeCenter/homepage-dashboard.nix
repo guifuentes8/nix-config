@@ -2,13 +2,14 @@
   services.homepage-dashboard = {
     enable = true;
     openFirewall = true;
+    listenPort = 8080;
     settings = { title = "My dashboard"; };
     services = [{
       "Services" = [
         {
           "Nextcloud" = {
             description = "Private cloud";
-            href = "http://pokecenter:80";
+            href = "http://192.168.0.10:9000";
           };
         }
         {
