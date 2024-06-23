@@ -15,7 +15,7 @@
 
     # Extra config
     ./borg.nix
-    # ./console.nix
+    ./console.nix
     ./nginx.nix
     ./networking.nix
     ./postgres.nix
@@ -29,13 +29,15 @@
   environment.systemPackages = [ pkgs.btop ];
 
   fileSystems."/run/media/guifuentes8/pokestorage" = {
-    device = "/dev/disk/by-uuid/e83a84e2-bead-45ee-acd9-d4b8e8183294";
-    fsType = "ext4";
+    device = "/dev/disk/by-uuid/5aec1129-4a4c-4d89-843e-69eec125eb67";
+    fsType = "btrfs";
     options = [ "users" "nofail" ];
   };
   fileSystems."/run/media/guifuentes8/backup_files" = {
     device = "/dev/disk/by-uuid/4e4eb08a-8b04-413c-abf2-ad82258d02c2";
     fsType = "ext4";
+    #    options = [ "users" "nofail" "bind" ];
+
   };
   stylix = {
     enable = true;
