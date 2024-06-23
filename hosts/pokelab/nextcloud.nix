@@ -33,6 +33,7 @@
     maxUploadSize = "50G";
     database.createLocally = true;
     autoUpdateApps.enable = false;
+    appstoreEnable = false;
     extraAppsEnable = true;
     extraApps = {
       inherit (config.services.nextcloud.package.packages.apps)

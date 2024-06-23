@@ -230,7 +230,11 @@
         };
       nixosConfigurations.pokelab = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
-        modules = [ sops-nix.nixosModules.sops ./hosts/pokelab ];
+        modules = [
+          stylix.nixosModules.stylix
+          sops-nix.nixosModules.sops
+          ./hosts/pokelab
+        ];
       };
       #                               MEW (Apple macOs)
 
