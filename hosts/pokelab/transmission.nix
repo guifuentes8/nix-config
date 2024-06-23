@@ -4,7 +4,7 @@
     downloadDirPermissions = "755";
     webHome = pkgs.flood-for-transmission;
     openFirewall = true;
-    user = "guifuentes8";
+    user = "transmission";
     openPeerPorts = true;
     openRPCPort = true; # Open firewall for RPC
     settings = {

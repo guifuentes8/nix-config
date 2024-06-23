@@ -196,8 +196,10 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ stylix.homeManagerModules.stylix
-./home/guifuentes8/magikarp.nix ];
+          modules = [
+            stylix.homeManagerModules.stylix
+            ./home/guifuentes8/magikarp.nix
+          ];
         };
       nixosConfigurations.Magikarp = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
@@ -219,16 +221,16 @@
       #                   ⠀⠀⠀⠈⠻⣦⣄⠀⠀⠈⠻⢷⣦⣤⣶⠿⠋⠀⠀⢀⣤⡾⠋⠀⠀⠀
       #                   ⠀⠀⠀⠀⠀⠈⠛⠷⣦⣤⣀⣀⠀⠀⣀⣀⣠⣤⡶⠟⠋⠀⠀⠀⠀⠀
       #                   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀
-      homeConfigurations."guifuentes8@PokeCenter" =
+      homeConfigurations."guifuentes8@pokelab" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ stylix.homeManagerModules.stylix
-./home/guifuentes8/pokecenter.nix ];
+          modules =
+            [ stylix.homeManagerModules.stylix ./home/guifuentes8/pokelab.nix ];
         };
-      nixosConfigurations.PokeCenter = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.pokelab = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
-        modules = [ sops-nix.nixosModules.sops ./hosts/PokeCenter ];
+        modules = [ sops-nix.nixosModules.sops ./hosts/pokelab ];
       };
       #                               MEW (Apple macOs)
 

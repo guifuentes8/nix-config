@@ -22,7 +22,8 @@
     ./tailscale.nix
   ];
 
-  networking.hostName = "PokeCenter"; # Define your hostname.
+  networking.hostName = "pokelab"; # Define your hostname.
+
   services.getty.autologinUser = "guifuentes8";
   services.openssh.enable = true;
 
