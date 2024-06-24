@@ -1,9 +1,15 @@
 {
 
-  services.nginx.virtualHosts."nextcloud".listen = [{
-    addr = "192.168.0.10";
-    port = 9000;
-  }];
+  services.nginx.virtualHosts."nextcloud".listen = [
+    {
+      addr = "100.70.218.107";
+      port = 9000;
+    }
+    {
+      addr = "192.168.0.10";
+      port = 9000;
+    }
+  ];
 
   services.nginx.virtualHosts."localhost" = {
     # enableACME = true;

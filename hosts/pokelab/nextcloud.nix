@@ -3,49 +3,59 @@
 
   services.nextcloud = {
     enable = true;
+    autoUpdateApps.enable = false;
+    appstoreEnable = false;
+    caching = {
+      memcached = true;
+      redis = true;
+    };
     config = {
       overwriteProtocol = "http";
       defaultPhoneRegion = "BR";
       trustedProxies = [ "localhost" "127.0.0.1" "192.168.0.10" ];
-      extraTrustedDomains = [ "pokecenter" "192.168.0.10" ];
+      extraTrustedDomains = [ "pokelab" "192.168.0.10" "100.70.218.107" ];
       dbtype = "pgsql";
       dbuser = "nextcloud";
       dbname = "nextcloud";
       adminpassFile = "/etc/nextcloud-admin-pass";
       adminuser = "admin";
     };
-    datadir = "/run/media/guifuentes8/pokestorage/nextcloud";
-    home = "/run/media/guifuentes8/pokestorage/nextcloud";
-
+    configureRedis = true;
+    datadir = "/var/pokestorage/nextcloud";
+    database.createLocally = true;
+    extraAppsEnable = true;
+    https = false;
+    hostName = "nextcloud";
+    maxUploadSize = "50G";
+    package = pkgs.nextcloud29; # Need to manually increment with every update
     poolSettings = {
-      pm = "dynamic";
-      "pm.max_children" = "550";
-      "pm.max_spare_servers" = "200";
-      "pm.min_spare_servers" = "96";
-      "pm.start_servers" = "96";
+      pm = "static";
+      "pm.max_children" = "85";
+      "pm.max_requests" = "500";
+      "pm.start_servers" = "256";
+      "pm.max_spare_servers" = "256";
+      "pm.min_spare_servers" = "128";
       "pm.process_idle_timeout" = "5s";
     };
-    extraOptions = { };
-    package = pkgs.nextcloud29; # Need to manually increment with every update
-    hostName = "nextcloud";
-    configureRedis = true;
-    https = false;
-    maxUploadSize = "50G";
-    database.createLocally = true;
-    autoUpdateApps.enable = false;
-    appstoreEnable = false;
-    extraAppsEnable = true;
+    phpOptions = {
+      catch_workers_output = "yes";
+      display_errors = "stderr";
+      error_reporting = "E_ALL & ~E_DEPRECATED & ~E_STRICT";
+      expose_php = "Off";
+      "opcache.enable" = "1";
+      "opcache.fast_shutdown" = "1";
+      "opcache.interned_strings_buffer" = "12";
+      "opcache.max_accelerated_files" = "65406";
+      "opcache.memory_consumption" = "512";
+      "opcache.revalidate_freq" = "1";
+      output_buffering = "0";
+      short_open_tag = "Off";
+    };
     extraApps = {
       inherit (config.services.nextcloud.package.packages.apps)
         bookmarks calendar contacts deck mail maps memories music notes
         onlyoffice tasks;
 
-      cookbook = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-XgBwUr26qW6wvqhrnhhhhcN4wkI+eXDHnNSm1HDbP6M=";
-        url =
-          "https://github.com/nextcloud/cookbook/releases/download/v0.10.2/Cookbook-0.10.2.tar.gz";
-        license = "gpl3";
-      };
       cospend = pkgs.fetchNextcloudApp {
         sha256 = "sha256-QHIxS5uubutiD9Abm/Bzv1RWG7TgL/tvixVdNEzTlxE=";
         url =
@@ -93,12 +103,6 @@
         sha256 = "sha256-ez6MdeK6PfhYLeHPhMDcHdkrO4+2zGs+RNdQtSMdJho=";
         url =
           "https://github.com/te-online/timemanager/archive/refs/tags/v0.3.14.tar.gz";
-        license = "gpl3";
-      };
-      integration_collaboard = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-FIHEzq1Q+/45QcARRpJDAwjO0DQLACtqWZ2S7SbUr+k=";
-        url =
-          "https://github.com/nextcloud-releases/integration_collaboard/releases/download/v1.0.6/integration_collaboard-v1.0.6.tar.gz";
         license = "gpl3";
       };
       integration_excalidraw = pkgs.fetchNextcloudApp {

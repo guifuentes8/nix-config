@@ -28,10 +28,10 @@
   services.openssh.enable = true;
   environment.systemPackages = [ pkgs.btop ];
 
-  fileSystems."/run/media/guifuentes8/pokestorage" = {
+  fileSystems."/var/pokestorage" = {
     device = "/dev/disk/by-uuid/5aec1129-4a4c-4d89-843e-69eec125eb67";
     fsType = "btrfs";
-    options = [ "users" "nofail" ];
+    options = [ "user" "rw" "nofail" ];
   };
   fileSystems."/run/media/guifuentes8/backup_files" = {
     device = "/dev/disk/by-uuid/4e4eb08a-8b04-413c-abf2-ad82258d02c2";
