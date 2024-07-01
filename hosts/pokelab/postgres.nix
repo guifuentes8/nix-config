@@ -17,5 +17,9 @@
     requires = [ "postgresql.service" ];
     after = [ "postgresql.service" ];
   };
+  systemd.services.wiki-js = {
+    requires = [ "postgresql.service" ];
+    after = [ "postgresql.service" ];
+  };
 
 }

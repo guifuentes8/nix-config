@@ -1,7 +1,7 @@
 { config, ... }: {
 
   networking = {
-    search = [ "pokelab" ];
+    hostName = "pokelab"; # Define your hostname.
     defaultGateway = "192.168.0.1";
     interfaces.enp4s0 = {
       useDHCP = false;
@@ -14,16 +14,9 @@
     nameservers = [ "100.100.100.100" "8.8.8.8" "8.8.4.4" ];
     firewall = {
       trustedInterfaces = [ "enp4s0" "tailscale0" ];
-      allowedUDPPorts = [ config.services.tailscale.port 8096 51413 ];
-      allowedTCPPorts = [ 22 80 443 8082 8096 51413 ];
+      allowedUDPPorts = [ config.services.tailscale.port 53 80 443 51413 ];
+      allowedTCPPorts = [ 53 80 443 3000 51413 ];
     };
   };
 
-  services.resolved = {
-    enable = true;
-    dnssec = "true";
-    domains = [ "~." ];
-    fallbackDns = config.networking.nameservers;
-    dnsovertls = "true";
-  };
 }

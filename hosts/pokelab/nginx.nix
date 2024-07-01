@@ -1,27 +1,66 @@
 {
+  services.nginx = {
+    enable = true;
 
-  services.nginx.virtualHosts."nextcloud".listen = [
-    {
-      addr = "100.70.218.107";
-      port = 9000;
-    }
-    {
-      addr = "192.168.0.10";
-      port = 9000;
-    }
-  ];
+    # Use recommended settings
+    recommendedGzipSettings = true;
+    recommendedOptimisation = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
 
-  services.nginx.virtualHosts."localhost" = {
-    # enableACME = true;
-    forceSSL = false;
-    locations."/" = {
-      proxyPass = "http://localhost:8080";
-      proxyWebsockets = true; # needed if you need to use WebSocket
-      extraConfig =
-        # required when the target is also TLS server with multiple hosts
-        "proxy_ssl_server_name on;" +
-        # required when the server wants to use HTTP Authentication
-        "proxy_pass_header Authorization;";
-    };
+    virtualHosts =
+      let
+        base = locations: {
+          inherit locations;
+
+          forceSSL = false;
+          enableACME = false;
+        };
+        proxy = port:
+
+          base {
+            "/" = {
+              proxyWebsockets = true;
+              proxyPass = "http://127.0.0.1:" + toString port + "/";
+            };
+          };
+
+      in
+      {
+        "pokelab.adguard.lan" = proxy 30;
+        "pokelab.vscode.lan" = proxy 2000;
+        "pokelab.gitea.lan" = proxy 3100;
+        "pokelab.nextcloud.lan" = proxy 9000;
+        "pokelab.lan" = proxy 8082 // { default = true; };
+        "pokelab.jellyfin.lan" = proxy 8096;
+        "pokelab.transmission.lan" = proxy 9091;
+
+        "bookstack".listen = [
+          {
+            addr = "100.70.218.107";
+            port = 4000;
+          }
+          {
+            addr = "192.168.0.10";
+            port = 4000;
+          }
+        ];
+
+        "nextcloud".listen = [
+          {
+            addr = "100.70.218.107";
+            port = 9000;
+          }
+          {
+            addr = "192.168.0.10";
+            port = 9000;
+          }
+
+          {
+            addr = "127.0.0.1";
+            port = 9000;
+          }
+        ];
+      };
   };
 }

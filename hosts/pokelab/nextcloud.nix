@@ -12,8 +12,14 @@
     config = {
       overwriteProtocol = "http";
       defaultPhoneRegion = "BR";
-      trustedProxies = [ "localhost" "127.0.0.1" "192.168.0.10" ];
-      extraTrustedDomains = [ "pokelab" "192.168.0.10" "100.70.218.107" ];
+      trustedProxies = [ "pokelab.nextcloud.lan" ];
+      extraTrustedDomains = [
+        "pokelab"
+        "192.168.0.10"
+        "100.70.218.107"
+        "localhost"
+        "pokelab.nextcloud.lan"
+      ];
       dbtype = "pgsql";
       dbuser = "nextcloud";
       dbname = "nextcloud";
@@ -21,7 +27,6 @@
       adminuser = "admin";
     };
     configureRedis = true;
-    datadir = "/var/pokestorage/nextcloud";
     database.createLocally = true;
     extraAppsEnable = true;
     https = false;
@@ -30,11 +35,11 @@
     package = pkgs.nextcloud29; # Need to manually increment with every update
     poolSettings = {
       pm = "static";
-      "pm.max_children" = "85";
-      "pm.max_requests" = "500";
-      "pm.start_servers" = "256";
-      "pm.max_spare_servers" = "256";
-      "pm.min_spare_servers" = "128";
+      "pm.max_children" = "55";
+      "pm.max_requests" = "448";
+      "pm.start_servers" = "192";
+      "pm.max_spare_servers" = "192";
+      "pm.min_spare_servers" = "96";
       "pm.process_idle_timeout" = "5s";
     };
     phpOptions = {

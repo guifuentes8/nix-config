@@ -8,21 +8,23 @@
     ../common/users/guifuentes8.nix
 
     # services
+    ./adguard.nix
+    ./bookstack.nix
+    ./gitea.nix
     ./homepage-dashboard.nix
     ./jellyfin.nix
     ./nextcloud.nix
     ./transmission.nix
+    ./tailscale.nix
+    ./vscode-server.nix
 
     # Extra config
-    ./borg.nix
+    #    ./borg.nix
     ./console.nix
     ./nginx.nix
     ./networking.nix
     ./postgres.nix
-    ./tailscale.nix
   ];
-
-  networking.hostName = "pokelab"; # Define your hostname.
 
   services.getty.autologinUser = "guifuentes8";
   services.openssh.enable = true;
@@ -31,12 +33,12 @@
   fileSystems."/var/pokestorage" = {
     device = "/dev/disk/by-uuid/5aec1129-4a4c-4d89-843e-69eec125eb67";
     fsType = "btrfs";
-    options = [ "user" "rw" "nofail" ];
+    options = [ "users" "rw" "nofail" "noauto" ];
   };
   fileSystems."/run/media/guifuentes8/backup_files" = {
     device = "/dev/disk/by-uuid/4e4eb08a-8b04-413c-abf2-ad82258d02c2";
     fsType = "ext4";
-    #    options = [ "users" "nofail" "bind" ];
+    options = [ "users" "nofail" "noauto" "rw" ];
 
   };
   stylix = {
