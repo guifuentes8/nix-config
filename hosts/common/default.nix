@@ -48,7 +48,7 @@
   };
 
   home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = { inherit inputs outputs nix-colors pkgs; };
+  home-manager.extraSpecialArgs = { inherit inputs outputs pkgs; };
 
   # Network
   networking = {

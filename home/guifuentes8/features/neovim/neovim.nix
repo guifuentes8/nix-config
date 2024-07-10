@@ -1,4 +1,4 @@
-{ lib, pkgs, inputs, ... }:
+{ lib, pkgs, unstable, ... }:
 let
   fromGitHub = rev: ref: repo:
     pkgs.vimUtils.buildVimPlugin {
@@ -15,7 +15,7 @@ in
 {
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-unwrapped;
+    package = unstable.neovim-unwrapped;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
@@ -176,7 +176,7 @@ in
       # Language servers
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted
-      nodePackages.pyright
+      #nodePackages.pyright
       marksman
       tailwindcss-language-server
       lua-language-server

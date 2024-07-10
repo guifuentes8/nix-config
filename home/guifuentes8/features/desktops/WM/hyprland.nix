@@ -14,8 +14,8 @@ in
 
     inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
 
-    ../../browsers/floorp.nix
-    ../../browsers/qutebrowser.nix
+    #../../browsers/floorp.nix
+    #../../browsers/qutebrowser.nix
     ../../terminals/kitty.nix
     ../../cli
     ../../programs
@@ -73,7 +73,7 @@ in
         pseudotile = true;
         preserve_split = true; # You probably want this
       };
-      master = { new_is_master = true; };
+      master = { };
       misc = {
         force_default_wallpaper = 1;
         disable_hyprland_logo = false;
