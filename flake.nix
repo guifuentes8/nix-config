@@ -70,9 +70,7 @@
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
-      # Home Manager Configurations
-
-      #                              CHARIZARD (The big boss PC, dual Xeon processor on fire from home 🐦🔥)
+      #                              CHARIZARD 
 
       #   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⣿⣻⣾⠁⠀⠀⠀⢀⣶⣺⢿⣖⣢⣤⣤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣷⣿⠦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       #   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡤⢖⣾⣽⣾⣾⣿⣿⢾⡀⠀⠀⠀⠘⣿⣻⠻⠿⣶⣬⣽⣲⢿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⣿⣷⣾⣌⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -96,7 +94,8 @@
       #   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠓⢭⣁⡀⠀⣀⣰⣿⣫⣷⣙⢮⡿⠯⠤⠖⠒⠚⠋⠉⠉⠀⠉⠉⠓⠒⢒⣿⡟⣾⣣⣝⣾⡛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       #   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⣿⢴⣯⣿⣽⣾⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⣼⣣⡟⣏⣴⣩⢷⣢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       #   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡧⢚⣇⠜⠛⢼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠓⣽⣗⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-      homeConfigurations."guifuentes8@Charizard" =
+
+      homeConfigurations."guifuentes8@charizard" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
@@ -105,15 +104,15 @@
             ./home/guifuentes8/charizard.nix
           ];
         };
-      nixosConfigurations.Charizard = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.charizard = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
           stylix.nixosModules.stylix
           sops-nix.nixosModules.sops
-          ./hosts/Charizard
+          ./hosts/charizard
         ];
       };
-      #                                PIKACHU (Main laptop, transport && mobile and beautiful friend)
+      #                                PIKACHU 
 
       #                      ⠸⣷⣦⠤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⣤⠀⠀⠀
       #                      ⠀⠙⣿⡄⠈⠑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠔⠊⠉⣿⡿⠁⠀⠀⠀
@@ -130,22 +129,23 @@
       #                      ⠀⠀⠀⢶⣗⠧⡀⢳⠀⠀⠀⠀⢸⣀⣸⠀⠀⠀⢀⡜⠀⣸⢤⣶⠀⠀⠀⠀⠀⠀
       #                      ⠀⠀⠀⠈⠻⣿⣦⣈⣧⡀⠀⠀⢸⣿⣿⠀⠀⢀⣼⡀⣨⣿⡿⠁⠀⠀⠀⠀⠀⠀
       #                      ⠀⠀⠀⠀⠀⠈⠻⠿⠿⠓⠄⠤⠘⠉⠙⠤⢀⠾⠿⣿⠟⠋
-      homeConfigurations."guifuentes8@Pikachu" =
+
+      homeConfigurations."guifuentes8@pikachu" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules =
             [ stylix.homeManagerModules.stylix ./home/guifuentes8/pikachu.nix ];
         };
-      nixosConfigurations.Pikachu = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.pikachu = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
           sops-nix.nixosModules.sops
           stylix.nixosModules.stylix
-          ./hosts/Pikachu
+          ./hosts/pikachu
         ];
       };
-      #                               SQUIRTLE (Windows WSL, WTF, Squad)
+      #                               SQUIRTLE 
 
       #                       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       #                       ⠀⠀⠀⠀⠀⠀⣴⡎⠠⠊⠀⠠⠚⢿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -162,18 +162,18 @@
       #                       ⠀⠀⠀⣼⣿⣿⣿⣿⠋⠙⠛⠻⠷⣄⡀⢀⣰⣿⣿⣿⣿⣿⣿⡿⠛⠀
       #                       ⠀⠀⠀⠉⠹⠛⠋⠁⠀⠀⠀⠀⠀⠿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
       #                       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠉⠁⠉⠀⠀⠀⠀⠀⠀⠀⠀
-      homeConfigurations."guifuentes8@Squirtle" =
+      homeConfigurations."guifuentes8@squirtle" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/guifuentes8/squirtle.nix ];
         };
 
-      nixosConfigurations.Squirtle = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.squirtle = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
-        modules = [ sops-nix.nixosModules.sops ./hosts/Squirtle ];
+        modules = [ sops-nix.nixosModules.sops ./hosts/squirtle ];
       };
-      #                         Magikarp (Old laptop like a Magikarp power ;D)
+      #                         Magikarp 
 
       #               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡶⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       #               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⣠⡞⠁⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -192,7 +192,8 @@
       #               ⠀⠀⢣⢃⠀⠀⠀⣾⢸⣀⣤⡄⠀⢠⣄⡈⢧⠀⠀⠀⠀⠀⠈⠙⠂⠀⠀⠀⠀⠀
       #               ⠀⠀⠀⣼⠀⠀⠀⠀⡆⡇⠀⠙⠳⠏⠈⠙⠛⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       #               ⠀⠀⢀⡟⠀⠀⠀⠀⠈⠮⣢⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-      homeConfigurations."guifuentes8@Magikarp" =
+
+      homeConfigurations."guifuentes8@magikarp" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
@@ -201,42 +202,11 @@
             ./home/guifuentes8/magikarp.nix
           ];
         };
-      nixosConfigurations.Magikarp = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.magikarp = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
-        modules = [ sops-nix.nixosModules.sops ./hosts/Magikarp ];
+        modules = [ sops-nix.nixosModules.sops ./hosts/magikarp ];
       };
-      #                           POKECENTER (Homelab nextcloud server and much more)
-
-      #                   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-      #                   ⠀⠀⠀⠀⠀⠀⣀⣴⡶⠿⠛⠛⠛⠛⠛⠛⠻⠷⣦⣄⡀⠀⠀⠀⠀⠀
-      #                   ⠀⠀⠀⠀⣠⡾⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣦⡀⠀⠀⠀
-      #                   ⠀⠀⢠⣾⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣆⠀⠀
-      #                   ⠀⢠⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣇⠀
-      #                   ⠀⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡄
-      #                   ⢠⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
-      #                   ⠸⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡇
-      #                   ⠀⣿⣿⣦⣀⠀⠀⠀⠀⠀⣠⣴⣶⢶⣦⣤⡀⠀⠀⠀⠀⢀⣠⣾⣿⠇
-      #                   ⠀⠸⣷⡈⠛⠿⣶⣦⣤⣼⠟⡡⠒⠒⢢⠙⣿⣤⣤⣶⠾⠟⠋⣰⡟⠀
-      #                   ⠀⠀⠹⣷⡄⠀⠀⠀⠉⣿⣄⠣⣀⢀⡠⢀⣿⠏⠁⠀⠀⢀⣴⡟⠀⠀
-      #                   ⠀⠀⠀⠈⠻⣦⣄⠀⠀⠈⠻⢷⣦⣤⣶⠿⠋⠀⠀⢀⣤⡾⠋⠀⠀⠀
-      #                   ⠀⠀⠀⠀⠀⠈⠛⠷⣦⣤⣀⣀⠀⠀⣀⣀⣠⣤⡶⠟⠋⠀⠀⠀⠀⠀
-      #                   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀
-      homeConfigurations."guifuentes8@pokelab" =
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules =
-            [ stylix.homeManagerModules.stylix ./home/guifuentes8/pokelab.nix ];
-        };
-      nixosConfigurations.pokelab = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
-        modules = [
-          stylix.nixosModules.stylix
-          sops-nix.nixosModules.sops
-          ./hosts/pokelab
-        ];
-      };
-      #                               MEW (Apple macOs)
+      #                               MEW 
 
       #                     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
       #                     ⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -256,6 +226,39 @@
       darwinConfigurations."Mew" =
         nix-darwin.lib.darwinSystem { modules = [ ./hosts/Mew ]; };
       darwinPackages = self.darwinConfiguration."Mew".pkgs;
+
+      #                           POKECENTER (Homelab server)
+
+      #                   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+      #                   ⠀⠀⠀⠀⠀⠀⣀⣴⡶⠿⠛⠛⠛⠛⠛⠛⠻⠷⣦⣄⡀⠀⠀⠀⠀⠀
+      #                   ⠀⠀⠀⠀⣠⡾⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣦⡀⠀⠀⠀
+      #                   ⠀⠀⢠⣾⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣆⠀⠀
+      #                   ⠀⢠⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣇⠀
+      #                   ⠀⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡄
+      #                   ⢠⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+      #                   ⠸⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡇
+      #                   ⠀⣿⣿⣦⣀⠀⠀⠀⠀⠀⣠⣴⣶⢶⣦⣤⡀⠀⠀⠀⠀⢀⣠⣾⣿⠇
+      #                   ⠀⠸⣷⡈⠛⠿⣶⣦⣤⣼⠟⡡⠒⠒⢢⠙⣿⣤⣤⣶⠾⠟⠋⣰⡟⠀
+      #                   ⠀⠀⠹⣷⡄⠀⠀⠀⠉⣿⣄⠣⣀⢀⡠⢀⣿⠏⠁⠀⠀⢀⣴⡟⠀⠀
+      #                   ⠀⠀⠀⠈⠻⣦⣄⠀⠀⠈⠻⢷⣦⣤⣶⠿⠋⠀⠀⢀⣤⡾⠋⠀⠀⠀
+      #                   ⠀⠀⠀⠀⠀⠈⠛⠷⣦⣤⣀⣀⠀⠀⣀⣀⣠⣤⡶⠟⠋⠀⠀⠀⠀⠀
+      #                   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀
+
+      homeConfigurations."guifuentes8@pokelab" =
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules =
+            [ stylix.homeManagerModules.stylix ./home/guifuentes8/pokelab.nix ];
+        };
+      nixosConfigurations.pokelab = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs outputs; };
+        modules = [
+          stylix.nixosModules.stylix
+          sops-nix.nixosModules.sops
+          ./hosts/pokelab
+        ];
+      };
 
     };
 }

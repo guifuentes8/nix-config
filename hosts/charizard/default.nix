@@ -37,7 +37,7 @@
   # Custom config
   console.keyMap = "us";
   services.xserver.xkb.layout = "us";
-  networking.hostName = "Charizard";
+  networking.hostName = "charizard";
 
   boot.loader = {
     grub = {

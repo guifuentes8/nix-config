@@ -14,7 +14,7 @@ in
 
     inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
 
-    ../../browsers/chromium.nix
+    ../../browsers/floorp.nix
     ../../browsers/qutebrowser.nix
     ../../terminals/kitty.nix
     ../../cli
