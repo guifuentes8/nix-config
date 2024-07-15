@@ -46,7 +46,7 @@
     };
     # darkmatter-grub-theme.url = "gitlab:VandalByte/darkmatter-grub-theme";
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/nixos-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -56,8 +56,16 @@
 
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager, nixpkgs-unstable
-    , sops-nix, stylix, ... }@inputs:
+  outputs =
+    { self
+    , nixpkgs
+    , nix-darwin
+    , home-manager
+    , nixpkgs-unstable
+    , sops-nix
+    , stylix
+    , ...
+    }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
@@ -67,7 +75,8 @@
         config.allowUnfree = true;
       };
 
-    in {
+    in
+    {
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
       overlays = import ./overlays { inherit inputs outputs; };

@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [
     ./common
-    ../../browsers/firefox.nix
-    ../../terminals/kitty.nix
+    ../../browsers/floorp.nix
+    ../../terminals/alacritty.nix
     ../../cli
     ../../programs
     ../../services

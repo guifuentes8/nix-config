@@ -34,7 +34,7 @@ in
     '';
     plugins = with pkgs.vimPlugins; [
       {
-        plugin = tokyonight-nvim;
+        plugin = catppuccin-nvim;
         type = "lua";
         config = builtins.readFile (./plugins/theme.rc.lua);
       }

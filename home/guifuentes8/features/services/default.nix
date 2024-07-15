@@ -11,7 +11,7 @@
         }
       '';
     };
-    #caffeine.enable = true;
+    caffeine.enable = true;
     kdeconnect = {
       enable = true;
       indicator = true;

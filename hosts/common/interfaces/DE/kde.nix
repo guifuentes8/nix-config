@@ -2,12 +2,12 @@
 
 {
   imports = [ ];
-  services.xserver = {
-    enable = true;
-    desktopManager.plasma6 = { enable = true; };
-  };
 
-  services.xserver.displayManager.defaultSession = "plasma";
+  services = {
+    xserver.enable = true;
+    desktopManager.plasma6 = { enable = true; };
+    displayManager.defaultSession = "plasma";
+  };
 
   programs.dconf.enable = true;
   programs.partition-manager.enable = true;

@@ -1,17 +1,4 @@
-{ pkgs, inputs, lib, ... }:
-let
-  fromGitHub = rev: ref: repo:
-    pkgs.vimUtils.buildVimPlugin {
-      pname = "${lib.strings.sanitizeDerivationName repo}";
-      version = ref;
-      src = builtins.fetchGit {
-        url = "https://github.com/${repo}.git";
-        ref = ref;
-        rev = rev;
-      };
-    };
-in
-{
+{ pkgs, unstable, inputs, lib, ... }: {
   imports = [ inputs.nixvim.homeManagerModules.nixvim ];
 
   programs.nixvim = {
@@ -82,7 +69,6 @@ in
       wrap = true;
     };
 
-
     plugins = {
       bufferline.enable = true;
       conform-nvim.enable = true;
@@ -131,10 +117,13 @@ in
       telescope-file-browser-nvim
 
     ];
-    colorschemes.tokyonight.enable = true;
+    colorschemes = {
+      catppuccin = {
+        enable = true;
+         settings = { flavour = "mocha"; };
+      };
+    };
   };
-
-
 
   xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;
   xdg.configFile."nvim/lua/highlights.lua".source = ./highlights.lua;

@@ -1,6 +1,5 @@
-{ pkgs, unstable, lib, ... }:
-let cursorName = "Catppuccin-Mocha-Dark-Cursors";
-in {
+{ pkgs, unstable, ... }: {
+
   stylix = {
     enable = true;
     autoEnable = true;
@@ -8,7 +7,7 @@ in {
     base16Scheme =
       "${unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     cursor = {
-      name = cursorName;
+      name = "Catppuccin-Mocha-Dark-Cursors";
       package = pkgs.catppuccin-cursors;
       size = 32;
     };
@@ -24,26 +23,7 @@ in {
       desktop = 0.8;
     };
     override = { };
-    image = ./extras/wallpaper.png;
-    targets = {
-      nixvim.enable = false;
-      vim.enable = false;
-      vscode.enable = false;
-    };
-  };
-
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = lib.mkForce "Papirus-Dark";
-      package = lib.mkForce pkgs.catppuccin-papirus-folders;
-    };
-  };
-
-  home.sessionVariables = {
-    XCURSOR_THEME = cursorName;
-    XCURSOR_SIZE = "30";
+    targets = { nixvim.enable = false; };
   };
 
 }
-
