@@ -1,7 +1,7 @@
 { lib, inputs, pkgs, ... }:
 let
   cw = ./scripts/cw.sh;
-  term = "kitty";
+  term = "footclient";
   startupScript = pkgs.writeShellScriptBin "start" ''
     swww-daemon & 
     wl-clipboard-history -t &
@@ -14,9 +14,8 @@ in
 
     inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
 
-    #../../browsers/floorp.nix
-    #../../browsers/qutebrowser.nix
-    ../../terminals/kitty.nix
+    ../../browsers/qutebrowser.nix
+    ../../terminals/foot.nix
     ../../cli
     ../../programs
     ../../services

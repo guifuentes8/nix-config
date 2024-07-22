@@ -24,7 +24,6 @@ in {
       desktop = 0.8;
     };
     override = { };
-    image = ./extras/wallpaper.png;
     targets = {
       nixvim.enable = false;
       vim.enable = false;

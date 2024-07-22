@@ -1,7 +1,7 @@
 { unstable, pkgs, config, ... }: {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar;
+    package = unstable.waybar;
     systemd.enable = true;
     settings = [
       {

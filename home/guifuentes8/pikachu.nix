@@ -18,4 +18,6 @@
     kb_variant = "abnt2";
   };
 
+  stylix.image = ./global/extras/pikachu.jpg;
+
 }
