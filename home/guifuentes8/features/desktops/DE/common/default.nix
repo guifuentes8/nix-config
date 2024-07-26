@@ -1,8 +1,8 @@
-{ pkgs, ... }:
-
-{
-
-  home.packages =
-    [ pkgs.bitwarden pkgs.gnome-epub-thumbnailer pkgs.fontpreview ];
-
+{ pkgs, ... }: {
+  home.packages = [
+    pkgs.ytdownloader
+    pkgs.bitwarden
+    pkgs.gnome-epub-thumbnailer
+    pkgs.fontpreview
+  ];
 }

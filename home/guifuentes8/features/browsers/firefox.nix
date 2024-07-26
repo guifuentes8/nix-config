@@ -18,17 +18,19 @@
       #  ];
     };
   };
- xdg.mimeApps = {
+  xdg.mimeApps = {
     enable = true;
-    defaultApplications = let
-   urls = [
-        "text/html"
-        "x-scheme-handler/http"
-        "x-scheme-handler/https"
-        "x-scheme-handler/about"
-        "x-scheme-handler/unknown"
-      ]; in 
-   
-     (lib.genAttrs urls (_: [ "firefox.desktop" ]));
- };
+    defaultApplications =
+      let
+        urls = [
+          "text/html"
+          "x-scheme-handler/http"
+          "x-scheme-handler/https"
+          "x-scheme-handler/about"
+          "x-scheme-handler/unknown"
+        ];
+
+      in
+      (lib.genAttrs urls (_: [ "firefox.desktop" ]));
+  };
 }

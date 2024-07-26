@@ -11,5 +11,6 @@
   ];
 
   programs.zsh.initExtraFirst = "cat ${./global/extras/charizard.txt}";
+  stylix.image = ./global/extras/charizard.png;
 
 }
