@@ -1,19 +1,29 @@
-{ ... }: {
+{ ... }:
+let
+  lanDomain = "192.168.0.10";
+  vpnDomain = "100.99.86.96";
+in
+{
   services.homepage-dashboard = {
     enable = true;
     listenPort = 8082;
     openFirewall = true;
     settings = {
       theme = "dark";
+      color = "slate";
       title = "Pokelab Server";
-      background = "https://images3.alphacoders.com/103/1039168.png";
+      background = {
+        image = "https://giffiles.alphacoders.com/212/212259.gif";
+        blur = "sm";
+      };
       favicon = "https://www.favicon.cc/favicon/939/942/favicon.ico";
-      cardBlur = "md";
-      headerStyle = "clean";
+      cardBlur = "xl";
+      headerStyle = "boxedWidgets";
       language = "en-US";
       hideVersion = true;
       statusStyle = "basic";
       useEqualHeights = true;
+      disableCollapse = true;
       quicklaunch = {
         searchDescriptions = true;
         hideInternetSearch = true;
@@ -22,20 +32,37 @@
         provider = "duckduckgo";
       };
       layout = {
-        Services = {
+        Calendar = { };
+        Media = {
           style = "row";
-          columns = 4;
+          columns = 3;
         };
+        Development = {
+          style = "row";
+          columns = 2;
+        };
+        Documentation = { };
+        Network = { };
+
       };
     };
     bookmarks = [
       {
-        Developer = [{
-          Github = [{
-            abbr = "GH";
-            href = "https://github.com/";
-          }];
-        }];
+        Developer = [
+          {
+            Github = [{
+              abbr = "GH";
+              href = "https://github.com/";
+            }];
+
+          }
+          {
+            Github2 = [{
+              abbr = "GH";
+              href = "https://github.com/";
+            }];
+          }
+        ];
       }
       {
         Entertainment = [{
@@ -46,80 +73,10 @@
         }];
       }
     ];
-    services = [{
-      "Services" = [
-        {
-          "Nextcloud" = {
-            icon =
-              "https://cdn.icon-icons.com/icons2/2699/PNG/512/nextcloud_logo_icon_168948.png";
-            description = "Nextcloud storage";
-            href = "http://pokelab:9000";
-            siteMonitor = "http://192.168.0.10:9000";
-            widget = {
-              type = "nextcloud";
-              url = "http://192.168.0.10:9000";
-              username = "guifuentes8";
-              password = "y2FBC-7kWHG-W5r93-GsYME-kfnfb";
-              fields = [
-                "cpuload"
-                "memoryusage"
-                "freespace"
-                "activeusers"
-                "numfiles"
-              ];
-            };
-
-          };
-        }
-        {
-          "Transmission" = {
-            icon =
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Transmission_Icon.svg/2048px-Transmission_Icon.svg.png";
-            description = "Torrent server";
-            href = "http://pokelab:9091";
-            siteMonitor = "http://192.168.0.10:9091/";
-            widget = {
-              type = "transmission";
-              url = "http://192.168.0.10:9091";
-              rpcUrl = "/transmission/";
-              fields = [ "leech" "download" "upload" "seed" ];
-            };
-
-          };
-        }
-        {
-          "Jellyfin" = {
-            icon =
-              "https://dl.flathub.org/media/com/github/iwalton3.jellyfin-media-player/20eebaca475a7aa1b2511bed6a86abeb/icons/128x128@2/com.github.iwalton3.jellyfin-media-player.webp";
-            description = "Movies and music player";
-            href = "http://pokelab:8096/web/#/home.html";
-            siteMonitor = "http://192.168.0.10:8096/";
-            widget = {
-              type = "jellyfin";
-              url = "http://192.168.0.10:8096";
-              key = "6d1ae261116a4ea985ef7b89e92dc541";
-              enableBlocks = true; # optional, defaults to false
-              enableNowPlaying = true; # optional, defaults to true
-              enableUser = true; # optional, defaults to false
-              showEpisodeNumber = true; # optional, defaults to false
-              expandOneStreamToTwoRows = false; # optional, defaults to true
-
-              fields = [ "movies" "series" "episodes" "songs" ];
-            };
-
-          };
-
-        }
-        {
-          "Tailscale" = {
-            icon =
-              "https://static.macupdate.com/submission/473953/d/phpapubfc-logo.png";
-            description = "Torrent server";
-            siteMonitor = "http://pokelab";
-          };
-        }
-        {
-          "Calendar" = {
+    services = [
+      {
+        Calendar = [{
+          Calendar = {
             widget = {
               type = "calendar";
               view = "monthly";
@@ -127,20 +84,141 @@
               showTime = true;
               timezone = "Africa/Dakar";
               previousDays = 3;
-              integrations = [{
-                type = "ical";
-                url =
-                  "http://192.168.0.10:9000/remote.php/dav/calendars/guifuentes8/personal/?export";
-                name = "Personal:";
-                color = "purple";
-                params = { showName = true; };
-              }];
+              integrations = [
+                {
+                  type = "ical";
+                  url =
+                    "http://${lanDomain}:9000/remote.php/dav/calendars/guifuentes8/nextcloud-calendar/?export";
+                  name = "Nextcloud Calendar:";
+                  color = "yellow";
+                  params = { showName = true; };
+                }
+                {
+                  type = "ical";
+                  url =
+                    "http://${lanDomain}:9000/remote.php/dav/calendars/guifuentes8/personal/?export";
+                  name = "Nextcloud Tasks:";
+                  color = "purple";
+                  params = { showName = true; };
+                }
+              ];
             };
-
           };
-        }
-      ];
-    }];
+        }];
+      }
+      {
+        Development = [
+          {
+            Gitea = {
+              icon =
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Gitea_Logo.svg/2560px-Gitea_Logo.svg.png";
+              description = "Git version";
+              href = "http://${vpnDomain}:3100";
+              siteMonitor = "http://${lanDomain}:3100";
+
+            };
+          }
+          {
+            Vscode = {
+              icon =
+                "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/visual-studio-code-icon.png";
+              description = "IDE editor";
+              href = "http://${vpnDomain}:2000";
+              siteMonitor = "http://${vpnDomain}:2000";
+            };
+          }
+        ];
+      }
+      {
+        Media = [
+          {
+            Nextcloud = {
+              icon =
+                "https://cdn.icon-icons.com/icons2/2699/PNG/512/nextcloud_logo_icon_168948.png";
+              description = "Nextcloud storage";
+              href = "http://${vpnDomain}:9000";
+              siteMonitor = "http://${lanDomain}:9000";
+              widget = {
+                type = "nextcloud";
+                url = "http://${lanDomain}:9000";
+                username = "guifuentes8";
+                password = "oGJD6-DgdFr-3twDH-kWkFN-kpTLb";
+                fields = [
+                  "cpuload"
+                  "memoryusage"
+                  "freespace"
+                  "activeusers"
+                  "numfiles"
+                ];
+              };
+
+            };
+          }
+          {
+            Jellyfin = {
+              icon =
+                "https://dl.flathub.org/media/com/github/iwalton3.jellyfin-media-player/20eebaca475a7aa1b2511bed6a86abeb/icons/128x128@2/com.github.iwalton3.jellyfin-media-player.webp";
+              description = "Movies and music player";
+              href = "http://${vpnDomain}:8096/web/#/home.html";
+              siteMonitor = "http://${lanDomain}:8096/";
+              widget = {
+                type = "jellyfin";
+                url = "http://${lanDomain}:8096";
+                key = "236c9c7f8fe24e129f64718d6429ec56";
+                enableBlocks = true; # optional, defaults to false
+                enableNowPlaying = true; # optional, defaults to true
+                enableUser = true; # optional, defaults to false
+                showEpisodeNumber = true; # optional, defaults to false
+                expandOneStreamToTwoRows = false; # optional, defaults to true
+
+                fields = [ "movies" "series" "episodes" "songs" ];
+              };
+            };
+          }
+          {
+            Transmission = {
+              icon =
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Transmission_Icon.svg/2048px-Transmission_Icon.svg.png";
+              description = "Torrent server";
+              href = "http://${vpnDomain}:9091";
+              siteMonitor = "http://192.168.0.10:9091/";
+              widget = {
+                type = "transmission";
+                url = "http://192.168.0.10:9091";
+                rpcUrl = "/transmission/";
+                fields = [ "leech" "download" "upload" "seed" ];
+              };
+
+            };
+          }
+
+        ];
+      }
+      {
+        Documentation = [{
+          Bookstack = {
+            href = "http://${vpnDomain}:4000";
+            icon =
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/BookStack_logo.svg/2151px-BookStack_logo.svg.png";
+            description = "Organising and storing information as a Library.";
+            siteMonitor = "http://${lanDomain}:4000";
+          };
+
+        }];
+      }
+
+      {
+        Network = [{
+          Tailscale = {
+            icon =
+              "https://static.macupdate.com/submission/473953/d/phpapubfc-logo.png";
+            description = "Torrent server";
+            siteMonitor = "http://${vpnDomain}";
+          };
+
+        }];
+      }
+    ];
     widgets = [
       {
         resources = {
@@ -162,6 +240,8 @@
         search = {
           provider = "duckduckgo";
           target = "_blank";
+          showSearchSuggestions = true;
+          focus = true;
         };
       }
       {
@@ -182,6 +262,7 @@
           format = { timeStyle = "short"; };
         };
       }
+
     ];
   };
 

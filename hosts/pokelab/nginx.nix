@@ -28,7 +28,7 @@
       in
       {
         "pokelab.adguard.lan" = proxy 30;
-        "pokelab.vscode.lan" = proxy 2000;
+        #  "pokelab.vscode.lan" = proxy 2000;
         "pokelab.gitea.lan" = proxy 3100;
         "pokelab.nextcloud.lan" = proxy 9000;
         "pokelab.lan" = proxy 8082 // { default = true; };
@@ -37,7 +37,7 @@
 
         "bookstack".listen = [
           {
-            addr = "100.70.218.107";
+            addr = "100.99.86.96";
             port = 4000;
           }
           {
@@ -48,7 +48,7 @@
 
         "nextcloud".listen = [
           {
-            addr = "100.70.218.107";
+            addr = "100.99.86.96";
             port = 9000;
           }
           {

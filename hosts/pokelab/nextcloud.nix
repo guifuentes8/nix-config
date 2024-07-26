@@ -16,7 +16,7 @@
       extraTrustedDomains = [
         "pokelab"
         "192.168.0.10"
-        "100.70.218.107"
+        "100.99.86.96"
         "localhost"
         "pokelab.nextcloud.lan"
       ];
