@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
 
     # Hardware Gpu (if exist)
-    ../common/hardware/gpu/amdgpu.nix
+    #    ../common/hardware/gpu/amdgpu.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -40,5 +40,6 @@
   console.keyMap = "us";
   services.xserver.xkb.layout = "us";
   networking.hostName = "charizard";
+  services.teamviewer.enable = true;
 
 }

@@ -64,7 +64,7 @@
   };
 
   # Sound
-  sound.enable = true;
+#  sound.enable = true;
   hardware.pulseaudio.enable = false;
 
   # Fonts

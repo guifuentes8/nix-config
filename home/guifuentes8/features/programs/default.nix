@@ -21,6 +21,7 @@
     onlyoffice-bin
     pavucontrol
     spotube
+    youtube-music
     zoom-us
 
     # programs cli

@@ -23,7 +23,7 @@
   ])
 
   # Gnome exclusive programs and icons
-  ++ (with pkgs.gnome; [
+  ++ (with unstable.gnome; [
     adwaita-icon-theme
     gnome-themes-extra
     gnome-tweaks
@@ -31,7 +31,7 @@
     gnome-music
     totem
     geary
-  ]) ++ (with pkgs.gnomeExtensions; [
+  ]) ++ (with unstable.gnomeExtensions; [
     appindicator
     burn-my-windows
     color-picker
@@ -50,13 +50,11 @@
   ]);
 
   # Remove default gnome packages
-  environment.gnome.excludePackages = (with pkgs.gnome; [
+  environment.gnome.excludePackages = (with unstable.gnome; [
     atomix
-    epiphany
     hitori
     iagno
     tali
-    seahorse
     gnome-music
   ]);
 }

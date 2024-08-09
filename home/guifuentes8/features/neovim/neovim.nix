@@ -135,11 +135,11 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/rainbow.rc.lua);
       }
-      {
-        plugin = neorg;
-        type = "lua";
-        config = builtins.readFile (./plugins/neorg.rc.lua);
-      }
+      #{
+      #  plugin = neorg;
+      #  type = "lua";
+      #  config = builtins.readFile (./plugins/neorg.rc.lua);
+      #}
       {
         plugin = noice-nvim;
         type = "lua";
