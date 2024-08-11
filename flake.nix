@@ -52,8 +52,6 @@
 
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
-    hyprcursor-phinger.url = "github:jappie3/hyprcursor-phinger";
-
   };
 
   outputs =

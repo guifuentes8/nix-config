@@ -1,5 +1,5 @@
 { pkgs, unstable, lib, ... }:
-let cursorName = "Catppuccin-Mocha-Dark-Cursors";
+let cursorName = "catppuccin-mocha-dark-cursors";
 in {
   stylix = {
     enable = true;
@@ -9,7 +9,7 @@ in {
       "${unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     cursor = {
       name = cursorName;
-      package = pkgs.catppuccin-cursors;
+      package = pkgs.catppuccin-cursors.mochaDark;
       size = 32;
     };
     fonts = {
@@ -41,8 +41,11 @@ in {
 
   home.sessionVariables = {
     XCURSOR_THEME = cursorName;
-    XCURSOR_SIZE = "30";
+    XCURSOR_SIZE = "32";
   };
+
+  #  wayland.windowManager.hyprland.settings.env =
+  #   [ "HYPRCURSOR_THEME,${cursorName}" "HYPRCURSOR_SIZE,32" ];
 
 }
 

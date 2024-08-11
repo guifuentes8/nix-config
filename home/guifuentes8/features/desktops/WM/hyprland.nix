@@ -12,8 +12,6 @@ in
 {
   imports = [
 
-    inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
-
     ../../browsers/qutebrowser.nix
     ../../terminals/foot.nix
     ../../cli
@@ -21,7 +19,6 @@ in
     ../../services
     ./common/wayland.nix
   ];
-  #programs.hyprcursor-phinger.enable = true;
   services.gnome-keyring.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
@@ -86,6 +83,11 @@ in
       device = {
         name = "epic-mouse-v1";
         sensitivity = -0.5;
+      };
+      cursor = {
+        no_hardware_cursors = true;
+        enable_hyprcursor = false;
+        hide_on_touch = true;
       };
 
     };
@@ -198,7 +200,7 @@ in
 
 
         bind = ALT,Space, exec, hyprctl switchxkblayout at-translated-set-2-keyboard next
-        bind = ALT,Space, exec, hyprctl switchxkblayout logitech-usb-receiver next
+        bind = ALT,Space, exec, hyprctl switchxkblayout logitech-usb-receiver nextp
 
         windowrule = float,^(mpv)$
         windowrule = size 960 520,^(mpv)$

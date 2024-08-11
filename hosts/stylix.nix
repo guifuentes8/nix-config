@@ -1,4 +1,6 @@
-{ pkgs, unstable, ... }: {
+{ pkgs, unstable, ... }:
+let cursor = "catppuccin-mocha-dark-cursors";
+in {
 
   stylix = {
     enable = true;
@@ -7,8 +9,8 @@
     base16Scheme =
       "${unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     cursor = {
-      name = "Catppuccin-Mocha-Dark-Cursors";
-      package = pkgs.catppuccin-cursors;
+      name = cursor;
+      package = pkgs.catppuccin-cursors.mochaDark;
       size = 32;
     };
     fonts = {

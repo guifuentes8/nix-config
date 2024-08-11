@@ -27,7 +27,9 @@ opt.clipboard = "unnamedplus"
 opt.cmdheight = 1
 opt.encoding = 'utf-8'
 opt.expandtab = true
-opt.foldmethod = 'indent'
+opt.foldmethod = 'manual'
+opt.foldlevel = 99
+opt.foldlevelstart = 1
 opt.formatoptions:append { 'r' }
 opt.fileencoding = 'utf-8'
 opt.hlsearch = true

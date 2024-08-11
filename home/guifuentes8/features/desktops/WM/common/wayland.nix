@@ -1,7 +1,7 @@
-{ pkgs, ... }: {
+{ unstable, ... }: {
   imports = [ ./default.nix ./waybar.nix ];
 
-  home.packages = with pkgs; [
+  home.packages = with unstable; [
     grim
     hyprpicker
     nwg-look
@@ -16,7 +16,7 @@
     wtype
   ];
 
-  programs.rofi.package = pkgs.rofi-wayland;
+  programs.rofi.package = unstable.rofi-wayland;
   programs.mpv.config.gpu-context = "wayland";
   programs.zsh.sessionVariables = { KITTY_ENABLE_WAYLAND = 1; };
 

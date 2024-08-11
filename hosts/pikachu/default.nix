@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
@@ -41,6 +41,7 @@
   console.keyMap = "br-abnt2";
   services.xserver.xkb.layout = "br";
   services.xserver.xkb.variant = "abnt2";
+
   networking.hostName = "pikachu";
 
 }
