@@ -46,7 +46,6 @@ keymap.set('n', '<C-w><up>', '<C-w>+<')
 keymap.set('n', '<C-w><down>', '<C-w>-<')
 
 
-keymap.set('n', '<C-b>', '<Cmd>:Telescope file_browser path=%:p:h select_buffer=true<CR>')
 keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
 
@@ -69,3 +68,7 @@ keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({sel
 -- PLUGING HOTKEYS
 keymap.set('n', ';z', '<cmd>:ZenMode<CR>')
 --keymap.set('n', ':', '<cmd>:FineCmdline<CR>')
+
+
+-- Telescope
+

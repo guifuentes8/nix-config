@@ -1,12 +1,39 @@
-{ pkgs, unstable, inputs, lib, ... }: {
-  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+{ pkgs, unstable, inputs, lib, ... }:
+let
+  fromGithub = rev: ref: repo:
+    pkgs.vimUtils.buildVimPlugin {
+      pname = "${lib.strings.sanitizeDerivationName repo}";
+      version = ref;
+      src = builtins.fetchGit {
+        url = "https://github.com/${repo}.git";
+        ref = ref;
+        rev = rev;
+      };
+    };
+in {
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+    ./settings.nix
+    ./plugins/telescope.nix
+    ./plugins/treesitter.nix
+    ./plugins/lint.nix
+    ./plugins/lsp.nix
+    ./plugins/yazi.nix
+  ];
 
   programs.nixvim = {
     enable = true;
+    package = unstable.neovim-unwrapped;
+    colorschemes.tokyonight = {
+      enable = true;
+      settings = { style = "night"; };
+    };
+
     extraConfigLua = ''
       require 'settings'
       require 'highlights'
       require 'maps'
+
     '';
     extraLuaPackages = luaPkgs:
       with luaPkgs; [
@@ -20,7 +47,6 @@
       # Language servers
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted
-      nodePackages.pyright
       marksman
       tailwindcss-language-server
       lua-language-server
@@ -35,6 +61,7 @@
       # Others
       nodePackages.live-server
     ];
+
     options = {
       ai = true;
       backup = false;
@@ -46,6 +73,7 @@
       encoding = "utf-8";
       expandtab = true;
       foldmethod = "indent";
+      foldlevel = 99;
       # formatoptions.append = [ "r" ];
       fileencoding = "utf-8";
       hlsearch = true;
@@ -71,24 +99,22 @@
 
     plugins = {
       bufferline.enable = true;
-      conform-nvim.enable = true;
+      # conform-nvim.enable = true;
       cmp.enable = true;
       dashboard.enable = true;
       gitsigns.enable = true;
-      indent-blankline.enable = true;
+      #   indent-blankline.enable = true;
       luasnip.enable = true;
       lualine.enable = true;
       lsp.enable = true;
       lspkind.enable = true;
       lspsaga.enable = true;
-      lint.enable = true;
+      #lint.enable = true;
       nvim-autopairs.enable = true;
       nvim-colorizer.enable = true;
       noice.enable = true;
       neorg.enable = true;
       rainbow-delimiters.enable = true;
-      telescope.enable = true;
-      treesitter.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins; [
@@ -117,12 +143,6 @@
       telescope-file-browser-nvim
 
     ];
-    colorschemes = {
-      catppuccin = {
-        enable = true;
-         settings = { flavour = "mocha"; };
-      };
-    };
   };
 
   xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;

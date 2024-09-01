@@ -1,4 +1,4 @@
-require("neorg").setup {
+require("neorg").setup({
   load = {
     ["core.defaults"] = {},
     ["core.concealer"] = { config = { icon_preset = "diamond" } },
@@ -25,7 +25,6 @@ require("neorg").setup {
       },
     },
     ["core.highlights"] = {},
-    ["core.mode"] = {},
     ["core.integrations.treesitter"] = {
       config = {
         configure_parsers = true,
@@ -56,7 +55,8 @@ require("neorg").setup {
     ["core.tangle"] = { config = { report_on_empty = false } },
     ["core.ui"] = {},
   },
-}
+
+})
 
 vim.wo.foldlevel = 99
 vim.wo.conceallevel = 2

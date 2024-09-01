@@ -76,43 +76,41 @@ telescope.setup {
 }
 
 -- Keymaps
--- Builtins functions
-
-vim.keymap.set('n', ';f',
+--
+keymap.set('n', ';f',
   function()
     builtin.find_files({
       no_ignore = false,
       hidden = true,
     })
   end)
-vim.keymap.set('n', ';s', function()
+keymap.set('n', ';s', function()
   builtin.live_grep()
 end)
-vim.keymap.set('n', '\\\\', function()
+keymap.set('n', '\\\\', function()
   builtin.buffers()
 end)
-vim.keymap.set('n', ';e', function()
+keymap.set('n', ';e', function()
   builtin.diagnostics()
 end)
 
-vim.keymap.set('n', ';h', function()
+keymap.set('n', ';h', function()
   builtin.search_history()
 end)
-vim.keymap.set('n', ';t', function()
+keymap.set('n', ';t', function()
   builtin.filetypes()
 end)
-vim.keymap.set('n', ';g', function()
+keymap.set('n', ';g', function()
   builtin.git_status()
 end)
-vim.keymap.set('n', ';gb', function()
+keymap.set('n', ';gb', function()
   builtin.git_branches()
 end)
+keymap.set("n", "<space>f", ":Telescope file_browser<CR>")
+keymap.set("n", "<space>b", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
 
--- Extensions
-vim.keymap.set("n", "<space>f", ":Telescope file_browser<CR>")
 
--- open file_browser with the path of the current buffer
-vim.keymap.set("n", "<space>b", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
-
+-- Builtins functions
 telescope.load_extension("file_browser")
 --telescope.load_extension("project")
+

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ unstable, pkgs, ... }: {
 
   imports = [ ./dependencies.nix ];
   programs = {
@@ -12,7 +12,7 @@
       ];
     };
   };
-  home.packages = with pkgs; [
+  home.packages = with unstable; [
 
     # programs
     beeper

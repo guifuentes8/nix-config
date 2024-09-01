@@ -1,5 +1,4 @@
 { inputs, ... }: {
-  neorg = inputs.neorg-overlay.overlays.default;
 
   modifications = final: prev: {
     #  rbw = prev.rbw.overrideAttrs (old: rec {

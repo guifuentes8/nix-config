@@ -6,7 +6,7 @@ in {
     autoEnable = true;
     polarity = "dark";
     base16Scheme =
-      "${unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+      "${unstable.base16-schemes}/share/themes/tokyo-night-dark.yaml";
     cursor = {
       name = cursorName;
       package = pkgs.catppuccin-cursors.mochaDark;
@@ -37,6 +37,7 @@ in {
       name = lib.mkForce "Papirus-Dark";
       package = lib.mkForce pkgs.catppuccin-papirus-folders;
     };
+
   };
 
   home.sessionVariables = {

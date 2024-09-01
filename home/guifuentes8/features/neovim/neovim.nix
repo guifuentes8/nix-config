@@ -1,6 +1,6 @@
 { lib, pkgs, unstable, ... }:
 let
-  fromGitHub = rev: ref: repo:
+  fromGithub = rev: ref: repo:
     pkgs.vimUtils.buildVimPlugin {
       pname = "${lib.strings.sanitizeDerivationName repo}";
       version = ref;
@@ -11,8 +11,7 @@ let
       };
     };
 
-in
-{
+in {
   programs.neovim = {
     enable = true;
     package = unstable.neovim-unwrapped;
@@ -33,11 +32,7 @@ in
       require 'maps'
     '';
     plugins = with pkgs.vimPlugins; [
-      {
-        plugin = catppuccin-nvim;
-        type = "lua";
-        config = builtins.readFile (./plugins/theme.rc.lua);
-      }
+
       {
         plugin = lualine-nvim;
         type = "lua";
@@ -135,11 +130,11 @@ in
         type = "lua";
         config = builtins.readFile (./plugins/rainbow.rc.lua);
       }
-      #{
-      #  plugin = neorg;
-      #  type = "lua";
-      #  config = builtins.readFile (./plugins/neorg.rc.lua);
-      #}
+      {
+        plugin = neorg;
+        type = "lua";
+        config = builtins.readFile (./plugins/neorg.rc.lua);
+      }
       {
         plugin = noice-nvim;
         type = "lua";

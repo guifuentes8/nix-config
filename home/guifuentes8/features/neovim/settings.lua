@@ -13,10 +13,9 @@ cmd([[let &t_Cs = "\e[4:3m"]])
 cmd([[let &t_Ce = "\e[4:0m"]])
 
 
-vim.scriptencoding = 'utf-8'
-vim.wo.number = true
-vim.notify = require("notify")
-
+cmd.scriptencoding = 'utf-8'
+opt.number = true
+cmd.notify = require("notify")
 
 opt.ai = true
 opt.backup = false
@@ -27,9 +26,7 @@ opt.clipboard = "unnamedplus"
 opt.cmdheight = 1
 opt.encoding = 'utf-8'
 opt.expandtab = true
-opt.foldmethod = 'manual'
 opt.foldlevel = 99
-opt.foldlevelstart = 1
 opt.formatoptions:append { 'r' }
 opt.fileencoding = 'utf-8'
 opt.hlsearch = true
