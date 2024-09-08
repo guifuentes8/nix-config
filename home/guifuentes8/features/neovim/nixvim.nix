@@ -5,7 +5,7 @@ let
       pname = "${lib.strings.sanitizeDerivationName repo}";
       version = ref;
       src = builtins.fetchGit {
-        url = "https://github.com/${repo}.git";
+        url = "${repo}";
         ref = ref;
         rev = rev;
       };
@@ -14,21 +14,22 @@ in {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./settings.nix
-    ./plugins/telescope.nix
-    ./plugins/treesitter.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
+    ./plugins/neorg.nix
+    ./plugins/telescope.nix
+    ./plugins/treesitter.nix
     ./plugins/yazi.nix
   ];
 
   programs.nixvim = {
     enable = true;
     package = unstable.neovim-unwrapped;
-    colorschemes.tokyonight = {
+    colorscheme = "catppuccin-macchiato";
+    colorschemes.catppuccin = {
       enable = true;
-      settings = { style = "night"; };
+      settings = { flavor = "macchiato"; };
     };
-
     extraConfigLua = ''
       require 'settings'
       require 'highlights'
@@ -62,7 +63,7 @@ in {
       nodePackages.live-server
     ];
 
-    options = {
+    opts = {
       ai = true;
       backup = false;
       backupskip = "/tmp";
@@ -99,22 +100,14 @@ in {
 
     plugins = {
       bufferline.enable = true;
-      # conform-nvim.enable = true;
       cmp.enable = true;
       dashboard.enable = true;
       gitsigns.enable = true;
-      #   indent-blankline.enable = true;
       luasnip.enable = true;
       lualine.enable = true;
       lsp.enable = true;
-      lspkind.enable = true;
-      lspsaga.enable = true;
-      #lint.enable = true;
-      nvim-autopairs.enable = true;
-      nvim-colorizer.enable = true;
       noice.enable = true;
       neorg.enable = true;
-      rainbow-delimiters.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins; [
@@ -142,6 +135,8 @@ in {
       telescope-media-files-nvim
       telescope-file-browser-nvim
 
+      (fromGithub "50d8c9c19509ba5b03760e2d644128afc4215281" "HEAD"
+        "https://codeberg.org/jthvai/lavender.nvim")
     ];
   };
 

@@ -10,7 +10,6 @@
   description = "My Awesome | guifuentes8 | Nixos Configuration";
 
   inputs = {
-    # Nix required
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
@@ -28,26 +27,15 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # darkmatter-grub-theme.url = "gitlab:VandalByte/darkmatter-grub-theme";
+    darkmatter-grub-theme.url = "gitlab:VandalByte/darkmatter-grub-theme";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
-
     };
-
-
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , nix-darwin
-    , home-manager
-    , nixpkgs-unstable
-    , sops-nix
-    , stylix
-    , ...
-    }@inputs:
+  outputs = { self, nixpkgs, nix-darwin, home-manager, nixpkgs-unstable
+    , sops-nix, stylix, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
@@ -57,8 +45,7 @@
         config.allowUnfree = true;
       };
 
-    in
-    {
+    in {
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
       overlays = import ./overlays { inherit inputs outputs; };

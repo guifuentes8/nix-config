@@ -10,8 +10,7 @@
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
 
-
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
@@ -22,11 +21,11 @@
 
   hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ vaapiIntel ];
 
-
   boot.initrd.kernelModules = [ "i915" ];
 
   environment.variables = {
-    VDPAU_DRIVER = lib.mkIf config.hardware.opengl.enable (lib.mkDefault "va_gl");
+    VDPAU_DRIVER =
+      lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
   };
 
   boot.kernelParams = [ "acpi_backlight=video" "coretemp" "kvm-intel" ];

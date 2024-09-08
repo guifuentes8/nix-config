@@ -19,6 +19,6 @@
         intelBusId = "PCI:0:2:0";
       };
     };
-    opengl.enable = true;
+    graphics.enable = true;
   };
 }

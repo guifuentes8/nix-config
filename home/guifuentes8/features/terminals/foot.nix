@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ ... }: {
   programs.foot = {
     enable = true;
     server.enable = true;
@@ -6,9 +6,7 @@
       main = {
         term = "xterm-256color";
         dpi-aware = "no";
-        # font =
-        #    "${configOptions.styles.font.code}:size=${configOptions.styles.font.size}";
-        pad = "8x8";
+        pad = "8x0";
       };
       mouse = { hide-when-typing = "yes"; };
 

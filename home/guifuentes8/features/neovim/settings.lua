@@ -3,7 +3,6 @@ local opt = vim.opt
 local api = vim.api
 local cmd = vim.cmd
 
-g.mapleader = ","
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 

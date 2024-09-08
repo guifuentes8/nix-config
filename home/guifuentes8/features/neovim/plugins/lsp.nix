@@ -13,57 +13,122 @@ let
     end  '';
 in {
   programs.nixvim = {
-    plugins.lsp = {
-      enable = true;
-      onAttach = onAttachFunction;
-      servers = {
-        eslint = {
-          enable = true;
-          filetypes =
-            [ ".eslintrc.js" ".eslintrc.cjs" ".eslintrc.json" ".eslintrc" ];
-          onAttach.function = onAttachFunction;
+    keymaps = [
+      {
+        action = "<cmd>Lspsaga code_action<CR>";
+        key = "<leader>ga";
+        options = { silent = true; };
+      }
+      {
+        action = "<cmd>Lspsaga peek_definition<CR>";
+        key = "<leader>gp";
+        options = { silent = true; };
+      }
+      {
+        action = "<cmd>Lspsaga goto_definition<CR>";
+        key = "<leader>gt";
+        options = { silent = true; };
+      }
+      {
+        action = "<cmd>Lspsaga diagnostic_jump_next<CR>";
+        key = "<leader>gk";
+        options = { silent = true; };
+      }
+      {
+        action = "<cmd>Lspsaga diagnostic_jump_prev<CR>";
+        key = "<leader>gj";
+        options = { silent = true; };
+      }
+      {
+        action = "<cmd>Lspsaga finder<CR>";
+        key = "<leader>gf";
+        options = { silent = true; };
+      }
+      {
+        action = "<cmd>Lspsaga hover_doc<CR>";
+        key = "<leader>gh";
+        options = { silent = true; };
+      }
+      {
+        action = "<cmd>Lspsaga outline<CR>";
+        key = "<leader>go";
+        options = { silent = true; };
+      }
+      {
+        action = "<cmd>Lspsaga rename<CR>";
+        key = "<leader>gr";
+        options = { silent = true; };
+      }
+    ];
+    plugins = {
+      lsp = {
+        enable = true;
+        onAttach = onAttachFunction;
+        servers = {
+          eslint = {
+            enable = true;
+            filetypes =
+              [ ".eslintrc.js" ".eslintrc.cjs" ".eslintrc.json" ".eslintrc" ];
+            onAttach.function = onAttachFunction;
+          };
+          nixd = {
+            enable = true;
+            onAttach.function = onAttachFunction;
+          };
+          tsserver = {
+            enable = true;
+            onAttach.function = onAttachFunction;
+          };
+          html = {
+            enable = true;
+            onAttach.function = onAttachFunction;
+          };
+          cssls = {
+            enable = true;
+            onAttach.function = onAttachFunction;
+          };
+          tailwindcss = {
+            enable = true;
+            onAttach.function = onAttachFunction;
+          };
+          graphql = {
+            enable = true;
+            onAttach.function = onAttachFunction;
+          };
+          jsonls = {
+            enable = true;
+            onAttach.function = onAttachFunction;
+          };
+          pyright = {
+            enable = true;
+            onAttach.function = onAttachFunction;
+          };
+          marksman = {
+            enable = true;
+            onAttach.function = onAttachFunction;
+          };
+          lua-ls = {
+            enable = true;
+            onAttach.function = onAttachFunction;
+          };
         };
-        nixd = {
-          enable = true;
-          onAttach.function = onAttachFunction;
+      };
+      lspsaga = {
+        enable = true;
+        codeAction = {
+          showServerName = true;
+          keys = { };
         };
-        tsserver = {
-          enable = true;
-          onAttach.function = onAttachFunction;
+        definition = { keys = { }; };
+        diagnostic = {
+          showCodeAction = true;
+          keys = { };
         };
-        html = {
-          enable = true;
-          onAttach.function = onAttachFunction;
-        };
-        cssls = {
-          enable = true;
-          onAttach.function = onAttachFunction;
-        };
-        tailwindcss = {
-          enable = true;
-          onAttach.function = onAttachFunction;
-        };
-        graphql = {
-          enable = true;
-          onAttach.function = onAttachFunction;
-        };
-
-        jsonls = {
-          enable = true;
-          onAttach.function = onAttachFunction;
-        };
-        pyright = {
-          enable = true;
-          onAttach.function = onAttachFunction;
-        };
-        marksman = {
-          enable = true;
-          onAttach.function = onAttachFunction;
-        };
-        lua_ls = {
-          enable = true;
-          onAttach.function = onAttachFunction;
-        };
+        finder = { keys = { }; };
+        hover = { };
+        lightbulb = { };
+        outline = { keys = { }; };
+        rename = { keys = { }; };
 
       };
     };

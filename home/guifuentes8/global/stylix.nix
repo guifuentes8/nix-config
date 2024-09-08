@@ -1,15 +1,18 @@
 { pkgs, unstable, lib, ... }:
-let cursorName = "catppuccin-mocha-dark-cursors";
+let
+  cursorName = "Quintom_Ink";
+  cursorPkg = pkgs.quintom-cursor-theme;
+
 in {
   stylix = {
     enable = true;
     autoEnable = true;
     polarity = "dark";
     base16Scheme =
-      "${unstable.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+      "${unstable.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
     cursor = {
       name = cursorName;
-      package = pkgs.catppuccin-cursors.mochaDark;
+      package = cursorPkg;
       size = 32;
     };
     fonts = {
@@ -19,15 +22,16 @@ in {
       };
     };
     opacity = {
-      applications = 0.8;
-      terminal = 0.85;
-      desktop = 0.8;
+      applications = 1.0;
+      terminal = 0.9;
+      desktop = 1.0;
     };
     override = { };
     targets = {
       nixvim.enable = false;
       vim.enable = false;
       vscode.enable = false;
+      waybar.enable = false;
     };
   };
 

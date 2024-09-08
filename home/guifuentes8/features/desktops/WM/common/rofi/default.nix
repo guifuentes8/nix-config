@@ -7,7 +7,6 @@
     theme = (import ./theme.nix { inherit config lib; });
     plugins = with pkgs; [
       rofi-bluetooth
-      rofi-calc
       rofi-emoji
       rofi-power-menu
       rofi-pulse-select
@@ -24,7 +23,6 @@
     rofi-pulse-select
     rofi-systemd
     rofi-rbw
-    bitwarden-cli
   ];
 
   programs.rbw = {

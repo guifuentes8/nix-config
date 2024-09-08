@@ -1,6 +1,12 @@
 { pkgs, ... }: {
-  home.packages =
-    [ pkgs.age pkgs.nh pkgs.nix-output-monitor pkgs.nvd pkgs.nixpkgs-fmt ];
+  home.packages = [
+    pkgs.age
+    pkgs.nh
+    pkgs.nix-output-monitor
+    pkgs.nvd
+    pkgs.nixpkgs-fmt
+    pkgs.microfetch
+  ];
 
   programs = {
     gh = {
@@ -43,8 +49,9 @@
     ssh.enable = true;
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       enableCompletion = true;
+      initExtraFirst = "microfetch";
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;

@@ -1,15 +1,13 @@
-{ lib, inputs, pkgs, ... }:
+{ lib, pkgs, config, ... }:
 let
   cw = ./scripts/cw.sh;
   term = "footclient";
   startupScript = pkgs.writeShellScriptBin "start" ''
-    swww-daemon & 
     wl-clipboard-history -t &
     dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
     systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
   '';
-in
-{
+in {
   imports = [
 
     ../../browsers/qutebrowser.nix
@@ -29,23 +27,23 @@ in
       monitor = ",preferred,auto,1";
       general = {
         gaps_in = 5;
-        gaps_out = 20;
-        border_size = 2;
+        gaps_out = 10;
+        border_size = 3;
         "col.active_border" =
-          lib.mkDefault "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = lib.mkDefault "rgba(595959aa)";
+          lib.mkForce "rgba(${config.lib.stylix.colors.base09}ff)";
+        "col.inactive_border" =
+          lib.mkForce "rgba(${config.lib.stylix.colors.base0D}ff)";
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
       };
       decoration = {
-        rounding = 10;
+        rounding = 8;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
         drop_shadow = true;
         shadow_range = 4;
         shadow_render_power = 3;
-        "col.shadow" = lib.mkDefault "rgba(1a1a1aee)";
         blur = {
           enabled = true;
           size = 4;
@@ -94,13 +92,11 @@ in
 
     extraConfig = ''
       # KEYBINDS
-
         $mainMod = SUPER
         $term = ${term}
 
         bind = $mainMod, Return, exec, $term
         bind = $mainMod, Escape, exit,
-        bind = CTRL_ALT, Escape, exec, swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color 7aa2f7cc --ring-clear-color 32344a --ring-ver-color e0af68 --ring-wrong-color f7768e --key-hl-color 73dacaee --bs-hl-color f7768e --line-color 00000000 --line-clear 00000000 --line-ver-color 00000000 --line-wrong-color 00000000 --inside-color 00000000 --inside-clear-color 32344a --inside-ver-color 00000000 --inside-wrong-color 00000000 --separator-color 7aa2f7cc --text-color c0caf6 --text-clear-color c0caf6 --text-ver-color c0caf6 --text-wrong-color c0caf6 --grace 2 --fade-in 0.2
         bind = $mainMod, Space, exec, rofi -modes "drun" -show-icons -show drun
         bind = $mainMod, Q, killactive,
         bind = $mainMod, S, togglesplit, # dwindle
@@ -177,15 +173,15 @@ in
         bind = ,Print, exec, grim -g "$(slurp)" - | wl-copy 
                 
         # Rofi scripts
-        bind = $mainMod, F1, exec, rofi -show calc -modi calc -no-show-match -no-sort
-        bind = $mainMod, F2, exec, rofi -modi emoji -show emoji
+        bind = $mainMod, F1, exec, 
+        bind = $mainMod, F2, exec, 
         bind = $mainMod, F3, exec, 
         bind = $mainMod, F4, exec, 
         bind = $mainMod, F5, exec,
         bind = $mainMod, F6, exec, 
         bind = $mainMod, F7, exec, 
-        bind = $mainMod, F8, exec, rofi-systemd 
-        bind = $mainMod, F9, exec, rofi-pulse-select sink
+        bind = $mainMod, F8, exec,  
+        bind = $mainMod, F9, exec, 
         bind = $mainMod, F10, exec, rofi-bluetooth 
         bind = $mainMod, F11, exec, rofi-rbw --keybindings 'Alt+u:copy:username,Alt+p:copy:password,Alt+t:copy:totp,Alt+n:copy:notes'        
         bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
@@ -202,9 +198,8 @@ in
         bind = ALT,Space, exec, hyprctl switchxkblayout at-translated-set-2-keyboard next
         bind = ALT,Space, exec, hyprctl switchxkblayout logitech-usb-receiver nextp
 
-        windowrule = float,^(mpv)$
-        windowrule = size 960 520,^(mpv)$
-        windowrule = center,^(mpv)$
+        windowrule = float,^(rofi-systemd)$
+        windowrule = center,^(rofi)$
     '';
   };
 }
