@@ -39,7 +39,7 @@
   # Custom config
   console.keyMap = "us";
   services.xserver.xkb.layout = "us";
-  networking.hostName = "charizard";
+  networking.hostName = "earth";
   services.teamviewer.enable = true;
 
 }

@@ -3,6 +3,6 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   dbgate = pkgs.callPackage ./dbgate { };
+  zen-browser = pkgs.callPackage ./zen-browser { };
   everforest-cursors = pkgs.callPackage ./everforest-cursors { };
-  pokeget-plus = pkgs.callPackage ./pokeget-plus { };
 }

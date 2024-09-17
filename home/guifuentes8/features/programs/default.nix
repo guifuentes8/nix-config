@@ -15,7 +15,6 @@
   home.packages = with unstable; [
 
     # programs
-    beeper
     discord
     gimp
     onlyoffice-bin
