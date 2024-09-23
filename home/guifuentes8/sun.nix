@@ -1,11 +1,13 @@
-{
+{ ... }: {
   imports = [
 
     # Global config (required)
     ./global
     ./features/neovim
+    ./features/cli
   ];
-  programs.zsh.initExtraFirst = "cat ${./global/extras/pokecenter.txt}";
+
+  stylix.image = ./global/extras/earth.jpg;
 
 }
 

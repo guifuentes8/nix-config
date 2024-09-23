@@ -8,7 +8,12 @@
     };
     bottom = {
       enable = true;
-      settings = { };
+      settings = {
+        flags = {
+          temperature_type = "c";
+          rate = 300;
+        };
+      };
     };
     feh.enable = true;
     jq.enable = true;

@@ -1,6 +1,5 @@
 { pkgs, config, ... }: {
   environment.etc."nextcloud-admin-pass".text = "Agorajaera@123";
-
   services.nextcloud = {
     enable = true;
     autoUpdateApps.enable = false;
@@ -10,21 +9,29 @@
       redis = true;
     };
     config = {
-      overwriteProtocol = "http";
-      defaultPhoneRegion = "BR";
-      trustedProxies = [ "pokelab.nextcloud.lan" ];
-      extraTrustedDomains = [
-        "pokelab"
-        "192.168.0.10"
-        "100.99.86.96"
-        "localhost"
-        "pokelab.nextcloud.lan"
-      ];
       dbtype = "pgsql";
       dbuser = "nextcloud";
       dbname = "nextcloud";
       adminpassFile = "/etc/nextcloud-admin-pass";
       adminuser = "admin";
+    };
+    settings = {
+      overwriteProtocol = "http";
+      defaultPhoneRegion = "BR";
+      enabledPreviewProviders = [
+        "OC\\Preview\\BMP"
+        "OC\\Preview\\GIF"
+        "OC\\Preview\\JPEG"
+        "OC\\Preview\\Krita"
+        "OC\\Preview\\MarkDown"
+        "OC\\Preview\\MP3"
+        "OC\\Preview\\OpenDocument"
+        "OC\\Preview\\PNG"
+        "OC\\Preview\\TXT"
+        "OC\\Preview\\XBitmap"
+        "OC\\Preview\\HEIC"
+      ];
+
     };
     configureRedis = true;
     database.createLocally = true;
@@ -58,78 +65,50 @@
     };
     extraApps = {
       inherit (config.services.nextcloud.package.packages.apps)
-        bookmarks calendar contacts deck mail maps memories music notes
-        onlyoffice tasks;
+        bookmarks calendar contacts cospend deck integration_openai
+        integration_paperless mail maps memories music notes notify_push
+        onlyoffice phonetrack tasks;
 
-      cospend = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-QHIxS5uubutiD9Abm/Bzv1RWG7TgL/tvixVdNEzTlxE=";
-        url =
-          "https://github.com/julien-nc/cospend-nc/releases/download/v1.6.1/cospend-1.6.1.tar.gz";
-        license = "gpl3";
-      };
       drawio = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-GSLynpuodzjjCy272eksudRJj2WlHwq4OntCGHad4/U=";
+        sha256 = "sha256-PpCOhegzJ6Suy040r1XwxWzBKmL9xkgEXLaWPKGmvlE=";
         url =
-          "https://github.com/jgraph/drawio-nextcloud/releases/download/v3.0.2/drawio-v3.0.2.tar.gz";
+          "https://github.com/jgraph/drawio-nextcloud/releases/download/v3.0.3/drawio-v3.0.3.tar.gz";
         license = "gpl3";
       };
       health = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-yLH5EpFKL3pto/4kVo9DKnvog8+x9XFXLChpFKqQU1M=";
+        sha256 = "sha256-JsmflNU/XIa46NJwdJ5xzjrBk3gI7mTthyqNJ5jhO1g=";
         url =
           "https://github.com/nextcloud/health/releases/download/v2.2.2/health.tar.gz";
         license = "gpl3";
       };
-      thesearchpage = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-+SiPBJ+meG2Fuj0UoFS9PMDJArCKE6q0IXhHOFSTPg0=";
-        url =
-          "https://github.com/callmemagnus/nextcloud-searchpage/releases/download/v1.2.7/thesearchpage.tar.gz";
-        license = "gpl3";
-      };
 
       news = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-zQOtIcUxa/IRhQLYoJYe5dRqx/Gac2/qCUdY2aZ5EU4=";
+        sha256 = "sha256-nj1yR2COwQ6ZqZ1/8v9csb/dipXMa61e45XQmA5WPwg=";
         url =
-          "https://github.com/nextcloud/news/releases/download/25.0.0-alpha6/news.tar.gz";
-        license = "gpl3";
-      };
-      phonetrack = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-V92f+FiS5vZEkq15A51pHoDpUOBfUOEVIcsXdP/rSMQ=";
-        url =
-          "https://github.com/julien-nc/phonetrack/releases/download/v0.8.1/phonetrack-0.8.1.tar.gz";
+          "https://github.com/nextcloud/news/releases/download/25.0.0-alpha8/news.tar.gz";
         license = "gpl3";
       };
       tables = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-GpNQvlvN7g4HmLpQDWrYm2a8W8Md/xqI42wCOAdCwes=";
+        sha256 = "sha256-0+CZqw2iRxJ2dZtaqJ2RPpfv1Pe8NwmrAr1zkvTFsf8=";
         url =
-          "https://github.com/nextcloud-releases/tables/releases/download/v0.7.2/tables-v0.7.2.tar.gz";
+          "https://github.com/nextcloud-releases/tables/releases/download/v0.8.0/tables-v0.8.0.tar.gz";
         license = "gpl3";
       };
+
       timemanager = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-ez6MdeK6PfhYLeHPhMDcHdkrO4+2zGs+RNdQtSMdJho=";
+        sha256 = "sha256-fpShR1tF6E0zvlZkV4+LmPqlmOjhzhFDpVxEGPuNQo8=";
         url =
-          "https://github.com/te-online/timemanager/archive/refs/tags/v0.3.14.tar.gz";
+          "https://github.com/te-online/nextcloud-app-releases/raw/main/timemanager/v0.3.15/timemanager.tar.gz";
         license = "gpl3";
       };
       integration_excalidraw = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-NZGu6+KxeXQP23brkpkUbrzglDAy1P9dyQEAf7muwKE";
+        sha256 = "sha256-zleLZUCWIvZIpGfLJC8RhLk5pcFJ/GO5RS/x3kiD83k=";
         url =
-          "https://github.com/nextcloud-releases/integration_excalidraw/releases/download/v2.1.0/integration_excalidraw-v2.1.0.tar.gz";
+          "https://github.com/nextcloud-releases/integration_excalidraw/releases/download/v2.2.0/integration_excalidraw-v2.2.0.tar.gz";
         license = "gpl3";
       };
+
     };
-    extraOptions.enabledPreviewProviders = [
-      "OC\\Preview\\BMP"
-      "OC\\Preview\\GIF"
-      "OC\\Preview\\JPEG"
-      "OC\\Preview\\Krita"
-      "OC\\Preview\\MarkDown"
-      "OC\\Preview\\MP3"
-      "OC\\Preview\\OpenDocument"
-      "OC\\Preview\\PNG"
-      "OC\\Preview\\TXT"
-      "OC\\Preview\\XBitmap"
-      "OC\\Preview\\HEIC"
-    ];
   };
 
 }

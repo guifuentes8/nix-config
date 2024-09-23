@@ -3,7 +3,7 @@
     enable = true;
     appKeyFile = "/etc/bookstack-appkey";
     hostname = "bookstack";
-    appURL = "http://100.99.86.96:4000";
+
     database = {
       createLocally = true;
       user = "bookstack";

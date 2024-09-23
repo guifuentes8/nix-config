@@ -10,6 +10,7 @@
     # services
     #    ./adguard.nix
     ./bookstack.nix
+    ./console.nix
     ./gitea.nix
     ./homepage-dashboard.nix
     ./jellyfin.nix
@@ -24,7 +25,7 @@
     ./lidarr.nix
 
     # Extra config
-    #    ./borg.nix
+    ./borg.nix
     ./console.nix
     ./nginx.nix
     ./networking.nix
@@ -46,21 +47,11 @@
     autoEnable = true;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    cursor = {
-      name = "phinger-cursors-dark";
-      package = pkgs.phinger-cursors;
-      size = 30;
-    };
     fonts = {
       monospace = {
         name = "JetBrainsMonoNL Nerd Font";
         package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
       };
-    };
-    opacity = {
-      applications = 0.8;
-      terminal = 0.85;
-      desktop = 0.8;
     };
     image = ./wallpaper.png;
     override = { };

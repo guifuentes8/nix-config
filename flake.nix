@@ -34,8 +34,16 @@
     };
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager, nixpkgs-unstable
-    , sops-nix, stylix, ... }@inputs:
+  outputs =
+    { self
+    , nixpkgs
+    , nix-darwin
+    , home-manager
+    , nixpkgs-unstable
+    , sops-nix
+    , stylix
+    , ...
+    }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
@@ -45,7 +53,8 @@
         config.allowUnfree = true;
       };
 
-    in {
+    in
+    {
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
       overlays = import ./overlays { inherit inputs outputs; };
@@ -59,12 +68,12 @@
       homeConfigurations."guifuentes8@sun" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs unstable; };
           modules =
             [ stylix.homeManagerModules.stylix ./home/guifuentes8/sun.nix ];
         };
       nixosConfigurations.sun = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
+        specialArgs = { inherit inputs outputs unstable; };
         modules =
           [ stylix.nixosModules.stylix sops-nix.nixosModules.sops ./hosts/sun ];
       };
@@ -76,12 +85,12 @@
       homeConfigurations."guifuentes8@mercury" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs unstable; };
           modules = [ ./home/guifuentes8/mercury.nix ];
         };
 
       nixosConfigurations.mercury = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
+        specialArgs = { inherit inputs outputs unstable; };
         modules = [ sops-nix.nixosModules.sops ./hosts/mercury ];
       };
 

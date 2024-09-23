@@ -1,9 +1,8 @@
 { ... }:
 let
   lanDomain = "192.168.0.10";
-  vpnDomain = "100.99.86.96";
-in
-{
+  vpnDomain = "100.72.62.112";
+in {
   services.homepage-dashboard = {
     enable = true;
     listenPort = 8082;
@@ -11,13 +10,14 @@ in
     settings = {
       theme = "dark";
       color = "slate";
-      title = "Pokelab Server";
+      title = "Sun Server";
       background = {
-        image = "https://giffiles.alphacoders.com/212/212259.gif";
-        blur = "sm";
+        image = "https://wallpaperaccess.com/full/2995428.jpg";
+        blur = "xl";
       };
-      favicon = "https://www.favicon.cc/favicon/939/942/favicon.ico";
-      cardBlur = "xl";
+      favicon =
+        "https://img.icons8.com/?size=100&id=YPTOhlU4qO2D&format=png&color=000000";
+      cardBlur = "3xl";
       headerStyle = "boxedWidgets";
       language = "en-US";
       hideVersion = true;
