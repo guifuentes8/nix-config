@@ -19,11 +19,11 @@
     ../common/boot/systemd-boot.nix
 
     # Login Manager
-    ../common/login/gdm.nix
+    ../common/login/greetd.nix
 
     # Choice Interface (WM and/or DE)
     ../common/interfaces/WM/hyprland.nix
-    ../common/interfaces/DE/gnome.nix
+    #../common/interfaces/DE/gnome.nix
 
     # Active services
     ../common/services/backlight.nix

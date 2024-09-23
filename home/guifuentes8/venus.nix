@@ -6,8 +6,8 @@
 
     ./features/dev
     ./features/neovim
-    #    ./features/desktops/WM/hyprland.nix
-    ./features/desktops/DE/gnome.nix
+    ./features/desktops/WM/hyprland.nix
+    #./features/desktops/DE/gnome.nix
   ];
 
   wayland.windowManager.hyprland.settings.input = {
