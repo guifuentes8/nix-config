@@ -7,7 +7,7 @@ export default function ChartsDemo() {
   const b = "maçã";
   const c = [1, 2];
   c.map((x) => console.log(x));
-  console.log(a);
+  console.log(a, b);
   return (
     <BarChart
       series={[

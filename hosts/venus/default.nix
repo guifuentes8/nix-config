@@ -8,7 +8,7 @@
     ../common/hardware/bluetooth.nix
 
     # Hardware Gpu (if exist)
-    ../common/hardware/gpu/notebook-prime.nix
+    ../common/hardware/gpu/nvidia-prime.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -19,13 +19,16 @@
     ../common/boot/systemd-boot.nix
 
     # Login Manager
-    ../common/login/greetd.nix
+    ../common/login/gdm.nix
 
     # Choice Interface (WM and/or DE)
     ../common/interfaces/WM/hyprland.nix
+    ../common/interfaces/DE/gnome.nix
 
     # Active services
     ../common/services/backlight.nix
+    ../common/services/flatpak.nix
+
     ../common/services/temperature.nix
     ../common/services/dev
 
@@ -39,7 +42,6 @@
 
   # custom system config
   console.keyMap = "br-abnt2";
-
   services.xserver.xkb.layout = "br";
   services.xserver.xkb.variant = "abnt2";
 

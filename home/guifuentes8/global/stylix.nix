@@ -1,7 +1,7 @@
 { pkgs, unstable, lib, ... }:
 let
-  cursorName = "Quintom_Ink";
-  cursorPkg = pkgs.quintom-cursor-theme;
+  cursorName = "phinger-cursors-dark";
+  cursorPkg = pkgs.phinger-cursors;
 
 in {
   stylix = {
@@ -9,7 +9,7 @@ in {
     autoEnable = true;
     polarity = "dark";
     base16Scheme =
-      "${unstable.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
+      "${unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;
@@ -41,16 +41,15 @@ in {
       name = lib.mkForce "Papirus-Dark";
       package = lib.mkForce pkgs.catppuccin-papirus-folders;
     };
-
+    cursorTheme = {
+      name = cursorName;
+      package = cursorPkg;
+    };
   };
 
   home.sessionVariables = {
     XCURSOR_THEME = cursorName;
     XCURSOR_SIZE = "32";
   };
-
-  #  wayland.windowManager.hyprland.settings.env =
-  #   [ "HYPRCURSOR_THEME,${cursorName}" "HYPRCURSOR_SIZE,32" ];
-
 }
 

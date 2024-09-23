@@ -15,22 +15,22 @@
 
   # default Kde Programs
 
-  #  environment.systemPackages = (with pkgs.kdePackages; [
-  #    kmail
-  #    kdenlive
-  #    kate
-  #    ktorrent
-  #    kmag
-  #    akregator
-  #    knotes
-  #    kasts
-  #    kaccounts-integration
-  #    kaccounts-providers
-  #    kio-gdrive
-  #    dragon
-  #    qtstyleplugin-kvantum
-  #  ]);
-  #
+  environment.systemPackages = (with pkgs.kdePackages; [
+    kmail
+    kdenlive
+    kate
+    ktorrent
+    kmag
+    akregator
+    #knotes
+    kasts
+    kaccounts-integration
+    kaccounts-providers
+    kio-gdrive
+    dragon
+    qtstyleplugin-kvantum
+  ]);
+
   environment.plasma6.excludePackages = with pkgs.kdePackages;
     [ plasma-browser-integration ];
 }

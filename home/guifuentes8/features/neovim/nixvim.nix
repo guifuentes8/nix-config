@@ -25,10 +25,12 @@ in {
   programs.nixvim = {
     enable = true;
     package = unstable.neovim-unwrapped;
-    colorscheme = "catppuccin-macchiato";
     colorschemes.catppuccin = {
       enable = true;
-      settings = { flavor = "macchiato"; };
+      settings = {
+        flavour = "mocha";
+        integrations = { };
+      };
     };
     extraConfigLua = ''
       require 'settings'

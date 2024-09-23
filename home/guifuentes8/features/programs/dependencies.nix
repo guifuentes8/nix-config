@@ -7,6 +7,7 @@
     unrar
     unzip
     chafa
+    lshw
     imagemagick
     ffmpegthumbnailer
     poppler_utils

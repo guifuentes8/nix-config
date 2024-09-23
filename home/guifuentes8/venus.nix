@@ -6,11 +6,10 @@
 
     ./features/dev
     ./features/neovim
-    ./features/desktops/WM/hyprland.nix
-
+    #    ./features/desktops/WM/hyprland.nix
+    ./features/desktops/DE/gnome.nix
   ];
 
-  # Keyboard
   wayland.windowManager.hyprland.settings.input = {
     kb_layout = "br";
     kb_variant = "abnt2";

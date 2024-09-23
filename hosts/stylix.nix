@@ -1,7 +1,8 @@
 { pkgs, unstable, ... }:
 let
-  cursorName = "Quintom_Ink";
-  cursorPkg = pkgs.quintom-cursor-theme;
+  cursorName = "phinger-cursors-dark";
+  cursorPkg = pkgs.phinger-cursors;
+
 in {
 
   stylix = {
@@ -9,7 +10,7 @@ in {
     autoEnable = true;
     polarity = "dark";
     base16Scheme =
-      "${unstable.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
+      "${unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     cursor = {
       name = cursorName;
