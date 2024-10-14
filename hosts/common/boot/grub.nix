@@ -4,7 +4,6 @@
       enable = true;
       useOSProber = true;
       efiSupport = true;
-      default = "saved";
       device = "nodev";
     };
     efi = {

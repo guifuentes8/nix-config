@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
 
     # Hardware Gpu (if exist)
-    #    ../common/hardware/gpu/amdgpu.nix
+        ../common/hardware/gpu/nvidia.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -15,9 +15,8 @@
     ../common
 
     # Boot initial (grub or systemd)
-    ../common/boot/systemd-boot.nix
-    ../common/hardware/logitech.nix
-
+    ../common/boot/grub.nix
+    
     # Login Manager
     ../common/login/sddm.nix
 
@@ -37,9 +36,9 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # Custom config
-  console.keyMap = "us";
-  services.xserver.xkb.layout = "us";
+  console.keyMap = "br-abnt2";
+  services.xserver.xkb.layout = "br";
+  services.xserver.xkb.variant = "abnt2";
   networking.hostName = "earth";
-  services.teamviewer.enable = true;
 
 }
