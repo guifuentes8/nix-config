@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
 
     # Hardware Gpu (if exist)
-        ../common/hardware/gpu/nvidia.nix
+    ../common/hardware/gpu/nvidia.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -15,8 +15,8 @@
     ../common
 
     # Boot initial (grub or systemd)
-    ../common/boot/grub.nix
-    
+    ../common/boot/systemd-boot.nix
+
     # Login Manager
     ../common/login/sddm.nix
 

@@ -29,7 +29,10 @@ in {
       desktop = 1.0;
     };
     override = { };
-    targets = { nixvim.enable = false; };
+    targets = {
+      nixvim.enable = false;
+      chromium.enable = false;
+    };
   };
 
 }

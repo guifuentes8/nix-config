@@ -15,7 +15,6 @@
   home.packages = with unstable; [
 
     # programs
-    chromium
     discord
     gimp
     onlyoffice-bin
