@@ -12,6 +12,7 @@ in {
 
     ../../browsers/qutebrowser.nix
     ../../terminals/kitty.nix
+    ../../terminals/warp.nix
     ../../cli
     ../../programs
     ../../services

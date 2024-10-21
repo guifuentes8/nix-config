@@ -1,22 +1,20 @@
-{ pkgs, config, ... }:
-
-{
+{ ... }: {
   imports = [
 
     # Global config (required)
     ./global
-    ./features/dev
-    ./features/desktop/common
-    ./features/desktop/gnome.nix
 
+    ./features/dev
+    ./features/neovim
+    ./features/desktops/WM/hyprland.nix
+    #./features/desktops/DE/gnome.nix
   ];
 
-  # As already mentioned
-  targets.genericLinux.enable = true;
-  programs.zsh.initExtraFirst = "cat ${./extras/magikarp.txt}";
+  wayland.windowManager.hyprland.settings.input = {
+    kb_layout = "br";
+    kb_variant = "abnt2";
+  };
 
-  # The critical missing piece for me
-  xdg.systemDirs.data =
-    [ "${config.home.homeDirectory}/.nix-profile/share/applications" ];
+  stylix.image = ./global/extras/venus.png;
 
 }
