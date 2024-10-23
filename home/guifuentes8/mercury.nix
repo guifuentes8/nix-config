@@ -7,7 +7,6 @@
     ./features/dev
     ./features/neovim
     ./features/desktops/WM/hyprland.nix
-    #./features/desktops/DE/gnome.nix
   ];
 
   wayland.windowManager.hyprland.settings.input = {
@@ -15,6 +14,6 @@
     kb_variant = "abnt2";
   };
 
-  stylix.image = ./global/extras/venus.png;
+  stylix.image = ./global/extras/mercury.jpg;
 
 }

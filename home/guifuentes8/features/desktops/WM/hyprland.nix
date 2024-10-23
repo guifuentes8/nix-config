@@ -1,7 +1,7 @@
 { lib, pkgs, config, ... }:
 let
   cw = ./scripts/cw.sh;
-  term = "kitty";
+  term = "footclient";
   startupScript = pkgs.writeShellScriptBin "start" ''
     wl-clipboard-history -t &
     dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
@@ -10,8 +10,9 @@ let
 in {
   imports = [
 
+    ../../browsers/firefox.nix
     ../../browsers/qutebrowser.nix
-    ../../terminals/kitty.nix
+    ../../terminals/foot.nix
     ../../terminals/warp.nix
     ../../cli
     ../../programs

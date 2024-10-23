@@ -10,6 +10,6 @@
 
   ];
 
-  stylix.image = ./global/extras/earth.jpg;
+  stylix.image = ./global/extras/earth.jpeg;
 
 }

@@ -1,4 +1,4 @@
-{ lib, pkgs, config, outputs, ... }: {
+{ lib, pkgs, config, outputs, inputs, ... }: {
 
   imports = [ ./programs.nix ./systemd.nix ./services.nix ./stylix.nix ];
 

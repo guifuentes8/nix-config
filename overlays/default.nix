@@ -1,17 +1,16 @@
 { inputs, ... }: {
 
+  # For every flake input, aliases 'pkgs.inputs.${flake}' to
+  # 'inputs.${flake}.packages.${pkgs.system}' or
+  # 'inputs.${flake}.legacyPackages.${pkgs.system}'
+  flake-inputs = final: _: {
+    inputs = builtins.mapAttrs (_: flake:
+      let
+        legacyPackages = (flake.legacyPackages or { }).${final.system} or { };
+        packages = (flake.packages or { }).${final.system} or { };
+      in if legacyPackages != { } then legacyPackages else packages) inputs;
+  };
   modifications = final: prev: {
-    #  rbw = prev.rbw.overrideAttrs (old: rec {
-    #    version = "main";
-    #    pname = "rbw";
-    #    src = prev.fetchFromGitHub {
-    #      owner = "doy";
-    #      repo = pname;
-    #      rev = "${version}";
-    #      hash = "sha256-ScVXtNk2QtfAQn6PtQkbDJNLWAu49l55s6Zpf1fiVjM=";
-    #    };
-    #  });
-
     nchat = prev.nchat.overrideAttrs (old: rec {
       version = "4.41";
       pname = "nchat";

@@ -8,29 +8,30 @@
       id = 0;
       name = "guifuentes8";
       # TODO
-      #  extensions = with pkgs.inputs.firefox-addons; [
-      #    bitwarden
-      #    react-devtools
-      #    reduxdevtools
-      #    darkreader
-      #    ublock-origin
-      #    stylus
-      #  ];
+      extensions = with pkgs.inputs.firefox-addons; [
+        bitwarden
+        darkreader
+        firefox-color
+        floccus
+        react-devtools
+        reduxdevtools
+        stylus
+        ublock-origin
+        vimium
+      ];
     };
   };
   xdg.mimeApps = {
     enable = true;
-    defaultApplications =
-      let
-        urls = [
-          "text/html"
-          "x-scheme-handler/http"
-          "x-scheme-handler/https"
-          "x-scheme-handler/about"
-          "x-scheme-handler/unknown"
-        ];
+    defaultApplications = let
+      urls = [
+        "text/html"
+        "x-scheme-handler/http"
+        "x-scheme-handler/https"
+        "x-scheme-handler/about"
+        "x-scheme-handler/unknown"
+      ];
 
-      in
-      (lib.genAttrs urls (_: [ "firefox.desktop" ]));
+    in (lib.genAttrs urls (_: [ "firefox.desktop" ]));
   };
 }

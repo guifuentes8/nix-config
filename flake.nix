@@ -32,18 +32,15 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , nix-darwin
-    , home-manager
-    , nixpkgs-unstable
-    , sops-nix
-    , stylix
-    , ...
-    }@inputs:
+  outputs = { self, nixpkgs, nix-darwin, home-manager, nixpkgs-unstable
+    , sops-nix, stylix, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
@@ -53,8 +50,7 @@
         config.allowUnfree = true;
       };
 
-    in
-    {
+    in {
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
       overlays = import ./overlays { inherit inputs outputs; };
@@ -86,12 +82,17 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs unstable; };
-          modules = [ stylix.homeManagerModules.stylix ./home/guifuentes8/mercury.nix ];
+          modules =
+            [ stylix.homeManagerModules.stylix ./home/guifuentes8/mercury.nix ];
         };
 
       nixosConfigurations.mercury = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs unstable; };
-        modules = [stylix.nixosModules.stylix sops-nix.nixosModules.sops ./hosts/mercury ];
+        modules = [
+          stylix.nixosModules.stylix
+          sops-nix.nixosModules.sops
+          ./hosts/mercury
+        ];
       };
 
       #        ┬  ┬┌─┐┌┐┌┬ ┬┌─┐

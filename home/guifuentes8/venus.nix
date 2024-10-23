@@ -15,6 +15,6 @@
     kb_variant = "abnt2";
   };
 
-  stylix.image = ./global/extras/venus.png;
+  stylix.image = ./global/extras/venus.jpg;
 
 }
