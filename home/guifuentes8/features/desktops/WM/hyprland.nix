@@ -185,7 +185,7 @@ in {
         bind = $mainMod, F8, exec,  
         bind = $mainMod, F9, exec, 
         bind = $mainMod, F10, exec, rofi-bluetooth 
-        bind = $mainMod, F11, exec, rofi-rbw --keybindings 'Alt+u:copy:username,Alt+p:copy:password,Alt+t:copy:totp,Alt+n:copy:notes'        
+        bind = $mainMod, F11, exec, rofi-rbw --keybindings 'Alt+u:copy:username,Alt+p:copy:password,Alt+t:copy:totp,Alt+n:copy:notes,Alt+s:sync'
         bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
 
         # Pick color
