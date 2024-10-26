@@ -29,7 +29,7 @@ in {
       enable = true;
       settings = {
         lualine_bold = true;
-        style = "storm";
+        style = "night";
       };
     };
     extraConfigLua = ''
