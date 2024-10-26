@@ -1,9 +1,8 @@
 { ... }: {
   imports = [
     ./common
-    ../../browsers/chromium.nix
+    ../../browsers/firefox.nix
     ../../terminals/alacritty.nix
-    ../../terminals/warp.nix
     ../../cli
     ../../programs
     ../../services

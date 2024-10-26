@@ -35,8 +35,7 @@
     overlays = builtins.attrValues outputs.overlays;
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (_: true);
-      permittedInsecurePackages = [ "electron-19.1.9" ];
+      permittedInsecurePackages = [ "electron-19.1.9" "tokyo-night-v2" ];
     };
   };
 

@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 {
-  home.file.".local/share/warp-terminal/themes/tokyo_night_storm.yml".source =
-    ./tokyo_night_storm.yml;
+  home.file.".local/share/warp-terminal/themes/catppuccin_mocha.yml".source =
+    ./catppuccin_mocha.yml;
   home.packages = [ pkgs.warp-terminal ];
 
 }
