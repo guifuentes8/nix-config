@@ -1,9 +1,18 @@
 { pkgs, config, ... }: {
   environment.etc."nextcloud-admin-pass".text = "Agorajaera@123";
+
   services.nextcloud = {
     enable = true;
     autoUpdateApps.enable = false;
     appstoreEnable = false;
+    hostName = "nextcloud";
+    datadir = "/mnt/storage/nextcloud";
+    configureRedis = true;
+    database.createLocally = true;
+    extraAppsEnable = true;
+    https = true;
+    maxUploadSize = "50G";
+    package = pkgs.nextcloud29; # Need to manually increment with every update
     caching = {
       memcached = true;
       redis = true;
@@ -16,7 +25,7 @@
       adminuser = "admin";
     };
     settings = {
-      overwriteProtocol = "http";
+      overwriteProtocol = "https";
       defaultPhoneRegion = "BR";
       enabledPreviewProviders = [
         "OC\\Preview\\BMP"
@@ -31,15 +40,7 @@
         "OC\\Preview\\XBitmap"
         "OC\\Preview\\HEIC"
       ];
-
     };
-    configureRedis = true;
-    database.createLocally = true;
-    extraAppsEnable = true;
-    https = false;
-    hostName = "nextcloud";
-    maxUploadSize = "50G";
-    package = pkgs.nextcloud29; # Need to manually increment with every update
     poolSettings = {
       pm = "static";
       "pm.max_children" = "55";
@@ -101,13 +102,6 @@
           "https://github.com/te-online/nextcloud-app-releases/raw/main/timemanager/v0.3.15/timemanager.tar.gz";
         license = "gpl3";
       };
-      integration_excalidraw = pkgs.fetchNextcloudApp {
-        sha256 = "sha256-zleLZUCWIvZIpGfLJC8RhLk5pcFJ/GO5RS/x3kiD83k=";
-        url =
-          "https://github.com/nextcloud-releases/integration_excalidraw/releases/download/v2.2.0/integration_excalidraw-v2.2.0.tar.gz";
-        license = "gpl3";
-      };
-
     };
   };
 

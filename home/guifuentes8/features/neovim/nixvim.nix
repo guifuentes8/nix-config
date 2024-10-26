@@ -25,11 +25,11 @@ in {
   programs.nixvim = {
     enable = true;
     package = unstable.neovim-unwrapped;
-    colorschemes.catppuccin = {
+    colorschemes.tokyonight = {
       enable = true;
       settings = {
-        flavour = "mocha";
-        integrations = { };
+        lualine_bold = true;
+        style = "storm";
       };
     };
     extraConfigLua = ''

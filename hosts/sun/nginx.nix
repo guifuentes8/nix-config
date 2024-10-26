@@ -1,15 +1,11 @@
-{ ... }:
-let
-  lanDomain = "192.168.0.10";
-  vpnDomain = "100.72.62.112";
+{ config, ... }:
+let domain = "guifuentes8.com.br";
 in {
-  services.bookstack.appURL = "http://${vpnDomain}:4000";
   services.nextcloud.settings = {
-    trusted_proxies = [ "sun.nextcloud.lan" ];
-    trusted_domains =
-      [ "sun" "${lanDomain}" "${vpnDomain}" "localhost" "sun.nextcloud.lan" ];
-
+    trusted_proxies = [ ];
+    trusted_domains = [ "nextcloud.${domain}" ];
   };
+
   services.nginx = {
     enable = true;
     recommendedGzipSettings = true;
@@ -25,49 +21,30 @@ in {
         enableACME = false;
       };
       proxy = port:
-
-        base {
-          "/" = {
-            proxyWebsockets = true;
-            proxyPass = "http://127.0.0.1:" + toString port + "/";
-          };
-        };
-
+        base { "/".proxyPass = "http://127.0.0.1:" + toString port + "/"; };
     in {
-      "sun.adguard.lan" = proxy 30;
-      "sun.gitea.lan" = proxy 3100;
-      "sun.nextcloud.lan" = proxy 9000;
-      "sun.lan" = proxy 8082 // { default = true; };
-      "sun.jellyfin.lan" = proxy 8096;
-      "sun.transmission.lan" = proxy 9091;
+      # Define example.com as reverse-proxied service on 127.0.0.1:3000
+      "${domain}" = proxy 8787 // { default = true; };
+      "dashboard.${domain}" = proxy 9092;
+      "jellyfin.${domain}" = proxy 8096;
+      "nextcloud.${domain}" = proxy 9090;
+      "flood.${domain}" = proxy 9091;
+      "gitea.${domain}" = proxy 9093;
+      "minecraft.${domain}" = proxy 9999;
 
-      "bookstack".listen = [
-        {
-          addr = vpnDomain;
-          port = 4000;
-        }
-        {
-          addr = lanDomain;
-          port = 4000;
-        }
-      ];
+      "${config.services.nextcloud.hostName}".listen = [{
+        addr = "127.0.0.1";
+        port = 9090;
+      }];
 
-      "nextcloud".listen = [
-        {
-          addr = vpnDomain;
-          port = 9000;
-        }
-        {
-          addr = lanDomain;
-          port = 9000;
-        }
-
-        {
-          addr = "127.0.0.1";
-          port = 9000;
-        }
-      ];
     };
+  };
+
+  services.static-web-server = {
+    enable = true;
+    listen = "[::]:8787";
+    #root = "${config.users.users.guifuentes8.home}";
+    root = "/tmp/www/";
   };
 
 }

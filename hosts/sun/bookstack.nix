@@ -3,6 +3,7 @@
     enable = true;
     appKeyFile = "/etc/bookstack-appkey";
     hostname = "bookstack";
+    appURL = "bookstack.guifuentes8.com.br";
 
     database = {
       createLocally = true;

@@ -5,7 +5,7 @@ let
 in {
   services.homepage-dashboard = {
     enable = true;
-    listenPort = 8082;
+    listenPort = 9092;
     openFirewall = true;
     settings = {
       theme = "dark";

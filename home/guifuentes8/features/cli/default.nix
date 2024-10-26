@@ -11,7 +11,7 @@
       settings = {
         flags = {
           temperature_type = "c";
-          rate = 300;
+          rate = 500;
         };
       };
     };

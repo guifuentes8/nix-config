@@ -1,21 +1,20 @@
-{ config, ... }: {
+{ ... }: {
 
   networking = {
-    hostName = "sun"; # Define your hostname.
+    hostName = "sun";
     defaultGateway = "192.168.0.1";
-    interfaces.enp3s0 = {
+    interfaces.enp5s0 = {
       useDHCP = false;
       ipv4.addresses = [{
         address = "192.168.0.10";
         prefixLength = 24;
       }];
-
     };
-    nameservers = [ "100.100.100.100" "8.8.8.8" "8.8.4.4" ];
+    nameservers = [ "8.8.8.8" "8.8.4.4" ];
     firewall = {
-      trustedInterfaces = [ "enp4s0" "tailscale0" ];
-      allowedUDPPorts = [ config.services.tailscale.port 53 80 443 51413 ];
-      allowedTCPPorts = [ 53 80 443 3000 51413 ];
+      trustedInterfaces = [ ];
+      allowedUDPPorts = [ 80 443 51413 ];
+      allowedTCPPorts = [ 80 443 51413 ];
     };
   };
 

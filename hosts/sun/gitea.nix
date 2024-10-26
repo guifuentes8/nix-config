@@ -1,6 +1,6 @@
 {
   services.gitea = {
     enable = true;
-    settings.server = { HTTP_PORT = 3100; };
+    settings.server = { HTTP_PORT = 9093; };
   };
 }

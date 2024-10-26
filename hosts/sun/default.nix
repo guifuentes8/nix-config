@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -6,19 +6,18 @@
     ../common
     ../common/boot/systemd-boot.nix
     ../common/users/guifuentes8.nix
-    ../common/login/gdm.nix
-    ../common/interfaces/DE/gnome.nix
 
     # services
     #    ./adguard.nix
-    #   ./bookstack.nix
-    #    ./gitea.nix
-    #    ./homepage-dashboard.nix
-    #    ./jellyfin.nix
-    #    ./nextcloud.nix
-    #    ./transmission.nix
-    ./tailscale.nix
-    #    ./vscode-server.nix
+    ./gitea.nix
+    ./homepage-dashboard.nix
+    ./jellyfin.nix
+    ./nextcloud.nix
+    ./transmission.nix
+    ./vscode-server.nix
+
+    # Games
+    #   ./minecraft.nix
 
     #    ./jackett.nix
     #    ./sonarr.nix
@@ -26,23 +25,31 @@
     #    ./lidarr.nix
 
     # Extra config
-    #    ./borg.nix
+    ./borg.nix
+    ./cloudflare.nix
     ./console.nix
     ./nginx.nix
     ./networking.nix
-    #    ./postgres.nix
+    ./postgres.nix
   ];
 
   services.getty.autologinUser = "guifuentes8";
   services.openssh.enable = true;
-  environment.systemPackages = [ pkgs.btop ];
+  environment.systemPackages = [ ];
 
-  #  fileSystems."/run/media/guifuentes8/backup_files" = {
-  #    device = "/dev/disk/by-uuid/4e4eb08a-8b04-413c-abf2-ad82258d02c2";
-  #    fsType = "ext4";
-  #    options = [ "users" "nofail" "rw" ];
+  fileSystems."/mnt/storage_backup" = {
+    device = "/dev/disk/by-uuid/433cc6cc-561e-4783-b33c-d523378eefd9";
+    fsType = "ext4";
+    depends = [ "/mnt/storage" ];
+    options = [ "nofail" "users" ];
+  };
+  fileSystems."/mnt/storage" = {
+    device = "/dev/disk/by-uuid/b22affd9-1505-4214-8acf-57468a600899";
+    fsType = "ext4";
 
-  #  };
+    options = [ "users" "nofail" ];
+  };
+
   stylix = {
     enable = true;
     autoEnable = true;
