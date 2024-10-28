@@ -14,6 +14,7 @@ in {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./settings.nix
+    ./plugins/cmp.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
     ./plugins/neorg.nix

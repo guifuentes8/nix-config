@@ -9,7 +9,7 @@ in {
     autoEnable = true;
     polarity = "dark";
     base16Scheme =
-      "${unstable.base16-schemes}/share/themes/tokyo-night-storm.yaml";
+      "${unstable.base16-schemes}/share/themes/tokyo-night-dark.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;
@@ -23,15 +23,14 @@ in {
     };
     opacity = {
       applications = 1.0;
-      terminal = 0.9;
+      terminal = 1.0;
       desktop = 1.0;
     };
     override = { };
     targets = {
       nixvim.enable = false;
-      vim.enable = false;
+      vim.enable = true;
       vscode.enable = false;
-      waybar.enable = false;
     };
   };
 

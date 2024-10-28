@@ -10,7 +10,7 @@ in {
     autoEnable = true;
     polarity = "dark";
     base16Scheme =
-      "${unstable.base16-schemes}/share/themes/tokyo-night-storm.yaml";
+      "${unstable.base16-schemes}/share/themes/tokyo-night-dark.yaml";
 
     cursor = {
       name = cursorName;
@@ -29,10 +29,7 @@ in {
       desktop = 1.0;
     };
     override = { };
-    targets = {
-      nixvim.enable = false;
-      chromium.enable = false;
-    };
+    targets = { };
   };
 
 }
