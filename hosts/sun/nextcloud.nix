@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, unstable, ... }: {
   environment.etc."nextcloud-admin-pass".text = "Agorajaera@123";
 
   services.nextcloud = {
@@ -12,7 +12,7 @@
     extraAppsEnable = true;
     https = true;
     maxUploadSize = "50G";
-    package = pkgs.nextcloud29; # Need to manually increment with every update
+    package = unstable.nextcloud29; # Need to manually increment with every update
     caching = {
       memcached = true;
       redis = true;
@@ -70,33 +70,33 @@
         integration_paperless mail maps memories music notes notify_push
         onlyoffice phonetrack tasks;
 
-      drawio = pkgs.fetchNextcloudApp {
+      drawio = unstable.fetchNextcloudApp {
         sha256 = "sha256-PpCOhegzJ6Suy040r1XwxWzBKmL9xkgEXLaWPKGmvlE=";
         url =
           "https://github.com/jgraph/drawio-nextcloud/releases/download/v3.0.3/drawio-v3.0.3.tar.gz";
         license = "gpl3";
       };
-      health = pkgs.fetchNextcloudApp {
+      health = unstable.fetchNextcloudApp {
         sha256 = "sha256-JsmflNU/XIa46NJwdJ5xzjrBk3gI7mTthyqNJ5jhO1g=";
         url =
           "https://github.com/nextcloud/health/releases/download/v2.2.2/health.tar.gz";
         license = "gpl3";
       };
 
-      news = pkgs.fetchNextcloudApp {
+      news = unstable.fetchNextcloudApp {
         sha256 = "sha256-nj1yR2COwQ6ZqZ1/8v9csb/dipXMa61e45XQmA5WPwg=";
         url =
           "https://github.com/nextcloud/news/releases/download/25.0.0-alpha8/news.tar.gz";
         license = "gpl3";
       };
-      tables = pkgs.fetchNextcloudApp {
+      tables = unstable.fetchNextcloudApp {
         sha256 = "sha256-0+CZqw2iRxJ2dZtaqJ2RPpfv1Pe8NwmrAr1zkvTFsf8=";
         url =
           "https://github.com/nextcloud-releases/tables/releases/download/v0.8.0/tables-v0.8.0.tar.gz";
         license = "gpl3";
       };
 
-      timemanager = pkgs.fetchNextcloudApp {
+      timemanager = unstable.fetchNextcloudApp {
         sha256 = "sha256-fpShR1tF6E0zvlZkV4+LmPqlmOjhzhFDpVxEGPuNQo8=";
         url =
           "https://github.com/te-online/nextcloud-app-releases/raw/main/timemanager/v0.3.15/timemanager.tar.gz";
