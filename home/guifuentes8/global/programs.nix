@@ -1,11 +1,11 @@
-{ pkgs, config, ... }: {
+{ pkgs, unstable, config, ... }: {
   home.packages = [
     pkgs.age
     pkgs.nh
     pkgs.nix-output-monitor
     pkgs.nvd
     pkgs.nixpkgs-fmt
-    pkgs.microfetch
+    unstable.microfetch
   ];
 
   programs = {

@@ -17,7 +17,7 @@ in {
     ./plugins/cmp.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
-    ./plugins/neorg.nix
+ #   ./plugins/neorg.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/yazi.nix
@@ -26,7 +26,7 @@ in {
   programs.nixvim = {
     enable = true;
     package = unstable.neovim-unwrapped;
-    colorschemes.ayu = { enable = true; };
+    colorschemes.tokyonight = { enable = true; };
     extraConfigLua = ''
       require 'settings'
       require 'highlights'
@@ -40,6 +40,44 @@ in {
         pathlib-nvim
       ];
 
+    plugins = {
+      bufferline.enable = true;
+      cmp.enable = true;
+      dashboard.enable = true;
+      gitsigns.enable = true;
+      luasnip.enable = true;
+      lualine.enable = true;
+      lsp.enable = true;
+      noice.enable = true;
+    };
+
+    extraPlugins = with pkgs.vimPlugins; [
+      cmp-buffer # buffer words
+      cmp-nvim-lsp # dependencies
+      cmp_luasnip
+
+      plenary-nvim
+      nvim-web-devicons
+      zen-mode-nvim
+      nvim-spectre
+      friendly-snippets
+      inc-rename-nvim
+
+      # Neorg dependencies
+
+      # Noice dependencies
+      nui-nvim
+      nvim-notify
+      nvim-lsp-notify
+
+      # Telescope extensions 
+      telescope-project-nvim
+      telescope-github-nvim
+      telescope-media-files-nvim
+      telescope-file-browser-nvim
+
+
+    ];
     extraPackages = with pkgs; [
 
       # Language servers
@@ -95,46 +133,6 @@ in {
       wrap = true;
     };
 
-    plugins = {
-      bufferline.enable = true;
-      cmp.enable = true;
-      dashboard.enable = true;
-      gitsigns.enable = true;
-      luasnip.enable = true;
-      lualine.enable = true;
-      lsp.enable = true;
-      noice.enable = true;
-      neorg.enable = true;
-    };
-
-    extraPlugins = with pkgs.vimPlugins; [
-      cmp-buffer # buffer words
-      cmp-nvim-lsp # dependencies
-      cmp_luasnip
-
-      plenary-nvim
-      nvim-web-devicons
-      zen-mode-nvim
-      nvim-spectre
-      friendly-snippets
-      inc-rename-nvim
-
-      # Neorg dependencies
-
-      # Noice dependencies
-      nui-nvim
-      nvim-notify
-      nvim-lsp-notify
-
-      # Telescope extensions 
-      telescope-project-nvim
-      telescope-github-nvim
-      telescope-media-files-nvim
-      telescope-file-browser-nvim
-
-      (fromGithub "50d8c9c19509ba5b03760e2d644128afc4215281" "HEAD"
-        "https://codeberg.org/jthvai/lavender.nvim")
-    ];
   };
 
   xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;

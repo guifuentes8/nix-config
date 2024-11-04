@@ -9,7 +9,7 @@ in {
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme = "${unstable.base16-schemes}/share/themes/ayu-dark.yaml";
+    base16Scheme = "${unstable.base16-schemes}/share/themes/tokyo-night-storm.yaml";
 
     cursor = {
       name = cursorName;
