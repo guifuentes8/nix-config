@@ -1,6 +1,6 @@
 # This file (and the global directory) holds config that i use on all hosts
-{ config, lib, inputs, outputs, pkgs, nix-colors, ... }: {
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
+{ config, lib, inputs, outputs, pkgs, ... }: {
+  imports = [ inputs.home-manager.nixosModules.home-manager ./sops.nix ];
 
   services = {
     tailscale.enable = true;
@@ -34,7 +34,7 @@
   };
 
   environment = {
-    systemPackages = [ ];
+    systemPackages = with pkgs; [ sops ];
     sessionVariables = {
       FLAKE = "/home/guifuentes8/nix-config";
       XDG_CACHE_HOME = "\${HOME}/.cache";
@@ -64,7 +64,7 @@
   };
 
   # Sound
-#  sound.enable = true;
+  #  sound.enable = true;
   hardware.pulseaudio.enable = false;
 
   # Fonts

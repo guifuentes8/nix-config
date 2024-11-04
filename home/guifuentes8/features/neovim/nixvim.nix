@@ -26,13 +26,7 @@ in {
   programs.nixvim = {
     enable = true;
     package = unstable.neovim-unwrapped;
-    colorschemes.tokyonight = {
-      enable = true;
-      settings = {
-        lualine_bold = true;
-        style = "night";
-      };
-    };
+    colorschemes.ayu = { enable = true; };
     extraConfigLua = ''
       require 'settings'
       require 'highlights'
