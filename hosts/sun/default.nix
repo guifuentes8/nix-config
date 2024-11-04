@@ -31,6 +31,7 @@
     ./nginx.nix
     ./networking.nix
     ./postgres.nix
+    ./tailscale.nix
   ];
 
   services.getty.autologinUser = "guifuentes8";
