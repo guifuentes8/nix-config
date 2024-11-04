@@ -65,8 +65,11 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs unstable; };
-          modules =
-            [ stylix.homeManagerModules.stylix ./home/guifuentes8/sun.nix ];
+          modules = [
+            stylix.homeManagerModules.stylix
+            sops-nix.homeManagerModules.sops
+            ./home/guifuentes8/sun.nix
+          ];
         };
       nixosConfigurations.sun = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs unstable; };
