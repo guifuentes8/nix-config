@@ -26,7 +26,7 @@ in {
   programs.nixvim = {
     enable = true;
     package = unstable.neovim-unwrapped;
-    colorschemes.tokyonight = { enable = true; };
+    colorschemes.catppuccin = { enable = true; settings.flavour="frappe"; };
     extraConfigLua = ''
       require 'settings'
       require 'highlights'
