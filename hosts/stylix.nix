@@ -9,7 +9,7 @@ in {
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme = "${unstable.base16-schemes}/share/themes/catppuccin-frappe.yaml";
+    base16Scheme = "${unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     cursor = {
       name = cursorName;
