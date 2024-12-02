@@ -92,7 +92,7 @@ in {
             onAttach.function = onAttachFunction;
           };
           graphql = {
-            enable = true;
+            enable = false;
             onAttach.function = onAttachFunction;
           };
           jsonls = {

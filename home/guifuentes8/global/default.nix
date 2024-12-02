@@ -1,4 +1,4 @@
-{ lib, pkgs, config, outputs, inputs, ... }: {
+{ lib, pkgs, config, outputs,  ... }: {
 
   imports =
     [ ./programs.nix ./systemd.nix ./services.nix ./stylix.nix ./sops.nix ];
@@ -6,7 +6,7 @@
   home = {
     username = "guifuentes8";
     homeDirectory = "/home/${config.home.username}";
-    stateVersion = "24.05";
+    stateVersion = "24.11";
   };
 
   xdg = {
@@ -27,7 +27,7 @@
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+      experimental-features = [ "nix-command" "flakes"  ];
       warn-dirty = false;
     };
   };

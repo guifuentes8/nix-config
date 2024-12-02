@@ -43,9 +43,6 @@ in {
         rounding = 8;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
         blur = {
           enabled = true;
           size = 4;
