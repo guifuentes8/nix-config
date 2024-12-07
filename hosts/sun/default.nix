@@ -14,7 +14,9 @@
     ./jellyfin.nix
     ./nextcloud.nix
     ./transmission.nix
+    ./excalidraw.nix
     ./vscode-server.nix
+    ./vaultwarden.nix
 
     # Games
     #   ./minecraft.nix

@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   services.postgresql = {
     enable = true;
-    package = pkgs.postgresql_15;
-    ensureDatabases = [ ];
+   # package = pkgs.postgresql_15;
+    ensureDatabases = [ "nextcloud" "postgres" ];
     enableTCPIP = true;
     authentication = pkgs.lib.mkOverride 10 ''
       local all      all    trust

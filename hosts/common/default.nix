@@ -107,6 +107,7 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
+      permittedInsecurePackages = [ "jitsi-meet-1.0.8043"];
     };
   };
   system = {

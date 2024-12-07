@@ -1,7 +1,7 @@
 {
   services.openvscode-server = {
     enable = true;
-    port = 9094;
+    port = 9095;
     user = "guifuentes8";
     group = "root";
     host = "0.0.0.0";

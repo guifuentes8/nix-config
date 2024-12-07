@@ -27,7 +27,7 @@
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes"  ];
+      experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
     };
   };
@@ -36,7 +36,7 @@
     overlays = builtins.attrValues outputs.overlays;
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [ "electron-19.1.9" "tokyo-night-v2" ];
+      permittedInsecurePackages = [ "electron-19.1.9"  ];
     };
   };
 
