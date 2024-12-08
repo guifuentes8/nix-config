@@ -1,0 +1,5 @@
+{...}:{
+    services.writefreely = {
+        enable = true;
+      };
+  }
