@@ -24,16 +24,19 @@ in {
         base { "/".proxyPass = "http://127.0.0.1:" + toString port + "/"; };
     in {
       "${domain}" = proxy 8787 // { default = true; };
-      "excalidraw.${domain}" = proxy 8089;
-      "jellyfin.${domain}" = proxy 8096;
       "nextcloud.${domain}" = proxy 9090;
       "flood.${domain}" = proxy 9091;
       "dashboard.${domain}" = proxy 9092;
       "gitea.${domain}" = proxy 9093;
-      "cloudbeaver.${domain}" = proxy 9094;
       "vscode.${domain}" = proxy 9095;
-      "vaultwarden.${domain}" = proxy 8222;
-     
+      "cloudbeaver.${domain}" = proxy 9096;
+      "convertx.${domain}" = proxy 9097;
+      "metube.${domain}" = proxy 9098;
+     "whoogle.${domain}" = proxy 9099;
+     "vaultwarden.${domain}" = proxy 8222;
+     "jellyfin.${domain}" = proxy 8096;
+     "excalidraw.${domain}" = proxy 8089;
+
       "${config.services.nextcloud.hostName}".listen = [{
         addr = "127.0.0.1";
         port = 9090;

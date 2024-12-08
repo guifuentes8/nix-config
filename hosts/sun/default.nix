@@ -9,12 +9,13 @@
 
     # services
     #    ./adguard.nix
+    ./excalidraw.nix
     ./gitea.nix
     ./homepage-dashboard.nix
     ./jellyfin.nix
     ./nextcloud.nix
+    ./rustdesk.nix
     ./transmission.nix
-    ./excalidraw.nix
     ./vscode-server.nix
     ./vaultwarden.nix
 

@@ -18,6 +18,7 @@
       "libvirtd"
       "cloudflared"
       "media"
+      "vaultwarden"
     ];
     shell = pkgs.zsh;
   };

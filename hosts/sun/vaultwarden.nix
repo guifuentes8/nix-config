@@ -3,7 +3,7 @@
       enable = true;
       backupDir = "/mnt/storage/vaultwarden";
       config = {
-  DOMAIN = "http://localhost";
+  DOMAIN = "https://vaultwarden.guifuentes8.com.br";
   SIGNUPS_ALLOWED = false;
 
   # Vaultwarden currently recommends running behind a reverse proxy
