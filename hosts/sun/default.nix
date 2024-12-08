@@ -18,6 +18,7 @@
     ./transmission.nix
     ./vscode-server.nix
     ./vaultwarden.nix
+    ./writefreely.nix
 
     # Games
     #   ./minecraft.nix

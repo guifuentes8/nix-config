@@ -36,7 +36,7 @@ in {
      "vaultwarden.${domain}" = proxy 8222;
      "jellyfin.${domain}" = proxy 8096;
      "excalidraw.${domain}" = proxy 8089;
-
+      "blog.${domain}" = proxy 8088;
       "${config.services.nextcloud.hostName}".listen = [{
         addr = "127.0.0.1";
         port = 9090;
