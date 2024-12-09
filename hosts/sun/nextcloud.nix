@@ -1,11 +1,9 @@
 { pkgs, config, unstable, ... }: {
   environment.etc."nextcloud-admin-pass".text = "Agorajaera@123";
 
-services.nextcloud-whiteboard-server = {
-  enable = true;
-  settings = {
-     NEXTCLOUD_URL = "https://cloud.guifuentes8.com.br";
-    };
+  services.nextcloud-whiteboard-server = {
+    enable = true;
+    settings = { NEXTCLOUD_URL = "https://cloud.guifuentes8.com.br"; };
   };
   services.nextcloud = {
     enable = true;
@@ -33,8 +31,8 @@ services.nextcloud-whiteboard-server = {
     };
     settings = {
       overwriteProtocol = "https";
-    trusted_proxies = [ "localhost" "127.0.0.1" ];
-    trusted_domains = [ "cloud.guifuentes8.com.br" ];
+      trusted_proxies = [ "localhost" "127.0.0.1" ];
+      trusted_domains = [ "cloud.guifuentes8.com.br" ];
       defaultPhoneRegion = "BR";
       enabledPreviewProviders = [
         "OC\\Preview\\BMP"
@@ -59,13 +57,14 @@ services.nextcloud-whiteboard-server = {
       "pm.process_idle_timeout" = "5s";
     };
     phpOptions = {
-      
+
     };
     extraApps = {
       inherit (config.services.nextcloud.package.packages.apps)
-        bookmarks calendar contacts cospend deck files_mindmap integration_openai
-        integration_paperless mail maps memories music news notes notify_push
-        onlyoffice phonetrack richdocuments spreed tasks whiteboard;
+        bookmarks calendar contacts cospend deck files_mindmap
+        integration_openai integration_paperless mail maps memories music news
+        notes notify_push onlyoffice phonetrack richdocuments spreed tasks
+        whiteboard;
 
       drawio = unstable.fetchNextcloudApp {
         sha256 = "sha256-PpCOhegzJ6Suy040r1XwxWzBKmL9xkgEXLaWPKGmvlE=";
@@ -73,14 +72,13 @@ services.nextcloud-whiteboard-server = {
           "https://github.com/jgraph/drawio-nextcloud/releases/download/v3.0.3/drawio-v3.0.3.tar.gz";
         license = "gpl3";
       };
-#      
+      #      
       tables = unstable.fetchNextcloudApp {
         sha256 = "sha256-0+CZqw2iRxJ2dZtaqJ2RPpfv1Pe8NwmrAr1zkvTFsf8=";
         url =
           "https://github.com/nextcloud-releases/tables/releases/download/v0.8.0/tables-v0.8.0.tar.gz";
         license = "gpl3";
       };
-
 
     };
   };

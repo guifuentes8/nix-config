@@ -8,9 +8,8 @@
     ../common/users/guifuentes8.nix
 
     # services
-    ./adguard.nix
-    ./bookstack.nix
-    ./excalidraw.nix
+    ./dokuwiki.nix
+    ./docker-services.nix
     ./gitea.nix
     ./homepage-dashboard.nix
     ./jellyfin.nix
@@ -19,7 +18,6 @@
     ./vscode-server.nix
     ./vaultwarden.nix
     ./writefreely.nix
-
 
     #    ./jackett.nix
     #    ./sonarr.nix

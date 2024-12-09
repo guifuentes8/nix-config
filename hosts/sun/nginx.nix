@@ -1,5 +1,11 @@
 { config, ... }:
-let domain = "guifuentes8.com.br";
+let
+  domain = "guifuentes8.com.br";
+  # 9000-9009 -> Dev tools
+  # 9010-9019 -> Personal tools
+  # 9020-9029 -> Utils tools
+  # 9030-9039 -> Server tools
+  # 9090-9099 -> Public tools
 in {
   services.nginx = {
     enable = true;
@@ -7,21 +13,16 @@ in {
     recommendedOptimisation = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
-    # 9000-9009 -> Dev tools
-    # 9010-9019 -> Personal tools
-    # 9020-9029 -> Utils tools
-    # 9030-9039 -> Server tools
-    # 9090-9099 -> Public tools
+
     virtualHosts = {
       "${domain}" = {
-        forceSSL = false;
-        enableACME = false;
+        forceSSL = true;
         default = true;
-        serverAliases = [ "guifuentes8.com.br" ];
+        enableACME = true;
+        locations."/" = { proxyPass = "http://localhost:80"; };
         locations."/.well-known/acme-challenge" = {
-          root = "/var/lib/acme/.challenges";
+          root = "/var/lib/acme/acme-challenge";
         };
-        locations."/" = { proxyPass = "http://localhost:8080"; };
       };
       "git.${domain}" = {
         forceSSL = true;
@@ -43,13 +44,16 @@ in {
         useACMEHost = "${domain}";
         locations."/" = { proxyPass = "http://localhost:9003"; };
       };
-
+      "wiki.${domain}" = {
+        forceSSL = true;
+        useACMEHost = "${domain}";
+        locations."/" = { proxyPass = "http://localhost:9004"; };
+      };
       "cloud.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
         locations."/" = { proxyPass = "http://localhost:9010"; };
       };
-
       "vault.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
@@ -80,65 +84,45 @@ in {
         useACMEHost = "${domain}";
         locations."/" = { proxyPass = "http://localhost:9023"; };
       };
-
       "status.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
         locations."/" = { proxyPass = "http://localhost:9030"; };
       };
-      # Config nginx in writefreely .nix file
-      #    forceSSL = true;
-      #"blog.${domain}" = {
-      #    useACMEHost = "${domain}";
-      #    locations."/" = {
-      #      proxyPass = "http://localhost:9090";
-      #    };
-      #  };
-      "wiki.${domain}" = {
+      "blog.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9013"; };
+        locations."/" = { proxyPass = "http://localhost:9090"; };
       };
-      "docs.${domain}" = {
+      "docsign.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
         locations."/" = { proxyPass = "http://localhost:9091"; };
+      };
+      "social.${domain}" = {
+        forceSSL = true;
+        useACMEHost = "${domain}";
+        locations."/" = { proxyPass = "http://localhost:9092"; };
       };
       "${config.services.nextcloud.hostName}".listen = [{
         addr = "127.0.0.1";
         port = 9010;
       }];
-
-      "${config.services.writefreely.host}".listen = [{
+      "dokuwiki".listen = [{
         addr = "127.0.0.1";
-        port = 9090;
+        port = 9004;
       }];
+
     };
   };
-
   security.acme = {
     acceptTerms = true;
-    defaults.email = "guifuentes8+admin@gmail.com";
+    defaults.server = "https://acme-staging-v02.api.letsencrypt.org/directory";
+    defaults.email = "guifuentes8@gmail.com";
     certs."${domain}" = {
-      extraDomainNames = [
-        "git.${domain}"
-        "code.${domain}"
-        "db.${domain}"
-        "draw.${domain}"
-        "cloud.${domain}"
-        "vault.${domain}"
-        "jellyfin.${domain}"
-        "google.${domain}"
-        "convert.${domain}"
-        "yt.${domain}"
-        "torrent.${domain}"
-        "status.${domain}"
-        "blog.${domain}"
-        "docs.${domain}"
-        "wiki.${domain}"
-      ];
-      webroot = "/var/lib/acme/.challenges";
-      email = "guifuentes8+admin@gmail.com";
+      domain = domain;
+      webroot = "/var/lib/acme/acme-challenge";
+      email = "guifuentes8@gmail.com";
       group = "nginx";
     };
   };
@@ -147,7 +131,7 @@ in {
 
   services.static-web-server = {
     enable = true;
-    listen = "[::]:8000";
+    listen = "[::]:8080";
     root = "/home/guifuentes8/guifuentes8-homepage/out/";
     configuration = { general = { directory-listing = true; }; };
   };
