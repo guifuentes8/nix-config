@@ -3,7 +3,7 @@
       enable = false;
       openFirewall = true;
       relay ={
-          enable = false;
+          enable = true;
 
         };
     };

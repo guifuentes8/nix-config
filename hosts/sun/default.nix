@@ -8,20 +8,18 @@
     ../common/users/guifuentes8.nix
 
     # services
-    #    ./adguard.nix
+    ./adguard.nix
+    ./bookstack.nix
     ./excalidraw.nix
     ./gitea.nix
     ./homepage-dashboard.nix
     ./jellyfin.nix
     ./nextcloud.nix
-    ./rustdesk.nix
     ./transmission.nix
     ./vscode-server.nix
     ./vaultwarden.nix
     ./writefreely.nix
 
-    # Games
-    #   ./minecraft.nix
 
     #    ./jackett.nix
     #    ./sonarr.nix

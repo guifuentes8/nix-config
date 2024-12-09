@@ -4,7 +4,7 @@
 services.nextcloud-whiteboard-server = {
   enable = true;
   settings = {
-     NEXTCLOUD_URL = "https://nextcloud.guifuentes8.com.br";
+     NEXTCLOUD_URL = "https://cloud.guifuentes8.com.br";
     };
   };
   services.nextcloud = {
@@ -33,6 +33,8 @@ services.nextcloud-whiteboard-server = {
     };
     settings = {
       overwriteProtocol = "https";
+    trusted_proxies = [ "localhost" "127.0.0.1" ];
+    trusted_domains = [ "cloud.guifuentes8.com.br" ];
       defaultPhoneRegion = "BR";
       enabledPreviewProviders = [
         "OC\\Preview\\BMP"
@@ -50,7 +52,7 @@ services.nextcloud-whiteboard-server = {
     };
     poolSettings = {
       pm = "dynamic";
-      "pm.max_children" = "1500";
+      "pm.max_children" = "500";
       "pm.start_servers" = "192";
       "pm.max_spare_servers" = "192";
       "pm.min_spare_servers" = "96";
@@ -71,19 +73,7 @@ services.nextcloud-whiteboard-server = {
           "https://github.com/jgraph/drawio-nextcloud/releases/download/v3.0.3/drawio-v3.0.3.tar.gz";
         license = "gpl3";
       };
-#      health = unstable.fetchNextcloudApp {
-#        sha256 = "sha256-JsmflNU/XIa46NJwdJ5xzjrBk3gI7mTthyqNJ5jhO1g=";
-#        url =
-#          "https://github.com/nextcloud/health/releases/download/v2.2.2/health.tar.gz";
-#        license = "gpl3";
-#      };
-
-#      news = unstable.fetchNextcloudApp {
-#        sha256 = "sha256-nj1yR2COwQ6ZqZ1/8v9csb/dipXMa61e45XQmA5WPwg=";
-#        url =
-#          "https://github.com/nextcloud/news/releases/download/25.0.0-alpha8/news.tar.gz";
-#        license = "gpl3";
-#      };
+#      
       tables = unstable.fetchNextcloudApp {
         sha256 = "sha256-0+CZqw2iRxJ2dZtaqJ2RPpfv1Pe8NwmrAr1zkvTFsf8=";
         url =
@@ -91,12 +81,7 @@ services.nextcloud-whiteboard-server = {
         license = "gpl3";
       };
 
-#      timemanager = unstable.fetchNextcloudApp {
-#        sha256 = "sha256-fpShR1tF6E0zvlZkV4+LmPqlmOjhzhFDpVxEGPuNQo8=";
-#        url =
-#          "https://github.com/te-online/nextcloud-app-releases/raw/main/timemanager/v0.3.15/timemanager.tar.gz";
-#        license = "gpl3";
-#      };
+
     };
   };
 

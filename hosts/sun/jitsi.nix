@@ -4,8 +4,6 @@
     hostName = "jitsi.guifuentes8.com.br";
     };
 
-   services.jitsi-videobridge.openFirewall = true;
+  services.jitsi-videobridge.openFirewall = true;
   networking.firewall.allowedTCPPorts = [ 80 443 ];
-  security.acme.email = "guifuentes8@gmail.com";
-  security.acme.acceptTerms = true;
 }

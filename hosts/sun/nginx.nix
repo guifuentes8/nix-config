@@ -1,52 +1,174 @@
 { config, ... }:
 let domain = "guifuentes8.com.br";
 in {
-  services.nextcloud.settings = {
-    trusted_proxies = [ "localhost" "127.0.0.1" ];
-    trusted_domains = [ "nextcloud.${domain}" ];
-  };
-
   services.nginx = {
     enable = true;
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
+# 9000-9009 -> Dev tools
+# 9010-9019 -> Personal tools
+# 9020-9029 -> Utils tools
+# 9030-9039 -> Server tools
+# 9090-9099 -> Public tools
+    virtualHosts = {
+  "${domain}" = {
+    forceSSL = true;
+    enableACME = true;
+    default = true;
+    serverAliases = ["guifuentes8.com.br"];
+    locations."/.well-known/acme-challenge" = {
+          root = "/var/lib/acme/.challenges";
+        };
+    locations."/" = {
+      proxyPass = "http://localhost:8000";
+    };
+  };
+ "git.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9000";
+    };
+  };
+"code.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9001";
+    };
+  };
+"db.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9002";
+    };
+  };
+"draw.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9003";
+    };
+  };
 
-    virtualHosts = let
-      base = locations: {
-        inherit locations;
+"cloud.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9010";
+    };
+  };
 
-        forceSSL = false;
-        enableACME = false;
-      };
-      proxy = port:
-        base { "/".proxyPass = "http://127.0.0.1:" + toString port + "/"; };
-    in {
-      "${domain}" = proxy 8787 // { default = true; };
-      "nextcloud.${domain}" = proxy 9090;
-      "flood.${domain}" = proxy 9091;
-      "dashboard.${domain}" = proxy 9092;
-      "gitea.${domain}" = proxy 9093;
-      "vscode.${domain}" = proxy 9095;
-      "cloudbeaver.${domain}" = proxy 9096;
-      "convertx.${domain}" = proxy 9097;
-      "metube.${domain}" = proxy 9098;
-     "whoogle.${domain}" = proxy 9099;
-     "vaultwarden.${domain}" = proxy 8222;
-     "jellyfin.${domain}" = proxy 8096;
-     "excalidraw.${domain}" = proxy 8089;
-      "blog.${domain}" = proxy 8088;
-      "${config.services.nextcloud.hostName}".listen = [{
+
+
+"vault.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9011";
+    };
+  };
+"jellyfin.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9012";
+    };
+  };
+"google.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9020";
+    };
+  };
+"convert.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9021";
+    };
+  };
+"yt.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9022";
+    };
+  };
+"torrent.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9023";
+    };
+  };
+
+"status.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9030";
+    };
+  };
+# Config nginx in writefreely .nix file
+#"blog.${domain}" = {
+#    forceSSL = true;
+#    useACMEHost = "${domain}";
+#    locations."/" = {
+#      proxyPass = "http://localhost:9090";
+#    };
+#  };
+"wiki.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9013";
+    };
+  };
+"docs.${domain}" = {
+    forceSSL = true;
+    useACMEHost = "${domain}";
+    locations."/" = {
+      proxyPass = "http://localhost:9091";
+    };
+  };
+  
+"${config.services.nextcloud.hostName}".listen = [{
+        addr = "127.0.0.1";
+        port = 9010;
+      }];
+
+"${config.services.writefreely.host}".listen = [{
         addr = "127.0.0.1";
         port = 9090;
       }];
-          };
+
+
+};
+
   };
 
-  services.static-web-server = {
+security.acme = {
+  acceptTerms = true;
+  defaults.email = "guifuentes8@gmail.com";
+  certs."${domain}" = {
+  #  extraDomainNames = ["*.${domain}"];
+    #extraDomainNames = [ "git.${domain}" "code.${domain}" "db.${domain}" "draw.${domain}" "cloud.${domain}" "vault.${domain}" "jellyfin.${domain}" "google.${domain}" "convert.${domain}" "yt.${domain}" "torrent.${domain}" "status.${domain}" "blog.${domain}" "docs.${domain}" "wiki.${domain}" ];
+        webroot = "/var/lib/acme/.challenges";
+email = "guifuentes8@gmail.com";
+group = "nginx";
+    };
+
+};
+  users.users.nginx.extraGroups = [ "acme" ];
+
+services.static-web-server = {
     enable = true;
-      listen = "[::]:8787";
+      listen = "[::]:8000";
       root = "/home/guifuentes8/guifuentes8-homepage/out/";
       configuration = {
     general = { 
@@ -54,8 +176,5 @@ in {
     };
   };
   };
-
-
-
 
 }
