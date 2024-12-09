@@ -17,7 +17,7 @@ in {
     ./plugins/cmp.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
- #   ./plugins/neorg.nix
+    ./plugins/neorg.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/yazi.nix
@@ -26,7 +26,10 @@ in {
   programs.nixvim = {
     enable = true;
     package = unstable.neovim-unwrapped;
-    colorschemes.catppuccin = { enable = true; settings.flavour = "mocha"; };
+    colorschemes.catppuccin = {
+      enable = true;
+      settings.flavour = "mocha";
+    };
     extraConfigLua = ''
       require 'settings'
       require 'highlights'
@@ -49,6 +52,7 @@ in {
       lualine.enable = true;
       lsp.enable = true;
       noice.enable = true;
+      web-devicons.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins; [
@@ -57,7 +61,6 @@ in {
       cmp_luasnip
 
       plenary-nvim
-      nvim-web-devicons
       zen-mode-nvim
       nvim-spectre
       friendly-snippets
@@ -75,7 +78,6 @@ in {
       telescope-github-nvim
       telescope-media-files-nvim
       telescope-file-browser-nvim
-
 
     ];
     extraPackages = with pkgs; [

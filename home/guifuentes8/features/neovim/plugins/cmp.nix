@@ -2,6 +2,7 @@
   programs.nixvim.plugins = {
     cmp = {
       enable = true;
+      autoEnableSources = false;
       settings = {
         snippet = {
           expand =

@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   programs.nixvim.plugins.telescope = {
     enable = true;
-    #   iconsPackage = pkgs.vimPlugins.nvim-web-devicons;
     keymaps = {
       "<leader>f" = {
         action = "find_files";

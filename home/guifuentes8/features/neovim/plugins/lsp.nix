@@ -75,7 +75,7 @@ in {
             enable = true;
             onAttach.function = onAttachFunction;
           };
-          tsserver = {
+          ts_ls = {
             enable = true;
             onAttach.function = onAttachFunction;
           };
@@ -107,7 +107,7 @@ in {
             enable = true;
             onAttach.function = onAttachFunction;
           };
-          lua-ls = {
+          lua_ls = {
             enable = true;
             onAttach.function = onAttachFunction;
           };
