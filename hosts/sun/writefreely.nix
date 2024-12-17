@@ -1,13 +1,13 @@
 { ... }: {
   services.writefreely = {
     enable = true;
-    host = "localhost";
+    host = "blog.guifuentes8.com.br";
     user = "writefreely";
     admin = { name = "guifuentes8"; };
-    # nginx = {
-    #   enable = true;
-    #   forceSSL = true;
-    # };
+    nginx = {
+      enable = true;
+      forceSSL = true;
+    };
     acme.enable = true;
     settings = {
       app = {

@@ -8,9 +8,9 @@
     ../common/users/guifuentes8.nix
 
     # services
-    ./dokuwiki.nix
     ./docker-services.nix
     ./gitea.nix
+    ./gollum.nix
     ./homepage-dashboard.nix
     ./jellyfin.nix
     ./nextcloud.nix

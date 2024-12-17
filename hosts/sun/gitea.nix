@@ -1,6 +1,11 @@
 {
   services.gitea = {
     enable = true;
-    settings.server = { HTTP_PORT = 9000; };
+    stateDir = "/mnt/storage/gitea";
+    settings = {
+      server = { HTTP_PORT = 9000; };
+      service = { DISABLE_REGISTRATION = true; };
+
+    };
   };
 }

@@ -89,11 +89,11 @@ in {
         useACMEHost = "${domain}";
         locations."/" = { proxyPass = "http://localhost:9030"; };
       };
-      "blog.${domain}" = {
-        forceSSL = true;
-        useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9090"; };
-      };
+      #"blog.${domain}" = {
+      # forceSSL = true;
+      #       useACMEHost = "${domain}";
+      #  locations."/" = { proxyPass = "http://localhost:9090"; };
+      # };
       "docsign.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
@@ -108,10 +108,6 @@ in {
         addr = "127.0.0.1";
         port = 9010;
       }];
-      "dokuwiki".listen = [{
-        addr = "127.0.0.1";
-        port = 9004;
-      }];
 
     };
   };
@@ -119,11 +115,19 @@ in {
     acceptTerms = true;
     defaults.server = "https://acme-staging-v02.api.letsencrypt.org/directory";
     defaults.email = "guifuentes8@gmail.com";
-    certs."${domain}" = {
-      domain = domain;
-      webroot = "/var/lib/acme/acme-challenge";
-      email = "guifuentes8@gmail.com";
-      group = "nginx";
+    certs = {
+      "${domain}" = {
+        domain = domain;
+        webroot = "/var/lib/acme/acme-challenge";
+        email = "guifuentes8@gmail.com";
+        group = "nginx";
+      };
+      "blog.${domain}" = {
+        domain = domain;
+        webroot = "/var/lib/acme/acme-challenge";
+        email = "guifuentes8+1@gmail.com";
+        group = "nginx";
+      };
     };
   };
 
