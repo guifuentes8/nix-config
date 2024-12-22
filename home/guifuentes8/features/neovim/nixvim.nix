@@ -50,7 +50,6 @@ in {
       gitsigns.enable = true;
       luasnip.enable = true;
       lualine.enable = true;
-      lsp.enable = true;
       noice.enable = true;
       web-devicons.enable = true;
     };
@@ -92,7 +91,6 @@ in {
       # Conform
       ruff # Python
       # Linters
-      eslint_d
       nixfmt-classic
       prettierd
       pylint

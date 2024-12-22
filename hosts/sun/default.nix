@@ -36,7 +36,7 @@
 
   services.getty.autologinUser = "guifuentes8";
   services.openssh.enable = true;
-  environment.systemPackages = [ ];
+  environment.systemPackages = [ pkgs.anydesk ];
 
   fileSystems."/mnt/storage_backup" = {
     device = "/dev/disk/by-uuid/433cc6cc-561e-4783-b33c-d523378eefd9";

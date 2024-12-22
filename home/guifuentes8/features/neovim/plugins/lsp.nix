@@ -67,8 +67,13 @@ in {
         servers = {
           eslint = {
             enable = true;
-            filetypes =
-              [ ".eslintrc.js" ".eslintrc.cjs" ".eslintrc.json" ".eslintrc" ];
+            filetypes = [
+              ".eslintrc.js"
+              ".eslintrc.cjs"
+              ".eslintrc.json"
+              ".eslintrc"
+              "eslint.config.mjs"
+            ];
             onAttach.function = onAttachFunction;
           };
           nixd = {

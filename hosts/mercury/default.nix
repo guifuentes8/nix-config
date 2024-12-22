@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
@@ -41,9 +41,16 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # custom system config
-  console.keyMap = "br-abnt2";
-  services.xserver.xkb.layout = "br";
-  services.xserver.xkb.variant = "abnt2";
+  #console.keyMap = "br-abnt2";
+  console.keyMap = "us";
+  #services.xserver.xkb.layout = "br";
+  services.xserver = {
+    xkb = {
+      layout = "br";
+      variant = "";
+    };
+  };
+  # services.xserver.xkb.variant = "abnt2";
 
   networking.hostName = "mercury";
 

@@ -29,11 +29,28 @@
             })
           '';
         };
-        formatting = {
-          expandable_indicator = true;
-          # format = "\n";
-        };
+        completion = { completeopt = "menuone,noinsert,noselect"; };
+        formatting = { expandable_indicator = true; };
       };
+    };
+
+    lspkind = {
+      enable = true;
+      mode = "symbol_text";
+      cmp = {
+        maxWidth = 50;
+        ellipsisChar = "...";
+
+      };
+    };
+
+    luasnip = {
+      enable = true;
+      filetypeExtend = {
+        javascriptreact = [ "javascript" "html" ];
+        typescriptreact = [ "javascript" "html" ];
+      };
+      fromVscode = [ { } ];
     };
 
   };

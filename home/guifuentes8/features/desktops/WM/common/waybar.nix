@@ -1,7 +1,7 @@
-{ unstable, config, ... }: {
+{ pkgs, config, ... }: {
   programs.waybar = {
     enable = true;
-    package = unstable.waybar;
+    package = pkgs.waybar;
     systemd.enable = true;
     settings = [{
       fixed-center = true;
@@ -9,8 +9,9 @@
       layer = "top";
       position = "top";
       exclusive = true;
-      modules-left = [ "cava" "mpris" "cava" ];
-      modules-center = [ "hyprland/workspaces" ];
+      #     modules-left = [ "cava" "mpris" "cava" ];
+      modules-left = [ "hyprland/workspaces" ];
+      modules-center = [ ];
       modules-right = [
         "disk"
         "cpu"

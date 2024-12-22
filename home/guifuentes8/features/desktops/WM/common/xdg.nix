@@ -277,7 +277,7 @@
     in (lib.genAttrs code (_: [ "nvim.desktop" ]))
     // (lib.genAttrs images (_: [ "feh.desktop" ]))
     // (lib.genAttrs archives (_: [ "thunar.desktop" ]))
-    // (lib.genAttrs urls (_: [ "firefox.desktop" ]))
+    // (lib.genAttrs urls (_: [ "org.qutebrowser.qutebrowser.desktop" ]))
     // (lib.genAttrs documents (_: [ "zathura.desktop" ]))
     // (lib.genAttrs audioVideo (_: [ "mpv.desktop" ]));
   };
