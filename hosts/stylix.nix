@@ -9,8 +9,8 @@ in {
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme = "${unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-
+    base16Scheme =
+      "${unstable.base16-schemes}/share/themes/everforest-dark-hard.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;

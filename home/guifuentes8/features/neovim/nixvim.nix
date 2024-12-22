@@ -26,9 +26,15 @@ in {
   programs.nixvim = {
     enable = true;
     package = unstable.neovim-unwrapped;
-    colorschemes.catppuccin = {
+    colorschemes.everforest = {
       enable = true;
-      settings.flavour = "mocha";
+      settings = {
+        background = "hard";
+        enable_italic = 1;
+        cursor = "purple";
+        transparent_background = 1;
+        ui_contrast = "high";
+      };
     };
     extraConfigLua = ''
       require 'settings'

@@ -19,7 +19,6 @@
       nsu =
         "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={}";
       nw = "https://nixos.wiki/index.php?search={}";
-      # Other searchs
       aw = "https://wiki.archlinux.org/?search={}";
       yt = "https://www.youtube.com/results?search_query={}";
       gh = "https://github.com/search?q={}&type=repositories";
@@ -41,7 +40,7 @@
           preferred_color_scheme = "dark";
         };
       };
-      url = { start_pages = "https://www.google.com.br"; };
+      url = { start_pages = "https://www.status.guifuentes8.com.br"; };
       content = {
         notifications.enabled = false;
         javascript = {
