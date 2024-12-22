@@ -1,7 +1,5 @@
 { ... }:
-let
-  lanDomain = "192.168.0.10";
-  vpnDomain = "100.72.62.112";
+let domain = "guifuentes8.com.br";
 in {
   services.homepage-dashboard = {
     enable = true;
@@ -10,14 +8,13 @@ in {
     settings = {
       theme = "dark";
       color = "slate";
-      title = "Sun Server";
+      title = "guifuentes8 Server";
       background = {
-        image = "https://wallpaperaccess.com/full/2995428.jpg";
-        blur = "xl";
+        image = "https://images5.alphacoders.com/102/1026844.jpg";
+        blur = "md";
       };
-      favicon =
-        "https://img.icons8.com/?size=100&id=YPTOhlU4qO2D&format=png&color=000000";
-      cardBlur = "3xl";
+      favicon = "https://cdn-icons-png.flaticon.com/512/4682/4682341.png ";
+      cardBlur = "2xl";
       headerStyle = "boxedWidgets";
       language = "en-US";
       hideVersion = true;
@@ -29,201 +26,240 @@ in {
         hideInternetSearch = true;
         showSearchSuggestions = true;
         hideVisitURL = true;
-        provider = "duckduckgo";
+        provider = "google";
       };
       layout = {
-        Calendar = { };
-        Media = {
+        Development = {
           style = "row";
           columns = 3;
         };
-        Development = {
+        Personal = {
           style = "row";
-          columns = 2;
+          columns = 3;
         };
-        Documentation = { };
-        Network = { };
-
+        Public = {
+          style = "row";
+          columns = 3;
+        };
+        Utils = {
+          style = "row";
+          columns = 3;
+        };
       };
     };
-    bookmarks = [
-      {
-        Developer = [
-          {
-            Github = [{
-              abbr = "GH";
-              href = "https://github.com/";
-            }];
-
-          }
-          {
-            Github2 = [{
-              abbr = "GH";
-              href = "https://github.com/";
-            }];
-          }
-        ];
-      }
-      {
-        Entertainment = [{
-          YouTube = [{
-            abbr = "YT";
-            href = "https://youtube.com/";
-          }];
-        }];
-      }
-    ];
     services = [
       {
-        Calendar = [{
-          Calendar = {
-            widget = {
-              type = "calendar";
-              view = "monthly";
-              maxEvents = 100; # optional - defaults to 10
-              showTime = true;
-              timezone = "Africa/Dakar";
-              previousDays = 3;
-              integrations = [
-                {
-                  type = "ical";
-                  url =
-                    "http://${lanDomain}:9000/remote.php/dav/calendars/guifuentes8/nextcloud-calendar/?export";
-                  name = "Nextcloud Calendar:";
-                  color = "yellow";
-                  params = { showName = true; };
-                }
-                {
-                  type = "ical";
-                  url =
-                    "http://${lanDomain}:9000/remote.php/dav/calendars/guifuentes8/personal/?export";
-                  name = "Nextcloud Tasks:";
-                  color = "purple";
-                  params = { showName = true; };
-                }
-              ];
-            };
-          };
-        }];
-      }
-      {
         Development = [
+          {
+            CloudBeaver = {
+              icon =
+                "https://dbeaver.com/wp-content/uploads/2022/12/cloudbeaver_logo.png";
+              description = ''
+                Cloud Database Manager - Community Edition.
+                CloudBeaver is a web server that provides a rich web interface. The server itself is a Java application, and the web part is written in TypeScript and React.'';
+              href = "https://db.${domain}";
+              siteMonitor = "https://db.${domain}";
+            };
+          }
+          {
+            Excalidraw = {
+              href = "https://draw.${domain}";
+              icon =
+                "https://images.seeklogo.com/logo-png/54/2/excalidraw-logo-png_seeklogo-548100.png?v=638700694670000000";
+              description =
+                "Excalidraw is a virtual collaborative whiteboard tool that lets you easily sketch diagrams that have a hand-drawn feel to them.";
+              siteMonitor = "https://draw.${domain}";
+            };
+          }
           {
             Gitea = {
               icon =
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Gitea_Logo.svg/2560px-Gitea_Logo.svg.png";
-              description = "Git version";
-              href = "http://${vpnDomain}:3100";
-              siteMonitor = "http://${lanDomain}:3100";
-
+              description =
+                "Git with a cup of tea! Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD.";
+              href = "https://git.${domain}";
+              siteMonitor = "https://git.${domain}";
+            };
+          }
+          {
+            Gollum = {
+              href = "https://wiki.${domain}";
+              icon = "https://avatars.githubusercontent.com/u/3840027?v=4";
+              description =
+                "A simple, Git-powered wiki with a local frontend and support for many kinds of markup and content.";
+              siteMonitor = "https://wiki.${domain}";
             };
           }
           {
             Vscode = {
               icon =
                 "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/visual-studio-code-icon.png";
-              description = "IDE editor";
-              href = "http://${vpnDomain}:2000";
-              siteMonitor = "http://${vpnDomain}:2000";
+              description =
+                "Visual Studio Code combines the simplicity of a source code editor with powerful developer tooling, like IntelliSense code completion and debugging.";
+              href = "https://code.${domain}";
+              siteMonitor = "https://code.${domain}";
             };
           }
         ];
       }
       {
-        Media = [
+        Personal = [
           {
             Nextcloud = {
               icon =
                 "https://cdn.icon-icons.com/icons2/2699/PNG/512/nextcloud_logo_icon_168948.png";
-              description = "Nextcloud storage";
-              href = "http://${vpnDomain}:9000";
-              siteMonitor = "http://${lanDomain}:9000";
-              widget = {
-                type = "nextcloud";
-                url = "http://${lanDomain}:9000";
-                username = "guifuentes8";
-                password = "oGJD6-DgdFr-3twDH-kWkFN-kpTLb";
-                fields = [
-                  "cpuload"
-                  "memoryusage"
-                  "freespace"
-                  "activeusers"
-                  "numfiles"
-                ];
-              };
-
+              description =
+                "A safe home for all your data – community-driven, free & open source 👏";
+              href = "https://cloud.${domain}";
+              siteMonitor = "https://cloud.${domain}";
             };
           }
           {
             Jellyfin = {
               icon =
                 "https://dl.flathub.org/media/com/github/iwalton3.jellyfin-media-player/20eebaca475a7aa1b2511bed6a86abeb/icons/128x128@2/com.github.iwalton3.jellyfin-media-player.webp";
-              description = "Movies and music player";
-              href = "http://${vpnDomain}:8096/web/#/home.html";
-              siteMonitor = "http://${lanDomain}:8096/";
-              widget = {
-                type = "jellyfin";
-                url = "http://${lanDomain}:8096";
-                key = "236c9c7f8fe24e129f64718d6429ec56";
-                enableBlocks = true; # optional, defaults to false
-                enableNowPlaying = true; # optional, defaults to true
-                enableUser = true; # optional, defaults to false
-                showEpisodeNumber = true; # optional, defaults to false
-                expandOneStreamToTwoRows = false; # optional, defaults to true
-
-                fields = [ "movies" "series" "episodes" "songs" ];
-              };
+              description =
+                "Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.";
+              href = "https://jellyfin.${domain}";
+              siteMonitor = "https://jellyfin.${domain}";
+            };
+          }
+          {
+            Vaultwarden = {
+              icon =
+                "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/logos/vaultwarden-ns52zbeqsxclzh9eke52cj.png/vaultwarden-eawsbmiuegj01cry9sop.png?_a=DAJFJtWIZAAC";
+              description =
+                "Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs";
+              href = "https://vault.${domain}";
+              siteMonitor = "https://vault.${domain}";
+            };
+          }
+        ];
+      }
+      {
+        Public = [
+          {
+            WriteFreely = {
+              icon =
+                "https://cloud68.co/assets/media/managed-hosting/photo//writefreely.png";
+              description =
+                "A clean, Markdown-based publishing platform made for writers. Write together and build a community.";
+              href = "https://blog.${domain}";
+              siteMonitor = "https://blog.${domain}";
+            };
+          }
+          {
+            Docuseal = {
+              icon =
+                "https://avatars.githubusercontent.com/u/138379721?s=280&v=4";
+              description =
+                "Open source DocuSign alternative. Create, fill, and sign digital documents ✍️";
+              href = "https://docsign.${domain}";
+              siteMonitor = "https://docsign.${domain}";
+            };
+          }
+        ];
+      }
+      {
+        Utils = [
+          {
+            Convertx = {
+              icon = "https://cdn-icons-png.flaticon.com/512/8970/8970989.png";
+              description =
+                "A self-hosted online file converter. Supports over a thousand different formats. Written with TypeScript, Bun and Elysia.";
+              href = "https://convert.${domain}";
+              siteMonitor = "https://convert.${domain}";
+            };
+          }
+          {
+            MeTube = {
+              icon =
+                "https://artifacthub.io/image/57011362-b4aa-4485-a77b-8b744d50708e@3x";
+              description =
+                "Self-hosted YouTube downloader (web UI for youtube-dl / yt-dlp)";
+              href = "https://yt.${domain}";
+              siteMonitor = "https://yt.${domain}";
             };
           }
           {
             Transmission = {
               icon =
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Transmission_Icon.svg/2048px-Transmission_Icon.svg.png";
-              description = "Torrent server";
-              href = "http://${vpnDomain}:9091";
-              siteMonitor = "http://192.168.0.10:9091/";
-              widget = {
-                type = "transmission";
-                url = "http://192.168.0.10:9091";
-                rpcUrl = "/transmission/";
-                fields = [ "leech" "download" "upload" "seed" ];
-              };
-
+              description =
+                "Transmission is a fast, easy, and free BitTorrent client";
+              href = "https://torrent.${domain}";
+              siteMonitor = "https://torrent.${domain}";
             };
           }
-
+          {
+            Whoogle = {
+              icon =
+                "https://preview.redd.it/4alqumb2xqi81.png?width=192&format=png&auto=webp&s=05f078627d3b9d7f1f82e002d5388efc6ee3c63a";
+              description =
+                "Get Google search results, but without any ads, JavaScript, AMP links, cookies, or IP address tracking.";
+              href = "https://convert.${domain}";
+              siteMonitor = "https://convert.${domain}";
+            };
+          }
         ];
       }
-      {
-        Documentation = [{
-          Bookstack = {
-            href = "http://${vpnDomain}:4000";
-            icon =
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/BookStack_logo.svg/2151px-BookStack_logo.svg.png";
-            description = "Organising and storing information as a Library.";
-            siteMonitor = "http://${lanDomain}:4000";
-          };
 
-        }];
-      }
-
-      {
-        Network = [{
-          Tailscale = {
-            icon =
-              "https://static.macupdate.com/submission/473953/d/phpapubfc-logo.png";
-            description = "Torrent server";
-            siteMonitor = "http://${vpnDomain}";
-          };
-
-        }];
-      }
     ];
+    # bookmarks = [{
+    #   NixOs = [
+    #     {
+    #       "Packages Search (stable channel)" = [{
+    #         icon =
+    #           "https://static-00.iconduck.com/assets.00/nixos-icon-2048x1776-8czr8nir.png";
+    #         abbr = "NS";
+    #         href =
+    #           "https://search.nixos.org/packages?channel=24.11&from=0&size=50&sort=relevance&type=packages&query=";
+    #       }];
+    #     }
+    #     {
+    #       "Packages Search (unstable channel)" = [{
+    #         icon =
+    #           "https://static-00.iconduck.com/assets.00/nixos-icon-2048x1776-8czr8nir.png";
+    #         abbr = "NS";
+    #         href =
+    #           "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=";
+    #       }];
+    #     }
+    #     {
+    #       "Packages Options (stable channel)" = [{
+    #         icon =
+    #           "https://static-00.iconduck.com/assets.00/nixos-icon-2048x1776-8czr8nir.png";
+    #         abbr = "NS";
+    #         href =
+    #           "https://search.nixos.org/options?channel=24.11&from=0&size=50&sort=relevance&type=packages&query=";
+    #       }];
+    #     }
+    #     {
+    #       "Packages Options (unstable channel)" = [{
+    #         icon =
+    #           "https://static-00.iconduck.com/assets.00/nixos-icon-2048x1776-8czr8nir.png";
+    #         abbr = "NS";
+    #         href =
+    #           "https://search.nixos.org/options?channel=unstable&size=50&sort=relevance&type=packages&query=";
+    #       }];
+    #     }
+    #     {
+    #       "Nixos Wiki" = [{
+    #         icon =
+    #           "https://static-00.iconduck.com/assets.00/nixos-icon-2048x1776-8czr8nir.png";
+    #         abbr = "NS";
+    #         href = "https://wiki.nixos.org/wiki/NixOS_Wiki";
+    #       }];
+    #     }
+
+    #   ];
+    # }];
+
     widgets = [
       {
         resources = {
           cpu = true;
-          disk = "/";
+          disk = "/mnt/storage";
           memory = true;
           cputemp = true;
           tempmin = 0; # optional, minimum cpu temp
@@ -238,10 +274,10 @@ in {
       }
       {
         search = {
-          provider = "duckduckgo";
+          provider = "google";
           target = "_blank";
           showSearchSuggestions = true;
-          focus = true;
+          focus = false;
         };
       }
       {

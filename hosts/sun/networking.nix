@@ -3,7 +3,7 @@
   networking = {
     hostName = "sun";
     defaultGateway = "192.168.0.1";
-    interfaces.enp5s0 = {
+    interfaces.enp4s0 = {
       useDHCP = false;
       ipv4.addresses = [{
         address = "192.168.0.10";
