@@ -71,4 +71,3 @@ keymap.set('n', ';z', '<cmd>:ZenMode<CR>')
 
 
 -- Telescope
-

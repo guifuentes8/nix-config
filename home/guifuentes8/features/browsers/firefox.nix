@@ -11,7 +11,6 @@
       extensions = with pkgs.inputs.firefox-addons; [
         bitwarden
         darkreader
-        firefox-color
         floccus
         react-devtools
         reduxdevtools
