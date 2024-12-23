@@ -40,7 +40,7 @@
           preferred_color_scheme = "dark";
         };
       };
-      url = { start_pages = "https://www.status.guifuentes8.com.br"; };
+      url = { start_pages = "https://status.guifuentes8.com.br"; };
       content = {
         notifications.enabled = false;
         javascript = {

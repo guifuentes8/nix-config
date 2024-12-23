@@ -18,6 +18,7 @@ in {
     ./plugins/lint.nix
     ./plugins/lsp.nix
     ./plugins/neorg.nix
+    ./plugins/noice.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/yazi.nix
@@ -51,12 +52,11 @@ in {
 
     plugins = {
       bufferline.enable = true;
-      cmp.enable = true;
+      cmp-cmdline.enable = false;
       dashboard.enable = true;
       gitsigns.enable = true;
       luasnip.enable = true;
       lualine.enable = true;
-      noice.enable = true;
       web-devicons.enable = true;
     };
 
@@ -71,11 +71,7 @@ in {
       friendly-snippets
       inc-rename-nvim
 
-      # Neorg dependencies
-
       # Noice dependencies
-      nui-nvim
-      nvim-notify
       nvim-lsp-notify
 
       # Telescope extensions 
