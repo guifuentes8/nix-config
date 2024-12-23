@@ -1,5 +1,4 @@
 { ... }: {
-
   networking = {
     hostName = "sun";
     defaultGateway = "192.168.0.1";

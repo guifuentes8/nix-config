@@ -31,12 +31,10 @@
     ./nginx.nix
     ./networking.nix
     ./postgres.nix
-    ./tailscale.nix
   ];
 
   services.getty.autologinUser = "guifuentes8";
   services.openssh.enable = true;
-  environment.systemPackages = [ pkgs.anydesk ];
 
   fileSystems."/mnt/storage_backup" = {
     device = "/dev/disk/by-uuid/433cc6cc-561e-4783-b33c-d523378eefd9";
@@ -55,7 +53,8 @@
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme =
+      "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
     fonts = {
       monospace = {
         name = "JetBrainsMonoNL Nerd Font";
