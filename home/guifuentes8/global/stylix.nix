@@ -1,7 +1,7 @@
-{ pkgs, unstable, lib, ... }:
+{ pkgs, config, unstable, outputs, lib, ... }:
 let
-  cursorName = "phinger-cursors-dark";
-  cursorPkg = pkgs.phinger-cursors;
+  cursorName = "everforest-cursors";
+  cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
 
 in {
   stylix = {
@@ -16,9 +16,12 @@ in {
       size = 32;
     };
     fonts = {
+      #packages = [ outputs.packages.${pkgs.system}.monolisa ];
       monospace = {
-        name = "JetBrainsMonoNL Nerd Font";
-        package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
+        #name = "JetBrainsMonoNL Nerd Font";
+        name = "MonoLisa";
+        package = outputs.packages.${pkgs.system}.monolisa;
+        #    package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
       };
     };
     opacity = {
@@ -42,7 +45,7 @@ in {
     };
     cursorTheme = {
       name = cursorName;
-      package = cursorPkg;
+      size = 32;
     };
   };
 
@@ -50,5 +53,11 @@ in {
     XCURSOR_THEME = cursorName;
     XCURSOR_SIZE = "32";
   };
+
+  #  home.file.".local/share/fonts/MonoLisa" = {
+  #    recursive = true;
+  #    source = "/home/guifuentes8/Nextcloud/Documents/Fonts/MonoLisa";
+  #  };
+
 }
 

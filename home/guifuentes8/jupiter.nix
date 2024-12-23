@@ -1,6 +1,5 @@
 { outputs, pkgs, lib, config, ... }:
 let waylandArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
-
 in {
   imports = [ ./global ./features/cli ./features/dev ./features/productivity ];
 
@@ -12,7 +11,6 @@ in {
       source = ./server-env-setup;
     };
   };
-
   home = {
     packages = [ ];
     sessionVariables = { };

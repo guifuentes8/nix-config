@@ -45,7 +45,7 @@
         notifications.enabled = false;
         javascript = {
           enabled = true;
-          clipboard = "access";
+          clipboard = "access-paste";
         };
       };
       tabs = { position = "left"; };

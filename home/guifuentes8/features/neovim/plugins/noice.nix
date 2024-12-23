@@ -6,8 +6,6 @@
       enable = true;
       settings = {
         cmdline = {
-          enabled = true;
-          # view = "cmdline_popup";
           format = {
             cmdline = {
               icon = " ";
@@ -51,7 +49,8 @@
             "vim.lsp.util.stylize_markdown" = true;
           };
         };
-        health = { checker = false; };
+        messages.enabled = true;
+        health.checker = false;
         presets = {
           bottom_search = false;
           command_palette = true;
@@ -59,7 +58,10 @@
           inc_rename = true;
           lsp_doc_border = true;
         };
-        popupmenu = { enabled = true; };
+        popupmenu = {
+          enabled = true;
+          backend = "nui";
+        };
         # views = {
         #   cmdline_popup = {
         #     position = {
@@ -69,6 +71,27 @@
         #     size = {
         #       width = 60;
         #       height = "auto";
+        #     };
+        #   };
+        #   popupmenu = {
+        #     relative = "editor";
+        #     position = {
+        #       row = 50;
+        #       col = "50%";
+        #     };
+        #     size = {
+        #       width = 60;
+        #       height = 10;
+        #     };
+        #     border = {
+        #       style = "rounded";
+        #       padding = [ 0 1 ];
+        #     };
+        #     win_options = {
+        #       winhighlight = {
+        #         Normal = "Normal";
+        #         FloatBorder = "DiagnosticInfo";
+        #       };
         #     };
         #   };
         # };

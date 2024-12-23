@@ -32,9 +32,6 @@ in {
       settings = {
         background = "hard";
         enable_italic = 1;
-        cursor = "purple";
-        transparent_background = 1;
-        ui_contrast = "high";
       };
     };
     extraConfigLua = ''
@@ -52,7 +49,6 @@ in {
 
     plugins = {
       bufferline.enable = true;
-      cmp-cmdline.enable = false;
       dashboard.enable = true;
       gitsigns.enable = true;
       luasnip.enable = true;

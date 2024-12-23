@@ -68,8 +68,10 @@
   hardware.pulseaudio.enable = false;
 
   # Fonts
-  fonts.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+  fonts.packages = with pkgs; [
+    outputs.packages.${pkgs.system}.monolisa
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
 
   # Security
   security.rtkit.enable = true;
@@ -97,7 +99,7 @@
     settings = {
       trusted-users = [ "root" "@wheel" ];
       auto-optimise-store = lib.mkDefault true;
-      experimental-features = [ "nix-command" "flakes"  ];
+      experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
     };
   };
@@ -107,7 +109,7 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
-      permittedInsecurePackages = [ "jitsi-meet-1.0.8043"];
+      permittedInsecurePackages = [ "jitsi-meet-1.0.8043" ];
     };
   };
   system = {

@@ -75,11 +75,11 @@ in {
         type = "lua";
         config = builtins.readFile (./plugins/autopair.rc.lua);
       }
-      {
-        plugin = telescope-nvim;
-        type = "lua";
-        config = builtins.readFile (./plugins/telescope.rc.lua);
-      }
+      #      {
+      #        plugin = telescope-nvim;
+      #        type = "lua";
+      #        config = builtins.readFile (./plugins/telescope.rc.lua);
+      #      }
       {
         plugin = nvim-colorizer-lua;
         type = "lua";

@@ -1,7 +1,7 @@
-{ pkgs, unstable, ... }:
+{ pkgs, outputs, unstable, ... }:
 let
-  cursorName = "phinger-cursors-dark";
-  cursorPkg = pkgs.phinger-cursors;
+  cursorName = "everforest-cursors";
+  cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
 
 in {
 
@@ -18,8 +18,10 @@ in {
     };
     fonts = {
       monospace = {
-        name = "JetBrainsMonoNL Nerd Font";
-        package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
+        #name = "JetBrainsMonoNL Nerd Font";
+        name = "MonoLisa";
+        package = outputs.packages.${pkgs.system}.monolisa;
+        #       package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
       };
     };
     opacity = {

@@ -1,7 +1,4 @@
-{ lib
-, rustPlatform
-, fetchFromGitHub
-}:
+{ lib, rustPlatform, fetchFromGitHub }:
 
 rustPlatform.buildRustPackage rec {
   pname = "pokeget-plus";
@@ -25,3 +22,4 @@ rustPlatform.buildRustPackage rec {
     maintainers = with maintainers; [ aleksana ];
   };
 }
+
