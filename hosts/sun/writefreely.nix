@@ -11,16 +11,18 @@
     acme.enable = true;
     settings = {
       app = {
-        single_user = true;
-        editor = "classic";
-        site_name = "Guifuentes8 Blog";
+        single_user = false;
+        editor = "pad";
+        site_name = "guifuentes8";
         site_description =
           "My first blog to share some experiences and articles to help my techs friends!";
         min_username_len = 8;
         monetization = false;
-        wf_modesty = true;
+        wf_modesty = false;
         open_registration = false;
+        open_deletion = true;
         default_visibility = "public";
+        max_blogs = 10;
       };
       server = { port = 9090; };
     };

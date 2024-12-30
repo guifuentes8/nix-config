@@ -191,16 +191,6 @@ in {
               siteMonitor = "https://torrent.${domain}";
             };
           }
-          {
-            Whoogle = {
-              icon =
-                "https://preview.redd.it/4alqumb2xqi81.png?width=192&format=png&auto=webp&s=05f078627d3b9d7f1f82e002d5388efc6ee3c63a";
-              description =
-                "Get Google search results, but without any ads, JavaScript, AMP links, cookies, or IP address tracking.";
-              href = "https://convert.${domain}";
-              siteMonitor = "https://convert.${domain}";
-            };
-          }
         ];
       }
 
