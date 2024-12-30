@@ -1,4 +1,4 @@
-{ lib, pkgs, config, outputs,  ... }: {
+{ lib, pkgs, config, outputs, ... }: {
 
   imports =
     [ ./programs.nix ./systemd.nix ./services.nix ./stylix.nix ./sops.nix ];
@@ -20,7 +20,10 @@
       download = "${config.home.homeDirectory}/Downloads";
       desktop = "${config.home.homeDirectory}/Desktop";
       documents = "${config.home.homeDirectory}/Documents";
-      extraConfig = { work = "${config.home.homeDirectory}/Work"; };
+      extraConfig = {
+        work = "${config.home.homeDirectory}/Work";
+        fonts = "${config.home.homeDirectory}/.local/share/fonts";
+      };
     };
   };
 
@@ -36,7 +39,7 @@
     overlays = builtins.attrValues outputs.overlays;
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [ "electron-19.1.9"  ];
+      permittedInsecurePackages = [ "electron-19.1.9" ];
     };
   };
 

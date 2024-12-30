@@ -31,6 +31,7 @@
 
     ../common/services/temperature.nix
     ../common/services/dev
+    ../common/services/wine.nix
 
     # User 
     ../common/users/guifuentes8.nix

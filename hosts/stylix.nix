@@ -18,10 +18,8 @@ in {
     };
     fonts = {
       monospace = {
-        #name = "JetBrainsMonoNL Nerd Font";
         name = "MonoLisa";
-        package = outputs.packages.${pkgs.system}.monolisa;
-        #       package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
+        package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
       };
     };
     opacity = {

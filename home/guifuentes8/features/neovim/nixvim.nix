@@ -27,18 +27,11 @@ in {
   programs.nixvim = {
     enable = true;
     package = unstable.neovim-unwrapped;
-    colorschemes.everforest = {
-      enable = true;
-      settings = {
-        background = "hard";
-        enable_italic = 1;
-      };
-    };
+    colorscheme = "everforest";
     extraConfigLua = ''
       require 'settings'
       require 'highlights'
       require 'maps'
-
     '';
     extraLuaPackages = luaPkgs:
       with luaPkgs; [
@@ -76,6 +69,9 @@ in {
       telescope-media-files-nvim
       telescope-file-browser-nvim
 
+      (fromGithub "6a74c99880b4d4a2cafb6798287057860115d96d" "HEAD"
+        "https://github.com/neanias/everforest-nvim")
+
     ];
     extraPackages = with pkgs; [
 
@@ -92,6 +88,9 @@ in {
       nixfmt-classic
       prettierd
       pylint
+      eslint_d
+      stylua
+
       # Others
       nodePackages.live-server
     ];

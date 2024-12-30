@@ -68,10 +68,8 @@
   hardware.pulseaudio.enable = false;
 
   # Fonts
-  fonts.packages = with pkgs; [
-    outputs.packages.${pkgs.system}.monolisa
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+  fonts.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
 
   # Security
   security.rtkit.enable = true;

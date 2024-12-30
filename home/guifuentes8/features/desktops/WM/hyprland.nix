@@ -12,8 +12,8 @@ in {
 
     ../../browsers/firefox.nix
     ../../browsers/qutebrowser.nix
+    ../../terminals/kitty.nix
     ../../terminals/foot.nix
-    ../../terminals/warp.nix
     ../../cli
     ../../programs
     ../../services

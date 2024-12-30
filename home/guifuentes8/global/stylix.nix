@@ -16,12 +16,9 @@ in {
       size = 32;
     };
     fonts = {
-      #packages = [ outputs.packages.${pkgs.system}.monolisa ];
       monospace = {
-        #name = "JetBrainsMonoNL Nerd Font";
         name = "MonoLisa";
-        package = outputs.packages.${pkgs.system}.monolisa;
-        #    package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
+        package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
       };
     };
     opacity = {
@@ -29,7 +26,7 @@ in {
       terminal = 0.9;
       desktop = 1.0;
     };
-    override = { };
+    override = { base05 = "A9B1D6"; };
     targets = {
       nixvim.enable = false;
       vim.enable = true;
@@ -53,11 +50,6 @@ in {
     XCURSOR_THEME = cursorName;
     XCURSOR_SIZE = "32";
   };
-
-  #  home.file.".local/share/fonts/MonoLisa" = {
-  #    recursive = true;
-  #    source = "/home/guifuentes8/Nextcloud/Documents/Fonts/MonoLisa";
-  #  };
 
 }
 
