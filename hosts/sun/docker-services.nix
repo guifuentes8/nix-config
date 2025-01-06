@@ -4,13 +4,13 @@
     hostname = "excalidraw";
     image = "excalidraw/excalidraw";
     ports = [ "127.0.0.1:9003:80" ];
+    environment = {
+      NEXTCLOUD_URL = "https://cloud.guifuentes8.com.br";
+      JWT_SECRET_KEY = "Guigui@@@2035";
+    };
+
   };
 
-  virtualisation.oci-containers.containers.whoogle = {
-    hostname = "whoogle";
-    image = "benbusby/whoogle-search";
-    ports = [ "127.0.0.1:9020:5000" ];
-  };
   virtualisation.oci-containers.containers.cloudbeaver = {
     hostname = "cloudbeaver";
     image = "dbeaver/cloudbeaver";
@@ -18,9 +18,7 @@
   };
   virtualisation.oci-containers.containers.convertx = {
     hostname = "convertx";
-    image = ''
-      c4illin/convertx
-    '';
+    image = "c4illin/convertx";
     ports = [ "127.0.0.1:9021:3000" ];
   };
   virtualisation.oci-containers.containers.metube = {
@@ -35,5 +33,13 @@
     image = "docuseal/docuseal";
     ports = [ "127.0.0.1:9091:3000" ];
   };
-
+  # virtualisation.oci-containers.containers.nextcloud-whiteboard-server = {
+  #   image = "ghcr.io/nextcloud-releases/whiteboard:release";
+  #   hostname = "whiteboard";
+  #   ports = [ "127.0.0.1:9050:3002" ];
+  #   environment = {
+  #     NEXTCLOUD_URL = "https://cloud.guifuentes8.com.br";
+  #     JWT_SECRET_KEY = "Guigui@@@2035";
+  #   };
+  # };
 }

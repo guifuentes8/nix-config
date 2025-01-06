@@ -1,9 +1,11 @@
 { pkgs, config, unstable, ... }: {
   environment.etc."nextcloud-admin-pass".text = "Agorajaera@123";
+  environment.etc."nextcloud-whiteboard".text = "JWT_SECRET_KEY=Guigui@@@2035";
 
   services.nextcloud-whiteboard-server = {
     enable = true;
     settings = { NEXTCLOUD_URL = "https://cloud.guifuentes8.com.br"; };
+    secrets = [ "/etc/nextcloud-whiteboard" ];
   };
   services.nextcloud = {
     enable = true;

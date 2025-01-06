@@ -6,6 +6,7 @@
     ../common
     ../common/boot/systemd-boot.nix
     ../common/users/guifuentes8.nix
+    ../stylix.nix
 
     # services
     ./docker-services.nix
@@ -47,23 +48,6 @@
     fsType = "ext4";
 
     options = [ "users" "nofail" ];
-  };
-
-  stylix = {
-    enable = true;
-    autoEnable = true;
-    polarity = "dark";
-    base16Scheme =
-      "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
-    fonts = {
-      monospace = {
-        name = "JetBrainsMonoNL Nerd Font";
-        package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
-      };
-    };
-    image = ./wallpaper.png;
-    override = { };
-    targets = { nixvim.enable = false; };
   };
 
 }
