@@ -1,9 +1,10 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    # wineWowPackages.stable
+    wineWowPackages.stable
     winetricks
+    wineWowPackages.waylandFull
     wine
-    # wineWowPackages.waylandFull
+    wine64
   ];
   hardware.graphics.enable32Bit = true;
 

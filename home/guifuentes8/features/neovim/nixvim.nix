@@ -13,7 +13,10 @@ let
 in {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+
+    ./keymaps.nix
     ./settings.nix
+    ./plugins/bufferline.nix
     ./plugins/cmp.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
@@ -28,11 +31,7 @@ in {
     enable = true;
     package = unstable.neovim-unwrapped;
     colorscheme = "everforest";
-    extraConfigLua = ''
-      require 'settings'
-      require 'highlights'
-      require 'maps'
-    '';
+    extraConfigLua = "";
     extraLuaPackages = luaPkgs:
       with luaPkgs; [
         lua-utils-nvim
@@ -41,33 +40,31 @@ in {
       ];
 
     plugins = {
-      bufferline.enable = true;
       dashboard.enable = true;
       gitsigns.enable = true;
-      luasnip.enable = true;
       lualine.enable = true;
-      web-devicons.enable = true;
+      web-devicons.enable = true; # required
     };
 
     extraPlugins = with pkgs.vimPlugins; [
-      cmp-buffer # buffer words
-      cmp-nvim-lsp # dependencies
-      cmp_luasnip
+      #cmp-buffer # buffer words
+      #cmp-nvim-lsp # dependencies
+      #  cmp_luasnip
 
-      plenary-nvim
+      #plenary-nvim
       zen-mode-nvim
-      nvim-spectre
-      friendly-snippets
-      inc-rename-nvim
+      # nvim-spectre
+      #friendly-snippets
+      #inc-rename-nvim
 
       # Noice dependencies
-      nvim-lsp-notify
+      #nvim-lsp-notify
 
       # Telescope extensions 
-      telescope-project-nvim
-      telescope-github-nvim
-      telescope-media-files-nvim
-      telescope-file-browser-nvim
+      #telescope-project-nvim
+      #telescope-github-nvim
+      #telescope-media-files-nvim
+      #telescope-file-browser-nvim
 
       (fromGithub "6a74c99880b4d4a2cafb6798287057860115d96d" "HEAD"
         "https://github.com/neanias/everforest-nvim")
@@ -76,14 +73,14 @@ in {
     extraPackages = with pkgs; [
 
       # Language servers
-      nodePackages.typescript-language-server
-      nodePackages.vscode-langservers-extracted
-      marksman
-      tailwindcss-language-server
-      lua-language-server
-      nixd
+      nodePackages.typescript-language-server # typescript
+      nodePackages.vscode-langservers-extracted # html, css, javascript
+      marksman # markdown
+      tailwindcss-language-server # tailwindcss
+      lua-language-server # lua
+      nixd # nix
       # Conform
-      ruff # Python
+      ruff # python
       # Linters
       nixfmt-classic
       prettierd
@@ -132,10 +129,10 @@ in {
 
   };
 
-  xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;
-  xdg.configFile."nvim/lua/highlights.lua".source = ./highlights.lua;
-  xdg.configFile."nvim/lua/maps.lua".source = ./maps.lua;
-  xdg.configFile."nvim/lua/plugins".source = ./plugins;
+  #  xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;
+  #  xdg.configFile."nvim/lua/highlights.lua".source = ./highlights.lua;
+  #  xdg.configFile."nvim/lua/maps.lua".source = ./maps.lua;
+  #  xdg.configFile."nvim/lua/plugins".source = ./plugins;
 
   home.sessionVariables.EDITOR = "nvim";
 
