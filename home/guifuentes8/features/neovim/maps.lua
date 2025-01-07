@@ -51,19 +51,6 @@ keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {})
 keymap.set("n", ";w", "<Cmd>:MCstart<CR>")
 keymap.set("n", ";W", "<Cmd>:MCvisual<CR>")
 
-keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
-	desc = "Toggle Spectre",
-})
-keymap.set("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
-	desc = "Search current word",
-})
-keymap.set("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-	desc = "Search current word",
-})
-keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-	desc = "Search on current file",
-})
-
 -- PLUGING HOTKEYS
 keymap.set("n", ";z", "<cmd>:ZenMode<CR>")
 --keymap.set('n', ':', '<cmd>:FineCmdline<CR>')

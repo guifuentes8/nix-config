@@ -64,7 +64,30 @@
       mode = [ "n" ];
       options = { silent = true; };
     }
-
+    {
+      action = ":m .+1<CR>==";
+      key = "<C-down>";
+      mode = [ "n" ];
+      options = { silent = true; };
+    }
+    {
+      action = ":m .-2<CR>==";
+      key = "<C-up>";
+      mode = [ "n" ];
+      options = { silent = true; };
+    }
+    {
+      action = ":m '>+1<CR>gv=gv";
+      key = "<C-down>";
+      mode = [ "v" ];
+      options = { silent = true; };
+    }
+    {
+      action = ":m '<-2<CR>gv=gv";
+      key = "<C-up>";
+      mode = [ "v" ];
+      options = { silent = true; };
+    }
   ];
 }
 

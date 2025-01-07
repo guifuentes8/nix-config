@@ -110,6 +110,7 @@ in {
       inccommand = "split";
       ignorecase = true;
       laststatus = 2;
+      number = true;
       # path.append = [ "**" ];
       scrolloff = 999;
       shell = "zsh";
