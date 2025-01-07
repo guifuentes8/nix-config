@@ -110,7 +110,7 @@
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs unstable; };
           modules =
-            [ stylix.homeManagerModules.stylix ./home/guifuentes8/venus.nix ];
+            [sops-nix.homeManagerModules.sops stylix.homeManagerModules.stylix ./home/guifuentes8/venus.nix ];
         };
       nixosConfigurations.venus = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs unstable; };
