@@ -8,7 +8,7 @@
     ../common/hardware/bluetooth.nix
 
     # Hardware Gpu (if exist)
-    ../common/hardware/gpu/nvidia-prime.nix
+#    ../common/hardware/gpu/nvidia-prime.nix
 
     # NIXOS CONFIG ------------------------------------
 

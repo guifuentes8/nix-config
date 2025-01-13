@@ -20,7 +20,7 @@
     lsd.enable = true;
     ncmpcpp = {
       package = pkgs.ncmpcpp.override { visualizerSupport = true; };
-      enable = true;
+      enable = false;
       mpdMusicDir = "${config.home.homeDirectory}/Nextcloud/Music";
     };
     rtorrent.enable = true;
