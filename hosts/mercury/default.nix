@@ -6,6 +6,7 @@
     # Hardware config (required)
     ./hardware-configuration.nix
     ../common/hardware/bluetooth.nix
+    ../common/hardware/logitech.nix
 
     # Hardware Gpu (if exist)
     ../common/hardware/gpu/intel.nix
@@ -19,11 +20,11 @@
     ../common/boot/systemd-boot.nix
 
     # Login Manager
-    ../common/login/greetd.nix
-
+    #../common/login/greetd.nix
+    ../common/login/gdm.nix
     # Choice Interface (WM and/or DE)
-    ../common/interfaces/WM/hyprland.nix
-    #../common/interfaces/DE/gnome.nix
+    #../common/interfaces/WM/hyprland.nix
+    ../common/interfaces/DE/gnome.nix
 
     # Active services
     ../common/services/backlight.nix
@@ -47,7 +48,7 @@
   #services.xserver.xkb.layout = "br";
   services.xserver = {
     xkb = {
-      layout = "br";
+      layout = "us";
       variant = "";
     };
   };

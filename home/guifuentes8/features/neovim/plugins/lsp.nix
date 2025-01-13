@@ -1,4 +1,4 @@
-{ ... }:
+{ unstable, ... }:
 let
   onAttachFunction = ''
     local on_attach = function(client, bufnr)
@@ -84,6 +84,8 @@ in {
             enable = true;
             onAttach.function = onAttachFunction;
           };
+          ts_query_ls.enable = false;
+          ts_query_ls.package = unstable.ts_query_ls;
           html = {
             enable = true;
             onAttach.function = onAttachFunction;

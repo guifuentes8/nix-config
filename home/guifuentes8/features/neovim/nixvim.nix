@@ -46,33 +46,17 @@ in {
       web-devicons.enable = true; # required
     };
 
-    extraPlugins = with pkgs.vimPlugins; [
-      #cmp-buffer # buffer words
-      #cmp-nvim-lsp # dependencies
-      #  cmp_luasnip
-
-      #plenary-nvim
+    extraPlugins = with unstable.vimPlugins; [
       zen-mode-nvim
-      # nvim-spectre
-      #friendly-snippets
-      #inc-rename-nvim
-
-      # Noice dependencies
-      #nvim-lsp-notify
-
-      # Telescope extensions 
-      #telescope-project-nvim
-      #telescope-github-nvim
-      #telescope-media-files-nvim
-      #telescope-file-browser-nvim
 
       (fromGithub "6a74c99880b4d4a2cafb6798287057860115d96d" "HEAD"
         "https://github.com/neanias/everforest-nvim")
 
     ];
-    extraPackages = with pkgs; [
+    extraPackages = with unstable; [
 
       # Language servers
+      nodePackages.typescript
       nodePackages.typescript-language-server # typescript
       nodePackages.vscode-langservers-extracted # html, css, javascript
       marksman # markdown

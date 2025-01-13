@@ -29,8 +29,8 @@
     };
     darkmatter-grub-theme.url = "gitlab:VandalByte/darkmatter-grub-theme";
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim/";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     firefox-addons = {
@@ -109,8 +109,11 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs unstable; };
-          modules =
-            [sops-nix.homeManagerModules.sops stylix.homeManagerModules.stylix ./home/guifuentes8/venus.nix ];
+          modules = [
+            sops-nix.homeManagerModules.sops
+            stylix.homeManagerModules.stylix
+            ./home/guifuentes8/venus.nix
+          ];
         };
       nixosConfigurations.venus = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs unstable; };
