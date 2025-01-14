@@ -27,7 +27,6 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    darkmatter-grub-theme.url = "gitlab:VandalByte/darkmatter-grub-theme";
     nixvim = {
       url = "github:nix-community/nixvim/";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -175,19 +174,26 @@
         specialArgs = { inherit inputs outputs; };
         modules = [ sops-nix.nixosModules.sops ./hosts/jupiter ];
 
+};
         #        ┌─┐┌─┐┌┬┐┬ ┬┬─┐┌┐┌
         #        └─┐├─┤ │ │ │├┬┘│││
         #        └─┘┴ ┴ ┴ └─┘┴└─┘└┘
         darwinConfigurations."saturn" =
-          nix-darwin.lib.darwinSystem { modules = [ ./hosts/saturn ]; };
-        darwinPackages = self.darwinConfiguration."saturn".pkgs;
-        #        ┬ ┬┬─┐┌─┐┌┐┌┬ ┬┌─┐
-        #        │ │├┬┘├─┤││││ │└─┐
-        #        └─┘┴└─┴ ┴┘└┘└─┘└─┘
-        #        ┌┐┌┌─┐┌─┐┌┬┐┬ ┬┌┐┌┌─┐
-        #        │││├┤ ├─┘ │ │ ││││├┤ 
-        #        ┘└┘└─┘┴   ┴ └─┘┘└┘└─┘
+          nix-darwin.lib.darwinSystem { modules = [ ./hosts/saturn
+  inputs.nixvim.nixDarwinModules.nixvim
 
-      };
-    };
+home-manager.darwinModules.home-manager
+          {
+home-manager.extraSpecialArgs = { inherit inputs outputs unstable; };
+
+#            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.administrador = import ./home/darwin;
+home-manager.backupFileExtension = "backup";
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
+ ]; };
+              };
 }

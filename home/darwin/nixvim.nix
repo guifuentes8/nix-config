@@ -1,4 +1,4 @@
-{ pkgs, unstable, inputs, lib, ... }:
+{ pkgs, inputs, lib, ... }:
 let
   fromGithub = rev: ref: repo:
     pkgs.vimUtils.buildVimPlugin {
@@ -20,7 +20,7 @@ in {
     ./plugins/cmp.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
-    ./plugins/neorg.nix
+#    ./plugins/neorg.nix
     ./plugins/noice.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
@@ -29,7 +29,7 @@ in {
 
   programs.nixvim = {
     enable = true;
-    package = unstable.neovim-unwrapped;
+    package = pkgs.neovim-unwrapped;
     colorscheme = "everforest";
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:
@@ -46,14 +46,14 @@ in {
       web-devicons.enable = true; # required
     };
 
-    extraPlugins = with unstable.vimPlugins; [
+    extraPlugins = with pkgs.vimPlugins; [
       zen-mode-nvim
 
       (fromGithub "6a74c99880b4d4a2cafb6798287057860115d96d" "HEAD"
         "https://github.com/neanias/everforest-nvim")
 
     ];
-    extraPackages = with unstable; [
+    extraPackages = with pkgs; [
 
       # Language servers
       nodePackages.typescript
@@ -119,6 +119,5 @@ in {
   #  xdg.configFile."nvim/lua/maps.lua".source = ./maps.lua;
   #  xdg.configFile."nvim/lua/plugins".source = ./plugins;
 
-  home.sessionVariables.EDITOR = "nvim";
 
 }
