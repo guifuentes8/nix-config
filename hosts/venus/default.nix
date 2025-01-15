@@ -6,9 +6,10 @@
     # Hardware config (required)
     ./hardware-configuration.nix
     ../common/hardware/bluetooth.nix
+    ../common/hardware/logitech.nix
 
     # Hardware Gpu (if exist)
-#    ../common/hardware/gpu/nvidia-prime.nix
+    #    ../common/hardware/gpu/nvidia-prime.nix
 
     # NIXOS CONFIG ------------------------------------
 
