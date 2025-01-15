@@ -1,10 +1,7 @@
 { lib, pkgs, config, outputs, ... }: {
 
   imports =
-    [ ./programs.nix ./systemd.nix ./services.nix 
-#./stylix.nix 
-#./sops.nix
- ];
+    [ ./programs.nix ./systemd.nix ./services.nix ./stylix.nix ./sops.nix ];
 
   home = {
     username = "guifuentes8";

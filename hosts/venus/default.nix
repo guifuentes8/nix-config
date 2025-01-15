@@ -24,7 +24,7 @@
 
     # Choice Interface (WM and/or DE)
     ../common/interfaces/WM/hyprland.nix
-    #../common/interfaces/DE/gnome.nix
+    ../common/interfaces/DE/kde.nix
 
     # Active services
     ../common/services/backlight.nix

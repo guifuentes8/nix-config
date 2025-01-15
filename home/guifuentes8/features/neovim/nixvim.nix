@@ -12,7 +12,7 @@ let
     };
 in {
   imports = [
-#    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeManagerModules.nixvim
 
     ./keymaps.nix
     ./settings.nix

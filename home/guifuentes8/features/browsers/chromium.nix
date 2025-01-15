@@ -12,7 +12,6 @@
       { id = "aapbdbdomjkkjkaonfhkkikfgjllcleb"; } # googleTranslate
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
-      { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } # catppuccin mocha
       { id = "fnaicdffflnofjppbagibeoednhnbjhg"; } # floccus bookmarks
       { id = "bkdgflcldnnnapblkhphbgpggdiikppg"; } # duckduckgo
     ];

@@ -11,6 +11,7 @@ in {
   imports = [
 
     ../../browsers/firefox.nix
+    ../../browsers/chromium.nix
     ../../browsers/qutebrowser.nix
     ../../terminals/kitty.nix
     ../../cli
