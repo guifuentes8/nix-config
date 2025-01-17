@@ -1,4 +1,4 @@
-{ pkgs, outputs, unstable, ... }:
+{ pkgs, outputs,   ... }:
 let
   cursorName = "everforest-cursors";
   cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;

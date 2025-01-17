@@ -1,4 +1,4 @@
-{ pkgs, unstable, config, ... }: {
+{ pkgs,   config, ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------

@@ -1,4 +1,4 @@
-{ pkgs, config, unstable, ... }: {
+{ pkgs, config, ... }: {
   environment.etc."nextcloud-admin-pass".text = "Agorajaera@123";
   environment.etc."nextcloud-whiteboard".text = "JWT_SECRET_KEY=Guigui@@@2035";
 
@@ -58,9 +58,7 @@
       "pm.min_spare_servers" = "96";
       "pm.process_idle_timeout" = "5s";
     };
-    phpOptions = {
-
-    };
+    phpOptions = { };
     extraApps = {
       inherit (config.services.nextcloud.package.packages.apps)
         bookmarks calendar contacts cospend deck files_mindmap
@@ -68,14 +66,14 @@
         notes notify_push onlyoffice phonetrack richdocuments spreed tasks
         whiteboard;
 
-      drawio = unstable.fetchNextcloudApp {
+      drawio = pkgs.unstable.fetchNextcloudApp {
         sha256 = "sha256-PpCOhegzJ6Suy040r1XwxWzBKmL9xkgEXLaWPKGmvlE=";
         url =
           "https://github.com/jgraph/drawio-nextcloud/releases/download/v3.0.3/drawio-v3.0.3.tar.gz";
         license = "gpl3";
       };
       #      
-      tables = unstable.fetchNextcloudApp {
+      tables = pkgs.unstable.fetchNextcloudApp {
         sha256 = "sha256-0+CZqw2iRxJ2dZtaqJ2RPpfv1Pe8NwmrAr1zkvTFsf8=";
         url =
           "https://github.com/nextcloud-releases/tables/releases/download/v0.8.0/tables-v0.8.0.tar.gz";
