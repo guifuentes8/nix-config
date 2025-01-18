@@ -7,4 +7,8 @@
     github_token = { owner = "guifuentes8"; };
     # "a/b/c/secret_file_example" = {};
   };
+
+  environment = {
+    systemPackages = with pkgs; [ sops ];
+  };
 }

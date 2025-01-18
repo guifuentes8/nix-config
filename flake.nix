@@ -36,6 +36,8 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nh_plus.url = "github:ToyVo/nh_plus";
   };
 
   outputs =
@@ -199,12 +201,13 @@
                 ./home/darwin/default.nix
 
               ];
-
               backupFileExtension = "backup";
             };
           }
 
         ];
       };
+
+      darwinPackages = self.darwinConfigurations."darwin".pkgs;
     };
 }

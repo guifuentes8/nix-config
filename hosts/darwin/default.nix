@@ -1,23 +1,14 @@
-{ inputs, outputs, pkgs,   ... }: {
+{ config, inputs, outputs, pkgs, ... }:
+let nh_plus = inputs.nh_plus.packages."aarch64-darwin".nh;
+in {
 
-  imports = [ ];
-  services.nix-daemon.enable = true;
-  nixpkgs.hostPlatform = "aarch64-darwin";
-  programs.zsh.enable = true;
-  system.stateVersion = 5;
-  nix = {
-    settings = {
-      trusted-users = [ "@admin" "administrador" "root" "@wheel" ];
-      experimental-features = [ "nix-command" "flakes" ];
-      warn-dirty = false;
-    };
+  imports = [ ../common/users/darwin.nix ];
+  environment = { systemPackages = with pkgs; [ nh_plus ]; };
+
+  homebrew = {
+    enable = true;
+    casks = [ "nextcloud" ];
   };
-  users.users.administrador = {
-    name = "administrador";
-    home = "/Users/administrador";
-  };
-  nix.extraOptions = ''
-    extra-platforms = x86_64-linux x86_64-darwin aarch64-darwin
-  '';
-  nix.linux-builder = { enable = true; };
+  networking = { hostName = "darwin"; };
+
 }

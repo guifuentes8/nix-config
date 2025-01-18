@@ -1,41 +1,6 @@
+# This file (and the global directory) holds config that i use on all hosts
 { config, lib, inputs, outputs, pkgs, ... }: {
-  imports = [ inputs.home-manager.nixosModules.home-manager ../common ];
-  users.users.guifuentes8 = {
-    isNormalUser = true;
-    description = "guifuentes8";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "sudo"
-      "video"
-      "docker"
-      "adbusers"
-      "input"
-      "vboxusers"
-      "nextcloud"
-      "vaultwarden"
-      "storage"
-      "libvirtd"
-      "cloudflared"
-      "media"
-      "vaultwarden"
-      "writefreely"
-    ];
-    shell = pkgs.zsh;
-  };
-
-  programs = {
-    dconf.enable = true;
-    git.enable = true;
-    nh = {
-      enable = true;
-      clean = {
-        enable = true;
-        extraArgs = "--keep-since 4d --keep 3";
-      };
-      flake = "${config.users.users.guifuentes8.home}/nix-config";
-    };
-  };
+  imports = [ inputs.home-manager.nixosModules.home-manager ./sops.nix ];
 
   services = {
     tailscale.enable = true;
@@ -52,6 +17,20 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       jack.enable = true;
+    };
+  };
+
+  programs = {
+    dconf.enable = true;
+    git.enable = true;
+    nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 4d --keep 3";
+      };
+
+      flake = "${config.users.users.guifuentes8.home}/nix-config";
     };
   };
 
@@ -80,11 +59,18 @@
       allowedTCPPorts = [ 80 443 ];
     };
   };
+  time = {
+    hardwareClockInLocalTime = true;
+    timeZone = lib.mkDefault "America/Sao_Paulo";
+  };
 
   # Sound
   #  sound.enable = true;
   hardware.pulseaudio.enable = false;
 
+  # Fonts
+  fonts.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
 
   # Security
   security.rtkit.enable = true;
@@ -116,18 +102,15 @@
       warn-dirty = false;
     };
   };
-  nixpkgs.hostPlatform = "x86_64-linux";
-
-
-
-  # Hardware
-  powerManagement.cpuFreqGovernor = lib.mkForce "performance";
-  time.hardwareClockInLocalTime = true;
-  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
-  boot.extraModprobeConfig = ''
-    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-  '';
-
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    hostPlatform = "x86_64-linux";
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+      permittedInsecurePackages = [ "jitsi-meet-1.0.8043" ];
+    };
+  };
   system = {
     stateVersion = "24.11";
     autoUpgrade = {
@@ -136,4 +119,13 @@
       dates = "daily";
     };
   };
+
+  # Hardware
+  powerManagement.cpuFreqGovernor = lib.mkForce "performance";
+
+  # boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+  # boot.extraModprobeConfig = ''
+  #   options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+  # '';
+
 }

@@ -1,12 +1,5 @@
 { pkgs, config, ... }: {
-  home.packages = [
-    pkgs.age
-    pkgs.nh
-    pkgs.nix-output-monitor
-    pkgs.nvd
-    pkgs.nixpkgs-fmt
-    #pkgs.microfetch
-  ];
+  home.packages = [ pkgs.age pkgs.pfetch-rs ];
 
   programs = {
     gh = {
@@ -51,7 +44,7 @@
       enable = true;
       autosuggestion.enable = true;
       enableCompletion = true;
-      initExtraFirst = "microfetch";
+      initExtraFirst = "pfetch-rs";
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;
@@ -78,8 +71,8 @@
         music = "ncmpcpp";
       };
       localVariables = {
-        #  GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
-        FLAKE = "/home/guifuentes8/nix-config";
+        GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
+        FLAKE = "${config.home.homeDirectory}/nix-config";
       };
     };
   };

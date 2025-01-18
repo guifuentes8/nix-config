@@ -1,7 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   programs.nixvim.plugins.neorg = {
     enable = true;
-    package = pkgs.unstable.vimPlugins.neorg;
+    package = pkgs.vimPlugins.neorg;
     lazyLoading = true;
     modules = {
       "core.defaults" = { __empty = null; };
@@ -15,10 +15,10 @@
       "core.dirman" = {
         config = {
           workspaces = {
-            personal = "/home/guifuentes8/Nextcloud/Notes/personal";
-            journal = "/home/guifuentes8/Nextcloud/Notes/journal";
-            work = "/home/guifuentes8/Nextcloud/Notes/neovim";
-            study = "/home/guifuentes8/Nextcloud/Notes/study";
+            personal = "${config.home.homeDirectory}/Nextcloud/Notes/personal";
+            journal = "${config.home.homeDirectory}/Nextcloud/Notes/journal";
+            work = "${config.home.homeDirectory}/Nextcloud/Notes/neovim";
+            study = "${config.home.homeDirectory}/Nextcloud/Notes/study";
           };
           default_workspace = "personal";
         };
