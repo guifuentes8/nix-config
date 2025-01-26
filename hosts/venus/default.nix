@@ -20,7 +20,7 @@
     ../common/boot/systemd-boot.nix
 
     # Login Manager
-    ../common/login/greetd.nix
+    ../common/login/sddm.nix
 
     # Choice Interface (WM and/or DE)
     ../common/interfaces/WM/hyprland.nix
