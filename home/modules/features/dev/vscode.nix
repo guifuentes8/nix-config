@@ -6,4 +6,6 @@
     package = pkgs.vscode;
     keybindings = [ ];
   };
+
+  home.packages = [pkgs.nixpkgs-fmt];
 }
