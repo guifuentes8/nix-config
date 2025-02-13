@@ -1,5 +1,5 @@
 { config, lib, inputs, outputs, pkgs, ... }: {
-  imports = [ inputs.home-manager.nixosModules.home-manager ../common ];
+  imports = [ inputs.home-manager.nixosModules.home-manager ../../common ];
   users.users.guifuentes8 = {
     isNormalUser = true;
     description = "guifuentes8";

@@ -28,7 +28,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -115,6 +115,7 @@
           modules = [
             sops-nix.homeManagerModules.sops
             stylix.homeManagerModules.stylix
+inputs.nixvim.homeManagerModules.nixvim
             ./home/guifuentes8/venus.nix
           ];
         };

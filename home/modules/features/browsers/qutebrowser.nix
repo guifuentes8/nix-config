@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib,pkgs, ... }: {
   programs.qutebrowser = {
     enable = true;
     package = pkgs.unstable.qutebrowser;

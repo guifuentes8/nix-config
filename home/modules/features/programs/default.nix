@@ -12,7 +12,7 @@
       ];
     };
   };
-  home.packages = with unstable; [
+  home.packages = with pkgs.unstable; [
 
     # programs
     discord

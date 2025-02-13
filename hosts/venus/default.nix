@@ -17,7 +17,7 @@
     ../common
 
     # Boot initial (grub or systemd)
-    ../common/boot/systemd-boot.nix
+    ../common/boot/grub.nix
 
     # Login Manager
     ../common/login/sddm.nix

@@ -10,8 +10,7 @@ let
         rev = rev;
       };
     };
-in
-{
+in {
   imports = [
 
     ./keymaps.nix
@@ -29,8 +28,12 @@ in
 
   programs.nixvim = {
     enable = true;
+    colorschemes = {
+      ayu.enable = true;
+      ayu.settings.mirage = true;
+    };
     package = pkgs.unstable.neovim-unwrapped;
-    colorscheme = "everforest";
+    # colorscheme = "everforest";
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:
       with luaPkgs; [

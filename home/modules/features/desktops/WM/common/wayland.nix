@@ -1,7 +1,7 @@
-{ ... }: {
+{pkgs, ... }: {
   imports = [ ./default.nix ./waybar.nix ];
 
-  home.packages = with unstable; [
+  home.packages = with pkgs.unstable; [
     grim
     hyprpicker
     nwg-look

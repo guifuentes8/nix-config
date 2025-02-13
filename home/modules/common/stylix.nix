@@ -9,7 +9,7 @@ in {
     autoEnable = true;
     polarity = "dark";
     base16Scheme =
-      "${pkgs.unstable.base16-schemes}/share/themes/everforest-dark-hard.yaml";
+      "${pkgs.unstable.base16-schemes}/share/themes/ayu-mirage.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;
