@@ -21,7 +21,6 @@
 
     # Login Manager
     #../common/login/greetd.nix
-    ../common/login/gdm.nix
     # Choice Interface (WM and/or DE)
     #../common/interfaces/WM/hyprland.nix
     ../common/interfaces/DE/gnome.nix
