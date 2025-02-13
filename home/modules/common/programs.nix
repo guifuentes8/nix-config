@@ -44,7 +44,7 @@
       enable = true;
       autosuggestion.enable = true;
       enableCompletion = true;
-      initExtraFirst = "pfetch-rs";
+      initExtraFirst = "pfetch";
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;
@@ -70,10 +70,7 @@
         testnet = "speedtest-rs";
         music = "ncmpcpp";
       };
-      localVariables = {
-        GH_TOKEN = "$(${pkgs.pass}/bin/pass show github/token)";
-        FLAKE = "${config.home.homeDirectory}/nix-config";
-      };
+      localVariables = { FLAKE = "${config.home.homeDirectory}/nix-config"; };
     };
   };
 

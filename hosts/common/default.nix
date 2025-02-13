@@ -1,6 +1,5 @@
 { config, lib, inputs, outputs, pkgs, ... }: {
-  # imports = [ ./sops.nix ];
-
+  imports = [ ];
 
   nix = {
     settings = {
@@ -26,6 +25,5 @@
   time.timeZone = lib.mkDefault "America/Sao_Paulo";
 
   programs.zsh.enable = true;
-
 
 }

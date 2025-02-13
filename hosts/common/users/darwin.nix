@@ -22,13 +22,10 @@
     enable = true;
     casks = [ "nextcloud" ];
   };
-  networking = {
-    hostName = "darwin";
-  };
+  networking = { hostName = "darwin"; };
 
   system.stateVersion = 5;
   services.nix-daemon.enable = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
-
 
 }

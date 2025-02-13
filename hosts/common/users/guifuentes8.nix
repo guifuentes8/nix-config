@@ -1,5 +1,6 @@
 { config, lib, inputs, outputs, pkgs, ... }: {
-  imports = [ inputs.home-manager.nixosModules.home-manager ../common ];
+  imports =
+    [ inputs.home-manager.nixosModules.home-manager ../common ../sops.nix ];
   users.users.guifuentes8 = {
     isNormalUser = true;
     description = "guifuentes8";
@@ -85,7 +86,6 @@
   #  sound.enable = true;
   hardware.pulseaudio.enable = false;
 
-
   # Security
   security.rtkit.enable = true;
   security.polkit.enable = true;
@@ -117,8 +117,6 @@
     };
   };
   nixpkgs.hostPlatform = "x86_64-linux";
-
-
 
   # Hardware
   powerManagement.cpuFreqGovernor = lib.mkForce "performance";
