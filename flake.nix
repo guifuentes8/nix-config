@@ -27,9 +27,8 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    darkmatter-grub-theme.url = "gitlab:VandalByte/darkmatter-grub-theme";
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -37,18 +36,22 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nh_plus.url = "github:ToyVo/nh_plus";
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager, nixpkgs-unstable
-    , sops-nix, stylix, ... }@inputs:
+  outputs =
+    { self, nixpkgs, nix-darwin, home-manager, sops-nix, stylix, ... }@inputs:
     let
       inherit (self) outputs;
-      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "x86_64-darwin" ];
+
+      forEachSystem = nixpkgs.lib.genAttrs [
+        "x86_64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
-      unstable = import nixpkgs-unstable {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
 
     in {
       nixosModules = import ./modules/nixos;
@@ -64,7 +67,7 @@
       homeConfigurations."guifuentes8@sun" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs unstable; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             stylix.homeManagerModules.stylix
             sops-nix.homeManagerModules.sops
@@ -72,7 +75,7 @@
           ];
         };
       nixosConfigurations.sun = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs unstable; };
+        specialArgs = { inherit inputs outputs; };
         modules =
           [ stylix.nixosModules.stylix sops-nix.nixosModules.sops ./hosts/sun ];
       };
@@ -84,7 +87,7 @@
       homeConfigurations."guifuentes8@mercury" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs unstable; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             stylix.homeManagerModules.stylix
             sops-nix.homeManagerModules.sops
@@ -93,7 +96,7 @@
         };
 
       nixosConfigurations.mercury = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs unstable; };
+        specialArgs = { inherit inputs outputs; };
         modules = [
           stylix.nixosModules.stylix
           sops-nix.nixosModules.sops
@@ -108,12 +111,16 @@
       homeConfigurations."guifuentes8@venus" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs unstable; };
-          modules =
-            [sops-nix.homeManagerModules.sops stylix.homeManagerModules.stylix ./home/guifuentes8/venus.nix ];
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            sops-nix.homeManagerModules.sops
+            stylix.homeManagerModules.stylix
+inputs.nixvim.homeManagerModules.nixvim
+            ./home/guifuentes8/venus.nix
+          ];
         };
       nixosConfigurations.venus = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs unstable; };
+        specialArgs = { inherit inputs outputs; };
         modules = [
           sops-nix.nixosModules.sops
           stylix.nixosModules.stylix
@@ -128,12 +135,12 @@
       homeConfigurations."guifuentes8@earth" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs unstable; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules =
             [ stylix.homeManagerModules.stylix ./home/guifuentes8/earth.nix ];
         };
       nixosConfigurations.earth = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs unstable; };
+        specialArgs = { inherit inputs outputs; };
         modules = [
           stylix.nixosModules.stylix
           sops-nix.nixosModules.sops
@@ -171,20 +178,37 @@
       nixosConfigurations.jupiter = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [ sops-nix.nixosModules.sops ./hosts/jupiter ];
-
-        #        ┌─┐┌─┐┌┬┐┬ ┬┬─┐┌┐┌
-        #        └─┐├─┤ │ │ │├┬┘│││
-        #        └─┘┴ ┴ ┴ └─┘┴└─┘└┘
-        darwinConfigurations."saturn" =
-          nix-darwin.lib.darwinSystem { modules = [ ./hosts/saturn ]; };
-        darwinPackages = self.darwinConfiguration."saturn".pkgs;
-        #        ┬ ┬┬─┐┌─┐┌┐┌┬ ┬┌─┐
-        #        │ │├┬┘├─┤││││ │└─┐
-        #        └─┘┴└─┴ ┴┘└┘└─┘└─┘
-        #        ┌┐┌┌─┐┌─┐┌┬┐┬ ┬┌┐┌┌─┐
-        #        │││├┤ ├─┘ │ │ ││││├┤ 
-        #        ┘└┘└─┘┴   ┴ └─┘┘└┘└─┘
-
       };
+
+      darwinConfigurations."darwin" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = { inherit inputs outputs; };
+        modules = [
+          ./hosts/darwin
+          sops-nix.darwinModules.sops
+          home-manager.darwinModules.home-manager
+
+          {
+            home-manager = {
+              extraSpecialArgs = { inherit inputs outputs; };
+              sharedModules = [
+                sops-nix.homeManagerModules.sops
+                stylix.homeManagerModules.stylix
+                inputs.nixvim.homeManagerModules.nixvim
+
+              ];
+              useUserPackages = true;
+              users.administrador.imports = [
+                ./home/darwin/default.nix
+
+              ];
+              backupFileExtension = "backup";
+            };
+          }
+
+        ];
+      };
+
+      darwinPackages = self.darwinConfigurations."darwin".pkgs;
     };
 }

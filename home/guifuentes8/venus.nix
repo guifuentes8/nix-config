@@ -2,12 +2,17 @@
   imports = [
 
     # Global config (required)
-    ./global
+    ../guifuentes8
 
-    ./features/dev
-    ./features/neovim
-    ./features/desktops/WM/hyprland.nix
-    #./features/desktops/DE/gnome.nix
+    ../modules/features/dev
+    ../modules/features/neovim
+    ../modules/features/desktops/WM/hyprland.nix
+    ../modules/features/desktops/DE/kde.nix
+
+  
+     ../modules/common/programs.nix ../modules/common/systemd.nix ../modules/common/services.nix ../modules/common/stylix.nix ../modules/common/sops.nix
+
+
   ];
 
   wayland.windowManager.hyprland.settings.input = {
@@ -15,6 +20,6 @@
     kb_variant = "abnt2";
   };
 
-  stylix.image = ./global/extras/venus.jpg;
+  stylix.image = ../modules/common/extras/venus.jpg;
 
 }

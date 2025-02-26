@@ -6,9 +6,10 @@
     # Hardware config (required)
     ./hardware-configuration.nix
     ../common/hardware/bluetooth.nix
+    ../common/hardware/logitech.nix
 
     # Hardware Gpu (if exist)
-    ../common/hardware/gpu/nvidia-prime.nix
+    #    ../common/hardware/gpu/nvidia-prime.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -16,14 +17,14 @@
     ../common
 
     # Boot initial (grub or systemd)
-    ../common/boot/systemd-boot.nix
+    ../common/boot/grub.nix
 
     # Login Manager
-    ../common/login/greetd.nix
+    ../common/login/sddm.nix
 
     # Choice Interface (WM and/or DE)
     ../common/interfaces/WM/hyprland.nix
-    #../common/interfaces/DE/gnome.nix
+    ../common/interfaces/DE/kde.nix
 
     # Active services
     ../common/services/backlight.nix
