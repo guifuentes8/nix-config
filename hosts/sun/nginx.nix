@@ -49,6 +49,11 @@ in {
         useACMEHost = "${domain}";
         locations."/" = { proxyPass = "http://localhost:9004"; };
       };
+      "terminal.${domain}" = {
+        forceSSL = true;
+        useACMEHost = "${domain}";
+        locations."/" = { proxyPass = "http://localhost:9005"; };
+      };
       "cloud.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";

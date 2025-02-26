@@ -10,6 +10,7 @@
 
     # services
     ./docker-services.nix
+    ./eternal-terminal.nix
     ./gitea.nix
     ./gollum.nix
     ./homepage-dashboard.nix
