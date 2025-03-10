@@ -1,6 +1,6 @@
 { config, lib, inputs, outputs, pkgs, ... }: {
   imports =
-    [ inputs.home-manager.nixosModules.home-manager ../common ../sops.nix ];
+    [ inputs.home-manager.nixosModules.home-manager ../../common ../sops.nix ];
   users.users.guifuentes8 = {
     isNormalUser = true;
     description = "guifuentes8";
