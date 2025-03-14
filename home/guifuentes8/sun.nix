@@ -2,12 +2,20 @@
   imports = [
 
     # Global config (required)
-    ./global
-    ./features/neovim
-    ./features/cli
+    ../guifuentes8
+
+    ../modules/features/dev
+    ../modules/features/neovim
+
+    ../modules/common/programs.nix
+    ../modules/common/systemd.nix
+    ../modules/common/services.nix
+    ../modules/common/stylix.nix
+    ../modules/common/sops.nix
+
   ];
 
-  stylix.image = ./global/extras/earth.jpeg;
+  stylix.image = ../modules/common/extras/earth.jpeg;
 
 }
 

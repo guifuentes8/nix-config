@@ -2,7 +2,7 @@
 
   services.gollum = {
     enable = true;
-    stateDir = "/mnt/storage/gollum";
+    stateDir = "/var/lib/storage/gollum";
     port = 9004;
     emoji = true;
     allowUploads = "page";

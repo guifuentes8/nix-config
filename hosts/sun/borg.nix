@@ -1,7 +1,7 @@
 { ... }:
 let
-  mainPath = "/mnt/storage/nextcloud/data/guifuentes8/files";
-  backupPath = "/mnt/storage_backup";
+  mainPath = "/var/lib/storage/nextcloud/data/guifuentes8/files";
+  backupPath = "/var/lib/storage_backup";
 in {
   services.borgbackup.jobs.borg-nextcloud = {
     paths = [ "${mainPath}/Media" "${mainPath}/Documents" "${mainPath}/Notes" ];

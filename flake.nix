@@ -71,6 +71,8 @@
           modules = [
             stylix.homeManagerModules.stylix
             sops-nix.homeManagerModules.sops
+inputs.nixvim.homeManagerModules.nixvim
+
             ./home/guifuentes8/sun.nix
           ];
         };

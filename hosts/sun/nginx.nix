@@ -49,15 +49,11 @@ in {
         useACMEHost = "${domain}";
         locations."/" = { proxyPass = "http://localhost:9004"; };
       };
-      "terminal.${domain}" = {
-        forceSSL = true;
-        useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9005"; };
-      };
       "cloud.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9010"; };
+        locations."/" = { proxyPass = "http://127.0.0.1:9010"; };
+
       };
       "vault.${domain}" = {
         forceSSL = true;
@@ -109,7 +105,18 @@ in {
         useACMEHost = "${domain}";
         locations."/" = { proxyPass = "http://localhost:9092"; };
       };
-      "${config.services.nextcloud.hostName}".listen = [{
+      "nextcloud-whiteboard.${domain}" = {
+        forceSSL = true;
+        useACMEHost = "${domain}";
+        locations."/" = { proxyPass = "http://localhost:9100"; };
+      };
+      #    forceSSL = true;
+      "office.${domain}" = {
+        useACMEHost = "${domain}";
+        locations."/" = { proxyPass = "http://localhost:9101"; };
+      };
+
+      "nextcloud".listen = [{
         addr = "127.0.0.1";
         port = 9010;
       }];
@@ -137,12 +144,5 @@ in {
   };
 
   users.users.nginx.extraGroups = [ "acme" ];
-
-  services.static-web-server = {
-    enable = true;
-    listen = "[::]:8080";
-    root = "/home/guifuentes8/guifuentes8-homepage/out/";
-    configuration = { general = { directory-listing = true; }; };
-  };
 
 }

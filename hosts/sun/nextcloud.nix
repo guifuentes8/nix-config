@@ -1,23 +1,38 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, lib, ... }:
+let domain = "guifuentes8.com.br";
+in {
   environment.etc."nextcloud-admin-pass".text = "Agorajaera@123";
   environment.etc."nextcloud-whiteboard".text = "JWT_SECRET_KEY=Guigui@@@2035";
+  environment.etc."onlyoffice-jwt".text = "JWT_SECRET_KEY=Guigui@@@2035";
 
   services.nextcloud-whiteboard-server = {
     enable = true;
     settings = { NEXTCLOUD_URL = "https://cloud.guifuentes8.com.br"; };
     secrets = [ "/etc/nextcloud-whiteboard" ];
   };
+  services.cron.enable = true;
+  services.phpfpm.phpOptions = ''
+    memory_limit = 2048M
+    max_execution_time = 500
+    opcache.enable = 1
+    opcache.memory_consumption = 512
+    opcache.interned_strings_buffer = 21
+    opcache.max_accelerated_files = 10000
+    opcache.revalidate_freq = 1
+  '';
   services.nextcloud = {
     enable = true;
+    cli.memoryLimit = "2G";
     autoUpdateApps.enable = false;
     appstoreEnable = false;
     hostName = "nextcloud";
-    datadir = "/mnt/storage/nextcloud";
+    datadir = "/var/lib/storage/nextcloud";
+    home = "/var/lib/nextcloud";
     configureRedis = true;
     database.createLocally = true;
     extraAppsEnable = true;
     https = true;
-    maxUploadSize = "50G";
+    maxUploadSize = "10G";
     package = pkgs.nextcloud30; # Need to manually increment with every update
     caching = {
       memcached = true;
@@ -28,8 +43,9 @@
       dbtype = "pgsql";
       dbuser = "nextcloud";
       dbname = "nextcloud";
+      dbhost = "/run/postgresql";
       adminpassFile = "/etc/nextcloud-admin-pass";
-      adminuser = "admin";
+      adminuser = "root";
     };
     settings = {
       overwriteProtocol = "https";
@@ -53,34 +69,33 @@
     poolSettings = {
       pm = "dynamic";
       "pm.max_children" = "500";
-      "pm.start_servers" = "192";
-      "pm.max_spare_servers" = "192";
-      "pm.min_spare_servers" = "96";
-      "pm.process_idle_timeout" = "5s";
+      "pm.start_servers" = "200";
+      "pm.max_spare_servers" = "200";
+      "pm.min_spare_servers" = "100";
+      "pm.process_idle_timeout" = "3s";
     };
-    phpOptions = { };
+    phpOptions = {
+      "opcache.enable" = 1;
+      "opcache.memory_consumption" = 512;
+      "opcache.interned_strings_buffer" = 32;
+      "opcache.max_accelerated_files" = 10000;
+      "opcache.revalidate_freq" = 1;
+      "opcache.validate_timestamps" = 1;
+    };
     extraApps = {
       inherit (config.services.nextcloud.package.packages.apps)
-        bookmarks calendar contacts cospend deck files_mindmap
-        integration_openai integration_paperless mail maps memories music news
-        notes notify_push onlyoffice phonetrack richdocuments spreed tasks
-        whiteboard;
-
-      drawio = pkgs.unstable.fetchNextcloudApp {
-        sha256 = "sha256-PpCOhegzJ6Suy040r1XwxWzBKmL9xkgEXLaWPKGmvlE=";
-        url =
-          "https://github.com/jgraph/drawio-nextcloud/releases/download/v3.0.3/drawio-v3.0.3.tar.gz";
-        license = "gpl3";
-      };
-      #      
-      tables = pkgs.unstable.fetchNextcloudApp {
-        sha256 = "sha256-0+CZqw2iRxJ2dZtaqJ2RPpfv1Pe8NwmrAr1zkvTFsf8=";
-        url =
-          "https://github.com/nextcloud-releases/tables/releases/download/v0.8.0/tables-v0.8.0.tar.gz";
-        license = "gpl3";
-      };
+        bookmarks calendar contacts deck files_mindmap memories music news notes
+        notify_push onlyoffice phonetrack tasks whiteboard;
 
     };
+  };
+
+  services.onlyoffice = {
+    enable = true;
+    port = 9101;
+    hostname = "localhost";
+    jwtSecretFile = "/etc/nextcloud-admin-pass";
+    postgresHost = "/run/postgresql";
   };
 
 }

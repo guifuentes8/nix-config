@@ -249,7 +249,7 @@ in {
       {
         resources = {
           cpu = true;
-          disk = "/mnt/storage";
+          disk = "/var/lib/storage";
           memory = true;
           cputemp = true;
           tempmin = 0; # optional, minimum cpu temp

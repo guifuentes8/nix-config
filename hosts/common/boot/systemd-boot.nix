@@ -5,8 +5,6 @@
       consoleMode = "max";
     };
 
-    efi = {
-      canTouchEfiVariables = true;
-    };
+    efi = { canTouchEfiVariables = true; };
   };
 }
