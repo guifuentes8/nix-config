@@ -1,4 +1,4 @@
-{   pkgs, ... }: {
+{ pkgs, ... }: {
 
   imports = [ ./dependencies.nix ];
   programs = {
@@ -19,8 +19,7 @@
     gimp
     onlyoffice-bin
     pavucontrol
-    spotube
-    youtube-music
+    harmony-music
     zoom-us
 
     # programs cli

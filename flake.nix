@@ -24,7 +24,7 @@
     # Others flakes
     sops-nix.url = "github:Mic92/sops-nix";
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
@@ -71,7 +71,7 @@
           modules = [
             stylix.homeManagerModules.stylix
             sops-nix.homeManagerModules.sops
-inputs.nixvim.homeManagerModules.nixvim
+            inputs.nixvim.homeManagerModules.nixvim
 
             ./home/guifuentes8/sun.nix
           ];
@@ -117,7 +117,7 @@ inputs.nixvim.homeManagerModules.nixvim
           modules = [
             sops-nix.homeManagerModules.sops
             stylix.homeManagerModules.stylix
-inputs.nixvim.homeManagerModules.nixvim
+            inputs.nixvim.homeManagerModules.nixvim
             ./home/guifuentes8/venus.nix
           ];
         };

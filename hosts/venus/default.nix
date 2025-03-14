@@ -42,9 +42,12 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # custom system config
-  console.keyMap = "br-abnt2";
-  services.xserver.xkb.layout = "br";
-  services.xserver.xkb.variant = "abnt2";
+
+  # console.keyMap = "br-abnt2";
+  # services.xserver.xkb.layout = "br";
+  # services.xserver.xkb.variant = "abnt2";
+  console.keyMap = "us";
+  services.xserver.xkb.layout = "us";
 
   networking.hostName = "venus";
 
