@@ -16,7 +16,8 @@ in {
 
     # Programming languages and dependencies packages 
     # pkgs.nodePackages.graphql-language-service-cli
-    pkgs.nodejs
+    pkgs.bun
+    pkgs.nodejs_22
     pkgs.pnpm
     pkgs.nest-cli
     pkgs.maven
