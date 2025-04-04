@@ -1,15 +1,21 @@
-{ pkgs, config, outputs, lib, ... }:
+{
+  pkgs,
+  config,
+  outputs,
+  lib,
+  ...
+}:
 let
   cursorName = "everforest-cursors";
   cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
 
-in {
+in
+{
   stylix = {
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme =
-      "${pkgs.unstable.base16-schemes}/share/themes/ayu-mirage.yaml";
+    base16Scheme = "${pkgs.unstable.base16-schemes}/share/themes/ayu-mirage.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;
@@ -26,7 +32,9 @@ in {
       terminal = 0.9;
       desktop = 1.0;
     };
-    override = { base05 = "A9B1D6"; };
+    override = {
+      base05 = "A9B1D6";
+    };
     targets = {
       nixvim.enable = false;
       vim.enable = true;
@@ -52,4 +60,3 @@ in {
   };
 
 }
-

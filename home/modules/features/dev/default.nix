@@ -1,6 +1,8 @@
 { pkgs, outputs, ... }:
-let dbgate = outputs.packages.${pkgs.system}.dbgate;
-in {
+let
+  dbgate = outputs.packages.${pkgs.system}.dbgate;
+in
+{
   imports = [ ./vscode.nix ];
 
   programs = {
@@ -14,15 +16,16 @@ in {
     # Extra programs for development
     #dbgate
 
-    # Programming languages and dependencies packages 
+    # Programming languages and dependencies packages
     # pkgs.nodePackages.graphql-language-service-cli
     pkgs.bun
     pkgs.nodejs_22
     pkgs.pnpm
     pkgs.nest-cli
     pkgs.maven
+
+    pkgs.nixfmt-rfc-style
     #pkgs.nodePackages.eas-cli
     #pkgs.nodePackages.expo-cli
   ];
 }
-

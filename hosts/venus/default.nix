@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
@@ -48,7 +48,7 @@
   # services.xserver.xkb.variant = "abnt2";
   console.keyMap = "us";
   services.xserver.xkb.layout = "us";
-
+  environment.systemPackages = [ pkgs.cacert ];
   networking.hostName = "venus";
 
 }

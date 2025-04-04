@@ -2,8 +2,8 @@
   programs.nixvim.plugins.neorg = {
     enable = true;
     package = pkgs.vimPlugins.neorg;
-    lazyLoading = true;
-    modules = {
+    settings.lazyLoading = true;
+    settings.load = {
       "core.defaults" = { __empty = null; };
       "core.concealer".config = { icon_preset = "diamond"; };
       "core.completion" = {

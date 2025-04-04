@@ -2,15 +2,14 @@
 let
   cursorName = "everforest-cursors";
   cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
-
-in {
+in
+{
 
   stylix = {
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme =
-      "${pkgs.unstable.base16-schemes}/share/themes/ayu-mirage.yaml";
+    base16Scheme = "${pkgs.unstable.base16-schemes}/share/themes/ayu-mirage.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;

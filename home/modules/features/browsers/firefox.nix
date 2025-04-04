@@ -8,7 +8,7 @@
       id = 0;
       name = "guifuentes8";
       # TODO
-      extensions = with pkgs.inputs.firefox-addons; [
+      extensions = with pkgs.inputs.nur.repos.rycee.firefox-addons; [
         bitwarden
         darkreader
         floccus
