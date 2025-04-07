@@ -42,16 +42,13 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # custom system config
-  #console.keyMap = "br-abnt2";
-  console.keyMap = "us";
-  #services.xserver.xkb.layout = "br";
+  console.keyMap = "br-abnt2";
   services.xserver = {
     xkb = {
-      layout = "us";
-      variant = "";
+      layout = "br";
+      variant = "abnt2";
     };
   };
-  # services.xserver.xkb.variant = "abnt2";
 
   networking.hostName = "mercury";
 
