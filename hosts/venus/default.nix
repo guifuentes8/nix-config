@@ -20,7 +20,7 @@
     ../common/boot/grub.nix
 
     # Login Manager
-    ../common/login/greetd.nix
+    ../common/login/greetd
 
     # Choice Interface (WM and/or DE)
     ../common/interfaces/WM/hyprland.nix
@@ -40,20 +40,9 @@
 
   # SYSTEM CONFIGS --------------------------------------
 
-<<<<<<< Updated upstream
-  # custom system config
-
-  # console.keyMap = "br-abnt2";
-  # services.xserver.xkb.layout = "br";
-  # services.xserver.xkb.variant = "abnt2";
-  console.keyMap = "us";
-  services.xserver.xkb.layout = "us";
-=======
   console.keyMap = "br-abnt2";
   services.xserver.xkb.layout = "br";
   services.xserver.xkb.variant = "abnt2";
-  environment.systemPackages = [ pkgs.cacert ];
->>>>>>> Stashed changes
   networking.hostName = "venus";
 
 }

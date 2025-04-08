@@ -11,6 +11,10 @@
   environment = {
     sessionVariables.NIXOS_OZONE_WL = "1";
     systemPackages = (with pkgs; [ xdg-utils ]);
+
+    etc."greetd/environments".text = ''
+      Hyprland  
+    '';
   };
 
   xdg.portal = {
