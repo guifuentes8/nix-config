@@ -2,19 +2,20 @@
   imports = [
 
     # Global config (required)
-    ./global
+    ../guifuentes8
 
-    ./features/dev
-    ./features/neovim
-    #./features/desktops/WM/hyprland.nix
-    ./features/desktops/DE/gnome.nix
+    ../modules/features/dev
+    ../modules/features/neovim
+    ../modules/features/desktops/DE/xfce.nix
+
+    ../modules/common/programs.nix
+    ../modules/common/systemd.nix
+    ../modules/common/services.nix
+    ../modules/common/stylix.nix
+    ../modules/common/sops.nix
+
   ];
 
-  #  wayland.windowManager.hyprland.settings.input = {
-  #        kb_layout = "br";
-  #        kb_variant = "abnt2";
-  #  };
-
-  stylix.image = ./global/extras/mercury.jpg;
+  stylix.image = ../modules/common/extras/mercury.jpg;
 
 }

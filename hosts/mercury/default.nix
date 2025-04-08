@@ -9,7 +9,6 @@
     ../common/hardware/logitech.nix
 
     # Hardware Gpu (if exist)
-    ../common/hardware/gpu/intel.nix
 
     # NIXOS CONFIG ------------------------------------
 
@@ -17,13 +16,10 @@
     ../common
 
     # Boot initial (grub or systemd)
-    ../common/boot/systemd-boot.nix
+    ../common/boot/grub.nix
 
-    # Login Manager
-    #../common/login/greetd.nix
     # Choice Interface (WM and/or DE)
-    #../common/interfaces/WM/hyprland.nix
-    ../common/interfaces/DE/gnome.nix
+    ../common/interfaces/DE/xfce.nix
 
     # Active services
     ../common/services/backlight.nix
@@ -31,7 +27,6 @@
 
     ../common/services/temperature.nix
     ../common/services/dev
-    ../common/services/wine.nix
 
     # User 
     ../common/users/guifuentes8.nix
@@ -42,14 +37,12 @@
   # SYSTEM CONFIGS --------------------------------------
 
   # custom system config
-  console.keyMap = "br-abnt2";
-  services.xserver = {
-    xkb = {
-      layout = "br";
-      variant = "abnt2";
-    };
-  };
 
+  # console.keyMap = "br-abnt2";
+  # services.xserver.xkb.layout = "br";
+  # services.xserver.xkb.variant = "abnt2";
+  console.keyMap = "us";
+  services.xserver.xkb.layout = "us";
   networking.hostName = "mercury";
-
+  stylix.image = ../../home/modules/common/extras/mercury.jpg;
 }

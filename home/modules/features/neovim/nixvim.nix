@@ -32,7 +32,7 @@ in {
       ayu.enable = true;
       ayu.settings.mirage = true;
     };
-    package = pkgs.unstable.neovim-unwrapped;
+    package = pkgs.neovim-unwrapped;
     # colorscheme = "everforest";
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:
@@ -49,13 +49,7 @@ in {
       web-devicons.enable = true; # required
     };
 
-    extraPlugins = with pkgs.vimPlugins; [
-      zen-mode-nvim
-
-      (fromGithub "6a74c99880b4d4a2cafb6798287057860115d96d" "HEAD"
-        "https://github.com/neanias/everforest-nvim")
-
-    ];
+    extraPlugins = with pkgs.vimPlugins; [ zen-mode-nvim ];
     extraPackages = with pkgs; [
 
       # Language servers
