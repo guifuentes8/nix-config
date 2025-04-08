@@ -20,11 +20,10 @@
     ../common/boot/grub.nix
 
     # Login Manager
-    ../common/login/sddm.nix
+    ../common/login/greetd.nix
 
     # Choice Interface (WM and/or DE)
     ../common/interfaces/WM/hyprland.nix
-    ../common/interfaces/DE/kde.nix
 
     # Active services
     ../common/services/backlight.nix
@@ -41,6 +40,7 @@
 
   # SYSTEM CONFIGS --------------------------------------
 
+<<<<<<< Updated upstream
   # custom system config
 
   # console.keyMap = "br-abnt2";
@@ -48,6 +48,12 @@
   # services.xserver.xkb.variant = "abnt2";
   console.keyMap = "us";
   services.xserver.xkb.layout = "us";
+=======
+  console.keyMap = "br-abnt2";
+  services.xserver.xkb.layout = "br";
+  services.xserver.xkb.variant = "abnt2";
+  environment.systemPackages = [ pkgs.cacert ];
+>>>>>>> Stashed changes
   networking.hostName = "venus";
 
 }
