@@ -93,6 +93,7 @@
           modules = [
             stylix.homeManagerModules.stylix
             sops-nix.homeManagerModules.sops
+            inputs.nixvim.homeManagerModules.nixvim
             ./home/guifuentes8/mercury.nix
           ];
         };
@@ -100,8 +101,8 @@
       nixosConfigurations.mercury = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
-          stylix.nixosModules.stylix
           sops-nix.nixosModules.sops
+          stylix.nixosModules.stylix
           ./hosts/mercury
         ];
       };
