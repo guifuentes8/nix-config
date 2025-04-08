@@ -200,6 +200,7 @@
 
               ];
               useUserPackages = true;
+              useGlobalPkgs = true;
               users.administrador.imports = [
                 ./home/darwin/default.nix
 

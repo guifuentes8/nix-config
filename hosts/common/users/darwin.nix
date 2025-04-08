@@ -1,12 +1,29 @@
-{ config, inputs, outputs, pkgs, ... }: {
+{
+  config,
+  inputs,
+  outputs,
+  pkgs,
+  ...
+}:
+{
 
   imports = [ ../../common ];
 
   nix = {
-    linux-builder = { enable = true; };
+    linux-builder = {
+      enable = true;
+    };
     settings = {
-      trusted-users = [ "@admin" "administrador" "root" "@wheel" ];
-      experimental-features = [ "nix-command" "flakes" ];
+      trusted-users = [
+        "@admin"
+        "administrador"
+        "root"
+        "@wheel"
+      ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
     };
     extraOptions = ''
@@ -20,9 +37,11 @@
 
   homebrew = {
     enable = true;
-    casks = [ "nextcloud" ];
+    # casks = [ "nextcloud" ];
   };
-  networking = { hostName = "darwin"; };
+  networking = {
+    hostName = "darwin";
+  };
 
   system.stateVersion = 5;
   services.nix-daemon.enable = true;

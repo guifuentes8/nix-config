@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;
@@ -50,7 +51,7 @@
       tab_bar.inactive_tab_hover = {
         fg_color = "#7aa2f7";
         bg_color = "#292e42";
-        # intensity = "Bold";
+        intensity = "Bold";
       };
       tab_bar.new_tab_hover = {
         fg_color = "#7aa2f7";

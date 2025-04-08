@@ -1,4 +1,12 @@
-{ lib, pkgs, config, inputs, outputs, ... }: {
+{
+  lib,
+  pkgs,
+  config,
+  inputs,
+  outputs,
+  ...
+}:
+{
 
   imports = [
     ../modules/common/programs.nix
@@ -8,6 +16,7 @@
     ../modules/features/neovim
     ../modules/features/dev
     ../modules/features/cli
+    ../modules/features/terminals/wezterm.nix
 
   ];
 
@@ -20,18 +29,21 @@
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
     };
   };
 
-  nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
-    config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [ ];
-    };
-  };
+  # nixpkgs = {
+  #   overlays = builtins.attrValues outputs.overlays;
+  #   config = {
+  #     allowUnfree = true;
+  #     permittedInsecurePackages = [ ];
+  #   };
+  # };
 
   fonts.fontconfig.enable = true;
   systemd.user.startServices = "sd-switch";
@@ -40,4 +52,3 @@
   stylix.image = ../modules/common/extras/venus.jpg;
 
 }
-
