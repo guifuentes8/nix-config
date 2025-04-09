@@ -5,21 +5,36 @@
   pkgs,
   ...
 }:
-let
-  nh_plus = inputs.nh_plus.packages."aarch64-darwin".nh;
-in
+
 {
 
   imports = [ ../common/users/darwin.nix ];
-  environment = {
-    systemPackages = with pkgs; [
-      nh_plus
-    ];
-  };
 
   networking = {
-    computerName = "Fuentes";
     hostName = "darwin";
   };
+  system.stateVersion = 5;
+  services.nix-daemon.enable = true;
+  nixpkgs.hostPlatform = "aarch64-darwin";
 
+  nix = {
+    linux-builder.enable = false;
+    settings = {
+      trusted-users = [
+        "@admin"
+        "administrador"
+        "root"
+        "@wheel"
+      ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      warn-dirty = false;
+    };
+    gc.automatic = true;
+    extraOptions = ''
+      extra-platforms = x86_64-linux x86_64-darwin aarch64-darwin
+    '';
+  };
 }

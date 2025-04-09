@@ -14,7 +14,6 @@ in
 
   home.packages = [
     # Extra programs for development
-    #dbgate
 
     # Programming languages and dependencies packages
     # pkgs.nodePackages.graphql-language-service-cli
