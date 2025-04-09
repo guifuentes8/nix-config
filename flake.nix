@@ -201,7 +201,7 @@
         ];
       };
 
-      darwinConfigurations."Mac-C02FH8E7Q05F" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."darwin" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = { inherit inputs outputs; };
         modules = [

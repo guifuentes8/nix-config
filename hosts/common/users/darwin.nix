@@ -19,6 +19,34 @@ in
     home = "/Users/administrador";
   };
 
+  networking = {
+    hostName = "darwin";
+  };
+  system.stateVersion = 5;
+  services.nix-daemon.enable = true;
+  nixpkgs.hostPlatform = "aarch64-darwin";
+
+  nix = {
+    linux-builder.enable = false;
+    settings = {
+      trusted-users = [
+        "@admin"
+        "administrador"
+        "root"
+        "@wheel"
+      ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      warn-dirty = false;
+    };
+    gc.automatic = true;
+    extraOptions = ''
+      extra-platforms = x86_64-linux x86_64-darwin aarch64-darwin
+    '';
+  };
+
   homebrew = {
     enable = true;
     onActivation = {
@@ -27,10 +55,22 @@ in
       upgrade = true;
     };
     casks = [
+      "alfred"
+      "discord"
+      "docker"
+      "dbeaver-community"
+      "flameshot"
+      "gimp"
       "google-chrome"
+      "microsoft-teams"
       "nextcloud"
+      "onlyoffice"
+      "obs"
+      "zoom"
+
     ];
   };
+
   environment = {
     systemPackages = with pkgs; [
       nh_plus

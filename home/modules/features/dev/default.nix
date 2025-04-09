@@ -1,7 +1,5 @@
-{ pkgs, outputs, ... }:
-let
-  dbgate = outputs.packages.${pkgs.system}.dbgate;
-in
+{ pkgs, ... }:
+
 {
   imports = [ ./vscode.nix ];
 
@@ -12,19 +10,13 @@ in
     rbenv.enable = true;
   };
 
-  home.packages = [
-    # Extra programs for development
-
-    # Programming languages and dependencies packages
-    # pkgs.nodePackages.graphql-language-service-cli
-    pkgs.bun
-    pkgs.nodejs_22
-    pkgs.pnpm
-    pkgs.nest-cli
-    pkgs.maven
-
-    pkgs.nixfmt-rfc-style
-    #pkgs.nodePackages.eas-cli
-    #pkgs.nodePackages.expo-cli
+  # Programming languages and dependencies packages
+  home.packages = with pkgs; [
+    bun
+    nodejs_22
+    pnpm
+    nest-cli
+    maven
+    nixfmt-rfc-style
   ];
 }

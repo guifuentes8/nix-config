@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   imports = [ ./dependencies.nix ];
   programs = {
@@ -16,6 +17,7 @@
 
     # programs
     discord
+    flameshot
     gimp
     onlyoffice-bin
     pavucontrol

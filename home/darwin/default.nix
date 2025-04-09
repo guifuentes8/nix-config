@@ -55,10 +55,6 @@
 
   stylix.image = ../modules/common/extras/venus.jpg;
 
-  home.packages = [
-    pkgs.alacritty
-  ];
-
   # Only 25.05
   # targets.darwin.linkApps.enable = true;
   # targets.darwin.linkApps.directory = "Applications/";
