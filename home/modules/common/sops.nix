@@ -4,8 +4,6 @@
 
   sops.defaultSopsFile = ../../../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
-  sops.defaultSymlinkPath = "/run/user/1000/secrets";
-  sops.defaultSecretsMountPoint = "/run/user/1000/secrets.d";
 
   sops.secrets = {
     github_token = {

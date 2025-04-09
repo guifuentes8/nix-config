@@ -9,7 +9,7 @@
 
   imports = [
     ../../common
-    ../sops.nix
+    # ../sops-darwin.nix
   ];
 
   nix = {
