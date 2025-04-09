@@ -32,6 +32,8 @@
     ../common/services/temperature.nix
     ../common/services/dev
 
+    ../common/services/gaming.nix
+
     # User 
     ../common/users/guifuentes8.nix
     ../stylix.nix
