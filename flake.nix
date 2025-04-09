@@ -206,7 +206,6 @@
         specialArgs = { inherit inputs outputs; };
         modules = [
           ./hosts/darwin
-          sops-nix.darwinModules.sops
           home-manager.darwinModules.home-manager
 
           {

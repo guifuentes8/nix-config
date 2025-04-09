@@ -12,10 +12,13 @@ in
 
   imports = [ ../common/users/darwin.nix ];
   environment = {
-    systemPackages = with pkgs; [ nh_plus ];
+    systemPackages = with pkgs; [
+      nh_plus
+    ];
   };
 
   networking = {
+    computerName = "Fuentes";
     hostName = "darwin";
   };
 

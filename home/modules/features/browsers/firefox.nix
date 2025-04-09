@@ -2,7 +2,7 @@
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-bin;
+    package = pkgs.unstable.firefox;
     policies = {
       DefaultDownloadDirectory = "/home/guifuentes8/Downloads";
     };
