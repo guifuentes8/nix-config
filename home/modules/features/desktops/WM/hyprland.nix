@@ -66,10 +66,7 @@ in {
         preserve_split = true; # You probably want this
       };
       master = { };
-      misc = {
-        force_default_wallpaper = 1;
-        disable_hyprland_logo = false;
-      };
+      misc = { };
       input = {
         follow_mouse = 1;
         sensitivity = 0;
