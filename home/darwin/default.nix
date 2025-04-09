@@ -12,11 +12,14 @@
     ../modules/common/programs.nix
     ../modules/common/services.nix
     ../modules/common/sops.nix
+    ../modules/common/sops-darwin.nix
     ../modules/common/stylix.nix
+
     ../modules/features/neovim
     ../modules/features/dev
     ../modules/features/cli
     ../modules/features/terminals/wezterm.nix
+    ../modules/features/browsers/firefox.nix
 
   ];
 
@@ -37,18 +40,26 @@
     };
   };
 
-  # nixpkgs = {
-  #   overlays = builtins.attrValues outputs.overlays;
-  #   config = {
-  #     allowUnfree = true;
-  #     permittedInsecurePackages = [ ];
-  #   };
-  # };
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [ ];
+    };
+  };
 
   fonts.fontconfig.enable = true;
   systemd.user.startServices = "sd-switch";
   news.display = "silent";
 
   stylix.image = ../modules/common/extras/venus.jpg;
+
+  home.packages = [
+    pkgs.alacritty
+  ];
+
+  # Only 25.05
+  # targets.darwin.linkApps.enable = true;
+  # targets.darwin.linkApps.directory = "Applications/";
 
 }

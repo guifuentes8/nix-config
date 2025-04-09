@@ -7,11 +7,14 @@
 }:
 {
 
-  imports = [ ../../common ];
+  imports = [
+    ../../common
+    # ../sops-darwin.nix
+  ];
 
   nix = {
     linux-builder = {
-      enable = true;
+      enable = false;
     };
     settings = {
       trusted-users = [
@@ -26,9 +29,11 @@
       ];
       warn-dirty = false;
     };
+    gc.automatic = true;
     extraOptions = ''
       extra-platforms = x86_64-linux x86_64-darwin aarch64-darwin
     '';
+
   };
   users.users.administrador = {
     name = "administrador";
@@ -37,6 +42,11 @@
 
   homebrew = {
     enable = true;
+    onActivation = {
+      autoUpdate = true;
+      # cleanUp = "zap"; # 25.05
+      upgrade = true;
+    };
     # casks = [ "nextcloud" ];
   };
   networking = {

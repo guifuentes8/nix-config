@@ -1,6 +1,17 @@
-{ config, lib, inputs, outputs, pkgs, ... }: {
-  imports =
-    [ inputs.home-manager.nixosModules.home-manager ../../common ../sops.nix ];
+{
+  config,
+  lib,
+  inputs,
+  outputs,
+  pkgs,
+  ...
+}:
+{
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+    ../../common
+    ../sops.nix
+  ];
   users.users.guifuentes8 = {
     isNormalUser = true;
     description = "guifuentes8";
@@ -67,7 +78,10 @@
       PATH = [ "\${XDG_BIN_HOME}" ];
       TZ = "America/Sao_Paulo";
     };
-    pathsToLink = [ "/libexec" "/etc" ];
+    pathsToLink = [
+      "/libexec"
+      "/etc"
+    ];
   };
 
   home-manager.useUserPackages = true;
@@ -78,7 +92,10 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 80 443 ];
+      allowedTCPPorts = [
+        80
+        443
+      ];
     };
   };
 
@@ -104,15 +121,24 @@
       LC_TELEPHONE = lib.mkDefault "pt_BR.utf8";
       LC_TIME = lib.mkDefault "pt_BR.UTF-8";
     };
-    supportedLocales =
-      lib.mkDefault [ "en_US.UTF-8/UTF-8" "pt_BR.UTF-8/UTF-8" ];
+    supportedLocales = lib.mkDefault [
+      "en_US.UTF-8/UTF-8"
+      "pt_BR.UTF-8/UTF-8"
+    ];
   };
 
   nix = {
     settings = {
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = [
+        "root"
+        "@wheel"
+        "guifuentes8"
+      ];
       auto-optimise-store = lib.mkDefault true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
     };
   };
@@ -129,7 +155,7 @@
   system = {
     stateVersion = "24.11";
     autoUpgrade = {
-      enable = false;
+      enable = true;
       allowReboot = false;
       dates = "daily";
     };
