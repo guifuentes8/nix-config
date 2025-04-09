@@ -1,6 +1,11 @@
-{ pkgs, inputs, lib, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 let
-  fromGithub = rev: ref: repo:
+  fromGithub =
+    rev: ref: repo:
     pkgs.vimUtils.buildVimPlugin {
       pname = "${lib.strings.sanitizeDerivationName repo}";
       version = ref;
@@ -10,7 +15,8 @@ let
         rev = rev;
       };
     };
-in {
+in
+{
   imports = [
 
     ./keymaps.nix
@@ -19,7 +25,7 @@ in {
     ./plugins/cmp.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
-    ./plugins/neorg.nix
+    # ./plugins/neorg.nix
     ./plugins/noice.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
@@ -33,10 +39,9 @@ in {
       ayu.settings.mirage = true;
     };
     package = pkgs.neovim-unwrapped;
-    # colorscheme = "everforest";
     extraConfigLua = "";
-    extraLuaPackages = luaPkgs:
-      with luaPkgs; [
+    extraLuaPackages =
+      luaPkgs: with luaPkgs; [
         lua-utils-nvim
         nvim-nio
         pathlib-nvim
@@ -109,11 +114,6 @@ in {
     };
 
   };
-
-  #  xdg.configFile."nvim/lua/settings.lua".source = ./settings.lua;
-  #  xdg.configFile."nvim/lua/highlights.lua".source = ./highlights.lua;
-  #  xdg.configFile."nvim/lua/maps.lua".source = ./maps.lua;
-  #  xdg.configFile."nvim/lua/plugins".source = ./plugins;
 
   home.sessionVariables.EDITOR = "nvim";
 

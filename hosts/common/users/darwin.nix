@@ -7,7 +7,10 @@
 }:
 {
 
-  imports = [ ../../common ];
+  imports = [
+    ../../common
+    ../sops.nix
+  ];
 
   nix = {
     linux-builder = {
