@@ -1,7 +1,7 @@
-{ pkgs, outputs, ... }:
+{ pkgs, ... }:
 let
-  cursorName = "everforest-cursors";
-  cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
+  cursorName = "phinger-cursors-light";
+  cursorPkg = pkgs.phinger-cursors;
 in {
 
   stylix = {
