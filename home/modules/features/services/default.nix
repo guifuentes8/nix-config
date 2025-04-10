@@ -13,7 +13,7 @@
     };
     caffeine.enable = true;
     kdeconnect = {
-      enable = false;
+      enable = true;
       indicator = true;
     };
     nextcloud-client = {

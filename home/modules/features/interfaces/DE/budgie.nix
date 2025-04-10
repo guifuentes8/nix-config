@@ -1,15 +1,14 @@
-{ pkgs, ... }: {
+{ ... }: {
 
   imports = [
-
     ../../browsers/firefox.nix
     ../../browsers/chromium.nix
-    ../../browsers/qutebrowser.nix
-    ../../terminals/foot.nix
+    ../../terminals/wezterm.nix
     ../../cli
+    ../../dev
+    ../../neovim
     ../../programs
     ../../services
-
   ];
 
 }

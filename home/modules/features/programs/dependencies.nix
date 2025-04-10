@@ -3,7 +3,7 @@
 
     ffmpeg
     pciutils
-    pulseaudio
+    #pulseaudio
     unrar
     unzip
     chafa
@@ -14,7 +14,7 @@
     xdotool
     playerctl
     xorg.xprop
-
+    cacert
   ];
 
 }

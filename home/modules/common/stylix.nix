@@ -3,13 +3,13 @@ let
   cursorName = "phinger-cursors-light";
   cursorPkg = pkgs.phinger-cursors;
 
-in
-{
+in {
   stylix = {
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme = "${pkgs.unstable.base16-schemes}/share/themes/ayu-mirage.yaml";
+    base16Scheme =
+      "${pkgs.unstable.base16-schemes}/share/themes/ayu-mirage.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;
@@ -26,9 +26,7 @@ in
       terminal = 1.0;
       desktop = 1.0;
     };
-    override = {
-      base05 = "A9B1D6";
-    };
+    override = { base05 = "A9B1D6"; };
     targets = {
       nixvim.enable = false;
       vim.enable = true;
@@ -40,7 +38,7 @@ in
     enable = true;
     iconTheme = {
       name = lib.mkForce "Papirus-Dark";
-      #     package = lib.mkForce pkgs.papirus-icon-theme;
+      package = lib.mkForce pkgs.unstable.epapirus-icon-theme;
     };
     cursorTheme = {
       name = cursorName;
