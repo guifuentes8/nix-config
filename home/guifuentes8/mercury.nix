@@ -3,7 +3,7 @@
 
     # Global config (required)
     ../guifuentes8
-    ../modules/features/interfaces/DE/budgie.nix
+    ../modules/features/interfaces/DE/cinnamon.nix
 
   ];
 
