@@ -25,7 +25,7 @@
       };
       "core.esupports.metagen" = {
         config = {
-          author = "guifuentes8";
+          author = "${config.user.username}";
           type = "auto";
           update_date = true;
         };

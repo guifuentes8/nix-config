@@ -1,9 +1,5 @@
-{ pkgs, config, ... }:
-{
-  home.packages = [
-    pkgs.age
-    pkgs.pfetch-rs
-  ];
+{ pkgs, config, ... }: {
+  home.packages = [ pkgs.age pkgs.pfetch-rs ];
 
   programs = {
     gh = {
@@ -74,9 +70,7 @@
         testnet = "speedtest-rs";
         music = "ncmpcpp";
       };
-      localVariables = {
-        FLAKE = "${config.home.homeDirectory}/nix-config";
-      };
+      localVariables = { FLAKE = "${config.home.homeDirectory}/nix-config"; };
     };
   };
 

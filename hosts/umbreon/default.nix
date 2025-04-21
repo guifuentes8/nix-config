@@ -3,11 +3,11 @@
 {
   imports = [
 
-    ../global
-    ../global/users/guifuentes8.nix
-    #../global/hardware/gpu/amdgpu.nix
-    ../global/hardware/gpu/notebook-prime.nix
-    ../global/services/common
+    ../common
+    ../common/users/gui8.nix
+    #..l/hardware/gpu/amdgpu.nix
+    ../common/hardware/gpu/notebook-prime.nix
+    ../common/services/common
 
     inputs.nix-wsl.nixosModules.wsl
   ];

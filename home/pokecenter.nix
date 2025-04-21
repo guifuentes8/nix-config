@@ -2,7 +2,7 @@
   imports = [
 
     # Global config (required)
-    ../guifuentes8
+    ../gui8
 
     ../modules/features/dev
     ../modules/features/neovim

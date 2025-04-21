@@ -1,4 +1,4 @@
-{ pkgs,   config, ... }: {
+{ pkgs, config, ... }: {
   imports = [
 
     # HARDWARE ----------------------------------------
@@ -28,7 +28,7 @@
     ../common/services/dev
 
     # User 
-    ../common/users/guifuentes8.nix
+    ../common/users/gui8.nix
     ../stylix.nix
 
   ];

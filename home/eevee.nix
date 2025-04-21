@@ -2,8 +2,8 @@
   imports = [
 
     # Global config (required)
-    ../guifuentes8
-    ../modules/features/interfaces/DE/cinnamon.nix
+    ./gui8.nix
+    ./modules/features/interfaces/DE/cinnamon.nix
 
   ];
 
