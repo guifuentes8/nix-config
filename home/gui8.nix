@@ -49,5 +49,6 @@
   fonts.fontconfig.enable = true;
   systemd.user.startServices = "sd-switch";
   news.display = "silent";
+
 }
 

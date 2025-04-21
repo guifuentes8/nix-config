@@ -44,7 +44,6 @@
       enable = true;
       autosuggestion.enable = true;
       enableCompletion = true;
-      initExtraFirst = "pfetch";
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;
