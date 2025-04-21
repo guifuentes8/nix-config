@@ -1,20 +1,9 @@
-{
-  config,
-  lib,
-  inputs,
-  outputs,
-  pkgs,
-  ...
-}:
-{
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-    ../../common
-    ../sops.nix
-  ];
-  users.users.guifuentes8 = {
+{ config, lib, inputs, outputs, pkgs, ... }: {
+  imports =
+    [ inputs.home-manager.nixosModules.home-manager ../../common ../sops.nix ];
+  users.users.gui8 = {
     isNormalUser = true;
-    description = "guifuentes8";
+    description = "gui8";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -45,7 +34,7 @@
         enable = true;
         extraArgs = "--keep-since 4d --keep 3";
       };
-      flake = "${config.users.users.guifuentes8.home}/nix-config";
+      flake = "${config.users.users.gui8.home}/nix-config";
     };
   };
 
@@ -70,7 +59,7 @@
   environment = {
     systemPackages = with pkgs; [ sops ];
     sessionVariables = {
-      FLAKE = "${config.users.users.guifuentes8.home}/nix-config";
+      FLAKE = "${config.users.users.gui8.home}/nix-config";
       XDG_CACHE_HOME = "\${HOME}/.cache";
       XDG_CONFIG_HOME = "\${HOME}/.config";
       XDG_BIN_HOME = "\${HOME}/.local/bin";
@@ -78,10 +67,7 @@
       PATH = [ "\${XDG_BIN_HOME}" ];
       TZ = "America/Sao_Paulo";
     };
-    pathsToLink = [
-      "/libexec"
-      "/etc"
-    ];
+    pathsToLink = [ "/libexec" "/etc" ];
   };
 
   home-manager.useUserPackages = true;
@@ -92,10 +78,7 @@
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [
-        80
-        443
-      ];
+      allowedTCPPorts = [ 80 443 ];
     };
   };
 
@@ -121,24 +104,15 @@
       LC_TELEPHONE = lib.mkDefault "pt_BR.utf8";
       LC_TIME = lib.mkDefault "pt_BR.UTF-8";
     };
-    supportedLocales = lib.mkDefault [
-      "en_US.UTF-8/UTF-8"
-      "pt_BR.UTF-8/UTF-8"
-    ];
+    supportedLocales =
+      lib.mkDefault [ "en_US.UTF-8/UTF-8" "pt_BR.UTF-8/UTF-8" ];
   };
 
   nix = {
     settings = {
-      trusted-users = [
-        "root"
-        "@wheel"
-        "guifuentes8"
-      ];
+      trusted-users = [ "root" "@wheel" "gui8" ];
       auto-optimise-store = lib.mkDefault true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
+      experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
     };
   };

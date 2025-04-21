@@ -1,15 +1,14 @@
-{ pkgs, lib, ... }:
-{
+{ pkgs, config, ... }: {
   programs.firefox = {
     enable = true;
     package = pkgs.unstable.firefox;
     policies = {
-      DefaultDownloadDirectory = "/home/guifuentes8/Downloads";
+      DefaultDownloadDirectory = "${config.home.homeDirectory}/Downloads";
     };
-    profiles."guifuentes8" = {
+    profiles."${config.home.username}" = {
       isDefault = true;
       id = 0;
-      name = "guifuentes8";
+      name = "${config.home.username}";
 
       extensions = with pkgs.inputs.nur.repos.rycee.firefox-addons; [
         bitwarden

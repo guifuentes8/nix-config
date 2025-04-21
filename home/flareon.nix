@@ -2,8 +2,8 @@
   imports = [
 
     # Global config (required)
-    ../guifuentes8
-    ../modules/features/interfaces/WM/hyprland.nix
+    ./default.nix
+    ./modules/features/interfaces/WM/hyprland.nix
 
   ];
 
@@ -12,6 +12,6 @@
     kb_variant = "abnt2";
   };
 
-  stylix.image = ../modules/common/extras/venus.jpg;
+  stylix.image = ./modules/common/extras/eevee.jpeg;
 
 }

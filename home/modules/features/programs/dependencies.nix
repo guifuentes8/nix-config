@@ -3,6 +3,7 @@
 
     ffmpeg
     pciutils
+    pokeget-rs
     #pulseaudio
     unrar
     unzip
