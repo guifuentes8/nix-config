@@ -9,7 +9,7 @@ in {
     autoEnable = true;
     polarity = "dark";
     base16Scheme =
-      "${pkgs.unstable.base16-schemes}/share/themes/ayu-mirage.yaml";
+      "${pkgs.unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;

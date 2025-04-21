@@ -1,7 +1,6 @@
 { pkgs, config, ... }: {
-  programs.firefox = {
+  programs.floorp = {
     enable = true;
-    package = pkgs.unstable.firefox;
     policies = {
       DefaultDownloadDirectory = "${config.home.homeDirectory}/Downloads";
     };
@@ -9,8 +8,9 @@
       isDefault = true;
       id = 0;
       name = "${config.home.username}";
+      settings = { "extensions.autoDisableScopes" = 0; };
 
-      extensions = with pkgs.inputs.nur.repos.rycee.firefox-addons; [
+      extensions = with pkgs.inputs.firefox-addons; [
         bitwarden
         darkreader
         floccus

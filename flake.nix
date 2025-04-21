@@ -23,20 +23,12 @@
 
     # Others flakes
     sops-nix.url = "github:Mic92/sops-nix";
-    stylix = {
-      url = "github:danth/stylix/release-24.11";
+    stylix.url = "github:danth/stylix/release-24.11";
+    nixvim.url = "github:nix-community/nixvim/nixos-24.11";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nh_plus.url = "github:ToyVo/nh_plus";
   };
 

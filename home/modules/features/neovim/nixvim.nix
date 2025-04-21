@@ -1,11 +1,6 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 let
-  fromGithub =
-    rev: ref: repo:
+  fromGithub = rev: ref: repo:
     pkgs.vimUtils.buildVimPlugin {
       pname = "${lib.strings.sanitizeDerivationName repo}";
       version = ref;
@@ -15,8 +10,7 @@ let
         rev = rev;
       };
     };
-in
-{
+in {
   imports = [
 
     ./keymaps.nix
@@ -35,13 +29,13 @@ in
   programs.nixvim = {
     enable = true;
     colorschemes = {
-      ayu.enable = true;
-      ayu.settings.mirage = true;
+      catppuccin.enable = true;
+      catppuccin.settings.flavour = "mocha";
     };
     package = pkgs.neovim-unwrapped;
     extraConfigLua = "";
-    extraLuaPackages =
-      luaPkgs: with luaPkgs; [
+    extraLuaPackages = luaPkgs:
+      with luaPkgs; [
         lua-utils-nvim
         nvim-nio
         pathlib-nvim

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
@@ -8,7 +7,8 @@
     mutableExtensionsDir = false;
     extensions = with pkgs.unstable.vscode-extensions; [
       # theme
-      teabyii.ayu
+      catppuccin.catppuccin-vsc
+      catppuccin.catppuccin-vsc-icons
 
       # lint
       dbaeumer.vscode-eslint
@@ -50,12 +50,8 @@
       "explorer.confirmDragAndDrop" = false;
       "explorer.confirmPasteNative" = false;
 
-      "eslint.validate" = [
-        "javascript"
-        "javascriptreact"
-        "typescript"
-        "typescriptreact"
-      ];
+      "eslint.validate" =
+        [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
 
       "git.confirmSync" = false;
 
@@ -68,8 +64,8 @@
       "window.titleBarStyle" = "native";
       "window.commandCenter" = false;
 
-      "workbench.colorTheme" = "Ayu Mirage Bordered";
-      "workbench.iconTheme" = "ayu";
+      "workbench.colorTheme" = "Catppuccin Mocha";
+      "workbench.iconTheme" = "Catppuccin Mocha";
       "workbench.startupEditor" = "newUntiledFile";
       "workbench.editor.labelFormat" = "short";
       "workbench.statusBar.visible" = true;
@@ -82,12 +78,8 @@
       "[javascript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
-      "[jsonc]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[json]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
+      "[jsonc]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+      "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
       "[typescript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };

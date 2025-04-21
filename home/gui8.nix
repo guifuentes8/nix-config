@@ -40,10 +40,7 @@
 
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
-    config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [ "electron-19.1.9" ];
-    };
+    config = { allowUnfree = true; };
   };
 
   fonts.fontconfig.enable = true;
