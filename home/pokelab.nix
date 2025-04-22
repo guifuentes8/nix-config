@@ -2,14 +2,13 @@
   imports = [
 
     # Global config (required)
-    ../gui8
+    ./users/guifuentes8.nix
 
-    ../modules/features/dev
-    ../modules/features/neovim
+    ./modules/features/dev
+    ./modules/features/neovim
 
   ];
 
-  stylix.image = ../modules/common/extras/earth.jpeg;
-
+  programs.zsh.initExtraFirst = "pokeget pikachu --gmax";
 }
 

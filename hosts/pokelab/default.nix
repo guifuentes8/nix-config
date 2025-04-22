@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
 
     ../common/boot/systemd-boot.nix
-    ../common/users/gui8.nix
+    ../common/users/guifuentes8.nix
     #   ../common/interfaces/DE/xfce.nix
     ../stylix.nix
 
