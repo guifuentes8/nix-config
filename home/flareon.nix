@@ -2,7 +2,7 @@
   imports = [
 
     # Global config (required)
-    ./gui8.nix
+    ./users/gui8.nix
     ./modules/features/interfaces/WM/hyprland.nix
 
   ];
@@ -11,8 +11,6 @@
     kb_layout = "br";
     kb_variant = "abnt2";
   };
-
-  stylix.image = ./modules/common/extras/eevee.jpeg;
 
   programs.zsh.initExtraFirst = "pokeget flareon";
 

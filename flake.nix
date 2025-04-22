@@ -56,7 +56,7 @@
       #        ╚═╗║ ║║║║
       #        ╚═╝╚═╝╝╚╝
 
-      homeConfigurations."gui8@pokecenter" =
+      homeConfigurations."gui8@pokelab" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
@@ -65,15 +65,15 @@
             sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
 
-            ./home/pokecenter.nix
+            ./home/pokelab.nix
           ];
         };
-      nixosConfigurations.pokecenter = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.pokelab = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
           stylix.nixosModules.stylix
           sops-nix.nixosModules.sops
-          ./hosts/pokecenter
+          ./hosts/pokelab
         ];
       };
 
