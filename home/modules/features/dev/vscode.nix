@@ -65,7 +65,7 @@
       "window.commandCenter" = false;
 
       "workbench.colorTheme" = "Catppuccin Mocha";
-      "workbench.iconTheme" = "Catppuccin Mocha";
+      "workbench.iconTheme" = "catppuccin-mocha";
       "workbench.startupEditor" = "newUntiledFile";
       "workbench.editor.labelFormat" = "short";
       "workbench.statusBar.visible" = true;
