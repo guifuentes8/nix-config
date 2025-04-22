@@ -7,7 +7,6 @@
     ./modules/common/services.nix
     ./modules/common/sops.nix
     ./modules/common/sops-darwin.nix
-    # ./modules/common/stylix.nix
 
     ./modules/features/neovim
     ./modules/features/dev
@@ -43,8 +42,7 @@
   systemd.user.startServices = "sd-switch";
   news.display = "silent";
 
-  stylix.image = ./modules/common/extras/eevee.jpeg;
-
+  programs.zsh.initExtraFirst = "pokeget flareon";
   # Only 25.05
   # targets.darwin.linkApps.enable = true;
   # targets.darwin.linkApps.directory = "Applications/";
