@@ -1,5 +1,5 @@
 { pkgs, config, ... }: {
-  home.packages = [ pkgs.age pkgs.pfetch-rs ];
+  home.packages = [ pkgs.age pkgs.pokeget-rs ];
 
   programs = {
     gh = {

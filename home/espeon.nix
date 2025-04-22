@@ -42,7 +42,7 @@
   systemd.user.startServices = "sd-switch";
   news.display = "silent";
 
-  programs.zsh.initExtraFirst = "pokeget flareon";
+  programs.zsh.initExtraFirst = "pokeget espeon";
   # Only 25.05
   # targets.darwin.linkApps.enable = true;
   # targets.darwin.linkApps.directory = "Applications/";

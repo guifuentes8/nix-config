@@ -4,7 +4,6 @@
     ffmpeg
     pciutils
     nix-search-cli
-    pokeget-rs
     #pulseaudio
     unrar
     unzip
