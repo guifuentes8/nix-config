@@ -56,7 +56,7 @@
       #        ╚═╗║ ║║║║
       #        ╚═╝╚═╝╝╚╝
 
-      homeConfigurations."gui8@pokecenter" =
+      homeConfigurations."guifuentes8@pokecenter" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
@@ -192,7 +192,7 @@
 
               ];
               useUserPackages = true;
-              # useGlobalPkgs = true;
+              useGlobalPkgs = true;
               users.administrador.imports = [
                 ./home/espeon.nix
 

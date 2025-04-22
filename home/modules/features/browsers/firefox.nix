@@ -1,6 +1,8 @@
-{ pkgs, config, ... }: {
-  programs.floorp = {
+{ pkgs, config, ... }:
+{
+  programs.firefox = {
     enable = true;
+    package = pkgs.unstable.firefox;
     policies = {
       DefaultDownloadDirectory = "${config.home.homeDirectory}/Downloads";
     };
@@ -8,17 +10,19 @@
       isDefault = true;
       id = 0;
       name = "${config.home.username}";
-      settings = { "extensions.autoDisableScopes" = 0; };
+      settings = {
+        "extensions.autoDisableScopes" = 0;
+      };
 
-      extensions = with pkgs.inputs.firefox-addons; [
-        bitwarden
-        darkreader
-        floccus
-        react-devtools
-        reduxdevtools
-        stylus
-        ublock-origin
-      ];
+      # extensions = with pkgs.inputs.firefox-addons; [
+      #   bitwarden
+      #   darkreader
+      #   floccus
+      #   react-devtools
+      #   reduxdevtools
+      #   stylus
+      #   ublock-origin
+      # ];
     };
   };
 
