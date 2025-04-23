@@ -1,18 +1,8 @@
-{
-  config,
-  inputs,
-  outputs,
-  pkgs,
-  ...
-}:
-let
-  nh_plus = inputs.nh_plus.packages."aarch64-darwin".nh;
-in
-{
+{ config, inputs, outputs, pkgs, ... }:
+let nh_plus = inputs.nh_plus.packages."aarch64-darwin".nh;
+in {
 
-  imports = [
-    ../../common
-  ];
+  imports = [ ../../common ];
 
   users.users.administrador = {
     name = "administrador";
@@ -26,16 +16,8 @@ in
   nix = {
     linux-builder.enable = false;
     settings = {
-      trusted-users = [
-        "@admin"
-        "administrador"
-        "root"
-        "@wheel"
-      ];
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
+      trusted-users = [ "@admin" "administrador" "root" "@wheel" ];
+      experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
     };
     gc.automatic = true;
@@ -53,25 +35,22 @@ in
     };
     casks = [
       "alfred"
+      "arc"
       "discord"
       "docker"
       "dbeaver-community"
       "flameshot"
       "gimp"
-      "google-chrome"
       "microsoft-teams"
       "nextcloud"
       "onlyoffice"
       "obs"
+      "zen-browser"
       "zoom"
 
     ];
   };
 
-  environment = {
-    systemPackages = with pkgs; [
-      nh_plus
-    ];
-  };
+  environment = { systemPackages = [ nh_plus ]; };
 
 }

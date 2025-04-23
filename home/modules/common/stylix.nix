@@ -1,9 +1,10 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 let
   cursorName = "phinger-cursors-light";
   cursorPkg = pkgs.phinger-cursors;
 
 in {
+
   stylix = {
     enable = true;
     autoEnable = true;
@@ -31,6 +32,7 @@ in {
       nixvim.enable = false;
       vim.enable = true;
       vscode.enable = false;
+      wezterm.enable = true;
     };
   };
 

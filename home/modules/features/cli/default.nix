@@ -3,7 +3,7 @@
   #imports = [ ./cava.nix ];
   programs = {
     bat = {
-      enable = true;
+      enable = false;
       extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
     };
     bottom = {

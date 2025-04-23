@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
   cursorName = "phinger-cursors-light";
   cursorPkg = pkgs.phinger-cursors;

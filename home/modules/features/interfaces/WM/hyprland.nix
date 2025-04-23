@@ -9,7 +9,7 @@ let
 in {
   imports = [
 
-    ../../browsers/firefox.nix
+    ../../browsers/zen-browser.nix
     ../../browsers/qutebrowser.nix
     ../../terminals/kitty.nix
     ../../cli
