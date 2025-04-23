@@ -1,11 +1,4 @@
-{
-  lib,
-  pkgs,
-  config,
-  inputs,
-  outputs,
-  ...
-}:
+{ lib, pkgs, outputs, ... }:
 
 {
 
@@ -20,7 +13,6 @@
     ../modules/features/dev
     ../modules/features/cli
     ../modules/features/terminals/wezterm.nix
-    ../modules/features/browsers/firefox.nix
 
   ];
 
@@ -33,10 +25,7 @@
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
+      experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
     };
   };
@@ -53,7 +42,7 @@
   systemd.user.startServices = "sd-switch";
   news.display = "silent";
 
-  stylix.image = ../modules/common/extras/venus.jpg;
+  stylix.image = ../modules/common/extras/eevee.jpeg;
 
   # Only 25.05
   # targets.darwin.linkApps.enable = true;
