@@ -5,7 +5,6 @@
 
     ../common/boot/systemd-boot.nix
     ../common/users/guifuentes8.nix
-    #   ../common/interfaces/DE/xfce.nix
     ../stylix.nix
 
     # services
