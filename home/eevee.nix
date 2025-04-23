@@ -7,8 +7,6 @@
 
   ];
 
-  stylix.image = ../modules/common/extras/eevee.jpeg;
-
   programs.zsh.initExtraFirst = "pokeget eevee";
 
 }

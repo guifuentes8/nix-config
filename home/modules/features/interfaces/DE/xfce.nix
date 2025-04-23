@@ -1,7 +1,7 @@
 { ... }: {
 
   imports = [
-    ../../browsers/firefox.nix
+    ../../browsers/zen-browser.nix
     ../../browsers/chromium.nix
     ../../terminals/wezterm.nix
     ../../cli

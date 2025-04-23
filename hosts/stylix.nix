@@ -6,6 +6,7 @@ in {
 
   stylix = {
     enable = true;
+    image = ../home/modules/common/extras/eevee.jpeg;
     autoEnable = true;
     polarity = "dark";
     base16Scheme =

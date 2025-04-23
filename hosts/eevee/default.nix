@@ -17,7 +17,7 @@
     # Boot initial (grub or systemd)
     ../common/boot/systemd-boot.nix
     # Choice Interface (WM and/or DE)
-    ../common/interfaces/DE/cinnamon.nix
+    ../common/interfaces/DE/xfce.nix
     # Active services
     ../common/services/backlight.nix
     ../common/services/dev
