@@ -165,7 +165,7 @@
 
               ];
               useUserPackages = true;
-              useGlobalPkgs = true;
+              #useGlobalPkgs = true;
               users.administrador.imports = [
                 ./home/espeon.nix
 

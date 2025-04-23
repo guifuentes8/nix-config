@@ -36,11 +36,13 @@ in {
     };
   };
 
-  gtk = {
+  gtk = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
     enable = true;
     iconTheme = {
-      name = lib.mkForce "Papirus-Dark";
-      package = lib.mkForce pkgs.unstable.epapirus-icon-theme;
+      name = lib.mkForce "colloid-icon-theme";
+      package = pkgs.unstable.colloid-icon-theme.override {
+        schemeVariants = [ "catppuccin" ];
+      };
     };
     cursorTheme = {
       name = cursorName;

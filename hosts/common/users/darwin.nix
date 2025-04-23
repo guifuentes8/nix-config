@@ -52,5 +52,4 @@ in {
   };
 
   environment = { systemPackages = [ nh_plus ]; };
-
 }
