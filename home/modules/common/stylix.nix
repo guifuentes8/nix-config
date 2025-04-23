@@ -29,10 +29,10 @@ in {
     };
     override = { base05 = "A9B1D6"; };
     targets = {
+      xfce.enable = true;
       nixvim.enable = false;
       vim.enable = true;
       vscode.enable = false;
-      wezterm.enable = true;
     };
   };
 

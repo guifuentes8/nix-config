@@ -2,11 +2,13 @@
   imports = [
 
     # Global config (required)
-    ./gui8.nix
-    ./modules/features/interfaces/DE/cinnamon.nix
+    ./users/gui8.nix
+    ./modules/features/interfaces/DE/xfce.nix
 
   ];
 
-  stylix.image = ../modules/common/extras/mercury.jpg;
+  stylix.image = ../modules/common/extras/eevee.jpeg;
+
+  programs.zsh.initExtraFirst = "pokeget eevee";
 
 }

@@ -39,6 +39,5 @@
   # services.xserver.xkb.variant = "abnt2";
   console.keyMap = "us";
   services.xserver.xkb.layout = "us";
-  networking.hostName = "mercury";
-  stylix.image = ../../home/modules/common/extras/mercury.jpg;
+  networking.hostName = "eevee";
 }

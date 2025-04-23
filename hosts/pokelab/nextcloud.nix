@@ -5,11 +5,6 @@ in {
   environment.etc."nextcloud-whiteboard".text = "JWT_SECRET_KEY=Guigui@@@2035";
   environment.etc."onlyoffice-jwt".text = "JWT_SECRET_KEY=Guigui@@@2035";
 
-  services.nextcloud-whiteboard-server = {
-    enable = true;
-    settings = { NEXTCLOUD_URL = "https://cloud.guifuentes8.com.br"; };
-    secrets = [ "/etc/nextcloud-whiteboard" ];
-  };
   services.cron.enable = true;
   services.phpfpm.phpOptions = ''
     memory_limit = 2048M
@@ -84,9 +79,26 @@ in {
     };
     extraApps = {
       inherit (config.services.nextcloud.package.packages.apps)
-        bookmarks calendar contacts deck files_mindmap memories music news notes
-        notify_push onlyoffice phonetrack tasks whiteboard;
+        bookmarks calendar cookbook contacts cospend deck files_mindmap maps
+        memories music news notes notify_push onlyoffice phonetrack tasks;
 
+      drawio = pkgs.fetchNextcloudApp {
+        sha256 = "sha256-V2FoRkbTb55zN1H4ilCHSjds4kOeUu6cFF/QZTQfvyA=";
+        url =
+          "https://github.com/jgraph/drawio-nextcloud/releases/download/v3.0.4/drawio-v3.0.4.tar.gz";
+        license = "gpl3";
+      };
+      timetracker = pkgs.fetchNextcloudApp {
+        sha256 = "sha256-T/YoYkDQkDgZ0bASIgZeCTZr6C/eHV69jrPKLOh0Vqk=";
+        url = "https://mtier.org/timetracker/timetracker-0.0.84.tar.gz";
+        license = "gpl3";
+      };
+      timemanager = pkgs.fetchNextcloudApp {
+        sha256 = "sha256-k4IybXcrLomIBYZO5BPS7YF7UahtEBOBzMxU7tgX9LA=";
+        url =
+          "https://github.com/te-online/nextcloud-app-releases/raw/main/timemanager/v0.3.18/timemanager.tar.gz";
+        license = "gpl3";
+      };
     };
   };
 
