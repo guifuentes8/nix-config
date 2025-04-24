@@ -39,10 +39,9 @@ in {
   gtk = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
     enable = true;
     iconTheme = {
-      name = lib.mkForce "colloid-icon-theme";
-      package = pkgs.unstable.colloid-icon-theme.override {
-        schemeVariants = [ "catppuccin" ];
-      };
+      name = lib.mkForce "Papirus-Dark";
+      package = pkgs.unstable.catppuccin-papirus-folders;
+
     };
     cursorTheme = {
       name = cursorName;
