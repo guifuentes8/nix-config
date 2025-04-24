@@ -15,7 +15,6 @@
   home.packages = with pkgs.unstable; [
 
     # programs
-    alfred
     bitwarden
     discord
     flameshot
@@ -25,6 +24,7 @@
     harmony-music
     onlyoffice-bin
     pavucontrol
+    ulauncher
     zoom-us
 
     # programs cli
