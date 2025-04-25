@@ -9,8 +9,7 @@ in {
     image = ../home/modules/common/extras/eevee.jpeg;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme =
-      "${pkgs.unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.unstable.base16-schemes}/share/themes/ayu-dark.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;

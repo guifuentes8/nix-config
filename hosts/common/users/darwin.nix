@@ -36,6 +36,8 @@ in {
     casks = [
       "alfred"
       "arc"
+      "bitwarden"
+      "caffeine"
       "discord"
       "docker"
       "dbeaver-community"

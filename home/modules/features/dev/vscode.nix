@@ -7,8 +7,8 @@
     mutableExtensionsDir = false;
     extensions = with pkgs.unstable.vscode-extensions; [
       # theme
-      catppuccin.catppuccin-vsc
-      catppuccin.catppuccin-vsc-icons
+      teabyii.ayu
+      pkief.material-icon-theme
 
       # lint
       dbaeumer.vscode-eslint
@@ -64,8 +64,8 @@
       "window.titleBarStyle" = "native";
       "window.commandCenter" = false;
 
-      "workbench.colorTheme" = "Catppuccin Mocha";
-      "workbench.iconTheme" = "catppuccin-mocha";
+      "workbench.colorTheme" = "Ayu Dark Bordered";
+      "workbench.iconTheme" = "material-icon-theme";
       "workbench.startupEditor" = "newUntiledFile";
       "workbench.editor.labelFormat" = "short";
       "workbench.statusBar.visible" = true;

@@ -28,10 +28,7 @@ in {
 
   programs.nixvim = {
     enable = true;
-    colorschemes = {
-      catppuccin.enable = true;
-      catppuccin.settings.flavour = "mocha";
-    };
+    colorschemes = { ayu.enable = true; };
     package = pkgs.neovim-unwrapped;
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:

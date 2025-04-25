@@ -27,9 +27,9 @@
       };
       aliases = {
         a = "add .";
-        co = "checkout";
-        cn = "checkout -b ";
-        cm = "commit";
+        ch = "checkout";
+        new = "checkout -b";
+        cm = "commit -m";
         ps = "push";
         pl = "pull";
         fe = "fetch";

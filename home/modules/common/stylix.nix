@@ -9,8 +9,7 @@ in {
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme =
-      "${pkgs.unstable.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.unstable.base16-schemes}/share/themes/ayu-dark.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;
@@ -27,9 +26,8 @@ in {
       terminal = 1.0;
       desktop = 1.0;
     };
-    override = { base05 = "A9B1D6"; };
     targets = {
-      xfce.enable = true;
+      xfce.enable = lib.mkIf (pkgs.stdenv.hostPlatform.isLinux) true;
       nixvim.enable = false;
       vim.enable = true;
       vscode.enable = false;
