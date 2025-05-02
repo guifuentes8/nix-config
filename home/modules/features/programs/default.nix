@@ -14,7 +14,6 @@
   home.packages = with pkgs.unstable; [
 
     # programs
-    bitwarden
     discord
     flameshot
     fontpreview

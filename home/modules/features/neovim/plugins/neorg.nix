@@ -2,8 +2,9 @@
   programs.nixvim.plugins.neorg = {
     enable = true;
     package = pkgs.vimPlugins.neorg;
-    settings.lazyLoading = true;
-    settings.load = {
+    # settings.lazyLoading = true;
+    lazyLoading = true;
+    modules = {
       "core.defaults" = { __empty = null; };
       "core.concealer".config = { icon_preset = "diamond"; };
       "core.completion" = {
@@ -15,17 +16,17 @@
       "core.dirman" = {
         config = {
           workspaces = {
-            personal = "${config.home.homeDirectory}/Nextcloud/Notes/personal";
+            main = "${config.home.homeDirectory}/Nextcloud/Notes/main";
             journal = "${config.home.homeDirectory}/Nextcloud/Notes/journal";
-            work = "${config.home.homeDirectory}/Nextcloud/Notes/neovim";
             study = "${config.home.homeDirectory}/Nextcloud/Notes/study";
+            media = "${config.home.homeDirectory}/Nextcloud/Notes/social";
           };
-          default_workspace = "personal";
+          default_workspace = "main";
         };
       };
       "core.esupports.metagen" = {
         config = {
-          author = "${config.user.username}";
+          author = "${config.home.username}";
           type = "auto";
           update_date = true;
         };

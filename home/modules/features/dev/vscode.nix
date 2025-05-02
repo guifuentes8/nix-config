@@ -1,4 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  inherit (pkgs.vscode-utils) buildVscodeMarketplaceExtension;
+
+  sainnhe.everforest = buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      name = "everforest";
+      publisher = "sainnhe";
+      version = "0.3.0";
+      sha256 = "sha256-nZirzVvM160ZTpBLTimL2X35sIGy5j2LQOok7a2Yc7U=";
+    };
+  };
+
+in {
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;
@@ -6,7 +19,7 @@
     mutableExtensionsDir = false;
     extensions = with pkgs.unstable.vscode-extensions; [
       # theme
-      teabyii.ayu
+      sainnhe.everforest
       pkief.material-icon-theme
 
       # lint
@@ -63,7 +76,7 @@
       "window.titleBarStyle" = "native";
       "window.commandCenter" = false;
 
-      "workbench.colorTheme" = "Ayu Dark Bordered";
+      "workbench.colorTheme" = "Everforest Dark";
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.startupEditor" = "newUntiledFile";
       "workbench.editor.labelFormat" = "short";
@@ -85,6 +98,11 @@
       "[typescriptreact]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
+
+      "everforest.darkContrast" = "hard";
+      "everforest.darkWorkbench" = "flat";
+      "everforest.italicKeywords" = true;
+      "everforest.highContrast" = true;
 
     };
   };

@@ -47,6 +47,6 @@
   systemd.user.startServices = "sd-switch";
   news.display = "silent";
 
-  stylix.image = ../modules/common/extras/eevee.jpeg;
+  stylix.image = ../modules/common/extras/eevee.png;
 }
 

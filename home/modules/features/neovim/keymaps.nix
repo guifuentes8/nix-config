@@ -77,6 +77,12 @@
       options = { silent = true; };
     }
     {
+      action = ":TransparentToggle <CR>";
+      key = "<C-t>";
+      mode = [ "n" ];
+      options = { silent = true; };
+    }
+    {
       action = ":m '>+1<CR>gv=gv";
       key = "<C-down>";
       mode = [ "v" ];
@@ -88,6 +94,7 @@
       mode = [ "v" ];
       options = { silent = true; };
     }
+
   ];
 }
 

@@ -4,5 +4,5 @@
 
   services = { flameshot.enable = true; };
 
-  home.packages = with pkgs; [ lxappearance xclip xcolor ];
+  home.packages = with pkgs; [ lxappearance xclip xcolor rofi-rbw ];
 }

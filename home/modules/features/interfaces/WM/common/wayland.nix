@@ -1,4 +1,4 @@
-{pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [ ./default.nix ./waybar.nix ];
 
   home.packages = with pkgs.unstable; [
@@ -10,9 +10,10 @@
     swayidle
     swayimg
     wdisplays
-    wl-clipboard
+    wl-clipboard-rs
     wf-recorder
     wtype
+    rofi-rbw-wayland
   ];
 
   programs.rofi.package = pkgs.unstable.rofi-wayland;

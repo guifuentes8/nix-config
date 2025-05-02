@@ -19,7 +19,7 @@ in {
     ./plugins/cmp.nix
     ./plugins/lint.nix
     ./plugins/lsp.nix
-    # ./plugins/neorg.nix
+    ./plugins/neorg.nix
     ./plugins/noice.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
@@ -28,7 +28,18 @@ in {
 
   programs.nixvim = {
     enable = true;
-    colorschemes = { ayu.enable = true; };
+    colorschemes = {
+      everforest = {
+        enable = true;
+        package =
+          (fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "Master"
+            "https://github.com/neanias/everforest-nvim");
+        settings = {
+          background = "hard";
+          enable_italic = 1;
+        };
+      };
+    };
     package = pkgs.neovim-unwrapped;
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:
@@ -42,6 +53,7 @@ in {
       dashboard.enable = true;
       gitsigns.enable = true;
       lualine.enable = true;
+      transparent.enable = true;
       web-devicons.enable = true; # required
     };
 

@@ -1,7 +1,8 @@
-{ pkgs, inputs, ... }:
+{ pkgs, outputs, ... }:
 let
-  cursorName = "phinger-cursors-light";
-  cursorPkg = pkgs.phinger-cursors;
+  cursorName = "everforest-cursors-light";
+  cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
+
 in {
 
   stylix = {
@@ -9,7 +10,8 @@ in {
     image = ../home/modules/common/extras/eevee.jpeg;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme = "${pkgs.unstable.base16-schemes}/share/themes/ayu-dark.yaml";
+    base16Scheme =
+      "${pkgs.unstable.base16-schemes}/share/themes/everforest-dark-hard.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;

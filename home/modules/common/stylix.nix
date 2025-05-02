@@ -1,7 +1,7 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, lib, outputs, ... }:
 let
-  cursorName = "phinger-cursors-light";
-  cursorPkg = pkgs.phinger-cursors;
+  cursorName = "everforest-cursors-light";
+  cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
 
 in {
 
@@ -9,7 +9,8 @@ in {
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme = "${pkgs.unstable.base16-schemes}/share/themes/ayu-dark.yaml";
+    base16Scheme =
+      "${pkgs.unstable.base16-schemes}/share/themes/everforest-dark-hard.yaml";
     cursor = {
       name = cursorName;
       package = cursorPkg;
@@ -23,7 +24,7 @@ in {
     };
     opacity = {
       applications = 1.0;
-      terminal = 1.0;
+      terminal = 0.9;
       desktop = 1.0;
     };
     targets = {

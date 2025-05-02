@@ -9,9 +9,11 @@ let
 in {
   imports = [
 
-    ../../browsers/zen-browser.nix
     ../../browsers/qutebrowser.nix
+    ../../browsers/chromium.nix
+
     ../../terminals/kitty.nix
+    ../../terminals/ghostty.nix
     ../../cli
     ../../dev
     ../../neovim
@@ -32,9 +34,9 @@ in {
         gaps_out = 10;
         border_size = 3;
         "col.active_border" =
-          lib.mkForce "rgba(${config.lib.stylix.colors.base09}ff)";
+          lib.mkForce "rgba(${config.lib.stylix.colors.base0C}ff)";
         "col.inactive_border" =
-          lib.mkForce "rgba(${config.lib.stylix.colors.base0D}ff)";
+          lib.mkForce "rgba(${config.lib.stylix.colors.base05}ff)";
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
@@ -179,7 +181,7 @@ in {
         bind = $mainMod, F8, exec,  
         bind = $mainMod, F9, exec, 
         bind = $mainMod, F10, exec, rofi-bluetooth 
-        bind = $mainMod, F11, exec, rofi-rbw --keybindings 'Alt+u:copy:username,Alt+p:copy:password,Alt+t:copy:totp,Alt+n:copy:notes,Alt+s:sync'
+        bind = $mainMod, F11, exec, rofi-rbw  --clipboarder wl-copy --keybindings 'Ctrl+1:copy:username,Ctrl+2:copy:password,Ctrl+3:copy:totp,Ctrl+4:copy:notes,Ctrl+5:sync'
         bind = $mainMod, F12, exec, rofi -show p -modi p:rofi-power-menu -lines 6
 
         # Pick color

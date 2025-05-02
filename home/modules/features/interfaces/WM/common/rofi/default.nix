@@ -5,32 +5,30 @@
     enable = true;
     terminal = "kitty";
     theme = (import ./theme.nix { inherit config lib; });
-    plugins = with pkgs; [
+    plugins = with pkgs.unstable; [
       rofi-bluetooth
       rofi-emoji
       rofi-power-menu
       rofi-pulse-select
       rofi-systemd
-      rofi-rbw
     ];
   };
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     rofi-bluetooth
     rofi-calc
     rofi-emoji
     rofi-power-menu
     rofi-pulse-select
     rofi-systemd
-    rofi-rbw
   ];
 
   programs.rbw = {
     enable = true;
+    package = pkgs.unstable.rbw;
     settings = {
       pinentry = pkgs.pinentry-gnome3;
-      base_url = "https://vault.bitwarden.com";
-      identity_url = "https://identity.bitwarden.com";
+      base_url = "https://vault.guifuentes8.com.br";
       email = "guifuentes8@gmail.com";
     };
   };
