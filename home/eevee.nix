@@ -24,8 +24,6 @@ in {
     (wrapGL gimp)
     (wrapGL unstable.harmony-music)
     (wrapGL onlyoffice-bin)
-    (wrapGL pokemmo-installer)
-    (wrapGL inputs.zen-browser.packages."${system}".beta)
   ];
 
   nixGL.packages = nixgl.packages;
