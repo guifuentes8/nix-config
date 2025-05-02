@@ -9,13 +9,13 @@ in {
     ./modules/features/cli
     ./modules/features/dev
     ./modules/features/neovim
-    ./modules/features/terminals/kitty.nix
+    ./modules/features/terminals/ghostty.nix
 
   ];
   targets.genericLinux.enable = true;
   programs = {
     obs-studio.package = wrapGL pkgs.obs-studio;
-    kitty.package = wrapGL pkgs.kitty;
+    ghostty.package = wrapGL pkgs.ghostty;
     vscode.package = wrapGL pkgs.vscodium;
   };
   home.packages = with pkgs; [
@@ -23,7 +23,6 @@ in {
     (wrapGL discord)
     (wrapGL gimp)
     (wrapGL unstable.harmony-music)
-    (wrapGL nextcloud-client)
     (wrapGL onlyoffice-bin)
     (wrapGL pokemmo-installer)
     (wrapGL inputs.zen-browser.packages."${system}".beta)
