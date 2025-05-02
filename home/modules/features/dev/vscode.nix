@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
     enableExtensionUpdateCheck = true;
     enableUpdateCheck = true;
     mutableExtensionsDir = false;
@@ -51,12 +49,8 @@
       "explorer.confirmDragAndDrop" = false;
       "explorer.confirmPasteNative" = false;
 
-      "eslint.validate" = [
-        "javascript"
-        "javascriptreact"
-        "typescript"
-        "typescriptreact"
-      ];
+      "eslint.validate" =
+        [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
 
       "git.confirmSync" = false;
 
@@ -83,12 +77,8 @@
       "[javascript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
-      "[jsonc]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[json]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
+      "[jsonc]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+      "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
       "[typescript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };

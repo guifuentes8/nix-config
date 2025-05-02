@@ -1,6 +1,5 @@
 { pkgs, ... }: {
 
-  imports = [ ./dependencies.nix ];
   programs = {
     obs-studio = {
       enable = true;
@@ -20,16 +19,11 @@
     flameshot
     fontpreview
     gimp
-    gnome-epub-thumbnailer
     harmony-music
     onlyoffice-bin
     pavucontrol
     ulauncher
-    zoom-us
 
-    # programs cli
-    appimage-run
-    ventoy-bin
   ];
 
 }

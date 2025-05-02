@@ -4,6 +4,7 @@
     ffmpeg
     pciutils
     nix-search-cli
+    glxinfo
     #pulseaudio
     unrar
     unzip
@@ -16,6 +17,9 @@
     playerctl
     xorg.xprop
     cacert
+    appimage-run
+    ventoy-bin
+
   ];
 
 }

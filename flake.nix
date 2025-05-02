@@ -8,13 +8,10 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-wsl.url = "github:nix-community/NixOS-WSL";
     nix-wsl.inputs.nixpkgs.follows = "nixpkgs";
+    nixgl.url = "github:nix-community/nixGL";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,10 +24,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nh_plus.url = "github:ToyVo/nh_plus";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs =
-    { self, nixpkgs, nix-darwin, home-manager, sops-nix, stylix, ... }@inputs:
+  outputs = { self, nixpkgs, nix-darwin, home-manager, sops-nix, stylix, nixgl
+    , ... }@inputs:
     let
       inherit (self) outputs;
 
@@ -73,12 +75,14 @@
       homeConfigurations."gui8@eevee" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs nixgl; };
           modules = [
             stylix.homeManagerModules.stylix
             sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
+
             ./home/eevee.nix
+
           ];
         };
 

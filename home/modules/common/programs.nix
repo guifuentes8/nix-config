@@ -1,5 +1,8 @@
-{ pkgs, config, ... }: {
-  home.packages = [ pkgs.age pkgs.pokeget-rs ];
+{ pkgs, config, ... }:
+
+{
+  imports = [ ./extras/dependencies.nix ];
+  home.packages = [ pkgs.age pkgs.pokeget-rs pkgs.sops ];
 
   programs = {
     gh = {
@@ -38,6 +41,10 @@
       };
     };
     gpg.enable = true;
+    nh = {
+      enable = true;
+      flake = "${config.home.homeDirectory}/nix-config";
+    };
     home-manager.enable = true;
     ssh.enable = true;
     zsh = {
@@ -69,7 +76,6 @@
         testnet = "speedtest-rs";
         music = "ncmpcpp";
       };
-      localVariables = { FLAKE = "${config.home.homeDirectory}/nix-config"; };
     };
   };
 
