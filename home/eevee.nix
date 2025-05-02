@@ -14,17 +14,10 @@ in {
   ];
   targets.genericLinux.enable = true;
   programs = {
-    obs-studio.package = wrapGL pkgs.obs-studio;
     ghostty.package = wrapGL pkgs.unstable.ghostty;
     vscode.package = wrapGL pkgs.unstable.vscode;
   };
-  home.packages = with pkgs; [
-    (wrapGL bitwarden)
-    (wrapGL discord)
-    (wrapGL gimp)
-    (wrapGL unstable.harmony-music)
-    (wrapGL onlyoffice-bin)
-  ];
+  home.packages = with pkgs; [ (wrapGL gimp) (wrapGL onlyoffice-bin) ];
 
   nixGL.packages = nixgl.packages;
   nixGL.defaultWrapper = "mesa";
