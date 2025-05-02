@@ -15,8 +15,8 @@ in {
   targets.genericLinux.enable = true;
   programs = {
     obs-studio.package = wrapGL pkgs.obs-studio;
-    ghostty.package = wrapGL pkgs.ghostty;
-    vscode.package = wrapGL pkgs.vscodium;
+    ghostty.package = wrapGL pkgs.unstable.ghostty;
+    vscode.package = wrapGL pkgs.unstable.vscode;
   };
   home.packages = with pkgs; [
     (wrapGL bitwarden)
