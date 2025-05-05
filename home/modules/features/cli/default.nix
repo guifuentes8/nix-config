@@ -37,6 +37,7 @@
   };
 
   home.packages = with pkgs; [
+    nix-search-cli
     cmatrix # matrix
     dipc # palette wallpaper converter
     devour # hide terminal

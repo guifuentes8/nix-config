@@ -19,7 +19,7 @@ in {
     };
     fonts = {
       monospace = {
-        name = "MonoLisa";
+        name = "JetBrainsMono";
         package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
       };
     };

@@ -1,8 +1,8 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, ... }:
 
 {
   imports = [ ./extras/dependencies.nix ];
-  home.packages = [ pkgs.age pkgs.pokeget-rs pkgs.sops ];
+  home.packages = [ pkgs.age pkgs.pokeget-rs ];
 
   programs = {
     gh = {
@@ -43,6 +43,7 @@
     gpg.enable = true;
     nh = {
       enable = true;
+      package = inputs.nh_plus.packages."aarch64-darwin".nh;
       flake = "${config.home.homeDirectory}/nix-config";
     };
     home-manager.enable = true;

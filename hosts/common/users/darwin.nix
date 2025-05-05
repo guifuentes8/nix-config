@@ -1,6 +1,4 @@
-{ config, inputs, outputs, pkgs, ... }:
-let nh_plus = inputs.nh_plus.packages."aarch64-darwin".nh;
-in {
+{ config, inputs, outputs, pkgs, ... }: {
 
   imports = [ ../../common ];
 
@@ -35,7 +33,6 @@ in {
     };
     casks = [
       "alfred"
-      "arc"
       "bitwarden"
       "caffeine"
       "discord"
@@ -43,15 +40,13 @@ in {
       "dbeaver-community"
       "flameshot"
       "gimp"
-      "microsoft-teams"
       "nextcloud"
       "onlyoffice"
       "obs"
-      "zen-browser"
+      "vivaldi"
       "zoom"
 
     ];
   };
 
-  environment = { systemPackages = [ nh_plus ]; };
 }
