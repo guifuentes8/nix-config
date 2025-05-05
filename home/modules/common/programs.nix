@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, ... }:
+{ pkgs, config, inputs, lib, ... }:
 
 {
   imports = [ ./extras/dependencies.nix ];
@@ -43,7 +43,10 @@
     gpg.enable = true;
     nh = {
       enable = true;
-      package = inputs.nh_plus.packages."aarch64-darwin".nh;
+      package = if (pkgs.stdenv.hostPlatform.isDarwin) then
+        inputs.nh_plus.packages."aarch64-darwin".nh
+      else
+        pkgs.nh;
       flake = "${config.home.homeDirectory}/nix-config";
     };
     home-manager.enable = true;
