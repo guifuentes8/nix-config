@@ -11,16 +11,6 @@
   #    #  optimise.automatic = true;
   #  };
 
-  nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
-      permittedInsecurePackages = [ ];
-      pulseaudio = true;
-    };
-  };
-
   time.timeZone = lib.mkDefault "America/Sao_Paulo";
 
   #----
