@@ -191,6 +191,8 @@
           pkgs = import nixpkgs-2405 { system = "aarch64-linux"; };
           modules = [
             ./hosts/umbreon
+            stylix.homeManagerModules.stylix
+
             {
               # or if you have a separate home.nix already present:
               home-manager.config = ./home/umbreon.nix;
