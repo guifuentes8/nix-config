@@ -188,9 +188,14 @@
       nixOnDroidConfigurations.default =
         nix-on-droid.lib.nixOnDroidConfiguration {
           pkgs = import nixpkgs { system = "aarch64-linux"; };
-          modules = [ ./hosts/umbreon ];
-          # or if you have a separate home.nix already present:
-          home-manager.config = ./home/umbreon.nix;
+          modules = [
+            ./hosts/umbreon
+            {
+              # or if you have a separate home.nix already present:
+              home-manager.config = ./home/umbreon.nix;
+            }
+          ];
+
         };
     };
 }
