@@ -17,15 +17,15 @@
     # };
     #ignore_install = [ ];
     ignoreInstall = [ ];
-    incremental_selection = {
-      enable = true;
-      keymaps = {
-        init_selection = false;
-        node_decremental = "grm";
-        node_incremental = "grn";
-        scope_incremental = "grc";
-      };
-    };
+    # incremental_selection = {
+    #   enable = true;
+    #   keymaps = {
+    #     init_selection = false;
+    #     node_decremental = "grm";
+    #     node_incremental = "grn";
+    #     scope_incremental = "grc";
+    #   };
+    # };
     indent = { enable = true; };
     parser_install_dir = {
       __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
