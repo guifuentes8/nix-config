@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs-2405.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-legacy.url = "github:nixos/nixpkgs/nixos-24.05";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-wsl.url = "github:nix-community/NixOS-WSL";
@@ -23,6 +23,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     stylix.url = "github:danth/stylix/release-24.11";
     nixvim.url = "github:nix-community/nixvim/nixos-24.11";
+    nixvim-legacy.inputs.nixpkgs.follows = "nixpkgs-legacy";
     nixvim-legacy.url = "github:nix-community/nixvim/nixos-24.05";
 
     firefox-addons = {
@@ -33,8 +34,8 @@
     nh_plus.url = "github:ToyVo/nh_plus";
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager, nix-on-droid, sops-nix
-    , stylix, nixgl, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-legacy, nix-darwin, home-manager
+    , nix-on-droid, sops-nix, stylix, nixgl, ... }@inputs:
     let
       inherit (self) outputs;
 
@@ -187,7 +188,7 @@
 
       nixOnDroidConfigurations.default =
         nix-on-droid.lib.nixOnDroidConfiguration {
-          pkgs = import nixpkgs { system = "aarch64-linux"; };
+          pkgs = import nixpkgs-legacy { system = "aarch64-linux"; };
           modules = [
             ./hosts/umbreon
 
