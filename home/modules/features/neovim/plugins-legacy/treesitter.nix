@@ -15,7 +15,8 @@
     #   disable = [ ];
     #   enable = true;
     # };
-    ignore_install = [ ];
+    #ignore_install = [ ];
+    ignoreInstall = [ ];
     incremental_selection = {
       enable = true;
       keymaps = {
