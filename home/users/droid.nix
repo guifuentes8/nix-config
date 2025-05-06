@@ -4,7 +4,7 @@
 
   imports = [
     ../modules/common/programs.nix
-    ../modules/common/sops.nix
+    #  ../modules/common/sops.nix
     ../modules/features/neovim/nixvim-legacy.nix
     ../modules/features/dev
     ../modules/features/cli
