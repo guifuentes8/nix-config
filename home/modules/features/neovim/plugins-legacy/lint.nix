@@ -37,7 +37,7 @@
     };
     conform-nvim = {
       enable = true;
-      settings = {
+      extraConfig = {
         formatters_by_ft = {
           css = [ "prettierd" ];
           graphql = [ "prettierd" ];
