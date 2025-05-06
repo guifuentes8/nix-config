@@ -8,7 +8,7 @@
       experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
     };
-    optimise.automatic = true;
+    #  optimise.automatic = true;
   };
 
   nixpkgs = {
