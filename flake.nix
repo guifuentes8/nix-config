@@ -190,25 +190,25 @@
           pkgs = import nixpkgs { system = "aarch64-linux"; };
           modules = [
             ./hosts/umbreon
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = { inherit inputs outputs; };
-                sharedModules = [
-                  stylix.homeManagerModules.stylix
-                  inputs.nixvim.homeManagerModules.nixvim
-                  sops-nix.homeManagerModules.sops
+            # home-manager.darwinModules.home-manager
+            # {
+            #   home-manager = {
+            #     extraSpecialArgs = { inherit inputs outputs; };
+            #     sharedModules = [
+            #       stylix.homeManagerModules.stylix
+            #       inputs.nixvim.homeManagerModules.nixvim
+            #       sops-nix.homeManagerModules.sops
 
-                ];
-                useUserPackages = true;
-                #useGlobalPkgs = true;
-                users.droid.imports = [
-                  ./home/umbreon.nix
+            #     ];
+            #     useUserPackages = true;
+            #     #useGlobalPkgs = true;
+            #     users.droid.imports = [
+            #       ./home/umbreon.nix
 
-                ];
-                backupFileExtension = "backup";
-              };
-            }
+            #     ];
+            #     backupFileExtension = "backup";
+            #   };
+            # }
           ];
         };
     };
