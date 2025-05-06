@@ -14,15 +14,11 @@
       url = "github:nix-community/nix-on-droid/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs-2405";
     };
-    home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #  home-manager = {
+    #    url = "github:nix-community/home-manager/release-24.11";
+    #    inputs.nixpkgs.follows = "nixpkgs";
+    #  };
 
-    home-manager-2405 = {
-      url = "github:nix-community/home-manager/release-24.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # Others flakes
     sops-nix.url = "github:Mic92/sops-nix";
     stylix.url = "github:danth/stylix/release-24.11";
