@@ -4,14 +4,13 @@
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs-2405.url = "github:nixos/nixpkgs/nixos-24.05";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-wsl.url = "github:nix-community/NixOS-WSL";
     nix-wsl.inputs.nixpkgs.follows = "nixpkgs";
     nixgl.url = "github:nix-community/nixGL";
     nix-on-droid = {
-      url = "github:nix-community/nix-on-droid/release-24.05";
+      url = "github:nix-community/nix-on-droid/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -37,7 +36,7 @@
   };
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, nix-on-droid, sops-nix
-    , stylix, nixgl, nixpkgs-2405, ... }@inputs:
+    , stylix, nixgl, ... }@inputs:
     let
       inherit (self) outputs;
 
