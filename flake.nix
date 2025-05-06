@@ -194,14 +194,16 @@
 
             {
               #extraSpecialArgs = { inherit inputs outputs; };
-              sharedModules = [
-                stylix.homeManagerModules.stylix
-                #   inputs.nixvim.homeManagerModules.nixvim
-                #   sops-nix.homeManagerModules.sops
+              home-manager = {
+                sharedModules = [
+                  stylix.homeManagerModules.stylix
+                  #   inputs.nixvim.homeManagerModules.nixvim
+                  #   sops-nix.homeManagerModules.sops
 
-              ];
-              # or if you have a separate home.nix already present:
-              home-manager.config = ./home/umbreon.nix;
+                ];
+                # or if you have a separate home.nix already present:
+                config = ./home/umbreon.nix;
+              };
             }
           ];
 
