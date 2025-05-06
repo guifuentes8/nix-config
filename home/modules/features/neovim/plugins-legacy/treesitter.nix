@@ -3,7 +3,7 @@
     enable = true;
     package = pkgs.vimPlugins.nvim-treesitter;
     grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
-    settings = {
+    extraConfig = {
       auto_install = false;
       autotag = true;
       ensure_installed = "all";
