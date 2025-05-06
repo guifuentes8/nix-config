@@ -113,7 +113,7 @@ in {
             enable = true;
             onAttach.function = onAttachFunction;
           };
-          lua_ls = {
+          lua-ls = {
             enable = true;
             onAttach.function = onAttachFunction;
           };
