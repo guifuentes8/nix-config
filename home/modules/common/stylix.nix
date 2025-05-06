@@ -1,7 +1,7 @@
 { pkgs, lib, outputs, ... }:
 let
   cursorName = "everforest-cursors-light";
-  cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
+  # cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
 
 in {
 
@@ -11,10 +11,10 @@ in {
     polarity = "dark";
     base16Scheme =
       "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
-    cursor = {
-      name = cursorName;
-      package = cursorPkg;
-      size = 32;
+      #    cursor = {
+      #      name = cursorName;
+      #      package = cursorPkg;
+      #      size = 32;
     };
     fonts = {
       monospace = {
