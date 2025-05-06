@@ -11,6 +11,12 @@ let
       };
     };
 in {
+  programs = {
+    ripgrep.enable = true;
+    tmux.enable = true;
+    vim.enable = true;
+  };
+
   imports = [
 
     ./keymaps.nix
@@ -31,8 +37,6 @@ in {
     colorschemes = {
       everforest = {
         enable = true;
-        package = (fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "HEAD"
-          "https://github.com/neanias/everforest-nvim");
         settings = {
           background = "hard";
           enable_italic = 1;
@@ -56,7 +60,12 @@ in {
       web-devicons.enable = true; # required
     };
 
-    extraPlugins = with pkgs.vimPlugins; [ zen-mode-nvim ];
+    extraPlugins = with pkgs.vimPlugins; [
+      zen-mode-nvim
+      (fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "HEAD"
+        "https://github.com/neanias/everforest-nvim")
+
+    ];
     extraPackages = with pkgs; [
       # Language servers
       nodePackages.typescript-language-server # typescript

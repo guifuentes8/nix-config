@@ -7,7 +7,7 @@
     #  ../modules/common/services.nix
     #../modules/common/sops.nix
     # ../modules/common/stylix.nix
-    ../modules/features/neovim
+    ../modules/features/nixvim-legacy.nix
     ../modules/features/dev
     ../modules/features/cli
 
@@ -16,7 +16,7 @@
   home = {
     username = lib.mkDefault "droid";
     homeDirectory = lib.mkDefault "/home/droid";
-    #   stateVersion = "24.05";
+    stateVersion = "24.05";
   };
 
   nix = {

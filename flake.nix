@@ -23,6 +23,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     stylix.url = "github:danth/stylix/release-24.11";
     nixvim.url = "github:nix-community/nixvim/nixos-24.11";
+    nixvim-legacy.url = "github:nix-community/nixvim/nixos-24.05";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -33,7 +34,7 @@
   };
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, nix-on-droid, sops-nix
-    , stylix, nixgl, nixpkgs-2405, ... }@inputs:
+    , stylix, nixgl, ... }@inputs:
     let
       inherit (self) outputs;
 
@@ -195,7 +196,7 @@
                 extraSpecialArgs = { inherit inputs outputs; };
                 sharedModules = [
                   #inputs.stylix.homeManagerModules.stylix
-                  inputs.nixvim.homeManagerModules.nixvim
+                  inputs.nixvim-legacy.homeManagerModules.nixvim
                   #   sops-nix.homeManagerModules.sops
 
                 ];
