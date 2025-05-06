@@ -12,7 +12,7 @@
     nixgl.url = "github:nix-community/nixGL";
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid/release-24.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-2405";
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -23,8 +23,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
     stylix.url = "github:danth/stylix/release-24.11";
     nixvim.url = "github:nix-community/nixvim/nixos-24.11";
-    nixvim-droid.url = "github:nix-community/nixvim/nixos-24.05";
-    nixvim-droid.inputs.nixpkgs.follows = "nixpkgs-2405";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -197,7 +195,7 @@
                 extraSpecialArgs = { inherit inputs outputs; };
                 sharedModules = [
                   #inputs.stylix.homeManagerModules.stylix
-                  inputs.nixvim-droid.homeManagerModules.nixvim
+                  inputs.nixvim.homeManagerModules.nixvim
                   #   sops-nix.homeManagerModules.sops
 
                 ];
