@@ -31,6 +31,8 @@
     };
 
     nh_plus.url = "github:ToyVo/nh_plus";
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
+
   };
 
   outputs = { self, nixpkgs, nixpkgs-legacy, nix-darwin, home-manager
@@ -194,6 +196,8 @@
             ./hosts/umbreon
 
             {
+              nixpkgs.overlays = [ inputs.neorg-overlay.overlays.default ];
+
               home-manager = {
                 extraSpecialArgs = { inherit inputs outputs; };
                 sharedModules = [
