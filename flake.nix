@@ -202,7 +202,7 @@
                 ];
                 useUserPackages = true;
                 #useGlobalPkgs = true;
-                users.administrador.imports = [
+                users.droid.imports = [
                   ./home/umbreon.nix
 
                 ];
