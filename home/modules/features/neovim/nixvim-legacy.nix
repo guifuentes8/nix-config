@@ -52,8 +52,6 @@ in {
         lua-utils-nvim
         nvim-nio
         pathlib-nvim
-        luaPkgs.pathlib-nvim # For neorg
-        luaPkgs.lua-utils-nvim # For neorg
       ];
 
     plugins = {
