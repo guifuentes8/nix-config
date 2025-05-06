@@ -1,11 +1,11 @@
 { pkgs, ... }: {
   programs.nixvim.plugins.treesitter = {
     enable = true;
-    #grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
+    grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
     settings = {
       auto_install = false;
       autotag = true;
-      ensure_installed = null;
+      ensure_installed = "all";
       highlight = {
         additional_vim_regex_highlighting = true;
         custom_captures = { };
@@ -24,9 +24,9 @@
       };
       indent = { enable = true; };
       # 24.11
-      #      parser_install_dir = {
-      #        __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
-      #      };
+      parser_install_dir = {
+        __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
+      };
       sync_install = false;
     };
   };
