@@ -26,6 +26,10 @@
       warn-dirty = false;
     };
   };
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    config = { allowUnfree = true; };
+  };
 
   fonts.fontconfig.enable = true;
   systemd.user.startServices = "sd-switch";
