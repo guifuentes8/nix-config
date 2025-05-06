@@ -187,7 +187,6 @@
       darwinPackages = self.darwinConfigurations."espeon".pkgs;
       nixOnDroidConfigurations.default =
         nix-on-droid.lib.nixOnDroidConfiguration {
-          specialArgs = { inherit inputs outputs; };
           pkgs = import nixpkgs { system = "aarch64-linux"; };
           modules = [
             ./hosts/umbreon

@@ -28,13 +28,13 @@
     };
   };
 
-  nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
-    config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [ ];
-    };
-  };
+  #  nixpkgs = {
+  #    overlays = builtins.attrValues outputs.overlays;
+  #    config = {
+  #      allowUnfree = true;
+  #      permittedInsecurePackages = [ ];
+  #    };
+  #  };
 
   fonts.fontconfig.enable = true;
   systemd.user.startServices = "sd-switch";
