@@ -46,11 +46,10 @@
 
     luasnip = {
       enable = true;
-      # 24.11
-      #  filetypeExtend = {
-      #    javascriptreact = [ "javascript" "html" ];
-      #    typescriptreact = [ "javascript" "html" ];
-      #  };
+      filetypeExtend = {
+        javascriptreact = [ "javascript" "html" ];
+        typescriptreact = [ "javascript" "html" ];
+      };
       fromVscode = [ { } ];
     };
 
