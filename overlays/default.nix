@@ -35,11 +35,5 @@
       config.allowUnfree = true;
     };
   };
-  neorg = final: _prev: {
-    neorg = import inputs.neorg-overlay.overlays.default {
-      system = final.system;
-      config.allowUnfree = true;
-    };
-  };
 
 }

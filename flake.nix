@@ -31,7 +31,6 @@
     };
 
     nh_plus.url = "github:ToyVo/nh_plus";
-    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
   };
 
