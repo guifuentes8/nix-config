@@ -58,27 +58,27 @@ in {
     };
 
     extraPlugins = with pkgs.vimPlugins; [ zen-mode-nvim ];
-    extraPackages = with pkgs; [
+    #  extraPackages = with pkgs; [
 
-      # Language servers
-      nodePackages.typescript-language-server # typescript
-      nodePackages.vscode-langservers-extracted # html, css, javascript
-      marksman # markdown
-      tailwindcss-language-server # tailwindcss
-      lua-language-server # lua
-      nixd # nix
-      # Conform
-      ruff # python
-      # Linters
-      nixfmt-classic
-      prettierd
-      pylint
-      eslint_d
-      stylua
+    #    # Language servers
+    #    nodePackages.typescript-language-server # typescript
+    #    nodePackages.vscode-langservers-extracted # html, css, javascript
+    #    marksman # markdown
+    #    tailwindcss-language-server # tailwindcss
+    #    lua-language-server # lua
+    #    nixd # nix
+    #    # Conform
+    #    ruff # python
+    #    # Linters
+    #    nixfmt-classic
+    #    prettierd
+    #    pylint
+    #    eslint_d
+    #    stylua
 
-      # Others
-      nodePackages.live-server
-    ];
+    #    # Others
+    #    nodePackages.live-server
+    #  ];
 
     opts = {
       ai = true;
