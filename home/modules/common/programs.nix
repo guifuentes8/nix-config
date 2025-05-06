@@ -41,14 +41,14 @@
       };
     };
     gpg.enable = true;
-    nh = {
-      enable = true;
-      package = if (pkgs.stdenv.hostPlatform.isDarwin) then
-        inputs.nh_plus.packages."aarch64-darwin".nh
-      else
-        pkgs.nh;
-      flake = "${config.home.homeDirectory}/nix-config";
-    };
+    #    nh = {
+    #      enable = true;
+    #      package = if (pkgs.stdenv.hostPlatform.isDarwin) then
+    #        inputs.nh_plus.packages."aarch64-darwin".nh
+    #      else
+    #        pkgs.nh;
+    #      flake = "${config.home.homeDirectory}/nix-config";
+    #    };
     home-manager.enable = true;
     ssh.enable = true;
     zsh = {
