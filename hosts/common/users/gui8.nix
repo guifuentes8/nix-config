@@ -76,10 +76,16 @@
   # Network
   networking = {
     networkmanager.enable = true;
-    firewall = {
+    firewall = rec {
       enable = true;
       allowedTCPPorts = [ 80 443 ];
+      allowedTCPPortRanges = [{
+        from = 1714;
+        to = 1764;
+      }];
+      allowedUDPPortRanges = allowedTCPPortRanges;
     };
+
   };
 
   # Sound
