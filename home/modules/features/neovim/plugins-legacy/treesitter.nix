@@ -31,7 +31,8 @@
     parserInstallDir = {
       __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
     };
-    sync_install = false;
+    #   sync_install = false;
+    syncInstall = false;
     #};
   };
 }
