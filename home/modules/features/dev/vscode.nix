@@ -17,7 +17,7 @@ in {
     enableExtensionUpdateCheck = true;
     enableUpdateCheck = true;
     mutableExtensionsDir = false;
-    extensions = with pkgs.unstable.vscode-extensions; [
+    extensions = with pkgs.vscode-extensions; [
       # theme
       sainnhe.everforest
       pkief.material-icon-theme
