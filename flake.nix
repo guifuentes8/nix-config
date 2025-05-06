@@ -23,7 +23,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
     stylix.url = "github:danth/stylix/release-24.11";
     nixvim.url = "github:nix-community/nixvim/nixos-24.11";
-    nixvim-legacy.inputs.nixpkgs.follows = "nixpkgs-legacy";
     nixvim-legacy.url = "github:nix-community/nixvim/nixos-24.05";
 
     firefox-addons = {
