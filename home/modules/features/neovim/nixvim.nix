@@ -37,7 +37,7 @@ in {
         };
       };
     };
-    package = pkgs.unstable.neovim-unwrapped;
+    package = pkgs.neovim-unwrapped;
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:
       with luaPkgs; [
