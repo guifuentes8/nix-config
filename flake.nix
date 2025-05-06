@@ -188,28 +188,9 @@
       nixOnDroidConfigurations.default =
         nix-on-droid.lib.nixOnDroidConfiguration {
           pkgs = import nixpkgs { system = "aarch64-linux"; };
-          modules = [
-            ./hosts/umbreon
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = { inherit inputs outputs; };
-                sharedModules = [
-                  stylix.homeManagerModules.stylix
-                  inputs.nixvim.homeManagerModules.nixvim
-                  sops-nix.homeManagerModules.sops
-
-                ];
-                useUserPackages = true;
-                #useGlobalPkgs = true;
-                users.droid.imports = [
-                  ./home/umbreon.nix
-
-                ];
-                backupFileExtension = "backup";
-              };
-            }
-          ];
+          modules = [ ./hosts/umbreon ];
+          # or if you have a separate home.nix already present:
+          home-manager.config = ./home/umbreon.nix;
         };
     };
 }
