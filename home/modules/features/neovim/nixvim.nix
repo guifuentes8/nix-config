@@ -20,7 +20,7 @@ in {
     #  ./plugins/lint.nix
     #  ./plugins/lsp.nix
     ./plugins/neorg.nix
-    ./plugins/noice.nix
+    # ./plugins/noice.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     #./plugins/yazi.nix
