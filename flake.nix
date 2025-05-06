@@ -23,10 +23,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
     stylix.url = "github:danth/stylix/release-24.11";
     nixvim.url = "github:nix-community/nixvim/nixos-24.11";
-    nixvim-2405 = {
-      url = "github:nix-community/nixvim/nixos-24.05";
-      inputs.nixpkgs.follows = "nixpkgs-2405";
-    };
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -190,7 +186,7 @@
 
       nixOnDroidConfigurations.default =
         nix-on-droid.lib.nixOnDroidConfiguration {
-          pkgs = import nixpkgs-2405 { system = "aarch64-linux"; };
+          pkgs = import nixpkgs { system = "aarch64-linux"; };
           modules = [
             ./hosts/umbreon
 
@@ -198,7 +194,7 @@
               home-manager = {
                 extraSpecialArgs = { inherit inputs outputs; };
                 sharedModules = [
-                  #inputs.stylix-2405.homeManagerModules.stylix
+                  #inputs.stylix.homeManagerModules.stylix
                   inputs.nixvim.homeManagerModules.nixvim
                   #   sops-nix.homeManagerModules.sops
 
