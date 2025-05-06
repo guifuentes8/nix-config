@@ -28,29 +28,29 @@ in {
       desktop = 1.0;
     };
     targets = {
-      xfce.enable = lib.mkIf (pkgs.stdenv.hostPlatform.isLinux) true;
+      # xfce.enable = lib.mkIf (pkgs.stdenv.hostPlatform.isLinux) true;
       nixvim.enable = false;
       vim.enable = true;
       vscode.enable = false;
     };
   };
 
-  gtk = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
-    enable = true;
-    iconTheme = {
-      name = lib.mkForce "Papirus-Dark";
-      package = pkgs.unstable.catppuccin-papirus-folders;
+  # gtk = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
+  #   enable = true;
+  #   iconTheme = {
+  #     name = lib.mkForce "Papirus-Dark";
+  #     package = pkgs.unstable.catppuccin-papirus-folders;
 
-    };
-    cursorTheme = {
-      name = cursorName;
-      size = 32;
-    };
-  };
+  #   };
+  #   cursorTheme = {
+  #     name = cursorName;
+  #     size = 32;
+  #   };
+  # };
 
-  home.sessionVariables = {
-    XCURSOR_THEME = cursorName;
-    XCURSOR_SIZE = "32";
-  };
+  #  home.sessionVariables = {
+  #    XCURSOR_THEME = cursorName;
+  #    XCURSOR_SIZE = "32";
+  #  };
 
 }
