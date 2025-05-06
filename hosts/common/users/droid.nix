@@ -29,6 +29,4 @@
     home = "/home/droid";
   };
 
-  services.nix-daemon.enable = true;
-
 }
