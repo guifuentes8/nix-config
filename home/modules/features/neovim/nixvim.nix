@@ -28,18 +28,18 @@ in {
 
   programs.nixvim = {
     enable = true;
-    colorschemes = {
-      everforest = {
-        enable = true;
-        package =
-          (fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "Master"
-            "https://github.com/neanias/everforest-nvim");
-        settings = {
-          background = "hard";
-          enable_italic = 1;
-        };
-      };
-    };
+    # colorschemes = {
+    #   everforest = {
+    #     enable = true;
+    #     package =
+    #       (fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "Master"
+    #         "https://github.com/neanias/everforest-nvim");
+    #     settings = {
+    #       background = "hard";
+    #       enable_italic = 1;
+    #     };
+    #   };
+    # };
     package = pkgs.neovim-unwrapped;
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:
