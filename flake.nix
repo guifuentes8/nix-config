@@ -201,7 +201,7 @@
                 extraSpecialArgs = { inherit inputs outputs; };
                 sharedModules = [
                   #inputs.stylix-2405.homeManagerModules.stylix
-                  #   inputs.nixvim.homeManagerModules.nixvim
+                  inputs.nixvim-2405.homeManagerModules.nixvim
                   #   sops-nix.homeManagerModules.sops
 
                 ];

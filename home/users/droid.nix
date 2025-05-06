@@ -7,7 +7,7 @@
     #  ../modules/common/services.nix
     #../modules/common/sops.nix
     # ../modules/common/stylix.nix
-    #  ../modules/features/neovim
+    ../modules/features/neovim
     ../modules/features/dev
     ../modules/features/cli
 
