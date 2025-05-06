@@ -196,7 +196,6 @@
             ./hosts/umbreon
 
             {
-              nixpkgs.overlays = [ inputs.neorg-overlay.overlays.default ];
 
               home-manager = {
                 extraSpecialArgs = { inherit inputs outputs; };
