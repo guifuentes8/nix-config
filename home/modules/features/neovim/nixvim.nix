@@ -23,7 +23,7 @@ in {
     ./plugins/noice.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
-    ./plugins/yazi.nix
+    #./plugins/yazi.nix
   ];
 
   programs.nixvim = {
