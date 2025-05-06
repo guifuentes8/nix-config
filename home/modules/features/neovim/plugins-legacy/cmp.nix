@@ -46,6 +46,7 @@
 
     luasnip = {
       enable = true;
+      # remove extra config 24.11
       extraConfig.filetypeExtend = {
         javascriptreact = [ "javascript" "html" ];
         typescriptreact = [ "javascript" "html" ];
