@@ -26,7 +26,7 @@
     #     scope_incremental = "grc";
     #   };
     # };
-    indent = { enable = true; };
+    #  indent = { enable = true; };
     # parser_install_dir = {
     #   parserInstallDir = {
     #     __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
