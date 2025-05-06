@@ -9,12 +9,12 @@
     #autotag = true;
     #ensure_installed = "all";
     ensureInstalled = "all";
-    highlight = {
-      additional_vim_regex_highlighting = true;
-      custom_captures = { };
-      disable = [ ];
-      enable = true;
-    };
+    # highlight = {
+    #   additional_vim_regex_highlighting = true;
+    #   custom_captures = { };
+    #   disable = [ ];
+    #   enable = true;
+    # };
     ignore_install = [ ];
     incremental_selection = {
       enable = true;
