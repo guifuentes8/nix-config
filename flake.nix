@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-2405.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -35,7 +36,7 @@
   };
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, nix-on-droid, sops-nix
-    , stylix, nixgl, ... }@inputs:
+    , stylix, nixgl, nixpkgs-2405, ... }@inputs:
     let
       inherit (self) outputs;
 
@@ -187,7 +188,7 @@
       darwinPackages = self.darwinConfigurations."espeon".pkgs;
       nixOnDroidConfigurations.default =
         nix-on-droid.lib.nixOnDroidConfiguration {
-          pkgs = import nixpkgs { system = "aarch64-linux"; };
+          pkgs = import nixpkgs-2405 { system = "aarch64-linux"; };
           modules = [
             ./hosts/umbreon
             {
