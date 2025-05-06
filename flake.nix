@@ -23,6 +23,8 @@
     sops-nix.url = "github:Mic92/sops-nix";
     stylix.url = "github:danth/stylix/release-24.11";
     nixvim.url = "github:nix-community/nixvim/nixos-24.11";
+    nixvim-droid.url = "github:nix-community/nixvim/nixos-24.11";
+    nixvim-droid.inputs.nixpkgs.follows = "nixpkgs-2405";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
