@@ -2,7 +2,7 @@
 
 {
 
-  # imports = [ ../common/users/droid.nix ];
+  imports = [ ../common/users/droid.nix ];
   # networking.hostName = "umbreon";
   system.stateVersion = "24.05";
 
