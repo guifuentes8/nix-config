@@ -2,14 +2,14 @@
 
   #imports = [ ../../common ];
 
-  nix = {
-    settings = {
-      trusted-users = [ "droid" "@admin" "root" "@wheel" ];
-      experimental-features = [ "nix-command" "flakes" ];
-      warn-dirty = false;
-    };
-    #  optimise.automatic = true;
-  };
+  #  nix = {
+  #    settings = {
+  #      trusted-users = [ "droid" "@admin" "root" "@wheel" ];
+  #      experimental-features = [ "nix-command" "flakes" ];
+  #      warn-dirty = false;
+  #    };
+  #    #  optimise.automatic = true;
+  #  };
 
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
