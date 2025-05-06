@@ -24,9 +24,4 @@
   time.timeZone = lib.mkDefault "America/Sao_Paulo";
 
   #----
-  users.users.droid = {
-    name = "droid";
-    home = "/home/droid";
-  };
-
 }
