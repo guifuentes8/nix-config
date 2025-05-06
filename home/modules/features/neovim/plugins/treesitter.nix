@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }: {
   programs.nixvim.plugins.treesitter = {
     enable = true;
-    package = pkgs.unstable.vimPlugins.nvim-treesitter;
+    package = pkgs.vimPlugins.nvim-treesitter;
     grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
     settings = {
       auto_install = false;
