@@ -45,13 +45,15 @@ in {
       #      };
       #    };
     };
-    package = pkgs.unstable.neovim-unwrapped;
+    package = pkgs.neovim-unwrapped;
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:
       with luaPkgs; [
         lua-utils-nvim
         nvim-nio
         pathlib-nvim
+        luaPkgs.pathlib-nvim # For neorg
+        luaPkgs.lua-utils-nvim # For neorg
       ];
 
     plugins = {
