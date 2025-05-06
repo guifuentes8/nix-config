@@ -14,7 +14,7 @@
   home.packages = with pkgs; [
     bun
     nodejs_22
-    pnpm_10
+    pnpm
     nest-cli
     maven
     nixfmt-rfc-style
