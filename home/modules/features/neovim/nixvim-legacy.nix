@@ -35,13 +35,14 @@ in {
   programs.nixvim = {
     enable = true;
     colorschemes = {
-      everforest = {
-        enable = true;
-        settings = {
-          background = "hard";
-          enable_italic = 1;
-        };
-      };
+      # 24.11
+      #    everforest = {
+      #      enable = true;
+      #      settings = {
+      #        background = "hard";
+      #        enable_italic = 1;
+      #      };
+      #    };
     };
     package = pkgs.neovim-unwrapped;
     extraConfigLua = "";
