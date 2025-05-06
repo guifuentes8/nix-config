@@ -35,11 +35,6 @@
     };
 
     nh_plus.url = "github:ToyVo/nh_plus";
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
   };
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, nix-on-droid, sops-nix

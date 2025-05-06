@@ -13,8 +13,8 @@ let
 in {
   imports = [
 
-    ./keymaps.nix
-    ./settings.nix
+    # ./keymaps.nix
+    # ./settings.nix
     #  ./plugins/bufferline.nix
     #  ./plugins/cmp.nix
     #  ./plugins/lint.nix
