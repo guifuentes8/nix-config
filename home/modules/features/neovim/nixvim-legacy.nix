@@ -34,6 +34,7 @@ in {
 
   programs.nixvim = {
     enable = true;
+    colorscheme = "everforest";
     colorschemes = {
       # 24.11
       #    everforest = {
