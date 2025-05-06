@@ -189,7 +189,6 @@
           pkgs = import nixpkgs { system = "aarch64-linux"; };
           modules = [
             ./hosts/umbreon
-            home-manager.nixosModules.home-manager
 
             {
               home-manager = {
