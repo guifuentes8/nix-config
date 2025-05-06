@@ -4,14 +4,15 @@
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-2405.url = "github:nixos/nixpkgs/nixos-24.05";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-wsl.url = "github:nix-community/NixOS-WSL";
     nix-wsl.inputs.nixpkgs.follows = "nixpkgs";
     nixgl.url = "github:nix-community/nixGL";
     nix-on-droid = {
-      url = "github:nix-community/nix-on-droid/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nix-on-droid/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs-2405";
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -36,7 +37,7 @@
   };
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, nix-on-droid, sops-nix
-    , stylix, nixgl, ... }@inputs:
+    , stylix, nixgl, nixpkgs-2405, ... }@inputs:
     let
       inherit (self) outputs;
 
@@ -189,7 +190,7 @@
 
       nixOnDroidConfigurations.default =
         nix-on-droid.lib.nixOnDroidConfiguration {
-          pkgs = import nixpkgs { system = "aarch64-linux"; };
+          pkgs = import nixpkgs-2405 { system = "aarch64-linux"; };
           modules = [
             ./hosts/umbreon
 
