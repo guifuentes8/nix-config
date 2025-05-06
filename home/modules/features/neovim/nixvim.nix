@@ -22,7 +22,7 @@ in {
     ./plugins/neorg.nix
     # ./plugins/noice.nix
     ./plugins/telescope.nix
-    #./plugins/treesitter.nix
+    ./plugins/treesitter.nix
     #./plugins/yazi.nix
   ];
 
