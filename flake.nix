@@ -191,7 +191,6 @@
           pkgs = import nixpkgs-2405 { system = "aarch64-linux"; };
           modules = [
             ./hosts/umbreon
-            stylix.homeManagerModules.stylix
 
             {
               #extraSpecialArgs = { inherit inputs outputs; };
