@@ -189,6 +189,7 @@
       };
 
       darwinPackages = self.darwinConfigurations."espeon".pkgs;
+
       nixOnDroidConfigurations.default =
         nix-on-droid.lib.nixOnDroidConfiguration {
           pkgs = import nixpkgs-2405 { system = "aarch64-linux"; };
@@ -199,12 +200,13 @@
               home-manager = {
                 extraSpecialArgs = { inherit inputs outputs; };
                 sharedModules = [
-                  inputs.stylix-2405.homeManagerModules.stylix
+                  #inputs.stylix-2405.homeManagerModules.stylix
                   #   inputs.nixvim.homeManagerModules.nixvim
                   #   sops-nix.homeManagerModules.sops
 
                 ];
-                # or if you have a separate home.nix already present:
+                useUserPackages = true;
+                backupFileExtension = "backup";
                 config = ./home/umbreon.nix;
               };
             }
