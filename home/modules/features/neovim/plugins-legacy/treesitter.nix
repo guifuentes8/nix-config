@@ -28,9 +28,9 @@
     # };
     indent = { enable = true; };
     # parser_install_dir = {
-    parserInstallDir = {
-      __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
-    };
+    #   parserInstallDir = {
+    #     __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
+    #   };
     #   sync_install = false;
     #};
   };
