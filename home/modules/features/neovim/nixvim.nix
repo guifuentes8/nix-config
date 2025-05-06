@@ -15,14 +15,14 @@ in {
 
     ./keymaps.nix
     ./settings.nix
-    ./plugins/bufferline.nix
-    ./plugins/cmp.nix
-    ./plugins/lint.nix
-    ./plugins/lsp.nix
-    ./plugins/neorg.nix
-    ./plugins/noice.nix
-    ./plugins/telescope.nix
-    ./plugins/treesitter.nix
+    #  ./plugins/bufferline.nix
+    #  ./plugins/cmp.nix
+    #  ./plugins/lint.nix
+    #  ./plugins/lsp.nix
+    #  ./plugins/neorg.nix
+    #  ./plugins/noice.nix
+    #  ./plugins/telescope.nix
+    #  ./plugins/treesitter.nix
     #./plugins/yazi.nix
   ];
 
