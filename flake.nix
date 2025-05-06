@@ -198,7 +198,7 @@
                 extraSpecialArgs = { inherit inputs outputs; };
                 sharedModules = [
                   inputs.nixvim-legacy.homeManagerModules.nixvim
-                  inputs.sops-nix.homeManagerModules.sops
+                  #   inputs.sops-nix.homeManagerModules.sops
 
                 ];
                 useUserPackages = true;
