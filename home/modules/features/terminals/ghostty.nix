@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.ghostty = {
-    enable = false;
+    enable = true;
     enableZshIntegration = true;
     #   installVimSyntax = true;
     installBatSyntax = true;

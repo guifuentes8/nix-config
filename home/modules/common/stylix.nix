@@ -29,6 +29,7 @@ in {
     };
     targets = {
       xfce.enable = lib.mkIf (pkgs.stdenv.hostPlatform.isLinux) true;
+      ghostty.enable = false;
       nixvim.enable = false;
       vim.enable = true;
       vscode.enable = false;
