@@ -31,9 +31,6 @@ in {
     colorschemes = {
       everforest = {
         enable = true;
-        package =
-          (fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "Master"
-            "https://github.com/neanias/everforest-nvim");
         settings = {
           background = "hard";
           enable_italic = 1;
@@ -59,6 +56,8 @@ in {
 
     extraPlugins = with pkgs.vimPlugins; [ zen-mode-nvim ];
     extraPackages = with pkgs; [
+      (fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "Master"
+        "https://github.com/neanias/everforest-nvim")
 
       # Language servers
       nodePackages.typescript-language-server # typescript
