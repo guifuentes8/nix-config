@@ -58,7 +58,8 @@ in {
       gitsigns.enable = true;
       lualine.enable = true;
       transparent.enable = true;
-      web-devicons.enable = true; # required
+      # 24.11
+      #   web-devicons.enable = true; # required
     };
 
     extraPlugins = with pkgs.vimPlugins; [
