@@ -13,16 +13,16 @@ let
 in {
   imports = [
 
-    # ./keymaps.nix
-    # ./settings.nix
-    #  ./plugins/bufferline.nix
-    #  ./plugins/cmp.nix
-    #  ./plugins/lint.nix
-    #  ./plugins/lsp.nix
-    #  ./plugins/neorg.nix
-    #  ./plugins/noice.nix
-    #  ./plugins/telescope.nix
-    #  ./plugins/treesitter.nix
+    ./keymaps.nix
+    ./settings.nix
+    ./plugins/bufferline.nix
+    ./plugins/cmp.nix
+    ./plugins/lint.nix
+    ./plugins/lsp.nix
+    ./plugins/neorg.nix
+    ./plugins/noice.nix
+    ./plugins/telescope.nix
+    ./plugins/treesitter.nix
     #./plugins/yazi.nix
   ];
 
@@ -49,36 +49,36 @@ in {
         pathlib-nvim
       ];
 
-    #   plugins = {
-    #     dashboard.enable = true;
-    #     gitsigns.enable = true;
-    #     lualine.enable = true;
-    #     transparent.enable = true;
-    #     web-devicons.enable = true; # required
-    #   };
+    plugins = {
+      dashboard.enable = true;
+      gitsigns.enable = true;
+      lualine.enable = true;
+      transparent.enable = true;
+      web-devicons.enable = true; # required
+    };
 
     extraPlugins = with pkgs.vimPlugins; [ zen-mode-nvim ];
-    #  extraPackages = with pkgs; [
+    extraPackages = with pkgs; [
 
-    #    # Language servers
-    #    nodePackages.typescript-language-server # typescript
-    #    nodePackages.vscode-langservers-extracted # html, css, javascript
-    #    marksman # markdown
-    #    tailwindcss-language-server # tailwindcss
-    #    lua-language-server # lua
-    #    nixd # nix
-    #    # Conform
-    #    ruff # python
-    #    # Linters
-    #    nixfmt-classic
-    #    prettierd
-    #    pylint
-    #    eslint_d
-    #    stylua
+      # Language servers
+      nodePackages.typescript-language-server # typescript
+      nodePackages.vscode-langservers-extracted # html, css, javascript
+      marksman # markdown
+      tailwindcss-language-server # tailwindcss
+      lua-language-server # lua
+      nixd # nix
+      # Conform
+      ruff # python
+      # Linters
+      nixfmt-classic
+      prettierd
+      pylint
+      eslint_d
+      stylua
 
-    #    # Others
-    #    nodePackages.live-server
-    #  ];
+      # Others
+      nodePackages.live-server
+    ];
 
     opts = {
       ai = true;
