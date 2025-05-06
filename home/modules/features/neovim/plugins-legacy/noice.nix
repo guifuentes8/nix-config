@@ -1,6 +1,7 @@
 { ... }: {
   programs.nixvim.plugins = {
-    nui.enable = true;
+    # 24.11
+    #nui.enable = true;
     notify.enable = true;
     noice = {
       enable = true;
