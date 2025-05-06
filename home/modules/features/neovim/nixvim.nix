@@ -17,10 +17,10 @@ in {
     ./settings.nix
     ./plugins/bufferline.nix
     ./plugins/cmp.nix
-    #  ./plugins/lint.nix
-    #  ./plugins/lsp.nix
+    ./plugins/lint.nix
+    ./plugins/lsp.nix
     ./plugins/neorg.nix
-    # ./plugins/noice.nix
+    ./plugins/noice.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     #./plugins/yazi.nix
@@ -28,15 +28,15 @@ in {
 
   programs.nixvim = {
     enable = true;
-    #colorschemes = {
-    #  everforest = {
-    #    enable = true;
-    #    settings = {
-    #      background = "hard";
-    #      enable_italic = 1;
-    #    };
-    #  };
-    #};
+    colorschemes = {
+      everforest = {
+        enable = true;
+        settings = {
+          background = "hard";
+          enable_italic = 1;
+        };
+      };
+    };
     package = pkgs.neovim-unwrapped;
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:

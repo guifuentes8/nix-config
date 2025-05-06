@@ -2,8 +2,7 @@
   programs.nixvim.plugins.treesitter = {
     enable = true;
     grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
-    # 24.11
-    config = {
+    settings = {
       auto_install = false;
       autotag = true;
       ensure_installed = "all";
@@ -24,7 +23,6 @@
         };
       };
       indent = { enable = true; };
-      # 24.11
       parser_install_dir = {
         __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
       };

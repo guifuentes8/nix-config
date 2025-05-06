@@ -190,7 +190,7 @@
 
       nixOnDroidConfigurations.default =
         nix-on-droid.lib.nixOnDroidConfiguration {
-          pkgs = import nixpkgs-2405 { system = "aarch64-linux"; };
+          pkgs = import nixpkgs { system = "aarch64-linux"; };
           modules = [
             ./hosts/umbreon
 
@@ -199,7 +199,7 @@
                 extraSpecialArgs = { inherit inputs outputs; };
                 sharedModules = [
                   #inputs.stylix-2405.homeManagerModules.stylix
-                  inputs.nixvim-2405.homeManagerModules.nixvim
+                  inputs.nixvim.homeManagerModules.nixvim
                   #   sops-nix.homeManagerModules.sops
 
                 ];
