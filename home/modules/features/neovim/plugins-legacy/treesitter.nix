@@ -7,7 +7,8 @@
     #settings = {
     #auto_install = false;
     #autotag = true;
-    ensure_installed = "all";
+    #ensure_installed = "all";
+    ensureInstalled = "all";
     highlight = {
       additional_vim_regex_highlighting = true;
       custom_captures = { };
