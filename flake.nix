@@ -25,11 +25,15 @@
     nixvim.url = "github:nix-community/nixvim/nixos-24.11";
 
     stylix-2405.url = "github:danth/stylix/release-24.05";
-    nixvim-2405.url = "github:nix-community/nixvim/nixos-24.05";
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim-2405 = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs-2405";
+    };
+
     nh_plus.url = "github:ToyVo/nh_plus";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
