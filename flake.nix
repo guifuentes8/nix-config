@@ -196,8 +196,8 @@
             ./hosts/umbreon
 
             {
-              extraSpecialArgs = { inherit inputs outputs; };
               home-manager = {
+                extraSpecialArgs = { inherit inputs outputs; };
                 sharedModules = [
                   stylix-2405.homeManagerModules.stylix
                   #   inputs.nixvim.homeManagerModules.nixvim
