@@ -1,5 +1,6 @@
 { pkgs, ... }: {
 
+  imports = [ ./vscode.nix ];
   programs = {
     obs-studio = {
       enable = true;

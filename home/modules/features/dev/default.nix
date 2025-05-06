@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # imports = [ ./vscode.nix ];
 
   programs = {
     go.enable = true;
