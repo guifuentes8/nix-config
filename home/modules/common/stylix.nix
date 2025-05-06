@@ -7,7 +7,7 @@ in {
 
   stylix = {
     enable = true;
-    autoEnable = true;
+    autoEnable = false;
     polarity = "dark";
     base16Scheme =
       "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
