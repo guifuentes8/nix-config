@@ -25,7 +25,7 @@ in {
     ./plugins-legacy/cmp.nix
     ./plugins-legacy/lint.nix
     ./plugins-legacy/lsp.nix
-    #  ./plugins-legacy/neorg.nix
+    ./plugins-legacy/neorg.nix
     ./plugins-legacy/noice.nix
     ./plugins-legacy/telescope.nix
     ./plugins-legacy/treesitter.nix
