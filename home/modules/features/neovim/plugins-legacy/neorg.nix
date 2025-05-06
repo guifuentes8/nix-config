@@ -1,7 +1,7 @@
 { pkgs, config, ... }: {
   programs.nixvim.plugins.neorg = {
     enable = true;
-    package = pkgs.vimPlugins.neorg;
+    package = pkgs.unstable.vimPlugins.neorg;
     # settings.lazyLoading = true;
     lazyLoading = true;
     modules = {
@@ -9,7 +9,7 @@
       "core.concealer".config = { icon_preset = "diamond"; };
       "core.completion" = {
         config = {
-          engine = "nvim-cmp";
+          engine = "nvim-cmpnixvim";
           name = "[Norg]";
         };
       };
