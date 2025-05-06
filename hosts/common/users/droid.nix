@@ -23,7 +23,6 @@
 
   time.timeZone = lib.mkDefault "America/Sao_Paulo";
 
-  programs.zsh.enable = true;
   #----
   users.users.droid = {
     name = "droid";
