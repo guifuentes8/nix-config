@@ -5,7 +5,7 @@
     # 24.11
     # settings = {
     #auto_install = false;
-    autotag = true;
+    #autotag = true;
     ensure_installed = "all";
     highlight = {
       additional_vim_regex_highlighting = true;
