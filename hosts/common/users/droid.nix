@@ -2,13 +2,13 @@
 
   imports = [ ../../common ];
 
-  users.users.administrador = {
+  users.users.droid = {
     name = "droid";
     home = "/home/droid";
   };
 
   services.nix-daemon.enable = true;
-  #nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.hostPlatform = "aarch64-linux";
 
   nix = {
     linux-builder.enable = false;

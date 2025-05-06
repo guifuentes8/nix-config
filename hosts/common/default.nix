@@ -27,5 +27,4 @@
 
   programs.zsh.enable = true;
 
-  environment.systemPackages = [ ];
 }
