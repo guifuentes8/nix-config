@@ -25,7 +25,7 @@ in {
     ./plugins-legacy/cmp.nix
     ./plugins-legacy/lint.nix
     ./plugins-legacy/lsp.nix
-    ./plugins-legacy/neorg.nix
+    #   ./plugins-legacy/neorg.nix
     ./plugins-legacy/noice.nix
     ./plugins-legacy/telescope.nix
     ./plugins-legacy/treesitter.nix
@@ -64,6 +64,7 @@ in {
     };
 
     extraPlugins = with pkgs.vimPlugins; [
+      neorg
       zen-mode-nvim
       (fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "HEAD"
         "https://github.com/neanias/everforest-nvim")
