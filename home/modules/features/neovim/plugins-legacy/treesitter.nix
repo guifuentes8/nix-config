@@ -5,8 +5,8 @@
     grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
     # 24.11
     #settings = {
-    auto_install = false;
-    autotag = true;
+    #auto_install = false;
+    #autotag = true;
     ensure_installed = "all";
     highlight = {
       additional_vim_regex_highlighting = true;
