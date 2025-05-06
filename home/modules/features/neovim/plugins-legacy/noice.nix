@@ -4,7 +4,7 @@
     notify.enable = true;
     noice = {
       enable = true;
-      settings = {
+      extraConfig = {
         cmdline = {
           format = {
             cmdline = {
