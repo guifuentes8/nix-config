@@ -39,7 +39,7 @@
   };
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, nix-on-droid, sops-nix
-    , stylix, nixgl, nixpkgs-2405, ... }@inputs:
+    , stylix, nixgl, nixpkgs-2405, stylix-2405, ... }@inputs:
     let
       inherit (self) outputs;
 
@@ -199,7 +199,7 @@
               extraSpecialArgs = { inherit inputs outputs; };
               home-manager = {
                 sharedModules = [
-                  inputs.stylix-2405.homeManagerModules.stylix
+                  stylix-2405.homeManagerModules.stylix
                   #   inputs.nixvim.homeManagerModules.nixvim
                   #   sops-nix.homeManagerModules.sops
 
