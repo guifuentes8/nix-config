@@ -1,7 +1,7 @@
 { pkgs, config, inputs, lib, ... }:
 
 {
-  imports = [ ./extras/dependencies.nix ];
+  # imports = [ ./extras/dependencies.nix ];
   home.packages = [ pkgs.age pkgs.pokeget-rs ];
 
   programs = {
