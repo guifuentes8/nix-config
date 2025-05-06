@@ -80,11 +80,11 @@ in {
             enable = true;
             onAttach.function = onAttachFunction;
           };
-          ts_ls = {
-            enable = true;
-            onAttach.function = onAttachFunction;
-          };
-          ts_query_ls.enable = false;
+          #          ts_ls = {
+          #            enable = true;
+          #            onAttach.function = onAttachFunction;
+          #          };
+          #          ts_query_ls.enable = false;
           html = {
             enable = true;
             onAttach.function = onAttachFunction;
