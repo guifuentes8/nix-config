@@ -21,14 +21,14 @@ in {
 
     ./keymaps.nix
     ./settings.nix
-    ./plugins/bufferline.nix
-    ./plugins/cmp.nix
-    ./plugins/lint.nix
-    ./plugins/lsp.nix
-    ./plugins/neorg.nix
-    ./plugins/noice.nix
-    ./plugins/telescope.nix
-    ./plugins/treesitter.nix
+    ./plugins-legacy/bufferline.nix
+    ./plugins-legacy/cmp.nix
+    ./plugins-legacy/lint.nix
+    ./plugins-legacy/lsp.nix
+    ./plugins-legacy/neorg.nix
+    ./plugins-legacy/noice.nix
+    ./plugins-legacy/telescope.nix
+    ./plugins-legacy/treesitter.nix
     #./plugins/yazi.nix
   ];
 
