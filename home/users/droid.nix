@@ -15,8 +15,8 @@
   ];
 
   home = {
-    username = "droid";
-    homeDirectory = "/home/droid";
+    username = lib.mkDefault "droid";
+    homeDirectory = lib.mkDefault "/home/droid";
     stateVersion = "24.05";
   };
 
