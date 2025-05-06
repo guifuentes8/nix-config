@@ -193,7 +193,7 @@
             ./hosts/umbreon
 
             {
-              #extraSpecialArgs = { inherit inputs outputs; };
+              extraSpecialArgs = { inherit inputs outputs; };
               home-manager = {
                 sharedModules = [
                   stylix.homeManagerModules.stylix
