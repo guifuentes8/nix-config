@@ -61,7 +61,7 @@ in {
     extraPackages = with pkgs; [
 
       # Language servers
-      #  nodePackages.typescript-language-server # typescript
+      #nodePackages.typescript-language-server # typescript
       nodePackages.vscode-langservers-extracted # html, css, javascript
       marksman # markdown
       tailwindcss-language-server # tailwindcss
