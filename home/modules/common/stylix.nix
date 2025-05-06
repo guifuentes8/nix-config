@@ -7,7 +7,7 @@ in {
 
   stylix = {
     enable = true;
-    autoEnable = true;
+    autoEnable = false;
     polarity = "dark";
     base16Scheme =
       "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
@@ -36,22 +36,22 @@ in {
     };
   };
 
-  gtk = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
-    enable = true;
-    iconTheme = {
-      name = lib.mkForce "Papirus-Dark";
-      package = pkgs.unstable.catppuccin-papirus-folders;
+  # gtk = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
+  #   enable = true;
+  #   iconTheme = {
+  #     name = lib.mkForce "Papirus-Dark";
+  #     package = pkgs.unstable.catppuccin-papirus-folders;
 
-    };
-    cursorTheme = {
-      name = cursorName;
-      size = 32;
-    };
-  };
+  #   };
+  #   cursorTheme = {
+  #     name = cursorName;
+  #     size = 32;
+  #   };
+  # };
 
-  home.sessionVariables = {
-    XCURSOR_THEME = cursorName;
-    XCURSOR_SIZE = "32";
-  };
+  # home.sessionVariables = {
+  #   XCURSOR_THEME = cursorName;
+  #   XCURSOR_SIZE = "32";
+  # };
 
 }
