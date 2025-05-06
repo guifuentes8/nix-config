@@ -32,6 +32,6 @@
   systemd.user.startServices = "sd-switch";
   news.display = "silent";
 
-  programs.zsh.initExtraFirst = "pokeget espeon";
+  programs.zsh.initExtraFirst = "pokeget umbreon";
 
 }
