@@ -29,7 +29,7 @@ in {
     ./plugins-legacy/noice.nix
     ./plugins-legacy/telescope.nix
     ./plugins-legacy/treesitter.nix
-    #./plugins/yazi.nix
+    # ./plugins/yazi.nix
   ];
 
   programs.nixvim = {
@@ -45,7 +45,7 @@ in {
       #      };
       #    };
     };
-    package = pkgs.neovim-unwrapped;
+    package = pkgs.unstable.neovim-unwrapped;
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:
       with luaPkgs; [
