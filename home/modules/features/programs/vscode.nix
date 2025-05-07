@@ -11,7 +11,8 @@ let
     };
   };
 
-in {
+in
+{
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;
@@ -62,16 +63,21 @@ in {
       "explorer.confirmDragAndDrop" = false;
       "explorer.confirmPasteNative" = false;
 
-      "eslint.validate" =
-        [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
+      "eslint.validate" = [
+        "javascript"
+        "javascriptreact"
+        "typescript"
+        "typescriptreact"
+      ];
 
       "git.confirmSync" = false;
 
       "javascript.updateImportsOnFileMove.enabled" = "always";
       "typescript.updateImportsOnFileMove.enabled" = "always";
 
-      "terminal.integrated.fontFamily" = "MonoLisa";
+      "terminal.integrated.fontFamily" = "JetBrainsMonoNL Nerd Font";
       "terminal.integrated.fontSize" = 13;
+      "terminal.integrated.fontLigatures.enabled" = true;
 
       "window.titleBarStyle" = "native";
       "window.commandCenter" = false;
@@ -90,8 +96,12 @@ in {
       "[javascript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
-      "[jsonc]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-      "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+      "[jsonc]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "[json]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
       "[typescript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };

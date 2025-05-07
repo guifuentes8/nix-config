@@ -11,6 +11,7 @@
   home.packages = [
     pkgs.age
     pkgs.pokeget-rs
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   programs = {
