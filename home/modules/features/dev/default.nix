@@ -4,6 +4,7 @@
 
   programs = {
     go.enable = true;
+    go.package = pkgs.unstable.go;
     java.enable = true;
     pyenv.enable = true;
     rbenv.enable = true;
