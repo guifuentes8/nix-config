@@ -1,4 +1,9 @@
-{ lib, pkgs, outputs, ... }:
+{
+  lib,
+  pkgs,
+  outputs,
+  ...
+}:
 
 {
 
@@ -8,7 +13,7 @@
     ../modules/common/sops.nix
     ../modules/common/sops-darwin.nix
     ../modules/common/stylix.nix
-    ../modules/features/neovim
+    # ../modules/features/neovim
     ../modules/features/dev
     ../modules/features/programs/vscode.nix
     ../modules/features/cli
@@ -27,7 +32,10 @@
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
     };
   };
