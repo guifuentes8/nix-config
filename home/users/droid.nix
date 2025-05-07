@@ -1,4 +1,4 @@
-{ lib, pkgs, outputs, ... }:
+{ lib, pkgs, inputs, outputs, ... }:
 
 {
 
@@ -25,7 +25,7 @@
     };
   };
   nixpkgs = {
-    overlays = [ neorg-overlay.overlays.default ];
+    overlays = [ inputs.neorg-overlay.overlays.default ];
     config = { allowUnfree = true; };
   };
 
