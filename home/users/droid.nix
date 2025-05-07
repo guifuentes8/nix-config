@@ -25,7 +25,7 @@
     };
   };
   nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
+    overlays = [ neorg-overlay.overlays.default ];
     config = { allowUnfree = true; };
   };
 
