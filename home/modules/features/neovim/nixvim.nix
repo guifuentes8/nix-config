@@ -23,11 +23,12 @@ in {
     ./plugins/noice.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
-    #./plugins/yazi.nix
+    ./plugins/yazi.nix
   ];
 
   programs.nixvim = {
     enable = true;
+    package = pkgs.neovim-unwrapped;
     colorschemes = {
       everforest = {
         enable = true;
@@ -39,7 +40,6 @@ in {
         };
       };
     };
-    package = pkgs.neovim-unwrapped;
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:
       with luaPkgs; [

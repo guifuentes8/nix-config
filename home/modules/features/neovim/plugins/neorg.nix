@@ -2,7 +2,6 @@
   programs.nixvim.plugins.neorg = {
     enable = true;
     package = pkgs.vimPlugins.neorg;
-    # settings.lazyLoading = true;
     lazyLoading = true;
     modules = {
       "core.defaults" = { __empty = null; };

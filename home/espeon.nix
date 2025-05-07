@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ./users/droid.nix ]; }
+{ ... }: { imports = [ ./users/darwin.nix ]; }

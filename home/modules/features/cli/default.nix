@@ -36,7 +36,7 @@
     };
   };
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     nix-search-cli
     cmatrix # matrix
     dipc # palette wallpaper converter
@@ -45,6 +45,7 @@
     girouette # Weather
     pastel # color cli
     speedtest-rs # Networking test
+    clock-rs
     tgpt # chatgpt
   ];
 

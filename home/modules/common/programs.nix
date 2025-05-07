@@ -1,7 +1,7 @@
 { pkgs, config, inputs, lib, ... }:
 
 {
-  # imports = [ ./extras/dependencies.nix ];
+  imports = [ ./extras/dependencies.nix ];
   home.packages = [ pkgs.age pkgs.pokeget-rs ];
 
   programs = {
@@ -37,34 +37,36 @@
       };
     };
     gpg.enable = true;
-    #    nh = {
-    #      enable = true;
-    #      package = if (pkgs.stdenv.hostPlatform.isDarwin) then
-    #        inputs.nh_plus.packages."aarch64-darwin".nh
-    #      else
-    #        pkgs.nh;
-    #      flake = "${config.home.homeDirectory}/nix-config";
-    #    };
+    nh = {
+      enable = true;
+      package = if (pkgs.stdenv.hostPlatform.isDarwin) then
+        inputs.nh_plus.packages."aarch64-darwin".nh
+      else
+        pkgs.nh;
+      flake = "${config.home.homeDirectory}/nix-config";
+    };
     home-manager.enable = true;
     ssh.enable = true;
     zsh = {
       enable = true;
-      #   autosuggestion.enable = true;
+      autosuggestion.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" ];
-        theme = "miloshadzic";
+        #plugins = [ "git" ];
+        #theme = "miloshadzic";
       };
-      # initExtra = ''
-      #   unset -v SSH_ASKPASS
-      #   export GITHUB_TOKEN=$(cat ${config.sops.secrets.github_token.path})
-      # '';
+      initExtra = ''
+        unset -v SSH_ASKPASS
+        export GITHUB_TOKEN=$(cat ${config.sops.secrets.github_token.path})
+        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      '';
       shellAliases = {
         cjpg = "mogrify -format jpg *.png && rm *.png";
         pick = "xcolor | hyprpicker";
-        clock = "tty-clock -c -C 6 -s -S -r -n -D";
+        clock = "clock-rs";
+        #   clock = "tty-clock -c -C 6 -s -S -r -n -D";
         matrix = "cmatrix -b -f -C red";
         climabauru = "girouette -q -c '1h' -L 'pt_BR' -l 'Bauru' -u metric";
         climasp = "girouette -q -c '1h' -L 'pt_BR' -l 'São Paulo' -u metric";
