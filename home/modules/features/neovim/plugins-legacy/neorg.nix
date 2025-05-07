@@ -9,7 +9,7 @@
       "core.concealer".config = { icon_preset = "diamond"; };
       "core.completion" = {
         config = {
-          engine = "nvim-cmpnixvim";
+          engine = "nvim-cmp";
           name = "[Norg]";
         };
       };

@@ -49,7 +49,7 @@ in {
     extraConfigLua = "";
     extraLuaPackages = luaPkgs:
       with luaPkgs; [
-        lua-utils-nvim
+        pkgs.unstable.lua-utils-nvim
         nvim-nio
         pathlib-nvim
       ];
