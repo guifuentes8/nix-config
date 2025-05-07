@@ -35,5 +35,6 @@
       config.allowUnfree = true;
     };
   };
+  neorg = inputs.neorg-overlay.overlays.default;
 
 }
