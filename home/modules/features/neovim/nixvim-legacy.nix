@@ -64,6 +64,7 @@ in {
     };
 
     extraPlugins = with pkgs.vimPlugins; [
+      nvim-web-devicons
       nui-nvim
       zen-mode-nvim
       (fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "HEAD"
