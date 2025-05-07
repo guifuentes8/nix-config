@@ -62,15 +62,24 @@
       autosuggestion.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
+      plugins = [
+        {
+          name = "powerlevel10k";
+          src = pkgs.zsh-powerlevel10k;
+          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        }
+      ];
       oh-my-zsh = {
         enable = true;
         #plugins = [ "git" ];
         #theme = "miloshadzic";
       };
+      initExtraFirst = ''
+        source ~/.p10k.zsh
 
+      '';
       initExtra = ''
         unset -v SSH_ASKPASS
-        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         export GITHUB_TOKEN=$(cat ${config.sops.secrets.github_token.path})
       '';
       shellAliases = {
@@ -92,7 +101,7 @@
     };
   };
 
-  xdg.configFile.".p10k.zsh" = {
+  home.file.".p10k.zsh" = {
     source = ./extras/.p10k.zsh;
   };
 }

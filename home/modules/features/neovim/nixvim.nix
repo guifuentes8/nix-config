@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 let
-  fromGithub = rev: ref: repo:
+  fromGithub =
+    rev: ref: repo:
     pkgs.vimUtils.buildVimPlugin {
       pname = "${lib.strings.sanitizeDerivationName repo}";
       version = ref;
@@ -10,7 +11,8 @@ let
         rev = rev;
       };
     };
-in {
+in
+{
   imports = [
 
     ./keymaps.nix
@@ -22,7 +24,7 @@ in {
     ./plugins/neorg.nix
     ./plugins/noice.nix
     ./plugins/telescope.nix
-    ./plugins/treesitter.nix
+    #  ./plugins/treesitter.nix
     ./plugins/yazi.nix
   ];
 
@@ -32,8 +34,10 @@ in {
     colorschemes = {
       everforest = {
         enable = true;
-        package = (fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "HEAD"
-          "https://github.com/neanias/everforest-nvim");
+        package = (
+          fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "HEAD"
+            "https://github.com/neanias/everforest-nvim"
+        );
         settings = {
           background = "hard";
           enable_italic = 1;
@@ -41,8 +45,8 @@ in {
       };
     };
     extraConfigLua = "";
-    extraLuaPackages = luaPkgs:
-      with luaPkgs; [
+    extraLuaPackages =
+      luaPkgs: with luaPkgs; [
         lua-utils-nvim
         nvim-nio
         pathlib-nvim
