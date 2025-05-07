@@ -10,12 +10,12 @@
   };
 
   # Programming languages and dependencies packages
-  #home.packages = with pkgs; [
-  #  bun
-  #  nodejs_22
-  #  unstable.pnpm_10
-  #  nest-cli
-  #  maven
-  #  nixfmt-rfc-style
-  #];
+  home.packages = with pkgs; [
+    bun
+    nodejs_22
+    unstable.pnpm_10
+    nest-cli
+    maven
+    nixfmt-rfc-style
+  ];
 }

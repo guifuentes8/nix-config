@@ -92,4 +92,7 @@
     };
   };
 
+  xdg.configFile.".p10k.zsh" = {
+    source = ./extras/.p10k.zsh;
+  };
 }
