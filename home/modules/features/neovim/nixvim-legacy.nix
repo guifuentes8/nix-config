@@ -21,14 +21,14 @@ in {
 
     ./keymaps.nix
     ./settings.nix
-    # ./plugins-legacy/bufferline.nix
-    # ./plugins-legacy/cmp.nix
-    # ./plugins-legacy/lint.nix
-    # ./plugins-legacy/lsp.nix
-    # ./plugins-legacy/neorg.nix
-    #  ./plugins-legacy/noice.nix
-    # ./plugins-legacy/telescope.nix
-    # ./plugins-legacy/treesitter.nix
+    ./plugins-legacy/bufferline.nix
+    ./plugins-legacy/cmp.nix
+    ./plugins-legacy/lint.nix
+    ./plugins-legacy/lsp.nix
+    ./plugins-legacy/neorg.nix
+    ./plugins-legacy/noice.nix
+    ./plugins-legacy/telescope.nix
+    ./plugins-legacy/treesitter.nix
     # ./plugins/yazi.nix
   ];
 
@@ -55,10 +55,10 @@ in {
       ];
 
     plugins = {
-      #  dashboard.enable = true;
-      #  gitsigns.enable = true;
-      #  lualine.enable = true;
-      #  transparent.enable = true;
+      dashboard.enable = true;
+      gitsigns.enable = true;
+      lualine.enable = true;
+      transparent.enable = true;
       # 24.11
       #   web-devicons.enable = true; # required
     };

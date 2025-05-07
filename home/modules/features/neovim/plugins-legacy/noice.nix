@@ -5,7 +5,7 @@
     notify.enable = true;
     noice = {
       enable = true;
-      package = pkgs.unstable.noice-nvim;
+      #package = pkgs.unstable.noice-nvim;
       # 24.11 only
       #settings = {
       cmdline = {
