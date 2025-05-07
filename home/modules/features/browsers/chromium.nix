@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.chromium = {
     enable = true;
-    package = pkgs.unstable.vivaldi;
+    package = pkgs.chromium;
     commandLineArgs = [ "--no-default-browser-check" ];
     extensions = [
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
@@ -17,5 +17,4 @@
       { id = "gighmmpiobklfepjocnamgkkbiglidom"; } # adblock
     ];
   };
-  home.packages = [ pkgs.vivaldi-ffmpeg-codecs ];
 }

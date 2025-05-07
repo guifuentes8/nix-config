@@ -14,6 +14,8 @@
     ../modules/features/cli
     ../modules/features/terminals/wezterm.nix
 
+    ../modules/features/browsers/floorp.nix
+
   ];
 
   home = {

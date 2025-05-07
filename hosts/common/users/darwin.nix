@@ -43,7 +43,6 @@
       "nextcloud"
       "onlyoffice"
       "obs"
-      "vivaldi"
       "zoom"
 
     ];
