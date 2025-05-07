@@ -1,17 +1,22 @@
-{ lib, pkgs, outputs, ... }:
+{
+  lib,
+  pkgs,
+  outputs,
+  ...
+}:
 
 {
 
   imports = [
-    # 24.11 ../modules/common/programs.nix
+    # 24.11
+    ../modules/common/programs.nix
     #../modules/common/sops.nix
     ../modules/features/neovim/nixvim-legacy.nix
     ../modules/features/dev
     ../modules/features/cli
 
   ];
-  sops.age.keyFile = lib.mkForce
-    "/data/data/com.termux.nix/files/home/.config/sops/age/keys.txt";
+  sops.age.keyFile = lib.mkForce "/data/data/com.termux.nix/files/home/.config/sops/age/keys.txt";
 
   home = {
     username = lib.mkDefault "droid";
@@ -22,13 +27,18 @@
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
     };
   };
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
-    config = { allowUnfree = true; };
+    config = {
+      allowUnfree = true;
+    };
   };
 
   fonts.fontconfig.enable = true;
@@ -39,7 +49,10 @@
 
   ## remove when 24.11 -----------------------
 
-  home.packages = [ pkgs.age pkgs.pokeget-rs ];
+  home.packages = [
+    pkgs.age
+    pkgs.pokeget-rs
+  ];
 
   programs = {
     gh = {

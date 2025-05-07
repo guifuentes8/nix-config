@@ -1,8 +1,17 @@
-{ pkgs, config, inputs, lib, ... }:
+{
+  pkgs,
+  config,
+  inputs,
+  lib,
+  ...
+}:
 
 {
   imports = [ ./extras/dependencies.nix ];
-  home.packages = [ pkgs.age pkgs.pokeget-rs ];
+  home.packages = [
+    pkgs.age
+    pkgs.pokeget-rs
+  ];
 
   programs = {
     gh = {
@@ -39,10 +48,11 @@
     gpg.enable = true;
     nh = {
       enable = true;
-      package = if (pkgs.stdenv.hostPlatform.isDarwin) then
-        inputs.nh_plus.packages."aarch64-darwin".nh
-      else
-        pkgs.nh;
+      package =
+        if (pkgs.stdenv.hostPlatform.isDarwin) then
+          inputs.nh_plus.packages."aarch64-darwin".nh
+        else
+          pkgs.nh;
       flake = "${config.home.homeDirectory}/nix-config";
     };
     home-manager.enable = true;
