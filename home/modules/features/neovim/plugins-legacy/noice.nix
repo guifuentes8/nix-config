@@ -1,10 +1,11 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.nixvim.plugins = {
     # 24.11
     #nui.enable = true;
     notify.enable = true;
     noice = {
       enable = true;
+      package = pkgs.unstable.noice-nvim;
       # 24.11 only
       #settings = {
       cmdline = {
