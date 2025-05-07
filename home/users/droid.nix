@@ -4,12 +4,14 @@
 
   imports = [
     ../modules/common/programs.nix
-    #  ../modules/common/sops.nix
+    ../modules/common/sops.nix
     ../modules/features/neovim/nixvim-legacy.nix
     ../modules/features/dev
     ../modules/features/cli
 
   ];
+  sops.age.keyFile = lib.mkForce
+    "/data/data/com.termux.nix/files/home/.config/sops/age/keys.txt";
 
   home = {
     username = lib.mkDefault "droid";
