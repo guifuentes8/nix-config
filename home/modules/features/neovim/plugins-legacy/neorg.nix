@@ -3,7 +3,7 @@
     enable = true;
     package = pkgs.vimPlugins.neorg;
     # settings.lazyLoading = true;
-    lazyLoading = true;
+    # lazyLoading = true;
     modules = {
       "core.defaults" = { __empty = null; };
       "core.concealer".config = { icon_preset = "diamond"; };
