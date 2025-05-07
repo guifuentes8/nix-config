@@ -16,7 +16,7 @@
     }/share/fonts/truetype/JetBrainsMono.ttf";
   time.timeZone = lib.mkDefault "America/Sao_Paulo";
   user.shell = "${pkgs.zsh}/bin/zsh";
-  user.username = "gui8";
+  user.userName = "gui8";
 
   #----
 }
