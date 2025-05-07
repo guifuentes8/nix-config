@@ -37,14 +37,14 @@
       };
     };
     gpg.enable = true;
-    #  nh = {
-    #    enable = true;
-    #    package = if (pkgs.stdenv.hostPlatform.isDarwin) then
-    #      inputs.nh_plus.packages."aarch64-darwin".nh
-    #    else
-    #      pkgs.nh;
-    #    flake = "${config.home.homeDirectory}/nix-config";
-    #  };
+    nh = {
+      enable = true;
+      package = if (pkgs.stdenv.hostPlatform.isDarwin) then
+        inputs.nh_plus.packages."aarch64-darwin".nh
+      else
+        pkgs.nh;
+      flake = "${config.home.homeDirectory}/nix-config";
+    };
     home-manager.enable = true;
     ssh.enable = true;
     zsh = {
@@ -58,10 +58,10 @@
         #theme = "miloshadzic";
       };
 
-      #export GITHUB_TOKEN=$(cat ${config.sops.secrets.github_token.path})
       initExtra = ''
         unset -v SSH_ASKPASS
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+        export GITHUB_TOKEN=$(cat ${config.sops.secrets.github_token.path})
       '';
       shellAliases = {
         cjpg = "mogrify -format jpg *.png && rm *.png";
