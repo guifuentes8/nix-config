@@ -21,7 +21,7 @@
 
     # Others flakes
     sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs-legacy";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix/release-24.11";
     nixvim.url = "github:nix-community/nixvim/nixos-24.11";
     nixvim-legacy.url = "github:nix-community/nixvim/nixos-24.05";
