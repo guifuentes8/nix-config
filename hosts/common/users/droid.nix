@@ -11,7 +11,12 @@
   #    #  optimise.automatic = true;
   #  };
 
+  terminal.font = "${
+      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    }/share/fonts/truetype/JetBrainsMono.ttf";
   time.timeZone = lib.mkDefault "America/Sao_Paulo";
+  user.shell = "${pkgs.zsh}/bin/zsh";
+  user.username = "gui8";
 
   #----
 }

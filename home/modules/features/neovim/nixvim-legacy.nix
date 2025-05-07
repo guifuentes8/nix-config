@@ -55,7 +55,7 @@ in {
       ];
 
     plugins = {
-      dashboard.enable = true;
+      #  dashboard.enable = true;
       gitsigns.enable = true;
       lualine.enable = true;
       transparent.enable = true;
