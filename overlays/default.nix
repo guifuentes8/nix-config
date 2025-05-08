@@ -35,6 +35,12 @@
       config.allowUnfree = true;
     };
   };
-  # neorg = inputs.neorg-overlay.overlays.default;
+   neorg = inputs.neorg-overlay.overlays.default;
+
+  nodejs = self: super: {
+              nodejs = super.nodejs_22;
+              nodejs-slim = super.nodejs-slim_22;
+            };
+
 
 }

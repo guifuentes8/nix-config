@@ -61,7 +61,7 @@ in
     };
 
     extraPlugins = with pkgs.vimPlugins; [ zen-mode-nvim ];
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs.unstable; [
       # Language servers
       nodePackages.typescript-language-server # typescript
       nodePackages.vscode-langservers-extracted # html, css, javascript

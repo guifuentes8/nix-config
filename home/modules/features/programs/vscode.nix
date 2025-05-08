@@ -31,6 +31,8 @@ in
       bradlc.vscode-tailwindcss
       naumovs.color-highlight
       jnoortheen.nix-ide
+      github.copilot
+      github.copilot-chat
 
     ];
     keybindings = [ ];
