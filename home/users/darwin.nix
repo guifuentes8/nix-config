@@ -13,8 +13,8 @@
     ../modules/common/sops.nix
     ../modules/common/sops-darwin.nix
     ../modules/common/stylix.nix
-    # ../modules/features/neovim
-    # ../modules/features/dev
+    ../modules/features/neovim
+    ../modules/features/dev
     ../modules/features/programs/vscode.nix
     ../modules/features/cli
     ../modules/features/terminals/wezterm.nix
