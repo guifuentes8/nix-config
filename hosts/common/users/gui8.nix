@@ -28,6 +28,7 @@
   programs = {
     dconf.enable = true;
     git.enable = true;
+    partition-manager.enable = true;
     nh = {
       enable = true;
       clean = {
