@@ -10,7 +10,7 @@ in {
   imports = [
 
     ../../browsers/qutebrowser.nix
-    ../../browsers/chromium.nix
+    ../../browsers/floorp.nix
 
     ../../terminals/kitty.nix
     ../../terminals/ghostty.nix

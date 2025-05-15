@@ -114,7 +114,7 @@
         ];
       };
 
-      homeConfigurations."gui8@flareon" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."g8@flareon" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         extraSpecialArgs = { inherit inputs outputs; };
         modules = [

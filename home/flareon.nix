@@ -2,7 +2,7 @@
   imports = [
 
     # Global config (required)
-    ./users/gui8.nix
+    ./users/g8.nix
     ./modules/features/interfaces/WM/hyprland.nix
 
   ];

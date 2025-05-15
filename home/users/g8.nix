@@ -7,7 +7,7 @@
     ../modules/common/sops.nix
   ];
   home = {
-    username = "gui8";
+    username = "g8";
     homeDirectory = "/home/${config.home.username}";
     stateVersion = "24.11";
   };

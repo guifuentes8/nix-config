@@ -35,7 +35,7 @@
     ../common/services/gaming.nix
 
     # User 
-    ../common/users/gui8.nix
+    ../common/users/g8.nix
     ../stylix.nix
 
   ];

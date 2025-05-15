@@ -1,7 +1,7 @@
 { config, lib, inputs, outputs, pkgs, ... }: {
   imports =
     [ inputs.home-manager.nixosModules.home-manager ../../common ../sops.nix ];
-  users.users.gui8 = {
+  users.users.g8 = {
     isNormalUser = true;
     description = "gui8";
     extraGroups = [
@@ -35,7 +35,7 @@
         enable = true;
         extraArgs = "--keep-since 4d --keep 3";
       };
-      flake = "${config.users.users.gui8.home}/nix-config";
+      flake = "${config.users.users.g8.home}/nix-config";
     };
   };
 
@@ -60,7 +60,7 @@
   environment = {
     systemPackages = with pkgs; [ sops ];
     sessionVariables = {
-      FLAKE = "${config.users.users.gui8.home}/nix-config";
+      #FLAKE = "${config.users.users.gui8.home}/nix-config";
       XDG_CACHE_HOME = "\${HOME}/.cache";
       XDG_CONFIG_HOME = "\${HOME}/.config";
       XDG_BIN_HOME = "\${HOME}/.local/bin";
