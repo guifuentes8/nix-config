@@ -1,11 +1,6 @@
-{
-  lib,
-  pkgs,
-  outputs,
-  ...
-}:
-
-{
+{ lib, pkgs, stdenv, outputs, ... }:
+let isDarwin = stdenv.hostPlatform.isDarwin;
+in {
 
   imports = [
     ../modules/common/programs.nix
@@ -32,16 +27,19 @@
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
+      experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
     };
   };
 
   nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
+    overlays = [
+      (self: super: {
+        nodejs = super.nodejs_22;
+        nodejs-slim = super.nodejs-slim_22;
+      })
+    ] ++ builtins.attrValues outputs.overlays;
+
     config = {
       allowUnfree = true;
       permittedInsecurePackages = [ ];
@@ -53,6 +51,7 @@
   news.display = "silent";
 
   programs.zsh.initExtraFirst = "pokeget espeon";
+
   # Only 25.05
   # targets.darwin.linkApps.enable = true;
   # targets.darwin.linkApps.directory = "Applications/";
