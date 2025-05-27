@@ -33,7 +33,6 @@
     ./networking.nix
     ./postgres.nix
   ];
-
   services.getty.autologinUser = "guifuentes8";
   services.openssh.enable = true;
   fileSystems."/var/lib/storage_backup" = {

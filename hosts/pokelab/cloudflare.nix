@@ -13,6 +13,12 @@ in {
           default = "http_status:404";
           ingress."cloud.${domain}" = "http://localhost:9010";
         };
+        "f3fbfd5c-1119-44ef-ae31-e3fbbd808bf7" = {
+          credentialsFile =
+            "${config.users.users.guifuentes8.home}/.cloudflared/f3fbfd5c-1119-44ef-ae31-e3fbbd808bf7.json";
+          default = "http_status:404";
+        };
+
         "5ed076b3-deca-48c7-83d9-aa22c226cac5" = {
           credentialsFile =
             "${config.users.users.guifuentes8.home}/.cloudflared/5ed076b3-deca-48c7-83d9-aa22c226cac5.json";

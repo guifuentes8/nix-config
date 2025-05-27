@@ -115,7 +115,6 @@ in {
         useACMEHost = "${domain}";
         locations."/" = { proxyPass = "http://localhost:9101"; };
       };
-
       "nextcloud".listen = [{
         addr = "127.0.0.1";
         port = 9010;
