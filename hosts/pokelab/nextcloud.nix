@@ -102,12 +102,32 @@ in {
     };
   };
 
+  # OTHER SERVICES
+
   services.onlyoffice = {
     enable = true;
     port = 9101;
     hostname = "localhost";
     jwtSecretFile = "/etc/nextcloud-admin-pass";
     postgresHost = "/run/postgresql";
+  };
+
+  systemd.services.nextcloud-scan = {
+    description = "Nextcloud files scan";
+    wantedBy = [ "timers.target" ]; # Para ser ativado por um timer
+    serviceConfig = {
+      User = "nextcloud"; # Usuário do Nextcloud
+      ExecStart =
+        "${config.services.nextcloud.occ}/bin/nextcloud-occ files:scan --all"; # Comando a ser executado
+    };
+  };
+  systemd.timers."nextcloud-scan-timer" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "60m";
+      OnUnitActiveSec = "60m";
+      Unit = "nextcloud-scan.service";
+    };
   };
 
 }
