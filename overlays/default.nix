@@ -36,13 +36,4 @@
     };
   };
   neorg = inputs.neorg-overlay.overlays.default;
-<<<<<<< Updated upstream
-=======
-
-  # nodejs = lib.optionals (pkgs.stdenv.hostPlatform.isDarwin) (self: super: {
-  #   nodejs = super.nodejs_22;
-  #   nodejs-slim = super.nodejs-slim_22;
-  # });
->>>>>>> Stashed changes
-
 }

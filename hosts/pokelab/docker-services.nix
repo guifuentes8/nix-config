@@ -1,5 +1,7 @@
 { ... }: {
-  virtualisation.oci-containers.backend = "docker";
+  imports = [ ./postiz.nix ];
+
+  # virtualisation.oci-containers.backend = "docker";
   virtualisation.oci-containers.containers.excalidraw = {
     hostname = "excalidraw";
     image = "excalidraw/excalidraw";
@@ -8,7 +10,6 @@
       NEXTCLOUD_URL = "https://cloud.guifuentes8.com.br";
       JWT_SECRET_KEY = "Guigui@@@2035";
     };
-
   };
 
   virtualisation.oci-containers.containers.cloudbeaver = {

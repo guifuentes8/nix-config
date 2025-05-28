@@ -39,6 +39,8 @@ in {
             "status.${domain}" = "http://localhost:9030";
             "nextcloud-whiteboard.${domain}" = "http://localhost:9100";
             "office.${domain}" = "http://localhost:9101";
+            "postiz.${domain}" = "http://localhost:4200";
+
           };
         };
       };
