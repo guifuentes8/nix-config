@@ -83,7 +83,7 @@
         ];
       };
 
-      homeConfigurations."gui8@eevee" =
+      homeConfigurations."g8@eevee" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs nixgl; };
