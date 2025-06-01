@@ -17,7 +17,6 @@
     # Boot initial (grub or systemd)
     ../common/boot/systemd-boot.nix
     # Choice Interface (WM and/or DE)
-    ../common/interfaces/DE/xfce.nix
     # Active services
     ../common/services/backlight.nix
     ../common/services/dev
@@ -25,7 +24,7 @@
     ../common/services/gaming.nix
     ../common/services/temperature.nix
     # User 
-    ../common/users/gui8.nix
+    ../common/users/g8.nix
     ../stylix.nix
 
   ];

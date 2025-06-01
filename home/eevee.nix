@@ -4,7 +4,7 @@ in {
   imports = [
 
     # Global config (required)
-    ./users/gui8.nix
+    ./users/g8.nix
 
     ./modules/features/cli
     ./modules/features/dev
