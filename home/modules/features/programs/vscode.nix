@@ -11,8 +11,7 @@ let
     };
   };
 
-in
-{
+in {
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;
@@ -32,7 +31,6 @@ in
       naumovs.color-highlight
       jnoortheen.nix-ide
       # github.copilot
-      github.copilot-chat
 
     ];
     keybindings = [ ];
@@ -65,12 +63,8 @@ in
       "explorer.confirmDragAndDrop" = false;
       "explorer.confirmPasteNative" = false;
 
-      "eslint.validate" = [
-        "javascript"
-        "javascriptreact"
-        "typescript"
-        "typescriptreact"
-      ];
+      "eslint.validate" =
+        [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
 
       "git.confirmSync" = false;
 
@@ -98,12 +92,8 @@ in
       "[javascript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
-      "[jsonc]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[json]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
+      "[jsonc]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+      "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
       "[typescript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
