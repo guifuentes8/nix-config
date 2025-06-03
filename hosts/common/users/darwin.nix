@@ -48,4 +48,6 @@
     ];
   };
 
+  home-manager.backupFileExtension = "backup";
+
 }
