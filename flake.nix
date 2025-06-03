@@ -154,7 +154,7 @@
         modules = [ inputs.sops-nix.nixosModules.sops ./hosts/vaporeon ];
       };
 
-      darwinConfigurations."espeon" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."espeon-2" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = { inherit inputs outputs; };
         modules = [
