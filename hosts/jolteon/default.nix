@@ -1,34 +1,39 @@
 { pkgs, config, ... }: {
   imports = [
 
-    # HARDWARE ----------------------------------------
-
     # Hardware config (required)
     ./hardware-configuration.nix
+    ../common/hardware/bluetooth.nix
+    ../common/hardware/logitech.nix
 
     # Hardware Gpu (if exist)
-    ../common/hardware/gpu/nvidia.nix
+    #    ../common/hardware/gpu/nvidia-prime.nix
 
     # NIXOS CONFIG ------------------------------------
 
-    # common NixOs Config 
+    # global NixOs Config 
     ../common
 
     # Boot initial (grub or systemd)
-    ../common/boot/systemd-boot.nix
+    ../common/boot/grub.nix
 
     # Login Manager
-    ../common/login/sddm.nix
+    ../common/login/greetd
 
     # Choice Interface (WM and/or DE)
-    ../common/interfaces/DE/kde.nix
+    ../common/interfaces/WM/hyprland.nix
 
     # Active services
+    ../common/services/backlight.nix
     ../common/services/flatpak.nix
+
+    ../common/services/temperature.nix
     ../common/services/dev
 
+    ../common/services/gaming.nix
+
     # User 
-    ../common/users/gui8.nix
+    ../common/users/g8.nix
     ../stylix.nix
 
   ];
@@ -39,6 +44,6 @@
   console.keyMap = "br-abnt2";
   services.xserver.xkb.layout = "br";
   services.xserver.xkb.variant = "abnt2";
-  networking.hostName = "earth";
+  networking.hostName = "jolteon";
 
 }

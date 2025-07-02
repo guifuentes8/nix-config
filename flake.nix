@@ -126,12 +126,16 @@
         ];
       };
 
-      homeConfigurations."gui8@jolteon" =
+      homeConfigurations."g8@jolteon" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules =
-            [ inputs.stylix.homeManagerModules.stylix ./home/jolteon.nix ];
+          modules = [
+            inputs.sops-nix.homeManagerModules.sops
+            inputs.nixvim.homeManagerModules.nixvim
+            inputs.stylix.homeManagerModules.stylix
+            ./home/jolteon.nix
+          ];
         };
       nixosConfigurations.jolteon = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
@@ -142,7 +146,7 @@
         ];
       };
 
-      homeConfigurations."gui8@vaporeon" =
+      homeConfigurations."g8@vaporeon" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
