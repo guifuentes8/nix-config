@@ -72,10 +72,8 @@
       '';
       initExtra = ''
         unset -v SSH_ASKPASS
-
-
+        export GITHUB_TOKEN=$(cat ${config.sops.secrets.github_token.path}) 
       '';
-      #export GITHUB_TOKEN=$(cat ${config.sops.secrets.github_token.path}) 
       shellAliases = {
         cjpg = "mogrify -format jpg *.png && rm *.png";
         pick = "xcolor | hyprpicker";
