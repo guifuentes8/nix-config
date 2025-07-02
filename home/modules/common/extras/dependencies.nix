@@ -18,6 +18,7 @@
       playerctl
       xorg.xprop
       cacert
+      wget
 
     ];
 }

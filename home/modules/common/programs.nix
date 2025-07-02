@@ -1,10 +1,4 @@
-{
-  pkgs,
-  config,
-  inputs,
-  lib,
-  ...
-}:
+{ pkgs, config, inputs, lib, ... }:
 
 {
   imports = [ ./extras/dependencies.nix ];
@@ -49,11 +43,10 @@
     gpg.enable = true;
     nh = {
       enable = true;
-      package =
-        if (pkgs.stdenv.hostPlatform.isDarwin) then
-          inputs.nh_plus.packages."aarch64-darwin".nh
-        else
-          pkgs.nh;
+      package = if (pkgs.stdenv.hostPlatform.isDarwin) then
+        inputs.nh_plus.packages."aarch64-darwin".nh
+      else
+        pkgs.nh;
       flake = "${config.home.homeDirectory}/nix-config";
     };
     home-manager.enable = true;
@@ -63,13 +56,11 @@
       autosuggestion.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
-      plugins = [
-        {
-          name = "powerlevel10k";
-          src = pkgs.zsh-powerlevel10k;
-          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-        }
-      ];
+      plugins = [{
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }];
       oh-my-zsh = {
         enable = true;
         #plugins = [ "git" ];
@@ -81,8 +72,10 @@
       '';
       initExtra = ''
         unset -v SSH_ASKPASS
-        export GITHUB_TOKEN=$(cat ${config.sops.secrets.github_token.path})
+
+
       '';
+      #export GITHUB_TOKEN=$(cat ${config.sops.secrets.github_token.path}) 
       shellAliases = {
         cjpg = "mogrify -format jpg *.png && rm *.png";
         pick = "xcolor | hyprpicker";
@@ -102,7 +95,5 @@
     };
   };
 
-  home.file.".p10k.zsh" = {
-    source = ./extras/.p10k.zsh;
-  };
+  home.file.".p10k.zsh" = { source = ./extras/.p10k.zsh; };
 }

@@ -3,7 +3,7 @@
     [ inputs.home-manager.nixosModules.home-manager ../../common ../sops.nix ];
   users.users.g8 = {
     isNormalUser = true;
-    description = "gui8";
+    description = "g8";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -59,15 +59,15 @@
 
   environment = {
     systemPackages = with pkgs; [ sops ];
-    sessionVariables = {
+#    sessionVariables = {
       #FLAKE = "${config.users.users.gui8.home}/nix-config";
-      XDG_CACHE_HOME = "\${HOME}/.cache";
-      XDG_CONFIG_HOME = "\${HOME}/.config";
-      XDG_BIN_HOME = "\${HOME}/.local/bin";
-      XDG_DATA_HOME = "\${HOME}/.local/share";
-      PATH = [ "\${XDG_BIN_HOME}" ];
-      TZ = "America/Sao_Paulo";
-    };
+#      XDG_CACHE_HOME = "\${HOME}/.cache";
+#      XDG_CONFIG_HOME = "\${HOME}/.config";
+#      XDG_BIN_HOME = "\${HOME}/.local/bin";
+#      XDG_DATA_HOME = "\${HOME}/.local/share";
+#      PATH = [ "\${XDG_BIN_HOME}" ];
+#      TZ = "America/Sao_Paulo";
+#    };
     pathsToLink = [ "/libexec" "/etc" ];
   };
 

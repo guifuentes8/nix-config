@@ -11,9 +11,6 @@
 
     # NIXOS CONFIG ------------------------------------
 
-    # global NixOs Config 
-    ../common
-
     # Boot initial (grub or systemd)
     ../common/boot/grub.nix
 

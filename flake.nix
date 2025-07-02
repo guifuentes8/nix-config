@@ -150,12 +150,33 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules =
-            [ inputs.stylix.homeManagerModules.stylix ./home/vaporeon.nix ];
+          modules = [
+            inputs.sops-nix.homeManagerModules.sops
+            inputs.nixvim.homeManagerModules.nixvim
+            inputs.stylix.homeManagerModules.stylix
+            ./home/vaporeon.nix
+          ];
         };
       nixosConfigurations.vaporeon = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
-        modules = [ inputs.sops-nix.nixosModules.sops ./hosts/vaporeon ];
+        modules = [
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.users.g8 = ./home/vaporeon.nix;
+            home-manager.extraSpecialArgs = { inherit inputs outputs; };
+            home-manager.sharedModules = [
+              inputs.sops-nix.homeManagerModules.sops
+              inputs.nixvim.homeManagerModules.nixvim
+              inputs.stylix.homeManagerModules.stylix
+
+            ];
+          }
+
+          #          inputs.stylix.nixosModules.stylix
+          inputs.sops-nix.nixosModules.sops
+          inputs.nix-wsl.nixosModules.wsl
+          ./hosts/vaporeon
+        ];
       };
 
       darwinConfigurations."espeon-2" = nix-darwin.lib.darwinSystem {
