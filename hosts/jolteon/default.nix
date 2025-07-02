@@ -12,7 +12,7 @@
     # NIXOS CONFIG ------------------------------------
 
     # Boot initial (grub or systemd)
-    ../common/boot/grub.nix
+    ../common/boot/systemd-boot.nix
 
     # Login Manager
     ../common/login/greetd
