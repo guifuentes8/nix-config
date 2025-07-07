@@ -1,4 +1,4 @@
-{ pkgs, lib, outputs, ... }:
+{ pkgs, lib, outputs, config, ... }:
 let
   cursorName = "everforest-cursors-light";
   cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
@@ -37,7 +37,8 @@ in {
       #  chromium.enable = true;
       dunst.enable = true;
       feh.enable = true;
-      # firefox.enable = true; PROFILE NAME
+      firefox.enable = true;
+      firefox.profileNames = [ "${config.home.username}" ];
       fish.enable = true;
       foot.enable = true;
       fzf.enable = true;

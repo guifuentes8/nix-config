@@ -40,6 +40,7 @@
       "dbeaver-community"
       "flameshot"
       "gimp"
+      "microsoft-teams"
       "nextcloud"
       "onlyoffice"
       "obs"
