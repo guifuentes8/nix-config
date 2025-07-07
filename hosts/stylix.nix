@@ -20,7 +20,7 @@ in {
     fonts = {
       monospace = {
         name = "JetBrainsMono";
-        package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
+        package = with pkgs; [ nerd-fonts.jetbrains-mono ];
       };
     };
     opacity = {

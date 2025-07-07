@@ -12,6 +12,6 @@
     kb_variant = "abnt2";
   };
 
-  programs.zsh.initExtraFirst = "pokeget flareon";
+  programs.zsh.initContent = "pokeget flareon";
 
 }

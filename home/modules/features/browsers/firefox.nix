@@ -11,7 +11,7 @@
       name = "${config.home.username}";
       settings = { "extensions.autoDisableScopes" = 0; };
 
-      extensions = with pkgs.inputs.firefox-addons; [
+      extensions.packages = with pkgs.inputs.firefox-addons; [
         bitwarden
         darkreader
         floccus

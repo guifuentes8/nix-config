@@ -2,11 +2,7 @@
 
 {
   imports = [ ./extras/dependencies.nix ];
-  home.packages = [
-    pkgs.age
-    pkgs.pokeget-rs
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+  home.packages = [ pkgs.age pkgs.pokeget-rs ];
 
   programs = {
     gh = {
@@ -43,34 +39,35 @@
     gpg.enable = true;
     nh = {
       enable = true;
-      package = if (pkgs.stdenv.hostPlatform.isDarwin) then
-        inputs.nh_plus.packages."aarch64-darwin".nh
-      else
-        pkgs.nh;
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 4d --keep 3";
+      };
       flake = "${config.home.homeDirectory}/nix-config";
     };
     home-manager.enable = true;
     ssh.enable = true;
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+    };
     zsh = {
       enable = true;
       autosuggestion.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
-      plugins = [{
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }];
-      oh-my-zsh = {
-        enable = true;
-        #plugins = [ "git" ];
-        #theme = "miloshadzic";
-      };
-      initExtraFirst = ''
-        source ~/.p10k.zsh
-
-      '';
-      initExtra = ''
+      # plugins = [{
+      #   name = "powerlevel10k";
+      #   src = pkgs.zsh-powerlevel10k;
+      #   file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      # }];
+      # oh-my-zsh = {
+      #   enable = true;
+      #   #plugins = [ "git" ];
+      #   #theme = "miloshadzic";
+      # };
+      initContent = ''
         unset -v SSH_ASKPASS
         export GITHUB_TOKEN=$(cat ${config.sops.secrets.github_token.path}) 
       '';
@@ -78,7 +75,6 @@
         cjpg = "mogrify -format jpg *.png && rm *.png";
         pick = "xcolor | hyprpicker";
         clock = "clock-rs";
-        #   clock = "tty-clock -c -C 6 -s -S -r -n -D";
         matrix = "cmatrix -b -f -C red";
         climabauru = "girouette -q -c '1h' -L 'pt_BR' -l 'Bauru' -u metric";
         climasp = "girouette -q -c '1h' -L 'pt_BR' -l 'São Paulo' -u metric";

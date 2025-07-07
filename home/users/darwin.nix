@@ -20,7 +20,7 @@
   home = {
     username = "administrador";
     homeDirectory = "/Users/administrador";
-    stateVersion = "24.11";
+    stateVersion = "25.05";
   };
 
   nix = {
@@ -45,14 +45,14 @@
     };
   };
 
-  fonts.fontconfig.enable = true;
+  #fonts.fontconfig.enable = true;
   systemd.user.startServices = "sd-switch";
   news.display = "silent";
 
-  programs.zsh.initExtraFirst = "pokeget espeon";
+  programs.zsh.initContent = "pokeget espeon";
 
   # Only 25.05
-  # targets.darwin.linkApps.enable = true;
-  # targets.darwin.linkApps.directory = "Applications/";
+  targets.darwin.linkApps.enable = true;
+  targets.darwin.linkApps.directory = "Applications/";
 
 }
