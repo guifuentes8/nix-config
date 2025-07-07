@@ -28,21 +28,13 @@ in {
 
   programs.nixvim = {
     enable = true;
-    package = pkgs.neovim-unwrapped;
+    package = pkgs.unstable.neovim-unwrapped;
     colorschemes = {
-      monokai-pro = {
+      ayu = {
         enable = true;
-        #  package = (
-        #    fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "HEAD"
-        #      "https://github.com/neanias/everforest-nvim"
-        #  );
-        settings = {
-          background = "hard";
-          enable_italic = 1;
-        };
+        settings = { mirage = false; };
       };
     };
-    extraConfigLua = "";
     extraLuaPackages = luaPkgs:
       with luaPkgs; [
         lua-utils-nvim
@@ -58,7 +50,10 @@ in {
       web-devicons.enable = true; # required
     };
 
-    extraPlugins = with pkgs.vimPlugins; [ zen-mode-nvim ];
+    extraPlugins = with pkgs.unstable.vimPlugins; [
+      zen-mode-nvim
+      material-nvim
+    ];
     extraPackages = with pkgs.unstable; [
       # Language servers
       nodePackages.typescript-language-server # typescript

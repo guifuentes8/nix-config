@@ -65,7 +65,7 @@
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            inputs.stylix.homeManagerModules.stylix
+            inputs.stylix.homeModules.stylix
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
 
@@ -86,7 +86,7 @@
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs nixgl; };
           modules = [
-            inputs.stylix.homeManagerModules.stylix
+            inputs.stylix.homeModules.stylix
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
 
@@ -110,7 +110,7 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             inputs.sops-nix.homeManagerModules.sops
-            inputs.stylix.homeManagerModules.stylix
+            inputs.stylix.homeModules.stylix
             inputs.nixvim.homeManagerModules.nixvim
             ./home/flareon.nix
           ];
@@ -131,7 +131,7 @@
           modules = [
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
-            inputs.stylix.homeManagerModules.stylix
+            inputs.stylix.homeModules.stylix
             ./home/jolteon.nix
           ];
         };
@@ -151,7 +151,7 @@
           modules = [
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
-            inputs.stylix.homeManagerModules.stylix
+            inputs.stylix.homeModules.stylix
             ./home/vaporeon.nix
           ];
         };
@@ -165,7 +165,7 @@
             home-manager.sharedModules = [
               inputs.sops-nix.homeManagerModules.sops
               inputs.nixvim.homeManagerModules.nixvim
-              inputs.stylix.homeManagerModules.stylix
+              inputs.stylix.homeModules.stylix
 
             ];
           }

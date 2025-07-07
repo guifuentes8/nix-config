@@ -90,8 +90,7 @@
   };
 
   # Sound
-  #  sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # Security
   security.rtkit.enable = true;

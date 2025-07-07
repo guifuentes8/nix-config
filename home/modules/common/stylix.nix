@@ -2,11 +2,8 @@
 let
   cursorName = "everforest-cursors-light";
   cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
-  base16SchemeDefault =
-    "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
+  base16SchemeDefault = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
 in {
-
-  imports = [ ./custom/base16/monokai-pro.nix ];
 
   stylix = {
     enable = true;
@@ -20,13 +17,13 @@ in {
     };
     fonts = {
       monospace = {
-        name = "JetBrainsMono";
-        package = with pkgs; [ nerd-fonts.jetbrains-mono ];
+        name = "JetBrainsMonoNL Nerd Font";
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
     };
     opacity = {
       applications = 1.0;
-      terminal = 0.9;
+      terminal = 0.95;
       desktop = 1.0;
     };
     targets = {
@@ -48,6 +45,7 @@ in {
       # grub.enable = true;
       gtk.enable = true;
       hyprland.enable = true;
+      hyprland.hyprpaper.enable = true;
       hyprlock.enable = true;
       hyprpaper.enable = true;
       i3.enable = true;

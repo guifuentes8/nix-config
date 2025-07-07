@@ -2,16 +2,17 @@
 let
   cursorName = "everforest-cursors-light";
   cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
+  base16SchemeDefault = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
 
 in {
 
   stylix = {
     enable = true;
-    image = ../home/modules/common/extras/eevee.jpeg;
+    image = ../home/modules/common/extras/eevee.png;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme =
-      "${pkgs.unstable.base16-schemes}/share/themes/everforest-dark-hard.yaml";
+    base16Scheme = base16SchemeDefault;
+
     cursor = {
       name = cursorName;
       package = cursorPkg;
@@ -19,8 +20,8 @@ in {
     };
     fonts = {
       monospace = {
-        name = "JetBrainsMono";
-        package = with pkgs; [ nerd-fonts.jetbrains-mono ];
+        name = "JetBrainsMonoNL Nerd Font";
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
     };
     opacity = {

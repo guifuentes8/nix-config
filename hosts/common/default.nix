@@ -20,7 +20,7 @@
     };
   };
 
-  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
+  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
   time.timeZone = lib.mkDefault "America/Sao_Paulo";
 
