@@ -14,7 +14,7 @@
     ./gollum.nix
     ./homepage-dashboard.nix
     ./jellyfin.nix
-    ./nextcloud.nix
+    ./seafile.nix
     ./transmission.nix
     ./vscode-server.nix
     ./vaultwarden.nix

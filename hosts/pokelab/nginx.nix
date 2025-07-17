@@ -52,7 +52,10 @@ in {
       "cloud.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://127.0.0.1:9010"; };
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:9010";
+          proxyWebsockets = true;
+        };
 
       };
       "vault.${domain}" = {
