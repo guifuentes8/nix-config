@@ -50,6 +50,8 @@
       "YOUTUBE_CLIENT_SECRET" = "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";
       "TIKTOK_CLIENT_ID" = "awh7rytfjqjdkmtq";
       "TIKTOK_CLIENT_SECRET" = "ZbyHpxO7Vq04MLdRzllEQT6zMw15fYX9";
+      "INSTAGRAM_APP_ID" = "689901326994321";
+      "INSTAGRAM_APP_SECRET" = "76de033f12fc5a0cd5c0ade5cab7ee09";
     };
     volumes =
       [ "postiz_postiz-config:/config:rw" "postiz_postiz-uploads:/uploads:rw" ];
