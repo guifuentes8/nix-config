@@ -1,7 +1,6 @@
 { pkgs, lib, ... }:
 let
-  fromGithub =
-    rev: ref: repo:
+  fromGithub = rev: ref: repo:
     pkgs.vimUtils.buildVimPlugin {
       pname = "${lib.strings.sanitizeDerivationName repo}";
       version = ref;
@@ -11,8 +10,7 @@ let
         rev = rev;
       };
     };
-in
-{
+in {
   imports = [
 
     ./keymaps.nix
@@ -30,23 +28,20 @@ in
 
   programs.nixvim = {
     enable = true;
-    package = pkgs.neovim-unwrapped;
+    package = pkgs.unstable.neovim-unwrapped;
     colorschemes = {
       everforest = {
         enable = true;
-        package = (
-          fromGithub "51f36df71b4c1c6d94ec19d6d3a96a59e58fa499" "HEAD"
-            "https://github.com/neanias/everforest-nvim"
-        );
+        package = (fromGithub "2eb7c348f880ba93de4d98cae049c9441f5d4d49" "HEAD"
+          "https://github.com/neanias/everforest-nvim");
         settings = {
           background = "hard";
           enable_italic = 1;
         };
       };
     };
-    extraConfigLua = "";
-    extraLuaPackages =
-      luaPkgs: with luaPkgs; [
+    extraLuaPackages = luaPkgs:
+      with luaPkgs; [
         lua-utils-nvim
         nvim-nio
         pathlib-nvim
@@ -60,7 +55,10 @@ in
       web-devicons.enable = true; # required
     };
 
-    extraPlugins = with pkgs.vimPlugins; [ zen-mode-nvim ];
+    extraPlugins = with pkgs.unstable.vimPlugins; [
+      zen-mode-nvim
+      material-nvim
+    ];
     extraPackages = with pkgs.unstable; [
       # Language servers
       nodePackages.typescript-language-server # typescript

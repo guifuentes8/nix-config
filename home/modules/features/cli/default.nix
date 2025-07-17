@@ -47,6 +47,7 @@
     speedtest-rs # Networking test
     clock-rs
     tgpt # chatgpt
+    tuifeed # feed
   ];
 
 }

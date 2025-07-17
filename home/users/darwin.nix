@@ -1,9 +1,4 @@
-{
-  lib,
-  pkgs,
-  outputs,
-  ...
-}:
+{ lib, pkgs, outputs, ... }:
 
 {
 
@@ -14,27 +9,24 @@
     ../modules/common/sops-darwin.nix
     ../modules/common/stylix.nix
     ../modules/features/neovim
-    ../modules/features/browsers/firefox.nix
     ../modules/features/dev
-    ../modules/features/programs/vscode.nix
     ../modules/features/cli
+    ../modules/features/programs/vscode.nix
     ../modules/features/terminals/wezterm.nix
+    ../modules/features/browsers/firefox.nix
 
   ];
 
   home = {
     username = "administrador";
     homeDirectory = "/Users/administrador";
-    stateVersion = "24.11";
+    stateVersion = "25.05";
   };
 
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
+      experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
     };
   };
@@ -53,14 +45,14 @@
     };
   };
 
-  fonts.fontconfig.enable = true;
+  #fonts.fontconfig.enable = true;
   systemd.user.startServices = "sd-switch";
   news.display = "silent";
 
-  programs.zsh.initExtraFirst = "pokeget espeon";
+  programs.zsh.initContent = "pokeget espeon";
 
   # Only 25.05
-  # targets.darwin.linkApps.enable = true;
-  # targets.darwin.linkApps.directory = "Applications/";
+  targets.darwin.linkApps.enable = true;
+  targets.darwin.linkApps.directory = "Applications/";
 
 }

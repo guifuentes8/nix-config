@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [
 
     # Global config (required)
@@ -12,6 +12,7 @@
     kb_variant = "abnt2";
   };
 
-  programs.zsh.initExtraFirst = "pokeget flareon";
+  programs.zsh.initContent = "pokeget flareon";
 
+  stylix.image = lib.mkForce ./modules/common/custom/wallpapers/flareon.png;
 }

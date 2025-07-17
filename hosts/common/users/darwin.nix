@@ -7,8 +7,8 @@
     home = "/Users/administrador";
   };
 
-  system.stateVersion = 5;
-  services.nix-daemon.enable = true;
+  system.primaryUser = "administrador";
+  system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   nix = {
@@ -28,7 +28,7 @@
     enable = true;
     onActivation = {
       autoUpdate = true;
-      # cleanUp = "zap"; # 25.05
+      cleanup = "zap"; # 25.05
       upgrade = true;
     };
     casks = [
@@ -40,6 +40,7 @@
       "dbeaver-community"
       "flameshot"
       "gimp"
+      "microsoft-teams"
       "nextcloud"
       "onlyoffice"
       "obs"
@@ -47,5 +48,7 @@
 
     ];
   };
+
+  home-manager.backupFileExtension = "backup";
 
 }

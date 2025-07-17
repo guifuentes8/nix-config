@@ -3,9 +3,9 @@
 
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-legacy.url = "github:nixos/nixpkgs/nixos-24.05";
-    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
+    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-wsl.url = "github:nix-community/NixOS-WSL";
     nix-wsl.inputs.nixpkgs.follows = "nixpkgs";
@@ -15,17 +15,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Others flakes
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
+      url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix.url = "github:Mic92/sops-nix";
@@ -35,8 +35,6 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nh_plus.url = "github:ToyVo/nh_plus";
 
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
@@ -67,7 +65,7 @@
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            inputs.stylix.homeManagerModules.stylix
+            inputs.stylix.homeModules.stylix
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
 
@@ -83,12 +81,12 @@
         ];
       };
 
-      homeConfigurations."gui8@eevee" =
+      homeConfigurations."g8@eevee" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs nixgl; };
           modules = [
-            inputs.stylix.homeManagerModules.stylix
+            inputs.stylix.homeModules.stylix
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
 
@@ -112,7 +110,7 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             inputs.sops-nix.homeManagerModules.sops
-            inputs.stylix.homeManagerModules.stylix
+            inputs.stylix.homeModules.stylix
             inputs.nixvim.homeManagerModules.nixvim
             ./home/flareon.nix
           ];
@@ -126,12 +124,16 @@
         ];
       };
 
-      homeConfigurations."gui8@jolteon" =
+      homeConfigurations."g8@jolteon" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules =
-            [ inputs.stylix.homeManagerModules.stylix ./home/jolteon.nix ];
+          modules = [
+            inputs.sops-nix.homeManagerModules.sops
+            inputs.nixvim.homeManagerModules.nixvim
+            inputs.stylix.homeModules.stylix
+            ./home/jolteon.nix
+          ];
         };
       nixosConfigurations.jolteon = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
@@ -142,16 +144,37 @@
         ];
       };
 
-      homeConfigurations."gui8@vaporeon" =
+      homeConfigurations."g8@vaporeon" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules =
-            [ inputs.stylix.homeManagerModules.stylix ./home/vaporeon.nix ];
+          modules = [
+            inputs.sops-nix.homeManagerModules.sops
+            inputs.nixvim.homeManagerModules.nixvim
+            inputs.stylix.homeModules.stylix
+            ./home/vaporeon.nix
+          ];
         };
       nixosConfigurations.vaporeon = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
-        modules = [ inputs.sops-nix.nixosModules.sops ./hosts/vaporeon ];
+        modules = [
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.users.g8 = ./home/vaporeon.nix;
+            home-manager.extraSpecialArgs = { inherit inputs outputs; };
+            home-manager.sharedModules = [
+              inputs.sops-nix.homeManagerModules.sops
+              inputs.nixvim.homeManagerModules.nixvim
+              inputs.stylix.homeModules.stylix
+
+            ];
+          }
+
+          #          inputs.stylix.nixosModules.stylix
+          inputs.sops-nix.nixosModules.sops
+          inputs.nix-wsl.nixosModules.wsl
+          ./hosts/vaporeon
+        ];
       };
 
       darwinConfigurations."espeon" = nix-darwin.lib.darwinSystem {
@@ -165,7 +188,7 @@
             home-manager = {
               extraSpecialArgs = { inherit inputs outputs; };
               sharedModules = [
-                inputs.stylix.homeManagerModules.stylix
+                inputs.stylix.homeModules.stylix
                 inputs.nixvim.homeManagerModules.nixvim
                 inputs.sops-nix.homeManagerModules.sops
 

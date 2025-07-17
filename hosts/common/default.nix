@@ -1,4 +1,4 @@
-{ config, lib, inputs, outputs, pkgs, ... }: {
+{ lib, outputs, pkgs, ... }: {
   imports = [ ];
 
   nix = {
@@ -20,8 +20,7 @@
     };
   };
 
-  fonts.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
   time.timeZone = lib.mkDefault "America/Sao_Paulo";
 

@@ -3,7 +3,7 @@
     [ inputs.home-manager.nixosModules.home-manager ../../common ../sops.nix ];
   users.users.g8 = {
     isNormalUser = true;
-    description = "gui8";
+    description = "g8";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -60,7 +60,7 @@
   environment = {
     systemPackages = with pkgs; [ sops ];
     sessionVariables = {
-      #FLAKE = "${config.users.users.gui8.home}/nix-config";
+      NH_FLAKE = "${config.users.users.g8.home}/nix-config";
       XDG_CACHE_HOME = "\${HOME}/.cache";
       XDG_CONFIG_HOME = "\${HOME}/.config";
       XDG_BIN_HOME = "\${HOME}/.local/bin";
@@ -90,8 +90,7 @@
   };
 
   # Sound
-  #  sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # Security
   security.rtkit.enable = true;
@@ -134,7 +133,7 @@
   '';
 
   system = {
-    stateVersion = "24.11";
+    stateVersion = "25.05";
     autoUpgrade = {
       enable = true;
       allowReboot = false;

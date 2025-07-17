@@ -1,15 +1,17 @@
 { ... }: {
   imports = [
-    # Global config (required)
-    ./global
 
-    # Others configs
-    ./features/dev
-    ./features/neovim
-    ./features/desktops/DE/kde.nix
+    # Global config (required)
+    ./users/g8.nix
+    ./modules/features/interfaces/WM/hyprland.nix
 
   ];
 
-  stylix.image = ./global/extras/earth.jpeg;
+  wayland.windowManager.hyprland.settings.input = {
+    kb_layout = "br";
+    kb_variant = "abnt2";
+  };
+
+  programs.zsh.initContent = "pokeget jolteon";
 
 }

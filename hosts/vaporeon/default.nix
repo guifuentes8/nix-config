@@ -3,30 +3,24 @@
 {
   imports = [
 
-    ../common
-    ../common/users/gui8.nix
-    #..l/hardware/gpu/amdgpu.nix
-    ../common/hardware/gpu/notebook-prime.nix
-    ../common/services/common
-
-    inputs.nix-wsl.nixosModules.wsl
-  ];
+    ../common/users/g8.nix
+    ../common/hardware/gpu/amdgpu.nix
+#    ../stylix.nix
+	
+      ];
   wsl = {
     enable = true;
-    wslConf.automount.root = "/mnt";
     wslConf.interop.appendWindowsPath = false;
     wslConf.network.generateHosts = false;
-    nativeSystemd = true;
-    useWindowsDriver = true;
+wslConf.network.hostname = "vaporeon";   
+ useWindowsDriver = true;
 
-    defaultUser = "guifuentes8";
+    defaultUser = "g8";
     startMenuLaunchers = true;
 
     # Enable integration with Docker Desktop (needs to be installed)
     docker-desktop.enable = false;
   };
-
-  home-manager.users.guifuentes8 = import ../../home/guifuentes8/windows.nix;
 
   environment = {
     systemPackages = [ ];
@@ -37,7 +31,7 @@
       WGPU_BACKEND = "gl";
       BROWSER = "org.qutebrowser.qutebrowser.desktop";
       WSLENV = "ANDROID_HOME/p";
-      ANDROID_HOME = "/mnt/c/Users/guifuentes8/Local Settings/Android/Sdk";
+      ANDROID_HOME = "/mnt/c/Users/gui8/Local Settings/Android/Sdk";
     };
 
   };

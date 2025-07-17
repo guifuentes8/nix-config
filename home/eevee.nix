@@ -4,7 +4,7 @@ in {
   imports = [
 
     # Global config (required)
-    ./users/gui8.nix
+    ./users/g8.nix
 
     ./modules/features/cli
     ./modules/features/dev
@@ -23,7 +23,7 @@ in {
   nixGL.defaultWrapper = "mesa";
   nixGL.offloadWrapper = "mesa";
   nixGL.installScripts = [ "mesa" ];
-  programs.zsh.initExtraFirst = "pokeget eevee";
+  programs.zsh.initContent = "pokeget eevee";
   xdg.configFile."systemd/user/cros-garcon.service.d/override.conf".text = ''
     [Service]
     Environment="PATH=%h/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/local/games:/usr/sbin:/usr/bin:/usr/games:/sbin:/bin"

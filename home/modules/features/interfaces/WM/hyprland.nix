@@ -196,8 +196,6 @@ in {
         bind = ALT,Space, exec, hyprctl switchxkblayout at-translated-set-2-keyboard next
         bind = ALT,Space, exec, hyprctl switchxkblayout logitech-usb-receiver nextp
 
-        windowrule = float,^(rofi-systemd)$
-        windowrule = center,^(rofi)$
     '';
   };
 }

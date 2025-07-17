@@ -59,7 +59,7 @@
   environment = {
     systemPackages = with pkgs; [ sops ];
     sessionVariables = {
-      FLAKE = "${config.users.users.guifuentes8.home}/nix-config";
+      NH_FLAKE = "${config.users.users.guifuentes8.home}/nix-config";
       XDG_CACHE_HOME = "\${HOME}/.cache";
       XDG_CONFIG_HOME = "\${HOME}/.config";
       XDG_BIN_HOME = "\${HOME}/.local/bin";
@@ -127,7 +127,7 @@
   '';
 
   system = {
-    stateVersion = "24.11";
+    stateVersion = "25.05";
     autoUpgrade = {
       enable = true;
       allowReboot = false;

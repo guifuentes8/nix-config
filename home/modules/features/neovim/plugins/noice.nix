@@ -1,7 +1,10 @@
 { ... }: {
   programs.nixvim.plugins = {
     nui.enable = true;
-    notify.enable = true;
+    notify = {
+      enable = true;
+      settings = { background_colour = "#000000"; };
+    };
     noice = {
       enable = true;
       settings = {
