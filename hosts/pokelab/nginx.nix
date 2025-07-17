@@ -124,10 +124,10 @@ in {
         locations."/" = { proxyPass = "http://localhost:5000"; };
 
       };
-      "nextcloud".listen = [{
-        addr = "127.0.0.1";
-        port = 9010;
-      }];
+      #  "nextcloud".listen = [{
+      #    addr = "127.0.0.1";
+      #    port = 9010;
+      #  }];
 
     };
   };
