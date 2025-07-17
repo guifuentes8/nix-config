@@ -15,7 +15,7 @@
       rpc-bind-address = "0.0.0.0"; # Bind to own IP
       rpc-port = 9023;
       rpc-whitelist =
-        "127.0.0.1,192.168.*,100.*.*.*, torrent.guifuentes8.com.br"; # Whitelist your remote machine (10.0.0.1 in this example)
+        "127.0.0.1,10.10.10.*,192.168.*,100.*.*.*, torrent.guifuentes8.com.br"; # Whitelist your remote machine (10.0.0.1 in this example)
       download-dir =
         "/var/lib/storage/nextcloud/data/guifuentes8/files/Torrents";
       ratio-limit = 0;
