@@ -1,8 +1,9 @@
 { pkgs, lib, outputs, config, ... }:
 let
-  cursorName = "everforest-cursors-light";
+  cursorName = "everforest-cursors";
   cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
-  base16SchemeDefault = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+  base16SchemeDefault =
+    "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
 in {
 
   stylix = {

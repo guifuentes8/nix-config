@@ -20,7 +20,7 @@ in {
       enableUpdateCheck = false;
       extensions = with pkgs.vscode-extensions; [
         # theme
-        nonylene.dark-molokai-theme
+        sainnhe.everforest
         pkief.material-icon-theme
 
         # lint
