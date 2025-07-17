@@ -7,7 +7,8 @@
     ../common/hardware/logitech.nix
 
     # Hardware Gpu (if exist)
-    #    ../common/hardware/gpu/nvidia-prime.nix
+
+    ../common/hardware/gpu/amdgpu.nix
 
     # NIXOS CONFIG ------------------------------------
 

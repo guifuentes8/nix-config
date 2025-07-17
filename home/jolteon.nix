@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [
 
     # Global config (required)
@@ -13,5 +13,6 @@
   };
 
   programs.zsh.initContent = "pokeget jolteon";
+  stylix.image = lib.mkForce ./modules/common/custom/wallpapers/jolteon.png;
 
 }
