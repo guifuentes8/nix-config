@@ -7,7 +7,7 @@
       fixed-center = true;
       name = "top";
       layer = "top";
-      position = "top";
+      position = "bottom";
       exclusive = true;
       #     modules-left = [ "cava" "mpris" "cava" ];
       modules-left = [ "hyprland/workspaces" ];

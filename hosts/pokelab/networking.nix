@@ -1,11 +1,11 @@
 { ... }: {
   networking = {
     hostName = "pokelab";
-    defaultGateway = "192.168.0.1";
+    defaultGateway = "10.10.10.1";
     interfaces.enp4s0 = {
       useDHCP = false;
       ipv4.addresses = [{
-        address = "192.168.0.10";
+        address = "10.10.10.10";
         prefixLength = 24;
       }];
     };

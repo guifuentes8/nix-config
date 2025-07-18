@@ -52,7 +52,10 @@ in {
       "cloud.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://127.0.0.1:9010"; };
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:9010";
+          proxyWebsockets = true;
+        };
 
       };
       "vault.${domain}" = {
@@ -121,10 +124,10 @@ in {
         locations."/" = { proxyPass = "http://localhost:5000"; };
 
       };
-      "nextcloud".listen = [{
-        addr = "127.0.0.1";
-        port = 9010;
-      }];
+      #  "nextcloud".listen = [{
+      #    addr = "127.0.0.1";
+      #    port = 9010;
+      #  }];
 
     };
   };
