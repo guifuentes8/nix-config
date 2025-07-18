@@ -12,7 +12,5 @@
     kb_variant = "abnt2";
   };
 
-  programs.zsh.initContent = "pokeget flareon";
-
-  stylix.image = lib.mkForce ./modules/common/custom/wallpapers/flareon.png;
+  stylix.image = lib.mkForce ./modules/common/custom/wallpapers/earth.jpeg;
 }

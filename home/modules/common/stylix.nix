@@ -3,7 +3,7 @@ let
   cursorName = "everforest-cursors";
   cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
   base16SchemeDefault =
-    "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
+    "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
 in {
 
   stylix = {
