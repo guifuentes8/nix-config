@@ -21,10 +21,5 @@
     seahubAddress = ''
       "[::1]:9010"
     '';
-    seahubExtraConf = ''
-      SITE_NAME = 'box.li7g.com'
-      SITE_TITLE = 'Box'
-      FILE_SERVER_ROOT = 'https://cloud.guifuentes8.com.com/seafhttp'
-    '';
   };
 }
