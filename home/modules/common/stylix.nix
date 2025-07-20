@@ -32,7 +32,7 @@ in {
     };
     opacity = {
       applications = 1.0;
-      terminal = 0.95;
+      terminal = 0.85;
       desktop = 1.0;
     };
     targets = {

@@ -2,7 +2,8 @@
 let
   cursorName = "phinger-cursors-dark";
   cursorPkg = pkgs.unstable.phinger-cursors;
-  base16SchemeDefault = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml";
+  base16SchemeDefault =
+    "${pkgs.base16-schemes}/share/themes/tokyo-night-moon.yaml";
 
 in {
 
@@ -12,6 +13,14 @@ in {
     autoEnable = true;
     polarity = "dark";
     base16Scheme = base16SchemeDefault;
+    override = {
+      base02 = "#343A52";
+      base03 = "#444B6A";
+      base04 = "#787C99";
+      base05 = "#A9B1D6";
+      base06 = "#CBCCD1";
+      base07 = "#D5D6DB";
+    };
 
     cursor = {
       name = cursorName;
@@ -26,7 +35,7 @@ in {
     };
     opacity = {
       applications = 1.0;
-      terminal = 1.0;
+      terminal = 0.85;
       desktop = 1.0;
     };
     override = { };
