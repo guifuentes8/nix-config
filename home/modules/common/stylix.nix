@@ -1,7 +1,6 @@
 { pkgs, lib, outputs, config, ... }:
 let
   cursorName = "phinger-cursors-dark";
-  #cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
   cursorPkg = pkgs.unstable.phinger-cursors;
   base16SchemeDefault = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml";
 in {
@@ -24,7 +23,7 @@ in {
     };
     opacity = {
       applications = 1.0;
-      terminal = 0.95;
+      terminal = 0.85;
       desktop = 1.0;
     };
     targets = {

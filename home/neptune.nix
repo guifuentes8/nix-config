@@ -12,6 +12,6 @@
     kb_variant = "abnt2";
   };
 
-  stylix.image = lib.mkForce ./modules/common/custom/wallpapers/earth;
+  stylix.image = lib.mkForce ./modules/common/custom/wallpapers/neptune.jpeg;
 
 }

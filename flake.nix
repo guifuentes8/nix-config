@@ -60,7 +60,7 @@
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
-      homeConfigurations."guifuentes8@pokelab" =
+      homeConfigurations."guifuentes8@space" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
@@ -69,82 +69,61 @@
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
 
-            ./home/pokelab.nix
+            ./home/space.nix
           ];
         };
-      nixosConfigurations.pokelab = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.space = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
-          ./hosts/pokelab
+          ./hosts/space
         ];
       };
 
-      homeConfigurations."g8@mercury" =
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs nixgl; };
-          modules = [
-            inputs.stylix.homeModules.stylix
-            inputs.sops-nix.homeManagerModules.sops
-            inputs.nixvim.homeManagerModules.nixvim
+      homeConfigurations."g8@mars" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        extraSpecialArgs = { inherit inputs outputs nixgl; };
+        modules = [
+          inputs.stylix.homeModules.stylix
+          inputs.sops-nix.homeManagerModules.sops
+          inputs.nixvim.homeManagerModules.nixvim
 
-            ./home/mercury.nix
+          ./home/mars.nix
 
-          ];
-        };
+        ];
+      };
 
-      nixosConfigurations.mercury = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.mars = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
           inputs.sops-nix.nixosModules.sops
           inputs.stylix.nixosModules.stylix
-          ./hosts/mercury
+          ./hosts/mars
         ];
       };
 
-      homeConfigurations."g8@venus" =
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [
-            inputs.sops-nix.homeManagerModules.sops
-            inputs.stylix.homeModules.stylix
-            inputs.nixvim.homeManagerModules.nixvim
-            ./home/venus.nix
-          ];
-        };
-      nixosConfigurations.venus = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
-        modules = [
-          inputs.sops-nix.nixosModules.sops
-          inputs.stylix.nixosModules.stylix
-          ./hosts/venus
-        ];
-      };
-
-      homeConfigurations."g8@earth" =
+      homeConfigurations."g8@uranus" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             inputs.sops-nix.homeManagerModules.sops
-            inputs.nixvim.homeManagerModules.nixvim
             inputs.stylix.homeModules.stylix
-            ./home/earth.nix
+            inputs.nixvim.homeManagerModules.nixvim
+            ./home/uranus.nix
           ];
         };
-      nixosConfigurations.earth = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.uranus = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
-          inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
-          ./hosts/earth
+          inputs.stylix.nixosModules.stylix
+          ./hosts/uranus
         ];
       };
 
-      homeConfigurations."g8@vaporeon" =
+      homeConfigurations."g8@neptune" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
@@ -152,15 +131,35 @@
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
             inputs.stylix.homeModules.stylix
-            ./home/vaporeon.nix
+            ./home/neptune.nix
           ];
         };
-      nixosConfigurations.vaporeon = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.neptune = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs outputs; };
+        modules = [
+          inputs.stylix.nixosModules.stylix
+          inputs.sops-nix.nixosModules.sops
+          ./hosts/neptune
+        ];
+      };
+
+      homeConfigurations."g8@jupiter" =
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            inputs.sops-nix.homeManagerModules.sops
+            inputs.nixvim.homeManagerModules.nixvim
+            inputs.stylix.homeModules.stylix
+            ./home/jupiter.nix
+          ];
+        };
+      nixosConfigurations.jupiter = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
           inputs.home-manager.nixosModules.home-manager
           {
-            home-manager.users.g8 = ./home/vaporeon.nix;
+            home-manager.users.g8 = ./home/jupiter.nix;
             home-manager.extraSpecialArgs = { inherit inputs outputs; };
             home-manager.sharedModules = [
               inputs.sops-nix.homeManagerModules.sops
@@ -177,11 +176,11 @@
         ];
       };
 
-      darwinConfigurations."espeon" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."saturn" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = { inherit inputs outputs; };
         modules = [
-          ./hosts/espeon
+          ./hosts/saturn
           home-manager.darwinModules.home-manager
 
           {
@@ -195,7 +194,7 @@
               ];
               useUserPackages = true;
               users.administrador.imports = [
-                ./home/espeon.nix
+                ./home/saturn.nix
 
               ];
               backupFileExtension = "backup";
@@ -205,7 +204,7 @@
         ];
       };
 
-      darwinPackages = self.darwinConfigurations."espeon".pkgs;
+      darwinPackages = self.darwinConfigurations."saturn".pkgs;
 
       nixOnDroidConfigurations.default =
         nix-on-droid.lib.nixOnDroidConfiguration {

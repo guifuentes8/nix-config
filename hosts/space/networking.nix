@@ -1,6 +1,6 @@
 { ... }: {
   networking = {
-    hostName = "pokelab";
+    hostName = "space";
     defaultGateway = "10.10.10.1";
     interfaces.enp4s0 = {
       useDHCP = false;

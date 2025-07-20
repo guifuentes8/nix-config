@@ -9,7 +9,5 @@
 
   ];
 
-  programs.zsh.initContent = "pokeget pikachu --gmax";
-
 }
 

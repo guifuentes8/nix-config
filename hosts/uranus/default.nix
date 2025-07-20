@@ -1,5 +1,7 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   imports = [
+
+    # HARDWARE ----------------------------------------
 
     # Hardware config (required)
     ./hardware-configuration.nix
@@ -8,12 +10,13 @@
 
     # Hardware Gpu (if exist)
 
-    ../common/hardware/gpu/amdgpu.nix
-
     # NIXOS CONFIG ------------------------------------
 
+    # global NixOs Config 
+    ../common
+
     # Boot initial (grub or systemd)
-    ../common/boot/systemd-boot.nix
+    ../common/boot/grub.nix
 
     # Login Manager
     ../common/login/greetd
@@ -38,10 +41,9 @@
 
   # SYSTEM CONFIGS --------------------------------------
 
-  # Custom config
   console.keyMap = "br-abnt2";
   services.xserver.xkb.layout = "br";
   services.xserver.xkb.variant = "abnt2";
-  networking.hostName = "jolteon";
+  networking.hostName = "uranus";
 
 }

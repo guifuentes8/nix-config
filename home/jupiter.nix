@@ -18,7 +18,6 @@ in {
       source = ./server-env-setup;
     };
   };
-  programs.zsh.initContent = "pokeget vaporeon";
   programs.zsh.shellAliases = {
     adb = "/mnt/c/Users/gui8/Local\\ Settings/Android/Sdk/platform-tools/adb";
   };
