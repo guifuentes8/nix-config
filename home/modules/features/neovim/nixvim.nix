@@ -28,11 +28,14 @@ in {
 
   programs.nixvim = {
     enable = true;
-    package = pkgs.unstable.neovim-unwrapped;
+    package = pkgs.neovim-unwrapped;
     colorschemes = {
-      ayu = {
+      tokyonight = {
         enable = true;
-        settings = { mirage = true; };
+        settings = {
+          style = "moon";
+          transparent = true;
+        };
       };
     };
     extraLuaPackages = luaPkgs:
