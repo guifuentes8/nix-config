@@ -12,7 +12,6 @@
     kb_variant = "abnt2";
   };
 
-  programs.zsh.initContent = "pokeget jolteon";
-  stylix.image = lib.mkForce ./modules/common/custom/wallpapers/jolteon.png;
+  stylix.image = lib.mkForce ./modules/common/custom/wallpapers/earth;
 
 }

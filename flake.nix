@@ -81,7 +81,7 @@
         ];
       };
 
-      homeConfigurations."g8@eevee" =
+      homeConfigurations."g8@mercury" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs nixgl; };
@@ -90,21 +90,21 @@
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
 
-            ./home/eevee.nix
+            ./home/mercury.nix
 
           ];
         };
 
-      nixosConfigurations.eevee = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.mercury = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
           inputs.sops-nix.nixosModules.sops
           inputs.stylix.nixosModules.stylix
-          ./hosts/eevee
+          ./hosts/mercury
         ];
       };
 
-      homeConfigurations."g8@flareon" =
+      homeConfigurations."g8@venus" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
@@ -112,19 +112,19 @@
             inputs.sops-nix.homeManagerModules.sops
             inputs.stylix.homeModules.stylix
             inputs.nixvim.homeManagerModules.nixvim
-            ./home/flareon.nix
+            ./home/venus.nix
           ];
         };
-      nixosConfigurations.flareon = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.venus = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
           inputs.sops-nix.nixosModules.sops
           inputs.stylix.nixosModules.stylix
-          ./hosts/flareon
+          ./hosts/venus
         ];
       };
 
-      homeConfigurations."g8@jolteon" =
+      homeConfigurations."g8@earth" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
@@ -132,15 +132,15 @@
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
             inputs.stylix.homeModules.stylix
-            ./home/jolteon.nix
+            ./home/earth.nix
           ];
         };
-      nixosConfigurations.jolteon = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.earth = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
-          ./hosts/jolteon
+          ./hosts/earth
         ];
       };
 

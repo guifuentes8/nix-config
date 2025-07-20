@@ -1,9 +1,9 @@
 { pkgs, outputs, ... }:
 let
-  cursorName = "everforest-cursors";
-  cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
-  base16SchemeDefault =
-    "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
+  cursorName = "phinger-cursors-dark";
+  #cursorPkg = outputs.packages.${pkgs.system}.everforest-cursors;
+  cursorPkg = pkgs.unstable.phinger-cursors;
+  base16SchemeDefault = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml";
 
 in {
 

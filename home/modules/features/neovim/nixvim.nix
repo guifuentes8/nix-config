@@ -30,14 +30,9 @@ in {
     enable = true;
     package = pkgs.unstable.neovim-unwrapped;
     colorschemes = {
-      everforest = {
+      ayu = {
         enable = true;
-        package = (fromGithub "2eb7c348f880ba93de4d98cae049c9441f5d4d49" "HEAD"
-          "https://github.com/neanias/everforest-nvim");
-        settings = {
-          background = "hard";
-          enable_italic = 1;
-        };
+        settings = { mirage = true; };
       };
     };
     extraLuaPackages = luaPkgs:
