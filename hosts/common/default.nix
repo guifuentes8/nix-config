@@ -15,7 +15,7 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
-      permittedInsecurePackages = [ ];
+      permittedInsecurePackages = [ "ventoy-1.1.05" ];
       pulseaudio = true;
     };
   };

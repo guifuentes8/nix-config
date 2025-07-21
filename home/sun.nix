@@ -1,13 +1,11 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [
 
     # Global config (required)
     ./users/g8.nix
 
-    ./modules/features/dev
-    ./modules/features/neovim
-
   ];
+  stylix.image = lib.mkForce ./modules/common/custom/wallpapers/uranus.jpeg;
 
 }
 

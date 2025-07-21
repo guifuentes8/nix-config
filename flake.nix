@@ -60,18 +60,6 @@
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
-      homeConfigurations."guifuentes8@sun" =
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [
-            inputs.stylix.homeModules.stylix
-            inputs.sops-nix.homeManagerModules.sops
-            inputs.nixvim.homeManagerModules.nixvim
-
-            ./home/sun.nix
-          ];
-        };
       nixosConfigurations.sun = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
@@ -87,7 +75,6 @@
             ];
           }
 
-          inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
           ./hosts/sun
         ];
