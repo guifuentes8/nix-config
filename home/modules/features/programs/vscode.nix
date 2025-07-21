@@ -2,12 +2,12 @@
 let
   inherit (pkgs.vscode-utils) buildVscodeMarketplaceExtension;
 
-  sainnhe.everforest = buildVscodeMarketplaceExtension {
+  tokyonight-moon = buildVscodeMarketplaceExtension {
     mktplcRef = {
-      name = "everforest";
-      publisher = "sainnhe";
-      version = "0.3.0";
-      sha256 = "sha256-nZirzVvM160ZTpBLTimL2X35sIGy5j2LQOok7a2Yc7U=";
+      name = "tokyo-night-moon-nvim-theme";
+      publisher = "matyaszednicek";
+      version = "0.0.4";
+      sha256 = "sha256-A5VIU8HB+9/PFE7+TybiSUqYd6iVmOuejkOHZAIeZmU=";
     };
   };
 
@@ -18,9 +18,9 @@ in {
     profiles.default = {
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
-      extensions = with pkgs.vscode-extensions; [
+      extensions = with pkgs.unstable.vscode-extensions; [
         # theme
-        sainnhe.everforest
+        tokyonight-moon
         enkia.tokyo-night
         pkief.material-icon-theme
 
@@ -80,7 +80,7 @@ in {
         "window.titleBarStyle" = "native";
         "window.commandCenter" = false;
 
-        "workbench.colorTheme" = "Everforest Dark";
+        "workbench.colorTheme" = "Tokyo Night Moon NVim";
         "workbench.iconTheme" = "material-icon-theme";
         "workbench.startupEditor" = "newUntiledFile";
         "workbench.editor.labelFormat" = "short";

@@ -49,8 +49,6 @@
   systemd.user.startServices = "sd-switch";
   news.display = "silent";
 
-  programs.zsh.initContent = "pokeget espeon";
-
   # Only 25.05
   targets.darwin.linkApps.enable = true;
   targets.darwin.linkApps.directory = "Applications/";

@@ -28,7 +28,7 @@
     enable = true;
     onActivation = {
       autoUpdate = true;
-      cleanup = "zap"; # 25.05
+      cleanup = "zap";
       upgrade = true;
     };
     casks = [
@@ -43,6 +43,7 @@
       "microsoft-teams"
       "nextcloud"
       "onlyoffice"
+      "pika"
       "obs"
       "zoom"
 
