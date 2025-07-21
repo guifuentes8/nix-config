@@ -157,7 +157,6 @@
             ];
           }
 
-          #          inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
           inputs.nix-wsl.nixosModules.wsl
           ./hosts/vaporeon

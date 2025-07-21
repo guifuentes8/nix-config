@@ -53,7 +53,11 @@ in {
         forceSSL = true;
         useACMEHost = "${domain}";
         locations."/" = {
-          proxyPass = "http://127.0.0.1:9010";
+          proxyPass = "http://localhost:9010";
+          proxyWebsockets = true;
+        };
+        locations."/seafhttp" = {
+          proxyPass = "http://localhost:9009";
           proxyWebsockets = true;
         };
 
