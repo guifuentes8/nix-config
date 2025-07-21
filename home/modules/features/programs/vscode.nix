@@ -21,6 +21,7 @@ in {
       extensions = with pkgs.vscode-extensions; [
         # theme
         sainnhe.everforest
+        enkia.tokyo-night
         pkief.material-icon-theme
 
         # lint
