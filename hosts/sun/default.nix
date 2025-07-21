@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
 
     ../common/boot/systemd-boot.nix
-    ../common/users/guifuentes8.nix
+    ../common/users/g8.nix
     ../stylix.nix
 
     # services

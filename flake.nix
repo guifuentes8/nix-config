@@ -60,7 +60,7 @@
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
-      homeConfigurations."guifuentes8@space" =
+      homeConfigurations."guifuentes8@sun" =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
@@ -69,15 +69,27 @@
             inputs.sops-nix.homeManagerModules.sops
             inputs.nixvim.homeManagerModules.nixvim
 
-            ./home/space.nix
+            ./home/sun.nix
           ];
         };
-      nixosConfigurations.space = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.sun = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.users.g8 = ./home/sun.nix;
+            home-manager.extraSpecialArgs = { inherit inputs outputs; };
+            home-manager.sharedModules = [
+              inputs.sops-nix.homeManagerModules.sops
+              inputs.nixvim.homeManagerModules.nixvim
+              inputs.stylix.homeModules.stylix
+
+            ];
+          }
+
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
-          ./hosts/space
+          ./hosts/sun
         ];
       };
 
@@ -143,17 +155,6 @@
         ];
       };
 
-      homeConfigurations."g8@jupiter" =
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [
-            inputs.sops-nix.homeManagerModules.sops
-            inputs.nixvim.homeManagerModules.nixvim
-            inputs.stylix.homeModules.stylix
-            ./home/jupiter.nix
-          ];
-        };
       nixosConfigurations.jupiter = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
