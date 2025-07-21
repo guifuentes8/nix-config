@@ -3,7 +3,7 @@
     enable = true;
     package = pkgs.unstable.openvscode-server;
     port = 9001;
-    user = "guifuentes8";
+    user = "g8";
     group = "root";
     host = "0.0.0.0";
     withoutConnectionToken = true;

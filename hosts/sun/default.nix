@@ -5,35 +5,34 @@
 
     ../common/boot/systemd-boot.nix
     ../common/users/g8.nix
-    ../stylix.nix
 
     # services
-    ./docker-services.nix
-    ./eternal-terminal.nix
-    ./gitea.nix
-    ./gollum.nix
-    ./homepage-dashboard.nix
-    ./jellyfin.nix
-    ./seafile.nix
-    ./transmission.nix
-    ./vscode-server.nix
-    ./vaultwarden.nix
-    ./writefreely.nix
+    ./server/docker-services.nix
+    ./server/eternal-terminal.nix
+    ./server/gitea.nix
+    ./server/gollum.nix
+    ./server/homepage-dashboard.nix
+    ./server/jellyfin.nix
+    ./server/seafile.nix
+    ./server/transmission.nix
+    ./server/vscode-server.nix
+    ./server/vaultwarden.nix
+    ./server/writefreely.nix
 
-    #    ./jackett.nix
-    #    ./sonarr.nix
-    #    ./radarr.nix
-    #    ./lidarr.nix
+    #/server    ./jackett.nix
+    #/server    ./sonarr.nix
+    #/server    ./radarr.nix
+    #/server    ./lidarr.nix
 
-    # Extra config
-    ./borg.nix
-    ./console.nix
-    ./cloudflare.nix
-    ./nginx.nix
-    ./networking.nix
-    ./postgres.nix
+    #/server Extra config
+    ./server/borg.nix
+    ./server/console.nix
+    ./server/cloudflare.nix
+    ./server/nginx.nix
+    ./server/networking.nix
+    ./server/postgres.nix
   ];
-  services.getty.autologinUser = "guifuentes8";
+  services.getty.autologinUser = "g8";
   services.openssh.enable = true;
   fileSystems."/var/lib/storage_backup" = {
     device = "/dev/disk/by-uuid/433cc6cc-561e-4783-b33c-d523378eefd9";

@@ -7,6 +7,6 @@
       service = { DISABLE_REGISTRATION = true; };
 
     };
-    user = "guifuentes8";
+    user = "g8";
   };
 }

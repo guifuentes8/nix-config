@@ -75,7 +75,6 @@
             ];
           }
 
-          inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
           ./hosts/sun
         ];

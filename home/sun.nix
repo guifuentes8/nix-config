@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [
 
     # Global config (required)
@@ -9,6 +9,7 @@
     ./modules/features/terminals/kitty.nix
 
   ];
+  stylix.image = lib.mkForce ./modules/common/custom/wallpapers/uranus.jpeg;
 
 }
 
