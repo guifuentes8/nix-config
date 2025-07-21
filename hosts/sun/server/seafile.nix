@@ -21,7 +21,5 @@
     seahubAddress = ''
       "[::1]:9009"
     '';
-    seafilePort = 9010;
-    seahubPort = 9009;
   };
 }
