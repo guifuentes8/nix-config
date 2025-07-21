@@ -11,6 +11,7 @@ in {
     autoEnable = false;
     polarity = "dark";
     base16Scheme = base16SchemeDefault;
+    imageScalingMode = "fit";
     override = {
       base02 = "#343A52";
       base03 = "#444B6A";

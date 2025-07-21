@@ -10,6 +10,7 @@ in {
   stylix = {
     enable = true;
     image = ../home/modules/common/extras/eevee.png;
+    imageScalingMode = "center";
     autoEnable = true;
     polarity = "dark";
     base16Scheme = base16SchemeDefault;

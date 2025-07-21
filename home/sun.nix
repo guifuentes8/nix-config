@@ -6,6 +6,7 @@
 
     ./modules/features/dev
     ./modules/features/neovim
+    ./modules/features/terminals/kitty.nix
 
   ];
 

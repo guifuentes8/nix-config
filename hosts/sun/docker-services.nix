@@ -26,9 +26,7 @@
     hostname = "metube";
     image = "alexta69/metube";
     ports = [ "127.0.0.1:9022:8081" ];
-    volumes = [
-      "/var/lib/storage/nextcloud/data/guifuentes8/files/Youtube:/downloads"
-    ];
+    #volumes = [ "/var/lib/storage/nextcloud/data/g8/files/Youtube:/downloads" ];
   };
 
   virtualisation.oci-containers.containers.docuseal = {
