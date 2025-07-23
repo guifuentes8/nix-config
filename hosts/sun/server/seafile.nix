@@ -1,32 +1,51 @@
-{ ... }: {
+{ config, pkgs, lib, ... }:
 
+{
   services.seafile = {
     enable = true;
-    adminEmail = "guifuentes8@gmail.com";
-    initialAdminPassword = "Agorajaera@123";
-    ccnetSettings.General.SERVICE_URL = "https://cloud.guifuentes8.com.br";
-    seafileSettings = {
-      quota.default = "50"; # Amount of GB allotted to users
-      history.keep_days = "14"; # Remove deleted files after 14 days
-      fileserver = {
-        host = "http://localhost";
-        port = 9009;
+    seahubPackage = pkgs.unstable.seahub;
+    adminEmail = "admin@example.com";
+    initialAdminPassword = "SenhaSegura123";
+    ccnetSettings.General = { SERVICE_URL = "http://10.10.10.10"; };
+
+    seafileSettings.fileserver = {
+      host = "127.0.0.1";
+      port = 8082;
+    };
+    seahubAddress = "127.0.0.1:8083";
+    seahubExtraConf = ''
+      ALLOWED_HOSTS = ['10.10.10.10']
+      CSRF_TRUSTED_ORIGINS = ['http://10.10.10.10']
+    '';
+  };
+
+  services.nginx = {
+    enable = true;
+    virtualHosts."10.10.10.10" = { # responde para qualquer IP/domínio
+      default = true;
+      listen = [{
+        addr = "10.10.10.10";
+        port = 80;
+      }];
+
+      locations = {
+        "/" = {
+          proxyPass = "http://127.0.0.1:8083";
+          proxyWebsockets = true;
+        };
+        "/seafhttp" = {
+          proxyPass = "http://127.0.0.1:8082";
+          extraConfig = ''
+            proxy_request_buffering off;
+          '';
+        };
       };
     };
-    seahubAddress = "localhost:9010";
-    seahubExtraConf = ''
-      ALLOWED_HOSTS = [ '127.0.0.1', 'cloud.guifuentes8.com.br', 'localhost' ]
-      CSRF_COOKIE_SECURE = True
-      SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-      SESSION_COOKIE_SECURE = True
-      SITE_ROOT = '/'
-      FILE_SERVER_ROOT = 'cloud.guifuentes8.com.br/seafhttp'
-      USE_X_FORWARDED_HOST = True
-    '';
-    workers = 12;
-    gc = {
-      enable = true;
-      dates = [ "Sun 03:00:00" ];
-    };
+  };
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 80 8082 8083 ];
   };
 }
+

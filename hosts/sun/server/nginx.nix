@@ -52,15 +52,6 @@ in {
       "cloud.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = {
-          proxyPass = "http://localhost:9010";
-          proxyWebsockets = true;
-        };
-        locations."/seafhttp" = {
-          proxyPass = "http://localhost:9009";
-          proxyWebsockets = true;
-        };
-
       };
       "vault.${domain}" = {
         forceSSL = true;
@@ -156,5 +147,8 @@ in {
   };
 
   users.users.nginx.extraGroups = [ "acme" ];
-
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 9008 9009 9010 ];
+  };
 }

@@ -2,9 +2,9 @@
   description = "My Awesome | gui8 | Nixos Configuration";
 
   inputs = {
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-legacy.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-wsl.url = "github:nix-community/NixOS-WSL";
@@ -40,8 +40,8 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-legacy, nix-darwin, home-manager
-    , nix-on-droid, nixgl, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-legacy, nix-darwin
+    , home-manager, nix-on-droid, nixgl, ... }@inputs:
     let
       inherit (self) outputs;
 
