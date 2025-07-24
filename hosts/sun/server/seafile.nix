@@ -1,51 +1,30 @@
 { config, pkgs, lib, ... }:
-
-{
+let
+  domain = "cloud.guifuentes8.com.br";
+  localDomain = "localhost";
+in {
   services.seafile = {
     enable = true;
     seahubPackage = pkgs.unstable.seahub;
-    adminEmail = "admin@example.com";
-    initialAdminPassword = "SenhaSegura123";
-    ccnetSettings.General = { SERVICE_URL = "http://10.10.10.10"; };
-
+    dataDir = "/var/lib/storage/seafile/data";
+    adminEmail = "guifuentes8@gmail.com";
+    initialAdminPassword = "Agorajaera@123";
+    ccnetSettings.General = { SERVICE_URL = "https://${domain}"; };
     seafileSettings.fileserver = {
-      host = "127.0.0.1";
-      port = 8082;
+      host = "${localDomain}";
+      port = 9100;
     };
-    seahubAddress = "127.0.0.1:8083";
+    seahubAddress = "${localDomain}:9101";
     seahubExtraConf = ''
-      ALLOWED_HOSTS = ['10.10.10.10']
-      CSRF_TRUSTED_ORIGINS = ['http://10.10.10.10']
+      ALLOWED_HOSTS = ['${domain}', '${localDomain}']
+      CSRF_TRUSTED_ORIGINS = ['https://${domain}', 'http://${localDomain}']
+      FILE_SERVER_ROOT = 'https://${domain}/seafhttp'
     '';
-  };
-
-  services.nginx = {
-    enable = true;
-    virtualHosts."10.10.10.10" = { # responde para qualquer IP/domínio
-      default = true;
-      listen = [{
-        addr = "10.10.10.10";
-        port = 80;
-      }];
-
-      locations = {
-        "/" = {
-          proxyPass = "http://127.0.0.1:8083";
-          proxyWebsockets = true;
-        };
-        "/seafhttp" = {
-          proxyPass = "http://127.0.0.1:8082";
-          extraConfig = ''
-            proxy_request_buffering off;
-          '';
-        };
-      };
+    gc = {
+      enable = true;
+      dates = [ "Sun 03:00:00" ];
     };
-  };
-
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 80 8082 8083 ];
+    workers = 10;
   };
 }
 

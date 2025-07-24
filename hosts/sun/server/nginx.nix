@@ -1,6 +1,12 @@
 { config, ... }:
 let
   domain = "guifuentes8.com.br";
+  localDomain = "localhost";
+  extraConfigSeafile = ''
+    proxy_request_buffering off;
+    client_max_body_size 0;
+
+  '';
   # 9000-9009 -> Dev tools
   # 9010-9019 -> Personal tools
   # 9020-9029 -> Utils tools
@@ -19,7 +25,7 @@ in {
         forceSSL = true;
         default = true;
         enableACME = true;
-        locations."/" = { proxyPass = "http://localhost:80"; };
+        locations."/" = { proxyPass = "http://${localDomain}:80"; };
         locations."/.well-known/acme-challenge" = {
           root = "/var/lib/acme/acme-challenge";
         };
@@ -27,103 +33,129 @@ in {
       "git.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9000"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9000"; };
       };
       "code.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9001"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9001"; };
       };
       "db.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9002"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9002"; };
       };
       "draw.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9003"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9003"; };
       };
       "wiki.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9004"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9004"; };
       };
-      "cloud.${domain}" = {
+      "dav.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
+        locations."/" = {
+          proxyPass = "http://${localDomain}:9005";
+          extraConfig = ''
+            rewrite ^/.well-known/carddav /radicale/ redirect;
+            rewrite ^/.well-known/caldav /radicale/ redirect;
+          '';
+        };
       };
+
+      "cloud.${domain}" = {
+        listen = [{
+          addr = "${localDomain}";
+          port = 9010;
+        }];
+
+        locations = {
+          "/" = {
+            proxyPass = "http://${localDomain}:9101";
+            proxyWebsockets = true;
+            extraConfig = ''
+              ${extraConfigSeafile} 
+            '';
+          };
+          "/seafhttp" = {
+            proxyPass = "http://${localDomain}:9100";
+            extraConfig = ''
+              rewrite ^/seafhttp(.*)$ $1 break;
+              ${extraConfigSeafile} 
+            '';
+          };
+        };
+      };
+
       "vault.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9011"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9011"; };
       };
       "jellyfin.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9012"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9012"; };
       };
       "google.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9020"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9020"; };
       };
       "convert.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9021"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9021"; };
       };
       "yt.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9022"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9022"; };
       };
       "torrent.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9023"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9023"; };
       };
       "status.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9030"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9030"; };
       };
       #"blog.${domain}" = {
       # forceSSL = true;
       #       useACMEHost = "${domain}";
-      #  locations."/" = { proxyPass = "http://localhost:9090"; };
+      #  locations."/" = { proxyPass = "http://${localDomain}:9090"; };
       # };
       "docsign.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9091"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9091"; };
       };
       "social.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9092"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9092"; };
       };
       "nextcloud-whiteboard.${domain}" = {
         forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9100"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9100"; };
       };
-      #    forceSSL = true;
       "office.${domain}" = {
+        forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:9101"; };
+        locations."/" = { proxyPass = "http://${localDomain}:9101"; };
       };
       "postiz.${domain}" = {
-        # forceSSL = true;
+        forceSSL = true;
         useACMEHost = "${domain}";
-        locations."/" = { proxyPass = "http://localhost:5000"; };
-
+        locations."/" = { proxyPass = "http://${localDomain}:5000"; };
       };
-      #  "nextcloud".listen = [{
-      #    addr = "127.0.0.1";
-      #    port = 9010;
-      #  }];
-
     };
   };
   security.acme = {
@@ -147,8 +179,5 @@ in {
   };
 
   users.users.nginx.extraGroups = [ "acme" ];
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 9008 9009 9010 ];
-  };
+
 }

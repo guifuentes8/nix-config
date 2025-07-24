@@ -8,12 +8,12 @@
 
     # services
     ./server/docker-services.nix
-    ./server/eternal-terminal.nix
     ./server/gitea.nix
     ./server/gollum.nix
     ./server/homepage-dashboard.nix
     ./server/jellyfin.nix
     ./server/seafile.nix
+    ./server/radicale.nix
     ./server/transmission.nix
     ./server/vscode-server.nix
     ./server/vaultwarden.nix
@@ -34,17 +34,16 @@
   ];
   services.getty.autologinUser = "g8";
   services.openssh.enable = true;
-  #  fileSystems."/var/lib/storage_backup" = {
-  #    device = "/dev/disk/by-uuid/433cc6cc-561e-4783-b33c-d523378eefd9";
-  #    fsType = "ext4";
-  #    depends = [ "/var/lib/storage" ];
-  #    options = [ "nofail" "users" "rw" ];
-  #  };
-  #  fileSystems."/var/lib/storage" = {
-  #    device = "/dev/disk/by-uuid/b22affd9-1505-4214-8acf-57468a600899";
-  #    fsType = "ext4";
-  #
-  #    options = [ "users" "nofail" "rw" ];
-  #  };
+  fileSystems."/var/lib/storage_backup" = {
+    device = "/dev/disk/by-uuid/433cc6cc-561e-4783-b33c-d523378eefd9";
+    fsType = "ext4";
+    depends = [ "/var/lib/storage" ];
+    options = [ "nofail" "users" "rw" ];
+  };
+  fileSystems."/var/lib/storage" = {
+    device = "/dev/disk/by-uuid/b22affd9-1505-4214-8acf-57468a600899";
+    fsType = "ext4";
+    options = [ "users" "nofail" "rw" ];
+  };
 
 }
