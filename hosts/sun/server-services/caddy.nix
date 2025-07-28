@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  domain = "sun.mau-becrux.ts.net";
+  magicDns = "sun.mau-becrux.ts.net";
   localDomain = "localhost";
   extraConfigCaddy = port: ''
     encode gzip
@@ -17,9 +17,17 @@ in {
   services.caddy = {
     enable = true;
     virtualHosts = {
-      "${domain}".extraConfig = extraConfigCaddy "9003";
-      "photos.${domain}".extraConfig = extraConfigCaddy "9006";
-      "vscode.${domain}".extraConfig = extraConfigCaddy "9001";
+      "${magicDns}:9100".extraConfig = extraConfigCaddy "9000";
+      "${magicDns}:9101".extraConfig = extraConfigCaddy "9001";
+      "${magicDns}:9102".extraConfig = extraConfigCaddy "9002";
+      "${magicDns}:9103".extraConfig = extraConfigCaddy "9003";
+      "${magicDns}:9104".extraConfig = extraConfigCaddy "9004";
+      "${magicDns}:9105".extraConfig = extraConfigCaddy "9005";
+      "${magicDns}:9106".extraConfig = extraConfigCaddy "9006";
+      "${magicDns}:9107".extraConfig = extraConfigCaddy "9007";
+      "${magicDns}:9108".extraConfig = extraConfigCaddy "9008";
+      "${magicDns}:9109".extraConfig = extraConfigCaddy "9009";
+      #  "${domain}".extraConfig = extraConfigCaddy "9001";
       #  "excalidraw.${domain}".extraConfig = extraConfigCaddy "9003";
 
       #     "git.${domain}" = {
