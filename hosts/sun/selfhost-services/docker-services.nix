@@ -6,10 +6,6 @@
     hostname = "excalidraw";
     image = "excalidraw/excalidraw";
     ports = [ "127.0.0.1:9003:80" ];
-    environment = {
-      NEXTCLOUD_URL = "https://cloud.guifuentes8.com.br";
-      JWT_SECRET_KEY = "Guigui@@@2035";
-    };
   };
 
   virtualisation.oci-containers.containers.cloudbeaver = {

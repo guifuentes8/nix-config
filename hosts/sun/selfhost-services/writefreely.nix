@@ -1,6 +1,6 @@
 { ... }: {
   services.writefreely = {
-    enable = true;
+    enable = false;
     host = "blog.guifuentes8.com.br";
     user = "writefreely";
     admin = { name = "guifuentes8"; };

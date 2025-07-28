@@ -6,34 +6,29 @@
     ../common/boot/systemd-boot.nix
     ../common/users/g8.nix
 
-    # services
-    ./server/docker-services.nix
-    ./server/gitea.nix
-    ./server/gollum.nix
-    ./server/homepage-dashboard.nix
-    ./server/jellyfin.nix
-    ./server/seafile.nix
-    ./server/radicale.nix
-    ./server/transmission.nix
-    ./server/vscode-server.nix
-    ./server/vaultwarden.nix
-    ./server/writefreely.nix
+    # External services selfhosted
+    ./selfhost-services/immich.nix
+    ./selfhost-services/gitea.nix
+    ./selfhost-services/vscode-server.nix
+    ./selfhost-services/docker-services.nix
 
     #/server    ./jackett.nix
     #/server    ./sonarr.nix
     #/server    ./radarr.nix
     #/server    ./lidarr.nix
 
-    #/server Extra config
-    ./server/borg.nix
-    ./server/console.nix
-    ./server/cloudflare.nix
-    ./server/nginx.nix
-    ./server/networking.nix
-    ./server/postgres.nix
+    # Server 
+    ./server-services/console.nix
+    ./server-services/caddy.nix
+    #   ./server-services/cloudflare.nix
+    ./server-services/dnsmasq.nix
+    ./server-services/networking.nix
+    ./server-services/postgres.nix
+    ./server-services/tailscale.nix
   ];
   services.getty.autologinUser = "g8";
   services.openssh.enable = true;
+
   fileSystems."/var/lib/storage_backup" = {
     device = "/dev/disk/by-uuid/433cc6cc-561e-4783-b33c-d523378eefd9";
     fsType = "ext4";

@@ -21,6 +21,8 @@
       "media"
       "vaultwarden"
       "writefreely"
+      "caddy"
+      "tailscale"
     ];
     shell = pkgs.zsh;
   };
