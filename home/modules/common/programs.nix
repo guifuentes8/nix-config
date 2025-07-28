@@ -2,7 +2,7 @@
 
 {
   imports = [ ./extras/dependencies.nix ];
-  home.packages = [ pkgs.age pkgs.pokeget-rs ];
+  home.packages = [ pkgs.age pkgs.seafile-client ];
 
   programs = {
     gh = {
