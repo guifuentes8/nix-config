@@ -1,16 +1,14 @@
-{ config, lib, pkgs, ... }:
-
-{
+{ ... }: {
   services.dnsmasq = {
     enable = true;
+    resolveLocalQueries = true;
     settings = {
-      address = [
-        "/sun.mau-becrux.ts.net/100.101.186.113"
-        "/photos.sun.mau-becrux.ts.net/100.101.186.113"
-      ];
+      domain-needed = true;
+      bogus-priv = true;
+      listen-address = [ "127.0.0.1" "100.101.186.113" ];
+      server = [ "100.100.100.100" "1.1.1.1" "8.8.8.8" ];
+      address = [ "/photos.sun.mau-becrux.ts.net/100.101.186.113" ];
     };
   };
-
-  networking.firewall.allowedUDPPorts = [ 53 ];
+  networking.nameservers = [ "127.0.0.1" "1.1.1.1" "8.8.8.8" ];
 }
-

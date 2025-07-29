@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 let
-  domain = "cloud.guifuentes8.com.br";
+  domain = "sun.mau-becrux.ts.net";
   localDomain = "localhost";
 in {
   services.seafile = {
@@ -12,9 +12,9 @@ in {
     ccnetSettings.General = { SERVICE_URL = "https://${domain}"; };
     seafileSettings.fileserver = {
       host = "${localDomain}";
-      port = 9100;
+      port = 9009;
     };
-    seahubAddress = "${localDomain}:9101";
+    seahubAddress = "${localDomain}:9010";
     seahubExtraConf = ''
       ALLOWED_HOSTS = ['${domain}', '${localDomain}']
       CSRF_TRUSTED_ORIGINS = ['https://${domain}', 'http://${localDomain}']
@@ -24,7 +24,8 @@ in {
       enable = true;
       dates = [ "Sun 03:00:00" ];
     };
-    workers = 10;
+    workers = 12;
   };
+  networking.firewall.allowedTCPPorts = [ 9009 9010 ];
 }
 

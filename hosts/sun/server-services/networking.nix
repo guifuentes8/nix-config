@@ -12,8 +12,8 @@
     nameservers = [ "8.8.8.8" "8.8.4.4" ];
     firewall = {
       trustedInterfaces = [ ];
-      allowedUDPPorts = [ 80 443 51413 53 ];
-      allowedTCPPorts = [ 80 443 51413 53 ];
+      allowedUDPPorts = [ 80 443 51413 ];
+      allowedTCPPorts = [ 80 443 51413 ];
     };
   };
 
