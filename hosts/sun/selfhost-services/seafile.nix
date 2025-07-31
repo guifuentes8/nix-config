@@ -1,7 +1,8 @@
 { config, pkgs, lib, ... }:
 let
-  domain = "sun.mau-becrux.ts.net";
-  localDomain = "localhost";
+  domain = "sun.tail7606a6.ts.net";
+  localDomain = "127.0.0.1";
+  #port = "8005";
 in {
   services.seafile = {
     enable = true;
@@ -24,8 +25,7 @@ in {
       enable = true;
       dates = [ "Sun 03:00:00" ];
     };
-    workers = 12;
+    workers = 10;
   };
-  networking.firewall.allowedTCPPorts = [ 9009 9010 ];
 }
 
