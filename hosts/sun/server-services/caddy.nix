@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  domain = "sun.tail7606a6.ts.net";
+  domain = "sun.mau-becrux.ts.net";
   localDomain = "127.0.0.1";
   # 9000-9009 -> Dev tools
   # 9010-9019 -> Personal tools
@@ -15,11 +15,10 @@ in {
       "${domain}" = {
         extraConfig = ''
           encode gzip
-          reverse_proxy ${localDomain}:9003
         '';
       };
 
-      "${domain}:9000" = {
+      "${domain}:8001" = {
         extraConfig = ''
           encode gzip zstd
 
@@ -33,7 +32,7 @@ in {
           }
         '';
       };
-      "${domain}:9001" = {
+      "${domain}:8002" = {
         extraConfig = ''
           reverse_proxy ${localDomain}:9006
         '';

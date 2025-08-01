@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 let
-  domain = "sun.tail7606a6.ts.net";
+  domain = "sun.mau-becrux.ts.net";
   localDomain = "127.0.0.1";
-  #port = "8005";
+  port = "8001";
 in {
   services.seafile = {
     enable = true;
@@ -10,7 +10,7 @@ in {
     dataDir = "/var/lib/storage/seafile/data";
     adminEmail = "guifuentes8@gmail.com";
     initialAdminPassword = "Agorajaera@123";
-    ccnetSettings.General = { SERVICE_URL = "https://${domain}"; };
+    ccnetSettings.General = { SERVICE_URL = "https://${domain}:${port}"; };
     seafileSettings.fileserver = {
       host = "${localDomain}";
       port = 9009;
@@ -19,7 +19,8 @@ in {
     seahubExtraConf = ''
       ALLOWED_HOSTS = ['${domain}', '${localDomain}']
       CSRF_TRUSTED_ORIGINS = ['https://${domain}', 'http://${localDomain}']
-      FILE_SERVER_ROOT = 'https://${domain}/seafhttp'
+      FILE_SERVER_ROOT = 'https://${domain}:${port}/seafhttp'
+
     '';
     gc = {
       enable = true;

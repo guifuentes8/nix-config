@@ -6,6 +6,8 @@
     ../common/boot/systemd-boot.nix
     ../common/users/g8.nix
 
+    ./selfhost-services/homer.nix
+
     # External services selfhosted
     ./selfhost-services/docker-services.nix
     ./selfhost-services/gitea.nix
