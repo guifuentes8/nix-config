@@ -10,13 +10,17 @@
 
     # External services selfhosted
     ./selfhost-services/docker-services.nix
-    ./selfhost-services/gitea.nix
-    ./selfhost-services/gollum.nix
-    ./selfhost-services/gitea.nix
+    #./selfhost-services/gitea.nix
+    #./selfhost-services/gollum.nix
+    #./selfhost-services/gitea.nix
     ./selfhost-services/immich.nix
-    ./selfhost-services/vscode-server.nix
+    ./selfhost-services/navidrome.nix
+
+    ./selfhost-services/audiobookshelf.nix
+    ./selfhost-services/radicale.nix
+    #   ./selfhost-services/vscode-server.nix
     ./selfhost-services/seafile.nix
-    ./selfhost-services/transmission.nix
+    #./selfhost-services/transmission.nix
 
     #/server    ./jackett.nix
     #/server    ./sonarr.nix
@@ -25,9 +29,9 @@
 
     # Server 
     ./server-services/console.nix
+    ./server-services/caddy.nix
     #   ./server-services/cloudflare.nix
     ./server-services/networking.nix
-    ./server-services/caddy.nix
     ./server-services/postgres.nix
     ./server-services/tailscale.nix
   ];

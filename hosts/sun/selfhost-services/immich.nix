@@ -1,7 +1,9 @@
 { pkgs, ... }: {
   services.immich = {
     enable = true;
-    port = 9006;
+    package = pkgs.unstable.immich;
+    host = "127.0.0.1";
+    port = 9102;
     openFirewall = true;
     mediaLocation = "/var/lib/storage/immich";
     accelerationDevices = null;

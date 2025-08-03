@@ -2,7 +2,7 @@
 let
   domain = "sun.mau-becrux.ts.net";
   localDomain = "127.0.0.1";
-  port = "8001";
+  port = "9001";
 in {
   services.seafile = {
     enable = true;
@@ -13,9 +13,9 @@ in {
     ccnetSettings.General = { SERVICE_URL = "https://${domain}:${port}"; };
     seafileSettings.fileserver = {
       host = "${localDomain}";
-      port = 9009;
+      port = 9100;
     };
-    seahubAddress = "${localDomain}:9010";
+    seahubAddress = "${localDomain}:9101";
     seahubExtraConf = ''
       ALLOWED_HOSTS = ['${domain}', '${localDomain}']
       CSRF_TRUSTED_ORIGINS = ['https://${domain}', 'http://${localDomain}']
@@ -26,7 +26,7 @@ in {
       enable = true;
       dates = [ "Sun 03:00:00" ];
     };
-    workers = 10;
+    workers = 12;
   };
 }
 

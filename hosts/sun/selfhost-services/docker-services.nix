@@ -2,32 +2,34 @@
   # imports = [ ./postiz.nix ];
 
   # virtualisation.oci-containers.backend = "docker";
+  virtualisation.oci-containers.containers.flatnotes = {
+    hostname = "flatenotes";
+    image = "dullage/flatnotes:latest";
+    ports = [ "127.0.0.1:9106:8080" ];
+    volumes = [ "/var/lib/storage/flatnotes:/data" ];
+    environment = { FLATNOTES_AUTH_TYPE = "none"; };
+  };
   virtualisation.oci-containers.containers.excalidraw = {
     hostname = "excalidraw";
     image = "excalidraw/excalidraw";
-    ports = [ "127.0.0.1:9003:80" ];
+    ports = [ "127.0.0.1:9113:80" ];
   };
 
   virtualisation.oci-containers.containers.cloudbeaver = {
     hostname = "cloudbeaver";
     image = "dbeaver/cloudbeaver";
-    ports = [ "127.0.0.1:9002:8978" ];
+    ports = [ "127.0.0.1:9112:8978" ];
   };
   virtualisation.oci-containers.containers.convertx = {
     hostname = "convertx";
     image = "c4illin/convertx";
-    ports = [ "127.0.0.1:9021:3000" ];
+    ports = [ "127.0.0.1:9107:3000" ];
   };
   virtualisation.oci-containers.containers.metube = {
     hostname = "metube";
     image = "alexta69/metube";
-    ports = [ "127.0.0.1:9022:8081" ];
+    ports = [ "127.0.0.1:9108:8081" ];
     #volumes = [ "/var/lib/storage/nextcloud/data/g8/files/Youtube:/downloads" ];
   };
 
-  virtualisation.oci-containers.containers.docuseal = {
-    hostname = "docuseal";
-    image = "docuseal/docuseal";
-    ports = [ "127.0.0.1:9091:3000" ];
-  };
 }
