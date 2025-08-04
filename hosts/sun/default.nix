@@ -6,19 +6,16 @@
     ../common/boot/systemd-boot.nix
     ../common/users/g8.nix
 
-    ./selfhost-services/homer.nix
+    ./selfhost-services/homepage-dashboard.nix
 
     # External services selfhosted
     ./selfhost-services/docker-services.nix
-    #./selfhost-services/gitea.nix
-    #./selfhost-services/gollum.nix
-    #./selfhost-services/gitea.nix
     ./selfhost-services/immich.nix
+    ./selfhost-services/karakeep.nix
     ./selfhost-services/navidrome.nix
 
     ./selfhost-services/audiobookshelf.nix
     ./selfhost-services/radicale.nix
-    #   ./selfhost-services/vscode-server.nix
     ./selfhost-services/seafile.nix
     #./selfhost-services/transmission.nix
 
@@ -26,6 +23,8 @@
     #/server    ./sonarr.nix
     #/server    ./radarr.nix
     #/server    ./lidarr.nix
+    ./selfhost-services/gitea.nix
+    ./selfhost-services/vscode-server.nix
 
     # Server 
     ./server-services/console.nix

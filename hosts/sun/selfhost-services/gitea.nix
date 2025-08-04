@@ -3,8 +3,8 @@
     enable = true;
     stateDir = "/var/lib/storage/gitea";
     settings = {
-      server = { HTTP_PORT = 9000; };
-      service = { DISABLE_REGISTRATION = true; };
+      server = { HTTP_PORT = 9110; };
+      service = { DISABLE_REGISTRATION = false; };
 
     };
     user = "g8";

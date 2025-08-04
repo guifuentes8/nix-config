@@ -2,7 +2,7 @@
   services.openvscode-server = {
     enable = true;
     package = pkgs.unstable.openvscode-server;
-    port = 9001;
+    port = 9111;
     user = "g8";
     group = "root";
     host = "0.0.0.0";

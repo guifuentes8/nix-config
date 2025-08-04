@@ -13,6 +13,7 @@ in {
       "${domain}" = { # homer
         extraConfig = ''
           ${caddyConfig}
+          reverse_proxy ${localDomain}:9000
         '';
       };
 
@@ -54,29 +55,56 @@ in {
         '';
       };
 
-      "${domain}:9006" = { # hedgedoc
+      "${domain}:9006" = { # flatnotes
         extraConfig = ''
           ${caddyConfig}
           reverse_proxy /* http://${localDomain}:9106
         '';
       };
-      "${domain}:9007" = { # flatnotes
+      "${domain}:9007" = { # convertx
         extraConfig = ''
           ${caddyConfig}
           reverse_proxy /* ${localDomain}:9107
         '';
       };
-      "${domain}:9008" = { # convertx
+      "${domain}:9008" = { # metube
         extraConfig = ''
           ${caddyConfig}
           reverse_proxy /* http://${localDomain}:9108
         '';
       };
 
-      "${domain}:9009" = { # metube
+      "${domain}:9009" = { # karakeep
         extraConfig = ''
           ${caddyConfig}
           reverse_proxy /* http://${localDomain}:9109
+        '';
+      };
+
+      "${domain}:9010" = { # gitea
+        extraConfig = ''
+          ${caddyConfig}
+          reverse_proxy /* http://${localDomain}:9110
+        '';
+      };
+      "${domain}:9011" = { # vscode
+        extraConfig = ''
+          ${caddyConfig}
+          reverse_proxy /* http://${localDomain}:9111
+        '';
+      };
+
+      "${domain}:9012" = { # cloudbeaver
+        extraConfig = ''
+          ${caddyConfig}
+          reverse_proxy /* http://${localDomain}:9112
+        '';
+      };
+
+      "${domain}:9013" = { # excalidraw
+        extraConfig = ''
+          ${caddyConfig}
+          reverse_proxy /* http://${localDomain}:9113
         '';
       };
     };
