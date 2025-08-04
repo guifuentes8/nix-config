@@ -23,7 +23,6 @@
     #/server    ./sonarr.nix
     #/server    ./radarr.nix
     #/server    ./lidarr.nix
-    ./selfhost-services/gitea.nix
     ./selfhost-services/vscode-server.nix
 
     # Server 
