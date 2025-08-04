@@ -7,8 +7,8 @@ in {
   services.seafile = {
     enable = true;
     seahubPackage = pkgs.unstable.seahub;
-    dataDir = "/var/lib/storage/seafile/data";
-    adminEmail = "guifuentes8@gmail.com";
+    dataDir = "/var/lib/storage/seafile-server/data";
+    adminEmail = "admin@example.com";
     initialAdminPassword = "Agorajaera@123";
     ccnetSettings.General = { SERVICE_URL = "https://${domain}:${port}"; };
     seafileSettings.fileserver = {
