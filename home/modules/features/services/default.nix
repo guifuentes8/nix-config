@@ -16,9 +16,5 @@
       enable = true;
       indicator = true;
     };
-    nextcloud-client = {
-      enable = true;
-      startInBackground = true;
-    };
   };
 }

@@ -1,7 +1,7 @@
 { lib, pkgs, config, outputs, ... }: {
   imports = [
     ../modules/common/programs.nix
-    ../modules/common/systemd.nix
+    #../modules/common/systemd.nix
     ../modules/common/services.nix
     ../modules/common/stylix.nix
     ../modules/common/sops.nix

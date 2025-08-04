@@ -52,7 +52,6 @@ in {
       ghostty.enable = true;
       gitui.enable = true;
       gnome.enable = lib.mkIf (pkgs.stdenv.hostPlatform.isLinux) true;
-      # grub.enable = true;
       gtk.enable = true;
       hyprland.enable = true;
       hyprland.hyprpaper.enable = true;
@@ -70,7 +69,7 @@ in {
       qutebrowser.enable = true;
       #  regreet.enable = true;
       rofi.enable = true;
-      starship.enable = true;
+      # starship.enable = true;
       sway.enable = true;
       swaylock.enable = true;
       tmux.enable = true;

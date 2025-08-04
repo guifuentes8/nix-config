@@ -22,7 +22,6 @@
     harmony-music
     onlyoffice-bin
     pavucontrol
-    ulauncher
 
   ];
 
