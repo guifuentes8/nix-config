@@ -17,7 +17,8 @@
     ./selfhost-services/audiobookshelf.nix
     ./selfhost-services/radicale.nix
     ./selfhost-services/seafile.nix
-    #./selfhost-services/transmission.nix
+    ./selfhost-services/vikunja.nix
+    ./selfhost-services/vaultwarden.nix
 
     #/server    ./jackett.nix
     #/server    ./sonarr.nix

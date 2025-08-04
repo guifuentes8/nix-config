@@ -15,11 +15,6 @@
     ports = [ "127.0.0.1:9113:80" ];
   };
 
-  virtualisation.oci-containers.containers.cloudbeaver = {
-    hostname = "cloudbeaver";
-    image = "dbeaver/cloudbeaver";
-    ports = [ "127.0.0.1:9112:8978" ];
-  };
   virtualisation.oci-containers.containers.convertx = {
     hostname = "convertx";
     image = "c4illin/convertx";

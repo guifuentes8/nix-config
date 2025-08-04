@@ -81,7 +81,7 @@ in {
         '';
       };
 
-      "${domain}:9010" = { # gitea
+      "${domain}:9010" = { # vaultwarden
         extraConfig = ''
           ${caddyConfig}
           reverse_proxy /* http://${localDomain}:9110
@@ -94,7 +94,7 @@ in {
         '';
       };
 
-      "${domain}:9012" = { # cloudbeaver
+      "${domain}:9012" = { # vikunja
         extraConfig = ''
           ${caddyConfig}
           reverse_proxy /* http://${localDomain}:9112

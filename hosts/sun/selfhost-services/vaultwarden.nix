@@ -3,11 +3,11 @@
     enable = true;
     backupDir = "/var/lib/storage/vaultwarden";
     config = {
-      DOMAIN = "https://vaultwarden.guifuentes8.com.br";
+      DOMAIN = "https://sun.mau-becrux.ts.net";
       SIGNUPS_ALLOWED = false;
 
       ROCKET_ADDRESS = "127.0.0.1";
-      ROCKET_PORT = 9011;
+      ROCKET_PORT = 9110;
 
       ROCKET_LOG = "critical";
 
