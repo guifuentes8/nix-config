@@ -9,7 +9,10 @@
       isDefault = true;
       id = 0;
       name = "${config.home.username}";
-      settings = { "extensions.autoDisableScopes" = 0; };
+      settings = {
+        "extensions.autoDisableScopes" = 0;
+        "browser.startup.homepage" = "https://sun.mau-becrux.ts.net";
+      };
 
       extensions.packages = with pkgs.inputs.firefox-addons; [
         bitwarden

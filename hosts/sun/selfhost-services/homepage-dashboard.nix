@@ -127,15 +127,33 @@ in {
       ];
     }];
 
+    widgets = [
+      {
+        resources = {
+          cpu = true;
+          disk = "/";
+          memory = true;
+        };
+      }
+      {
+        search = {
+          provider = "duckduckgo";
+          target = "_blank";
+        };
+      }
+    ];
+
     settings = {
-      title = "G8 Sun server";
-      description = "G8 sun homelab dashboard server!";
+      title = "G8 Sunlab";
+      description = "G8 Sun homelab dashboard for my server!";
       background.image =
         "https://images2.alphacoders.com/538/thumb-1920-538932.jpg";
-      cardBlur = "md";
+      cardBlur = "xl";
       favicon = "https://cdn-icons-png.flaticon.com/512/12797/12797551.png";
-      statusStyle = "basic";
+      statusStyle = "dot";
       theme = "dark";
+      headerStyle = "underlined";
+      disableCollapse = true;
       layout = [{
         "Services" = {
           style = "row";
