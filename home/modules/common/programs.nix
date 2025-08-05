@@ -2,7 +2,8 @@
 
 {
   imports = [ ./extras/dependencies.nix ];
-  home.packages = [ pkgs.age pkgs.seafile-client ];
+  home.packages = [ pkgs.age ]
+    ++ lib.optional pkgs.stdenv.isLinux pkgs.seafile-client;
 
   programs = {
     gh = {
