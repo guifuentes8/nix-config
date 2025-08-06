@@ -84,7 +84,7 @@ in {
           "Karakeep" = {
             icon =
               "https://play-lh.googleusercontent.com/95d3e2a2-m4WVn7RYmdlOpdXJditxSpj4iVCF70aWPxJUQEP1HOdbiUg6L2GDOHfFV8";
-            description = "Bookmarks service";
+            description = "Bookmarks + feed RSS service";
             href = "${domain}:9009";
             siteMonitor = "${domain}:9009";
           };
@@ -157,7 +157,7 @@ in {
       layout = [{
         "Services" = {
           style = "row";
-          columns = 4;
+          columns = 2;
         };
       }];
     };

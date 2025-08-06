@@ -30,28 +30,12 @@
       "FRONTEND_URL" = "https://postiz.guifuentes8.com.br";
       "IS_GENERAL" = "true";
       "JWT_SECRET" = "Agorajaera@123";
-      "LINKEDIN_CLIENT_ID" = "77yxrh9il6rlos";
-      "LINKEDIN_CLIENT_SECRET" = "WPL_AP1.pwWZtYCYH3VEgOt0.XbJiGQ==";
       "MAIN_URL" = "https://postiz.guifuentes8.com.br";
-      "NEXT_PUBLIC_BACKEND_URL" = "https://postiz.guifuentes8.com.br/api";
+      "NEXT_PUBLIC_BACKEND_URL" = "https://sun.mau-becrux.ts.net/api";
       "NEXT_PUBLIC_UPLOAD_DIRECTORY" = "/uploads";
       "NTBA_FIX_350" = "1";
       "REDIS_URL" = "redis://postiz-redis:6379";
       "STORAGE_PROVIDER" = "local";
-      "TELEGRAM_BOT_NAME" = "G8_center_bot";
-      "TELEGRAM_TOKEN" = "8055435336:AAEasiAieq2edrSHSvTIeC_Wkb4spP3xe2M";
-      "UPLOAD_DIRECTORY" = "/uploads";
-      "X_API_KEY" = "4VdFmpwcCMOAPUJIguJHKnsfQ";
-      "X_API_SECRET" = "k8QbsIydGVDHWWNObJCkOx7f4nJX73lpXbjZRX1QSmFVywicik";
-      "X_CLIENT" = "V2UtYlIxcXNVb0lKdGYwVmM5emw6MTpjaQ";
-      "X_SECRET" = "ZEGO1vofr28AXcTIy4ymMf4ThkQrUppgHAoWqKwWZTTyDtskvi";
-      "YOUTUBE_CLIENT_ID" =
-        "1097134545979-p3tt5hgdhv2l5208lbq98mf643sv910h.apps.googleusercontent.com";
-      "YOUTUBE_CLIENT_SECRET" = "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";
-      "TIKTOK_CLIENT_ID" = "awh7rytfjqjdkmtq";
-      "TIKTOK_CLIENT_SECRET" = "ZbyHpxO7Vq04MLdRzllEQT6zMw15fYX9";
-      "INSTAGRAM_APP_ID" = "689901326994321";
-      "INSTAGRAM_APP_SECRET" = "76de033f12fc5a0cd5c0ade5cab7ee09";
     };
     volumes =
       [ "postiz_postiz-config:/config:rw" "postiz_postiz-uploads:/uploads:rw" ];
