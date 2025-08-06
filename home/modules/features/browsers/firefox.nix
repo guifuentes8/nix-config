@@ -14,15 +14,15 @@
         "browser.startup.homepage" = "https://sun.mau-becrux.ts.net";
       };
 
-      extensions.packages = with pkgs.inputs.firefox-addons; [
-        bitwarden
-        darkreader
-        floccus
-        react-devtools
-        reduxdevtools
-        stylus
-        ublock-origin
-      ];
+      #  extensions.packages = with pkgs.inputs.firefox-addons; [
+      #    bitwarden
+      #    darkreader
+      #    floccus
+      #    react-devtools
+      #    reduxdevtools
+      #    stylus
+      #    ublock-origin
+      #  ];
     };
   };
 

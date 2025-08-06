@@ -24,6 +24,8 @@
     '';
   };
 
+  services.tailscale.enable = true;
+
   homebrew = {
     enable = true;
     onActivation = {
@@ -38,12 +40,12 @@
       "discord"
       "docker"
       "dbeaver-community"
-      "flameshot"
       "gimp"
       "microsoft-teams"
       "nextcloud"
       "onlyoffice"
       "pika"
+      # "tailscale"
       "obs"
       "zoom"
 
