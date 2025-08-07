@@ -19,6 +19,7 @@
     ./selfhost-services/seafile.nix
     ./selfhost-services/vikunja.nix
     ./selfhost-services/vaultwarden.nix
+    ./selfhost-services/postiz.nix
 
     #/server    ./jackett.nix
     #/server    ./sonarr.nix
@@ -29,7 +30,7 @@
     # Server 
     ./server-services/console.nix
     ./server-services/caddy.nix
-    #   ./server-services/cloudflare.nix
+    ./server-services/cloudflare.nix
     ./server-services/networking.nix
     ./server-services/postgres.nix
     ./server-services/tailscale.nix

@@ -1,7 +1,8 @@
 # Auto-generated using compose2nix v0.3.1.
 { pkgs, lib, ... }:
+let domain = "postiz.larquim.com.br";
 
-{
+in {
   # Runtime
   virtualisation.podman = {
     enable = true;
@@ -27,11 +28,11 @@
       "DATABASE_URL" =
         "postgresql://postiz-user:postiz-password@postiz-postgres:5432/postiz-db-local";
       "DISABLE_REGISTRATION" = "true";
-      "FRONTEND_URL" = "https://postiz.guifuentes8.com.br";
+      "FRONTEND_URL" = "https://${domain}";
       "IS_GENERAL" = "true";
       "JWT_SECRET" = "Agorajaera@123";
-      "MAIN_URL" = "https://postiz.guifuentes8.com.br";
-      "NEXT_PUBLIC_BACKEND_URL" = "https://sun.mau-becrux.ts.net/api";
+      "MAIN_URL" = "https://${domain}";
+      "NEXT_PUBLIC_BACKEND_URL" = "https://${domain}/api";
       "NEXT_PUBLIC_UPLOAD_DIRECTORY" = "/uploads";
       "NTBA_FIX_350" = "1";
       "REDIS_URL" = "redis://postiz-redis:6379";

@@ -1,10 +1,10 @@
 { pkgs, lib, ... }: {
 
   services.tailscale = {
-    enable = true;
-    package = lib.mkForce pkgs.unstable.tailscale;
+    enable = lib.mkDefault true;
+    package = lib.mkDefault pkgs.unstable.tailscale;
     openFirewall = true;
-    useRoutingFeatures = lib.mkForce "server";
+    useRoutingFeatures = lib.mkDefault "server";
     permitCertUid = "caddy";
   };
 

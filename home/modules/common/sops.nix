@@ -6,7 +6,9 @@
   sops.defaultSopsFormat = "yaml";
 
   sops.secrets = {
-    github_token = { path = "${config.sops.defaultSymlinkPath}/github_token"; };
+    github_token = {
+      path = "${config.sops.defaultSymlinkPath}/g8/github/token";
+    };
   };
   systemd.user.services.mbsync.Unit.After = [ "sops-nix.service" ];
 }

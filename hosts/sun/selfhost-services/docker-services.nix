@@ -1,5 +1,4 @@
 { ... }: {
-  imports = [ ./postiz.nix ];
 
   # virtualisation.oci-containers.backend = "docker";
   virtualisation.oci-containers.containers.flatnotes = {
