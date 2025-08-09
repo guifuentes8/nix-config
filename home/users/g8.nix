@@ -3,7 +3,7 @@
     ../modules/common/programs.nix
     ../modules/common/services.nix
     ../modules/common/stylix.nix
-    # ../modules/common/sops.nix
+    ../modules/common/sops.nix
   ];
   home = {
     username = "g8";
