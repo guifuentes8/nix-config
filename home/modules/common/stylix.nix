@@ -78,7 +78,7 @@ in {
       waybar.enable = true;
       wezterm.enable = true;
       wpaperd.enable = true;
-      xfce.enable = lib.mkIf (pkgs.stdenv.hostPlatform.isLinux) true;
+      xfce.enable = false;
       yazi.enable = true;
       zathura.enable = true;
     };

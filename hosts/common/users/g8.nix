@@ -10,6 +10,7 @@
       "sudo"
       "video"
       "docker"
+      "podman"
       "adbusers"
       "input"
       "vboxusers"
