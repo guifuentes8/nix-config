@@ -15,7 +15,7 @@
     wslConf.network.hostname = "jupiter";
     useWindowsDriver = true;
 
-    defaultUser = "g8";
+    defaultUser = "g8-fuentes";
     startMenuLaunchers = true;
 
     # Enable integration with Docker Desktop (needs to be installed)
