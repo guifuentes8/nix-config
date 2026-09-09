@@ -7,7 +7,7 @@
     defaultSopsFile = ../../../secrets/common.yaml;
     defaultSopsFormat = "yaml";
     secrets = {
-      github-token = {};
+      github-token = { };
     };
   };
   systemd.user.services.mbsync.Unit.After = [ "sops-nix.service" ];

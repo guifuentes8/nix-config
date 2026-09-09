@@ -17,8 +17,8 @@
 
     isNormalUser = true;
     description = "g8-fuentes";
- 
-   extraGroups = [
+
+    extraGroups = [
       "networkmanager"
       "wheel"
       "sudo"
@@ -74,7 +74,7 @@
   environment = {
     systemPackages = with pkgs; [ sops ];
     sessionVariables = {
-      
+
       XDG_CACHE_HOME = "\${HOME}/.cache";
       XDG_CONFIG_HOME = "\${HOME}/.config";
       XDG_BIN_HOME = "\${HOME}/.local/bin";

@@ -1,6 +1,8 @@
 { config, domain, ... }:
-let localDomain = "127.0.0.1";
-in {
+let
+  localDomain = "127.0.0.1";
+in
+{
   services = {
     #######################################
     ## 🔹 NGINX - apenas HTTP interno
@@ -17,16 +19,20 @@ in {
           #  forceSSL = true;
           #  default = true;
           #  enableACME = true;
-          locations."/" = { proxyPass = "http://${localDomain}:80"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:80";
+          };
           # locations."/.well-known/acme-challenge" = {
           # root = "/var/lib/acme/acme-challenge";
           #};
         };
         "nextcloud" = {
-          listen = [{
-            addr = "${localDomain}";
-            port = 9101;
-          }];
+          listen = [
+            {
+              addr = "${localDomain}";
+              port = 9101;
+            }
+          ];
         };
         "nextcloud.${domain}" = {
           locations."/" = {
@@ -41,59 +47,87 @@ in {
           };
         };
         "immich.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9102"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9102";
+          };
         };
 
         "radicale.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9103"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9103";
+          };
         };
 
         "navidrome.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9104"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9104";
+          };
         };
 
         "audiobookshelf.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9105"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9105";
+          };
         };
 
         "flatnotes.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9106"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9106";
+          };
         };
 
         "convertx.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9107"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9107";
+          };
         };
 
         "metube.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9108"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9108";
+          };
         };
 
         "karakeep.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9109"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9109";
+          };
         };
 
         "vaultwarden.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9110"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9110";
+          };
         };
 
         "vscode.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9111"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9111";
+          };
         };
 
         "vikunja.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9112"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9112";
+          };
         };
 
         "excalidraw.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9113"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9113";
+          };
         };
 
         "gitea.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9114"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9114";
+          };
         };
 
         "onlyoffice.${domain}" = {
-          locations."/" = { proxyPass = "http://${localDomain}:9115"; };
+          locations."/" = {
+            proxyPass = "http://${localDomain}:9115";
+          };
         };
       };
     };
@@ -114,4 +148,3 @@ in {
   };
   #users.users.nginx.extraGroups = [ "acme" ];
 }
-

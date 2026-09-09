@@ -14,7 +14,7 @@
     #   ../common/interfaces/DE/xfce.nix
     #   ../common/stylix.nix
 
-    #    ./selfhost-services/homepage-dashboard.nix
+    ./selfhost-services/homepage-dashboard.nix
     #
     #   ./selfhost-services/docker-services.nix
     #    # External services selfhosted
@@ -23,8 +23,8 @@
     #   ./selfhost-services/immich.nix
     #   ./selfhost-services/navidrome.nix
 
-    #  ./selfhost-services/radicale.nix
-    #  ./selfhost-services/audiobookshelf.nix
+    #   ./selfhost-services/radicale.nix
+    ./selfhost-services/audiobookshelf.nix
     #  ./selfhost-services/karakeep.nix
     ./selfhost-services/vaultwarden.nix
     #  ./selfhost-services/vscode-server.nix
