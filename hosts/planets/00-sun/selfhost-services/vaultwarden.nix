@@ -1,7 +1,7 @@
 { ... }: {
   services.vaultwarden = {
     enable = true;
-    backupDir = "/var/lib/storage/vaultwarden";
+    #backupDir = "/var/lib/storage/vaultwarden";
     config = {
       DOMAIN = "https://vaultwarden.g8-space.com.br";
       SIGNUPS_ALLOWED = false;

@@ -11,7 +11,7 @@
     displayManager = {
       autoLogin = {
         enable = true;
-        user = "guifuentes8";
+        user = "g8-fuentes";
       };
       defaultSession = "xfce";
     };

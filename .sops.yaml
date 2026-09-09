@@ -1,4 +1,5 @@
 keys:
+  - &sun age1t4xlfck2xf2x0hexmlv8te2agy93p8dvecxzml86e4jrz2h2e93qqlwaxn
   - &jupiter age1vhn60l0pej226cjlmxrg4ulgj0ef86nq4k05pughgfhxwlrp7assp59hay
   - &saturn age1qy3hjryjl9383rkj2vm7fnh4c8gdpvjzwdeesu96lk90hf8g45tqulqu3x
   - &uranus age1jqyjprxdn3swn9afx5v3ckz04tun8t0f7kh36qeu69uqjlvg6ypq99lrux
@@ -8,6 +9,7 @@ creation_rules:
   - path_regex: ^secrets/common\.yaml$
     key_groups:
       - age:
+          - *sun
           - *jupiter
           - *saturn
           - *uranus

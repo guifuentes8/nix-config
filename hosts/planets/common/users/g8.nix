@@ -12,10 +12,13 @@
     ../../common
     ../sops.nix
   ];
+
   users.users.g8-fuentes = {
+
     isNormalUser = true;
     description = "g8-fuentes";
-    extraGroups = [
+ 
+   extraGroups = [
       "networkmanager"
       "wheel"
       "sudo"

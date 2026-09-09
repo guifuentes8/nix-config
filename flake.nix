@@ -67,12 +67,13 @@
           inputs.home-manager.nixosModules.home-manager
           {
             home-manager = {
-              home-manager.users.g8 = ./home/planets/00-sun;
-              home-manager.extraSpecialArgs = { inherit inputs outputs; };
-              home-manager.sharedModules = [
+              users.g8-fuentes = ./home/planets/00-sun;
+              extraSpecialArgs = { inherit inputs outputs; };
+              sharedModules = [
                 inputs.sops-nix.homeModules.sops
                 inputs.nixvim.homeModules.nixvim
-              ];
+		inputs.stylix.homeModules.stylix            
+  ];
             };
           }
         ];

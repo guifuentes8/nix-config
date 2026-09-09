@@ -2,12 +2,12 @@
 {
   networking = {
     hostName = "sun";
-    defaultGateway = "192.168.0.1";
-    interfaces.enp4s0 = {
+    defaultGateway = "192.168.1.1";
+    interfaces.wlp0s20u11 = {
       useDHCP = false;
       ipv4.addresses = [
         {
-          address = "192.168.0.10";
+          address = "192.168.1.10";
           prefixLength = 24;
         }
       ];

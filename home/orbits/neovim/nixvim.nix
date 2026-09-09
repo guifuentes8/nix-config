@@ -37,8 +37,12 @@ in
     nixpkgs.useGlobalPackages = true;
     package = pkgs.neovim-unwrapped;
 
-    colorschemes.kanagawa = {
+    colorschemes.tokyonight = {
       enable = true;
+      settings = {
+        style = "moon";
+      };
+
     };
 
     extraLuaPackages =
