@@ -108,7 +108,7 @@
           inputs.home-manager.nixosModules.home-manager
           {
             home-manager = {
-              users.g8 = ./home/planets/05-jupiter;
+              users.g8-fuentes = ./home/planets/05-jupiter;
               extraSpecialArgs = { inherit inputs outputs; };
               sharedModules = [
                 inputs.sops-nix.homeModules.sops

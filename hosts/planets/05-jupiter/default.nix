@@ -4,7 +4,7 @@
   imports = [
 
     ../common/users/g8.nix
-    ../common/hardware/gpu/amdgpu.nix
+    ../common/hardware/gpu/amd.nix
 
     ../common/services/dev
     #   ../stylix.nix
